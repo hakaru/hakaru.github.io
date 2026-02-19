@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="1024" height="1024" rx="220" fill="white"/>
+
+    <!-- Archive Box -->
+    <path d="M192 480V800C192 826.51 213.49 848 240 848H784C810.51 848 832 826.51 832 800V480" fill="#E0E0E0"/>
+    <path d="M160 480H864V384C864 357.49 842.51 336 816 336H208C181.49 336 160 357.49 160 384V480Z" fill="#F5F5F5"/>
+    <rect x="448" y="576" width="128" height="48" rx="24" fill="#BDBDBD"/>
+
+    <!-- LINE-style Speech Bubble -->
+    <path d="M688 224H336C300.697 224 272 252.697 272 288V480H521.512C530.565 480 539.248 483.743 545.657 490.152L592 536.512V312C592 263.438 635.438 224 684 224H688Z" fill="#06C755"/>
+
+</svg>
