@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Manual | simpleMIDIController | hakaru</title>
+    <meta name="description" content="Complete guide to using simpleMIDIController - MIDI Controller App for iPhone and iPad.">
+    <meta property="og:title" content="User Manual | simpleMIDIController">
+    <meta property="og:description" content="Complete guide to using simpleMIDIController - MIDI Controller App for iPhone and iPad.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/simpleMIDIController-support/manual/en/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content strong { color: #fff; }
+        .toc {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 20px; margin-bottom: 30px;
+        }
+        .toc h3 { color: #fff; margin: 0 0 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 6px; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/simpleMIDIController-support/" class="back-link">← simpleMIDIController Support</a>
+        <div class="hero">
+            <img src="/simpleMIDIController-support/assets/app-icon.png" alt="simpleMIDIController" class="hero-icon">
+            <h1>User Manual</h1>
+            <p>simpleMIDIController — MIDI Controller App for iPhone and iPad</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/simpleMIDIController-support/">Support</a>
+            <a href="/simpleMIDIController-support/index-ja">サポート</a>
+            <a href="/simpleMIDIController-support/manual/en/" class="active">Manual</a>
+            <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
+            <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+            <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+            <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
+        </nav>
+        <div class="content">
+            <p>Welcome to simpleMIDIController, the MIDI controller app for iPhone and iPad. This manual will guide you through all features and help you get the most out of your MIDI setup.</p>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ol>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#midi-connections">MIDI Connections</a></li>
+                    <li><a href="#controller-interface">Controller Interface</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#tips">Tips &amp; Tricks</a></li>
+                </ol>
+            </div>
+
+            <hr>
+
+            <h2 id="getting-started">Getting Started</h2>
+
+            <h3>First Launch</h3>
+            <p>When you first open simpleMIDIController, you may be asked to grant Bluetooth access. This is required for Bluetooth MIDI connectivity.</p>
+
+            <h3>Main Screen Overview</h3>
+            <p>The main screen provides intuitive MIDI controls for live performance and studio use.</p>
+
+            <hr>
+
+            <h2 id="midi-connections">MIDI Connections</h2>
+
+            <p>simpleMIDIController supports three connection methods:</p>
+
+            <h3>Bluetooth MIDI</h3>
+            <ol>
+                <li>Ensure your MIDI device is in Bluetooth MIDI pairing mode</li>
+                <li>Open simpleMIDIController</li>
+                <li>The app will discover available Bluetooth MIDI devices</li>
+                <li>Tap to connect</li>
+            </ol>
+
+            <p><strong>Troubleshooting Bluetooth:</strong></p>
+            <ul>
+                <li>Toggle Bluetooth OFF/ON on your iPhone/iPad</li>
+                <li>Restart the MIDI device</li>
+                <li>Move devices closer to avoid interference</li>
+                <li>Ensure no other app is connected to the same MIDI device</li>
+            </ul>
+
+            <h3>USB MIDI</h3>
+            <p>Connect USB MIDI devices using:</p>
+            <ul>
+                <li>Lightning to USB Camera Adapter (for older iPhones/iPads)</li>
+                <li>USB-C (for newer devices)</li>
+            </ul>
+            <p>USB MIDI devices are automatically detected when connected.</p>
+
+            <h3>Virtual MIDI</h3>
+            <p>Send MIDI to other apps on the same device:</p>
+            <ol>
+                <li>Enable Virtual MIDI in settings</li>
+                <li>Select "simpleMIDIController" as the MIDI input in your target app (DAW, synth app, etc.)</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="controller-interface">Controller Interface</h2>
+
+            <h3>Control Types</h3>
+            <p>simpleMIDIController provides various control types for different use cases:</p>
+            <ul>
+                <li><strong>Buttons</strong>: Send note on/off or control change messages</li>
+                <li><strong>Sliders</strong>: Send continuous control change values</li>
+                <li><strong>Pads</strong>: Velocity-sensitive triggers</li>
+            </ul>
+
+            <h3>Customization</h3>
+            <p>Configure each control to send:</p>
+            <ul>
+                <li>MIDI Channel (1-16)</li>
+                <li>Control number or note</li>
+                <li>Value range</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="settings">Settings</h2>
+
+            <h3>MIDI Settings</h3>
+            <ul>
+                <li><strong>MIDI Channel</strong>: Default channel for all controls</li>
+                <li><strong>Velocity Curve</strong>: Adjust response sensitivity</li>
+                <li><strong>Virtual MIDI</strong>: Enable/disable Virtual MIDI port</li>
+            </ul>
+
+            <h3>Bluetooth Settings</h3>
+            <ul>
+                <li><strong>Auto-Connect</strong>: Automatically reconnect to last used device</li>
+                <li><strong>Device List</strong>: View and manage paired Bluetooth MIDI devices</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="tips">Tips &amp; Tricks</h2>
+
+            <h3>For Best Performance</h3>
+            <ol>
+                <li><strong>Use Bluetooth wisely</strong>: Keep devices within 1-2 meters for best latency</li>
+                <li><strong>Reduce interference</strong>: Move away from Wi-Fi routers and USB 3.0 hubs</li>
+                <li><strong>Check battery</strong>: Low battery on either device can affect Bluetooth performance</li>
+                <li><strong>Close unused apps</strong>: Free up system resources for better stability</li>
+            </ol>
+
+            <h3>Troubleshooting</h3>
+
+            <p><strong>Bluetooth device not found</strong></p>
+            <ul>
+                <li>Ensure the device is in pairing mode</li>
+                <li>Toggle iPhone/iPad Bluetooth OFF/ON</li>
+                <li>Restart the MIDI device</li>
+                <li>Check if another app is using the device</li>
+            </ul>
+
+            <p><strong>High latency</strong></p>
+            <ul>
+                <li>Reduce distance between devices</li>
+                <li>Avoid interference sources</li>
+                <li>Use USB MIDI for lowest latency</li>
+            </ul>
+
+            <p><strong>Permission denied</strong></p>
+            <ul>
+                <li>Go to iOS Settings → Privacy &amp; Security → Bluetooth</li>
+                <li>Enable permission for simpleMIDIController</li>
+            </ul>
+
+            <hr>
+
+            <h2>Support</h2>
+            <p>Need help? Visit our <a href="/simpleMIDIController-support/support/">Support Page</a> or contact us at <a href="mailto:support@hakaru.net">support@hakaru.net</a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

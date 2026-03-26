@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluetooth MIDIで自由にワイヤレス演奏 | simpleMIDIController ブログ</title>
+    <meta name="description" content="SimpleMidiControllerのBluetooth MIDI機能でケーブル不要のワイヤレス演奏。ペアリングするだけで即座に接続できます。">
+    <meta property="og:title" content="Bluetooth MIDIで自由にワイヤレス演奏 | simpleMIDIController ブログ">
+    <meta property="og:description" content="Bluetooth MIDI機能でケーブル不要のワイヤレス演奏を実現。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/simpleMIDIController-support/blog/ja/2026-03-08-bluetooth-midi/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Bluetooth MIDIで自由にワイヤレス演奏",
+        "datePublished": "2026-03-08",
+        "inLanguage": "ja",
+        "author": { "@type": "Organization", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru", "url": "https://hakaru.net" },
+        "url": "https://hakaru.net/simpleMIDIController-support/blog/ja/2026-03-08-bluetooth-midi/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 {
+            font-size: 1.8em; font-weight: 700; margin-bottom: 12px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .article-date { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content strong { color: #fff; }
+        .related-articles {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 20px; margin-top: 30px;
+        }
+        .related-articles h3 { color: #fff; margin: 0 0 12px; font-size: 1em; }
+        .related-articles ul { margin: 0; padding: 0; list-style: none; }
+        .related-articles li { margin-bottom: 8px; }
+        .related-articles a { color: #e94560; text-decoration: none; }
+        .related-articles a:hover { text-decoration: underline; }
+        .app-store-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; margin: 20px 0;
+            background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.4);
+            border-radius: 10px; text-decoration: none; color: #fff; transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .app-store-btn:hover { background: rgba(233,69,96,0.3); transform: translateY(-2px); }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/simpleMIDIController-support/blog/ja/" class="back-link">← ブログ</a>
+        <nav class="support-nav">
+            <a href="/simpleMIDIController-support/">Support</a>
+            <a href="/simpleMIDIController-support/index-ja">サポート</a>
+            <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+            <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
+            <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+            <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+            <a href="/simpleMIDIController-support/blog/ja/" class="active">ブログ</a>
+        </nav>
+        <div class="article-header">
+            <h1>Bluetooth MIDIで自由にワイヤレス演奏</h1>
+            <div class="article-date">2026年3月8日</div>
+        </div>
+        <div class="content">
+            <p>SimpleMidiControllerの最大の魅力のひとつが、<strong>Bluetooth MIDI</strong>によるワイヤレス接続です。ケーブルもアダプタも不要。ペアリングするだけで、すぐに演奏を始められます。</p>
+
+            <h2>接続はとても簡単</h2>
+            <ol>
+                <li>MIDIデバイスのBluetooth MIDIペアリングモードをON</li>
+                <li>SimpleMidiControllerを起動</li>
+                <li>アプリが自動的にデバイスを検出</li>
+                <li>タップして接続完了</li>
+            </ol>
+            <p>たったこれだけです。面倒な設定は一切ありません。</p>
+
+            <h2>ライブでも安心</h2>
+            <p>Bluetooth MIDIは、ステージ上でケーブルに足を引っかける心配がなくなります。デバイスとの距離を1〜2メートル以内に保てば、低レイテンシーで安定した接続が得られます。</p>
+
+            <h2>自動再接続</h2>
+            <p>設定画面で「自動接続」をONにしておけば、次回アプリ起動時に前回使用したデバイスへ自動的に再接続します。毎回ペアリングし直す手間がありません。</p>
+
+            <h2>うまくつながらないときは</h2>
+            <ul>
+                <li>iPhone/iPadのBluetoothをOFF→ONに切り替え</li>
+                <li>MIDIデバイスを再起動</li>
+                <li>他のアプリが同じデバイスに接続していないか確認</li>
+                <li>Wi-Fiルーターなど電波干渉源から離れる</li>
+            </ul>
+            <p>Bluetooth MIDIで、ケーブルから解放された自由な演奏を体験してください。</p>
+
+            <hr>
+
+            <a href="https://apps.apple.com/app/simplemidicontroller/id1707567575" class="app-store-btn">App Storeでダウンロード</a>
+
+            <div class="related-articles">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="/simpleMIDIController-support/blog/ja/2026-03-08-iphone-midi-controller-setup/">iPhoneをMIDIコントローラーにする方法 — DAW連携完全ガイド</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

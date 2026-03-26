@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIDI 2.0 Goes Mainstream in 2026 — Your iPhone Is the Simplest MIDI Controller | simpleMIDIController Blog</title>
+    <meta name="description" content="Windows 11 now natively supports MIDI 2.0. In the year MIDI 2.0 goes mainstream, discover why simpleMIDIController makes your iPhone the most accessible MIDI controller available.">
+    <meta property="og:title" content="MIDI 2.0 Goes Mainstream in 2026 — Your iPhone Is the Simplest MIDI Controller">
+    <meta property="og:description" content="Windows 11 now natively supports MIDI 2.0. Discover why simpleMIDIController makes your iPhone the most accessible MIDI controller available.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/simpleMIDIController-support/blog/en/2026-03-08-midi2-comes-to-windows/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MIDI 2.0 Goes Mainstream in 2026 — Your iPhone Is the Simplest MIDI Controller",
+        "datePublished": "2026-03-08",
+        "author": { "@type": "Organization", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru", "url": "https://hakaru.net" },
+        "url": "https://hakaru.net/simpleMIDIController-support/blog/en/2026-03-08-midi2-comes-to-windows/",
+        "keywords": ["simpleMIDIController", "MIDI 2.0", "Windows 11", "controller", "DAW"]
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 {
+            font-size: 1.8em; font-weight: 700; margin-bottom: 12px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .article-date { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content strong { color: #fff; }
+        .related-articles {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 20px; margin-top: 30px;
+        }
+        .related-articles h3 { color: #fff; margin: 0 0 12px; font-size: 1em; }
+        .related-articles ul { margin: 0; padding: 0; list-style: none; }
+        .related-articles li { margin-bottom: 8px; }
+        .related-articles a { color: #e94560; text-decoration: none; }
+        .related-articles a:hover { text-decoration: underline; }
+        .app-store-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; margin: 20px 0;
+            background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.4);
+            border-radius: 10px; text-decoration: none; color: #fff; transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .app-store-btn:hover { background: rgba(233,69,96,0.3); transform: translateY(-2px); }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/simpleMIDIController-support/blog/en/" class="back-link">← Blog</a>
+        <nav class="support-nav">
+            <a href="/simpleMIDIController-support/">Support</a>
+            <a href="/simpleMIDIController-support/index-ja">サポート</a>
+            <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+            <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
+            <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+            <a href="/simpleMIDIController-support/blog/en/" class="active">Blog</a>
+            <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
+        </nav>
+        <div class="article-header">
+            <h1>MIDI 2.0 Goes Mainstream in 2026 — Your iPhone Is the Simplest MIDI Controller</h1>
+            <div class="article-date">March 8, 2026</div>
+        </div>
+        <div class="content">
+            <h2>2026: The Year MIDI 2.0 Goes Mainstream</h2>
+            <p>2026 marks a major turning point for MIDI 2.0 adoption.</p>
+
+            <h3>Windows 11 Gets Native MIDI 2.0 Support</h3>
+            <p>In February 2026, Microsoft released Windows MIDI Services, bringing OS-level MIDI 2.0 support to Windows 11.</p>
+            <p>Key capabilities include:</p>
+            <ul>
+                <li><strong>Native MIDI 2.0 Support</strong>: UMP (Universal MIDI Packet) protocol handled at the OS level</li>
+                <li><strong>Automatic MIDI 1.0/2.0 Translation</strong>: Legacy and MIDI 2.0 devices interoperate seamlessly</li>
+                <li><strong>Multi-Client Access</strong>: Multiple apps access the same MIDI device simultaneously</li>
+                <li><strong>Loopback/App-to-App Routing</strong>: Direct MIDI signal routing between applications</li>
+                <li><strong>USB MIDI 2.0 Class Driver</strong>: Zero-driver recognition of USB MIDI 2.0 devices</li>
+            </ul>
+
+            <h3>Industry-Wide Momentum</h3>
+            <ul>
+                <li><strong>MIDI Association 2026 Roadmap</strong>: MIDI 2.0 Property Exchange becomes essential for AI controllers and biometric integration</li>
+                <li><strong>CES 2026</strong>: New MIDI 2.0 compatible gear announced in volume</li>
+                <li><strong>Controller Evolution</strong>: AI sensors and MIDI 2.0 combine to create "intent-predicting" controllers</li>
+            </ul>
+
+            <hr>
+
+            <h2>Why Your iPhone as a MIDI Controller Makes Sense</h2>
+            <p>With MIDI 2.0 bringing higher-resolution control as the standard, <strong>simpleMIDIController</strong> offers the simplest entry point into this new ecosystem.</p>
+
+            <h3>Always in Your Pocket</h3>
+            <p>No dedicated hardware to carry. Your iPhone — always with you — becomes a MIDI controller instantly. Ready for impromptu sessions or on-the-go production.</p>
+
+            <h3>Multi-Touch Expression</h3>
+            <p>iPhone's multi-touch screen provides expressiveness that physical faders and knobs cannot match. Pinch, swipe, and touch gestures are perfectly suited for MIDI 2.0's high-resolution value ranges.</p>
+
+            <h3>Zero Setup</h3>
+            <p>Bluetooth or USB connection gets you linked to your DAW or synth instantly. No drivers, no complex configuration.</p>
+
+            <h3>Live Performance Backup</h3>
+            <p>As a backup for your main controller, or as an additional control source for improvisation — your iPhone is always on standby.</p>
+
+            <hr>
+
+            <h2>The Simplest Entry Point for the MIDI 2.0 Era</h2>
+            <p>With Windows 11 joining macOS in native MIDI 2.0 support, the cross-platform MIDI 2.0 ecosystem is now a reality.</p>
+            <p>simpleMIDIController is the simplest, most accessible way to use your iPhone as a MIDI controller in this new landscape.</p>
+
+            <hr>
+
+            <h2>Download simpleMIDIController</h2>
+            <p>Turn your iPhone into a MIDI controller. Connect via Bluetooth or USB and start controlling your DAW instantly.</p>
+
+            <a href="https://apps.apple.com/app/simplemidicontroller/id1707567575" class="app-store-btn">Download on the App Store</a>
+
+            <div class="related-articles">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="/simpleMIDIController-support/blog/en/2026-03-08-iphone-midi-controller-setup/">Turn Your iPhone into a MIDI Controller — Complete DAW Integration Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

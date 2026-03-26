@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wireless Freedom with Bluetooth MIDI | simpleMIDIController Blog</title>
+    <meta name="description" content="Bluetooth MIDI in simpleMIDIController offers wireless connection with no cables or adapters needed. Just pair and play.">
+    <meta property="og:title" content="Wireless Freedom with Bluetooth MIDI | simpleMIDIController Blog">
+    <meta property="og:description" content="Bluetooth MIDI offers wireless connection with no cables or adapters needed.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/simpleMIDIController-support/blog/en/2026-03-08-bluetooth-midi/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Wireless Freedom with Bluetooth MIDI",
+        "datePublished": "2026-03-08",
+        "author": { "@type": "Organization", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru", "url": "https://hakaru.net" },
+        "url": "https://hakaru.net/simpleMIDIController-support/blog/en/2026-03-08-bluetooth-midi/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 {
+            font-size: 1.8em; font-weight: 700; margin-bottom: 12px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .article-date { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content strong { color: #fff; }
+        .related-articles {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 20px; margin-top: 30px;
+        }
+        .related-articles h3 { color: #fff; margin: 0 0 12px; font-size: 1em; }
+        .related-articles ul { margin: 0; padding: 0; list-style: none; }
+        .related-articles li { margin-bottom: 8px; }
+        .related-articles a { color: #e94560; text-decoration: none; }
+        .related-articles a:hover { text-decoration: underline; }
+        .app-store-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; margin: 20px 0;
+            background: rgba(233,69,96,0.15); border: 1px solid rgba(233,69,96,0.4);
+            border-radius: 10px; text-decoration: none; color: #fff; transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .app-store-btn:hover { background: rgba(233,69,96,0.3); transform: translateY(-2px); }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/simpleMIDIController-support/blog/en/" class="back-link">← Blog</a>
+        <nav class="support-nav">
+            <a href="/simpleMIDIController-support/">Support</a>
+            <a href="/simpleMIDIController-support/index-ja">サポート</a>
+            <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+            <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
+            <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+            <a href="/simpleMIDIController-support/blog/en/" class="active">Blog</a>
+            <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
+        </nav>
+        <div class="article-header">
+            <h1>Wireless Freedom with Bluetooth MIDI</h1>
+            <div class="article-date">March 8, 2026</div>
+        </div>
+        <div class="content">
+            <p>One of simpleMIDIController's best features is <strong>Bluetooth MIDI</strong> — wireless connection with no cables or adapters needed. Just pair and play.</p>
+
+            <h2>Dead Simple Setup</h2>
+            <ol>
+                <li>Put your MIDI device in Bluetooth MIDI pairing mode</li>
+                <li>Open simpleMIDIController</li>
+                <li>The app automatically detects available devices</li>
+                <li>Tap to connect</li>
+            </ol>
+            <p>That's it. No complicated configuration required.</p>
+
+            <h2>Perfect for Live Performance</h2>
+            <p>Bluetooth MIDI eliminates cable clutter on stage. Keep your devices within 1-2 meters for low-latency, stable connection.</p>
+
+            <h2>Auto-Reconnect</h2>
+            <p>Enable "Auto Connect" in settings, and the app will automatically reconnect to your last used device on launch. No need to pair again every time.</p>
+
+            <h2>Troubleshooting</h2>
+            <ul>
+                <li>Toggle Bluetooth OFF and ON on your iPhone/iPad</li>
+                <li>Restart your MIDI device</li>
+                <li>Make sure no other apps are connected to the same device</li>
+                <li>Move away from Wi-Fi routers and other interference sources</li>
+            </ul>
+            <p>Experience cable-free performance with Bluetooth MIDI.</p>
+
+            <hr>
+
+            <a href="https://apps.apple.com/app/simplemidicontroller/id1707567575" class="app-store-btn">Download on the App Store</a>
+
+            <div class="related-articles">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="/simpleMIDIController-support/blog/en/2026-03-08-iphone-midi-controller-setup/">How to Use Your iPhone as a MIDI Controller — Complete DAW Setup Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
