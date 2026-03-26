@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take User Manual | hakaru</title>
+    <meta name="description" content="Complete guide to using 1Take - Professional Audio Recording App for iPhone.">
+    <meta property="og:title" content="1Take User Manual">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/manual/en/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 20px 20px 40px; margin-bottom: 30px; }
+        .toc li { margin-bottom: 6px; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/" class="back-link">← 1Take Support</a>
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Professional Audio Recorder for iOS</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/" class="active">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>1Take User Manual</h2>
+            <p>Welcome to 1Take, the professional audio recording app designed for musicians. This manual will guide you through all features and help you get the most out of your recordings.</p>
+
+            <ol class="toc">
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#recording-basics">Recording Basics</a></li>
+                <li><a href="#recording-analysis">Recording Analysis</a></li>
+                <li><a href="#presets">Presets</a></li>
+                <li><a href="#signal-chain">Signal Processing Chain</a></li>
+                <li><a href="#preroll">Pre-roll Recording</a></li>
+                <li><a href="#auto-record">Auto-Record</a></li>
+                <li><a href="#meters">Meters</a></li>
+                <li><a href="#markers">Markers</a></li>
+                <li><a href="#recordings-library">Recordings Library</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#pro-features">Pro Features</a></li>
+            </ol>
+
+            <hr>
+
+            <h2 id="getting-started">Getting Started</h2>
+
+            <h3>First Launch</h3>
+            <p>When you first open 1Take, you'll be asked to grant microphone access. This is required for the app to record audio.</p>
+
+            <h3>Main Screen Overview</h3>
+            <p>The main screen consists of:</p>
+            <ul>
+                <li><strong>Level Meter</strong>: Shows real-time audio levels (tap to switch between VU/GR/Spectrum/LUFS)</li>
+                <li><strong>Record Button</strong>: Start/stop recording (center)</li>
+                <li><strong>TRIM Knob</strong>: Adjust input gain (left)</li>
+                <li><strong>THRESH Knob</strong>: Adjust gate threshold (right)</li>
+                <li><strong>Preset Selector</strong>: Choose your sound profile (top)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording-basics">Recording Basics</h2>
+
+            <h3>Starting a Recording</h3>
+            <ol>
+                <li>Tap the <strong>Record</strong> button to start recording</li>
+                <li>The button turns red and a timer appears</li>
+                <li>Tap again to stop and save</li>
+            </ol>
+
+            <h3>Adding Markers</h3>
+            <p>During recording, tap the <strong>Marker</strong> button to add a user marker at the current position. This helps you find important moments later.</p>
+
+            <h3>Recording Stopped Alert</h3>
+            <p>When you stop recording, an alert shows:</p>
+            <ul>
+                <li><strong>Duration</strong>: Total recording length</li>
+                <li><strong>Integrity</strong>: Percentage of audio data successfully captured (aim for 100%)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording-analysis">Recording Analysis</h2>
+            <p>1Take v1.3.0 introduces automatic recording quality analysis using broadcast-standard algorithms (ITU-R BS.1770-4).</p>
+
+            <h3>What Gets Analyzed</h3>
+            <p>After each recording, 1Take automatically evaluates:</p>
+            <ul>
+                <li><strong>Peak Level (dBFS)</strong>: Maximum sample value (-6 to -12 dBFS is ideal)</li>
+                <li><strong>RMS Level (dBFS)</strong>: Average loudness over time</li>
+                <li><strong>Crest Factor (dB)</strong>: Dynamic range (Peak minus RMS)</li>
+                <li><strong>LUFS</strong>: Perceived loudness (target -14 to -16 LUFS for streaming)</li>
+                <li><strong>True Peak (dBTP)</strong>: Inter-sample peak level (keep below -1 dBTP)</li>
+                <li><strong>Loudness Range (LRA)</strong>: Statistical loudness variation</li>
+            </ul>
+
+            <h3>Reference Values</h3>
+            <table>
+                <thead>
+                    <tr><th>Metric</th><th>Good Range</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Peak</td><td>-12 to -6 dBFS</td><td>Leave headroom</td></tr>
+                    <tr><td>LUFS</td><td>-16 to -14 LUFS</td><td>Streaming standard</td></tr>
+                    <tr><td>True Peak</td><td>Below -1 dBTP</td><td>Prevents clipping</td></tr>
+                    <tr><td>Crest Factor</td><td>8-14 dB</td><td>Balanced dynamics</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="presets">Presets</h2>
+            <p>1Take includes three carefully crafted presets modeled after legendary audio gear:</p>
+
+            <h3>Studio (LA-2A Style)</h3>
+            <ul>
+                <li><strong>Best for</strong>: Vocals, acoustic guitar, podcasts</li>
+                <li><strong>Character</strong>: Warm, smooth compression with tube-like qualities</li>
+                <li><strong>Stereo Spread</strong>: OFF</li>
+            </ul>
+
+            <h3>Studio+ (1176 Style)</h3>
+            <ul>
+                <li><strong>Best for</strong>: Drums, electric guitar, energetic performances</li>
+                <li><strong>Character</strong>: Punchy, aggressive compression with fast attack</li>
+                <li><strong>Stereo Spread</strong>: OFF</li>
+            </ul>
+
+            <h3>Live (VCA Style)</h3>
+            <ul>
+                <li><strong>Best for</strong>: Live performances, loud rehearsals</li>
+                <li><strong>Character</strong>: Clean, transparent compression that won't distort</li>
+                <li><strong>Stereo Spread</strong>: ON (enhanced width)</li>
+            </ul>
+
+            <h3>Customizing Presets (Pro)</h3>
+            <p>Pro users can customize each preset's parameters including Gate, EQ, Compressors, Saturation, Stereo Spread, and Maximizer.</p>
+
+            <hr>
+
+            <h2 id="signal-chain">Signal Processing Chain</h2>
+            <p>1Take processes audio through a professional signal chain in real-time:</p>
+            <pre><code>Input → Trim → Gate → EQ → Comp A → Comp B → Saturation → Stereo → Maximizer → Output</code></pre>
+
+            <h3>Input Trim</h3>
+            <p>Adjusts digital gain before processing. Use the TRIM knob on the main screen.</p>
+
+            <h3>Noise Gate</h3>
+            <p>Cuts background noise between phrases. Adjust threshold with the THRESH knob.</p>
+
+            <h3>5-Band Parametric EQ</h3>
+            <p>Shape your tone with five fully adjustable bands. Each band provides:</p>
+            <ul>
+                <li><strong>Frequency</strong>: Center frequency selection</li>
+                <li><strong>Gain</strong>: Boost or cut (±12 dB)</li>
+                <li><strong>Q</strong>: Bandwidth control (narrow to wide)</li>
+            </ul>
+
+            <h3>2-Stage Compressor</h3>
+            <ul>
+                <li><strong>Comp A</strong>: Fast compressor for catching peaks</li>
+                <li><strong>Comp B</strong>: Slower compressor for adding density and "glue"</li>
+            </ul>
+
+            <h3>Saturation</h3>
+            <p>Adds subtle harmonic warmth (analog-style distortion).</p>
+
+            <h3>Stereo Spread</h3>
+            <p>Enhances stereo width for a wider sound image.</p>
+
+            <h3>Maximizer</h3>
+            <p>Final stage limiter that prevents digital clipping. Ceiling fixed at -1.0 dBFS for safety.</p>
+
+            <hr>
+
+            <h2 id="preroll">Pre-roll Recording</h2>
+            <p>Never miss a great take again! Pre-roll continuously buffers audio so you can capture moments that happened <em>before</em> you pressed record.</p>
+
+            <h3>How It Works</h3>
+            <ol>
+                <li>Enable Pre-roll in Settings</li>
+                <li>Set your desired duration (5-30 seconds, extended with Pro)</li>
+                <li>When you start recording, the buffer is included</li>
+            </ol>
+
+            <p>You're jamming and play something amazing. Even if you press record 10 seconds later, Pre-roll captures those 10 seconds!</p>
+
+            <hr>
+
+            <h2 id="auto-record">Auto-Record</h2>
+            <p>Auto-Record automatically starts and stops recording based on audio levels.</p>
+
+            <h3>Intelligent Calibration (New in v1.3.0)</h3>
+            <ol>
+                <li>Tap the <strong>Auto</strong> button in Auto-Record settings</li>
+                <li>1Take measures your ambient noise floor</li>
+                <li>Thresholds are automatically calculated with optimal margins</li>
+                <li>Hysteresis control prevents false triggers</li>
+            </ol>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Long-press the Record button to enter Auto-Record mode</li>
+                <li>The "AUTO" badge appears</li>
+                <li>Recording starts automatically when sound is detected</li>
+                <li>Recording stops after the specified silence duration</li>
+                <li>Tap the Record button to exit Auto-Record mode</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="meters">Meters</h2>
+            <p>Tap the meter display to cycle through four meter modes:</p>
+
+            <h3>VU Meter</h3>
+            <p>Classic analog-style meter with 300ms time constant. The needle shows average level, with peak hold indicator.</p>
+            <ul>
+                <li><strong>Green zone</strong>: Safe levels</li>
+                <li><strong>Yellow zone</strong>: Getting hot</li>
+                <li><strong>Red zone</strong>: Near clipping</li>
+            </ul>
+
+            <h3>GR (Gain Reduction) Meter</h3>
+            <p>Shows how much compression is being applied.</p>
+            <ul>
+                <li><strong>Left meter</strong>: Comp A gain reduction</li>
+                <li><strong>Right meter</strong>: Comp B gain reduction</li>
+            </ul>
+
+            <h3>Spectrum Analyzer</h3>
+            <p>Real-time frequency display showing the spectral content of your audio.</p>
+
+            <h3>LUFS Meter</h3>
+            <p>Professional loudness meter following ITU-R BS.1770-4 standard.</p>
+            <ul>
+                <li><strong>Needle</strong>: Momentary loudness (400ms)</li>
+                <li><strong>Cyan marker</strong>: Short-term loudness (3s)</li>
+                <li><strong>Yellow marker</strong>: Integrated loudness (entire recording)</li>
+                <li><strong>TP (True Peak)</strong>: Inter-sample peak level</li>
+            </ul>
+            <p><strong>Reference levels</strong>: -24 LUFS (Broadcast), -14 LUFS (Streaming: Spotify, YouTube, Apple Music)</p>
+
+            <hr>
+
+            <h2 id="markers">Markers</h2>
+            <h3>User Markers</h3>
+            <p>Manually added by tapping the Marker button during recording.</p>
+
+            <h3>Clip Markers (CLIP)</h3>
+            <p>Automatically added when audio clips (exceeds 0 dBFS).</p>
+
+            <h3>Over Markers (OVER)</h3>
+            <p>Automatically added when True Peak exceeds -1 dBTP.</p>
+
+            <h3>Buffer Drop Markers</h3>
+            <p>Automatically added if audio data is lost due to system performance issues.</p>
+
+            <hr>
+
+            <h2 id="recordings-library">Recordings Library</h2>
+            <p>Access your recordings by tapping the list icon.</p>
+
+            <h3>Recording Info</h3>
+            <p>Each recording shows: Title, Duration, Date/Time, FX preset used, Audio integrity percentage, Marker counts.</p>
+
+            <h3>Export</h3>
+            <p>Share your recordings in various formats. Pro users can export in BWF and 24-bit formats.</p>
+
+            <hr>
+
+            <h2 id="settings">Settings</h2>
+
+            <h3>Performance</h3>
+            <p><strong>Buffer Size</strong>: Controls audio processing latency vs. stability tradeoff. Recommended: 4096 for most users.</p>
+
+            <h3>File Format</h3>
+            <ul>
+                <li><strong>WAV (16-bit)</strong>: Standard quality, smaller files</li>
+                <li><strong>WAV (24-bit)</strong>: Higher quality, larger files (Pro)</li>
+                <li><strong>BWF (16-bit)</strong>: Broadcast Wave with timecode (Pro)</li>
+                <li><strong>BWF (24-bit)</strong>: Professional format for DAW integration (Pro)</li>
+            </ul>
+
+            <h3>Keep Screen On (New in v1.3.0)</h3>
+            <p>Enable this option to prevent your device from sleeping during long recording sessions.</p>
+
+            <hr>
+
+            <h2 id="pro-features">Pro Features</h2>
+            <p>Upgrade to Pro to unlock:</p>
+            <ul>
+                <li><strong>Extended Pre-roll</strong> - Increase pre-roll buffer from 10 to 30 seconds</li>
+                <li><strong>Custom Presets</strong> - Full access to adjust all parameters for each preset</li>
+                <li><strong>BWF Format</strong> - Broadcast Wave Format with embedded timecode</li>
+                <li><strong>24-bit Recording</strong> - Higher bit depth for professional post-production</li>
+                <li><strong>MP3/AAC Export</strong> - Export in compressed formats</li>
+                <li><strong>Batch Export</strong> - Export multiple recordings at once</li>
+            </ul>
+
+            <hr>
+
+            <h2>Tips &amp; Tricks</h2>
+
+            <h3>For Best Recording Quality</h3>
+            <ol>
+                <li><strong>Set proper levels</strong>: Aim for peaks around -12 to -6 dB on the VU meter</li>
+                <li><strong>Use Pre-roll</strong>: Keep it enabled so you never miss spontaneous moments</li>
+                <li><strong>Choose the right preset</strong>: Match your source material to the preset character</li>
+                <li><strong>Monitor with headphones</strong>: Use wired headphones to hear the processed sound</li>
+            </ol>
+
+            <h3>Troubleshooting</h3>
+            <p><strong>Audio integrity below 100%</strong>: Increase buffer size in Settings, close other apps.</p>
+            <p><strong>Sound is distorted</strong>: Lower the Input Trim.</p>
+            <p><strong>Recording won't start</strong>: Check microphone permissions in iOS Settings.</p>
+
+            <hr>
+
+            <h2>Support</h2>
+            <p>Need help? Visit our <a href="/1Take-support/">Support Page</a> or contact us at <a href="mailto:onetake@hakaru.net">onetake@hakaru.net</a>.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take 更新履歴 | hakaru</title>
+    <meta name="description" content="1Takeのバージョン履歴とリリースノート。iOSプロフェッショナル録音アプリ。">
+    <meta property="og:title" content="1Take 更新履歴">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/changelog-ja">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/index-ja" class="back-link">← 1Take サポート</a>
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>iOSプロフェッショナル録音アプリ</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja" class="active">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>更新履歴</h2>
+            <p>1Takeのすべての注目すべき変更をここに記録します。</p>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-23</h2>
+            <p>安定性の向上と削除録音の復元対応。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li><strong>削除した録音が復元可能に</strong> - 削除した録音がファイルアプリの「最近削除した項目」に移動し、30日間復元できます</li>
+            </ul>
+
+            <h3>修正</h3>
+            <ul>
+                <li>セッション割り込み時の再帰呼び出しによる再生クラッシュを修正</li>
+                <li>オーディオハードウェア準備前の録音ボタンタップによるクラッシュを修正</li>
+                <li>電話着信やSiri起動時の復帰を改善</li>
+                <li>Swift 6の厳密な並行性チェックに完全対応</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-08</h2>
+            <p>MP3/AACエクスポート、一括エクスポート、Pro機能の強化。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li><strong>MP3/AACエクスポート（Pro）</strong> - 圧縮フォーマットでの録音エクスポートに対応</li>
+                <li><strong>一括エクスポート（Pro）</strong> - 複数の録音をまとめてエクスポート</li>
+                <li><strong>高品質エクスポート（Pro）</strong> - 24bit WAV/BWFでの高音質エクスポート</li>
+                <li>ロックされた機能からのワンタップアクセスでPro機能の発見を改善</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.0] - 2026-02-03</h2>
+            <p>録音分析、インテリジェント自動キャリブレーション、5バンドEQ、パフォーマンス最適化。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li><strong>録音分析システム</strong>
+                    <ul>
+                        <li>録音後の自動音声品質評価</li>
+                        <li>ピークレベル、RMSレベル、クレストファクター、LUFS分析</li>
+                        <li>ダイナミックレンジ評価</li>
+                        <li>推奨事項付き録音品質レポート</li>
+                    </ul>
+                </li>
+                <li><strong>自動録音インテリジェントキャリブレーション</strong>
+                    <ul>
+                        <li>環境音に基づく自動スレッショルド計算</li>
+                        <li>安定したトリガリングのためのヒステリシス制御</li>
+                        <li>Autoボタンでワンタップ設定</li>
+                        <li>バックグラウンドノイズ測定</li>
+                    </ul>
+                </li>
+                <li><strong>5バンドパラメトリックEQ</strong>
+                    <ul>
+                        <li>プロ仕様の5バンドパラメトリックイコライザー</li>
+                        <li>各バンドで周波数、ゲイン、Q（帯域幅）を調整</li>
+                        <li>ドラッグ可能なコントロールポイント付き周波数レスポンスカーブ</li>
+                    </ul>
+                </li>
+                <li><strong>スリープ防止設定</strong> - 「画面をオンのまま維持」オプション</li>
+                <li><strong>マイク認識の強化</strong></li>
+            </ul>
+
+            <h3>変更</h3>
+            <ul>
+                <li>「Analyze」ボタンを「Auto」に名称変更（自動録音キャリブレーション）</li>
+                <li>録音品質分析が録音停止後に自動実行</li>
+                <li>マーカーシステムの簡素化：手動のGood/Bad/Memoマーカーを削除（自動CLIP/OVERマーカーは維持）</li>
+                <li>4バンドEQを5バンドパラメトリックEQにアップグレード</li>
+            </ul>
+
+            <h3>修正</h3>
+            <ul>
+                <li>長時間録音時のクラッシュを修正</li>
+                <li>オーディオエンジンのエラー処理と復旧を改善</li>
+                <li>オーディオルート変更時のリソースクリーンアップを改善</li>
+                <li>ロックフリーアトミクスによるスレッドセーフなオーディオ処理</li>
+            </ul>
+
+            <h3>パフォーマンス</h3>
+            <ul>
+                <li>リアルタイムオーディオコールバックからNSLockを排除</li>
+                <li>ロックフリー並行処理のためSwift Atomicsを導入</li>
+                <li>VUバリスティクスをオーディオスレッドで計算（ゼロレイテンシー）</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.2.0] - 2026-01-24</h2>
+            <p>プロフェッショナルLUFSメーター、Pro機能強化、Firebase統合。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li><strong>LUFSメーター（ITU-R BS.1770-4準拠）</strong>
+                    <ul>
+                        <li>モーメンタリー（400ms）、ショートターム（3s）、インテグレーテッドラウドネス</li>
+                        <li>4倍オーバーサンプリングによるトゥルーピーク測定</li>
+                        <li>メータータップでVU → GR → LUFS → VUを切り替え</li>
+                    </ul>
+                </li>
+                <li><strong>Pro機能（アプリ内課金）</strong>
+                    <ul>
+                        <li>プロワークフロー向け24ビットWAV/BWFエクスポート</li>
+                        <li>フルパラメータ制御可能なカスタムプリセット</li>
+                        <li>メタデータ埋め込みのBWF（Broadcast Wave Format）</li>
+                    </ul>
+                </li>
+                <li><strong>BWFフォーマット対応</strong></li>
+            </ul>
+
+            <h3>修正</h3>
+            <ul>
+                <li>リトライロジックによるオーディオルート変更復旧</li>
+                <li>USB-Cマイク切断処理の改善</li>
+                <li>LUFSアナライザーのスレッドセーフティ</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.1.0] - 2026-01-22</h2>
+            <p>Armモード、Pre-roll、スペクトラムアナライザー。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li><strong>Armモード</strong> - サーキュラーバッファ付きの待機状態に入るARMボタン</li>
+                <li><strong>Pre-roll録音</strong> - 録音ボタンを押す前の5秒間をキャプチャ</li>
+                <li><strong>リアルタイムスペクトラムアナライザー</strong> - 32バンド対数スケールのFFTベース</li>
+                <li><strong>GR（ゲインリダクション）メーター</strong> - VUメーターをタップで切り替え</li>
+                <li><strong>入力ソースバッジ</strong> - 現在の入力ソースを表示</li>
+                <li><strong>アプリ内ヘルプシステム</strong> - 英語/日本語ローカライズされた10以上のヘルプトピック</li>
+            </ul>
+
+            <h3>変更</h3>
+            <ul>
+                <li>メインナビゲーションからスペクトラムタブを削除（現在は2タブ：録音、録音一覧）</li>
+                <li>ピークリセットを5秒固定間隔に変更</li>
+            </ul>
+
+            <h3>修正</h3>
+            <ul>
+                <li>ステレオ録音が正しく動作するように</li>
+                <li>録音中のルート変更：安全な停止とファイルクローズ</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.0.0] - 2026-01-21</h2>
+            <p>初回リリース。</p>
+
+            <h3>追加</h3>
+            <ul>
+                <li>高品質オーディオ録音（WAV 16ビットPCM、48kHz）</li>
+                <li>対応デバイスでのステレオ録音</li>
+                <li>プロフェッショナル信号チェーン：ノイズゲート → EQ → コンプレッサー → リミッター</li>
+                <li>4つのプリセット：Flat、Studio、Studio+、Live</li>
+                <li>ピークホールドとクリップ検出付きVUメーター</li>
+                <li>スマートコンテキストマーカー（GOOD、BAD、MEMO、CLIP）</li>
+                <li>ハプティックフィードバック付きClip Guard</li>
+                <li>Share Sheetエクスポート対応の録音管理</li>
+                <li>英語と日本語のローカライズ</li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

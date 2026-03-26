@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DAWに直接持ち込める録音 - 1Take Proの24bit BWFワークフロー | 1Take ブログ</title>
+    <meta name="description" content="1Take Proの24bit BWF出力を使えば、iPhoneで録音した素材をDAWにそのまま持ち込めます。">
+    <meta property="og:title" content="DAWに直接持ち込める録音 - 1Take Proの24bit BWFワークフロー">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ja/2026-03-08-daw-workflow-with-1take-pro/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DAWに直接持ち込める録音 - 1Take Proの24bit BWFワークフロー","datePublished":"2026年3月8日","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ja/2026-03-08-daw-workflow-with-1take-pro/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="article-header">
+            <h1>DAWに直接持ち込める録音 - 1Take Proの24bit BWFワークフロー</h1>
+            <div class="article-meta">2026年3月8日</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/" class="active">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>はじめに</h2>
+            <p>iPhoneで録音した音声をDAWに持ち込む際、同期作業は常に悩みの種でした。「この音声、どの映像のどのシーンと合わせるんだっけ？」——1Take ProのBWFワークフローはこの問題を解決します。</p>
+
+            <hr>
+
+            <h2>BWF（Broadcast Wave Format）とは</h2>
+            <p>BWFはプロフェッショナル放送業界の標準フォーマットです。通常のWAVファイルと互換性を保ちながら、録音に関するメタデータ（いつ、どこで録音されたか）をファイル内に埋め込みます。</p>
+            <p>最も重要なのが<strong>タイムスタンプ</strong>です。録音開始時刻が絶対時刻でファイルに記録されます。</p>
+
+            <hr>
+
+            <h2>Logic Proでのワークフロー</h2>
+            <ol>
+                <li>1Take ProでBWF形式を選択して録音</li>
+                <li>AirDropまたはiCloud経由でMacに転送</li>
+                <li>Logic Proのプロジェクトにドラッグ＆ドロップ</li>
+                <li>「タイムスタンプに配置」を選択</li>
+                <li>録音時刻に自動でファイルが配置される</li>
+            </ol>
+
+            <hr>
+
+            <h2>DaVinci Resolveでの映像同期</h2>
+            <p>映像を撮影しながら別デバイスで音声録音する「二次録音」の場面でBWFは特に威力を発揮します。</p>
+            <ol>
+                <li>映像と音声を同時に録音開始</li>
+                <li>DaVinci Resolveに映像と1TakeのBWFファイルを読み込み</li>
+                <li>「タイムコードで同期」を選択</li>
+                <li>自動的にタイムラインの正しい位置に配置</li>
+            </ol>
+            <p>クラッパーボードも、手動でのリップシンクも不要です。</p>
+
+            <hr>
+
+            <h2>24bit録音の音質的メリット</h2>
+            <p>通常の16bitと比較して、24bitは理論上144dBのダイナミックレンジを持ちます。ポストプロダクションでの処理（コンプレッション、EQ、ノイズリダクション）を経ても音質劣化が最小限に抑えられます。</p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Storeでダウンロード</a></li>
+                <li><a href="/1Take-support/manual/ja/">マニュアル</a></li>
+                <li><a href="/1Take-support/index-ja">サポートページ</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ja/2026-03-08-1take-v132-new-features/">1Take v1.3.2：MP3/AACエクスポート</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-03-08-iphone-pro-recording-guide/">iPhoneで高音質録音するための完全ガイド</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-01-22-introducing-1take/">iPhoneを究極のレコーダーに変える</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

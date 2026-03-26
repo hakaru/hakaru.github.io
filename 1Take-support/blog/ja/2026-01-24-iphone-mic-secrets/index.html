@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhoneマイクの「聖域」を解体する | 1Take ブログ</title>
+    <meta name="description" content="Appleが「フラット」と謳うiPhoneマイクの真実。AGCの暴走と1TakeのInput Trimの執念。">
+    <meta property="og:title" content="iPhoneマイクの「聖域」を解体する">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ja/2026-01-24-iphone-mic-secrets/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"iPhoneマイクの「聖域」を解体する","datePublished":"2026年1月24日","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ja/2026-01-24-iphone-mic-secrets/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="article-header">
+            <h1>iPhoneマイクの「聖域」を解体する</h1>
+            <div class="article-meta">2026年1月24日</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/" class="active">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>はじめに</h2>
+            <p>iPhoneのマイクは「フラット」だとAppleは言います。でもそれは本当でしょうか？</p>
+            <p>私は1Takeを開発するにあたって、iPhoneマイクの実際の挙動を徹底的に調べました。そこで見えてきたのは、「Appleの最適化」という名の、ミュージシャンにとって都合の悪い現実でした。</p>
+
+            <hr>
+
+            <h2>AGC：見えない敵</h2>
+            <p>AGC（自動ゲイン制御）はもともと通話品質を向上させるために設計されています。小さな声も大きな声も、均一に聴こえるように自動的にボリュームを調整する仕組みです。</p>
+
+            <h3>なぜミュージシャンに害なのか</h3>
+            <p>音楽の表現の核心は「ダイナミクス」——音の大小の変化です。ピアノで始まりフォルテで終わるパフォーマンスは、その対比があって初めて感動を生みます。</p>
+            <p>AGCはこの対比を機械的に潰します。静かに始めると「小さすぎる」と判断してゲインを上げ、大きく演奏すると「大きすぎる」と下げる。結果として、感情を込めた演奏が平板な録音になってしまいます。</p>
+
+            <hr>
+
+            <h2>iPhoneマイクの周波数特性の真実</h2>
+            <p>Appleは確かに広帯域の周波数応答を実現しています。しかし「フラット」というのは語弊があります。</p>
+            <ul>
+                <li><strong>低域（100Hz以下）</strong>：ウィンドノイズ対策のため意図的にロールオフされています</li>
+                <li><strong>中域（1-3kHz）</strong>：会話の聴き取りやすさを優先してわずかに持ち上げられています</li>
+                <li><strong>高域（8kHz以上）</strong>：距離や角度に敏感で、正面から少しずれただけで大きく変化します</li>
+            </ul>
+
+            <hr>
+
+            <h2>1TakeのInput Trimへの執念</h2>
+            <p>この問題への1Takeの回答が<strong>Input Trim</strong>です。</p>
+            <p>Input Trimは単純なデジタルゲインに見えますが、設計の哲学が込められています：</p>
+            <ul>
+                <li>AGCが介入する前の段階でゲインを固定する</li>
+                <li>一度設定したゲインは録音セッション中変化しない</li>
+                <li>VUメーターでリアルタイムにレベルを確認しながら最適値を探せる</li>
+            </ul>
+
+            <h3>適切なInput Trimの設定方法</h3>
+            <ol>
+                <li>実際に録音する音量で演奏または発声する</li>
+                <li>VUメーターの針が平均して0VU付近、ピーク時に+3〜+6VU程度になるように調整</li>
+                <li>GRメーターで3〜6dBのゲインリダクションが見えれば理想的</li>
+            </ol>
+
+            <hr>
+
+            <h2>まとめ</h2>
+            <p>iPhoneマイクは悪くありません。ただ、ボイスメモはそのマイクの可能性を引き出していません。</p>
+            <p>1TakeのInput TrimとAGC無効化は、iPhoneマイクを「通話デバイス」から「楽器」に変えるための鍵です。</p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Storeでダウンロード</a></li>
+                <li><a href="/1Take-support/index-ja">サポートページ</a></li>
+                <li><a href="/1Take-support/manual/ja/">マニュアル</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ja/2026-01-22-introducing-1take/">iPhoneを究極のレコーダーに変える</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-01-22-note-nd2887d7c0b9d/">iPhoneに「光の記憶」と「FETの暴力」を</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-03-08-iphone-pro-recording-guide/">iPhoneで高音質録音するための完全ガイド</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

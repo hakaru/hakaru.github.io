@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take Blog | hakaru</title>
+    <meta name="description" content="Articles and updates about 1Take - Professional Audio Recorder for iOS.">
+    <meta property="og:title" content="1Take Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/en/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        .blog-summary { color: #a0a0a0; font-size: 0.9em; margin-top: 6px; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/" class="back-link">← 1Take Support</a>
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Professional Audio Recorder for iOS</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/" class="active">Blog</a>
+            <a href="/1Take-support/blog/ja/">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>Blog</h2>
+            <ul class="blog-list">
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-23-recoverable-recording-deletion/">Accidentally Deleted a Recording? You Can Get It Back</a>
+                    <div class="blog-date">March 23, 2026</div>
+                    <div class="blog-summary">Starting with v1.3.2, deleted recordings can be recovered from the Files app for up to 30 days.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-23-1take-v132-stability-update/">1Take v1.3.2: Stability Improvements</a>
+                    <div class="blog-date">March 23, 2026</div>
+                    <div class="blog-summary">v1.3.2 fixes crashes and makes deleted recordings recoverable from the Files app.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-08-voice-memos-vs-1take/">Voice Memos vs 1Take - 5 Reasons Musicians Should Switch</a>
+                    <div class="blog-date">March 8, 2026</div>
+                    <div class="blog-summary">Still recording music with iPhone's Voice Memos? Here's a detailed comparison with 1Take.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-08-iphone-pro-recording-guide/">The Complete Guide to Professional iPhone Recording</a>
+                    <div class="blog-date">March 8, 2026</div>
+                    <div class="blog-summary">Master professional-quality recording on your iPhone. From mic techniques to app selection.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-08-ios26-spatial-audio-recording/">iOS 26 Spatial Audio and the Future of iPhone Recording</a>
+                    <div class="blog-date">March 8, 2026</div>
+                    <div class="blog-summary">iOS 26 unlocks Spatial Audio recording for third-party apps. Why 1Take matters more than ever.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-08-daw-workflow-with-1take-pro/">From iPhone to DAW in Seconds - The 1Take Pro 24-bit BWF Workflow</a>
+                    <div class="blog-date">March 8, 2026</div>
+                    <div class="blog-summary">1Take Pro's 24-bit BWF output lets you bring iPhone recordings straight into your DAW.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-03-08-1take-v132-new-features/">1Take v1.3.2: MP3/AAC Export, Batch Export, and Pro Enhancements</a>
+                    <div class="blog-date">March 8, 2026</div>
+                    <div class="blog-summary">v1.3.2 brings MP3/AAC export, batch export, 24-bit high-quality export, and improved Pro feature discovery.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-02-03-understanding-recording-analysis/">Deep Dive: How 1Take's Recording Analysis System Works</a>
+                    <div class="blog-date">February 3, 2026</div>
+                    <div class="blog-summary">A technical look at 1Take v1.3.0's Recording Analysis System and what each metric means.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-02-03-1take-v130-released/">1Take v1.3.0 Released: Recording Analysis, Auto-Calibration &amp; Performance Boost</a>
+                    <div class="blog-date">February 3, 2026</div>
+                    <div class="blog-summary">1Take v1.3.0 brings automatic recording quality analysis, intelligent auto-record calibration, and 5-band EQ.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-02-03-1take-now-on-product-hunt/">1Take is Now Live on Product Hunt!</a>
+                    <div class="blog-date">February 3, 2026</div>
+                    <div class="blog-summary">We're excited to announce that 1Take is now live on Product Hunt.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-01-24-iphone-mic-secrets/">Dismantling the iPhone Microphone's 'Sacred Ground'</a>
+                    <div class="blog-date">January 24, 2026</div>
+                    <div class="blog-summary">The truth behind Apple's 'flat' iPhone microphones, AGC, and 1Take's Input Trim obsession.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-01-22-note-nd2887d7c0b9d/">Light Memory and FET Violence on iPhone: Dual-Stage Compression</a>
+                    <div class="blog-date">January 22, 2026</div>
+                    <div class="blog-summary">How 1Take recreates the 'nonlinear aesthetics' of vintage LA-2A and 1176 gear.</div>
+                </li>
+                <li>
+                    <a href="/1Take-support/blog/en/2026-01-22-introducing-1take/">Turn Your iPhone into the Ultimate Recorder</a>
+                    <div class="blog-date">January 22, 2026</div>
+                    <div class="blog-summary">Introducing 1Take, a recording app with professional signal processing chain for musicians.</div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
