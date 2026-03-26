@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SonicDNA Engine のご紹介 — iOS向けIR/NAMオーディオプロセッサー | hakaru</title>
+    <meta name="description" content="SonicDNA Engine を発表します。iPhone/iPadで動作する多目的オーディオプロセッサーで、NAMとIRのリアルタイム処理をiOSで実現します。">
+    <meta property="og:title" content="SonicDNA Engine のご紹介 — iOS向けIR/NAMオーディオプロセッサー">
+    <meta property="og:description" content="SonicDNA Engine を発表します。iPhone/iPadで動作する多目的オーディオプロセッサーで、NAMとIRのリアルタイム処理をiOSで実現します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/SonicDNAEngine-support/blog/ja/2026-03-10-introducing-sonicdna-engine/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SonicDNA Engine のご紹介 — iOS向けIR/NAMオーディオプロセッサー",
+        "datePublished": "2026-03-10",
+        "dateModified": "2026-03-10",
+        "author": {
+            "@type": "Person",
+            "name": "hakaru"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "hakaru",
+            "url": "https://hakaru.net"
+        },
+        "url": "https://hakaru.net/SonicDNAEngine-support/blog/ja/2026-03-10-introducing-sonicdna-engine/",
+        "description": "SonicDNA Engine を発表します。iPhone/iPadで動作する多目的オーディオプロセッサーで、Neural Amp Modeler（NAM）とImpulse Response（IR）のリアルタイム処理をiOSで実現します。",
+        "inLanguage": "ja"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .app-store-link {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 20px; margin: 16px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s;
+        }
+        .app-store-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .app-store-link .app-icon-small { width: 50px; height: 50px; border-radius: 11px; }
+        .app-store-text { font-size: 12px; line-height: 1.3; }
+        .app-store-text .download { font-size: 16px; font-weight: 600; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        .article-header { margin-bottom: 30px; }
+        .article-header h2 { font-size: 1.6em; border-bottom: none; margin-bottom: 8px; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← hakaru Apps</a>
+        <div class="hero">
+            <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="hero-icon">
+            <h1>SonicDNA Engine</h1>
+            <p>IR/NAM Audio Processor &amp; AUv3 Plugin for iOS</p>
+            <a href="#" class="app-store-link">
+                <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="app-icon-small">
+                <div class="app-store-text">
+                    <div>Coming Soon on the</div>
+                    <div class="download">App Store</div>
+                </div>
+            </a>
+        </div>
+        <nav class="support-nav">
+            <a href="/SonicDNAEngine-support/">Support</a>
+            <a href="/SonicDNAEngine-support/index-ja">サポート</a>
+            <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+            <a href="/SonicDNAEngine-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+            <a href="/SonicDNAEngine-support/blog/ja/" class="active">ブログ</a>
+            <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+        </nav>
+        <div class="content">
+            <div class="article-header">
+                <h2>SonicDNA Engine のご紹介 — iOS向けIR/NAMオーディオプロセッサー</h2>
+                <div class="article-meta">2026-03-10</div>
+            </div>
+
+            <p><strong>SonicDNA Engine</strong> を発表します。iPhone/iPadで動作する多目的オーディオプロセッサーで、Neural Amp Modeler（NAM）とImpulse Response（IR）のリアルタイム処理を、スタンドアロンエフェクターとしても、AUv3プラグインとしても使えます。</p>
+
+            <hr>
+
+            <h2>コンセプト：キャプチャ → 再生</h2>
+            <p>SonicDNA Engineは <strong>SonicDNAエコシステム</strong> の2つ目のピースです：</p>
+            <ul>
+                <li><strong>SonicDNA Collector</strong> = アナログ機器の音のDNAをキャプチャ</li>
+                <li><strong>SonicDNA Engine</strong> = キャプチャした音のDNAをどこでも再生</li>
+            </ul>
+            <p>2つのアプリで <strong>キャプチャ → 再生</strong> のワークフローを完成させます。Collectorでお気に入りの真空管アンプ、ヴィンテージプリアンプ、スタジオコンプレッサーの特性を録音し、そのファイルをEngineに読み込めば、DAWやライブ環境でそのサウンドを再現できます — すべてiPhone/iPad上で。</p>
+            <p>もちろん、Engine単体でも使えます。コミュニティで公開されている標準的なIR/NAMファイルをそのまま読み込めます。</p>
+
+            <hr>
+
+            <h2>こんな方におすすめ</h2>
+            <h3>あらゆるミュージシャンに</h3>
+            <p>SonicDNA Engineはギタリスト専用ではありません。あらゆるオーディオソースに対応する汎用オーディオプロセッサーです：</p>
+            <ul>
+                <li><strong>ギタリスト・ベーシスト</strong> — NAMアンプモデルとIRキャビネットシミュレーションで、完全なアンプ・イン・ア・ボックス体験</li>
+                <li><strong>キーボーディスト・シンセ奏者</strong> — キーボードやシンセサイザーをヴィンテージプリアンプモデルやスピーカーIRに通して、デジタルサウンドにアナログの暖かみを追加</li>
+                <li><strong>ボーカリスト・ポッドキャスター</strong> — マイクIRでクラシックなスタジオマイクをシミュレート。ボーカルチェーンに繊細なプリアンプの色付け</li>
+                <li><strong>オーディオマニア・サウンドデザイナー</strong> — ルームIR、スピーカーシミュレーション、機器モデリングを自由に実験し、リスニング体験を自在にシェイピング</li>
+            </ul>
+            <p>オーディオを出力できるものなら、SonicDNA Engineで処理できます。</p>
+
+            <hr>
+
+            <h2>2つの使い方</h2>
+            <h3>スタンドアロン エフェクターモード</h3>
+            <p>USBオーディオインターフェース経由で楽器やマイクを接続し、スタンドアロンのプロセッサーとして使用：</p>
+            <pre><code>楽器/マイク → オーディオI/F → iPhone/iPad → オーディオI/F → スピーカー/ヘッドホン
+                                (SonicDNA Engine)</code></pre>
+            <p>アプリを起動すると、オーディオエンジンが自動的にスタート。お気に入りの機器モデルでの低レイテンシー処理がすぐに始まります。</p>
+
+            <h3>AUv3 プラグインモード</h3>
+            <p>AUv3対応ホストアプリでオーディオユニットエクステンションとして動作：</p>
+            <ul>
+                <li><strong>AUM</strong> — iOS定番のミキサーアプリ、ライブ演奏・ルーティングに</li>
+                <li><strong>GarageBand</strong> — 手軽な録音・デモ制作に</li>
+                <li><strong>Logic Pro (iPad)</strong> — 本格的な楽曲制作に</li>
+                <li><strong>Cubasis、BeatMaker</strong> など</li>
+            </ul>
+            <p>ギター、ボーカル、キーボード、シンセ、ドラム — どんなトラックにもエフェクトプラグインとして挿入し、機器モデリングと畳み込みでサウンドをシェイピング。</p>
+
+            <hr>
+
+            <h2>シグナルチェーン</h2>
+            <p>SonicDNA Engineは、設計されたDSPチェーンでオーディオ信号を処理します：</p>
+            <pre><code>入力 → 入力ゲイン → ノイズゲート → NAM(機器モデル) → EQ → IR(畳み込み) → 出力レベル → ミックス → 出力</code></pre>
+
+            <h3>NAM 機器モデリング</h3>
+            <p>Neural Amp Modelerファイルを読み込んで、実際のオーディオ機器のサウンドを再現します。NAMは機械学習を使ってアナログ機器の非線形な振る舞い — サチュレーション、ダイナミクス、キャラクター — をキャプチャします。WaveNet、LSTM、Linearアーキテクチャに対応。</p>
+            <p>NAMはギターアンプモデリングで広く知られていますが、この技術はプリアンプ、チャンネルストリップ、テープマシンなど、あらゆるオーディオ機器に応用可能です。</p>
+            <p><a href="https://www.tone3000.com">Tone3000</a> では何千もの無料NAMモデルが公開されています。</p>
+
+            <h3>IR 畳み込み処理</h3>
+            <p>インパルスレスポンスファイルを読み込んで、さまざまなものを正確にシミュレーション：</p>
+            <ul>
+                <li><strong>スピーカーキャビネット</strong> — ギターキャブ、ベースキャブ、スタジオモニター</li>
+                <li><strong>マイクロフォン</strong> — クラシックなスタジオマイクのキャラクターをシミュレート</li>
+                <li><strong>ルーム・空間</strong> — コンサートホール、スタジオ、音響環境</li>
+                <li><strong>機器</strong> — IRとしてキャプチャされたあらゆるリニアシステム</li>
+            </ul>
+            <p>AppleのAccelerateフレームワークを活用したFFTベースの畳み込み（Overlap-Saveアルゴリズム）で、効率的なリアルタイム処理を実現。</p>
+
+            <h3>内蔵エフェクト</h3>
+            <ul>
+                <li><strong>ノイズゲート</strong> — 調整可能なスレッショルド、ノイズをスムーズにカット</li>
+                <li><strong>3バンドパラメトリックEQ</strong> — ローシェルフ(200Hz)、ミッドベル(1kHz)、ハイシェルフ(4kHz)、各±12dB</li>
+                <li><strong>入出力ゲイン</strong> — 信号レベルの完全な制御</li>
+                <li><strong>Dry/Wetミックス</strong> — 原音とエフェクト音のブレンド</li>
+            </ul>
+
+            <hr>
+
+            <h2>技術的な裏側</h2>
+            <h3>1つのDSPコア、2つのモード</h3>
+            <p>スタンドアロンアプリとして使っても、AUv3プラグインとして使っても、同じDSPカーネルがオーディオを処理します。どちらのモードでも同一の音質です。</p>
+            <p>DSPはリアルタイム性能を最大化するためにC++で実装：</p>
+            <ul>
+                <li><strong>畳み込みエンジン</strong> — vDSP FFTベース、事前確保バッファ（オーディオスレッドでメモリ確保ゼロ）</li>
+                <li><strong>NAM推論</strong> — NAMCoreライブラリを使用したカスタムC++実装</li>
+                <li><strong>ノイズゲート</strong> — エンベロープフォロワーとスムーズなアタック/リリース</li>
+                <li><strong>パラメトリックEQ</strong> — vDSP biquadフィルター、Audio EQ Cookbook準拠の係数計算</li>
+                <li>全パラメータは <code>std::atomic</code> でロックフリー、リアルタイムセーフに動作</li>
+            </ul>
+
+            <h3>低レイテンシー</h3>
+            <p>48kHzで128サンプルバッファ（約2.7ms）をターゲットにし、ライブ演奏にも十分な低レイテンシーを実現します。</p>
+
+            <h3>プリセットシステム</h3>
+            <p>IRファイル、NAMモデル、パラメータ設定のお気に入りの組み合わせをプリセットとして保存。異なる機器セットアップを素早く切り替え。</p>
+
+            <hr>
+
+            <h2>SonicDNA Engineの強み</h2>
+            <ol>
+                <li><strong>多目的オーディオプロセッサー</strong> — ギターだけでなく、あらゆる楽器・マイク・オーディオソースに対応</li>
+                <li><strong>iOS ネイティブNAM対応</strong> — コミュニティの膨大なNAMモデルをiPhone/iPadで活用</li>
+                <li><strong>AUv3プラグイン</strong> — お気に入りのDAW内で動作、スタンドアロンだけでなく</li>
+                <li><strong>SonicDNA Collector連携</strong> — 自分の機器のDNAをキャプチャして再生</li>
+                <li><strong>オープンフォーマット</strong> — 標準的なIR(WAV)とNAMファイル、独自フォーマットへの囲い込みなし</li>
+                <li><strong>プライバシー第一</strong> — 全処理がデバイス上、データ収集なし、クラウド依存なし</li>
+            </ol>
+
+            <hr>
+
+            <h2>今後の予定</h2>
+            <p>SonicDNA Engineは現在開発中です。ロードマップ：</p>
+            <ul>
+                <li><strong>レイテンシー最適化</strong> — Core Audio直接レンダリングで3ms未満を目指す</li>
+                <li><strong>SonicDNA Collector連携</strong> — App Groupsによるシームレスなファイル共有</li>
+                <li><strong>チューナー</strong> — 内蔵クロマチックチューナー</li>
+                <li><strong>デュアル処理</strong> — 2つのNAMモデルをブレンド</li>
+                <li><strong>MIDIコントロール</strong> — MIDI CCでパラメータをリアルタイム制御</li>
+                <li><strong>セットリストモード</strong> — ライブ演奏用にプリセットを整理</li>
+            </ul>
+
+            <hr>
+
+            <h2>最新情報をフォロー</h2>
+            <p>開発アップデート、ベストなサウンドを得るためのヒント、さまざまな楽器やセットアップでのIR/NAMファイル活用ガイドなど、このブログで随時お届けします。</p>
+            <p>ご質問・フィードバックは <a href="mailto:sonicdna@hakaru.net"><strong>sonicdna@hakaru.net</strong></a> まで。</p>
+
+            <hr>
+
+            <p><a href="/SonicDNAEngine-support/blog/ja/">← ブログ一覧へ戻る</a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>プライバシーポリシー | SonicDNA Engine | hakaru</title>
+    <meta name="description" content="SonicDNA Engine プライバシーポリシー。データの取り扱いについて説明します。">
+    <meta property="og:title" content="プライバシーポリシー | SonicDNA Engine">
+    <meta property="og:description" content="SonicDNA Engine プライバシーポリシー。データの取り扱いについて説明します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNAEngine-support/privacy-ja">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .app-store-link {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 20px; margin: 16px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s;
+        }
+        .app-store-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .app-store-link .app-icon-small { width: 50px; height: 50px; border-radius: 11px; }
+        .app-store-text { font-size: 12px; line-height: 1.3; }
+        .app-store-text .download { font-size: 16px; font-weight: 600; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← hakaru Apps</a>
+        <div class="hero">
+            <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="hero-icon">
+            <h1>SonicDNA Engine</h1>
+            <p>IR/NAM Audio Processor &amp; AUv3 Plugin for iOS</p>
+            <a href="#" class="app-store-link">
+                <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="app-icon-small">
+                <div class="app-store-text">
+                    <div>Coming Soon on the</div>
+                    <div class="download">App Store</div>
+                </div>
+            </a>
+        </div>
+        <nav class="support-nav">
+            <a href="/SonicDNAEngine-support/">Support</a>
+            <a href="/SonicDNAEngine-support/index-ja">サポート</a>
+            <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+            <a href="/SonicDNAEngine-support/privacy-ja" class="active">プライバシー</a>
+            <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+            <a href="/SonicDNAEngine-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+        </nav>
+        <div class="content">
+            <h2>プライバシーポリシー</h2>
+            <p><strong>最終更新日: 2026年3月10日</strong></p>
+
+            <h2>はじめに</h2>
+            <p>SonicDNA Engine（以下「当アプリ」）は、お客様のプライバシーを保護することをお約束します。このプライバシーポリシーは、iOSアプリケーションをご利用いただく際の情報の取り扱いについて説明します。</p>
+
+            <h2>概要</h2>
+            <p>SonicDNA Engineのオーディオ処理はすべてデバイス上でリアルタイムに行われます。IRおよびNAMファイルはローカルに保存され、アプリ自体がサーバーにアップロードすることはありません。ただし、当アプリはFirebase Analytics &amp; Crashlytics、Tone3000 API、iCloud Driveというサードパーティサービスを利用しており、それぞれが以下に説明するデータを収集・処理する場合があります。</p>
+
+            <h2>オーディオ処理</h2>
+            <p>SonicDNA Engineのすべてのオーディオ処理は：</p>
+            <ul>
+                <li><strong>デバイス上で完全にリアルタイム</strong>で実行されます</li>
+                <li>オーディオはアプリによって<strong>録音・保存されることはありません</strong></li>
+                <li>オーディオはサーバーに<strong>送信されることはありません</strong></li>
+                <li>クラウドに依存しない処理</li>
+            </ul>
+
+            <h2>IR・NAMファイル</h2>
+            <p>SonicDNA Engineにインポートしたir・NAMファイルは：</p>
+            <ul>
+                <li><strong>お客様のデバイスにローカル保存</strong>されます</li>
+                <li>iCloud同期が有効な場合は<strong>iCloud Driveにも同期</strong>されます（下記参照）</li>
+                <li>アプリ自体がサーバーに<strong>アップロードすることはありません</strong></li>
+                <li>お客様のみがアクセス可能です</li>
+            </ul>
+
+            <h2>収集・使用するデータ</h2>
+
+            <h3>Firebase Analytics &amp; Crashlytics</h3>
+            <p>当アプリはGoogle LLC提供のFirebase AnalyticsおよびFirebase Crashlyticsを使用しています。</p>
+            <ul>
+                <li><strong>収集内容</strong>: 匿名の使用データ（機能使用状況、セッション長、アプリバージョン、デバイスモデル・OSバージョン）およびクラッシュレポート（クラッシュ時のスタックトレース、デバイス状態）</li>
+                <li><strong>収集しない内容</strong>: お客様の音声、個人を特定する情報、ファイルの内容</li>
+                <li><strong>目的</strong>: アプリの利用状況の把握、バグ・クラッシュの診断・改善</li>
+                <li><strong>処理者</strong>: Google LLC（Firebase）。詳細は<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>をご覧ください</li>
+                <li><strong>データ保持期間</strong>: Google Firebaseのデフォルト設定に従います（クラッシュレポート: 90日、アナリティクス: 14ヶ月）</li>
+                <li><strong>オプトアウト</strong>: iOS設定 &gt; プライバシーとセキュリティ &gt; トラッキングから広告トラッキングを制限できます</li>
+            </ul>
+
+            <h3>Tone3000 API</h3>
+            <p>内蔵モデルブラウザ（「Store」タブ）でTone3000のNAM/IRモデルを閲覧・ダウンロードする場合：</p>
+            <ul>
+                <li><strong>送信される情報</strong>: 検索クエリ、モデル閲覧履歴、Tone3000アカウントの認証情報（メールアドレス・パスワードはTone3000の認証システムで処理）、ダウンロードURL</li>
+                <li><strong>認証</strong>: Tone3000アカウントが必要です。認証トークンはiOS Keychainに安全に保存されます</li>
+                <li><strong>送信されない情報</strong>: お客様の音声データ、ローカルに保存されたIR/NAMファイル</li>
+                <li><strong>処理者</strong>: Tone3000。詳細は<a href="https://www.tone3000.com/privacy">Tone3000のプライバシーポリシー</a>をご覧ください</li>
+                <li><strong>任意</strong>: StoreタブとTone3000機能は任意です。Tone3000にサインインせずにアプリを使用できます</li>
+            </ul>
+
+            <h3>iCloud Drive</h3>
+            <p>iCloud同期を有効にした場合：</p>
+            <ul>
+                <li><strong>同期される内容</strong>: IRファイル（WAV）、NAMモデルファイル（JSON）、ユーザープリセット（複数デバイス間で同期）</li>
+                <li><strong>処理者</strong>: Apple Inc.（iCloud Drive経由）。詳細は<a href="https://www.apple.com/jp/privacy/">Appleのプライバシーポリシー</a>をご覧ください</li>
+                <li><strong>制御</strong>: iOS設定 &gt; [お客様の名前] &gt; iCloud &gt; SonicDNA Engineからいつでも無効にできます</li>
+            </ul>
+
+            <h2>マイクへのアクセス</h2>
+            <p>SonicDNA Engineは、リアルタイムのオーディオ処理のためにマイクへのアクセスを必要とします。この許可は：</p>
+            <ul>
+                <li>ライブオーディオ入力処理のためだけに使用されます</li>
+                <li>オーディオエンジンが動作しているときのみアクティブになります</li>
+                <li>オーディオはリアルタイムで処理され、保存されることはありません</li>
+                <li>iOS設定でいつでも制御できます</li>
+            </ul>
+
+            <h2>AUv3プラグイン</h2>
+            <p>AUv3プラグインとしてホストアプリケーション内で使用する場合：</p>
+            <ul>
+                <li>SonicDNA Engineはホストから提供されたオーディオのみを処理します</li>
+                <li>追加のデータ収集や送信は行いません</li>
+                <li>プラグインはホストアプリのサンドボックス内で動作します</li>
+            </ul>
+
+            <h2>サードパーティサービス一覧</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>サービス</th>
+                        <th>提供者</th>
+                        <th>目的</th>
+                        <th>データ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Firebase Analytics</td>
+                        <td>Google LLC</td>
+                        <td>アプリ利用状況分析</td>
+                        <td>匿名使用統計</td>
+                    </tr>
+                    <tr>
+                        <td>Firebase Crashlytics</td>
+                        <td>Google LLC</td>
+                        <td>クラッシュレポート</td>
+                        <td>クラッシュ情報、デバイス情報</td>
+                    </tr>
+                    <tr>
+                        <td>Tone3000 API</td>
+                        <td>Tone3000</td>
+                        <td>モデルブラウザ＆ダウンロード</td>
+                        <td>アカウント認証、検索クエリ</td>
+                    </tr>
+                    <tr>
+                        <td>iCloud Drive</td>
+                        <td>Apple Inc.</td>
+                        <td>デバイス間ファイル同期</td>
+                        <td>IR/NAM/プリセットファイル</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>データの保存</h2>
+            <p>デバイスにローカルで保存されるデータ：</p>
+            <ul>
+                <li>インポートされたIRファイル（WAV）</li>
+                <li>インポートされたNAMモデルファイル（JSON）</li>
+                <li>ユーザープリセット（パラメータ設定）</li>
+                <li>アプリの設定</li>
+                <li>Tone3000認証トークン（Keychain）</li>
+            </ul>
+            <p>このデータはアプリを通じて管理でき、デバイスのバックアップに含まれます。</p>
+
+            <h2>データの削除</h2>
+            <p>アプリのIRおよびNAMブラウザからいつでもファイルを削除できます。アプリをアンインストールすると、デバイスからすべてのローカルデータが削除されます。Tone3000のアカウントデータはTone3000のウェブサイトから管理できます。</p>
+
+            <h2>トラッキングと広告</h2>
+            <p>当アプリは広告識別子（IDFA）を使用せず、広告主とデータを共有しません。Firebase Analyticsが使用する識別子は匿名であり、個人を特定することはありません。</p>
+
+            <h2>お子様のプライバシー</h2>
+            <p>当アプリは13歳未満のお子様から意図的に個人情報を収集することはありません。Firebase Analyticsは個人を特定する情報を収集しません。</p>
+
+            <h2>ポリシーの変更</h2>
+            <p>このプライバシーポリシーは随時更新される場合があります。変更があった場合は、このページに新しいプライバシーポリシーを掲載し、「最終更新日」を更新することでお知らせします。</p>
+
+            <h2>お問い合わせ</h2>
+            <p>このプライバシーポリシーについてご質問がある場合は、以下までご連絡ください：<br>
+            <a href="mailto:sonicdna@hakaru.net"><strong>sonicdna@hakaru.net</strong></a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

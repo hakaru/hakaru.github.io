@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SonicDNA Engine Support | hakaru</title>
+    <meta name="description" content="SonicDNA Engine support page. IR/NAM Audio Processor &amp; AUv3 Plugin for iOS.">
+    <meta property="og:title" content="SonicDNA Engine Support">
+    <meta property="og:description" content="SonicDNA Engine support page. IR/NAM Audio Processor &amp; AUv3 Plugin for iOS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNAEngine-support/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .app-store-link {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 20px; margin: 16px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s;
+        }
+        .app-store-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .app-store-link .app-icon-small { width: 50px; height: 50px; border-radius: 11px; }
+        .app-store-text { font-size: 12px; line-height: 1.3; }
+        .app-store-text .download { font-size: 16px; font-weight: 600; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← hakaru Apps</a>
+        <div class="hero">
+            <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="hero-icon">
+            <h1>SonicDNA Engine</h1>
+            <p>IR/NAM Audio Processor &amp; AUv3 Plugin for iOS</p>
+            <a href="#" class="app-store-link">
+                <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="app-icon-small">
+                <div class="app-store-text">
+                    <div>Coming Soon on the</div>
+                    <div class="download">App Store</div>
+                </div>
+            </a>
+        </div>
+        <nav class="support-nav">
+            <a href="/SonicDNAEngine-support/" class="active">Support</a>
+            <a href="/SonicDNAEngine-support/index-ja">サポート</a>
+            <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+            <a href="/SonicDNAEngine-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+            <a href="/SonicDNAEngine-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+        </nav>
+        <div class="content">
+            <p>Welcome to SonicDNA Engine support page.</p>
+            <p>SonicDNA Engine is an IR/NAM audio processor app with AUv3 plugin support for iOS.</p>
+
+            <h2>Overview</h2>
+            <p>SonicDNA Engine transforms your iPhone or iPad into a versatile audio processor. Load IR (Impulse Response) files for speaker/room/mic simulation and NAM (Neural Amp Modeler) files for equipment modeling, with real-time low-latency audio processing.</p>
+            <p>Whether you're a guitarist, keyboardist, vocalist, synthesizer enthusiast, or audiophile — SonicDNA Engine processes your audio through AI-powered modeling and convolution in real time.</p>
+
+            <hr>
+
+            <h2>Key Features</h2>
+
+            <h3>NAM Equipment Modeling</h3>
+            <p>Load Neural Amp Modeler files to recreate the sound of real audio equipment — guitar amps, bass amps, preamps, channel strips, and more — with AI-powered digital modeling.</p>
+
+            <h3>IR Convolution Processing</h3>
+            <p>Load impulse response files for accurate simulation of speakers, cabinets, rooms, microphones, and acoustic spaces using FFT-based convolution.</p>
+
+            <h3>Built-in Effects</h3>
+            <ul>
+                <li><strong>Noise Gate</strong> - Adjustable threshold with smooth gating</li>
+                <li><strong>3-Band EQ</strong> - Low shelf, Mid bell, High shelf parametric EQ</li>
+                <li><strong>Input/Output Gain</strong> - Full signal level control</li>
+                <li><strong>Dry/Wet Mix</strong> - Blend between original and processed signal</li>
+            </ul>
+
+            <h3>AUv3 Plugin</h3>
+            <p>Use SonicDNA Engine as an Audio Unit Extension in any AUv3-compatible host:</p>
+            <ul>
+                <li>AUM, GarageBand, Cubasis, BeatMaker, and more</li>
+                <li>Full parameter control within host apps</li>
+                <li>IR/NAM file loading from within the plugin</li>
+            </ul>
+
+            <h3>Standalone Effector Mode</h3>
+            <p>Connect your instrument or microphone via USB audio interface and use as a standalone processor:</p>
+            <ul>
+                <li>Real-time audio processing with low latency</li>
+                <li>Support for USB audio interfaces</li>
+                <li>48kHz sample rate</li>
+            </ul>
+
+            <h3>Preset System</h3>
+            <p>Save and recall your favorite settings including IR/NAM selection and all parameter values.</p>
+
+            <hr>
+
+            <h2>Use Cases</h2>
+
+            <h3>For Guitarists &amp; Bassists</h3>
+            <p>Load NAM amp models and IR cabinet simulations for a complete amp-in-a-box experience. Access thousands of community amp models from ToneHunt.</p>
+
+            <h3>For Keyboardists &amp; Synth Players</h3>
+            <p>Run your keyboard or synthesizer through vintage preamp models and speaker IRs. Add analog warmth and character to digital sounds.</p>
+
+            <h3>For Vocalists &amp; Podcasters</h3>
+            <p>Use microphone IRs to simulate classic studio microphones. Apply subtle preamp coloring to your vocal chain.</p>
+
+            <h3>For Audiophiles &amp; Sound Designers</h3>
+            <p>Experiment with room IRs, speaker simulations, and equipment modeling. Shape your listening experience with precision convolution processing.</p>
+
+            <hr>
+
+            <h2>Setup Guide</h2>
+
+            <h3>Standalone Mode</h3>
+            <pre><code>Instrument/Mic → Audio Interface → iPhone/iPad → Audio Interface → Speakers/Headphones
+                                    (SonicDNA Engine)</code></pre>
+            <ol>
+                <li>Connect your USB audio interface to iPhone/iPad</li>
+                <li>Connect your instrument or microphone to audio interface input</li>
+                <li>Connect audio interface output to speakers/headphones</li>
+                <li>Launch SonicDNA Engine (audio engine starts automatically)</li>
+                <li>Load IR and/or NAM files</li>
+            </ol>
+
+            <h3>AUv3 Plugin Mode</h3>
+            <ol>
+                <li>Open your AUv3 host app (AUM, GarageBand, etc.)</li>
+                <li>Add SonicDNA Engine as an Audio Unit effect</li>
+                <li>Load IR/NAM files from the plugin interface</li>
+                <li>Adjust parameters as needed</li>
+            </ol>
+
+            <hr>
+
+            <h2>Using the App</h2>
+
+            <h3>Loading IR Files</h3>
+            <ol>
+                <li>Go to the <strong>IR</strong> tab</li>
+                <li>Tap <strong>+</strong> to import WAV files</li>
+                <li>Select the IR file to activate it</li>
+                <li>Supported format: WAV (any sample rate, mono/stereo)</li>
+            </ol>
+
+            <h3>Loading NAM Files</h3>
+            <ol>
+                <li>Go to the <strong>NAM</strong> tab</li>
+                <li>Tap <strong>+</strong> to import .nam/.json files</li>
+                <li>Select the NAM model to activate it</li>
+                <li>Supported: WaveNet, LSTM, Linear architectures</li>
+            </ol>
+
+            <h3>Signal Chain</h3>
+            <pre><code>Input → Input Gain → Noise Gate → NAM → EQ → IR Convolution → Output Level → Mix → Output</code></pre>
+
+            <h3>Controls</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Control</th>
+                        <th>Range</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>INPUT</strong></td>
+                        <td>0 - 2x</td>
+                        <td>Input gain before processing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OUTPUT</strong></td>
+                        <td>0 - 2x</td>
+                        <td>Output level after processing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MIX</strong></td>
+                        <td>0% - 100%</td>
+                        <td>Dry/Wet blend (0%=dry, 100%=wet)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Noise Gate</strong></td>
+                        <td>-96 to 0 dB</td>
+                        <td>Gate threshold</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EQ Low</strong></td>
+                        <td>-12 to +12 dB</td>
+                        <td>Low shelf (200 Hz)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EQ Mid</strong></td>
+                        <td>-12 to +12 dB</td>
+                        <td>Mid bell (1 kHz)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EQ High</strong></td>
+                        <td>-12 to +12 dB</td>
+                        <td>High shelf (4 kHz)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2>FAQ</h2>
+
+            <h3>What audio interfaces are supported?</h3>
+            <p>Any class-compliant USB audio interface should work. Tested with common interfaces like ZOOM AMS-22.</p>
+
+            <h3>What instruments/sources can I use?</h3>
+            <p>Anything that outputs audio — electric guitar, bass, keyboards, synthesizers, microphones, drum machines, or any line-level source.</p>
+
+            <h3>Where can I get IR files?</h3>
+            <p>IR files are available from many sources:</p>
+            <ul>
+                <li>Create your own with <a href="https://apps.apple.com/app/id6758269736">SonicDNA Collector</a></li>
+                <li>Speaker/cabinet IRs from communities like ToneHunt</li>
+                <li>Room and reverb IRs from various online sources</li>
+                <li>Microphone simulation IRs</li>
+                <li>Many free and commercial IR packs available online</li>
+            </ul>
+
+            <h3>Where can I get NAM files?</h3>
+            <p>NAM models can be found at:</p>
+            <ul>
+                <li><a href="https://www.tone3000.com">Tone3000</a> - Community NAM model sharing</li>
+                <li>Train your own using <a href="https://github.com/sdatkinson/neural-amp-modeler">Neural Amp Modeler</a></li>
+            </ul>
+
+            <h3>What NAM architectures are supported?</h3>
+            <p>SonicDNA Engine supports WaveNet, LSTM, and Linear NAM architectures.</p>
+
+            <h3>Is there latency?</h3>
+            <p>The app uses a 128-sample buffer at 48kHz (~2.7ms). Total round-trip latency depends on your audio interface.</p>
+
+            <h3>Can I use this with GarageBand?</h3>
+            <p>Yes! SonicDNA Engine works as an AUv3 effect plugin in GarageBand and other AUv3 hosts.</p>
+
+            <h3>What is the relationship with SonicDNA Collector?</h3>
+            <p>SonicDNA Collector captures the sonic characteristics of analog equipment. SonicDNA Engine plays back those captured characteristics. Together they form the SonicDNA ecosystem: Capture → Play.</p>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <p>If you have questions or feedback, please contact us at:<br>
+            <a href="mailto:sonicdna@hakaru.net"><strong>sonicdna@hakaru.net</strong></a></p>
+
+            <hr>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="/SonicDNAEngine-support/privacy">Privacy Policy</a></li>
+                <li><a href="/SonicDNAEngine-support/changelog">Changelog</a></li>
+                <li><a href="/SonicDNAEngine-support/blog/en/">Blog</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
