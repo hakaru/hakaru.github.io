@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Changelog | SonicDNA Collector</title>
+    <meta name="description" content="SonicDNA Collector version history and changelog.">
+    <meta property="og:title" content="Changelog | SonicDNA Collector">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/changelog/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .page-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 40px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .page-title { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/SonicDNACollector-support/" class="back-link">← SonicDNA Collector Support</a>
+        <h1 class="page-title">Changelog</h1>
+        <nav class="support-nav">
+            <a href="/SonicDNACollector-support/">Support</a>
+            <a href="/SonicDNACollector-support/index-ja">サポート</a>
+            <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+            <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
+            <a href="/SonicDNACollector-support/privacy">Privacy</a>
+            <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+            <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNACollector-support/changelog/" class="active">Changelog</a>
+        </nav>
+        <div class="content">
+            <p>All notable changes to SonicDNA Collector will be documented in this file.</p>
+            <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>, and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+
+            <hr>
+
+            <h2>[1.0.0] - 2026-01-25</h2>
+
+            <h3>Initial Release</h3>
+            <p>First public release of SonicDNA Collector.</p>
+
+            <h3>Added</h3>
+            <p><strong>Core Features</strong></p>
+            <ul>
+                <li>Logarithmic sweep generation (20Hz - 20kHz)</li>
+                <li>Gain staircase recording (5 or 11 steps)</li>
+                <li>Real-time VU meters for input/output</li>
+                <li>FFT spectrum analyzer</li>
+                <li>Clipping detection with visual indicators</li>
+            </ul>
+
+            <p><strong>Audio Engine</strong></p>
+            <ul>
+                <li>96kHz sample rate support</li>
+                <li>USB audio interface support</li>
+                <li>Low-latency monitoring</li>
+                <li>Pre-roll buffer</li>
+            </ul>
+
+            <p><strong>User Interface</strong></p>
+            <ul>
+                <li>Dark mode design</li>
+                <li>Debug console with real-time logs</li>
+                <li>Optimized for iPhone</li>
+                <li>0dBFS test tone generator</li>
+            </ul>
+
+            <p><strong>Recording Management</strong></p>
+            <ul>
+                <li>Organized session folders</li>
+                <li>JSON metadata export</li>
+                <li>WAV file output</li>
+                <li>Share via Files app</li>
+            </ul>
+
+            <p><strong>Analysis</strong></p>
+            <ul>
+                <li>Built-in frequency response viewer</li>
+                <li>THD measurement display</li>
+                <li>Harmonic analysis charts</li>
+            </ul>
+
+            <hr>
+
+            <h2>[Unreleased]</h2>
+
+            <h3>Planned</h3>
+            <ul>
+                <li>iPad optimization</li>
+                <li>iCloud sync for recordings</li>
+                <li>More staircase presets</li>
+                <li>Real-time THD display during test tone</li>
+                <li>Audio unit plugin support</li>
+                <li>Export to REW format</li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

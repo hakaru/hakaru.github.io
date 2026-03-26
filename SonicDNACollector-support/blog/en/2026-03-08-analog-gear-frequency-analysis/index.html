@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Measure Your Analog Gear's Frequency Response with iPhone | SonicDNA Collector Blog</title>
+    <meta name="description" content="Every piece of analog gear has a sonic fingerprint. Learn how to objectively measure and visualize the unique character of your gear using iPhone and an audio interface.">
+    <meta property="og:title" content="How to Measure Your Analog Gear's Frequency Response with iPhone">
+    <meta property="og:description" content="A comprehensive guide to measuring analog equipment frequency response using iPhone and audio interface.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/blog/en/2026-03-08-analog-gear-frequency-analysis/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Measure Your Analog Gear's Frequency Response with iPhone",
+        "datePublished": "2026-03-08",
+        "author": {"@type": "Organization", "name": "hakaru"},
+        "publisher": {"@type": "Organization", "name": "hakaru", "url": "https://hakaru.net"},
+        "url": "https://hakaru.net/SonicDNACollector-support/blog/en/2026-03-08-analog-gear-frequency-analysis/",
+        "description": "A comprehensive guide to measuring analog equipment frequency response using iPhone and audio interface.",
+        "keywords": "SonicDNA Collector, analog gear, frequency response, measurement, audio"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-title {
+            font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff;
+            line-height: 1.3;
+        }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-title { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/SonicDNACollector-support/blog/en/" class="back-link">← Blog</a>
+        <div class="article-header">
+            <h1 class="article-title">How to Measure Your Analog Gear's Frequency Response with iPhone</h1>
+            <div class="article-meta">2026-03-08</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/SonicDNACollector-support/">Support</a>
+            <a href="/SonicDNACollector-support/index-ja">サポート</a>
+            <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+            <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
+            <a href="/SonicDNACollector-support/privacy">Privacy</a>
+            <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNACollector-support/blog/en/" class="active">Blog</a>
+            <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+        </nav>
+        <div class="content">
+            <p>Every piece of analog gear has a sonic fingerprint. Vintage compressors, tube preamps, tape machines — even two units of the same model can sound subtly different. Engineers and musicians have long relied on words like "warm," "punchy," or "silky" to describe these differences, but subjective descriptions only go so far. What if you could objectively measure and visualize the unique character of your gear?</p>
+            <p>The answer lies in <strong>frequency response measurement</strong>. In this guide, we'll cover everything from the fundamentals of frequency response to a practical method for measuring your analog equipment using just an iPhone and an audio interface.</p>
+
+            <h2>What Is Frequency Response?</h2>
+            <p>Frequency response describes how an audio device handles signals across the audible spectrum. An ideal, perfectly transparent device would pass every frequency from 20Hz to 20kHz at exactly the same level. In practice, no analog device does this perfectly — and that's precisely what makes analog gear interesting.</p>
+            <p>A vintage Neve preamp might add a subtle low-end warmth below 200Hz while gently rolling off the highest frequencies. A tube compressor might introduce harmonic content that creates a characteristic presence peak around 3kHz. These deviations from a flat response are the "secret sauce" that gives each piece of gear its unique sonic identity.</p>
+            <p>Frequency response is typically displayed as a graph with frequency (Hz) on the horizontal axis and level (dB) on the vertical axis. A flat horizontal line indicates a neutral, transparent device. Curves, bumps, and roll-offs reveal the device's character.</p>
+
+            <h3>Why Measure Frequency Response?</h3>
+            <p>Measuring your gear's frequency response offers several practical benefits:</p>
+            <ul>
+                <li><strong>Objective characterization</strong>: Put numbers behind subjective impressions like "warm" or "bright"</li>
+                <li><strong>Detect aging and degradation</strong>: Regular measurements can reveal capacitor deterioration, tube wear, or transformer degradation before they become audible problems</li>
+                <li><strong>Compare gear scientifically</strong>: Evaluate different preamps, EQs, or processors under identical conditions</li>
+                <li><strong>Optimize your signal chain</strong>: Understanding each device's characteristics helps you build better recording chains</li>
+                <li><strong>Verify repairs and maintenance</strong>: Compare pre- and post-repair measurements to confirm a device has been restored to proper operation</li>
+            </ul>
+
+            <h2>Traditional Measurement Methods and Their Limitations</h2>
+            <p>Historically, measuring audio equipment frequency response has required specialized tools and considerable expertise.</p>
+
+            <h3>Dedicated Audio Analyzers</h3>
+            <p>Instruments like Audio Precision systems can measure frequency response with extraordinary accuracy. However, these systems cost thousands to tens of thousands of dollars, putting them out of reach for most individual studios and audio enthusiasts. They also require training to operate correctly and are not portable.</p>
+
+            <h3>PC-Based Measurement Software</h3>
+            <p>Software solutions such as REW (Room EQ Wizard) and ARTA (Audio Real-Time Analyzer) bring measurement capabilities to a standard computer. While more affordable than dedicated hardware, they come with their own challenges. Setting up a PC-based measurement system involves configuring audio interface routing, calibrating input and output levels, installing drivers, and navigating complex software interfaces. For studios where gear is permanently racked, bringing a laptop to the rack room and running cables every time you want to take a measurement is cumbersome.</p>
+
+            <h3>Basic Smartphone Apps</h3>
+            <p>Some apps attempt frequency analysis using a phone's built-in microphone. While convenient, these are fundamentally limited by the phone's microphone characteristics — particularly in the low and high frequency extremes. The built-in microphone's own frequency response colors every measurement, making accurate equipment analysis impossible.</p>
+
+            <h2>A Modern Approach: iPhone + Audio Interface</h2>
+            <p>Modern iPhones contain remarkably powerful processors capable of real-time audio processing at professional sample rates. When paired with a USB-C audio interface, an iPhone becomes a capable measurement platform with professional-grade analog-to-digital and digital-to-analog conversion.</p>
+
+            <h3>What You Need</h3>
+            <ul>
+                <li><strong>iPhone</strong> (USB-C models recommended)</li>
+                <li><strong>Audio interface</strong> (USB-C connection, 96kHz support preferred)</li>
+                <li><strong>Appropriate cables</strong> (for connecting to your gear under test)</li>
+            </ul>
+
+            <h3>Basic Signal Path</h3>
+            <p>The measurement setup follows a straightforward signal chain:</p>
+            <ol>
+                <li>Connect the audio interface to your iPhone</li>
+                <li>Route the audio interface output to the input of the gear you want to measure</li>
+                <li>Connect the output of your gear back to the audio interface input</li>
+            </ol>
+            <p>This creates a complete loop: iPhone → audio interface output → device under test → audio interface input → iPhone. The iPhone sends a precisely generated test signal through the device, then analyzes the returning signal to determine exactly how the device modified it.</p>
+
+            <h2>How Sweep Signals Work</h2>
+            <p>The gold standard for frequency response measurement is the <strong>sweep signal</strong> — a sine wave that continuously changes frequency from low to high over a defined period.</p>
+
+            <h3>Why Sweeps Outperform Other Test Signals</h3>
+            <p><strong>Compared to white noise</strong>: White noise contains all frequencies simultaneously, but the energy is spread thin across the entire spectrum. This results in a relatively low signal-to-noise ratio at any individual frequency. A sweep concentrates all energy into one frequency at a time, delivering dramatically better S/N performance.</p>
+            <p><strong>Compared to impulses</strong>: An impulse theoretically contains all frequencies, but generating a clean impulse requires an enormous peak level in an infinitesimally short time. In practice, this causes clipping and distortion. Sweeps achieve the same spectral coverage at moderate, safe signal levels over a longer time window.</p>
+
+            <h3>Logarithmic vs. Linear Sweeps</h3>
+            <p>There are two types of frequency sweeps. A linear sweep changes frequency at a constant rate — spending equal time at every frequency range. A logarithmic sweep spends more time in the lower frequencies and accelerates through the higher frequencies. This matches human hearing perception, which is also logarithmic in nature, and is the standard for audio measurements.</p>
+            <p>Logarithmic sweeps have another critical advantage: through <strong>deconvolution processing</strong>, harmonic distortion products can be cleanly separated from the fundamental response. This means a single sweep measurement can simultaneously yield both the frequency response and the distortion characteristics of a device.</p>
+
+            <h2>Reading Your Measurement Results</h2>
+            <p>Once you've captured a measurement, interpreting the resulting frequency response graph is essential for understanding your gear.</p>
+
+            <h3>Understanding the Graph</h3>
+            <ul>
+                <li><strong>Horizontal axis (X)</strong>: Frequency, displayed on a logarithmic scale. The left edge represents low frequencies (20Hz) and the right edge represents high frequencies (20kHz)</li>
+                <li><strong>Vertical axis (Y)</strong>: Level in decibels (dB), referenced to 0dB. Points above the reference indicate the device is boosting that frequency; points below indicate attenuation</li>
+            </ul>
+
+            <h3>Common Response Patterns</h3>
+            <p><strong>Flat response</strong>: A nearly horizontal line across the spectrum indicates a transparent device that passes audio with minimal coloration. Typical of high-quality monitor preamps and modern converters.</p>
+            <p><strong>Low-frequency rise</strong>: A gentle lift below 100Hz is characteristic of many vintage designs, particularly those using transformers in the signal path. This is often described as "warmth" or "body."</p>
+            <p><strong>High-frequency roll-off</strong>: A gradual attenuation above 10kHz is common in transformer-coupled analog gear. This contributes to the "smooth" or "silky" quality that engineers often prize.</p>
+            <p><strong>Resonant peaks and dips</strong>: Sharp peaks or dips at specific frequencies indicate resonances or filter characteristics. These are most prominent in devices with EQ circuits or tone controls, but can appear in any device with reactive components.</p>
+
+            <h3>Level-Dependent Behavior: Where Analog Gets Interesting</h3>
+            <p>One of the most fascinating aspects of analog gear is that its frequency response can change depending on the input level. A preamp might measure nearly flat at low levels but develop a distinctive low-end bump and high-frequency saturation when driven hard. This nonlinear behavior — where the response depends on the signal level — is a defining characteristic of analog equipment and a major reason engineers reach for specific pieces of gear.</p>
+            <p>Capturing this behavior requires multiple sweep measurements at different input levels. Doing this manually means carefully adjusting levels between each measurement, which is tedious and error-prone.</p>
+
+            <h2>SonicDNA Collector: Precision Measurement Made Simple</h2>
+            <p><strong>SonicDNA Collector</strong> was built to bring all of these measurement capabilities together in a single, streamlined iPhone app.</p>
+
+            <h3>Precision Sweep Generation</h3>
+            <p>SonicDNA Collector generates logarithmic sweep signals from 20Hz to 20kHz at a 96kHz sample rate. Each 5-second sweep is bracketed by 1-second silence buffers for accurate noise floor and reverb tail capture. The app performs deconvolution processing to extract both frequency response and harmonic distortion data from a single sweep.</p>
+
+            <h3>Gain Staircase: Automated Multi-Level Testing</h3>
+            <p>Instead of manually adjusting levels and repeating measurements, the Gain Staircase feature automatically runs a series of sweeps at progressively increasing levels. This captures your gear's behavior from its linear region through saturation in a single automated sequence.</p>
+            <ul>
+                <li><strong>5-Step Mode</strong>: Covers -30dB to -6dB in approximately 35 seconds</li>
+                <li><strong>9-Step Mode</strong>: Covers -30dB to -2dB in approximately 63 seconds</li>
+            </ul>
+            <p>This reveals how your gear's frequency response, distortion characteristics, and overall behavior change as it's driven harder — the kind of data that would take much longer to collect manually.</p>
+
+            <h3>Real-Time Monitoring</h3>
+            <p>During measurement, SonicDNA Collector displays real-time input and output levels along with spectral information. This makes it easy to verify your connections are correct, set appropriate levels before measuring, and detect any clipping or other issues instantly.</p>
+
+            <h3>WAV Export for Further Analysis</h3>
+            <p>All measurement data can be exported as 96kHz/32-bit float WAV files. This lets you import your measurements into a DAW or specialized analysis software for deeper examination, comparison overlays, or archiving.</p>
+
+            <h3>Practical Use Cases</h3>
+            <ul>
+                <li><strong>Vintage gear documentation</strong>: Build a measurement library of every piece in your collection and track changes over time</li>
+                <li><strong>Pre-purchase verification</strong>: When buying used gear, verify it meets specifications before committing</li>
+                <li><strong>Repair validation</strong>: Measure before and after service to confirm proper restoration</li>
+                <li><strong>Tube rolling comparisons</strong>: Quantify the sonic differences between tube brands in the same amplifier</li>
+                <li><strong>A/B testing</strong>: Scientifically compare two pieces of gear that serve the same function in your signal chain</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Measuring your analog gear's frequency response transforms subjective impressions into objective data. What once required expensive laboratory equipment or complex PC setups can now be accomplished with an iPhone, an audio interface, and the right app.</p>
+            <p>Discover the unique sonic DNA of your analog gear — measure it, understand it, and make better-informed decisions about your signal chain.</p>
+            <p><a href="https://apps.apple.com/app/id6758269736">Download SonicDNA Collector on the App Store</a></p>
+
+            <h2>Related Articles</h2>
+            <ul>
+                <li><a href="/SonicDNACollector-support/blog/en/2026-03-08-feature-deep-dive/">SonicDNA Collector Feature Deep Dive</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

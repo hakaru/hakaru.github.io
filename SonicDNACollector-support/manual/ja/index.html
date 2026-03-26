@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ユーザーマニュアル | SonicDNA Collector</title>
+    <meta name="description" content="SonicDNA Collector ユーザーマニュアル。アナログ機材周波数特性アナライザーアプリの使い方ガイド。">
+    <meta property="og:title" content="ユーザーマニュアル | SonicDNA Collector">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/manual/ja/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .page-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 40px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .toc {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 20px 24px; margin-bottom: 40px;
+        }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; color: #a0a0a0; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; }
+        .toc a:hover { color: #e94560; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em; font-family: monospace;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+            font-family: monospace; font-size: 0.85em; color: #b0b0b0;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .warning {
+            background: rgba(233, 69, 96, 0.1); border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; color: #ff8fa3;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .page-title { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/SonicDNACollector-support/index-ja" class="back-link">← SonicDNA Collector サポート</a>
+        <h1 class="page-title">ユーザーマニュアル</h1>
+        <nav class="support-nav">
+            <a href="/SonicDNACollector-support/">Support</a>
+            <a href="/SonicDNACollector-support/index-ja">サポート</a>
+            <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+            <a href="/SonicDNACollector-support/manual/ja/" class="active">マニュアル</a>
+            <a href="/SonicDNACollector-support/privacy">Privacy</a>
+            <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+            <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+        </nav>
+        <div class="toc">
+            <h3>目次</h3>
+            <ol>
+                <li><a href="#getting-started">はじめに</a></li>
+                <li><a href="#interface-overview">インターフェース概要</a></li>
+                <li><a href="#equipment-setup">機器のセットアップ</a></li>
+                <li><a href="#gain-calibration">ゲイン調整</a></li>
+                <li><a href="#recording">録音</a></li>
+                <li><a href="#analysis">分析</a></li>
+                <li><a href="#troubleshooting">トラブルシューティング</a></li>
+            </ol>
+        </div>
+        <div class="content">
+            <h2 id="getting-started">はじめに</h2>
+
+            <h3>必要なもの</h3>
+            <ul>
+                <li>iOS 17.0以降のiPhoneまたはiPad</li>
+                <li>USBオーディオインターフェース（クラスコンプライアント）</li>
+                <li>Lightning-USBまたはUSB-Cアダプター（必要に応じて）</li>
+                <li>機器用のオーディオケーブル</li>
+            </ul>
+
+            <h3>初回起動</h3>
+            <ol>
+                <li>App StoreからSonicDNA Collectorをインストール</li>
+                <li>プロンプトが表示されたらマイク許可を付与</li>
+                <li>オーディオインターフェースを接続</li>
+                <li>アプリが自動的にインターフェースを検出</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="interface-overview">インターフェース概要</h2>
+
+            <h3>メイン画面</h3>
+            <pre>
+┌─────────────────────────────────┐
+│ [🎵] SonicDNA        [?] [📁]  │  ← ナビゲーション
+├─────────────────────────────────┤
+│ [🎤 入力デバイス] [🔊 出力]    │  ← デバイス選択
+│ [📋 デバイス名入力          ]  │  ← 機器名
+├─────────────────────────────────┤
+│ OUTPUT  ████████░░░░  -12dB [C]│  ← 出力VU
+│ ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                │  ← 出力スペクトラム
+├─────────────────────────────────┤
+│ INPUT   ████████░░░░  -18dB [C]│  ← 入力VU
+│ ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                │  ← 入力スペクトラム
+├─────────────────────────────────┤
+│ DEBUG CONSOLE                  │
+│ 06:30:15.123 エンジン開始      │  ← リアルタイムログ
+│ 06:30:15.456 入力: ZOOM AMS    │
+├─────────────────────────────────┤
+│ ● Ready              96.0 kHz  │  ← ステータス
+├─────────────────────────────────┤
+│ [5 STEPS]    [⏺]    [0dBFS]   │  ← コントロール
+│              Staircase          │
+└─────────────────────────────────┘</pre>
+
+            <h3>コントロール</h3>
+            <table>
+                <thead>
+                    <tr><th>コントロール</th><th>機能</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>5 STEPS / 11 STEPS</strong></td><td>ゲインステアケースモード選択</td></tr>
+                    <tr><td><strong>録音ボタン</strong></td><td>録音開始/停止</td></tr>
+                    <tr><td><strong>0dBFS</strong></td><td>1kHzテストトーン再生/停止</td></tr>
+                    <tr><td><strong>[?]</strong></td><td>ヘルプ画面</td></tr>
+                    <tr><td><strong>[📁]</strong></td><td>録音ライブラリ</td></tr>
+                </tbody>
+            </table>
+
+            <h3>インジケーター</h3>
+            <table>
+                <thead>
+                    <tr><th>インジケーター</th><th>意味</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>緑のバー</strong></td><td>安全なレベル</td></tr>
+                    <tr><td><strong>黄色のバー</strong></td><td>高レベル（注意）</td></tr>
+                    <tr><td><strong>赤のバー</strong></td><td>クリッピング近く</td></tr>
+                    <tr><td><strong>[C] 赤</strong></td><td>クリッピング検出！</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="equipment-setup">機器のセットアップ</h2>
+
+            <h3>信号フロー</h3>
+            <pre>
+┌──────────┐    ┌────────────┐    ┌─────────────┐    ┌──────────┐
+│  iPhone  │───▶│ オーディオ │───▶│   測定対象  │───▶│オーディオ│───▶ iPhone
+│   出力   │    │ I/F 出力   │    │    機器    │    │ I/F 入力 │    入力
+└──────────┘    └────────────┘    └─────────────┘    └──────────┘</pre>
+
+            <h3>接続手順</h3>
+            <ol>
+                <li><strong>オーディオインターフェースを接続</strong>
+                    <ul>
+                        <li>デバイスに適したアダプターを使用</li>
+                        <li>iOSがインターフェースを認識するまで待機</li>
+                    </ul>
+                </li>
+                <li><strong>機器を接続</strong>
+                    <ul>
+                        <li>オーディオI/F出力 → 機器入力</li>
+                        <li>機器出力 → オーディオI/F入力</li>
+                    </ul>
+                </li>
+                <li><strong>アプリで確認</strong>
+                    <ul>
+                        <li>入出力デバイスが検出されていることを確認</li>
+                        <li>デバイス名がヘッダーに表示される</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <hr>
+
+            <h2 id="gain-calibration">ゲイン調整</h2>
+
+            <h3>テストトーンの使用</h3>
+            <div class="warning">警告: 0dBFSテストトーンは非常に大きな音です！</div>
+            <ol>
+                <li><strong>まずモニター音量を下げる</strong></li>
+                <li><strong>0dBFS</strong>ボタンをタップ</li>
+                <li>警告ダイアログを確認</li>
+                <li>OUTPUTメーターを観察（0dBを示すはず）</li>
+                <li>機器の入力ゲインを調整</li>
+                <li>INPUTメーターを観察</li>
+                <li>平均-18dB〜-12dBを目指す</li>
+                <li><strong>0dBFS</strong>を再度タップして停止</li>
+            </ol>
+
+            <h3>クリッピングの回避</h3>
+            <ul>
+                <li><strong>INPUTクリッピング</strong>（入力の赤いC）= ハードウェア損傷のリスク！
+                    <ul>
+                        <li>直ちにオーディオI/Fのゲインを下げる</li>
+                        <li>機器の出力レベルを確認</li>
+                    </ul>
+                </li>
+                <li><strong>OUTPUTクリッピング</strong>（出力の赤いC）= テストトーンでは正常
+                    <ul>
+                        <li>0dBFS信号はデジタルフルスケール</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording">録音</h2>
+
+            <h3>ステアケース録音</h3>
+            <p>ステアケース録音は、段階的に高いレベルで複数のスイープを再生します：</p>
+
+            <p><strong>5ステップモード</strong>（推奨）</p>
+            <ul>
+                <li>-30dB、-24dB、-18dB、-12dB、-6dB</li>
+                <li>合計時間：約35秒</li>
+                <li>一般的な測定に最適</li>
+            </ul>
+
+            <p><strong>11ステップモード</strong>（包括的）</p>
+            <ul>
+                <li>-100dB〜0dBを10dBステップで</li>
+                <li>合計時間：約77秒</li>
+                <li>フルダイナミックレンジ分析</li>
+            </ul>
+
+            <h3>録音プロセス</h3>
+            <ol>
+                <li>機器名を入力（例: "Neve 1073"）</li>
+                <li>ステップ数を選択</li>
+                <li>赤い録音ボタンをタップ</li>
+                <li>完了を待つ</li>
+                <li>ライブラリで録音を確認</li>
+            </ol>
+
+            <h3>出力ファイル</h3>
+            <p>各セッションは以下を含むフォルダを作成：</p>
+            <pre>
+GainStaircase_2026-01-25T15-30-00/
+├── Sweep_-30dB.wav
+├── Sweep_-24dB.wav
+├── Sweep_-18dB.wav
+├── Sweep_-12dB.wav
+├── Sweep_-6dB.wav
+└── metadata.json</pre>
+
+            <hr>
+
+            <h2 id="analysis">分析</h2>
+
+            <h3>内蔵分析</h3>
+            <p><strong>録音</strong> → セッションを選択 → <strong>分析</strong></p>
+            <p>利用可能な測定：</p>
+            <ul>
+                <li><strong>周波数特性</strong> - 周波数に対するマグニチュードのプロット</li>
+                <li><strong>THD</strong> - 各レベルでの全高調波歪み</li>
+                <li><strong>高調波</strong> - 個々の高調波レベル</li>
+            </ul>
+
+            <h3>Python分析ツールキット</h3>
+            <p>高度な分析には、付属のPythonツールキットを使用：</p>
+            <pre><code>cd analysis/
+python -m sonicdna analyze /path/to/session/</code></pre>
+            <p>機能：</p>
+            <ul>
+                <li>インパルス応答抽出</li>
+                <li>詳細な周波数特性プロット</li>
+                <li>THD+N測定</li>
+                <li>各種フォーマットへのエクスポート</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="troubleshooting">トラブルシューティング</h2>
+
+            <h3>オーディオインターフェースが検出されない</h3>
+            <ol>
+                <li>物理的な接続を確認</li>
+                <li>別のUSBポート/アダプターを試す</li>
+                <li>アプリを再起動</li>
+                <li>iOS設定 → プライバシー → マイクを確認</li>
+            </ol>
+
+            <h3>入力信号がない</h3>
+            <ol>
+                <li>ケーブル接続を確認</li>
+                <li>機器の出力レベルを確認</li>
+                <li>インターフェースのゲインが最小でないことを確認</li>
+                <li>必要に応じてファンタム電源を確認</li>
+            </ol>
+
+            <h3>録音中にクリッピング</h3>
+            <ol>
+                <li>オーディオI/Fの入力ゲインを下げる</li>
+                <li>機器の出力レベルを下げる</li>
+                <li>より低いステアケース範囲を使用</li>
+            </ol>
+
+            <h3>アプリがクラッシュ</h3>
+            <ol>
+                <li>他のオーディオアプリを閉じる</li>
+                <li>アプリを再起動</li>
+                <li>問題が続く場合は、アプリを再インストール</li>
+            </ol>
+
+            <hr>
+
+            <h2>最良の結果を得るためのヒント</h2>
+            <ol>
+                <li><strong>短いケーブルを使用</strong> - 干渉を最小限に</li>
+                <li><strong>iPhoneのサウンドを無効化</strong> - サイレントモード推奨</li>
+                <li><strong>一定のレベル</strong> - 録音中は調整しない</li>
+                <li><strong>セッションに名前を付ける</strong> - 整理しやすく</li>
+                <li><strong>複数テイク</strong> - 重要な測定には</li>
+            </ol>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

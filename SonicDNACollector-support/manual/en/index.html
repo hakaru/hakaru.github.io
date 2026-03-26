@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Manual | SonicDNA Collector</title>
+    <meta name="description" content="SonicDNA Collector User Manual. Complete guide for using the analog gear frequency analyzer app.">
+    <meta property="og:title" content="User Manual | SonicDNA Collector">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/manual/en/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .page-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 40px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .toc {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 20px 24px; margin-bottom: 40px;
+        }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; color: #a0a0a0; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; }
+        .toc a:hover { color: #e94560; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em; font-family: monospace;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+            font-family: monospace; font-size: 0.85em; color: #b0b0b0;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .warning {
+            background: rgba(233, 69, 96, 0.1); border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; color: #ff8fa3;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .page-title { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/SonicDNACollector-support/" class="back-link">← SonicDNA Collector Support</a>
+        <h1 class="page-title">User Manual</h1>
+        <nav class="support-nav">
+            <a href="/SonicDNACollector-support/">Support</a>
+            <a href="/SonicDNACollector-support/index-ja">サポート</a>
+            <a href="/SonicDNACollector-support/manual/en/" class="active">Manual</a>
+            <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
+            <a href="/SonicDNACollector-support/privacy">Privacy</a>
+            <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+            <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+        </nav>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#interface-overview">Interface Overview</a></li>
+                <li><a href="#equipment-setup">Equipment Setup</a></li>
+                <li><a href="#gain-calibration">Gain Calibration</a></li>
+                <li><a href="#recording">Recording</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ol>
+        </div>
+        <div class="content">
+            <h2 id="getting-started">Getting Started</h2>
+
+            <h3>Requirements</h3>
+            <ul>
+                <li>iPhone or iPad with iOS 17.0 or later</li>
+                <li>USB audio interface (class-compliant)</li>
+                <li>Lightning to USB or USB-C adapter (if needed)</li>
+                <li>Audio cables for your equipment</li>
+            </ul>
+
+            <h3>First Launch</h3>
+            <ol>
+                <li>Install SonicDNA Collector from the App Store</li>
+                <li>Grant microphone permission when prompted</li>
+                <li>Connect your audio interface</li>
+                <li>The app will automatically detect the interface</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="interface-overview">Interface Overview</h2>
+
+            <h3>Main Screen</h3>
+            <pre>
+┌─────────────────────────────────┐
+│ [🎵] SonicDNA        [?] [📁]  │  ← Navigation
+├─────────────────────────────────┤
+│ [🎤 Input Device] [🔊 Output]  │  ← Device Selection
+│ [📋 Device Name Input        ] │  ← Equipment Name
+├─────────────────────────────────┤
+│ OUTPUT  ████████░░░░  -12dB [C]│  ← Output VU
+│ ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                │  ← Output Spectrum
+├─────────────────────────────────┤
+│ INPUT   ████████░░░░  -18dB [C]│  ← Input VU
+│ ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                │  ← Input Spectrum
+├─────────────────────────────────┤
+│ DEBUG CONSOLE                  │
+│ 06:30:15.123 Engine started    │  ← Real-time Logs
+│ 06:30:15.456 Input: ZOOM AMS   │
+├─────────────────────────────────┤
+│ ● Ready              96.0 kHz  │  ← Status
+├─────────────────────────────────┤
+│ [5 STEPS]    [⏺]    [0dBFS]   │  ← Controls
+│              Staircase          │
+└─────────────────────────────────┘</pre>
+
+            <h3>Controls</h3>
+            <table>
+                <thead>
+                    <tr><th>Control</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>5 STEPS / 11 STEPS</strong></td><td>Select gain staircase mode</td></tr>
+                    <tr><td><strong>Record Button</strong></td><td>Start/stop recording</td></tr>
+                    <tr><td><strong>0dBFS</strong></td><td>Play/stop 1kHz test tone</td></tr>
+                    <tr><td><strong>[?]</strong></td><td>Help screen</td></tr>
+                    <tr><td><strong>[📁]</strong></td><td>Recordings library</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Indicators</h3>
+            <table>
+                <thead>
+                    <tr><th>Indicator</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Green bar</strong></td><td>Safe level</td></tr>
+                    <tr><td><strong>Yellow bar</strong></td><td>High level (caution)</td></tr>
+                    <tr><td><strong>Red bar</strong></td><td>Near clipping</td></tr>
+                    <tr><td><strong>[C] Red</strong></td><td>Clipping detected!</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="equipment-setup">Equipment Setup</h2>
+
+            <h3>Signal Flow</h3>
+            <pre>
+┌──────────┐    ┌────────────┐    ┌─────────────┐    ┌──────────┐
+│  iPhone  │───▶│ Audio I/F  │───▶│  Equipment  │───▶│ Audio I/F│───▶ iPhone
+│  Output  │    │   Output   │    │   Under     │    │  Input   │    Input
+└──────────┘    └────────────┘    │   Test      │    └──────────┘
+                                  └─────────────┘</pre>
+
+            <h3>Connection Steps</h3>
+            <ol>
+                <li><strong>Connect Audio Interface</strong>
+                    <ul>
+                        <li>Use appropriate adapter for your device</li>
+                        <li>Wait for iOS to recognize the interface</li>
+                    </ul>
+                </li>
+                <li><strong>Connect Equipment</strong>
+                    <ul>
+                        <li>Audio interface output → Equipment input</li>
+                        <li>Equipment output → Audio interface input</li>
+                    </ul>
+                </li>
+                <li><strong>Verify in App</strong>
+                    <ul>
+                        <li>Check that input/output devices are detected</li>
+                        <li>Device names appear in the header</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <hr>
+
+            <h2 id="gain-calibration">Gain Calibration</h2>
+
+            <h3>Using the Test Tone</h3>
+            <div class="warning">Warning: The 0dBFS test tone is very loud!</div>
+            <ol>
+                <li><strong>Lower your monitor volume first</strong></li>
+                <li>Tap the <strong>0dBFS</strong> button</li>
+                <li>Confirm the warning dialog</li>
+                <li>Observe the OUTPUT meter (should show 0dB)</li>
+                <li>Adjust equipment input gain</li>
+                <li>Observe the INPUT meter</li>
+                <li>Aim for -18dB to -12dB average</li>
+                <li>Tap <strong>0dBFS</strong> again to stop</li>
+            </ol>
+
+            <h3>Avoiding Clipping</h3>
+            <ul>
+                <li><strong>INPUT clipping</strong> (red C on input) = Hardware damage risk!
+                    <ul>
+                        <li>Reduce audio interface gain immediately</li>
+                        <li>Check equipment output level</li>
+                    </ul>
+                </li>
+                <li><strong>OUTPUT clipping</strong> (red C on output) = Normal for test tone
+                    <ul>
+                        <li>0dBFS signal is full digital scale</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording">Recording</h2>
+
+            <h3>Staircase Recording</h3>
+            <p>The staircase recording plays multiple sweeps at progressively higher levels:</p>
+
+            <p><strong>5 Steps Mode</strong> (Recommended)</p>
+            <ul>
+                <li>-30dB, -24dB, -18dB, -12dB, -6dB</li>
+                <li>Total time: ~35 seconds</li>
+                <li>Good for typical measurements</li>
+            </ul>
+
+            <p><strong>11 Steps Mode</strong> (Comprehensive)</p>
+            <ul>
+                <li>-100dB to 0dB in 10dB steps</li>
+                <li>Total time: ~77 seconds</li>
+                <li>Full dynamic range analysis</li>
+            </ul>
+
+            <h3>Recording Process</h3>
+            <ol>
+                <li>Enter equipment name (e.g., "Neve 1073")</li>
+                <li>Select step count</li>
+                <li>Tap the red record button</li>
+                <li>Wait for completion</li>
+                <li>Find recording in library</li>
+            </ol>
+
+            <h3>Output Files</h3>
+            <p>Each session creates a folder containing:</p>
+            <pre>
+GainStaircase_2026-01-25T15-30-00/
+├── Sweep_-30dB.wav
+├── Sweep_-24dB.wav
+├── Sweep_-18dB.wav
+├── Sweep_-12dB.wav
+├── Sweep_-6dB.wav
+└── metadata.json</pre>
+
+            <hr>
+
+            <h2 id="analysis">Analysis</h2>
+
+            <h3>Built-in Analysis</h3>
+            <p>Navigate to <strong>Recordings</strong> → Select a session → <strong>Analysis</strong></p>
+            <p>Available measurements:</p>
+            <ul>
+                <li><strong>Frequency Response</strong> - Plot of magnitude vs frequency</li>
+                <li><strong>THD</strong> - Total Harmonic Distortion at each level</li>
+                <li><strong>Harmonics</strong> - Individual harmonic levels</li>
+            </ul>
+
+            <h3>Python Analysis Toolkit</h3>
+            <p>For advanced analysis, use the included Python toolkit:</p>
+            <pre><code>cd analysis/
+python -m sonicdna analyze /path/to/session/</code></pre>
+            <p>Features:</p>
+            <ul>
+                <li>Impulse response extraction</li>
+                <li>Detailed frequency response plots</li>
+                <li>THD+N measurement</li>
+                <li>Export to various formats</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+
+            <h3>No Audio Interface Detected</h3>
+            <ol>
+                <li>Check physical connection</li>
+                <li>Try different USB port/adapter</li>
+                <li>Restart the app</li>
+                <li>Check iOS Settings → Privacy → Microphone</li>
+            </ol>
+
+            <h3>No Input Signal</h3>
+            <ol>
+                <li>Verify cable connections</li>
+                <li>Check equipment output level</li>
+                <li>Ensure interface gain is not at minimum</li>
+                <li>Check interface phantom power if needed</li>
+            </ol>
+
+            <h3>Clipping During Recording</h3>
+            <ol>
+                <li>Reduce audio interface input gain</li>
+                <li>Lower equipment output level</li>
+                <li>Use a lower staircase range</li>
+            </ol>
+
+            <h3>App Crashes</h3>
+            <ol>
+                <li>Close other audio apps</li>
+                <li>Restart the app</li>
+                <li>If persistent, reinstall the app</li>
+            </ol>
+
+            <hr>
+
+            <h2>Tips for Best Results</h2>
+            <ol>
+                <li><strong>Use short cables</strong> - Minimize interference</li>
+                <li><strong>Disable iPhone sounds</strong> - Silent mode recommended</li>
+                <li><strong>Consistent levels</strong> - Don't adjust during recording</li>
+                <li><strong>Name your sessions</strong> - Easy organization</li>
+                <li><strong>Multiple takes</strong> - For critical measurements</li>
+            </ol>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

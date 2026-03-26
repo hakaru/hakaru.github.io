@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SonicDNA Collector Feature Deep Dive — Unlock Your Gear's DNA | SonicDNA Collector Blog</title>
+    <meta name="description" content="Let's take an in-depth look at each feature of SonicDNA Collector and how to get the most out of them.">
+    <meta property="og:title" content="SonicDNA Collector Feature Deep Dive — Unlock Your Gear's DNA">
+    <meta property="og:description" content="Let's take an in-depth look at each feature of SonicDNA Collector and how to get the most out of them.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/blog/en/2026-03-08-feature-deep-dive/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SonicDNA Collector Feature Deep Dive — Unlock Your Gear's DNA",
+        "datePublished": "2026-03-08",
+        "author": {"@type": "Organization", "name": "hakaru"},
+        "publisher": {"@type": "Organization", "name": "hakaru", "url": "https://hakaru.net"},
+        "url": "https://hakaru.net/SonicDNACollector-support/blog/en/2026-03-08-feature-deep-dive/",
+        "description": "An in-depth look at each feature of SonicDNA Collector and how to get the most out of them."
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 12px; color: #fff;
+            line-height: 1.3;
+        }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-title { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/SonicDNACollector-support/blog/en/" class="back-link">← Blog</a>
+        <div class="article-header">
+            <h1 class="article-title">SonicDNA Collector Feature Deep Dive — Unlock Your Gear's DNA</h1>
+            <div class="article-meta">2026-03-08</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/SonicDNACollector-support/">Support</a>
+            <a href="/SonicDNACollector-support/index-ja">サポート</a>
+            <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+            <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
+            <a href="/SonicDNACollector-support/privacy">Privacy</a>
+            <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+            <a href="/SonicDNACollector-support/blog/en/" class="active">Blog</a>
+            <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+            <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+        </nav>
+        <div class="content">
+            <p>Let's take an in-depth look at each feature of SonicDNA Collector and how to get the most out of them.</p>
+
+            <h2>Logarithmic Sweep Generation — The Heart of Measurement</h2>
+            <p>Every measurement in SonicDNA Collector is built on <strong>logarithmic sweep signals</strong>. The app generates a continuous frequency sweep from 20Hz to 20kHz at a 96kHz sample rate.</p>
+            <p>Why logarithmic sweeps?</p>
+            <ul>
+                <li><strong>Wide dynamic range</strong>: Far superior S/N ratio compared to white noise or impulse methods</li>
+                <li><strong>Harmonic distortion separation</strong>: Deconvolution cleanly separates the fundamental from distortion components</li>
+                <li><strong>One sweep does it all</strong>: A single measurement provides data for frequency response, impulse response, and more</li>
+            </ul>
+            <p>Each sweep lasts 5 seconds, with 1-second silence buffers before and after. These silence periods are essential for accurately capturing the device's reverb tail and noise floor.</p>
+
+            <h2>Gain Staircase — Exposing Nonlinear Character</h2>
+            <p>The magic of analog gear lies in how it behaves differently at various input levels. The Gain Staircase feature automatically runs multiple sweeps at progressively higher levels, capturing these changes.</p>
+
+            <h3>5-Step Mode (~35 seconds)</h3>
+            <table>
+                <thead>
+                    <tr><th>Step</th><th>Level</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>-30dB</td><td>Behavior near noise floor</td></tr>
+                    <tr><td>2</td><td>-24dB</td><td>Low-level characteristics</td></tr>
+                    <tr><td>3</td><td>-18dB</td><td>Standard operating point</td></tr>
+                    <tr><td>4</td><td>-12dB</td><td>High-level characteristics</td></tr>
+                    <tr><td>5</td><td>-6dB</td><td>Saturation region</td></tr>
+                </tbody>
+            </table>
+            <p>This mode is sufficient for everyday measurements. Quickly assess the basic behavior of compressors, EQs, and other processors.</p>
+
+            <h3>11-Step Mode (~77 seconds)</h3>
+            <p>Covers the full range from -100dB to 0dB in 10dB steps. Ideal for tube amplifiers, tape machines, and other gear that exhibits different distortion characteristics across the entire dynamic range.</p>
+            <p>Output consists of individual WAV files for each level, plus a <code>metadata.json</code> file containing session information.</p>
+
+            <h2>Real-time Monitoring — See What You're Capturing</h2>
+
+            <h3>Dual VU Meters</h3>
+            <p>Output (playback) and input (recording) levels are displayed simultaneously. Color-coded bars give you instant status:</p>
+            <ul>
+                <li><strong>Green</strong>: Safe levels</li>
+                <li><strong>Yellow</strong>: Caution (low headroom)</li>
+                <li><strong>Red</strong>: Near clipping</li>
+            </ul>
+
+            <h3>Clipping Detection</h3>
+            <p>The <strong>[C]</strong> indicator next to each meter signals that the signal has reached digital full scale. Input-side clipping means ADC overload — reduce your interface gain immediately.</p>
+
+            <h3>FFT Spectrum</h3>
+            <p>Visualize the frequency distribution of your signal in real time. Watch the sweep move from low to high frequencies, and instantly spot any unexpected peaks or notches.</p>
+
+            <h2>Analysis Tools — Making Sense of Your Data</h2>
+            <p>Extract meaningful insights from your recordings:</p>
+
+            <h3>Frequency Response</h3>
+            <p>Plot the amplitude variation across frequencies after passing through the device. Perfect for verifying EQ curves and filter characteristics.</p>
+
+            <h3>THD (Total Harmonic Distortion)</h3>
+            <p>Measure distortion at each input level. Objectively determine where saturation begins.</p>
+
+            <h3>THD+N</h3>
+            <p>A comprehensive quality metric that includes both distortion and noise components.</p>
+
+            <h3>Impulse Response</h3>
+            <p>Extract impulse responses from sweep data via deconvolution. Create IR data for convolution reverbs or verify phase characteristics.</p>
+
+            <h3>Gain Linearity</h3>
+            <p>Plot output level against input level to evaluate device linearity. Also useful for visualizing compressor knee curves.</p>
+
+            <h2>Professional I/O — No Compromises</h2>
+            <ul>
+                <li><strong>96kHz sample rate</strong>: Captures harmonics beyond the audible range for more precise modeling</li>
+                <li><strong>USB class-compliant</strong>: No special drivers needed. Tested with ZOOM AMS-22 and similar interfaces</li>
+                <li><strong>Low latency</strong>: Minimal delay for real-time monitoring</li>
+            </ul>
+
+            <h2>Debug Console — Instant Troubleshooting</h2>
+            <p>The debug console at the bottom of the screen shows real-time events:</p>
+            <ul>
+                <li>Audio engine initialization, start, and stop</li>
+                <li>Device detection and connection status</li>
+                <li>Start/end timing for each sweep</li>
+                <li>Errors and warnings</li>
+            </ul>
+            <p>When something unexpected happens, the console log provides the clues you need to identify the cause.</p>
+
+            <h2>Summary</h2>
+            <p>SonicDNA Collector is your tool for extracting the "DNA" of audio gear. The combination of logarithmic sweeps and gain staircase recording comprehensively captures everything from frequency response to nonlinear distortion characteristics.</p>
+            <p>For detailed usage instructions, check out the <a href="/SonicDNACollector-support/manual/en/">User Manual</a>.</p>
+
+            <hr>
+            <p>Questions or feedback? Reach out at <strong>sonicdna@hakaru.net</strong>.</p>
+
+            <h2>Related Articles</h2>
+            <ul>
+                <li><a href="/SonicDNACollector-support/blog/en/2026-03-08-analog-gear-frequency-analysis/">How to Measure Your Analog Gear's Frequency Response</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
