@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store Review Monitor - Never Miss a Review Status Change | hakaru</title>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/icon-180.png">
+    <meta property="og:title" content="App Store Review Monitor - GitHub Action">
+    <meta property="og:description" content="Automate App Store Connect review monitoring with GitHub Actions. Get notified on Slack, Discord, Teams, or GitHub Issues when your app is approved or rejected.">
+    <meta property="og:url" content="https://hakaru.github.io/blog/appstore-review-monitor">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="A GitHub Action that monitors App Store Connect review status and notifies you via GitHub Issues, Slack, Discord, or Microsoft Teams.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .back-link:hover { color: #e94560; }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #0969da, #1f6feb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 30px rgba(9, 105, 218, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #58a6ff, #79c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15em;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-blue { background: rgba(9, 105, 218, 0.2); color: #58a6ff; border: 1px solid rgba(9, 105, 218, 0.3); }
+        .badge-green { background: rgba(40, 167, 69, 0.2); color: #56d364; border: 1px solid rgba(40, 167, 69, 0.3); }
+        .badge-purple { background: rgba(139, 92, 246, 0.2); color: #bc8cff; border: 1px solid rgba(139, 92, 246, 0.3); }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 40px 0 16px;
+            color: #fff;
+        }
+
+        p, li {
+            line-height: 1.8;
+            color: #c0c0c0;
+        }
+
+        p { margin-bottom: 16px; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #56d364;
+            font-weight: bold;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-card .emoji {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+
+        .feature-card h3 {
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .feature-card p {
+            font-size: 0.9em;
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .code-block {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0 24px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .code-block code {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.85em;
+            color: #c9d1d9;
+            white-space: pre;
+        }
+
+        .code-label {
+            font-size: 0.75em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+        }
+
+        .status-table th, .status-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .status-table th {
+            color: #888;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-table td { color: #c0c0c0; }
+
+        .notify-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 20px 0 30px;
+        }
+
+        .notify-card {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .notify-card .icon { font-size: 2em; margin-bottom: 8px; }
+        .notify-card .name { font-weight: 600; color: #fff; font-size: 0.95em; }
+        .notify-card .note { font-size: 0.8em; color: #777; margin-top: 4px; }
+
+        .cta {
+            text-align: center;
+            margin: 50px 0 30px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cta h2 { margin-top: 0; }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: white;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+        .comparison {
+            margin: 24px 0;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .comparison-card.before { border-color: rgba(220, 53, 69, 0.3); }
+        .comparison-card.after { border-color: rgba(40, 167, 69, 0.3); }
+
+        .comparison-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .comparison-card.before .comparison-label { color: #f85149; }
+        .comparison-card.after .comparison-label { color: #56d364; }
+
+        .comparison-card p {
+            font-size: 0.9em;
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        footer a { color: #666; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6em; }
+            .comparison-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">&larr; hakaru Apps</a>
+
+        <div class="hero">
+            <div class="hero-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+            </div>
+            <h1>App Store Review Monitor</h1>
+            <p>A GitHub Action that watches your App Store review status and notifies you the moment something changes.</p>
+            <div class="badge-row">
+                <span class="badge badge-blue">GitHub Action</span>
+                <span class="badge badge-green">Open Source</span>
+                <span class="badge badge-purple">Free</span>
+            </div>
+        </div>
+
+        <h2>The Problem</h2>
+        <div class="comparison">
+            <div class="comparison-row">
+                <div class="comparison-card before">
+                    <div class="comparison-label">Before</div>
+                    <p>Manually refreshing App Store Connect every few hours to check review status. Missing rejections for hours or days.</p>
+                </div>
+                <div class="comparison-card after">
+                    <div class="comparison-label">After</div>
+                    <p>Automated monitoring every 3 hours. Instant notifications on Slack, Discord, Teams, or GitHub Issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="emoji">🔍</div>
+                <h3>Auto Monitoring</h3>
+                <p>Checks review status every 3 hours via App Store Connect API</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🚨</div>
+                <h3>Rejection Alerts</h3>
+                <p>Instant notification with rejection details when your app is rejected</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🎉</div>
+                <h3>Approval Alerts</h3>
+                <p>Celebrate the moment your app is approved for distribution</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">📡</div>
+                <h3>Multi-Channel</h3>
+                <p>GitHub Issues, Slack, Discord, and Microsoft Teams</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">⚡</div>
+                <h3>Zero Dependencies</h3>
+                <p>No external services needed. Runs entirely on GitHub Actions</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🔒</div>
+                <h3>Secure</h3>
+                <p>Credentials stored in GitHub Secrets. No third-party access</p>
+            </div>
+        </div>
+
+        <h2>Notification Channels</h2>
+        <p>Choose one or combine multiple channels. All are optional — GitHub Issues are always created.</p>
+        <div class="notify-grid">
+            <div class="notify-card">
+                <div class="icon">📋</div>
+                <div class="name">GitHub Issues</div>
+                <div class="note">Always enabled</div>
+            </div>
+            <div class="notify-card">
+                <div class="icon">💬</div>
+                <div class="name">Slack</div>
+                <div class="note">Webhook URL</div>
+            </div>
+            <div class="notify-card">
+                <div class="icon">🎮</div>
+                <div class="name">Discord</div>
+                <div class="note">Webhook URL</div>
+            </div>
+            <div class="notify-card">
+                <div class="icon">👥</div>
+                <div class="name">Teams</div>
+                <div class="note">Webhook URL</div>
+            </div>
+        </div>
+
+        <h2>Status Tracking</h2>
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Indicator</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Waiting for Review</td><td>🕐</td><td>Status reported</td></tr>
+                <tr><td>In Review</td><td>🔍</td><td>Status reported</td></tr>
+                <tr><td>Rejected</td><td>🚨</td><td>Alert + rejection details</td></tr>
+                <tr><td>Approved</td><td>🎉</td><td>Celebration notification</td></tr>
+                <tr><td>Processing</td><td>⏳</td><td>Status reported</td></tr>
+                <tr><td>Pending Release</td><td>📦</td><td>Status reported</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Quick Start</h2>
+        <p>Get up and running in 3 steps:</p>
+
+        <h3 style="color: #58a6ff; font-size: 1.1em; margin: 20px 0 8px;">1. Create an API Key</h3>
+        <p>Go to <strong>App Store Connect &gt; Users and Access &gt; Integrations</strong> and generate a Team Key. Download the <code>.p8</code> file.</p>
+
+        <h3 style="color: #58a6ff; font-size: 1.1em; margin: 20px 0 8px;">2. Add Secrets</h3>
+        <div class="code-block">
+            <div class="code-label">Terminal</div>
+            <code>gh secret set ASC_KEY_ID --body "YOUR_KEY_ID"
+gh secret set ASC_ISSUER_ID --body "YOUR_ISSUER_ID"
+gh secret set ASC_PRIVATE_KEY &lt; AuthKey_XXXXXXXX.p8
+gh secret set APP_STORE_APP_ID --body "YOUR_APP_ID"</code>
+        </div>
+
+        <h3 style="color: #58a6ff; font-size: 1.1em; margin: 20px 0 8px;">3. Add Workflow</h3>
+        <div class="code-block">
+            <div class="code-label">.github/workflows/review-monitor.yml</div>
+            <code>name: App Store Review Monitor
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: hakaru/appstore-review-monitor@v1
+        with:
+          app-id: ${{ secrets.APP_STORE_APP_ID }}
+          asc-key-id: ${{ secrets.ASC_KEY_ID }}
+          asc-issuer-id: ${{ secrets.ASC_ISSUER_ID }}
+          asc-private-key: ${{ secrets.ASC_PRIVATE_KEY }}
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK }}     # optional
+          discord-webhook-url: ${{ secrets.DISCORD_WEBHOOK }} # optional
+          teams-webhook-url: ${{ secrets.TEAMS_WEBHOOK }}     # optional</code>
+        </div>
+
+        <div class="cta">
+            <h2>Start Monitoring Now</h2>
+            <p>Free, open source, and takes less than 5 minutes to set up.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/marketplace/actions/app-store-review-monitor" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+                    GitHub Marketplace
+                </a>
+                <a href="https://github.com/hakaru/appstore-review-monitor" class="btn btn-secondary">
+                    View Source
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru</p>
+            <p style="margin-top: 8px;">
+                <a href="/">hakaru Apps</a>
+                <span style="margin: 0 8px;">|</span>
+                <a href="https://github.com/hakaru">GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
