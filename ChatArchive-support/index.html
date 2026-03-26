@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatArchive サポート | LINE チャット履歴バックアップ</title>
+    <meta name="description" content="ChatArchive - MacでLINEのチャット履歴を安全にバックアップ・閲覧できるmacOSアプリ。完全ローカル処理でプライバシーを保護。">
+    <meta property="og:title" content="ChatArchive サポート">
+    <meta property="og:description" content="MacでLINEのチャット履歴を安全にバックアップ・閲覧できるmacOSアプリ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/ChatArchive-support/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px; padding: 6px 14px; font-size: 0.85em; color: #b0b0b0;
+            margin: 12px 0 20px;
+        }
+        .hero-badge svg { width: 16px; height: 16px; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px; }
+        .btn-download, .btn-license {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: 0.95em; transition: all 0.3s;
+        }
+        .btn-download {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: #fff; box-shadow: 0 4px 15px rgba(233,69,96,0.3);
+        }
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(233,69,96,0.4); }
+        .btn-license {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0;
+        }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; margin: 24px 0;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .feature-icon { font-size: 2em; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 1em; color: #fff; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.9em; color: #a0a0a0; margin: 0; }
+        .steps { display: flex; flex-direction: column; gap: 20px; margin: 24px 0; }
+        .step {
+            display: flex; gap: 20px; align-items: flex-start;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px;
+        }
+        .step-number {
+            width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1em; color: #fff;
+        }
+        .step-content h3 { color: #fff; margin-bottom: 6px; font-size: 1em; }
+        .step-content p { color: #a0a0a0; font-size: 0.9em; margin: 0; }
+        .faq-list { margin: 24px 0; }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.08); padding: 16px 0;
+        }
+        .faq-item summary {
+            cursor: pointer; color: #e0e0e0; font-weight: 500;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; color: #e94560; font-size: 1.2em; }
+        .faq-item[open] summary::after { content: '−'; }
+        .faq-answer { padding-top: 12px; color: #a0a0a0; font-size: 0.95em; }
+        .legal-content {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 24px;
+        }
+        .legal-content h3 { color: #fff; margin-bottom: 8px; }
+        .legal-content p { color: #a0a0a0; margin-bottom: 16px; }
+        .legal-content a { color: #e94560; text-decoration: none; }
+        .contact-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 10px; text-decoration: none;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0; font-weight: 600; transition: all 0.3s; margin-top: 16px;
+        }
+        .contact-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .section-note {
+            font-size: 0.85em; color: #888; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+            padding: 10px 14px; margin-bottom: 20px;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← hakaru Apps</a>
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+            <h1>ChatArchive</h1>
+            <p>LINE Chat Backup &amp; Archive Tool for Mac</p>
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                macOS 14.0+
+            </div>
+            <div class="hero-buttons">
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    ダウンロード
+                </a>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    ライセンスを購入
+                </a>
+            </div>
+        </div>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/" class="active">ホーム</a>
+            <a href="/ChatArchive-support/privacy.html">プライバシー</a>
+            <a href="/ChatArchive-support/terms.html">利用規約</a>
+            <a href="/ChatArchive-support/blog/">ブログ</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/th/">TH</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+        <div class="content">
+            <h2 id="features">主な機能</h2>
+            <p class="section-note">iPhone版LINEとMacで動作します。Android版LINEは対象外です。</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F513;</div>
+                    <h3>暗号化DB復号</h3>
+                    <p>LINEの暗号化されたデータベースを自動的に復号し、チャット履歴を読み取ります。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F5B1;</div>
+                    <h3>ワンクリック自動読み込み</h3>
+                    <p>面倒な設定は不要。ワンクリックでチャットデータを自動検出・読み込みします。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F4AC;</div>
+                    <h3>チャットUI</h3>
+                    <p>見やすいチャット画面で、馴染みのある操作感で履歴を閲覧できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F50D;</div>
+                    <h3>全文検索</h3>
+                    <p>すべてのチャット履歴を横断的に全文検索。過去のメッセージをすぐに見つけられます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F512;</div>
+                    <h3>完全ローカル処理</h3>
+                    <p>すべてのデータ処理はデバイス上で完結。ネットワーク通信は一切行いません。</p>
+                </div>
+            </div>
+
+            <h2 id="howto">使い方</h2>
+            <p>かんたん3ステップでチャット履歴を閲覧</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>アプリを起動</h3>
+                        <p>ChatArchiveを起動します。Mac版LINEがインストールされていることを確認してください。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>「読み込み」をクリック</h3>
+                        <p>メイン画面の読み込みボタンをクリック。チャットデータベースを自動検出して復号・読み込みを開始します。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>チャット履歴を閲覧</h3>
+                        <p>読み込みが完了したら、チャットUIで履歴を閲覧・検索できます。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="faq">よくある質問</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>「データが見つかりません」と表示されます</summary>
+                    <div class="faq-answer">
+                        <p>Mac版LINEがインストールされ、一度以上ログインした状態であることを確認してください。チャットデータベースはログイン後に作成されます。</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>「アクセス権限が必要です」と表示されます</summary>
+                    <div class="faq-answer">
+                        <p>macOSのセキュリティ設定で「フルディスクアクセス」の許可が必要な場合があります。システム設定 &gt; プライバシーとセキュリティ &gt; フルディスクアクセス から ChatArchive を追加してください。</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>データは安全ですか？</summary>
+                    <div class="faq-answer">
+                        <p>はい。ChatArchiveはすべてのデータ処理をデバイス上でローカルに行います。ネットワーク通信は一切行わず、外部サーバーにデータを送信することはありません。暗号化キーもメモリ上でのみ使用され、ディスクには保存されません。</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>どのようなメッセージ形式に対応していますか？</summary>
+                    <div class="faq-answer">
+                        <p>テキストメッセージ、画像、スタンプ、動画、音声メッセージ、ファイル、位置情報、連絡先などの主要なメッセージ形式に対応しています。</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>画像やスタンプは表示されますか？</summary>
+                    <div class="faq-answer">
+                        <p>LINEアプリにキャッシュされている画像やスタンプは表示可能です。キャッシュが削除されている場合、サムネイルまたはプレースホルダーが表示されます。</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>インターネット接続は必要ですか？</summary>
+                    <div class="faq-answer">
+                        <p>いいえ、完全にオフラインで動作します。ChatArchiveはネットワーク通信を一切行いません。インターネットに接続していない環境でもすべての機能を利用できます。</p>
+                    </div>
+                </details>
+            </div>
+
+            <h2 id="privacy">プライバシーポリシー（概要）</h2>
+            <div class="legal-content">
+                <h3>データ収集について</h3>
+                <p>ChatArchiveは、ユーザーの個人情報やチャットデータを一切収集しません。すべてのデータ処理はお使いのデバイス上でローカルに行われます。</p>
+                <h3>ネットワーク通信</h3>
+                <p>本アプリはネットワーク通信を一切行いません。インターネット接続なしで完全に動作します。</p>
+                <h3>第三者提供</h3>
+                <p>ユーザーのデータを第三者に提供・共有・販売することはありません。</p>
+                <p><a href="/ChatArchive-support/privacy.html">プライバシーポリシー全文はこちら →</a></p>
+            </div>
+
+            <h2 id="contact">お問い合わせ</h2>
+            <p>ご質問・ご要望がございましたらお気軽にお問い合わせください。</p>
+            <a href="https://forms.gle/PLACEHOLDER" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                お問い合わせフォーム
+            </a>
+
+            <h2>リンク</h2>
+            <ul>
+                <li><a href="/ChatArchive-support/privacy.html">プライバシーポリシー</a></li>
+                <li><a href="/ChatArchive-support/terms.html">利用規約</a></li>
+                <li><a href="/ChatArchive-support/blog/">ブログ</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

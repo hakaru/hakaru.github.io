@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - ChatArchive</title>
+    <meta name="description" content="Tips and techniques for using ChatArchive and making the most of your chat history.">
+    <meta property="og:type" content="website">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 80px; height: 80px; border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .blog-card {
+            display: block; text-decoration: none;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+            transition: all 0.3s;
+        }
+        .blog-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(233,69,96,0.3); transform: translateY(-2px); }
+        .blog-card h2 { font-size: 1.15em; color: #fff; margin-bottom: 10px; line-height: 1.4; }
+        .blog-card p { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .blog-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.85em; color: #666; }
+        .blog-card-tag {
+            background: rgba(233,69,96,0.15); color: #e94560;
+            padding: 2px 10px; border-radius: 20px; font-size: 0.85em;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/ChatArchive-support/en/" class="back-link">← ChatArchive Support</a>
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+            <h1>Blog</h1>
+            <p>Tips and techniques for using ChatArchive and making the most of your chat history</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/en/">Home</a>
+            <a href="/ChatArchive-support/en/privacy.html">Privacy</a>
+            <a href="/ChatArchive-support/en/terms.html">Terms</a>
+            <a href="/ChatArchive-support/en/blog/" class="active">Blog</a>
+            <a href="/ChatArchive-support/">JA</a>
+            <a href="/ChatArchive-support/th/">TH</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+
+        <a href="/ChatArchive-support/en/blog/line-backup-complete-guide.html" class="blog-card">
+            <h2>The Complete Guide to Backing Up All LINE Chat History on Mac</h2>
+            <p>Learn how to back up all your LINE chat history on Mac at once. Compare standard export vs ChatArchive bulk backup.</p>
+            <div class="blog-card-meta">
+                <span class="blog-card-tag">Backup</span>
+                <span class="blog-card-tag">Mac</span>
+                March 8, 2026
+            </div>
+        </a>
+
+        <a href="/ChatArchive-support/en/blog/line-export-all-chats.html" class="blog-card">
+            <h2>How to Export All LINE Chat History to Text Files</h2>
+            <p>LINE's standard export works one chat at a time. Learn how to batch-export all your chat history to text files using both LINE's built-in feature and ChatArchive.</p>
+            <div class="blog-card-meta">
+                <span class="blog-card-tag">Backup</span>
+                <span class="blog-card-tag">LINE</span>
+                February 22, 2025
+            </div>
+        </a>
+
+        <a href="/ChatArchive-support/en/blog/line-backup-notebooklm.html" class="blog-card">
+            <h2>How to Upload LINE Chat History to NotebookLM for AI Analysis</h2>
+            <p>A complete guide to loading your LINE chat history into Google's NotebookLM for AI-powered summarization, search, and analysis. Perfect for revisiting memories and organizing information.</p>
+            <div class="blog-card-meta">
+                <span class="blog-card-tag">Tips</span>
+                <span class="blog-card-tag">NotebookLM</span>
+                February 22, 2025
+            </div>
+        </a>
+
+        <a href="/ChatArchive-support/en/blog/chatarchive-getting-started.html" class="blog-card">
+            <h2>How to Use ChatArchive — Complete Guide from Installation to Advanced Usage</h2>
+            <p>A complete guide to ChatArchive: from download and installation to importing, browsing, searching, and exporting chat history in just 3 steps.</p>
+            <div class="blog-card-meta">
+                <span class="blog-card-tag">How to Use</span>
+                February 22, 2025
+            </div>
+        </a>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

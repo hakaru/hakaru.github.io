@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>วิธีอัปโหลดประวัติแชท LINE ไปยัง NotebookLM เพื่อวิเคราะห์ด้วย AI - ChatArchive</title>
+    <meta name="description" content="วิธีส่งออกประวัติแชท LINE เป็นไฟล์ข้อความ แล้วอัปโหลดไปยัง Google NotebookLM เพื่อให้ AI วิเคราะห์ สรุป และตอบคำถาม เหมาะสำหรับรำลึกความทรงจำและจัดระเบียบข้อมูล">
+    <meta property="og:title" content="วิธีอัปโหลดประวัติแชท LINE ไปยัง NotebookLM เพื่อวิเคราะห์ด้วย AI">
+    <meta property="og:description" content="คู่มือฉบับสมบูรณ์สำหรับการโหลดประวัติแชท LINE เข้าสู่ NotebookLM เพื่อให้ AI สรุป ค้นหา และวิเคราะห์">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "วิธีอัปโหลดประวัติแชท LINE ไปยัง NotebookLM เพื่อวิเคราะห์ด้วย AI",
+        "description": "คู่มือฉบับสมบูรณ์สำหรับการโหลดประวัติแชท LINE เข้าสู่ NotebookLM เพื่อให้ AI สรุป ค้นหา และวิเคราะห์",
+        "datePublished": "2025-02-22",
+        "author": { "@type": "Organization", "name": "ChatArchive" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 16px; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 32px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 12px; }
+        .article-meta { color: #888; font-size: 0.9em; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .article-tag { background: rgba(233,69,96,0.15); color: #e94560; padding: 2px 10px; border-radius: 20px; font-size: 0.85em; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin: 32px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin-bottom: 12px; }
+        .toc ol { margin-left: 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; transition: color 0.3s; }
+        .toc a:hover { color: #e94560; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .blog-step { display: flex; gap: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+        .blog-step-number { width: 36px; height: 36px; min-width: 36px; background: linear-gradient(135deg, #e94560, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1em; }
+        .blog-step-body h3 { font-size: 1em; color: #fff; margin: 0 0 8px; }
+        .blog-step-body p { margin-bottom: 0; font-size: 0.95em; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box p { margin-bottom: 0; color: inherit; }
+        .info-box strong { color: inherit; }
+        .feature-list { list-style: none; margin: 0 0 16px 0 !important; }
+        .feature-list li { padding-left: 24px; position: relative; margin-bottom: 8px; }
+        .feature-list li::before { content: '✓'; color: #e94560; position: absolute; left: 0; font-weight: 700; }
+        .prompt-example { background: rgba(255,255,255,0.04); border-left: 3px solid #e94560; padding: 12px 16px; margin-bottom: 8px; font-family: monospace; font-size: 0.9em; color: #e0e0e0; border-radius: 0 8px 8px 0; }
+        .code-sample { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px; font-family: monospace; font-size: 0.85em; color: #b0e0b0; white-space: pre-line; margin-bottom: 16px; overflow-x: auto; }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { font-size: 1.3em; color: #fff; margin-bottom: 12px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; transition: opacity 0.3s; }
+        .btn-download:hover { opacity: 0.85; text-decoration: none; }
+        .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; transition: all 0.3s; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } .cta-buttons { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/ChatArchive-support/th/blog/" class="back-link">← บล็อก</a>
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+        </div>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/th/">หน้าหลัก</a>
+            <a href="/ChatArchive-support/th/privacy.html">ความเป็นส่วนตัว</a>
+            <a href="/ChatArchive-support/th/terms.html">ข้อกำหนด</a>
+            <a href="/ChatArchive-support/th/blog/" class="active">บล็อก</a>
+            <a href="/ChatArchive-support/">JA</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+
+        <div class="article-header">
+            <h1>วิธีอัปโหลดประวัติแชท LINE ไปยัง NotebookLM เพื่อวิเคราะห์ด้วย AI</h1>
+            <div class="article-meta">
+                <span class="article-tag">เคล็ดลับ</span>
+                <span class="article-tag">NotebookLM</span>
+                <span>22 กุมภาพันธ์ 2025</span>
+                <span>เวลาอ่าน: 8 นาที</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>คุณปล่อยให้ประวัติแชท LINE หลายปีนอนเฉยๆ อยู่หรือเปล่า? หากอัปโหลดไปยัง <strong>NotebookLM</strong> ของ Google AI จะช่วยสรุป วิเคราะห์ และค้นหาข้อมูลจากประวัติแชทจำนวนมหาศาลให้คุณได้</p>
+            <p>บทความนี้จะอธิบายขั้นตอนการส่งออกประวัติแชทจาก LINE แล้วนำเข้าสู่ NotebookLM เพื่อให้ AI วิเคราะห์</p>
+
+            <nav class="toc">
+                <h2>สารบัญ</h2>
+                <ol>
+                    <li><a href="#what">NotebookLM คืออะไร</a></li>
+                    <li><a href="#what-can">ทำอะไรได้บ้าง &#8212; กรณีการใช้งาน</a></li>
+                    <li><a href="#prepare">สิ่งที่ต้องเตรียม</a></li>
+                    <li><a href="#export-line">ขั้นตอนที่ 1: ส่งออกประวัติแชทจาก LINE</a></li>
+                    <li><a href="#export-chatarchive">ส่งออกด้วย ChatArchive</a></li>
+                    <li><a href="#upload">ขั้นตอนที่ 2: อัปโหลดไปยัง NotebookLM</a></li>
+                    <li><a href="#analyze">ขั้นตอนที่ 3: ให้ AI ตอบคำถามและวิเคราะห์</a></li>
+                    <li><a href="#prompts">ตัวอย่างพรอมต์ที่ใช้ได้</a></li>
+                    <li><a href="#privacy-note">ข้อควรระวังด้านความเป็นส่วนตัว</a></li>
+                    <li><a href="#tips">เคล็ดลับเพิ่มเติม</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="what">1. NotebookLM คืออะไร</h2>
+            <p><strong>NotebookLM</strong> เป็นเครื่องมือวิจัยและจดบันทึกที่ขับเคลื่อนด้วย AI จาก Google เมื่ออัปโหลดเอกสาร เช่น PDF หรือไฟล์ข้อความ AI จะเข้าใจเนื้อหาและช่วยสรุป ตอบคำถาม และวิเคราะห์ให้</p>
+
+            <ul class="feature-list">
+                <li>ตอบคำถามจากเนื้อหาที่อัปโหลดเท่านั้น (ลดปัญหา Hallucination)</li>
+                <li>รองรับหลายรูปแบบ ทั้งไฟล์ข้อความ (.txt), PDF, Google Docs และเว็บเพจ</li>
+                <li>รองรับสูงสุด 500,000 คำ / 200MB ต่อไฟล์</li>
+                <li>แผนฟรีอัปโหลดได้สูงสุด 50 ไฟล์</li>
+                <li>ใช้งานได้ทันทีเมื่อมีบัญชี Google</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>จุดเด่น:</strong> NotebookLM ตอบคำถามจากเอกสารที่อัปโหลด "เท่านั้น" ต่างจากแชทบอท AI ทั่วไปที่อาจผสมข้อมูลจากแหล่งอื่น จึงเหมาะกับการวิเคราะห์ประวัติแชทเป็นพิเศษ</p>
+            </div>
+
+            <h2 id="what-can">2. ทำอะไรได้บ้าง &#8212; กรณีการใช้งาน</h2>
+            <p>เมื่อนำเข้าประวัติแชท LINE เข้าสู่ NotebookLM แล้ว คุณสามารถทำสิ่งเหล่านี้ได้:</p>
+
+            <h3>ย้อนรำลึกความทรงจำ</h3>
+            <p>"ช่วงหน้าร้อนปี 2023 เราคุยเรื่องอะไรกัน?" "แผนเที่ยวตกลงกันตอนไหน?" AI จะค้นหาหัวข้อที่ต้องการจากบทสนทนามากมายให้คุณ</p>
+
+            <h3>จัดระเบียบและค้นพบข้อมูล</h3>
+            <p>"รวบรวมชื่อร้านอาหารที่แชร์กันมาทั้งหมด" "สรุปเรื่องที่คุยกันตอนย้ายบ้าน" สามารถจัดโครงสร้างข้อมูลที่กระจัดกระจายได้</p>
+
+            <h3>สรุปบทสนทนา</h3>
+            <p>ดึงประเด็นสำคัญจากแชทกลุ่มที่ยาว แค่พิมพ์ "สรุปบทสนทนาเดือนที่แล้ว" ก็ข้ามข้อความที่ไม่จำเป็นต้องอ่านได้</p>
+
+            <h3>วิเคราะห์อารมณ์และแนวโน้ม</h3>
+            <p>"โทนของบทสนทนาเปลี่ยนไปตามช่วงเวลาไหม?" "มีรูปแบบคำที่ใช้บ่อยอะไรบ้าง?" สามารถวิเคราะห์ในเชิงลึกได้ด้วย</p>
+
+            <h2 id="prepare">3. สิ่งที่ต้องเตรียม</h2>
+            <ul>
+                <li><strong>บัญชี Google</strong> (จำเป็นสำหรับการใช้ NotebookLM)</li>
+                <li><strong>LINE</strong> ที่ติดตั้งบนสมาร์ทโฟนหรือ PC</li>
+                <li><strong>เบราว์เซอร์บน PC</strong> (NotebookLM ใช้งานผ่านเบราว์เซอร์บน PC)</li>
+            </ul>
+
+            <h2 id="export-line">4. ขั้นตอนที่ 1: ส่งออกประวัติแชทจาก LINE</h2>
+            <p>LINE มีฟีเจอร์ส่งออกประวัติแชทเป็นไฟล์ข้อความ (.txt) ในตัว</p>
+
+            <h3>กรณี iPhone / Android</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิดห้องแชท</h3>
+                    <p>เปิดห้องแชทที่ต้องการส่งออก</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>เลือก "ส่งประวัติแชท" จากเมนู</h3>
+                    <p>แตะ <strong>&#8801;</strong> (เมนู) มุมขวาบน &gt; <strong>อื่นๆ</strong> &gt; <strong>ส่งประวัติแชท</strong></p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>เลือกปลายทาง</h3>
+                    <p>เลือกวิธีที่สะดวกในการส่งไปยัง PC เช่น "บันทึกลงไฟล์" หรือ "ส่งทางอีเมล" AirDrop, Google Drive หรือแนบอีเมลจะสะดวกที่สุด</p>
+                </div>
+            </div>
+
+            <div class="info-box note">
+                <p><strong>รูปแบบการส่งออก:</strong> ประวัติแชท LINE จะถูกส่งออกเป็น<strong>ไฟล์ข้อความ (.txt)</strong> บันทึกวันที่ เวลา ชื่อผู้ส่ง และข้อความตามลำดับเวลา ไม่รวมรูปภาพและวิดีโอ</p>
+            </div>
+
+            <h3>กรณี LINE บน PC (Windows / Mac)</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิดห้องแชท</h3>
+                    <p>เปิดห้องแชทที่ต้องการส่งออกใน LINE บน PC</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>เลือก "บันทึกแชท"</h3>
+                    <p>คลิก <strong>&#8801;</strong> (เมนู) มุมขวาบน &gt; <strong>บันทึกแชท</strong> แล้วเลือกตำแหน่งที่จะบันทึก</p>
+                </div>
+            </div>
+
+            <h3>ตัวอย่างไฟล์ที่ส่งออก</h3>
+            <p>ไฟล์ข้อความที่ส่งออกจะมีรูปแบบดังนี้:</p>
+
+            <div class="code-sample">[LINE] Aさんとのトーク履歴
+保存日時：2025/02/22 15:30
+
+2024/01/15 Mon
+10:23	Aさん	おはよう！今日のランチどうする？
+10:24	自分	パスタがいいな
+10:25	Aさん	いいね！駅前の新しいイタリアンは？
+10:26	自分	行ってみよう！12時に集合で
+10:27	Aさん	了解！</div>
+
+            <h2 id="export-chatarchive">5. ส่งออกด้วย ChatArchive</h2>
+            <p>การส่งออกมาตรฐานของ LINE ต้อง<strong>ทำทีละห้องแชท</strong> หากมีห้องแชทจำนวนมาก <strong>ChatArchive</strong> ช่วยให้สำรองข้อมูลแชททั้งหมดได้ในครั้งเดียว</p>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>นำเข้าข้อมูล LINE ด้วย ChatArchive</h3>
+                    <p>เปิด ChatArchive แล้วคลิก "นำเข้า" จะตรวจจับฐานข้อมูล LINE โดยอัตโนมัติและนำเข้าทั้งหมดในครั้งเดียว</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>ส่งออกในรูปแบบ .chatarchive</h3>
+                    <p>ใช้ฟีเจอร์ส่งออกเพื่อบันทึกประวัติแชททั้งหมด สามารถแปลงเป็นข้อความเพื่อนำเข้า NotebookLM ได้ตามต้องการ</p>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <p><strong>ข้อดีของ ChatArchive:</strong> สำรองข้อมูลได้ทุกห้องแชทในครั้งเดียว แม้มีมากกว่า 100 ห้องก็เสร็จในการดำเนินการเดียว ประมวลผลภายในเครื่องทั้งหมดจึงปลอดภัยเรื่องความเป็นส่วนตัว<br><a href="/ChatArchive-support/th/blog/chatarchive-getting-started.html">ดูคู่มือการใช้งาน ChatArchive ฉบับเต็มที่นี่</a></p>
+            </div>
+
+            <h2 id="upload">6. ขั้นตอนที่ 2: อัปโหลดไปยัง NotebookLM</h2>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิด NotebookLM</h3>
+                    <p>เข้าไปที่ <strong>notebooklm.google.com</strong> ในเบราว์เซอร์ แล้วเข้าสู่ระบบด้วยบัญชี Google</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>สร้าง Notebook ใหม่</h3>
+                    <p>คลิก "Notebook ใหม่" เพื่อสร้าง Notebook ใหม่ ตั้งชื่อให้จำง่าย เช่น "วิเคราะห์แชท LINE"</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>อัปโหลดแหล่งข้อมูล</h3>
+                    <p>คลิก "เพิ่มแหล่งข้อมูล" แล้วเลือก <strong>"อัปโหลดไฟล์"</strong> จากนั้นอัปโหลดไฟล์ .txt ที่ส่งออกไว้ก่อนหน้า</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">4</div>
+                <div class="blog-step-body">
+                    <h3>อัปโหลดหลายไฟล์ได้</h3>
+                    <p>หากส่งออกแยกตามห้องแชท สามารถอัปโหลดไฟล์ .txt หลายไฟล์พร้อมกันได้ แผนฟรีเพิ่มได้สูงสุด <strong>50 ไฟล์</strong></p>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <p><strong>จำกัดขนาดไฟล์:</strong> รองรับสูงสุด <strong>200MB</strong> และ <strong>500,000 คำ</strong> ต่อไฟล์ ประวัติแชทหลายปีมักอยู่ในขนาดนี้ แต่หากเกินขีดจำกัด ให้แบ่งไฟล์ตามช่วงเวลา</p>
+            </div>
+
+            <h2 id="analyze">7. ขั้นตอนที่ 3: ให้ AI ตอบคำถามและวิเคราะห์</h2>
+            <p>เมื่ออัปโหลดเสร็จ NotebookLM จะวิเคราะห์แหล่งข้อมูล ถามคำถามด้วยภาษาธรรมชาติในช่องแชทด้านล่าง แล้ว AI จะตอบให้ทันที</p>
+
+            <h3>สรุปอัตโนมัติจาก NotebookLM</h3>
+            <p>เมื่ออัปโหลดแหล่งข้อมูล NotebookLM จะสร้าง<strong>ภาพรวมของแหล่งข้อมูล</strong>โดยอัตโนมัติ แค่นี้ก็เข้าใจภาพรวมของประวัติแชทได้แล้ว</p>
+
+            <h3>คำตอบพร้อมการอ้างอิง</h3>
+            <p>คำตอบของ NotebookLM จะมี<strong>การอ้างอิงถึงแหล่งข้อมูล</strong>แนบมาด้วย ทำให้ตรวจสอบได้ว่าคำตอบของ AI อิงจากข้อความใด ง่ายต่อการยืนยันข้อเท็จจริง</p>
+
+            <h2 id="prompts">8. ตัวอย่างพรอมต์ที่ใช้ได้</h2>
+            <p>ตัวอย่างพรอมต์ที่เป็นประโยชน์สำหรับใช้กับ NotebookLM คัดลอกไปใช้ได้เลย</p>
+
+            <h3>สรุปและย้อนมอง</h3>
+            <div class="prompt-example">สรุปบทสนทนาทั้งหมดนี้ตามลำดับเวลา</div>
+            <div class="prompt-example">หัวข้อที่คุยกันมากที่สุดในปี 2024 คืออะไร?</div>
+            <div class="prompt-example">ลิสต์หัวข้อหลักของบทสนทนาในรอบหนึ่งปีที่ผ่านมา</div>
+
+            <h3>ค้นหาข้อมูล</h3>
+            <div class="prompt-example">รวบรวมชื่อร้านอาหารทั้งหมดที่แชร์กันในบทสนทนา</div>
+            <div class="prompt-example">สรุปบทสนทนาที่เกี่ยวกับการท่องเที่ยว</div>
+            <div class="prompt-example">ลิสต์ข้อความที่เกี่ยวกับนัดหมายหรือตารางเวลาตามลำดับวันที่</div>
+
+            <h3>วิเคราะห์</h3>
+            <div class="prompt-example">หัวข้อที่ปรากฏบ่อยที่สุดในบทสนทนาคืออะไร?</div>
+            <div class="prompt-example">โทนและบรรยากาศของบทสนทนาเปลี่ยนไปตามช่วงเวลาหรือไม่?</div>
+            <div class="prompt-example">วิเคราะห์ลักษณะเฉพาะของผู้เข้าร่วมบทสนทนาแต่ละคน</div>
+
+            <h3>การใช้งานจริง</h3>
+            <div class="prompt-example">ลิสต์ URL ทั้งหมดที่แชร์กันในบทสนทนา</div>
+            <div class="prompt-example">รวบรวมบทสนทนาทั้งหมดที่เกี่ยวกับการย้ายบ้าน แล้วสรุปตามลำดับเวลา</div>
+            <div class="prompt-example">สรุปข้อมูลสูตรอาหารหรือร้านอาหารที่พูดถึงในบทสนทนา</div>
+
+            <h2 id="privacy-note">9. ข้อควรระวังด้านความเป็นส่วนตัว</h2>
+
+            <div class="info-box warning">
+                <p><strong>สำคัญ:</strong> ประวัติแชทมีข้อมูลส่วนบุคคล โปรดทำความเข้าใจประเด็นต่อไปนี้ก่อนใช้งาน</p>
+            </div>
+
+            <h3>การจัดการข้อมูลของ NotebookLM</h3>
+            <ul>
+                <li>ข้อมูลถูกประมวลผลตามนโยบายความเป็นส่วนตัวของ Google</li>
+                <li>ข้อมูลที่อัปโหลดผูกกับบัญชีของคุณ ไม่เปิดเผยต่อผู้ใช้คนอื่น</li>
+                <li>หากลบ Notebook ข้อมูลก็จะถูกลบด้วย</li>
+            </ul>
+
+            <h3>สิ่งที่ควรทำก่อนอัปโหลด</h3>
+            <ul>
+                <li><strong>ขอความยินยอม:</strong> หากเป็นไปได้ ควรแจ้งคู่สนทนาเรื่องการนำบทสนทนาไปให้ AI วิเคราะห์</li>
+                <li><strong>ตรวจสอบข้อมูลส่วนบุคคล:</strong> ตรวจสอบว่าไม่มีข้อมูลอ่อนไหว เช่น ที่อยู่ เบอร์โทรศัพท์ รหัสผ่าน</li>
+                <li><strong>จำกัดวัตถุประสงค์:</strong> ใช้เพื่อทบทวนและจัดระเบียบส่วนตัวเท่านั้น ไม่ควรเปิดเผยเนื้อหาบทสนทนาให้บุคคลที่สาม</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>หากต้องการวิเคราะห์แบบออฟไลน์:</strong> สำหรับผู้ที่ไม่ต้องการอัปโหลดข้อมูลขึ้นคลาวด์ สามารถใช้ฟีเจอร์ค้นหาแบบเต็มข้อความของ <strong>ChatArchive</strong> เพื่อค้นหาและเรียกดูประวัติแชทภายในเครื่องได้อย่างสมบูรณ์</p>
+            </div>
+
+            <h2 id="tips">10. เคล็ดลับเพิ่มเติม</h2>
+
+            <h3>วิเคราะห์แชทกลุ่ม</h3>
+            <p>สามารถส่งออกแชทกลุ่มได้ด้วยวิธีเดียวกัน ลองถามว่า "วิเคราะห์แนวโน้มการพูดของสมาชิกแต่ละคน" จะเห็นรูปแบบการสื่อสารในกลุ่มได้</p>
+
+            <h3>วิเคราะห์ข้ามหลายห้องแชท</h3>
+            <p>อัปโหลดไฟล์ข้อความจากหลายห้องแชทลงใน Notebook เดียวกัน จะค้นหาและวิเคราะห์ข้อมูลข้ามห้องแชทได้</p>
+
+            <h3>ใช้ Audio Overview (สรุปเสียง)</h3>
+            <p>NotebookLM มีฟีเจอร์ "Audio Overview" ที่สร้างเสียงแนวพอดแคสต์จากเนื้อหาแหล่งข้อมูลโดยอัตโนมัติ ฟังสรุปประวัติแชทยาวๆ แบบฟังเพลินได้</p>
+
+            <h3>สำรองข้อมูลและวิเคราะห์เป็นประจำ</h3>
+            <p>หากส่งออกประวัติแชทเดือนละครั้งแล้วเพิ่มเข้า NotebookLM จะสามารถติดตามการเปลี่ยนแปลงตามลำดับเวลาได้</p>
+
+            <div class="cta-box">
+                <h2>สำรองข้อมูลแชททั้งหมดด้วย ChatArchive</h2>
+                <p>ไม่ต้องส่งออกทีละแชทด้วยมืออีกต่อไป ChatArchive สำรองข้อมูลแชททั้งหมดให้ด้วยคลิกเดียว</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        ดาวน์โหลด
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        ซื้อใบอนุญาต
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

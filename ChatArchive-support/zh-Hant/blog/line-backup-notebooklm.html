@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>如何將 LINE 聊天記錄上傳至 NotebookLM 進行 AI 分析 - ChatArchive</title>
+    <meta name="description" content="完整指南：將 LINE 聊天記錄匯出為文字檔並上傳至 Google NotebookLM，讓 AI 進行摘要、搜尋和分析。適合回顧回憶和整理資訊。">
+    <meta property="og:title" content="如何將 LINE 聊天記錄上傳至 NotebookLM 進行 AI 分析">
+    <meta property="og:description" content="完整指南：將 LINE 聊天記錄載入 NotebookLM，讓 AI 進行摘要、搜尋和分析。">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "如何將 LINE 聊天記錄上傳至 NotebookLM 進行 AI 分析",
+        "description": "完整指南：將 LINE 聊天記錄載入 NotebookLM，讓 AI 進行摘要、搜尋和分析。",
+        "datePublished": "2025-02-22",
+        "author": { "@type": "Organization", "name": "ChatArchive" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 16px; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 32px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 12px; }
+        .article-meta { color: #888; font-size: 0.9em; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .article-tag { background: rgba(233,69,96,0.15); color: #e94560; padding: 2px 10px; border-radius: 20px; font-size: 0.85em; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin: 32px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin-bottom: 12px; }
+        .toc ol { margin-left: 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; transition: color 0.3s; }
+        .toc a:hover { color: #e94560; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .blog-step { display: flex; gap: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+        .blog-step-number { width: 36px; height: 36px; min-width: 36px; background: linear-gradient(135deg, #e94560, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1em; }
+        .blog-step-body h3 { font-size: 1em; color: #fff; margin: 0 0 8px; }
+        .blog-step-body p { margin-bottom: 0; font-size: 0.95em; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box p { margin-bottom: 0; color: inherit; }
+        .info-box strong { color: inherit; }
+        .info-box a { color: inherit; text-decoration: underline; }
+        .feature-list { list-style: none; margin: 0 0 16px 0 !important; }
+        .feature-list li { padding-left: 24px; position: relative; margin-bottom: 8px; }
+        .feature-list li::before { content: '✓'; color: #e94560; position: absolute; left: 0; font-weight: 700; }
+        .prompt-example { background: rgba(255,255,255,0.04); border-left: 3px solid #e94560; padding: 12px 16px; margin-bottom: 8px; font-family: monospace; font-size: 0.9em; color: #e0e0e0; border-radius: 0 8px 8px 0; }
+        .code-sample { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px; font-family: monospace; font-size: 0.85em; color: #b0e0b0; white-space: pre-line; margin-bottom: 16px; overflow-x: auto; }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { font-size: 1.3em; color: #fff; margin-bottom: 12px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; transition: opacity 0.3s; }
+        .btn-download:hover { opacity: 0.85; text-decoration: none; }
+        .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; transition: all 0.3s; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } .cta-buttons { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/ChatArchive-support/zh-Hant/blog/" class="back-link">← 部落格</a>
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+        </div>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/zh-Hant/">首頁</a>
+            <a href="/ChatArchive-support/zh-Hant/privacy.html">隱私權</a>
+            <a href="/ChatArchive-support/zh-Hant/terms.html">條款</a>
+            <a href="/ChatArchive-support/zh-Hant/blog/" class="active">部落格</a>
+            <a href="/ChatArchive-support/">JA</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/th/">TH</a>
+        </nav>
+
+        <div class="article-header">
+            <h1>如何將 LINE 聊天記錄上傳至 NotebookLM 進行 AI 分析</h1>
+            <div class="article-meta">
+                <span class="article-tag">活用技巧</span>
+                <span class="article-tag">NotebookLM</span>
+                <span>2025年2月22日</span>
+                <span>閱讀時間：8 分鐘</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>您是否有多年的 LINE 聊天記錄一直閒置著？只要上傳至 Google 的 <strong>NotebookLM</strong>，AI 就能為您摘要、分析和搜尋龐大的聊天記錄。</p>
+            <p>本文將說明如何匯出 LINE 的聊天記錄，並載入 NotebookLM 進行 AI 分析的完整步驟。</p>
+
+            <nav class="toc">
+                <h2>目錄</h2>
+                <ol>
+                    <li><a href="#what">什麼是 NotebookLM</a></li>
+                    <li><a href="#what-can">可以做什麼 &#8212; 應用場景</a></li>
+                    <li><a href="#prepare">事前準備</a></li>
+                    <li><a href="#export-line">步驟 1：從 LINE 匯出聊天記錄</a></li>
+                    <li><a href="#export-chatarchive">使用 ChatArchive 匯出</a></li>
+                    <li><a href="#upload">步驟 2：上傳至 NotebookLM</a></li>
+                    <li><a href="#analyze">步驟 3：讓 AI 進行分析</a></li>
+                    <li><a href="#prompts">實用提示詞集</a></li>
+                    <li><a href="#privacy-note">隱私權注意事項</a></li>
+                    <li><a href="#tips">進階活用技巧</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="what">1. 什麼是 NotebookLM</h2>
+            <p><strong>NotebookLM</strong> 是 Google 提供的 AI 研究與筆記工具。上傳 PDF 或文字檔等文件後，AI 會理解其內容並進行摘要、問答和分析。</p>
+
+            <ul class="feature-list">
+                <li>僅根據已上傳的來源內容回答（幻覺較少）</li>
+                <li>支援文字檔（.txt）、PDF、Google 文件、網頁等多種格式</li>
+                <li>每個來源最多支援 50 萬字、200MB</li>
+                <li>免費方案可上傳最多 50 個來源</li>
+                <li>擁有 Google 帳號即可立即使用</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>重點：</strong>NotebookLM 「只會」參考已上傳文件的內容來回答。不同於一般 AI 聊天，它不會混入來源以外的資訊，因此非常適合用來分析聊天記錄。</p>
+            </div>
+
+            <h2 id="what-can">2. 可以做什麼 &#8212; 應用場景</h2>
+            <p>將 LINE 聊天記錄載入 NotebookLM 後，您可以：</p>
+
+            <h3>回顧回憶</h3>
+            <p>「2023 年夏天我們聊了什麼？」「旅行計畫是在哪裡決定的？」等，AI 能從龐大的聊天記錄中為您找出特定話題。</p>
+
+            <h3>整理與挖掘資訊</h3>
+            <p>「列出所有分享過的餐廳名稱」「整理關於搬家手續的討論內容」等，可將分散的資訊結構化。</p>
+
+            <h3>對話摘要</h3>
+            <p>從冗長的群組聊天中提取重點。「摘要上個月的對話」就能跳過不必要的訊息。</p>
+
+            <h3>情感分析與趨勢掌握</h3>
+            <p>「對話的語氣隨時間有變化嗎？」「常用的詞彙有什麼模式？」等，也能進行後設分析。</p>
+
+            <h2 id="prepare">3. 事前準備</h2>
+            <ul>
+                <li><strong>Google 帳號</strong>（使用 NotebookLM 時需要）</li>
+                <li>已安裝 <strong>LINE</strong> 的智慧型手機或電腦</li>
+                <li><strong>電腦瀏覽器</strong>（NotebookLM 在電腦瀏覽器上使用）</li>
+            </ul>
+
+            <h2 id="export-line">4. 步驟 1：從 LINE 匯出聊天記錄</h2>
+            <p>LINE 內建了將聊天記錄匯出為文字檔（.txt）的功能。</p>
+
+            <h3>iPhone / Android</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>開啟聊天室</h3>
+                    <p>開啟要匯出的聊天室。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>從選單中選擇「傳送聊天記錄」</h3>
+                    <p>點擊畫面右上角的 <strong>&#8801;</strong>（選單）&gt; <strong>其他</strong> &gt; <strong>傳送聊天記錄</strong>。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>選擇儲存位置</h3>
+                    <p>選擇「儲存至檔案」或「以郵件傳送」等方便傳輸至電腦的方式。推薦使用 AirDrop、Google 雲端硬碟或電子郵件附件。</p>
+                </div>
+            </div>
+
+            <div class="info-box note">
+                <p><strong>匯出格式：</strong>LINE 的聊天記錄匯出為 <strong>.txt（純文字）格式</strong>。內含日期、時間、發送者名稱和訊息內容，按時間順序排列。不包含圖片和影片。</p>
+            </div>
+
+            <h3>電腦版 LINE（Windows / Mac）</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>開啟聊天室</h3>
+                    <p>在電腦版 LINE 中開啟要匯出的聊天室。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>選擇「儲存聊天記錄」</h3>
+                    <p>點擊畫面右上角的 <strong>&#8801;</strong>（選單）&gt; <strong>儲存聊天記錄</strong>，並選擇儲存位置。</p>
+                </div>
+            </div>
+
+            <h3>匯出檔案的內容</h3>
+            <p>匯出的文字檔格式如下所示。</p>
+
+            <div class="code-sample">[LINE] Aさんとのトーク履歴
+保存日時：2025/02/22 15:30
+
+2024/01/15 Mon
+10:23	Aさん	おはよう！今日のランチどうする？
+10:24	自分	パスタがいいな
+10:25	Aさん	いいね！駅前の新しいイタリアンは？
+10:26	自分	行ってみよう！12時に集合で
+10:27	Aさん	了解！</div>
+
+            <h2 id="export-chatarchive">5. 使用 ChatArchive 匯出</h2>
+            <p>LINE 的標準匯出功能需要<strong>逐一手動操作每個聊天室</strong>。如果聊天室數量眾多，使用 <strong>ChatArchive</strong> 即可一次備份所有聊天記錄。</p>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>使用 ChatArchive 匯入 LINE 資料</h3>
+                    <p>啟動 ChatArchive 並點擊「匯入」。系統會自動偵測 LINE 的資料庫並一次匯入所有資料。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>以 .chatarchive 格式匯出</h3>
+                    <p>使用匯出功能將所有聊天記錄一次儲存。您可視需要轉為文字格式後匯入 NotebookLM。</p>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <p><strong>ChatArchive 的優點：</strong>可一次備份所有聊天室，即使有 100 個以上的聊天室也能一次完成操作。完全在本機處理，隱私安全無虞。<br><a href="/ChatArchive-support/zh-Hant/blog/chatarchive-getting-started.html">ChatArchive 的詳細使用方式請參閱此處</a></p>
+            </div>
+
+            <h2 id="upload">6. 步驟 2：上傳至 NotebookLM</h2>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>開啟 NotebookLM</h3>
+                    <p>在瀏覽器中前往 <strong>notebooklm.google.com</strong>，使用 Google 帳號登入。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>建立新筆記本</h3>
+                    <p>點擊「新增筆記本」建立一個新的筆記本。建議命名為「LINE 聊天分析」等容易辨識的名稱。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>上傳來源</h3>
+                    <p>點擊「新增來源」中的<strong>「上傳檔案」</strong>，上傳剛才匯出的 .txt 檔案。</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">4</div>
+                <div class="blog-step-body">
+                    <h3>可上傳多個檔案</h3>
+                    <p>若逐一匯出了各個聊天室，可一次上傳多個 .txt 檔案。免費方案最多可新增 <strong>50 個檔案</strong>。</p>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <p><strong>檔案大小限制：</strong>每個檔案最大 <strong>200MB</strong>、<strong>50 萬字</strong>。數年份的聊天記錄通常不會超過此限制，若超過請按時間分割。</p>
+            </div>
+
+            <h2 id="analyze">7. 步驟 3：讓 AI 進行分析</h2>
+            <p>上傳完成後，NotebookLM 會解析來源內容。您只需在畫面下方的聊天欄中用自然語言提問，AI 就會為您回答。</p>
+
+            <h3>NotebookLM 自動生成摘要</h3>
+            <p>上傳來源後，NotebookLM 會自動生成<strong>來源摘要</strong>。僅憑這一功能就能掌握聊天記錄的整體概況。</p>
+
+            <h3>附引用的回答</h3>
+            <p>NotebookLM 的回答會附上<strong>來源引用</strong>。您可以確認 AI 的回答是基於哪些訊息，方便進行事實查核。</p>
+
+            <h2 id="prompts">8. 實用提示詞集</h2>
+            <p>以下是向 NotebookLM 提問時實用的提示詞範例，可直接複製使用。</p>
+
+            <h3>摘要與回顧</h3>
+            <div class="prompt-example">請按時間順序摘要整段對話</div>
+            <div class="prompt-example">2024 年最熱門的話題是什麼？</div>
+            <div class="prompt-example">請列出這一年中對話的主要主題</div>
+
+            <h3>資訊搜尋</h3>
+            <div class="prompt-example">請列出對話中提到的所有餐廳名稱</div>
+            <div class="prompt-example">請整理關於旅行的對話內容</div>
+            <div class="prompt-example">請按日期列出關於約定和行程的訊息</div>
+
+            <h3>分析</h3>
+            <div class="prompt-example">對話中最常出現的主題是什麼？</div>
+            <div class="prompt-example">對話的語氣和氛圍是否隨時間有所變化？</div>
+            <div class="prompt-example">請分析這段對話中每位參與者的特徵</div>
+
+            <h3>實用應用</h3>
+            <div class="prompt-example">請列出對話中分享的所有網址</div>
+            <div class="prompt-example">請擷取所有關於搬家的對話，並按時間順序整理</div>
+            <div class="prompt-example">請整理對話中提到的食譜和料理資訊</div>
+
+            <h2 id="privacy-note">9. 隱私權注意事項</h2>
+
+            <div class="info-box warning">
+                <p><strong>重要提醒：</strong>聊天記錄中包含個人資訊。使用前請了解以下事項。</p>
+            </div>
+
+            <h3>NotebookLM 的資料處理</h3>
+            <ul>
+                <li>資料依照 Google 的隱私權政策進行處理</li>
+                <li>上傳的資料會綁定至您的帳號，不會對其他使用者公開</li>
+                <li>刪除筆記本後，資料也會被刪除</li>
+            </ul>
+
+            <h3>上傳前應注意的事項</h3>
+            <ul>
+                <li><strong>取得對方同意：</strong>將與他人的對話提供給 AI 分析時，如有可能請先取得對方的同意</li>
+                <li><strong>確認個人資訊：</strong>請確認聊天記錄中是否包含地址、電話號碼、密碼等敏感資訊</li>
+                <li><strong>限定使用目的：</strong>請僅在個人回顧與整理的範圍內使用，不要將對話內容分享給第三方</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>想在本機分析的話：</strong>如果不想將資料上傳至雲端，使用 <strong>ChatArchive</strong> 的全文搜尋功能就能完全在本機環境中搜尋和瀏覽記錄。</p>
+            </div>
+
+            <h2 id="tips">10. 進階活用技巧</h2>
+
+            <h3>分析多人群組聊天</h3>
+            <p>群組聊天的匯出也是相同步驟。試著問「分析每位成員的發言傾向」，就能看到群組內的溝通模式。</p>
+
+            <h3>跨聊天室分析</h3>
+            <p>將多個聊天室的文字檔上傳至同一個筆記本，即可跨聊天室搜尋和分析資訊。</p>
+
+            <h3>善用 Audio Overview（音訊摘要）</h3>
+            <p>NotebookLM 具有根據來源內容自動生成 Podcast 風格音訊的「Audio Overview」功能。您可以用聽的方式瀏覽長篇聊天記錄的內容。</p>
+
+            <h3>定期備份與分析</h3>
+            <p>每月匯出一次聊天記錄並加入 NotebookLM，就能追蹤隨時間推移的變化趨勢。</p>
+
+            <div class="cta-box">
+                <h2>使用 ChatArchive 一次備份所有聊天記錄</h2>
+                <p>不必再逐一手動匯出，ChatArchive 讓您一鍵備份所有聊天記錄。</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        下載
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        購買授權
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

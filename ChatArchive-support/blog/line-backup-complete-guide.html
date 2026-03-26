@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LINEトーク履歴を一括バックアップする完全ガイド【Mac対応】</title>
+    <meta name="description" content="LINEのトーク履歴をMacで一括バックアップする方法を解説。標準エクスポートの限界とChatArchiveを使った全トーク一括保存の手順。">
+    <meta property="og:title" content="LINEトーク履歴を一括バックアップする完全ガイド【Mac対応】">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LINEトーク履歴を一括バックアップする完全ガイド【Mac対応】",
+        "datePublished": "2026-03-08",
+        "dateModified": "2026-03-08",
+        "author": { "@type": "Person", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru apps", "url": "https://hakaru.net/" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hakaru.net/ChatArchive-support/blog/line-backup-complete-guide.html" },
+        "description": "LINEのトーク履歴をMacで一括バックアップする方法を解説。標準エクスポートの限界とChatArchiveを使った全トーク一括保存の手順。",
+        "inLanguage": "ja"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .breadcrumb { font-size: 0.85em; color: #666; margin-bottom: 20px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #e94560; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin: 0 0 12px; border: none; padding: 0; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        .blog-step { display: flex; gap: 16px; margin: 16px 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; }
+        .blog-step-number { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, #e94560, #ff6b6b); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; color: #fff; }
+        .blog-step-body h3 { color: #fff; margin-bottom: 6px; font-size: 1em; }
+        .blog-step-body p { color: #a0a0a0; font-size: 0.9em; margin: 0; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; font-size: 0.9em; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box a { color: #e94560; text-decoration: none; }
+        .check { color: #2ecc71; }
+        .cross { color: #e74c3c; }
+        .mid-cta { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 20px; text-align: center; margin: 24px 0; }
+        .mid-cta p { color: #a0a0a0; margin-bottom: 12px; }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 24px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { color: #fff; font-size: 1.3em; margin-bottom: 10px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download, .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s; }
+        .btn-download { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; box-shadow: 0 4px 15px rgba(233,69,96,0.3); }
+        .btn-download:hover { transform: translateY(-2px); }
+        .btn-license { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/ChatArchive-support/blog/" class="back-link">← ブログ一覧</a>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/">ホーム</a>
+            <a href="/ChatArchive-support/privacy.html">プライバシー</a>
+            <a href="/ChatArchive-support/terms.html">利用規約</a>
+            <a href="/ChatArchive-support/blog/" class="active">ブログ</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/th/">TH</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+        <div class="article-header">
+            <nav class="breadcrumb">
+                <a href="/ChatArchive-support/">ホーム</a> &gt; <a href="/ChatArchive-support/blog/">ブログ</a> &gt; LINEトーク履歴を一括バックアップする完全ガイド
+            </nav>
+            <h1>LINEトーク履歴を一括バックアップする完全ガイド</h1>
+            <p class="article-meta">公開日: 2026年3月8日 &#x30FB; 読了目安: 8分</p>
+        </div>
+        <div class="content">
+            <p>LINEのトーク履歴は、私たちの日常の記録そのものです。家族との何気ない会話、友人との旅行の計画、仕事の重要なやり取り &#8212; これらが突然消えてしまったら、取り返しがつきません。</p>
+            <p>実際に、<strong>機種変更時のバックアップ失敗</strong>、<strong>アカウントの停止・乗っ取り</strong>、<strong>端末の故障</strong>などでトーク履歴を失うケースは少なくありません。この記事では、LINEの標準バックアップ方法の特徴と限界を整理した上で、<strong>MacでLINEの全トーク履歴を一括バックアップする具体的な手順</strong>を解説します。</p>
+
+            <nav class="toc">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#risk">LINEのトーク履歴を失うリスク</a></li>
+                    <li><a href="#standard">LINEの標準バックアップ方法とその限界</a></li>
+                    <li><a href="#difficulty">「一括バックアップ」が難しい理由</a></li>
+                    <li><a href="#chatarchive">ChatArchiveを使った一括バックアップ手順</a></li>
+                    <li><a href="#usage">バックアップデータの活用法</a></li>
+                    <li><a href="#privacy">プライバシーとセキュリティ</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="risk">1. LINEのトーク履歴を失うリスク</h2>
+            <p>「まさか自分が」と思うかもしれませんが、LINEのトーク履歴を失うリスクは意外と身近にあります。</p>
+            <h3>機種変更・端末の故障</h3>
+            <p>iPhoneからAndroidへの機種変更では、直近14日分のトーク履歴しか引き継げません。また、端末が水没・故障して起動しなくなった場合、最後にバックアップした時点以降のトークは失われます。</p>
+            <h3>アカウントの停止・乗っ取り</h3>
+            <p>利用規約違反と判断されてアカウントが停止された場合、トーク履歴にアクセスできなくなります。また、アカウントが第三者に乗っ取られた場合、パスワードを変更されるとログインすらできなくなります。</p>
+            <h3>バックアップの復元失敗</h3>
+            <p>iCloudやGoogleドライブへのバックアップが正常に完了していなかったケースや、復元時にエラーが発生するケースもあります。バックアップが「完了した」と表示されていても、実際にはデータが破損していることがあります。</p>
+            <div class="info-box warning">
+                <p><strong>重要:</strong> LINEのトーク履歴は、LINE社のサーバーには保存されていません。端末とクラウドバックアップ（iCloud / Googleドライブ）にしか存在しないため、両方を失うと復元は不可能です。</p>
+            </div>
+
+            <h2 id="standard">2. LINEの標準バックアップ方法とその限界</h2>
+            <p>LINEには複数のバックアップ方法が用意されていますが、それぞれに制約があります。</p>
+            <h3>方法A: iCloud / Googleドライブへの自動バックアップ</h3>
+            <ul>
+                <li><span class="check">✓</span> 自動で定期バックアップが可能</li>
+                <li><span class="check">✓</span> 同じOS間の機種変更なら復元できる</li>
+                <li><strong><span class="cross">✗</span> iPhone &#x2194; Android間の移行では直近14日分のみ</strong></li>
+                <li><strong><span class="cross">✗</span> バックアップデータを直接閲覧・検索できない</strong></li>
+                <li><strong><span class="cross">✗</span> クラウドストレージの容量を消費する</strong></li>
+            </ul>
+            <h3>方法B: テキストファイルへのエクスポート</h3>
+            <ul>
+                <li><span class="check">✓</span> テキスト形式でどこでも読める</li>
+                <li><span class="check">✓</span> 長期保存に適している</li>
+                <li><strong><span class="cross">✗</span> 1トークルームずつ手動で操作する必要がある</strong></li>
+                <li><strong><span class="cross">✗</span> 画像・スタンプ・動画は含まれない</strong></li>
+                <li><strong><span class="cross">✗</span> 100トークルームあれば100回の手作業</strong></li>
+            </ul>
+            <div class="info-box note">
+                <p><strong>まとめ:</strong> LINEの標準機能はいずれも「全トークを一括でバックアップする」ことには対応していません。特にトークルームが多い方にとって、手動エクスポートは現実的な選択肢とは言えません。</p>
+            </div>
+
+            <h2 id="difficulty">3. 「一括バックアップ」が難しい理由</h2>
+            <h3>ローカルデータベースの暗号化</h3>
+            <p>Mac版LINEのデータベースファイルは暗号化された状態で保存されています。単にファイルをコピーしても中身を読むことはできません。データベースを正しく復号する必要があります。</p>
+            <h3>APIの不在</h3>
+            <p>LINEは一般ユーザー向けのバックアップAPIを提供していません。そのため、サードパーティのツールが公式にバックアップ機能を提供することが難しい状況です。</p>
+            <div class="info-box tip">
+                <p><strong>解決策:</strong> ChatArchiveは、Mac版LINEのローカルデータベースを<strong>自動検出・復号</strong>することで、この技術的な壁を乗り越えています。LINEアプリ側に変更を加えることなく、安全に全トークを読み取ります。</p>
+            </div>
+
+            <h2 id="chatarchive">4. ChatArchiveを使った一括バックアップ手順</h2>
+            <p><strong>ChatArchive</strong>は、MacでLINEの全トーク履歴を一括バックアップできるアプリです。暗号化されたLINEのデータベースを自動で復号し、全トークルームのメッセージ・画像・スタンプをまとめて保存します。</p>
+            <h3>事前準備</h3>
+            <ul>
+                <li><strong>macOS 14.0（Sonoma）以降</strong>のMac</li>
+                <li><strong>Mac版LINEがインストール済み</strong>で、ログイン・トーク同期が完了していること</li>
+            </ul>
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>ChatArchiveをダウンロード</h3>
+                    <p>公式サイトからChatArchiveをダウンロードし、アプリケーションフォルダにドラッグ＆ドロップで配置します。ダウンロードは無料です。</p>
+                </div>
+            </div>
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>フルディスクアクセスを許可</h3>
+                    <p><strong>システム設定 &gt; プライバシーとセキュリティ &gt; フルディスクアクセス</strong>を開き、ChatArchiveを追加して有効化します。LINEのデータベースファイルにアクセスするために必要な権限です。</p>
+                </div>
+            </div>
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>ライセンスを有効化</h3>
+                    <p>ライセンスを購入し、アプリ内でライセンスキーを入力して有効化します。全機能をアンロックできます。</p>
+                </div>
+            </div>
+            <div class="mid-cta">
+                <p>ライセンスを購入して全機能をアンロック</p>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    ライセンスを購入
+                </a>
+            </div>
+            <div class="blog-step">
+                <div class="blog-step-number">4</div>
+                <div class="blog-step-body">
+                    <h3>「読み込み」をクリック</h3>
+                    <p>ChatArchiveのメイン画面で「読み込み」ボタンをクリックします。Mac版LINEのデータベースを<strong>自動検出・復号・読み込み</strong>します。ファイルを手動で探す必要はありません。</p>
+                </div>
+            </div>
+            <div class="blog-step">
+                <div class="blog-step-number">5</div>
+                <div class="blog-step-body">
+                    <h3>読み込み完了 &#8212; 全トークを確認</h3>
+                    <p>数秒から数分で、全トークルームが一覧表示されます。チャットUI上でそのまま閲覧・全文検索が可能です。</p>
+                </div>
+            </div>
+            <div class="blog-step">
+                <div class="blog-step-number">6</div>
+                <div class="blog-step-body">
+                    <h3>エクスポートして保存</h3>
+                    <p>メニューからエクスポートを選択し、保存先を指定します。<strong>.chatarchive形式</strong>でテキスト・画像・スタンプを含む全データが保存されます。</p>
+                </div>
+            </div>
+            <div class="info-box tip">
+                <p><strong>定期バックアップのすすめ:</strong> 新しいメッセージは日々増えていきます。月に1回程度、ChatArchiveで最新のデータを読み込み・エクスポートしておくと安心です。</p>
+            </div>
+
+            <h2 id="usage">5. バックアップデータの活用法</h2>
+            <h3>過去の会話を横断検索</h3>
+            <p>ChatArchiveの全文検索機能を使えば、全トークルームを横断して過去の会話を検索できます。「あの店の名前なんだっけ？」「去年の旅行の日程は？」といった情報も、一瞬で見つかります。</p>
+            <h3>機種変更前の保険</h3>
+            <p>iPhoneからAndroidへの乗り換えを予定している場合、事前にChatArchiveで全トークをバックアップしておけば、移行で失われるトーク履歴を確実に保存できます。</p>
+            <h3>AIツールで分析</h3>
+            <p>エクスポートしたデータをGoogle NotebookLMなどのAIツールに読み込ませれば、会話の要約・情報抽出・パターン分析が可能です。</p>
+            <p><a href="/ChatArchive-support/blog/line-backup-notebooklm.html">→ LINEトーク履歴をNotebookLMでAI分析する方法</a></p>
+
+            <h2 id="privacy">6. プライバシーとセキュリティ</h2>
+            <h3>完全ローカル処理</h3>
+            <p>ChatArchiveは<strong>インターネット通信を一切行いません</strong>。データの読み込み・表示・エクスポートのすべてがMac上で完結します。トーク履歴が外部サーバーに送信されることは絶対にありません。</p>
+            <h3>LINEアカウントへの影響なし</h3>
+            <p>ChatArchiveはMac上のローカルデータベースを読み取るだけで、LINEのサーバーにアクセスしたり、アカウント情報を変更したりすることはありません。LINEの利用に影響を与えることはありません。</p>
+            <div class="info-box note">
+                <p><strong>安心設計:</strong> ネットワーク通信なし・サーバー送信なし・アカウント情報の取得なし。ChatArchiveは「あなたのMacの中だけ」で完結するアプリです。</p>
+            </div>
+
+            <h2 id="faq">7. よくある質問</h2>
+            <h3>Q: Mac版LINEにログインしていないと使えませんか？</h3>
+            <p>はい。ChatArchiveはMac上のLINEデータベースを読み取ります。Mac版LINEで一度ログインし、トーク履歴が同期されている必要があります。同期が完了していれば、バックアップ時にLINEが起動している必要はありません。</p>
+            <h3>Q: どのくらいの期間のトーク履歴がバックアップされますか？</h3>
+            <p>Mac版LINEに同期されている全期間のトーク履歴がバックアップ対象です。通常は数年分のトーク履歴が含まれます。</p>
+            <h3>Q: 画像やスタンプもバックアップされますか？</h3>
+            <p>はい。LINEアプリのキャッシュに残っている画像・スタンプは保存されます。キャッシュが削除されている古い画像はプレースホルダーとして表示されます。</p>
+            <h3>Q: バックアップしたデータを別のMacで見られますか？</h3>
+            <p>はい。.chatarchive ファイルを別のMacのChatArchiveにインポートすれば、チャットUIでそのまま閲覧・検索できます。</p>
+            <h3>Q: 無料で試せますか？</h3>
+            <p>ダウンロードは無料です。全機能を利用するにはライセンスの購入が必要です。</p>
+
+            <h2>関連記事</h2>
+            <ul>
+                <li><a href="/ChatArchive-support/blog/line-export-all-chats.html">LINEの全チャット履歴をテキストファイルに出力する方法</a></li>
+                <li><a href="/ChatArchive-support/blog/line-backup-notebooklm.html">LINEのトーク履歴をNotebookLMにアップロードしてAI分析する方法</a></li>
+                <li><a href="/ChatArchive-support/blog/chatarchive-getting-started.html">ChatArchiveの使い方 &#8212; インストールから活用まで完全ガイド</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <h2>大切なトーク履歴を、今すぐバックアップ</h2>
+                <p>機種変更やアカウントトラブルで失ってからでは遅すぎます。<br>ChatArchiveで、全トーク履歴をワンクリックでバックアップしましょう。</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        ライセンスを購入
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        無料ダウンロード
+                    </a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

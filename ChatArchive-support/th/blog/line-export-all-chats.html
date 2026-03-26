@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความ - ChatArchive</title>
+    <meta name="description" content="วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความในครั้งเดียว อธิบายข้อจำกัดของฟีเจอร์มาตรฐานและวิธีสำรองข้อมูลแชททั้งหมดด้วย ChatArchive">
+    <meta property="og:title" content="วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความ">
+    <meta property="og:description" content="การส่งออกมาตรฐานของ LINE ทำได้ทีละแชท เรียนรู้วิธีส่งออกทั้งหมดพร้อมกันด้วย ChatArchive">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความ",
+        "description": "วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความในครั้งเดียว อธิบายข้อจำกัดของฟีเจอร์มาตรฐานและวิธีสำรองข้อมูลแชททั้งหมดด้วย ChatArchive",
+        "datePublished": "2025-02-22",
+        "author": { "@type": "Organization", "name": "ChatArchive" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 16px; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 32px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 12px; }
+        .article-meta { color: #888; font-size: 0.9em; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+        .article-tag { background: rgba(233,69,96,0.15); color: #e94560; padding: 2px 10px; border-radius: 20px; font-size: 0.85em; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin: 32px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin-bottom: 12px; }
+        .toc ol { margin-left: 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; transition: color 0.3s; }
+        .toc a:hover { color: #e94560; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #e0e0e0; }
+        .blog-step { display: flex; gap: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
+        .blog-step-number { width: 36px; height: 36px; min-width: 36px; background: linear-gradient(135deg, #e94560, #ff6b6b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1em; }
+        .blog-step-body h3 { font-size: 1em; color: #fff; margin: 0 0 8px; }
+        .blog-step-body p { margin-bottom: 0; font-size: 0.95em; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box p { margin-bottom: 0; color: inherit; }
+        .info-box strong { color: inherit; }
+        .feature-list { list-style: none; margin: 0 0 16px 0 !important; }
+        .feature-list li { padding-left: 24px; position: relative; margin-bottom: 8px; }
+        .feature-list li::before { content: '✓'; color: #e94560; position: absolute; left: 0; font-weight: 700; }
+        .check { color: #2ed573; font-weight: 700; }
+        .cross { color: #ff4757; font-weight: 700; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 0.9em; }
+        .compare-table th { background: rgba(255,255,255,0.08); color: #fff; padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .compare-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #b0b0b0; }
+        .compare-table tr:hover td { background: rgba(255,255,255,0.03); }
+        .mid-cta { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0; }
+        .mid-cta p { color: #c0a0a8; margin-bottom: 16px; }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { font-size: 1.3em; color: #fff; margin-bottom: 12px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; transition: opacity 0.3s; }
+        .btn-download:hover { opacity: 0.85; text-decoration: none; }
+        .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95em; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; transition: all 0.3s; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } .cta-buttons { flex-direction: column; align-items: center; } .compare-table { font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/ChatArchive-support/th/blog/" class="back-link">← บล็อก</a>
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+        </div>
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/th/">หน้าหลัก</a>
+            <a href="/ChatArchive-support/th/privacy.html">ความเป็นส่วนตัว</a>
+            <a href="/ChatArchive-support/th/terms.html">ข้อกำหนด</a>
+            <a href="/ChatArchive-support/th/blog/" class="active">บล็อก</a>
+            <a href="/ChatArchive-support/">JA</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+
+        <div class="article-header">
+            <h1>วิธีส่งออกประวัติแชท LINE ทั้งหมดเป็นไฟล์ข้อความ</h1>
+            <div class="article-meta">
+                <span class="article-tag">สำรองข้อมูล</span>
+                <span class="article-tag">LINE</span>
+                <span>22 กุมภาพันธ์ 2025</span>
+                <span>เวลาอ่าน: 7 นาที</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>เคยอยากเก็บประวัติแชท LINE ไว้เป็นไฟล์ข้อความก่อนเปลี่ยนเครื่องหรือย้ายบัญชีไหม?</p>
+            <p>LINE มีฟีเจอร์ส่งออกในตัว แต่มีข้อจำกัดสำคัญคือ<strong>ส่งออกได้ทีละห้องแชทเท่านั้น</strong> สำหรับผู้ที่มีห้องแชทหลายสิบหรือหลายร้อยห้อง วิธีนี้ไม่สะดวกเลย</p>
+            <p>บทความนี้จะอธิบายขั้นตอนการส่งออกมาตรฐานของ LINE และวิธี<strong>ส่งออกประวัติแชททั้งหมดเป็นข้อความในครั้งเดียว</strong></p>
+
+            <nav class="toc">
+                <h2>สารบัญ</h2>
+                <ol>
+                    <li><a href="#why">ทำไมควรเก็บประวัติแชทเป็นข้อความ</a></li>
+                    <li><a href="#standard">วิธีที่ 1: ฟีเจอร์ส่งออกมาตรฐานของ LINE</a></li>
+                    <li><a href="#limitation">ข้อจำกัดของฟีเจอร์มาตรฐาน</a></li>
+                    <li><a href="#chatarchive">วิธีที่ 2: ส่งออกแชททั้งหมดด้วย ChatArchive</a></li>
+                    <li><a href="#compare">เปรียบเทียบทั้งสองวิธี</a></li>
+                    <li><a href="#setup">การตั้งค่า ChatArchive</a></li>
+                    <li><a href="#howto">ขั้นตอนการส่งออกด้วย ChatArchive</a></li>
+                    <li><a href="#format">เนื้อหาของข้อมูลที่ส่งออก</a></li>
+                    <li><a href="#usecase">วิธีใช้ประโยชน์จากข้อมูลที่ส่งออก</a></li>
+                    <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="why">1. ทำไมควรเก็บประวัติแชทเป็นข้อความ</h2>
+            <p>ประวัติแชท LINE สามารถสำรองข้อมูลผ่านคลาวด์ (iCloud / Google Drive) ได้ แต่การเก็บเป็นไฟล์ข้อความไว้ในมือมีข้อดีมากมาย</p>
+
+            <ul>
+                <li><strong>ไม่ผูกกับแอป:</strong> อ่านได้จาก PC หรือสมาร์ทโฟนเครื่องไหนก็ได้ แม้ไม่มี LINE</li>
+                <li><strong>ค้นหาได้อิสระ:</strong> ค้นหาแบบเต็มข้อความได้ด้วย Text Editor หรือ grep</li>
+                <li><strong>เหมาะสำหรับเก็บระยะยาว:</strong> ไฟล์ .txt เป็นรูปแบบที่อ่านได้ตลอดไป</li>
+                <li><strong>นำไปใช้กับเครื่องมืออื่น:</strong> โหลดเข้า NotebookLM และเครื่องมือ AI อื่นๆ เพื่อวิเคราะห์ได้</li>
+                <li><strong>ประกันก่อนย้ายบัญชี:</strong> แม้ข้อมูลสำรองเสียหาย ยังมีข้อมูลข้อความเหลืออยู่</li>
+            </ul>
+
+            <h2 id="standard">2. วิธีที่ 1: ฟีเจอร์ส่งออกมาตรฐานของ LINE</h2>
+            <p>LINE มีฟีเจอร์บันทึกประวัติแชทเป็นไฟล์ .txt ในตัว</p>
+
+            <h3>กรณี iPhone / Android</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิดห้องแชท</h3>
+                    <p>เปิดห้องแชทที่ต้องการส่งออก</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>เปิดเมนู</h3>
+                    <p>แตะ <strong>&#8801;</strong> มุมขวาบน &gt; <strong>อื่นๆ</strong> &gt; <strong>ส่งประวัติแชท</strong></p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>เลือกปลายทาง</h3>
+                    <p>เลือกอีเมล, AirDrop, Google Drive หรือวิธีอื่นที่สะดวกในการส่งไปยัง PC</p>
+                </div>
+            </div>
+
+            <h3>กรณี LINE บน PC (Windows / Mac)</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิดห้องแชท</h3>
+                    <p>เปิดห้องแชทที่ต้องการใน LINE บน PC</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>เลือก "บันทึกแชท"</h3>
+                    <p>คลิก <strong>&#8801;</strong> มุมขวาบน &gt; <strong>บันทึกแชท</strong> แล้วเลือกโฟลเดอร์ที่จะบันทึก</p>
+                </div>
+            </div>
+
+            <div class="info-box note">
+                <p><strong>รูปแบบไฟล์:</strong> ส่งออกเป็นไฟล์ข้อความ (.txt) บันทึกวันที่ เวลา ชื่อผู้ส่ง และเนื้อหาข้อความ <strong>รูปภาพ วิดีโอ และสติกเกอร์จะไม่ถูกบันทึก</strong> (แสดงเป็น [สติกเกอร์] [รูปภาพ] แทน)</p>
+            </div>
+
+            <h2 id="limitation">3. ข้อจำกัดของฟีเจอร์มาตรฐาน</h2>
+            <p>ฟีเจอร์ส่งออกมาตรฐานของ LINE ใช้ง่ายแต่มี<strong>ข้อจำกัดสำคัญ</strong></p>
+
+            <ul>
+                <li><span class="cross">&#x2717;</span> <strong>ส่งออกได้ทีละห้องแชทเท่านั้น</strong></li>
+                <li><span class="cross">&#x2717;</span> ไม่มีฟีเจอร์ส่งออกทั้งหมดในครั้งเดียว</li>
+                <li><span class="cross">&#x2717;</span> หากมี 100 ห้องแชท ต้องทำซ้ำ 100 ครั้ง</li>
+                <li><span class="cross">&#x2717;</span> แชทกลุ่ม แชทส่วนตัว และบัญชีทางการ ต้องทำแยกกัน</li>
+                <li><span class="cross">&#x2717;</span> เสี่ยงที่จะส่งออกไม่ครบ</li>
+            </ul>
+
+            <div class="info-box warning">
+                <p><strong>ปัญหาในทางปฏิบัติ:</strong> ผู้ใช้ LINE ทั่วไปมีห้องแชท 50-200 ห้อง การส่งออกแชททั้งหมดด้วยฟีเจอร์มาตรฐานต้องทำทีละห้องด้วยมือ</p>
+            </div>
+
+            <h2 id="chatarchive">4. วิธีที่ 2: ส่งออกแชททั้งหมดด้วย ChatArchive</h2>
+            <p><strong>ChatArchive</strong> คือทางออกของปัญหานี้</p>
+            <p>ChatArchive เข้าถึงฐานข้อมูล LINE บน macOS โดยตรง ช่วยให้<strong>นำเข้าและส่งออกประวัติแชททุกห้องในคลิกเดียว</strong></p>
+
+            <ul class="feature-list">
+                <li>สำรองข้อมูลทุกห้องแชทในครั้งเดียว</li>
+                <li>ถอดรหัสฐานข้อมูลที่เข้ารหัสโดยอัตโนมัติ</li>
+                <li>รองรับข้อความ รูปภาพ สติกเกอร์ วิดีโอ เสียง และไฟล์</li>
+                <li>ส่งออกและนำเข้าในรูปแบบ .chatarchive</li>
+                <li>เรียกดูด้วย UI แชท + ค้นหาแบบเต็มข้อความ</li>
+                <li>ประมวลผลภายในเครื่องทั้งหมด &#8212; ไม่มีการส่งข้อมูลออกภายนอกใดๆ ทั้งสิ้น</li>
+            </ul>
+
+            <div class="mid-cta">
+                <p>สำรองข้อมูลแชททั้งหมดในครั้งเดียว &#8212; ไม่ต้องส่งออกทีละห้องอีกต่อไป</p>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    ซื้อใบอนุญาต
+                </a>
+            </div>
+
+            <h2 id="compare">5. เปรียบเทียบทั้งสองวิธี</h2>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ฟีเจอร์มาตรฐาน LINE</th>
+                        <th>ChatArchive</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ขอบเขต</strong></td>
+                        <td>ทีละแชท</td>
+                        <td><strong>ทุกแชทพร้อมกัน</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>จำนวนขั้นตอน</strong></td>
+                        <td>จำนวนแชท &times; ทำมือ</td>
+                        <td><strong>คลิกเดียว</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ส่งออกข้อความ</strong></td>
+                        <td><span class="check">&#x2713;</span> .txt</td>
+                        <td><span class="check">&#x2713;</span> .chatarchive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>รูปภาพ / สติกเกอร์</strong></td>
+                        <td><span class="cross">&#x2717;</span> ไม่รองรับ</td>
+                        <td><span class="check">&#x2713;</span> ดึงจากแคช</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ค้นหาเต็มข้อความ</strong></td>
+                        <td><span class="cross">&#x2717;</span></td>
+                        <td><span class="check">&#x2713;</span> ค้นหาข้ามห้องแชท</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ดูแบบ UI แชท</strong></td>
+                        <td><span class="cross">&#x2717;</span></td>
+                        <td><span class="check">&#x2713;</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ความเป็นส่วนตัว</strong></td>
+                        <td>ประมวลผลในเครื่อง</td>
+                        <td><strong>ประมวลผลภายในเครื่องทั้งหมด</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ระบบปฏิบัติการ</strong></td>
+                        <td>iOS / Android / PC</td>
+                        <td>macOS 14.0+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ราคา</strong></td>
+                        <td>ฟรี</td>
+                        <td>ต้องซื้อใบอนุญาต</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="setup">6. การตั้งค่า ChatArchive</h2>
+
+            <h3>สภาพแวดล้อมที่จำเป็น</h3>
+            <ul>
+                <li><strong>macOS 14.0 (Sonoma) ขึ้นไป</strong></li>
+                <li><strong>ติดตั้ง LINE บน Mac แล้ว</strong> (เข้าสู่ระบบแล้ว)</li>
+            </ul>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>ดาวน์โหลด ChatArchive</h3>
+                    <p>ดาวน์โหลด ChatArchive จากเว็บไซต์ทางการ แล้ววางในโฟลเดอร์ Applications</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>ซื้อและเปิดใช้ใบอนุญาต</h3>
+                    <p>ซื้อใบอนุญาตแล้วใส่รหัสใบอนุญาตในแอปเพื่อเปิดใช้งาน</p>
+                </div>
+            </div>
+
+            <div class="mid-cta">
+                <p>ซื้อใบอนุญาตเพื่อปลดล็อกฟีเจอร์ทั้งหมด</p>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    ซื้อใบอนุญาต
+                </a>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>อนุญาต Full Disk Access</h3>
+                    <p>ไปที่ <strong>การตั้งค่าระบบ &gt; ความเป็นส่วนตัวและความปลอดภัย &gt; Full Disk Access</strong> แล้วเพิ่มและเปิดใช้งาน ChatArchive จำเป็นสำหรับการเข้าถึงฐานข้อมูล LINE</p>
+                </div>
+            </div>
+
+            <h2 id="howto">7. ขั้นตอนการส่งออกด้วย ChatArchive</h2>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>เปิด ChatArchive</h3>
+                    <p>เปิด ChatArchive จากโฟลเดอร์ Applications ตรวจสอบว่าติดตั้ง LINE บน Mac และเข้าสู่ระบบแล้ว</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>คลิก "นำเข้า"</h3>
+                    <p>คลิกปุ่ม "นำเข้า" บนหน้าจอหลัก จะ<strong>ตรวจจับ ถอดรหัส และนำเข้า</strong>ฐานข้อมูลที่เข้ารหัสของ LINE โดยอัตโนมัติ ไม่ต้องเลือกไฟล์ด้วยตัวเอง</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>ยืนยันการนำเข้าเสร็จสมบูรณ์</h3>
+                    <p>ห้องแชททั้งหมดจะแสดงในรายการ สามารถเรียกดูและค้นหาได้ทันทีผ่าน UI แชท</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">4</div>
+                <div class="blog-step-body">
+                    <h3>ส่งออก</h3>
+                    <p>เลือกส่งออกจากเมนู แล้วกำหนดตำแหน่งที่จะบันทึก ข้อมูลทั้งหมดจะถูกบันทึกในรูปแบบ <strong>.chatarchive</strong></p>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <p><strong>การเก็บรักษาไฟล์สำรอง:</strong> แนะนำให้บันทึกไฟล์ .chatarchive ที่ส่งออกไว้ในไดรฟ์ภายนอกหรือคลาวด์สตอเรจ สามารถนำเข้ากลับเข้า ChatArchive เพื่อดูได้ทุกเมื่อ</p>
+            </div>
+
+            <h2 id="format">8. เนื้อหาของข้อมูลที่ส่งออก</h2>
+            <p>ข้อมูลที่นำเข้าด้วย ChatArchive ประกอบด้วย:</p>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>ประเภทข้อความ</th>
+                        <th>รายละเอียด</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ข้อความ</td>
+                        <td>บันทึกเนื้อหาข้อความทั้งหมด</td>
+                    </tr>
+                    <tr>
+                        <td>รูปภาพ</td>
+                        <td>ดึงจากแคช (หากไม่มีแคชจะแสดงตัวแทนข้อมูล)</td>
+                    </tr>
+                    <tr>
+                        <td>สติกเกอร์</td>
+                        <td>ดึงจากแคช (หากไม่มีแคชจะแสดงตัวแทนข้อมูล)</td>
+                    </tr>
+                    <tr>
+                        <td>วิดีโอ</td>
+                        <td>บันทึกข้อมูลเมตา</td>
+                    </tr>
+                    <tr>
+                        <td>ข้อความเสียง</td>
+                        <td>บันทึกข้อมูลเมตา</td>
+                    </tr>
+                    <tr>
+                        <td>ไฟล์</td>
+                        <td>บันทึกชื่อไฟล์</td>
+                    </tr>
+                    <tr>
+                        <td>ตำแหน่งที่ตั้ง</td>
+                        <td>บันทึกที่อยู่และพิกัด</td>
+                    </tr>
+                    <tr>
+                        <td>ข้อมูลติดต่อ</td>
+                        <td>บันทึกข้อมูลผู้ติดต่อที่แชร์</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box note">
+                <p><strong>ความแตกต่างจากการส่งออกมาตรฐานของ LINE:</strong> การส่งออกข้อความมาตรฐานของ LINE บันทึกเฉพาะข้อความตัวอักษร แต่ ChatArchive จะดึงรูปภาพและสติกเกอร์จากแคชมาให้มากที่สุดเท่าที่จะทำได้</p>
+            </div>
+
+            <h2 id="usecase">9. วิธีใช้ประโยชน์จากข้อมูลที่ส่งออก</h2>
+
+            <h3>เก็บเป็นข้อมูลสำรองระยะยาว</h3>
+            <p>สำรองข้อมูลแชททั้งหมดก่อนเปลี่ยนเครื่อง ย้ายบัญชี หรือยกเลิก LINE เพื่อป้องกันข้อมูลสูญหาย</p>
+
+            <h3>ค้นหาบทสนทนาในอดีต</h3>
+            <p>ใช้ฟีเจอร์ค้นหาเต็มข้อความของ ChatArchive ค้นหาข้ามทุกห้องแชท เช่น "ชื่อร้านอาหารนั้น" หรือ "นัดเมื่อปีก่อน" ได้ในทันที</p>
+
+            <h3>วิเคราะห์ด้วย AI</h3>
+            <p>นำข้อมูลข้อความที่ส่งออกไปโหลดใน Google NotebookLM หรือเครื่องมือ AI อื่นๆ เพื่อสรุป วิเคราะห์ และดึงข้อมูลสำคัญออกมา</p>
+            <p><a href="/ChatArchive-support/th/blog/line-backup-notebooklm.html">&#x2192; วิธีวิเคราะห์ประวัติแชท LINE ด้วย NotebookLM</a></p>
+
+            <h3>เก็บเป็นบันทึกความทรงจำ</h3>
+            <p>เก็บบทสนทนาสำคัญกับครอบครัวและเพื่อนไว้อ่านย้อนกลับ เหมือนอัลบั้มรูปที่เป็นข้อความ</p>
+
+            <h2 id="faq">10. คำถามที่พบบ่อย</h2>
+
+            <h3>Q: ต้องเข้าสู่ระบบ LINE บน Mac หรือไม่?</h3>
+            <p>ใช่ ChatArchive อ่านฐานข้อมูล LINE บน Mac จำเป็นต้องเข้าสู่ระบบ LINE บน Mac อย่างน้อยหนึ่งครั้ง และมีการซิงค์ประวัติแชทแล้ว</p>
+
+            <h3>Q: ข้อมูลจะถูกส่งออกไปภายนอกหรือไม่?</h3>
+            <p>ไม่ ChatArchive <strong>ประมวลผลภายในเครื่องทั้งหมด</strong> ไม่มีการเชื่อมต่อเครือข่ายใดๆ และข้อมูลจะไม่ถูกส่งไปยังอินเทอร์เน็ต</p>
+
+            <h3>Q: รูปภาพและสติกเกอร์จะถูกบันทึกด้วยหรือไม่?</h3>
+            <p>รูปภาพและสติกเกอร์ที่ยังอยู่ในแคชของ LINE จะแสดงและบันทึกได้ รูปภาพเก่าที่แคชถูกลบแล้วจะแสดงเป็นตัวแทนข้อมูล</p>
+
+            <h3>Q: เปิดไฟล์ที่ส่งออกบน Mac เครื่องอื่นได้หรือไม่?</h3>
+            <p>ได้ นำไฟล์ .chatarchive ไปนำเข้าใน ChatArchive บน Mac เครื่องอื่นก็ดูได้เลย</p>
+
+            <h3>Q: ทดลองใช้ฟรีได้หรือไม่?</h3>
+            <p>ดาวน์โหลดฟรี การใช้งานฟีเจอร์ทั้งหมดต้องซื้อใบอนุญาต</p>
+
+            <div class="cta-box">
+                <h2>ประวัติแชททั้งหมด คลิกเดียว</h2>
+                <p>หมดยุคส่งออกทีละห้องด้วยมือ<br>ChatArchive ช่วยสำรองข้อมูลแชทสำคัญทั้งหมดในครั้งเดียว</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        ซื้อใบอนุญาต
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        ดาวน์โหลดฟรี
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

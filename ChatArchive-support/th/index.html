@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatArchive - แอปสำรองและดูประวัติแชท</title>
+    <meta name="description" content="ChatArchive เป็นแอป macOS ที่สำรองข้อมูลและดูประวัติแชทได้อย่างปลอดภัย ประมวลผลทั้งหมดบนอุปกรณ์เพื่อปกป้องความเป็นส่วนตัวของคุณ">
+    <meta property="og:type" content="website">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 120px; height: 120px; border-radius: 26px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4); margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 2.5em; font-weight: 700; margin-bottom: 12px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero .tagline { color: #a0a0a0; font-size: 1.2em; margin-bottom: 16px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px; padding: 6px 14px; font-size: 0.85em; color: #b0b0b0;
+            margin-bottom: 28px;
+        }
+        .hero-badge svg { width: 16px; height: 16px; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download, .btn-license {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 12px; text-decoration: none;
+            font-weight: 600; font-size: 1em; transition: all 0.3s;
+        }
+        .btn-download {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: #fff; box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+        }
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(233,69,96,0.5); }
+        .btn-license {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0;
+        }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .section { margin: 60px 0; }
+        .section-title {
+            font-size: 1.6em; font-weight: 700; color: #fff; margin-bottom: 8px;
+            text-align: center;
+        }
+        .section-subtitle { color: #a0a0a0; text-align: center; margin-bottom: 30px; }
+        .section-note { color: #888; text-align: center; font-size: 0.85em; margin-bottom: 20px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .feature-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px; transition: all 0.3s;
+        }
+        .feature-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+        .feature-icon { font-size: 2em; margin-bottom: 12px; }
+        .feature-card h3 { color: #fff; font-size: 1em; margin-bottom: 8px; }
+        .feature-card p { color: #a0a0a0; font-size: 0.9em; }
+        .steps { display: flex; flex-direction: column; gap: 16px; }
+        .step {
+            display: flex; gap: 16px; align-items: flex-start;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px;
+        }
+        .step-number {
+            width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: #fff; font-size: 1em;
+        }
+        .step-content h3 { color: #fff; margin-bottom: 6px; }
+        .step-content p { color: #a0a0a0; font-size: 0.9em; }
+        .faq-list { display: flex; flex-direction: column; gap: 12px; }
+        .faq-item {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 16px 20px;
+        }
+        .faq-item summary { color: #fff; cursor: pointer; font-weight: 500; }
+        .faq-item summary:hover { color: #e94560; }
+        .faq-answer { margin-top: 12px; color: #a0a0a0; font-size: 0.9em; }
+        .legal-box {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 24px;
+        }
+        .legal-box h3 { color: #fff; margin-bottom: 8px; font-size: 1em; }
+        .legal-box p { color: #a0a0a0; font-size: 0.9em; margin-bottom: 16px; }
+        .legal-box a { color: #e94560; text-decoration: none; }
+        .legal-box a:hover { text-decoration: underline; }
+        .contact-buttons { text-align: center; }
+        .btn-contact {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0; padding: 12px 24px; border-radius: 10px;
+            text-decoration: none; font-weight: 600; transition: all 0.3s;
+        }
+        .btn-contact:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; margin: 0 8px; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8em; }
+            .features-grid { grid-template-columns: 1fr; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+            <h1>ChatArchive</h1>
+            <p class="tagline">สำรองข้อมูลและดูประวัติแชทอย่างปลอดภัย</p>
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                macOS 14.0+
+            </div>
+            <div class="hero-buttons">
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    ดาวน์โหลด
+                </a>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    ซื้อใบอนุญาต
+                </a>
+            </div>
+        </div>
+
+        <nav class="support-nav">
+            <a href="/ChatArchive-support/th/" class="active">หน้าหลัก</a>
+            <a href="/ChatArchive-support/th/privacy.html">ความเป็นส่วนตัว</a>
+            <a href="/ChatArchive-support/th/terms.html">ข้อกำหนด</a>
+            <a href="/ChatArchive-support/th/blog/">บล็อก</a>
+            <a href="/ChatArchive-support/">JA</a>
+            <a href="/ChatArchive-support/en/">EN</a>
+            <a href="/ChatArchive-support/zh-Hant/">中文</a>
+        </nav>
+
+        <section class="section" id="features">
+            <h2 class="section-title">คุณสมบัติหลัก</h2>
+            <p class="section-subtitle">จัดการประวัติแชทอย่างง่ายดายและปลอดภัย</p>
+            <p class="section-note">ใช้งานได้กับ LINE สำหรับ iPhone และ Mac เท่านั้น ไม่รองรับ LINE สำหรับ Android</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F513;</div>
+                    <h3>ถอดรหัสฐานข้อมูล</h3>
+                    <p>ถอดรหัสฐานข้อมูลที่เข้ารหัสของแอปข้อความบน macOS โดยอัตโนมัติ และอ่านประวัติแชทของคุณ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F5B1;</div>
+                    <h3>นำเข้าอัตโนมัติด้วยคลิกเดียว</h3>
+                    <p>ไม่ต้องตั้งค่าซับซ้อน ตรวจจับและนำเข้าข้อมูลแชทโดยอัตโนมัติด้วยคลิกเดียว</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F4AC;</div>
+                    <h3>หน้าจอแชท</h3>
+                    <p>ดูประวัติแชทในหน้าจอที่สะอาดตา พร้อมประสบการณ์การใช้งานที่คุ้นเคย</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F50D;</div>
+                    <h3>ค้นหาข้อความแบบเต็ม</h3>
+                    <p>ค้นหาข้ามประวัติแชททั้งหมด ค้นหาข้อความในอดีตได้อย่างรวดเร็ว</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F512;</div>
+                    <h3>ประมวลผลบนอุปกรณ์ทั้งหมด</h3>
+                    <p>การประมวลผลข้อมูลทั้งหมดทำบนอุปกรณ์ของคุณ ไม่มีการสื่อสารผ่านเครือข่ายใด ๆ</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="howto">
+            <h2 class="section-title">วิธีใช้</h2>
+            <p class="section-subtitle">ดูประวัติแชทได้ง่าย ๆ ใน 3 ขั้นตอน</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>เปิดแอป</h3>
+                        <p>เปิด ChatArchive ตรวจสอบให้แน่ใจว่าได้ติดตั้งแอปข้อความบน macOS แล้ว</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>คลิก "นำเข้า"</h3>
+                        <p>คลิกปุ่มนำเข้าบนหน้าจอหลัก แอปจะตรวจจับ ถอดรหัส และนำเข้าฐานข้อมูลแชทโดยอัตโนมัติ</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>ดูประวัติแชท</h3>
+                        <p>เมื่อนำเข้าเสร็จสมบูรณ์ คุณสามารถดูและค้นหาประวัติแชทในหน้าจอแชทได้</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <h2 class="section-title">คำถามที่พบบ่อย</h2>
+            <p class="section-subtitle">หากพบปัญหา โปรดตรวจสอบที่นี่</p>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>แสดงข้อความ "ไม่พบข้อมูล"</summary>
+                    <div class="faq-answer">
+                        <p>โปรดตรวจสอบว่าได้ติดตั้งแอปข้อความบน macOS แล้ว และได้เข้าสู่ระบบอย่างน้อยหนึ่งครั้ง ฐานข้อมูลแชทจะถูกสร้างหลังจากเข้าสู่ระบบครั้งแรก</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>แสดงข้อความ "ต้องการสิทธิ์การเข้าถึง"</summary>
+                    <div class="faq-answer">
+                        <p>คุณอาจต้องให้สิทธิ์ "การเข้าถึงดิสก์แบบเต็ม" ในการตั้งค่าความปลอดภัยของ macOS ไปที่ การตั้งค่าระบบ &gt; ความเป็นส่วนตัวและความปลอดภัย &gt; การเข้าถึงดิสก์แบบเต็ม แล้วเพิ่ม ChatArchive</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>ข้อมูลของฉันปลอดภัยหรือไม่?</summary>
+                    <div class="faq-answer">
+                        <p>ใช่ ChatArchive ประมวลผลข้อมูลทั้งหมดบนอุปกรณ์ของคุณ ไม่มีการสื่อสารผ่านเครือข่ายใด ๆ และไม่เคยส่งข้อมูลไปยังเซิร์ฟเวอร์ภายนอก</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>รองรับรูปแบบข้อความใดบ้าง?</summary>
+                    <div class="faq-answer">
+                        <p>รองรับข้อความตัวอักษร รูปภาพ สติกเกอร์ วิดีโอ ข้อความเสียง ไฟล์ ข้อมูลตำแหน่ง รายชื่อติดต่อ และรูปแบบข้อความหลักอื่น ๆ</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>รูปภาพและสติกเกอร์จะแสดงหรือไม่?</summary>
+                    <div class="faq-answer">
+                        <p>รูปภาพและสติกเกอร์ที่แคชไว้จะสามารถแสดงได้ หากแคชถูกลบ จะแสดงภาพขนาดย่อแทน</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>ต้องเชื่อมต่ออินเทอร์เน็ตหรือไม่?</summary>
+                    <div class="faq-answer">
+                        <p>ไม่ต้อง แอปทำงานแบบออฟไลน์ได้อย่างสมบูรณ์ ทุกฟีเจอร์สามารถใช้งานได้แม้ไม่มีการเชื่อมต่ออินเทอร์เน็ต</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="section" id="privacy">
+            <h2 class="section-title">นโยบายความเป็นส่วนตัว</h2>
+            <p class="section-subtitle">เราให้ความสำคัญกับความเป็นส่วนตัวของข้อมูลของคุณ</p>
+            <div class="legal-box">
+                <h3>การเก็บรวบรวมข้อมูล</h3>
+                <p>ChatArchive ไม่เก็บรวบรวมข้อมูลส่วนบุคคลหรือข้อมูลแชทใด ๆ การประมวลผลข้อมูลทั้งหมดทำบนอุปกรณ์ของคุณ</p>
+                <h3>การสื่อสารผ่านเครือข่าย</h3>
+                <p>แอปนี้ไม่มีการสื่อสารผ่านเครือข่ายใด ๆ ทำงานได้อย่างสมบูรณ์โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</p>
+                <h3>การแบ่งปันกับบุคคลที่สาม</h3>
+                <p>เราไม่ให้ แบ่งปัน หรือขายข้อมูลผู้ใช้แก่บุคคลที่สามใด ๆ</p>
+                <p><a href="/ChatArchive-support/th/privacy.html">อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม &rarr;</a></p>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2 class="section-title">ติดต่อเรา</h2>
+            <p class="section-subtitle">หากมีคำถามหรือข้อเสนอแนะ สามารถติดต่อเราได้</p>
+            <div class="contact-buttons">
+                <a href="https://forms.gle/PLACEHOLDER" class="btn-contact" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    แบบฟอร์มติดต่อ
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <a href="/ChatArchive-support/th/privacy.html">นโยบายความเป็นส่วนตัว</a>
+            <a href="/ChatArchive-support/th/terms.html">ข้อกำหนดการใช้งาน</a>
+            <p style="margin-top: 12px;">&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
