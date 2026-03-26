@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Manual | GitInflow Support</title>
+    <meta name="description" content="GitInflow User Manual. Complete guide for all features.">
+    <meta property="og:title" content="User Manual | GitInflow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/manual/en/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h1 {
+            font-size: 1.8em; color: #fff; margin-bottom: 16px; font-weight: 700;
+        }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content blockquote {
+            border-left: 3px solid rgba(233,69,96,0.5); padding-left: 16px;
+            margin: 16px 0; color: #a0a0a0;
+        }
+        .toc {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 24px; margin-bottom: 40px;
+        }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 4px; }
+        .toc a { color: #a0a0a0; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/GitInflow-support/" class="back-link">← GitInflow Support</a>
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>GitHub Issue Kanban Client for iOS</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/GitInflow-support/">Support</a>
+            <a href="/GitInflow-support/index-ja">サポート</a>
+            <a href="/GitInflow-support/manual/en/" class="active">Manual</a>
+            <a href="/GitInflow-support/manual/ja/">マニュアル</a>
+            <a href="/GitInflow-support/privacy">Privacy</a>
+            <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+            <a href="/GitInflow-support/blog/en/">Blog</a>
+            <a href="/GitInflow-support/blog/ja/">ブログ</a>
+            <a href="/GitInflow-support/changelog">Changelog</a>
+            <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h1>GitInflow User Manual</h1>
+            <p>GitInflow is a GitHub Issue kanban client for iOS. This manual covers all features in detail.</p>
+
+            <hr>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ol>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#kanban-tabs">Kanban Tabs</a></li>
+                    <li><a href="#changing-status">Changing Status</a></li>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#repository-filter">Repository Filter</a></li>
+                    <li><a href="#creating-issues">Creating Issues</a></li>
+                    <li><a href="#issue-detail">Issue Detail</a></li>
+                    <li><a href="#labels-milestones">Labels &amp; Milestones</a></li>
+                    <li><a href="#comments">Comments</a></li>
+                    <li><a href="#share-extension">Share Extension</a></li>
+                    <li><a href="#pull-requests-tab">Pull Requests Tab</a></li>
+                    <li><a href="#widget">Widget</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#error-handling">Error Handling</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ol>
+            </div>
+
+            <hr>
+
+            <h2 id="getting-started">Getting Started</h2>
+
+            <h3>Login</h3>
+            <ol>
+                <li>Launch GitInflow.</li>
+                <li>Tap <strong>"Sign in with GitHub"</strong> on the login screen.</li>
+                <li>Authenticate in the browser or via GitHub's app. GitInflow uses OAuth and never stores your password.</li>
+            </ol>
+
+            <h3>Select Repositories</h3>
+            <ol>
+                <li>After login, go to the <strong>Settings</strong> tab (gear icon).</li>
+                <li>Tap repositories to select them. Selected repos are checked.</li>
+                <li>You can select <strong>up to 5 repositories</strong> at once.</li>
+            </ol>
+
+            <h3>Set a Default Repository</h3>
+            <p>In the Settings tab, tap the <strong>star icon</strong> next to a repository to mark it as the default. The default repository is used when:</p>
+            <ul>
+                <li>Creating a new issue via the <strong>+</strong> button</li>
+                <li>Using the <strong>Share Extension</strong> when no repo is manually chosen</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="kanban-tabs">Kanban Tabs</h2>
+            <p>GitInflow organizes issues into four status columns, each represented by a tab:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tab</th>
+                        <th>Description</th>
+                        <th>GitHub Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Backlog</strong></td>
+                        <td>Issues with no status label — the inbox for new work</td>
+                        <td><em>(no label)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ready</strong></td>
+                        <td>Issues that are triaged and ready to start</td>
+                        <td><code>status:ready</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>In Progress</strong></td>
+                        <td>Issues actively being worked on</td>
+                        <td><code>status:inProgress</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Done</strong></td>
+                        <td>Completed issues — automatically closed on GitHub</td>
+                        <td><code>status:done</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Tap any tab to switch to it. Each tab shows only the issues matching that status from your selected repositories.</p>
+
+            <hr>
+
+            <h2 id="changing-status">Changing Status</h2>
+            <p>There are four ways to change an issue's status:</p>
+
+            <h3>Swipe Left — Add / Advance</h3>
+            <p>Swipe an issue card <strong>to the left</strong> to reveal quick actions:</p>
+            <ul>
+                <li><strong>Label</strong> — Open the label picker sheet</li>
+                <li><strong>Milestone</strong> — Open the milestone picker sheet</li>
+                <li><strong>Advance</strong> — Move the issue to the next status (e.g., Backlog → Ready → In Progress → Done)</li>
+            </ul>
+
+            <h3>Swipe Right — Retreat / Comment</h3>
+            <p>Swipe an issue card <strong>to the right</strong> to reveal:</p>
+            <ul>
+                <li><strong>Retreat</strong> — Move the issue back to the previous status (e.g., In Progress → Ready)</li>
+                <li><strong>Comment</strong> — Open a comment sheet to add a comment to the issue</li>
+            </ul>
+
+            <h3>Context Menu (Long Press)</h3>
+            <p>Long-press any issue card to open a context menu with all available status options. This lets you jump directly to any status without swiping multiple times.</p>
+
+            <h3>Issue Detail Buttons</h3>
+            <p>Tap an issue to open the <strong>Issue Detail</strong> screen. Status change buttons are displayed at the bottom of the screen — tap <strong>Advance</strong> or <strong>Retreat</strong> to move the issue.</p>
+
+            <hr>
+
+            <h2 id="search">Search</h2>
+            <p>Each kanban tab has a <strong>search bar</strong> at the top. Tap it to filter issues in the current tab by keyword.</p>
+            <ul>
+                <li>Search matches issue <strong>titles</strong>.</li>
+                <li>The search is local (no extra network request) and updates in real time as you type.</li>
+                <li>Clearing the search bar restores the full list.</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="repository-filter">Repository Filter</h2>
+            <p>When you have <strong>two or more repositories</strong> selected in Settings, a row of <strong>filter chips</strong> appears below the tab bar on the kanban screen.</p>
+            <ul>
+                <li>Tap a chip to show issues from that repository only.</li>
+                <li>Tap <strong>All</strong> (the leftmost chip) to show issues from all selected repositories.</li>
+                <li>The filter applies to the current tab only; switching tabs keeps your filter selection.</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="creating-issues">Creating Issues</h2>
+            <ol>
+                <li>Navigate to any kanban tab (the <strong>+</strong> button is always visible in the top-right corner).</li>
+                <li>Tap <strong>+</strong>.</li>
+                <li>If you have multiple repositories selected, a <strong>repository picker</strong> appears — choose the target repo. If you have a default repo set, it is pre-selected.</li>
+                <li>Enter a <strong>title</strong> (required) and an optional <strong>body</strong>.</li>
+                <li>Tap <strong>Submit</strong> to create the issue on GitHub. The new issue appears in the <strong>Backlog</strong> tab.</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="issue-detail">Issue Detail</h2>
+            <p>Tap any issue card to open its detail screen. The detail screen shows:</p>
+            <ul>
+                <li><strong>Title</strong> — Issue title and number</li>
+                <li><strong>Status badge</strong> — Current kanban status (Backlog / Ready / In Progress / Done)</li>
+                <li><strong>Labels</strong> — All labels assigned to the issue</li>
+                <li><strong>Milestone</strong> — Assigned milestone, if any</li>
+                <li><strong>Body</strong> — Issue description (rendered as plain text)</li>
+                <li><strong>Comments</strong> — All existing comments in chronological order</li>
+                <li><strong>Status change buttons</strong> — Advance and Retreat buttons at the bottom</li>
+            </ul>
+            <p>From the detail screen you can:</p>
+            <ul>
+                <li>Read the full issue description and all comments</li>
+                <li>Change status using the Advance / Retreat buttons</li>
+                <li>Add a comment (see <a href="#comments">Comments</a>)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="labels-milestones">Labels &amp; Milestones</h2>
+
+            <h3>Adding a Label via Swipe</h3>
+            <ol>
+                <li>Swipe an issue card <strong>to the left</strong>.</li>
+                <li>Tap the <strong>Label</strong> action.</li>
+                <li>A picker sheet appears with all labels in the issue's repository.</li>
+                <li>Tap a label to toggle it on or off.</li>
+                <li>Tap <strong>Done</strong> to apply.</li>
+            </ol>
+
+            <h3>Adding a Milestone via Swipe</h3>
+            <ol>
+                <li>Swipe an issue card <strong>to the left</strong>.</li>
+                <li>Tap the <strong>Milestone</strong> action.</li>
+                <li>A picker sheet appears with all open milestones in the repository.</li>
+                <li>Tap a milestone to assign it, or tap <strong>None</strong> to remove the current milestone.</li>
+                <li>Tap <strong>Done</strong> to apply.</li>
+            </ol>
+            <blockquote>
+                <strong>Note:</strong> Labels and milestones are fetched from GitHub and reflect what exists in that repository. Create labels and milestones on GitHub.com or the GitHub app first.
+            </blockquote>
+
+            <hr>
+
+            <h2 id="comments">Comments</h2>
+
+            <h3>Adding a Comment via Swipe</h3>
+            <ol>
+                <li>Swipe an issue card <strong>to the right</strong>.</li>
+                <li>Tap the <strong>Comment</strong> action.</li>
+                <li>A comment sheet appears. Type your comment.</li>
+                <li>Tap <strong>Post</strong> to submit.</li>
+            </ol>
+
+            <h3>Adding a Comment from Issue Detail</h3>
+            <ol>
+                <li>Tap an issue to open the detail screen.</li>
+                <li>Scroll to the bottom of the comments list.</li>
+                <li>Tap the <strong>Add Comment</strong> field.</li>
+                <li>Type your comment and tap <strong>Post</strong>.</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="share-extension">Share Extension</h2>
+            <p>The Share Extension lets you create or update GitHub Issues directly from any app — browser, Notes, Safari, etc.</p>
+
+            <h3>Activating the Share Extension</h3>
+            <ol>
+                <li>In any app, tap the <strong>Share</strong> button (box with arrow).</li>
+                <li>Scroll the share sheet and tap <strong>GitInflow Share</strong>. If it does not appear, tap <strong>More</strong> and enable it.</li>
+            </ol>
+
+            <h3>New Issue Mode</h3>
+            <ol>
+                <li>In the Share Extension, select <strong>New Issue</strong> from the mode picker.</li>
+                <li>Choose a repository (your default repo is pre-selected).</li>
+                <li>The shared content (URL, selected text, image) is pre-filled in the body.</li>
+                <li>Edit the title and body as needed.</li>
+                <li>Tap <strong>Create</strong> to post the issue.</li>
+            </ol>
+
+            <h3>Append to Existing Mode</h3>
+            <ol>
+                <li>Select <strong>Append to Existing</strong> from the mode picker.</li>
+                <li>Choose a repository.</li>
+                <li>A list of open issues in that repository appears — tap the issue you want to append to.</li>
+                <li>The shared content is pre-filled as a comment.</li>
+                <li>Tap <strong>Post</strong> to add the comment.</li>
+            </ol>
+
+            <h3>Show All Repos Toggle</h3>
+            <p>By default, the Share Extension shows only your <strong>default repository</strong>. Enable the <strong>"Show All Repos"</strong> toggle in the Share Extension to see all selected repositories and pick any of them.</p>
+
+            <h3>Default Repository in Share Extension</h3>
+            <p>The default repository set in Settings is pre-selected in the Share Extension, making one-tap issue creation possible.</p>
+
+            <hr>
+
+            <h2 id="pull-requests-tab">Pull Requests Tab</h2>
+            <p>Tap the <strong>PRs</strong> tab (at the bottom navigation bar) to see all open pull requests from your selected repositories.</p>
+            <ul>
+                <li>Each row shows the PR title, repository, and author.</li>
+                <li>Tap a PR to open it in Safari (GitHub web).</li>
+                <li>When multiple repositories are selected, use the <strong>repository filter chips</strong> (same as the kanban screen) to filter by repo.</li>
+            </ul>
+            <blockquote>
+                Pull requests are read-only in GitInflow. Use GitHub.com or the GitHub app to review and merge PRs.
+            </blockquote>
+
+            <hr>
+
+            <h2 id="widget">Widget</h2>
+            <p>GitInflow provides a home screen widget that shows your issue counts at a glance.</p>
+
+            <h3>Widget Sizes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Small</strong></td>
+                        <td>Count of <strong>In Progress</strong> issues</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>Counts for all four statuses: Backlog / Ready / In Progress / Done</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Adding the Widget</h3>
+            <ol>
+                <li>Long-press an empty area on your home screen.</li>
+                <li>Tap <strong>+</strong> (top-left corner) to open the widget gallery.</li>
+                <li>Search for <strong>GitInflow</strong>.</li>
+                <li>Select <strong>Small</strong> or <strong>Medium</strong>.</li>
+                <li>Tap <strong>Add Widget</strong> and position it.</li>
+            </ol>
+
+            <h3>Widget Behavior</h3>
+            <ul>
+                <li>The widget refreshes periodically in the background (iOS controls the exact interval).</li>
+                <li>Tapping the widget opens GitInflow on the kanban screen.</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="notifications">Notifications</h2>
+            <p>GitInflow can send <strong>local notifications</strong> when new issues appear in your selected repositories.</p>
+            <ul>
+                <li>Notifications are generated when GitInflow refreshes issue data (either in the foreground or background).</li>
+                <li>New issues that were not present on the previous refresh trigger a notification.</li>
+                <li>Tap a notification to open GitInflow directly to the relevant issue.</li>
+            </ul>
+
+            <h3>Enabling Notifications</h3>
+            <p>iOS will prompt you to allow notifications on first launch. If you declined, go to <strong>iOS Settings → GitInflow → Notifications</strong> and enable them.</p>
+
+            <hr>
+
+            <h2 id="settings">Settings</h2>
+            <p>Open the <strong>Settings</strong> tab (gear icon) to manage:</p>
+
+            <h3>Repository Selection</h3>
+            <ul>
+                <li>Tap any repository in the list to <strong>select or deselect</strong> it.</li>
+                <li>A checkmark indicates a selected repository.</li>
+                <li>You can select up to <strong>5 repositories</strong>.</li>
+            </ul>
+
+            <h3>Default Repository</h3>
+            <ul>
+                <li>Tap the <strong>star icon</strong> next to a repository to set it as the default.</li>
+                <li>The star turns filled/yellow on the selected default.</li>
+                <li>Only one default can be set at a time.</li>
+            </ul>
+
+            <h3>Privacy Policy</h3>
+            <p>A link to the GitInflow Privacy Policy is available in Settings.</p>
+
+            <h3>Logout</h3>
+            <p>Tap <strong>Logout</strong> (at the bottom of Settings) to sign out of your GitHub account. All locally cached data is cleared on logout.</p>
+
+            <hr>
+
+            <h2 id="error-handling">Error Handling</h2>
+
+            <h3>Failed Repository Banner</h3>
+            <p>If GitInflow cannot load issues from a repository (e.g., network error, revoked access), a <strong>red error banner</strong> appears at the top of the kanban screen showing which repository failed.</p>
+
+            <h3>Retry Button</h3>
+            <p>Tap the <strong>Retry</strong> button in the error banner to immediately re-fetch issues from the failed repository. If the problem persists, check your internet connection or verify that the GitHub token still has access to that repository (re-login if needed).</p>
+
+            <hr>
+
+            <h2 id="faq">FAQ</h2>
+
+            <h3>How many repositories can I select?</h3>
+            <p>Up to 5 repositories can be selected at a time in Settings.</p>
+
+            <h3>What does "Done" status do on GitHub?</h3>
+            <p>When you move an issue to Done, GitInflow adds the <code>status:done</code> label and <strong>closes</strong> the issue on GitHub. Moving it back to any other status reopens the issue.</p>
+
+            <h3>Can I use GitInflow with private repositories?</h3>
+            <p>Yes. GitInflow uses your GitHub OAuth token which has access to all repositories you authorized during login. Private repos appear alongside public repos in Settings.</p>
+
+            <h3>The Share Extension is not showing up. What do I do?</h3>
+            <p>In the share sheet, tap <strong>More</strong> (or scroll right to find Edit), find GitInflow Share in the list, and enable it.</p>
+
+            <h3>Why are my labels or milestones not showing?</h3>
+            <p>Labels and milestones are fetched from GitHub. If none appear, make sure the repository has labels and milestones created on GitHub, and that you have network access.</p>
+
+            <h3>Why isn't the widget updating?</h3>
+            <p>Widgets on iOS refresh on a schedule managed by the system. Open GitInflow at least once to trigger a data refresh, and the widget will update shortly after.</p>
+
+            <h3>How do I change which repositories appear in the widget?</h3>
+            <p>The widget reflects the repositories selected in Settings. Add or remove repos in Settings, and the widget will update on its next refresh.</p>
+
+            <h3>I accidentally moved an issue to Done. How do I undo it?</h3>
+            <p>Swipe the issue card to the right in the Done tab and tap <strong>Retreat</strong>, or long-press the card and select a status from the context menu. This removes the <code>status:done</code> label and reopens the issue on GitHub.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

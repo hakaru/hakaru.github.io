@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Building GitInflow: Technical Decisions Behind the App | GitInflow Blog</title>
+    <meta name="description" content="A look at the key technical decisions made while building GitInflow — from SwiftUI architecture to OAuth security.">
+    <meta property="og:title" content="Building GitInflow: Technical Decisions Behind the App">
+    <meta property="og:description" content="A look at the key technical decisions made while building GitInflow — from SwiftUI architecture to OAuth security.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/blog/en/2026-03-22-building-gitinflow/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Building GitInflow: Technical Decisions Behind the App",
+        "datePublished": "2026-03-22",
+        "author": {"@type": "Person", "name": "hakaru"},
+        "publisher": {"@type": "Organization", "name": "hakaru"},
+        "url": "https://hakaru.net/GitInflow-support/blog/en/2026-03-22-building-gitinflow/"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; color: #fff; font-weight: 700; margin-bottom: 8px; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; font-size: 0.85em; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content em { color: #a0a0a0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/GitInflow-support/blog/en/" class="back-link">← Blog</a>
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>GitHub Issue Kanban Client for iOS</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/GitInflow-support/">Support</a>
+            <a href="/GitInflow-support/index-ja">サポート</a>
+            <a href="/GitInflow-support/manual/en/">Manual</a>
+            <a href="/GitInflow-support/manual/ja/">マニュアル</a>
+            <a href="/GitInflow-support/privacy">Privacy</a>
+            <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+            <a href="/GitInflow-support/blog/en/" class="active">Blog</a>
+            <a href="/GitInflow-support/blog/ja/">ブログ</a>
+            <a href="/GitInflow-support/changelog">Changelog</a>
+            <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="article-header">
+            <h1>Building GitInflow: Technical Decisions Behind the App</h1>
+            <div class="article-meta">March 22, 2026</div>
+        </div>
+        <div class="content">
+            <p>GitInflow went from idea to App Store in a single sprint. Here's a look at the key technical decisions we made along the way.</p>
+
+            <h2>Architecture: SwiftUI + MVVM + No Backend</h2>
+            <p>The entire app runs on two things: <strong>SwiftUI</strong> and the <strong>GitHub REST API</strong>. No custom backend, no database, no sync engine.</p>
+            <pre><code>SwiftUI Views
+  → ViewModels (@MainActor, ObservableObject)
+    → Services (GitHubAPIClient, StatusService, CacheService)
+      → GitHub REST API v3</code></pre>
+            <p>This simplicity is intentional. Every piece of data lives on GitHub. The app is just a view layer with local caching.</p>
+
+            <h2>Kanban via Labels</h2>
+            <p>The kanban system uses GitHub labels (<code>status:ready</code>, <code>status:inProgress</code>, <code>status:done</code>) instead of GitHub Projects. Why?</p>
+            <ol>
+                <li><strong>No API complexity</strong> — Labels are a single field on the Issue object</li>
+                <li><strong>Universal</strong> — Works with any GitHub client, CLI tool, or automation</li>
+                <li><strong>Auto-creation</strong> — GitInflow creates missing labels on first use via <code>POST /repos/{owner}/{repo}/labels</code></li>
+            </ol>
+            <p>When you move an issue to "Done", the app does two things in sequence: updates the labels, then closes the issue. Moving back reopens it.</p>
+
+            <h2>Multi-Repository: TaskGroup for Parallel Fetching</h2>
+            <p>One of the most impactful features is viewing issues across up to 5 repositories at once. This is implemented with Swift's <code>withTaskGroup</code>:</p>
+            <pre><code>await withTaskGroup(of: (Repository, Result&lt;[Issue], Error&gt;).self) { group in
+    for repo in repos {
+        group.addTask {
+            do {
+                var fetched = try await self.apiClient.fetchIssues(...)
+                // Filter PRs, assign repoFullName
+                return (repo, .success(fetched))
+            } catch {
+                return (repo, .failure(error))
+            }
+        }
+    }
+    // Merge results, track failures
+}</code></pre>
+            <p>Partial failures are tracked separately — if one repo fails, the others still display. An error banner shows which repo failed with a retry button.</p>
+
+            <h2>OAuth Security: Server-Side Token Exchange</h2>
+            <p>The initial implementation had the OAuth client secret embedded in the app binary. This is a common pattern but fundamentally insecure — anyone can extract it with <code>strings</code>.</p>
+            <p>We moved token exchange to a <strong>Cloudflare Worker</strong>:</p>
+            <pre><code>App → sends auth code → Cloudflare Worker → exchanges for token → returns token to app</code></pre>
+            <p>The worker holds the client secret via <code>wrangler secret</code>. The app never sees it. Total cost: $0 (Cloudflare free tier).</p>
+
+            <h2>Share Extension: App Group + Keychain Sharing</h2>
+            <p>The Share Extension runs as a separate process. It needs two things from the main app:</p>
+            <ol>
+                <li><strong>OAuth token</strong> — Shared via Keychain Access Group</li>
+                <li><strong>Selected repositories</strong> — Shared via App Group UserDefaults</li>
+            </ol>
+            <p>This required careful entitlement configuration:</p>
+            <ul>
+                <li>Both targets need <code>keychain-access-groups</code> with <code>$(AppIdentifierPrefix)com.gitinflow.GitInflow</code></li>
+                <li>Both targets need <code>com.apple.security.application-groups</code> with <code>group.com.gitinflow.shared</code></li>
+            </ul>
+
+            <h2>Localization: String Catalogs</h2>
+            <p>Rather than maintaining <code>.strings</code> files, we use Xcode's <strong>String Catalog</strong> format (<code>.xcstrings</code>). SwiftUI's <code>Text("日本語")</code> automatically looks up translations in the catalog — no code changes needed for most strings.</p>
+            <p>For non-SwiftUI contexts (error messages, notifications), we use <code>String(localized:)</code>.</p>
+
+            <h2>Widget: WidgetKit + App Group</h2>
+            <p>The widget reads issue counts from App Group UserDefaults. The main app writes these counts after each fetch:</p>
+            <pre><code>private func updateWidgetData() {
+    let defaults = UserDefaults(suiteName: AppConfig.appGroupID)
+    defaults?.set(backlogCount, forKey: "widget_backlog_count")
+    // ...
+    WidgetCenter.shared.reloadAllTimelines()
+}</code></pre>
+            <p>Simple, reliable, no background networking required.</p>
+
+            <h2>What We'd Do Differently</h2>
+            <ul>
+                <li><strong>Pagination from day one</strong> — We added it later, but the 100-item limit bit us early in testing</li>
+                <li><strong>Protocol-first services</strong> — We retrofitted <code>StatusServiceProtocol</code> and <code>AuthServiceProtocol</code>; should have started with them</li>
+                <li><strong>Offline support</strong> — Not yet implemented, but the caching infrastructure is there</li>
+            </ul>
+
+            <h2>Stack Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>UI</td><td>SwiftUI (iOS 17+)</td></tr>
+                    <tr><td>Architecture</td><td>MVVM + @MainActor</td></tr>
+                    <tr><td>Networking</td><td>URLSession + async/await</td></tr>
+                    <tr><td>Concurrency</td><td>TaskGroup (parallel fetch)</td></tr>
+                    <tr><td>Auth</td><td>OAuth + Cloudflare Workers</td></tr>
+                    <tr><td>Storage</td><td>Keychain (tokens), UserDefaults (preferences)</td></tr>
+                    <tr><td>Extensions</td><td>Share Extension, WidgetKit</td></tr>
+                    <tr><td>Localization</td><td>String Catalogs (.xcstrings)</td></tr>
+                    <tr><td>Build</td><td>xcodegen (project.yml)</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <p><em>Interested in the code? GitInflow is built in the open. Questions and feedback welcome at <a href="mailto:gitinflow@hakaru.net">gitinflow@hakaru.net</a>.</em></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

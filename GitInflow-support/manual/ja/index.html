@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ユーザーマニュアル | GitInflow サポート</title>
+    <meta name="description" content="GitInflow ユーザーマニュアル。全機能の詳細ガイド。">
+    <meta property="og:title" content="ユーザーマニュアル | GitInflow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/manual/ja/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h1 {
+            font-size: 1.8em; color: #fff; margin-bottom: 16px; font-weight: 700;
+        }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content blockquote {
+            border-left: 3px solid rgba(233,69,96,0.5); padding-left: 16px;
+            margin: 16px 0; color: #a0a0a0;
+        }
+        .toc {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 24px; margin-bottom: 40px;
+        }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 4px; }
+        .toc a { color: #a0a0a0; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/GitInflow-support/index-ja" class="back-link">← GitInflow サポート</a>
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>GitHub Issue をカンバンで管理する iOS アプリ</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/GitInflow-support/">Support</a>
+            <a href="/GitInflow-support/index-ja">サポート</a>
+            <a href="/GitInflow-support/manual/en/">Manual</a>
+            <a href="/GitInflow-support/manual/ja/" class="active">マニュアル</a>
+            <a href="/GitInflow-support/privacy">Privacy</a>
+            <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+            <a href="/GitInflow-support/blog/en/">Blog</a>
+            <a href="/GitInflow-support/blog/ja/">ブログ</a>
+            <a href="/GitInflow-support/changelog">Changelog</a>
+            <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h1>GitInflow ユーザーマニュアル</h1>
+            <p>GitInflow は GitHub Issue をカンバン方式で管理する iOS クライアントアプリです。このマニュアルでは全機能を詳しく説明します。</p>
+
+            <hr>
+
+            <div class="toc">
+                <h3>目次</h3>
+                <ol>
+                    <li><a href="#hajimeni">はじめに</a></li>
+                    <li><a href="#kanban-tabs">カンバンタブ</a></li>
+                    <li><a href="#status-change">ステータス変更</a></li>
+                    <li><a href="#search">検索</a></li>
+                    <li><a href="#repo-filter">リポジトリフィルター</a></li>
+                    <li><a href="#create-issue">Issue 作成</a></li>
+                    <li><a href="#issue-detail">Issue 詳細</a></li>
+                    <li><a href="#labels-milestones">ラベルとマイルストーン</a></li>
+                    <li><a href="#comments">コメント</a></li>
+                    <li><a href="#share-extension">共有シート（Share Extension）</a></li>
+                    <li><a href="#pull-requests">Pull Requests タブ</a></li>
+                    <li><a href="#widget">ウィジェット</a></li>
+                    <li><a href="#notifications">通知</a></li>
+                    <li><a href="#settings">設定</a></li>
+                    <li><a href="#error-handling">エラー対応</a></li>
+                    <li><a href="#faq">よくある質問（FAQ）</a></li>
+                </ol>
+            </div>
+
+            <hr>
+
+            <h2 id="hajimeni">はじめに</h2>
+
+            <h3>ログイン</h3>
+            <ol>
+                <li>GitInflow を起動します。</li>
+                <li>ログイン画面で <strong>「GitHubでサインイン」</strong> をタップします。</li>
+                <li>ブラウザまたは GitHub アプリで認証します。GitInflow は OAuth を使用しており、パスワードは保存されません。</li>
+            </ol>
+
+            <h3>リポジトリを選択する</h3>
+            <ol>
+                <li>ログイン後、<strong>設定</strong>タブ（歯車アイコン）を開きます。</li>
+                <li>リポジトリをタップして選択します。選択済みのリポジトリにはチェックマークが表示されます。</li>
+                <li>最大 <strong>5 つのリポジトリ</strong> を同時に選択できます。</li>
+            </ol>
+
+            <h3>デフォルトリポジトリを設定する</h3>
+            <p>設定タブでリポジトリの横にある<strong>星アイコン</strong>をタップすると、そのリポジトリをデフォルトに設定できます。デフォルトリポジトリは次の場面で使用されます:</p>
+            <ul>
+                <li><strong>+</strong> ボタンから新規 Issue を作成するとき</li>
+                <li><strong>Share Extension</strong> でリポジトリを手動選択しないとき</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="kanban-tabs">カンバンタブ</h2>
+            <p>GitInflow では、Issue を 4 つのステータス列（タブ）で管理します:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>タブ</th>
+                        <th>説明</th>
+                        <th>GitHub ラベル</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Backlog</strong></td>
+                        <td>ステータスラベルがない Issue — 新しい作業の受け口</td>
+                        <td><em>(なし)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ready</strong></td>
+                        <td>トリアージ済みで作業開始可能な Issue</td>
+                        <td><code>status:ready</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>In Progress</strong></td>
+                        <td>現在作業中の Issue</td>
+                        <td><code>status:inProgress</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Done</strong></td>
+                        <td>完了した Issue — GitHub 上で自動クローズ</td>
+                        <td><code>status:done</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>タブをタップして切り替えます。各タブには、選択したリポジトリのうち該当ステータスの Issue のみが表示されます。</p>
+
+            <hr>
+
+            <h2 id="status-change">ステータス変更</h2>
+            <p>Issue のステータスを変更する方法は 4 つあります。</p>
+
+            <h3>左スワイプ — ラベル追加 / 進める</h3>
+            <p>Issue カードを<strong>左にスワイプ</strong>するとクイックアクションが表示されます:</p>
+            <ul>
+                <li><strong>ラベル</strong> — ラベルピッカーシートを開く</li>
+                <li><strong>マイルストーン</strong> — マイルストーンピッカーシートを開く</li>
+                <li><strong>進める（Advance）</strong> — 次のステータスに移動（例: Backlog → Ready → In Progress → Done）</li>
+            </ul>
+
+            <h3>右スワイプ — 戻す / コメント</h3>
+            <p>Issue カードを<strong>右にスワイプ</strong>すると以下が表示されます:</p>
+            <ul>
+                <li><strong>戻す（Retreat）</strong> — 前のステータスに戻す（例: In Progress → Ready）</li>
+                <li><strong>コメント</strong> — コメント入力シートを開く</li>
+            </ul>
+
+            <h3>コンテキストメニュー（長押し）</h3>
+            <p>Issue カードを<strong>長押し</strong>するとコンテキストメニューが表示され、すべてのステータスオプションを選べます。何度もスワイプせずに任意のステータスへ直接ジャンプできます。</p>
+
+            <h3>Issue 詳細ボタン</h3>
+            <p>Issue をタップして<strong>Issue 詳細</strong>画面を開きます。画面下部に <strong>Advance</strong>（進める）と <strong>Retreat</strong>（戻す）ボタンが表示されます。</p>
+
+            <hr>
+
+            <h2 id="search">検索</h2>
+            <p>各カンバンタブの上部に<strong>検索バー</strong>があります。タップするとそのタブの Issue をキーワードで絞り込めます。</p>
+            <ul>
+                <li>Issue の<strong>タイトル</strong>が検索対象です。</li>
+                <li>検索はローカルで実行され（追加のネットワーク通信なし）、入力と同時にリアルタイムで更新されます。</li>
+                <li>検索バーを空にすると全件表示に戻ります。</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="repo-filter">リポジトリフィルター</h2>
+            <p>設定で <strong>2 つ以上のリポジトリ</strong>を選択している場合、カンバン画面のタブバー下に<strong>フィルターチップ</strong>の行が表示されます。</p>
+            <ul>
+                <li>チップをタップすると、そのリポジトリの Issue のみ表示されます。</li>
+                <li>一番左の <strong>すべて（All）</strong> をタップすると、全選択リポジトリの Issue が表示されます。</li>
+                <li>フィルターは現在のタブにのみ適用されます。タブを切り替えてもフィルター選択は維持されます。</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="create-issue">Issue 作成</h2>
+            <ol>
+                <li>任意のカンバンタブを開きます（<strong>+</strong> ボタンは右上に常に表示されています）。</li>
+                <li><strong>+</strong> をタップします。</li>
+                <li>複数のリポジトリを選択している場合、<strong>リポジトリピッカー</strong>が表示されます — 投入先を選んでください。デフォルトリポジトリが設定されている場合は自動的に選択されます。</li>
+                <li><strong>タイトル</strong>（必須）と任意の<strong>本文</strong>を入力します。</li>
+                <li><strong>Submit</strong> をタップして GitHub に Issue を作成します。新しい Issue は <strong>Backlog</strong> タブに表示されます。</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="issue-detail">Issue 詳細</h2>
+            <p>Issue カードをタップして詳細画面を開きます。詳細画面には以下が表示されます:</p>
+            <ul>
+                <li><strong>タイトル</strong> — Issue のタイトルと番号</li>
+                <li><strong>ステータスバッジ</strong> — 現在のカンバンステータス（Backlog / Ready / In Progress / Done）</li>
+                <li><strong>ラベル</strong> — Issue に付与されたすべてのラベル</li>
+                <li><strong>マイルストーン</strong> — 割り当てられたマイルストーン（ある場合）</li>
+                <li><strong>本文</strong> — Issue の説明（プレーンテキストで表示）</li>
+                <li><strong>コメント</strong> — 時系列順のすべてのコメント</li>
+                <li><strong>ステータス変更ボタン</strong> — 画面下部の Advance と Retreat ボタン</li>
+            </ul>
+            <p>詳細画面からは以下の操作が可能です:</p>
+            <ul>
+                <li>Issue の説明と全コメントを読む</li>
+                <li>Advance / Retreat ボタンでステータスを変更する</li>
+                <li>コメントを追加する（<a href="#comments">コメント</a>を参照）</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="labels-milestones">ラベルとマイルストーン</h2>
+
+            <h3>スワイプでラベルを追加する</h3>
+            <ol>
+                <li>Issue カードを<strong>左にスワイプ</strong>します。</li>
+                <li><strong>ラベル</strong> アクションをタップします。</li>
+                <li>そのリポジトリのすべてのラベルが表示されるピッカーシートが開きます。</li>
+                <li>ラベルをタップしてオン / オフを切り替えます。</li>
+                <li><strong>完了</strong> をタップして適用します。</li>
+            </ol>
+
+            <h3>スワイプでマイルストーンを追加する</h3>
+            <ol>
+                <li>Issue カードを<strong>左にスワイプ</strong>します。</li>
+                <li><strong>マイルストーン</strong> アクションをタップします。</li>
+                <li>リポジトリのオープンなマイルストーンが表示されるピッカーシートが開きます。</li>
+                <li>マイルストーンをタップして割り当てるか、<strong>なし</strong> をタップして現在のマイルストーンを解除します。</li>
+                <li><strong>完了</strong> をタップして適用します。</li>
+            </ol>
+            <blockquote>
+                <strong>注意:</strong> ラベルとマイルストーンは GitHub から取得されます。GitHub.com または GitHub アプリで事前に作成しておく必要があります。
+            </blockquote>
+
+            <hr>
+
+            <h2 id="comments">コメント</h2>
+
+            <h3>スワイプでコメントを追加する</h3>
+            <ol>
+                <li>Issue カードを<strong>右にスワイプ</strong>します。</li>
+                <li><strong>コメント</strong> アクションをタップします。</li>
+                <li>コメント入力シートが開きます。コメントを入力します。</li>
+                <li><strong>投稿</strong> をタップして送信します。</li>
+            </ol>
+
+            <h3>Issue 詳細からコメントを追加する</h3>
+            <ol>
+                <li>Issue をタップして詳細画面を開きます。</li>
+                <li>コメント一覧の一番下までスクロールします。</li>
+                <li><strong>コメントを追加</strong> フィールドをタップします。</li>
+                <li>コメントを入力して <strong>投稿</strong> をタップします。</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="share-extension">共有シート（Share Extension）</h2>
+            <p>Share Extension を使うと、ブラウザ・メモ・Safari など任意のアプリから GitHub Issue を直接作成・更新できます。</p>
+
+            <h3>Share Extension を起動する</h3>
+            <ol>
+                <li>任意のアプリで<strong>共有ボタン</strong>（矢印の出た四角）をタップします。</li>
+                <li>共有シートをスクロールして <strong>GitInflow Share</strong> をタップします。表示されない場合は <strong>その他</strong> をタップして有効にしてください。</li>
+            </ol>
+
+            <h3>新規 Issue モード</h3>
+            <ol>
+                <li>Share Extension でモードピッカーから <strong>新規 Issue</strong> を選択します。</li>
+                <li>リポジトリを選択します（デフォルトリポジトリが事前選択されます）。</li>
+                <li>共有したコンテンツ（URL・選択テキスト・画像）が本文に自動入力されます。</li>
+                <li>タイトルと本文を必要に応じて編集します。</li>
+                <li><strong>作成</strong> をタップして Issue を投稿します。</li>
+            </ol>
+
+            <h3>既存 Issue に追記モード</h3>
+            <ol>
+                <li>モードピッカーから <strong>既存に追記</strong> を選択します。</li>
+                <li>リポジトリを選択します。</li>
+                <li>そのリポジトリのオープンな Issue 一覧が表示されます — 追記したい Issue をタップします。</li>
+                <li>共有コンテンツがコメントとして自動入力されます。</li>
+                <li><strong>投稿</strong> をタップしてコメントを追加します。</li>
+            </ol>
+
+            <h3>すべてのリポジトリを表示トグル</h3>
+            <p>Share Extension はデフォルトで<strong>デフォルトリポジトリ</strong>のみ表示します。<strong>「すべてのリポジトリを表示」</strong> トグルを有効にすると、選択中のすべてのリポジトリから選べるようになります。</p>
+
+            <h3>Share Extension のデフォルトリポジトリ</h3>
+            <p>設定で指定したデフォルトリポジトリが Share Extension でも事前選択されるため、ワンタップで Issue 作成が可能です。</p>
+
+            <hr>
+
+            <h2 id="pull-requests">Pull Requests タブ</h2>
+            <p>下部ナビゲーションバーの <strong>PRs</strong> タブをタップすると、選択中のリポジトリのオープンな Pull Request が一覧表示されます。</p>
+            <ul>
+                <li>各行に PR のタイトル、リポジトリ、作成者が表示されます。</li>
+                <li>PR をタップすると Safari で GitHub のページが開きます。</li>
+                <li>複数リポジトリを選択中の場合、<strong>リポジトリフィルターチップ</strong>（カンバン画面と同じ）でリポジトリを絞り込めます。</li>
+            </ul>
+            <blockquote>
+                Pull Request の操作（レビュー・マージ等）は GitInflow では行えません。GitHub.com または GitHub アプリをご利用ください。
+            </blockquote>
+
+            <hr>
+
+            <h2 id="widget">ウィジェット</h2>
+            <p>GitInflow はホーム画面ウィジェットを提供しており、Issue の件数を一目で確認できます。</p>
+
+            <h3>ウィジェットのサイズ</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>サイズ</th>
+                        <th>表示内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Small</strong></td>
+                        <td><strong>In Progress</strong> の Issue 件数</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medium</strong></td>
+                        <td>全 4 ステータスの件数: Backlog / Ready / In Progress / Done</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>ウィジェットを追加する</h3>
+            <ol>
+                <li>ホーム画面の空いている場所を<strong>長押し</strong>します。</li>
+                <li>左上の <strong>+</strong> をタップしてウィジェットギャラリーを開きます。</li>
+                <li><strong>GitInflow</strong> を検索します。</li>
+                <li><strong>Small</strong> または <strong>Medium</strong> を選択します。</li>
+                <li><strong>ウィジェットを追加</strong> をタップして配置します。</li>
+            </ol>
+
+            <h3>ウィジェットの動作</h3>
+            <ul>
+                <li>ウィジェットは iOS が管理するスケジュールに従ってバックグラウンドで定期的に更新されます。</li>
+                <li>ウィジェットをタップすると GitInflow のカンバン画面が開きます。</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="notifications">通知</h2>
+            <p>GitInflow は選択中のリポジトリに新しい Issue が追加されたとき、<strong>ローカル通知</strong>を送信できます。</p>
+            <ul>
+                <li>通知は GitInflow が Issue データを更新したとき（フォアグラウンド・バックグラウンド問わず）に生成されます。</li>
+                <li>前回の更新時に存在しなかった新しい Issue が通知をトリガーします。</li>
+                <li>通知をタップすると、該当の Issue が表示された状態で GitInflow が開きます。</li>
+            </ul>
+
+            <h3>通知を有効にする</h3>
+            <p>初回起動時に iOS が通知許可を求めます。拒否した場合は <strong>iOS 設定 → GitInflow → 通知</strong> で有効にしてください。</p>
+
+            <hr>
+
+            <h2 id="settings">設定</h2>
+            <p><strong>設定</strong>タブ（歯車アイコン）で以下を管理できます。</p>
+
+            <h3>リポジトリ選択</h3>
+            <ul>
+                <li>リポジトリをタップして<strong>選択 / 解除</strong>します。</li>
+                <li>チェックマークが選択中を示します。</li>
+                <li>最大 <strong>5 つのリポジトリ</strong> を選択できます。</li>
+            </ul>
+
+            <h3>デフォルトリポジトリ</h3>
+            <ul>
+                <li>リポジトリ横の<strong>星アイコン</strong>をタップしてデフォルトに設定します。</li>
+                <li>設定済みの星は塗りつぶし / 黄色になります。</li>
+                <li>デフォルトは 1 つだけ設定できます。</li>
+            </ul>
+
+            <h3>プライバシーポリシー</h3>
+            <p>設定画面にプライバシーポリシーへのリンクがあります。</p>
+
+            <h3>ログアウト</h3>
+            <p>設定画面下部の <strong>ログアウト</strong> をタップすると GitHub アカウントからサインアウトします。ログアウト時にローカルキャッシュはすべて削除されます。</p>
+
+            <hr>
+
+            <h2 id="error-handling">エラー対応</h2>
+
+            <h3>リポジトリ読み込みエラーバナー</h3>
+            <p>ネットワークエラーやアクセス権の失効などにより Issue を読み込めない場合、カンバン画面の上部に<strong>赤いエラーバナー</strong>が表示され、どのリポジトリで問題が発生しているかを示します。</p>
+
+            <h3>再試行ボタン</h3>
+            <p>エラーバナーの<strong>再試行</strong>ボタンをタップすると、問題のあったリポジトリから Issue を即座に再取得します。問題が続く場合はインターネット接続を確認するか、GitHub トークンが対象リポジトリへのアクセス権を持っているか確認してください（必要に応じて再ログイン）。</p>
+
+            <hr>
+
+            <h2 id="faq">よくある質問（FAQ）</h2>
+
+            <h3>リポジトリは何個まで選択できますか？</h3>
+            <p>設定で最大 5 つのリポジトリを同時に選択できます。</p>
+
+            <h3>「Done」ステータスにすると GitHub ではどうなりますか？</h3>
+            <p>Done に移動すると、GitInflow は <code>status:done</code> ラベルを付与して GitHub 上の Issue を<strong>クローズ</strong>します。他のステータスに戻すと Issue は再オープンされます。</p>
+
+            <h3>プライベートリポジトリでも使えますか？</h3>
+            <p>はい。GitInflow はログイン時に認可した GitHub OAuth トークンを使用するため、プライベートリポジトリも公開リポジトリと同様に設定画面に表示されます。</p>
+
+            <h3>Share Extension が表示されません。どうすればいいですか？</h3>
+            <p>共有シートで <strong>その他</strong>（または編集）をタップし、リストの中から「GitInflow Share」を見つけて有効にしてください。</p>
+
+            <h3>ラベルやマイルストーンが表示されないのはなぜですか？</h3>
+            <p>ラベルとマイルストーンは GitHub から取得されます。リポジトリに対象のラベル・マイルストーンが存在するか、またネットワーク接続があるかを確認してください。</p>
+
+            <h3>ウィジェットが更新されないのはなぜですか？</h3>
+            <p>iOS のウィジェットは OS が管理するスケジュールで更新されます。GitInflow を一度起動してデータを更新すると、ウィジェットもまもなく反映されます。</p>
+
+            <h3>ウィジェットに表示されるリポジトリを変えるには？</h3>
+            <p>ウィジェットは設定で選択したリポジトリを反映します。設定でリポジトリを追加・削除すると、次の更新タイミングでウィジェットに反映されます。</p>
+
+            <h3>誤って Done に移動してしまいました。元に戻せますか？</h3>
+            <p>Done タブで Issue カードを右にスワイプして <strong>戻す（Retreat）</strong> をタップするか、カードを長押ししてコンテキストメニューからステータスを選択してください。<code>status:done</code> ラベルが削除され、GitHub 上の Issue が再オープンされます。</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

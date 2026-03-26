@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitInflow リリース：GitHub Issue をカンバンボードに | GitInflow ブログ</title>
+    <meta name="description" content="GitInflow は GitHub Issue をカンバン方式で管理する iOS アプリです。追加ツール不要で、GitHub だけでタスク管理が完結します。">
+    <meta property="og:title" content="GitInflow リリース：GitHub Issue をカンバンボードに">
+    <meta property="og:description" content="GitInflow は GitHub Issue をカンバン方式で管理する iOS アプリです。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/blog/ja/2026-03-22-introducing-gitinflow/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "GitInflow リリース：GitHub Issue をカンバンボードに",
+        "datePublished": "2026-03-22",
+        "author": {"@type": "Person", "name": "hakaru"},
+        "publisher": {"@type": "Organization", "name": "hakaru"},
+        "url": "https://hakaru.net/GitInflow-support/blog/ja/2026-03-22-introducing-gitinflow/",
+        "inLanguage": "ja"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; color: #fff; font-weight: 700; margin-bottom: 8px; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content em { color: #a0a0a0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/GitInflow-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>GitHub Issue をカンバンで管理する iOS アプリ</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/GitInflow-support/">Support</a>
+            <a href="/GitInflow-support/index-ja">サポート</a>
+            <a href="/GitInflow-support/manual/en/">Manual</a>
+            <a href="/GitInflow-support/manual/ja/">マニュアル</a>
+            <a href="/GitInflow-support/privacy">Privacy</a>
+            <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+            <a href="/GitInflow-support/blog/en/">Blog</a>
+            <a href="/GitInflow-support/blog/ja/" class="active">ブログ</a>
+            <a href="/GitInflow-support/changelog">Changelog</a>
+            <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="article-header">
+            <h1>GitInflow リリース：GitHub Issue をカンバンボードに</h1>
+            <div class="article-meta">2026年3月22日</div>
+        </div>
+        <div class="content">
+            <p><strong>GitInflow</strong> をリリースしました。GitHub Issue をカンバン方式で管理する iOS アプリです。追加ツール不要で、GitHub だけでタスク管理が完結します。</p>
+
+            <h2>なぜ GitInflow を作ったのか</h2>
+            <p>GitHub Issue でタスクを管理している開発者は多いと思います。しかし GitHub のモバイルアプリはコードレビュー向けで、タスク管理には物足りない。</p>
+            <p>GitInflow はその隙間を埋めます。iPhone 上で<strong>カンバンボード</strong>を使い、GitHub Issue とラベルだけでワークフローを回せます。独自バックエンドもデータベースも不要です。</p>
+
+            <h2>仕組み</h2>
+            <p>GitInflow は GitHub ラベルでステータスを表現します：</p>
+            <ul>
+                <li><strong>Backlog</strong> — ステータスラベルなし（受信トレイ）</li>
+                <li><strong>Ready</strong> — <code>status:ready</code> — トリアージ済み、着手可能</li>
+                <li><strong>In Progress</strong> — <code>status:inProgress</code> — 作業中</li>
+                <li><strong>Done</strong> — <code>status:done</code> — 完了（Issue は自動クローズ）</li>
+            </ul>
+            <p>Issue を右スワイプで次のステータスに進め、左スワイプで戻す。それだけです。</p>
+
+            <h2>主な機能</h2>
+
+            <h3>マルチリポジトリ</h3>
+            <p>最大5つのリポジトリを選択し、カンバンビューで一元管理。タブ上部のフィルタチップでリポジトリごとに絞り込めます。</p>
+
+            <h3>クイックトリアージ</h3>
+            <p>スワイプアクションでステータス変更、ラベル追加、マイルストーン設定、コメント追加。リストビューから離れずにすべて完了。</p>
+
+            <h3>スマート共有シート</h3>
+            <p>ブラウザで見つけた記事やSlackのバグ報告を、共有シート経由で直接 GitHub Issue に。</p>
+
+            <h3>ウィジェット</h3>
+            <p>ホーム画面ウィジェットで In Progress の件数を一目で確認。Medium サイズなら全ステータスの件数が見えます。</p>
+
+            <h3>プライバシー重視</h3>
+            <p>データはデバイスと GitHub の間だけ。アナリティクスもトラッキングもなし。OAuth トークンは iOS Keychain に保存、トークン交換は Cloudflare Worker 経由。</p>
+
+            <h2>はじめよう</h2>
+            <ol>
+                <li>App Store から GitInflow をダウンロード</li>
+                <li>GitHub アカウントでログイン</li>
+                <li>設定でリポジトリを選択</li>
+                <li>スワイプ開始！</li>
+            </ol>
+            <p>自分たちが欲しかったアプリを作りました。ぜひお試しください。</p>
+
+            <hr>
+
+            <p><em>フィードバックは <a href="https://github.com/hakaru/GitInflow-support/issues">GitHub Issues</a> または <a href="mailto:gitinflow@hakaru.net">gitinflow@hakaru.net</a> まで。</em></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

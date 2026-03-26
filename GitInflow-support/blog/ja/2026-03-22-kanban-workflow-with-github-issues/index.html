@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitHub Issue でカンバン運用する方法 | GitInflow ブログ</title>
+    <meta name="description" content="Jira や Trello がなくてもカンバンワークフローは回せます。GitInflow を使った GitHub Issue でのカンバン運用を解説します。">
+    <meta property="og:title" content="GitHub Issue でカンバン運用する方法">
+    <meta property="og:description" content="Jira や Trello がなくてもカンバンワークフローは回せます。GitInflow を使った GitHub Issue でのカンバン運用を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/blog/ja/2026-03-22-kanban-workflow-with-github-issues/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "GitHub Issue でカンバン運用する方法",
+        "datePublished": "2026-03-22",
+        "author": {"@type": "Person", "name": "hakaru"},
+        "publisher": {"@type": "Organization", "name": "hakaru"},
+        "url": "https://hakaru.net/GitInflow-support/blog/ja/2026-03-22-kanban-workflow-with-github-issues/",
+        "inLanguage": "ja"
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; color: #fff; font-weight: 700; margin-bottom: 8px; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content em { color: #a0a0a0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/GitInflow-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>GitHub Issue をカンバンで管理する iOS アプリ</p>
+        </div>
+        <nav class="support-nav">
+            <a href="/GitInflow-support/">Support</a>
+            <a href="/GitInflow-support/index-ja">サポート</a>
+            <a href="/GitInflow-support/manual/en/">Manual</a>
+            <a href="/GitInflow-support/manual/ja/">マニュアル</a>
+            <a href="/GitInflow-support/privacy">Privacy</a>
+            <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+            <a href="/GitInflow-support/blog/en/">Blog</a>
+            <a href="/GitInflow-support/blog/ja/" class="active">ブログ</a>
+            <a href="/GitInflow-support/changelog">Changelog</a>
+            <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="article-header">
+            <h1>GitHub Issue でカンバン運用する方法</h1>
+            <div class="article-meta">2026年3月22日</div>
+        </div>
+        <div class="content">
+            <p>Jira や Trello がなくても、カンバンワークフローは回せます。コードが GitHub にあるなら、タスク管理も GitHub で。GitInflow を使ったセットアップ方法を紹介します。</p>
+
+            <h2>4列のアプローチ</h2>
+            <p>シンプルなカンバンボードは4列で構成されます：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>列</th>
+                        <th>意味</th>
+                        <th>いつ使う</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Backlog</strong></td>
+                        <td>新しいアイデア、バグ報告、機能要望</td>
+                        <td>Issue が作成されたが未優先の段階</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ready</strong></td>
+                        <td>トリアージ済み、着手可能</td>
+                        <td>やると決めたもの</td>
+                    </tr>
+                    <tr>
+                        <td><strong>In Progress</strong></td>
+                        <td>現在作業中</td>
+                        <td>手をつけたとき</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Done</strong></td>
+                        <td>完了</td>
+                        <td>作業が終わったとき</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>GitInflow のマッピング</h2>
+            <p>GitInflow は<strong>ラベル</strong>でステータスを表現します：</p>
+            <ul>
+                <li>ラベルなし → <strong>Backlog</strong></li>
+                <li><code>status:ready</code> → <strong>Ready</strong></li>
+                <li><code>status:inProgress</code> → <strong>In Progress</strong></li>
+                <li><code>status:done</code> → <strong>Done</strong>（Issue も自動クローズ）</li>
+            </ul>
+            <p>ポイントは、GitHub にカンバン列の機能がなくても、ラベルで同じことが実現できるということ。ラベルは GitHub API の一部なので、どのツールからでも読み書きできます。</p>
+
+            <h2>日常のワークフロー</h2>
+
+            <h3>朝：Backlog のトリアージ</h3>
+            <ol>
+                <li>GitInflow を開く → Backlog タブ</li>
+                <li>夜のうちに届いた新しい Issue をスキャン</li>
+                <li>重要なものを右スワイプで <strong>Ready</strong> に移動</li>
+                <li>ラベルやマイルストーンをつける</li>
+            </ol>
+
+            <h3>日中：進捗の追跡</h3>
+            <ol>
+                <li><strong>Ready</strong> から Issue を選んで <strong>In Progress</strong> にスワイプ</li>
+                <li>作業する</li>
+                <li>スワイプアクションでメモ的にコメントを残す</li>
+                <li>終わったら <strong>Done</strong> にスワイプ — Issue が自動クローズ</li>
+            </ol>
+
+            <h3>夕方：振り返り</h3>
+            <ol>
+                <li><strong>Done</strong> タブ — 今日何を完了したか</li>
+                <li><strong>In Progress</strong> — 滞っているものはないか</li>
+                <li>ホーム画面のウィジェットで件数をチラ見</li>
+            </ol>
+
+            <h2>マルチリポジトリのコツ</h2>
+            <p>複数リポジトリ（個人用、仕事用、サイドプロジェクト）を使う場合：</p>
+            <ul>
+                <li>設定で<strong>最大5つ</strong>を選択</li>
+                <li><strong>フィルタチップ</strong>で1つのリポジトリに集中</li>
+                <li><strong>デフォルトリポジトリ</strong>を設定すると Issue 作成が高速化</li>
+                <li>Share Extension もデフォルトリポジトリを使う</li>
+            </ul>
+
+            <h2>なぜ GitHub Projects ではなくラベルなのか</h2>
+            <p>GitHub Projects はチーム向けには優秀ですが、個人利用には重い：</p>
+            <ul>
+                <li>ラベルは<strong>ユニバーサル</strong> — どの GitHub ツールでも動く</li>
+                <li>ラベルは<strong>シンプル</strong> — ボードの設定が不要</li>
+                <li>ラベルは<strong>ポータブル</strong> — アプリを変えてもデータはそのまま</li>
+                <li>GitInflow は初回使用時にステータスラベルを自動作成</li>
+            </ul>
+
+            <h2>はじめよう</h2>
+            <ol>
+                <li>GitInflow をインストール</li>
+                <li>リポジトリを選択</li>
+                <li>Backlog のトリアージを開始</li>
+                <li>習慣にする：Backlog → Ready → In Progress → Done</li>
+            </ol>
+            <p>セットアップは30秒。整理されていない Issue には二度と戻れなくなります。</p>
+
+            <hr>
+
+            <p><em>カンバンワークフローについて質問があれば <a href="https://github.com/hakaru/GitInflow-support/issues">こちらへ</a>。</em></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
