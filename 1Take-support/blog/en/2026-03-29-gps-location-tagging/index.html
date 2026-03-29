@@ -72,46 +72,46 @@
             <a href="/1Take-support/changelog-ja">更新履歴</a>
         </nav>
         <div class="content">
-            <h2>Overview</h2>
-            <p>1Take v1.4 introduces <strong>GPS location tagging</strong>. When you start a recording, 1Take automatically captures your current location and converts it into a human-readable place name — the name of a neighborhood, district, or city — which then appears alongside the recording in your library.</p>
-            <p>For musicians who rehearse at a studio, perform at different venues, or capture field recordings outdoors, this means every take is automatically tied to where it happened.</p>
+            <h2>What it does</h2>
+            <p>1Take v1.4 adds <strong>GPS location tagging</strong>. When you hit record, 1Take grabs your location and converts it to a place name — a neighborhood, district, or city — then shows it next to the recording in your library.</p>
+            <p>If you record in different studios, play different venues, or do field recordings, you no longer have to guess where a take was captured.</p>
 
             <hr>
 
-            <h2>How It Works</h2>
-            <p>Location capture happens automatically at the moment you tap the record button. There is nothing to configure and no manual step required.</p>
+            <h2>How it works</h2>
+            <p>Nothing to set up. It just runs when you start recording.</p>
             <ol>
                 <li>You tap the record button.</li>
-                <li>1Take requests your location at <strong>coarse accuracy</strong> — approximately 100 meters. This is intentionally imprecise; the goal is a place name, not a precise coordinate.</li>
-                <li>iOS performs <strong>reverse geocoding</strong> to translate the coordinate into a readable name such as "Shibuya, Tokyo" or "Brooklyn, New York."</li>
-                <li>That name is stored in the recording's <code>markers.json</code> file alongside other metadata.</li>
-                <li>The place name appears in the recording list and in the recording detail view.</li>
+                <li>1Take requests your location at <strong>coarse accuracy</strong> — about 100 meters. Imprecise by design. The point is a place name, not a coordinate.</li>
+                <li>iOS does <strong>reverse geocoding</strong> to turn the coordinate into something readable, like "Shibuya, Tokyo" or "Brooklyn, New York."</li>
+                <li>That name goes into <code>markers.json</code> alongside the recording's other metadata.</li>
+                <li>It shows up in the recording list and in the detail view.</li>
             </ol>
 
-            <h3>Coarse Accuracy and Privacy</h3>
-            <p>1Take uses the coarse location mode provided by iOS, which limits precision to roughly 100 meters. This is accurate enough to identify a neighborhood or venue but not accurate enough to pinpoint a specific room or address. <strong>No precise GPS coordinates are stored.</strong></p>
-            <p>This design means the feature is useful for context — "I recorded this at the Osaka venue last Thursday" — while keeping your exact whereabouts private.</p>
+            <h3>Privacy</h3>
+            <p>1Take uses iOS's coarse location mode, which caps precision at roughly 100 meters. Good enough to know which neighborhood or venue, not good enough to identify a specific address. <strong>No precise GPS coordinates are stored.</strong></p>
+            <p>You get useful context ("that take from the Osaka show last Thursday") without the app knowing exactly where you were.</p>
 
             <hr>
 
-            <h2>Permission and Opt-Out</h2>
-            <p>The first time you record after updating to v1.4, iOS will show a permission prompt asking whether 1Take may access your location. You can:</p>
+            <h2>Permissions</h2>
+            <p>The first time you record after updating to v1.4, iOS will ask whether 1Take can access your location. Your options:</p>
             <ul>
-                <li><strong>Allow once</strong> — location is captured for this recording only; you will be asked again next time.</li>
-                <li><strong>Allow while using the app</strong> — location is captured for each recording without further prompts.</li>
-                <li><strong>Don't allow</strong> — location tagging is disabled. Recording continues normally with no location information attached.</li>
+                <li><strong>Allow once</strong> — location captured for this recording only, asked again next time.</li>
+                <li><strong>Allow while using the app</strong> — location captured automatically each time, no further prompts.</li>
+                <li><strong>Don't allow</strong> — location tagging off, recording works normally with no location attached.</li>
             </ul>
-            <p>Declining location permission has no effect on any other feature. Recording quality, duration, AI optimization, and cloud sync all work exactly the same with or without location access.</p>
-            <p>You can change this permission at any time in <strong>Settings &gt; Privacy &amp; Security &gt; Location Services &gt; 1Take</strong>.</p>
+            <p>Declining location permission doesn't affect anything else. Recording quality, AI optimization, and cloud sync all work the same either way.</p>
+            <p>Change this anytime in <strong>Settings &gt; Privacy &amp; Security &gt; Location Services &gt; 1Take</strong>.</p>
 
             <hr>
 
-            <h2>Where Location Data Is Stored</h2>
-            <p>The place name is written to the <code>markers.json</code> file that lives alongside each recording. This is the same file that stores markers, notes, and other recording metadata. If you access your recordings through the Files app or via cloud sync, you can read the location data directly from that file.</p>
-            <p>The location appears in two places within 1Take:</p>
+            <h2>Where the data lives</h2>
+            <p>The place name is stored in <code>markers.json</code> — the same file that holds markers, notes, and other recording metadata. If you access recordings through the Files app or cloud sync, you can read it directly from there.</p>
+            <p>Inside 1Take, location shows up in two places:</p>
             <ul>
-                <li><strong>Recording list</strong> — shown as a small label below the recording name, alongside the date and duration.</li>
-                <li><strong>Recording detail view</strong> — shown in the metadata section together with file size, sample rate, and other details.</li>
+                <li><strong>Recording list</strong> — small label under the recording name, next to the date and duration.</li>
+                <li><strong>Recording detail view</strong> — in the metadata section alongside file size, sample rate, etc.</li>
             </ul>
 
             <hr>

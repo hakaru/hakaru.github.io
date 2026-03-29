@@ -73,12 +73,12 @@
         </nav>
         <div class="content">
             <h2>Overview</h2>
-            <p>1Take v1.4 introduces <strong>Cloud Sync</strong>, a new automatic backup system that uploads your recordings to the cloud as soon as you finish recording. This feature is available to all users at no extra cost — it is not gated behind a PRO subscription.</p>
-            <p>Four cloud storage providers are supported: <strong>iCloud Drive</strong>, <strong>Google Drive</strong>, <strong>Dropbox</strong>, and <strong>Backblaze B2</strong>. You can enable one, several, or all of them simultaneously.</p>
+            <p>v1.4 adds <strong>Cloud Sync</strong>: when you stop a recording, 1Take uploads it to the cloud automatically. No extra subscription needed — it works for everyone.</p>
+            <p>You can use <strong>iCloud Drive</strong>, <strong>Google Drive</strong>, <strong>Dropbox</strong>, or <strong>Backblaze B2</strong>. Enable as many as you want at the same time.</p>
 
             <hr>
 
-            <h2>Supported Providers</h2>
+            <h2>Which Provider to Pick</h2>
 
             <table>
                 <thead>
@@ -90,72 +90,73 @@
                 <tbody>
                     <tr>
                         <td><strong>iCloud Drive</strong></td>
-                        <td>Files appear in Finder on Mac and File Explorer on Windows via iCloud for Windows</td>
+                        <td>Best if you use a Mac. Recordings appear in Finder automatically — no extra software.</td>
                     </tr>
                     <tr>
                         <td><strong>Google Drive</strong></td>
-                        <td>Uploads to a dedicated 1Take folder in your Google Drive</td>
+                        <td>Goes into a dedicated 1Take folder. Good if Google Drive is already your main storage.</td>
                     </tr>
                     <tr>
                         <td><strong>Dropbox</strong></td>
-                        <td>Uploads to Apps/1Take in your Dropbox</td>
+                        <td>Uploads to Apps/1Take in your Dropbox. Easy sharing with collaborators.</td>
                     </tr>
                     <tr>
                         <td><strong>Backblaze B2</strong></td>
-                        <td>Uploads to the bucket and path you specify; ideal for large archives</td>
+                        <td>You specify the bucket and path. The cheapest option if you're storing a lot of audio long-term.</td>
                     </tr>
                 </tbody>
             </table>
 
+            <p>For most people, iCloud Drive is the obvious choice if you're in the Apple ecosystem. If you're already paying for Google Drive storage, that works well too. Backblaze B2 is for the people who know they want it — it requires entering API keys, but storage costs a fraction of the others.</p>
+
             <h3>iCloud Drive and Desktop Access</h3>
-            <p>When iCloud Drive sync is enabled, your recordings are stored in the <strong>1Take folder inside iCloud Drive</strong>. On a Mac signed in to the same Apple Account, this folder appears automatically in Finder under iCloud Drive. On Windows, the same files are accessible after installing iCloud for Windows from the Microsoft Store.</p>
-            <p>This means you can open, rename, and organize your recordings directly from your desktop without any additional software.</p>
+            <p>With iCloud Drive enabled, recordings go into the <strong>1Take folder inside iCloud Drive</strong>. On a Mac signed in to the same Apple Account, that folder shows up automatically in Finder. On Windows, install iCloud for Windows from the Microsoft Store and it works the same way.</p>
+            <p>You can open, rename, and organize recordings directly from your desktop.</p>
 
             <hr>
 
             <h2>How It Works</h2>
-            <p>Cloud Sync is designed to be hands-off. Once you enable a provider and authenticate, 1Take handles everything in the background.</p>
+            <p>Once you set up a provider, you don't need to think about it again.</p>
             <ol>
-                <li>You finish a recording and tap Stop.</li>
-                <li>1Take immediately queues the file for upload to each enabled provider.</li>
-                <li>The upload begins automatically — over Wi-Fi by default, or over cellular if you have allowed it in Settings.</li>
-                <li>A small cloud indicator in the Recordings Library shows the upload status for each file.</li>
-                <li>Once uploaded, the status changes to a checkmark for each provider that has received the file.</li>
+                <li>Stop a recording.</li>
+                <li>1Take queues the file for upload to every enabled provider.</li>
+                <li>Upload starts automatically — Wi-Fi by default, or cellular if you've allowed it in Settings.</li>
+                <li>A small cloud icon in the library shows the upload status per file.</li>
+                <li>When a provider receives the file, the icon changes to a checkmark.</li>
             </ol>
-            <p>If the upload cannot complete — for example because you are offline — 1Take retries automatically when a connection becomes available.</p>
+            <p>If you're offline when you stop recording, 1Take retries when a connection comes back.</p>
 
-            <h3>Per-Provider Retry Controls</h3>
-            <p>Each cloud provider has its own retry settings. In Settings → Cloud Sync, you can configure:</p>
+            <h3>Per-Provider Retry Settings</h3>
+            <p>Under Settings → Cloud Sync, each provider has its own retry controls:</p>
             <ul>
-                <li><strong>Maximum retries</strong> — how many times 1Take will attempt to upload a file before marking it as failed</li>
-                <li><strong>Retry interval</strong> — the delay between retry attempts (from 1 minute to 1 hour)</li>
-                <li><strong>Cellular uploads</strong> — whether uploads are allowed over a cellular connection for each provider individually</li>
+                <li>Maximum retries before marking a file as failed</li>
+                <li>Retry interval (1 minute to 1 hour)</li>
+                <li>Whether cellular uploads are allowed for that provider</li>
             </ul>
-            <p>This lets you, for example, allow iCloud Drive to upload over cellular while restricting Backblaze B2 to Wi-Fi only, since B2 uploads may involve larger transfer volumes.</p>
+            <p>Useful if you want iCloud Drive to upload over cellular but keep Backblaze B2 on Wi-Fi only. B2 transfers tend to be larger, so you might not want those eating your data plan.</p>
 
             <h3>Upload History</h3>
-            <p>A full upload history is available for each recording. Tap any recording in the library, then tap the cloud icon to see a log of every upload attempt: the timestamp, the provider, the result (success or failure), and the error message if applicable.</p>
-            <p>This history makes it straightforward to diagnose why a particular file did not reach a specific provider and whether a retry is still pending.</p>
+            <p>Tap any recording in the library, then tap the cloud icon. You'll see a log of every upload attempt: timestamp, provider, result, and any error message. If a file didn't make it to a specific provider, this is where you find out why.</p>
 
             <hr>
 
-            <h2>Setting Up Cloud Sync</h2>
-            <p>Setup takes under a minute for most providers:</p>
+            <h2>Setting Up</h2>
+            <p>Most providers take under a minute:</p>
             <ol>
                 <li>Open <strong>Settings</strong> in 1Take.</li>
                 <li>Tap <strong>Cloud Sync</strong>.</li>
-                <li>Tap the provider you want to enable.</li>
-                <li>Toggle the provider on and follow the authentication prompt.</li>
-                <li>For iCloud Drive, no authentication is needed — it uses your existing Apple Account.</li>
-                <li>For Google Drive and Dropbox, you will be taken through the standard OAuth sign-in flow in Safari.</li>
-                <li>For Backblaze B2, enter your Application Key ID, Application Key, bucket name, and an optional path prefix.</li>
+                <li>Tap the provider you want.</li>
+                <li>Toggle it on and follow the auth prompt.</li>
+                <li>iCloud Drive — no auth needed, uses your existing Apple Account.</li>
+                <li>Google Drive and Dropbox — standard OAuth sign-in in Safari.</li>
+                <li>Backblaze B2 — enter your Application Key ID, Application Key, bucket name, and an optional path prefix.</li>
             </ol>
-            <p>Once authenticated, the provider is active immediately. Any recordings that were not yet uploaded will begin uploading in the background.</p>
+            <p>Once authenticated, the provider is active immediately. Any recordings that haven't uploaded yet will start uploading in the background.</p>
 
             <hr>
 
-            <h2>Free for All Users</h2>
-            <p>Cloud Sync is available in every version of 1Take, including the free tier. No PRO subscription is required to enable any provider or to use any aspect of the feature. Your cloud storage costs are determined by each provider's own pricing, not by 1Take.</p>
+            <h2>Cost</h2>
+            <p>Cloud Sync is free in 1Take. No PRO plan required. What you pay depends on the cloud provider you use — 1Take doesn't charge anything extra on top of that.</p>
 
             <hr>
 

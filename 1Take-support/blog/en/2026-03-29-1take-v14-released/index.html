@@ -73,59 +73,59 @@
         </nav>
         <div class="content">
             <h2>What's New in v1.4</h2>
-            <p>1Take v1.4 is now available on the App Store. This is the largest update since launch, adding automatic cloud backup, location tagging, smarter AI audio optimization, contextual guidance throughout the app, and a redesigned recording detail view. Below is a summary of everything new.</p>
+            <p>v1.4 is out on the App Store. It's the biggest update I've shipped since launch: automatic cloud backup, GPS location tagging, improved AI optimization, contextual hints throughout the app, and a reworked recording detail view. Quick rundown below, with links to the longer articles for the features that need more explanation.</p>
 
             <hr>
 
             <h2>Cloud Sync</h2>
-            <p>1Take can now automatically back up your recordings to the cloud the moment you finish recording. Four providers are supported: <strong>iCloud Drive</strong>, <strong>Google Drive</strong>, <strong>Dropbox</strong>, and <strong>Backblaze B2</strong>. You can enable any combination of these simultaneously.</p>
-            <p>Cloud Sync is available to all users at no extra cost. Setup takes under a minute: open Settings, tap Cloud Sync, select a provider, and sign in. Uploads happen in the background with automatic retry if you are offline when recording ends.</p>
-            <p>iCloud Drive support is particularly useful for Mac users — recordings appear directly in Finder under iCloud Drive without any additional software.</p>
-            <p><a href="/1Take-support/blog/en/2026-03-29-cloud-sync-multi-provider/">Read the full Cloud Sync article</a></p>
+            <p>When you stop a recording, 1Take now uploads it to the cloud automatically. Supported providers: <strong>iCloud Drive</strong>, <strong>Google Drive</strong>, <strong>Dropbox</strong>, and <strong>Backblaze B2</strong>. You can enable multiple at the same time.</p>
+            <p>It's free for everyone, no subscription needed. Setup is quick — open Settings, tap Cloud Sync, pick a provider, sign in. Uploads run in the background and retry automatically if you're offline when you stop recording.</p>
+            <p>If you're on a Mac, iCloud Drive is the easiest option. Recordings show up directly in Finder with no extra software required.</p>
+            <p><a href="/1Take-support/blog/en/2026-03-29-cloud-sync-multi-provider/">Full Cloud Sync article</a></p>
 
             <hr>
 
             <h2>GPS Location Tagging</h2>
-            <p>When you start a recording, 1Take now automatically captures your location using coarse GPS accuracy (approximately 100 meters) and converts it to a human-readable place name via reverse geocoding. The name appears in the recording list and detail view.</p>
-            <p>This is especially useful for musicians who rehearse and perform at multiple venues. The coarse accuracy setting means your precise location is never stored — only a neighborhood or city name.</p>
-            <p>Location permission is requested on your first recording after updating. Declining has no effect on recording quality or any other feature.</p>
-            <p><a href="/1Take-support/blog/en/2026-03-29-gps-location-tagging/">Read the full GPS Location Tagging article</a></p>
+            <p>1Take now captures your location when you start a recording and converts it to a place name (neighborhood or city level, about 100-meter accuracy). That name shows up in the recording list and detail view.</p>
+            <p>Handy if you record in multiple places — rehearsal space, stage, home studio. Because I'm using coarse accuracy, your exact GPS coordinates are never stored.</p>
+            <p>You'll see a location permission prompt on your first recording after the update. You can decline and everything else still works fine.</p>
+            <p><a href="/1Take-support/blog/en/2026-03-29-gps-location-tagging/">Full GPS Location Tagging article</a></p>
 
             <hr>
 
             <h2>AI Optimization Improvements</h2>
-            <p>The AI audio analysis and optimization system in 1Take has been significantly improved in v1.4:</p>
+            <p>Two changes to the AI optimization system:</p>
             <ul>
-                <li><strong>Inline adjustments</strong> — the AI can now apply targeted changes to specific sections of a recording rather than only applying global settings. This allows more surgical corrections to problem areas while leaving the rest untouched.</li>
-                <li><strong>Cross-preset learning</strong> — the AI now learns from adjustments you accept or reject across all your presets, not just within the one currently in use. Over time, suggestions become more consistent with your overall preferences regardless of which preset is active.</li>
+                <li>The AI can now make changes to specific sections of a recording, not just apply the same settings globally. If one part of a take has a problem, it can fix that part without touching the rest.</li>
+                <li>The learning model now draws from your accept/reject history across all presets, not just the one you're currently using. Suggestions get more consistent over time regardless of which preset is active.</li>
             </ul>
-            <p><a href="/1Take-support/blog/en/2026-03-29-ai-auto-optimization/">Read the full AI Optimization article</a></p>
+            <p><a href="/1Take-support/blog/en/2026-03-29-ai-auto-optimization/">Full AI Optimization article</a></p>
 
             <hr>
 
             <h2>Contextual Hints</h2>
-            <p>First-time users and users exploring less-visited areas of the app will now see contextual hints that explain what each control does and suggest the next step. Hints appear inline at the point of interaction and can be dismissed individually. Once you have seen and dismissed a hint, it does not reappear.</p>
-            <p>Hints cover the recording screen, the library, settings, and the AI optimization workflow. They are designed to surface the right information at the right time rather than requiring a separate walkthrough or manual lookup.</p>
+            <p>When you're on a screen you haven't used much, you'll now see small inline hints explaining what each control does. Tap to dismiss. Once dismissed, a hint won't show up again.</p>
+            <p>These cover the recording screen, library, settings, and the AI optimization flow. The goal was to surface useful info at the moment you need it, without forcing you through a tutorial.</p>
 
             <hr>
 
             <h2>Redesigned Recording Detail View</h2>
-            <p>The recording detail view has been reorganized to make the most important information immediately visible. Metadata — including file name, duration, format, sample rate, file size, and the new GPS location — is now presented in a cleaner layout at the top of the screen. Actions such as export, share, and delete have been moved to a consistent position at the bottom.</p>
+            <p>The detail view got a layout overhaul. File name, duration, format, sample rate, size, and the new GPS location are all at the top now. Export, share, and delete buttons moved to a consistent spot at the bottom. Nothing was removed — it's just organized better.</p>
 
             <hr>
 
             <h2>Security Improvements</h2>
-            <p>Google Drive authentication has been migrated to use the iOS native OAuth client. The previous implementation required a client secret embedded in the app, which is an anti-pattern for mobile applications. The new approach uses the iOS ASWebAuthenticationSession flow with a native client ID, removing the need for any embedded secret and bringing the implementation in line with Google's current recommendations for mobile apps.</p>
+            <p>Google Drive authentication now uses the iOS native OAuth client. The old implementation embedded a client secret in the app binary, which isn't how you're supposed to do OAuth on mobile. The new approach uses ASWebAuthenticationSession with a native client ID — no embedded secret, and consistent with what Google actually recommends for iOS apps.</p>
 
             <hr>
 
-            <h2>Bug Fixes and Stability</h2>
+            <h2>Bug Fixes</h2>
             <ul>
-                <li>Fixed an issue where the recording level meter could briefly freeze when switching between tabs while a recording was in progress.</li>
-                <li>Fixed a rare crash that could occur when deleting multiple recordings quickly in succession.</li>
-                <li>Improved reliability of background audio session handling when the app is interrupted by a phone call.</li>
-                <li>Fixed an issue where cloud upload status indicators could show stale state after relaunching the app.</li>
-                <li>General performance improvements to the recordings library when a large number of recordings are present.</li>
+                <li>Fixed the level meter briefly freezing when switching tabs during a recording.</li>
+                <li>Fixed a rare crash when deleting multiple recordings in quick succession.</li>
+                <li>Improved audio session handling when a phone call interrupts a recording.</li>
+                <li>Fixed cloud upload status icons showing stale state after relaunching the app.</li>
+                <li>Performance improvements in the library when there are a large number of recordings.</li>
             </ul>
 
             <hr>

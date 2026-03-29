@@ -74,9 +74,9 @@
         <div class="content">
 
             <h2>The Problem with Most Cloud Storage for Audio</h2>
-            <p>Musicians generate a lot of data. A single session of 24-bit WAV recordings can run into several gigabytes. Over a year, even a casual home recordist accumulates tens of gigabytes of takes, demos, and live recordings that would be painful or impossible to recreate if a hard drive failed.</p>
-            <p>Consumer services like iCloud and Google One are easy to set up, but they are designed for general files, photos, and documents. Their pricing tiers are fixed, their storage caps are relatively low, and they have no API that allows an app like 1Take to automate uploads in the background. Object storage services built for developers — Amazon S3, Google Cloud Storage, Wasabi — offer full API access, but their pricing structures have some surprises that matter a lot for recording workflows.</p>
-            <p>Backblaze B2 threads the needle between these two categories. It offers a developer-grade API at pricing that makes sense for how musicians actually use cloud storage.</p>
+            <p>Musicians generate a lot of data. A single 24-bit WAV session can run several gigabytes. Record regularly at home for a year and you end up with tens of gigabytes of takes, demos, and live recordings that simply cannot be recreated if a drive dies.</p>
+            <p>Consumer services like iCloud and Google One are fine for general use, but they have fixed storage tiers, relatively low caps, and no API that lets an app like 1Take automate uploads in the background. Developer-focused object storage (Amazon S3, Google Cloud Storage, Wasabi) has full API access, but the pricing has some gotchas that really do matter for recording workflows.</p>
+            <p>B2 sits between these two worlds. Developer API, priced for how musicians actually use storage.</p>
 
             <hr>
 
@@ -84,20 +84,20 @@
 
             <p>As of March 2026, Backblaze B2 charges as follows:</p>
             <ul>
-                <li><strong>Storage:</strong> $0.006 per GB per month ($6 per TB per month). This rises to $0.00695/GB ($6.95/TB) from May 1, 2026.</li>
-                <li><strong>First 10 GB:</strong> Always free, with no credit card required to start.</li>
-                <li><strong>Uploads (inbound bandwidth):</strong> Completely free. You are never charged for uploading data to B2.</li>
-                <li><strong>Downloads (outbound bandwidth):</strong> Free up to 3x your average stored data per month, then $0.01 per GB beyond that.</li>
-                <li><strong>API calls:</strong> Class A calls (uploads, creates) are always free. Class B and C calls currently have 2,500 free per day, with full free access planned from May 2026.</li>
+                <li>Storage: $0.006/GB per month ($6/TB). Goes up to $0.00695/GB ($6.95/TB) on May 1, 2026.</li>
+                <li>First 10 GB: always free, no credit card required.</li>
+                <li>Uploads: free. You never pay to send data to B2.</li>
+                <li>Downloads: free up to 3x your average stored data per month, then $0.01/GB after that.</li>
+                <li>API calls: Class A (uploads, creates) always free. Class B and C currently have 2,500 free per day; full free access planned from May 2026.</li>
             </ul>
 
-            <p>The detail that matters most for recording backup is the upload cost: <strong>$0</strong>. Every WAV file, every take, every session backup arrives in B2 without adding to your bill. You only pay for the storage itself, and only for as much as you actually use.</p>
+            <p>The number that matters most for recording backup: uploads cost <strong>$0</strong>. Every WAV file, every take, every session backup lands in B2 without touching your bill. You pay only for the storage you actually use.</p>
 
             <hr>
 
             <h2>Cost Comparison</h2>
 
-            <p>The table below estimates the cost for a musician recording roughly 10 GB of audio per month — a reasonable figure for regular home recording in WAV format.</p>
+            <p>These estimates assume a musician recording about 10 GB of audio per month — typical for regular WAV home recording.</p>
 
             <table>
                 <thead>
@@ -142,63 +142,63 @@
                 </tbody>
             </table>
 
-            <p>The Wasabi figure deserves explanation. Wasabi advertises $6.99 per TB per month, which sounds competitive. But Wasabi charges for a full terabyte even if you store 10 GB, and imposes a 90-day minimum storage policy per object (you are charged for 90 days even if you delete a file after one day). For a musician with a modest archive that grows slowly, this makes Wasabi significantly more expensive in practice than B2.</p>
-            <p>Amazon S3 has no minimum, but its standard storage rate of $0.023 per GB is nearly four times the B2 rate. For the same 120 GB archive at year's end, S3 costs around $2.76 per month versus B2's $0.72 per month.</p>
+            <p>The Wasabi number needs some unpacking. $6.99/TB sounds competitive, but Wasabi charges you for a full terabyte even if you store 10 GB. On top of that, there is a 90-day minimum storage policy per object — delete a file after one day and you still get billed for 90. For a slowly-growing audio archive, that adds up fast.</p>
+            <p>S3 has no minimum, but $0.023/GB is nearly four times what B2 charges. A 120 GB archive at year's end costs about $2.76/month on S3 versus $0.72/month on B2.</p>
 
             <hr>
 
             <h2>Why the Upload Pattern Matters</h2>
 
-            <p>Cloud storage pricing is designed around the assumption that data will be downloaded frequently. That assumption does not apply to recording backup.</p>
-            <p>A musician uploading session files is not planning to stream them from the cloud every day. The typical pattern is: <strong>upload constantly, download rarely</strong>. Files go up after every session, but they only come back down when a hard drive fails, when switching computers, or when collaborating with a remote producer.</p>
-            <p>This pattern exposes a hidden cost in services that charge for egress. B2 gives you a free download allowance equal to 3x your average stored data per month. For a 120 GB archive, that means 360 GB of free downloads each month — far more than any backup scenario realistically requires. Even a full restore of the entire archive would use only one third of the free monthly allowance, and that would be a rare event.</p>
+            <p>Most cloud storage pricing assumes you download frequently. Recording backup does not work that way.</p>
+            <p>The pattern is: upload constantly, download almost never. Files go up after every session. They come back down when a drive fails, when you switch computers, or when you need to share stems with a remote producer. That is maybe a few times a year, if that.</p>
+            <p>B2's free download allowance is 3x your average stored data per month. With a 120 GB archive, that is 360 GB free each month. Even a full restore of everything uses only a third of that allowance. You would have to be pretty creative to actually exceed the free tier on a recording backup.</p>
 
             <hr>
 
             <h2>Reliability</h2>
 
-            <p>Backblaze publishes a data durability rating of <strong>99.999999999% (eleven nines)</strong>. This is the same figure Amazon quotes for S3. Both services achieve it through different architectures, but the result is the same: losing a stored file to a hardware failure is a near-statistical-impossibility.</p>
-            <p>Backblaze achieves this through their Vault architecture, which distributes each file across 20 storage pods using Reed-Solomon erasure coding. The system can lose multiple pods simultaneously and still reconstruct every file without data loss.</p>
-            <p>For comparison, a single consumer hard drive has a typical annual failure rate of 1–3%. Storing recordings only on a local drive — even with multiple local copies — carries meaningful risk over a multi-year timeframe. Cloud backup at B2's durability level effectively eliminates that risk at a cost that is lower than a replacement hard drive over the same period.</p>
+            <p>Backblaze's stated data durability is <strong>99.999999999% (eleven nines)</strong> — the same number Amazon quotes for S3. Different architectures, same practical result: losing a file to hardware failure is statistically negligible.</p>
+            <p>Backblaze does this through their Vault architecture: each file is spread across 20 storage pods using Reed-Solomon erasure coding. Multiple pods can fail simultaneously and every file can still be reconstructed.</p>
+            <p>By contrast, a consumer hard drive fails at roughly 1–3% per year. Store recordings only on a local drive and the odds catch up with you over a few years, even with multiple local copies. Off-site backup at eleven-nine durability takes that risk off the table, for less than the cost of a replacement drive over the same period.</p>
 
             <hr>
 
             <h2>A Realistic First Year</h2>
 
-            <p>Here is what the costs actually look like for a musician recording 10 GB per month and never deleting anything:</p>
+            <p>Here's what the numbers actually look like for 10 GB/month, keeping everything:</p>
             <ul>
-                <li><strong>Month 1:</strong> 10 GB stored — $0 (within the free 10 GB tier)</li>
-                <li><strong>Month 2:</strong> 20 GB stored — $0.06/month (10 GB above the free tier)</li>
-                <li><strong>Month 6:</strong> 60 GB stored — $0.30/month</li>
-                <li><strong>Month 12:</strong> 120 GB stored — $0.66/month</li>
-                <li><strong>Total for the year:</strong> approximately $4–5</li>
+                <li>Month 1: 10 GB stored — $0 (within the free tier)</li>
+                <li>Month 2: 20 GB stored — $0.06/month</li>
+                <li>Month 6: 60 GB stored — $0.30/month</li>
+                <li>Month 12: 120 GB stored — $0.66/month</li>
+                <li>Total for the year: roughly $4–5</li>
             </ul>
-            <p>All uploads throughout this period cost nothing. If you download files occasionally — say, to mix on a different machine — you would still be well within the free monthly download allowance for the entire year.</p>
-            <p>After May 2026, the rate increases slightly to $0.00695/GB, so the same scenario would cost roughly $4.50–5.50 for the first year. Still under $5.50.</p>
+            <p>All uploads are free. If you pull files down occasionally to mix on another machine, you will still be well within the free download allowance for the entire year.</p>
+            <p>After May 2026, the rate goes to $0.00695/GB, so the same scenario runs about $4.50–5.50 for year one. Still under $5.50.</p>
 
             <hr>
 
-            <h2>How 1Take Integrates with Backblaze B2</h2>
+            <h2>How 1Take Works with Backblaze B2</h2>
 
-            <p>1Take v1.4 includes built-in Backblaze B2 support as part of the Cloud Sync feature. Setup requires your B2 Application Key ID, Application Key, and the name of the bucket you want to use. You can also specify an optional path prefix to organize files within the bucket.</p>
-            <p>Once configured, the integration handles everything automatically:</p>
+            <p>I built B2 support into 1Take v1.4 as part of Cloud Sync. Setup takes three things: your B2 Application Key ID, Application Key, and a bucket name. You can also add a path prefix if you want to keep recordings in a specific folder within the bucket.</p>
+            <p>After that, everything runs automatically:</p>
             <ul>
-                <li>Each recording is queued for upload immediately after you stop recording.</li>
-                <li>Uploads proceed in the background over Wi-Fi, or over cellular if you allow it in Settings.</li>
-                <li>If an upload fails — due to a dropped connection or B2 being temporarily unavailable — 1Take retries automatically. You can configure the maximum number of retries and the interval between attempts.</li>
-                <li>Every upload attempt is logged, so you can see exactly which files are backed up and which are still pending.</li>
+                <li>Each recording is queued for upload the moment you stop recording.</li>
+                <li>Uploads happen in the background over Wi-Fi (or cellular, if you enable it in Settings).</li>
+                <li>If an upload fails due to a dropped connection or a temporary B2 outage, 1Take retries. The retry limit and interval are both configurable.</li>
+                <li>Every upload attempt is logged, so you can see exactly what's backed up and what's still pending.</li>
             </ul>
-            <p>The Backblaze B2 integration is available to all 1Take users, including the free tier. There is no additional charge from 1Take for using it.</p>
+            <p>B2 integration is available to all 1Take users, including the free tier. No extra charge from my side.</p>
 
             <h3>Getting a B2 Account</h3>
-            <p>You can create a Backblaze B2 account at <a href="https://www.backblaze.com/cloud-storage" target="_blank" rel="noopener">backblaze.com</a>. The first 10 GB is free with no credit card required. To use the API from 1Take, you will need to create an Application Key with read and write access to your bucket — this takes about two minutes in the B2 dashboard.</p>
+            <p>Sign up at <a href="https://www.backblaze.com/cloud-storage" target="_blank" rel="noopener">backblaze.com</a>. The first 10 GB is free, no credit card needed. To connect 1Take, create an Application Key with read and write access to your bucket — takes about two minutes in the B2 dashboard.</p>
 
             <hr>
 
-            <h2>Summary</h2>
+            <h2>Bottom Line</h2>
 
-            <p>For musicians who record frequently and want automated, durable off-site backup, Backblaze B2 is the most cost-effective option among the services that support developer API access. The zero-cost upload model is well matched to recording workflows. The free storage tier covers light use entirely. And the eleven-nine durability rating means your recordings are as safe as they can be in cloud storage.</p>
-            <p>If you are currently keeping recordings only on a local drive or on a consumer storage plan with limited capacity, switching to B2 via 1Take's Cloud Sync is a straightforward way to close that gap.</p>
+            <p>If you record regularly and want automated off-site backup that does not cost much, B2 is the best option I found among services that actually have a developer API. The free uploads fit the recording workflow naturally. The free storage tier handles light use entirely. And the durability numbers are on par with S3 at a fraction of the price.</p>
+            <p>If you're currently relying on a local drive or a consumer plan with limited capacity, setting up B2 in 1Take's Cloud Sync is probably the quickest way to actually fix that.</p>
 
             <div class="related">
                 <h3>Related Articles</h3>

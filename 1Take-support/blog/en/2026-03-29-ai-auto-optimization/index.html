@@ -72,40 +72,40 @@
             <a href="/1Take-support/changelog-ja">更新履歴</a>
         </nav>
         <div class="content">
-            <h2>Sound Tuning That Works While You Play</h2>
-            <p><strong>1Take v1.4</strong> introduces AI Auto-Optimization, a feature that listens as you record and continuously refines your audio settings on the fly. You no longer have to stop a session to tweak EQ curves or dial in compression ratios. The AI engine handles it, and every adjustment is visible right in the recording detail view.</p>
-            <p>This is not a one-size-fits-all loudness normalizer. It is a parameter-aware optimization loop that reads the character of your sound and selects values specific to that take.</p>
+            <h2>It adjusts while you play</h2>
+            <p><strong>1Take v1.4</strong> adds AI Auto-Optimization. It runs during recording and adjusts EQ, compression, input trim, and saturation on the fly. No pausing to tweak settings. No remembering to fix things after the fact.</p>
+            <p>It's not a loudness normalizer. It reads the actual character of your recording and picks parameter values for that specific take.</p>
             <hr>
 
-            <h2>What Gets Optimized</h2>
-            <p>The AI engine targets four processing stages, adjusting each one based on the live audio signal:</p>
+            <h2>What it adjusts</h2>
+            <p>Four processing stages, each tuned to the live signal:</p>
 
-            <h3>EQ (Equalizer)</h3>
-            <p>Spectral analysis identifies problem frequency bands - muddiness in the low-mids, harshness in the upper-mids, excessive room resonances - and sets corrective filter values. Both <strong>frequency</strong> and <strong>gain</strong> are adjusted per band so cuts and boosts land exactly where the signal needs them.</p>
+            <h3>EQ</h3>
+            <p>FFT analysis finds the problem bands — low-mid muddiness, harsh upper-mids, room resonances — and sets corrective filter values. Both <strong>frequency</strong> and <strong>gain</strong> are set per band, so cuts and boosts go exactly where the signal needs them.</p>
 
             <h3>Compression</h3>
-            <p>Dynamic range is measured continuously throughout the recording. The optimizer sets <strong>threshold</strong>, <strong>attack</strong>, and <strong>release</strong> values appropriate to the source material - gentle and transparent for vocals that already sit in a natural range, tighter and faster for instruments with sharp transients.</p>
+            <p>Dynamic range gets measured throughout the take. The optimizer picks <strong>threshold</strong>, <strong>attack</strong>, and <strong>release</strong> based on the source — loose and transparent for vocals that are already in a natural range, tighter for instruments with sharp transients.</p>
 
             <h3>Input Trim</h3>
-            <p>Noise floor detection and LUFS measurement combine to determine whether the recording is sitting too hot or too quiet. The trim value is adjusted to place the signal in the optimal range for downstream processing, preventing clipping and ensuring headroom for mixing.</p>
+            <p>Noise floor and LUFS measurement together determine whether the level is too hot or too quiet. The trim gets adjusted to put the signal in a good spot for downstream processing — enough headroom, no clipping.</p>
 
             <h3>Saturation</h3>
-            <p>When a recording sounds thin or sterile, a small amount of harmonic saturation can add presence and warmth. The AI evaluates spectral density and harmonic content before applying saturation, keeping the result musical rather than distorted.</p>
+            <p>Some recordings just sound thin. A little harmonic saturation helps. The AI checks spectral density and harmonic content before applying any — the goal is presence, not distortion.</p>
             <hr>
 
-            <h2>Inline Transparency: See Every Change</h2>
-            <p>Adjustments do not happen silently. Every parameter the AI modifies is displayed inline in the recording detail view, showing the <strong>previous value</strong> and the <strong>new value</strong> side by side. If you disagree with a change, you can override it manually. The display covers all four stages so you always know exactly what was touched and why.</p>
-            <p>This level of transparency is intentional. AI-assisted processing should inform your workflow, not obscure it.</p>
+            <h2>You can see every change</h2>
+            <p>Every parameter the AI touches shows up inline in the recording detail view, with the <strong>before</strong> and <strong>after</strong> values right next to each other. Don't like a change? Override it manually. All four stages are shown, so nothing happens behind your back.</p>
+            <p>I built it this way on purpose. AI processing that hides what it does isn't useful.</p>
             <hr>
 
-            <h2>Learning Across Takes: Cross-Preset Propagation</h2>
-            <p>AI Auto-Optimization does more than optimize each recording in isolation. It learns from the results of previous takes and carries those insights forward. When a particular EQ approach consistently improves recordings under a given preset, those tendencies inform the starting point for the next session.</p>
-            <p>This cross-preset propagation means the optimizer gets more accurate as you use 1Take more. Early takes benefit from the general analysis engine; later takes benefit from both the engine and the accumulated knowledge of your specific recording environment and style.</p>
+            <h2>It learns from your previous takes</h2>
+            <p>The optimizer doesn't treat every recording as a blank slate. When a certain EQ approach consistently works well under a given preset, that pattern carries forward into the next session's starting point.</p>
+            <p>In practice this means accuracy improves the more you use 1Take. Early sessions run on the general analysis engine. Later ones also draw on what worked in your specific room and with your specific setup.</p>
             <hr>
 
-            <h2>DAW Integration via markers.json</h2>
-            <p>Optimization history travels with your recordings. When you export a take, the <code>markers.json</code> file includes a complete record of every parameter change the AI made, along with the analyzed file name and both the previous and new values for each adjustment.</p>
-            <p>In your DAW, this data serves as a reference for the processing already applied to the audio. You can match your DAW chain to the 1Take settings, work from the documented starting point, or use the history to understand what was happening in the room during that session.</p>
+            <h2>Exported data: markers.json</h2>
+            <p>When you export a take, <code>markers.json</code> includes a full log of every parameter change the AI made — the file that was analyzed, each parameter, the value before, and the value after.</p>
+            <p>This is handy when you bring the audio into a DAW. You can see exactly what 1Take did and match your plugin chain to it, or just use it as a reference for what the room sounded like.</p>
 
             <table>
                 <thead>
@@ -135,23 +135,23 @@
             </table>
             <hr>
 
-            <h2>Technical Details</h2>
-            <p>The analysis pipeline runs entirely on-device during recording. There are three core measurement systems:</p>
+            <h2>How it works under the hood</h2>
+            <p>Everything runs on-device, during recording. Three measurement systems drive the decisions:</p>
             <ul>
-                <li><strong>Spectral analysis</strong> - Continuous FFT-based frequency analysis identifies the energy distribution across the audio spectrum, informing EQ decisions in real time</li>
-                <li><strong>Noise floor detection</strong> - Measures the ambient noise level during quiet passages to establish a baseline for gain and trim decisions</li>
-                <li><strong>LUFS measurement</strong> - Integrated loudness is tracked against broadcast and streaming reference levels, providing the foundation for compression and trim adjustments</li>
+                <li><strong>Spectral analysis</strong> — Continuous FFT reads the energy distribution across the spectrum and feeds EQ decisions in real time</li>
+                <li><strong>Noise floor detection</strong> — Quiet passages get analyzed to establish an ambient baseline for gain and trim</li>
+                <li><strong>LUFS measurement</strong> — Integrated loudness is tracked against broadcast and streaming references, which drives compression and trim</li>
             </ul>
-            <p>All processing runs locally on your device. No audio data is sent to any server.</p>
+            <p>No audio leaves your device. Everything is local.</p>
             <hr>
 
-            <h2>How to Enable AI Auto-Optimization</h2>
+            <h2>Turning it on</h2>
             <ol>
                 <li>Open <strong>Settings</strong> in 1Take</li>
                 <li>Tap <strong>Recording</strong></li>
-                <li>Enable the <strong>AI Auto-Optimize</strong> toggle</li>
+                <li>Enable <strong>AI Auto-Optimize</strong></li>
             </ol>
-            <p>Once enabled, the optimizer activates automatically for every new recording. Existing recordings are not retroactively modified. To apply optimization to a previous take, open its detail view and use the manual optimization option.</p>
+            <p>Once enabled, it runs automatically for every new recording. Old recordings aren't touched retroactively — but if you want to run optimization on a past take, open its detail view and use the manual option there.</p>
             <hr>
 
             <ul>
