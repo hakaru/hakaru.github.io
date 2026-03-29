@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GPS Location Tagging: Remember Where Every Recording Was Made | 1Take Blog</title>
+    <meta name="description" content="1Take v1.4 automatically captures your GPS location when you start recording and shows the place name alongside your recording in the library.">
+    <meta property="og:title" content="GPS Location Tagging: Remember Where Every Recording Was Made">
+    <meta property="og:description" content="1Take v1.4 automatically captures your GPS location when you start recording and shows the place name alongside your recording in the library.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/en/2026-03-29-gps-location-tagging/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"GPS Location Tagging: Remember Where Every Recording Was Made","datePublished":"March 29, 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/en/2026-03-29-gps-location-tagging/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/blog/en/" class="back-link">← Blog</a>
+        <div class="article-header">
+            <h1>GPS Location Tagging: Remember Where Every Recording Was Made</h1>
+            <div class="article-meta">March 29, 2026</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/" class="active">Blog</a>
+            <a href="/1Take-support/blog/ja/">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>Overview</h2>
+            <p>1Take v1.4 introduces <strong>GPS location tagging</strong>. When you start a recording, 1Take automatically captures your current location and converts it into a human-readable place name — the name of a neighborhood, district, or city — which then appears alongside the recording in your library.</p>
+            <p>For musicians who rehearse at a studio, perform at different venues, or capture field recordings outdoors, this means every take is automatically tied to where it happened.</p>
+
+            <hr>
+
+            <h2>How It Works</h2>
+            <p>Location capture happens automatically at the moment you tap the record button. There is nothing to configure and no manual step required.</p>
+            <ol>
+                <li>You tap the record button.</li>
+                <li>1Take requests your location at <strong>coarse accuracy</strong> — approximately 100 meters. This is intentionally imprecise; the goal is a place name, not a precise coordinate.</li>
+                <li>iOS performs <strong>reverse geocoding</strong> to translate the coordinate into a readable name such as "Shibuya, Tokyo" or "Brooklyn, New York."</li>
+                <li>That name is stored in the recording's <code>markers.json</code> file alongside other metadata.</li>
+                <li>The place name appears in the recording list and in the recording detail view.</li>
+            </ol>
+
+            <h3>Coarse Accuracy and Privacy</h3>
+            <p>1Take uses the coarse location mode provided by iOS, which limits precision to roughly 100 meters. This is accurate enough to identify a neighborhood or venue but not accurate enough to pinpoint a specific room or address. <strong>No precise GPS coordinates are stored.</strong></p>
+            <p>This design means the feature is useful for context — "I recorded this at the Osaka venue last Thursday" — while keeping your exact whereabouts private.</p>
+
+            <hr>
+
+            <h2>Permission and Opt-Out</h2>
+            <p>The first time you record after updating to v1.4, iOS will show a permission prompt asking whether 1Take may access your location. You can:</p>
+            <ul>
+                <li><strong>Allow once</strong> — location is captured for this recording only; you will be asked again next time.</li>
+                <li><strong>Allow while using the app</strong> — location is captured for each recording without further prompts.</li>
+                <li><strong>Don't allow</strong> — location tagging is disabled. Recording continues normally with no location information attached.</li>
+            </ul>
+            <p>Declining location permission has no effect on any other feature. Recording quality, duration, AI optimization, and cloud sync all work exactly the same with or without location access.</p>
+            <p>You can change this permission at any time in <strong>Settings &gt; Privacy &amp; Security &gt; Location Services &gt; 1Take</strong>.</p>
+
+            <hr>
+
+            <h2>Where Location Data Is Stored</h2>
+            <p>The place name is written to the <code>markers.json</code> file that lives alongside each recording. This is the same file that stores markers, notes, and other recording metadata. If you access your recordings through the Files app or via cloud sync, you can read the location data directly from that file.</p>
+            <p>The location appears in two places within 1Take:</p>
+            <ul>
+                <li><strong>Recording list</strong> — shown as a small label below the recording name, alongside the date and duration.</li>
+                <li><strong>Recording detail view</strong> — shown in the metadata section together with file size, sample rate, and other details.</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Update on App Store</a></li>
+                <li><a href="/1Take-support/changelog">Full Changelog</a></li>
+                <li><a href="/1Take-support/">Support Page</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-1take-v14-released/">1Take v1.4 Released: Cloud Sync, GPS Tagging, and AI Improvements</a></li>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-cloud-sync-multi-provider/">Cloud Sync: Auto-Backup to iCloud, Google Drive, Dropbox, and Backblaze B2</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

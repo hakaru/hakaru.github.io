@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>クラウド同期：iCloud・Google Drive・Dropbox・Backblaze B2への自動バックアップ | 1Take ブログ</title>
+    <meta name="description" content="1Take v1.4 でクラウド同期機能が登場。録音が完了した瞬間に iCloud Drive、Google Drive、Dropbox、Backblaze B2 へ自動でアップロードします。">
+    <meta property="og:title" content="クラウド同期：iCloud・Google Drive・Dropbox・Backblaze B2への自動バックアップ">
+    <meta property="og:description" content="1Take v1.4 でクラウド同期機能が登場。録音が完了した瞬間に iCloud Drive、Google Drive、Dropbox、Backblaze B2 へ自動でアップロードします。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ja/2026-03-29-cloud-sync-multi-provider/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"クラウド同期：iCloud・Google Drive・Dropbox・Backblaze B2への自動バックアップ","datePublished":"2026-03-29","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ja/2026-03-29-cloud-sync-multi-provider/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="article-header">
+            <h1>クラウド同期：iCloud・Google Drive・Dropbox・Backblaze B2への自動バックアップ</h1>
+            <div class="article-meta">2026年3月29日</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/" class="active">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>概要</h2>
+            <p>1Take v1.4 では<strong>クラウド同期</strong>機能が追加されました。録音を停止した瞬間に、ファイルを自動でクラウドストレージへアップロードするバックアップシステムです。この機能は無料ユーザーを含むすべてのユーザーが利用できます。PRO サブスクリプションは必要ありません。</p>
+            <p>対応クラウドサービスは <strong>iCloud Drive</strong>、<strong>Google Drive</strong>、<strong>Dropbox</strong>、<strong>Backblaze B2</strong> の 4 種類です。1 つだけ有効にすることも、複数を同時に有効にすることも可能です。</p>
+
+            <hr>
+
+            <h2>対応プロバイダー</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>プロバイダー</th>
+                        <th>説明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>iCloud Drive</strong></td>
+                        <td>Mac の Finder や Windows の iCloud for Windows からファイルに直接アクセス可能</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Drive</strong></td>
+                        <td>Google Drive 内の専用 1Take フォルダにアップロード</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dropbox</strong></td>
+                        <td>Dropbox の Apps/1Take フォルダにアップロード</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Backblaze B2</strong></td>
+                        <td>指定したバケットとパスにアップロード。大容量アーカイブに最適</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>iCloud Drive とデスクトップからのアクセス</h3>
+            <p>iCloud Drive 同期を有効にすると、録音ファイルは <strong>iCloud Drive 内の 1Take フォルダ</strong>に保存されます。同じ Apple アカウントでサインインしている Mac では、このフォルダが Finder の「iCloud Drive」に自動的に表示されます。Windows では、Microsoft Store から iCloud for Windows をインストールすることで同様にアクセスできます。</p>
+            <p>追加のソフトウェアは不要で、デスクトップから録音ファイルを直接開いたり、名前を変更したり、整理したりすることが可能です。</p>
+
+            <hr>
+
+            <h2>動作の仕組み</h2>
+            <p>クラウド同期は設定後に手間なく動作します。プロバイダーを有効にして認証を完了すれば、あとは 1Take がすべてバックグラウンドで処理します。</p>
+            <ol>
+                <li>録音を終了してストップボタンをタップする。</li>
+                <li>1Take が有効なすべてのプロバイダーへのアップロードをキューに追加する。</li>
+                <li>アップロードが自動的に開始される（デフォルトは Wi-Fi のみ。設定でモバイル通信を許可することも可能）。</li>
+                <li>録音ライブラリの各ファイルにクラウドアイコンが表示され、アップロード状況を確認できる。</li>
+                <li>アップロード完了後、各プロバイダーのアイコンがチェックマークに変わる。</li>
+            </ol>
+            <p>オフラインなどの理由でアップロードが完了しなかった場合、接続が回復した際に自動でリトライします。</p>
+
+            <h3>プロバイダーごとのリトライ設定</h3>
+            <p>各クラウドプロバイダーには独自のリトライ設定があります。設定 → クラウド同期 から以下を変更できます。</p>
+            <ul>
+                <li><strong>最大リトライ回数</strong> — 失敗と判定するまでに何回アップロードを試みるか</li>
+                <li><strong>リトライ間隔</strong> — 再試行までの待機時間（1 分から 1 時間の範囲で設定可能）</li>
+                <li><strong>モバイル通信でのアップロード</strong> — プロバイダーごとにモバイル通信でのアップロードを許可するか個別に設定可能</li>
+            </ul>
+            <p>たとえば iCloud Drive はモバイル通信でのアップロードを許可しつつ、転送量が大きくなりやすい Backblaze B2 は Wi-Fi のみに制限する、といった使い分けができます。</p>
+
+            <h3>アップロード履歴</h3>
+            <p>各録音ファイルのアップロード履歴を確認できます。ライブラリでファイルをタップしてクラウドアイコンをタップすると、すべてのアップロード試行のログが表示されます。ログにはタイムスタンプ、プロバイダー名、結果（成功または失敗）、失敗時のエラーメッセージが含まれます。</p>
+            <p>特定のファイルが特定のプロバイダーに届いていない原因の調査や、リトライが保留中かどうかの確認に役立ちます。</p>
+
+            <hr>
+
+            <h2>クラウド同期の設定手順</h2>
+            <p>ほとんどのプロバイダーは 1 分以内にセットアップが完了します。</p>
+            <ol>
+                <li>1Take の<strong>設定</strong>を開く。</li>
+                <li><strong>クラウド同期</strong>をタップする。</li>
+                <li>有効にしたいプロバイダーをタップする。</li>
+                <li>プロバイダーのトグルをオンにして、認証の案内に従う。</li>
+                <li>iCloud Drive の場合は認証不要。既存の Apple アカウントがそのまま使われる。</li>
+                <li>Google Drive と Dropbox の場合は、Safari で標準的な OAuth サインインフローが表示される。</li>
+                <li>Backblaze B2 の場合は、Application Key ID、Application Key、バケット名、およびオプションのパスプレフィックスを入力する。</li>
+            </ol>
+            <p>認証が完了するとすぐにプロバイダーが有効になります。まだアップロードされていない録音ファイルはバックグラウンドでアップロードが開始されます。</p>
+
+            <hr>
+
+            <h2>すべてのユーザーに無料で提供</h2>
+            <p>クラウド同期は無料プランを含む 1Take のすべてのバージョンで利用できます。どのプロバイダーの有効化にも、機能のどの部分にも、PRO サブスクリプションは必要ありません。クラウドストレージの料金は各プロバイダーの料金体系に依存し、1Take が別途課金することはありません。</p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Store でアップデート</a></li>
+                <li><a href="/1Take-support/changelog-ja">更新履歴を見る</a></li>
+                <li><a href="/1Take-support/index-ja">サポートページ</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ja/2026-03-29-ai-auto-optimization/">AI 自動最適化：1Take がリアルタイムで音質を調整する仕組み</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-03-29-gps-location-tagging/">GPS ロケーションタグ：録音した場所をいつまでも記録する</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

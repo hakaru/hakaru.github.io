@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take v1.4 リリース：クラウド同期、GPS タグ、AI改善 | 1Take ブログ</title>
+    <meta name="description" content="1Take v1.4がリリースされました。4つのクラウドプロバイダーへの自動バックアップ、GPS位置情報タグ、AI最適化の改善、コンテキストヒント、録音詳細画面のリデザインが含まれます。">
+    <meta property="og:title" content="1Take v1.4 リリース：クラウド同期、GPS タグ、AI改善">
+    <meta property="og:description" content="1Take v1.4がリリースされました。4つのクラウドプロバイダーへの自動バックアップ、GPS位置情報タグ、AI最適化の改善、コンテキストヒント、録音詳細画面のリデザインが含まれます。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ja/2026-03-29-1take-v14-released/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"1Take v1.4 リリース：クラウド同期、GPS タグ、AI改善","datePublished":"2026年3月29日","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ja/2026-03-29-1take-v14-released/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/1Take-support/blog/ja/" class="back-link">← ブログ</a>
+        <div class="article-header">
+            <h1>1Take v1.4 リリース：クラウド同期、GPS タグ、AI改善</h1>
+            <div class="article-meta">2026年3月29日</div>
+        </div>
+        <nav class="support-nav">
+            <a href="/1Take-support/">Support</a>
+            <a href="/1Take-support/index-ja">サポート</a>
+            <a href="/1Take-support/manual/en/">Manual</a>
+            <a href="/1Take-support/manual/ja/">マニュアル</a>
+            <a href="/1Take-support/privacy">Privacy</a>
+            <a href="/1Take-support/privacy-ja">プライバシー</a>
+            <a href="/1Take-support/blog/en/">Blog</a>
+            <a href="/1Take-support/blog/ja/" class="active">ブログ</a>
+            <a href="/1Take-support/changelog">Changelog</a>
+            <a href="/1Take-support/changelog-ja">更新履歴</a>
+        </nav>
+        <div class="content">
+            <h2>v1.4 の新機能</h2>
+            <p>1Take v1.4がApp Storeで公開されました。リリース以来最大のアップデートとなり、自動クラウドバックアップ、位置情報タグ、より賢くなったAI音声最適化、アプリ全体のコンテキストヒント、そして録音詳細画面のリデザインが含まれています。以下に新機能の概要をまとめます。</p>
+
+            <hr>
+
+            <h2>クラウド同期</h2>
+            <p>録音が終わった瞬間に、1Takeがクラウドへ自動バックアップできるようになりました。対応プロバイダーは<strong>iCloud Drive</strong>、<strong>Google Drive</strong>、<strong>Dropbox</strong>、<strong>Backblaze B2</strong>の4つ。これらを同時に複数有効にすることもできます。</p>
+            <p>クラウド同期はすべてのユーザーに追加費用なしで提供されます。セットアップは1分以内で完了します。設定を開き、クラウド同期を選択してプロバイダーをタップしてサインインするだけです。録音終了時にオフラインだった場合は、接続が回復したタイミングで自動的に再試行されます。</p>
+            <p>iCloud Drive対応はMacユーザーに特に便利です。追加ソフトウェアなしで、録音がFinderのiCloud Drive直下に自動的に表示されます。</p>
+            <p><a href="/1Take-support/blog/ja/2026-03-29-cloud-sync-multi-provider/">クラウド同期の詳細記事を読む</a></p>
+
+            <hr>
+
+            <h2>GPS位置情報タグ</h2>
+            <p>録音開始時に、1Takeが自動的におおよそのGPS情報（約100メートル精度）を取得し、逆ジオコーディングで読みやすい地名に変換します。その地名が録音一覧と詳細画面に表示されます。</p>
+            <p>複数の会場でリハーサルやライブを行うミュージシャンに特に便利な機能です。粗い精度設定により、正確な位置情報は保存されず、地区名や市区町村名のみが残ります。</p>
+            <p>位置情報の許可はアップデート後の初回録音時にリクエストされます。許可を拒否しても、録音品質や他の機能には一切影響しません。</p>
+            <p><a href="/1Take-support/blog/ja/2026-03-29-gps-location-tagging/">GPS位置情報タグの詳細記事を読む</a></p>
+
+            <hr>
+
+            <h2>AI最適化の改善</h2>
+            <p>1TakeのAI音声解析・最適化システムがv1.4で大幅に改善されました：</p>
+            <ul>
+                <li><strong>インライン調整</strong> — AIがグローバル設定だけでなく、録音の特定の箇所に対してピンポイントな変更を適用できるようになりました。問題のある部分だけを外科的に修正し、それ以外の部分はそのまま保つことが可能です。</li>
+                <li><strong>クロスプリセット学習</strong> — AIが現在使用中のプリセットだけでなく、すべてのプリセットにわたって承認・拒否した調整から学習するようになりました。時間とともに、どのプリセットが有効であっても全体的な好みに合った提案が一貫して行われるようになります。</li>
+            </ul>
+            <p><a href="/1Take-support/blog/ja/2026-03-29-ai-auto-optimization/">AI最適化の詳細記事を読む</a></p>
+
+            <hr>
+
+            <h2>コンテキストヒント</h2>
+            <p>初めてアプリを使うユーザーや、普段あまり使わない画面を探索するユーザーに向けて、各コントロールの説明や次のステップを示すコンテキストヒントが表示されるようになりました。ヒントは操作ポイントにインラインで表示され、個別に閉じることができます。一度閉じたヒントは再表示されません。</p>
+            <p>ヒントは録音画面、ライブラリ、設定、AI最適化ワークフローをカバーしています。別途チュートリアルやマニュアルを参照しなくても、必要なときに必要な情報が得られるよう設計されています。</p>
+
+            <hr>
+
+            <h2>録音詳細画面のリデザイン</h2>
+            <p>録音詳細画面が整理され、最も重要な情報がすぐに確認できるようになりました。ファイル名、長さ、フォーマット、サンプルレート、ファイルサイズ、新しいGPS位置情報を含むメタデータが画面上部のすっきりとしたレイアウトで表示されます。エクスポート、共有、削除などの操作は画面下部の一貫した位置に移動しました。</p>
+
+            <hr>
+
+            <h2>セキュリティの改善</h2>
+            <p>Google Drive認証がiOSネイティブのOAuthクライアントを使用するよう移行されました。以前の実装ではアプリ内にクライアントシークレットを埋め込む必要がありましたが、これはモバイルアプリとしてのアンチパターンでした。新しい実装ではiOSのASWebAuthenticationSessionフローとネイティブクライアントIDを使用し、埋め込みシークレットが不要になり、Googleが現在推奨するモバイルアプリの実装に沿ったものになりました。</p>
+
+            <hr>
+
+            <h2>バグ修正と安定性の向上</h2>
+            <ul>
+                <li>録音中にタブを切り替えると録音レベルメーターが一瞬フリーズする問題を修正しました。</li>
+                <li>複数の録音を素早く連続して削除すると稀にクラッシュする問題を修正しました。</li>
+                <li>通話による中断が発生した際のバックグラウンドオーディオセッション処理の信頼性を改善しました。</li>
+                <li>アプリ再起動後にクラウドアップロードのステータス表示が古い状態を示すことがある問題を修正しました。</li>
+                <li>録音が多数ある場合の録音ライブラリの全般的なパフォーマンスを改善しました。</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Storeでアップデート</a></li>
+                <li><a href="/1Take-support/changelog-ja">更新履歴</a></li>
+                <li><a href="/1Take-support/index-ja">サポートページ</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>関連記事</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ja/2026-03-29-cloud-sync-multi-provider/">クラウド同期：iCloud、Google Drive、Dropbox、Backblaze B2への自動バックアップ</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-03-29-ai-auto-optimization/">AI自動最適化：1Takeがリアルタイムでサウンドを調整する仕組み</a></li>
+                    <li><a href="/1Take-support/blog/ja/2026-03-29-gps-location-tagging/">GPS位置情報タグ：録音した場所をいつでも確認できます</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
