@@ -1,0 +1,140 @@
+[
+  {
+    "id": "1Take",
+    "name": "1Take",
+    "icon": "/1Take-support/assets/app-icon.png",
+    "prefix": "/1Take-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/1Take-support/" },
+        { "label": "Manual", "href": "/1Take-support/manual/en/" },
+        { "label": "Blog", "href": "/1Take-support/blog/en/" },
+        { "label": "Changelog", "href": "/1Take-support/changelog" },
+        { "label": "Privacy", "href": "/1Take-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/1Take-support/index-ja" },
+        { "label": "マニュアル", "href": "/1Take-support/manual/ja/" },
+        { "label": "ブログ", "href": "/1Take-support/blog/ja/" },
+        { "label": "更新履歴", "href": "/1Take-support/changelog-ja" },
+        { "label": "プライバシー", "href": "/1Take-support/privacy-ja" }
+      ]
+    }
+  },
+  {
+    "id": "GitInflow",
+    "name": "GitInflow",
+    "icon": "/assets/gitinflow-icon.png",
+    "prefix": "/GitInflow-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/GitInflow-support/" },
+        { "label": "Manual", "href": "/GitInflow-support/manual/en/" },
+        { "label": "Blog", "href": "/GitInflow-support/blog/en/" },
+        { "label": "Changelog", "href": "/GitInflow-support/changelog" },
+        { "label": "Privacy", "href": "/GitInflow-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/GitInflow-support/index-ja" },
+        { "label": "マニュアル", "href": "/GitInflow-support/manual/ja/" },
+        { "label": "ブログ", "href": "/GitInflow-support/blog/ja/" },
+        { "label": "更新履歴", "href": "/GitInflow-support/changelog-ja" },
+        { "label": "プライバシー", "href": "/GitInflow-support/privacy-ja" }
+      ]
+    }
+  },
+  {
+    "id": "SonicDNACollector",
+    "name": "SonicDNA Collector",
+    "icon": "/assets/sonicdna-icon.png",
+    "prefix": "/SonicDNACollector-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/SonicDNACollector-support/" },
+        { "label": "Manual", "href": "/SonicDNACollector-support/manual/en/" },
+        { "label": "Blog", "href": "/SonicDNACollector-support/blog/en/" },
+        { "label": "Changelog", "href": "/SonicDNACollector-support/changelog/" },
+        { "label": "Privacy", "href": "/SonicDNACollector-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/SonicDNACollector-support/index-ja" },
+        { "label": "マニュアル", "href": "/SonicDNACollector-support/manual/ja/" },
+        { "label": "ブログ", "href": "/SonicDNACollector-support/blog/ja/" },
+        { "label": "更新履歴", "href": "/SonicDNACollector-support/changelog/" },
+        { "label": "プライバシー", "href": "/SonicDNACollector-support/privacy-ja" }
+      ]
+    }
+  },
+  {
+    "id": "SonicDNAEngine",
+    "name": "SonicDNA Engine",
+    "icon": "/assets/sonicdna-icon.png",
+    "prefix": "/SonicDNAEngine-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/SonicDNAEngine-support/" },
+        { "label": "Blog", "href": "/SonicDNAEngine-support/blog/en/" },
+        { "label": "Changelog", "href": "/SonicDNAEngine-support/changelog" },
+        { "label": "Privacy", "href": "/SonicDNAEngine-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/SonicDNAEngine-support/index-ja" },
+        { "label": "ブログ", "href": "/SonicDNAEngine-support/blog/ja/" },
+        { "label": "更新履歴", "href": "/SonicDNAEngine-support/changelog" },
+        { "label": "プライバシー", "href": "/SonicDNAEngine-support/privacy-ja" }
+      ]
+    }
+  },
+  {
+    "id": "simpleMIDIController",
+    "name": "simpleMIDI Controller",
+    "icon": "/assets/simplemidi-icon.png",
+    "prefix": "/simpleMIDIController-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/simpleMIDIController-support/" },
+        { "label": "Manual", "href": "/simpleMIDIController-support/manual/en/" },
+        { "label": "Blog", "href": "/simpleMIDIController-support/blog/en/" },
+        { "label": "Privacy", "href": "/simpleMIDIController-support/privacy/" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/simpleMIDIController-support/index-ja" },
+        { "label": "マニュアル", "href": "/simpleMIDIController-support/manual/ja/" },
+        { "label": "ブログ", "href": "/simpleMIDIController-support/blog/ja/" },
+        { "label": "プライバシー", "href": "/simpleMIDIController-support/privacy/" }
+      ]
+    }
+  },
+  {
+    "id": "ChatArchive",
+    "name": "ChatArchive",
+    "icon": "/assets/chatarchive-icon.png",
+    "prefix": "/ChatArchive-support",
+    "links": {
+      "ja": [
+        { "label": "サポート", "href": "/ChatArchive-support/" },
+        { "label": "ブログ", "href": "/ChatArchive-support/blog/" },
+        { "label": "プライバシー", "href": "/ChatArchive-support/privacy" },
+        { "label": "利用規約", "href": "/ChatArchive-support/terms" }
+      ],
+      "en": [
+        { "label": "Support", "href": "/ChatArchive-support/en/" },
+        { "label": "Blog", "href": "/ChatArchive-support/en/blog/" },
+        { "label": "Privacy", "href": "/ChatArchive-support/en/privacy" },
+        { "label": "Terms", "href": "/ChatArchive-support/en/terms" }
+      ],
+      "th": [
+        { "label": "Support", "href": "/ChatArchive-support/th/" },
+        { "label": "Blog", "href": "/ChatArchive-support/th/blog/" },
+        { "label": "Privacy", "href": "/ChatArchive-support/th/privacy" },
+        { "label": "Terms", "href": "/ChatArchive-support/th/terms" }
+      ],
+      "zh-Hant": [
+        { "label": "Support", "href": "/ChatArchive-support/zh-Hant/" },
+        { "label": "Blog", "href": "/ChatArchive-support/zh-Hant/blog/" },
+        { "label": "Privacy", "href": "/ChatArchive-support/zh-Hant/privacy" },
+        { "label": "Terms", "href": "/ChatArchive-support/zh-Hant/terms" }
+      ]
+    }
+  }
+]
