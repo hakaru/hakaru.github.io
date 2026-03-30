@@ -22,6 +22,7 @@ TARGET_DIRS = [
     "simpleMIDIController-support",
     "ChatArchive-support",
     "TineModeler-support",
+    "M2DX-Core-support",
 ]
 
 LANG_LABELS = {

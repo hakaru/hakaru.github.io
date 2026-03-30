@@ -122,6 +122,22 @@
     }
   },
   {
+    "id": "M2DX-Core",
+    "name": "M2DX-Core",
+    "icon": "/assets/midi2kit-icon.svg",
+    "prefix": "/M2DX-Core-support",
+    "links": {
+      "en": [
+        {"label": "Support", "href": "/M2DX-Core-support/"},
+        {"label": "Privacy", "href": "/M2DX-Core-support/privacy"}
+      ],
+      "ja": [
+        {"label": "サポート", "href": "/M2DX-Core-support/index-ja"},
+        {"label": "プライバシー", "href": "/M2DX-Core-support/privacy-ja"}
+      ]
+    }
+  },
+  {
     "id": "ChatArchive",
     "name": "ChatArchive",
     "icon": "/assets/chatarchive-icon.png",

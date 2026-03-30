@@ -1,52 +1,73 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>iOS 26 Spatial Audio時代のiPhone録音 — 1Takeで実現するプロ品質キャプチャ | 1Take ブログ</title>
-    <meta name="description" content="iOS 26でSpatial Audio録音が開放。iPhoneオーディオ録音の進化と1Takeの強みを解説。">
-    <meta property="og:title" content="iOS 26 Spatial Audio時代のiPhone録音 — 1Takeで実現するプロ品質キャプチャ">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ja/2026-03-08-ios26-spatial-audio-recording/">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"iOS 26 Spatial Audio時代のiPhone録音 — 1Takeで実現するプロ品質キャプチャ","datePublished":"2026年3月8日","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ja/2026-03-08-ios26-spatial-audio-recording/"}</script>
+    <title>M2DX-Core Support | hakaru</title>
+    <meta name="description" content="M2DX-Core support page. DX7 FM synthesis engine in pure Swift with bit-accurate hardware emulation.">
+    <meta property="og:title" content="M2DX-Core Support">
+    <meta property="og:description" content="M2DX-Core support page. DX7 FM synthesis engine in pure Swift with bit-accurate hardware emulation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
-        .back-link:hover { color: #e94560; }
-        .article-header { margin-bottom: 40px; }
-        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
-        .article-meta { color: #666; font-size: 0.9em; }
-        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
-        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
-        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
         .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
         .content p { margin-bottom: 16px; }
         .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
         .content li { margin-bottom: 8px; }
         .content a { color: #e94560; text-decoration: none; }
         .content a:hover { text-decoration: underline; }
-        .content strong { color: #fff; }
-        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
-        .content pre code { background: none; padding: 0; }
         .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
-        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
-        .related ul { list-style: none; padding: 0; margin: 0; }
-        .related li { margin-bottom: 8px; }
-        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
-        .related a:hover { text-decoration: underline; }
-        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        .content pre {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px 20px; margin-bottom: 16px;
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em;
+            color: #c0c0c0; overflow-x: auto;
+        }
+        .content code {
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.88em;
+            background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; color: #e0e0e0;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
         footer a { color: #888; text-decoration: none; }
         footer a:hover { color: #e94560; }
-        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+        }
 
-    
 /* Sidebar styles */
 body {
     display: flex;
@@ -167,17 +188,17 @@ body {
 <nav class="sidebar">
   <div class="sidebar-logo"><a href="/">hakaru</a></div>
   <div class="sidebar-app">
-    <button class="sidebar-app-header active expanded">
+    <button class="sidebar-app-header">
       <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
       1Take
       <span class="arrow">&#9654;</span>
     </button>
-    <div class="sidebar-app-links show">
-      <a href="/1Take-support/index-ja">サポート</a>
-      <a href="/1Take-support/manual/ja/">マニュアル</a>
-      <a href="/1Take-support/blog/ja/" class="active">ブログ</a>
-      <a href="/1Take-support/changelog-ja">更新履歴</a>
-      <a href="/1Take-support/privacy-ja">プライバシー</a>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -187,11 +208,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/GitInflow-support/index-ja">サポート</a>
-      <a href="/GitInflow-support/manual/ja/">マニュアル</a>
-      <a href="/GitInflow-support/blog/ja/">ブログ</a>
-      <a href="/GitInflow-support/changelog-ja">更新履歴</a>
-      <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -201,11 +222,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/SonicDNACollector-support/index-ja">サポート</a>
-      <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
-      <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
-      <a href="/SonicDNACollector-support/changelog/">更新履歴</a>
-      <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -215,10 +236,10 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/SonicDNAEngine-support/index-ja">サポート</a>
-      <a href="/SonicDNAEngine-support/blog/ja/">ブログ</a>
-      <a href="/SonicDNAEngine-support/changelog">更新履歴</a>
-      <a href="/SonicDNAEngine-support/privacy-ja">プライバシー</a>
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -228,10 +249,10 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/simpleMIDIController-support/index-ja">サポート</a>
-      <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
-      <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
-      <a href="/simpleMIDIController-support/privacy/">プライバシー</a>
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -241,19 +262,19 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/TineModeler-support/index-ja">サポート</a>
-      <a href="/TineModeler-support/privacy-ja">プライバシー</a>
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
-    <button class="sidebar-app-header">
+    <button class="sidebar-app-header active expanded">
       <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
       M2DX-Core
       <span class="arrow">&#9654;</span>
     </button>
-    <div class="sidebar-app-links">
-      <a href="/M2DX-Core-support/index-ja">サポート</a>
-      <a href="/M2DX-Core-support/privacy-ja">プライバシー</a>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-Core-support/" class="active">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -263,79 +284,74 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/">サポート</a>
-      <a href="/ChatArchive-support/blog/">ブログ</a>
-      <a href="/ChatArchive-support/privacy">プライバシー</a>
-      <a href="/ChatArchive-support/terms">利用規約</a>
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
     </div>
   </div>
   <div class="sidebar-lang">
-    <a href="/1Take-support/blog/en/2026-03-08-ios26-spatial-audio-recording/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
-    <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
+    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
+    <a href="/M2DX-Core-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
   </div>
 </nav>
 <div class="content-pane">
     <div class="container">
-        
-        <div class="article-header">
-            <h1>iOS 26 Spatial Audio時代のiPhone録音 — 1Takeで実現するプロ品質キャプチャ</h1>
-            <div class="article-meta">2026年3月8日</div>
+
+        <div class="hero">
+            <h1>M2DX-Core</h1>
+            <p>DX7 FM Synthesis Engine in Pure Swift</p>
         </div>
-        
+
         <div class="content">
-            <h2>iOS 26とSpatial Audio</h2>
-            <p>iOS 26では、サードパーティアプリがSpatial Audio（空間オーディオ）録音にアクセスできるAPIが公開されました。これはiPhone録音の歴史における重要なマイルストーンです。</p>
+            <p>Welcome to the M2DX-Core support page.</p>
+            <p>M2DX-Core is a bit-accurate DX7 FM synthesis engine written entirely in pure Swift. It emulates the original Yamaha OPS chip using Int32 fixed-point arithmetic, providing the exact sound of the hardware synthesizer without any C or C++ code.</p>
 
             <hr>
 
-            <h2>Spatial Audioとは何か</h2>
-            <p>Spatial Audioは、音の「立体的な位置」を記録する技術です。複数のマイクからの入力を組み合わせて、「あの楽器は右前方から聴こえる」という空間情報を保持します。</p>
-            <p>Apple Vision ProやAirPods Proで再生すると、まるで録音した部屋にいるような没入感を体験できます。</p>
+            <h2>Features</h2>
+
+            <h3>Bit-Accurate Emulation</h3>
+            <p>M2DX-Core uses Int32 fixed-point arithmetic throughout, matching the behavior of the original Yamaha OPS chip at the bit level. Every operator, envelope, and LFO calculation faithfully reproduces the hardware.</p>
+
+            <h3>MIDI 2.0 Native</h3>
+            <p>Built with native MIDI 2.0 support, M2DX-Core takes full advantage of per-note pitch bend, per-note expression, and high-resolution control data — enabling expressive playing not possible with MIDI 1.0.</p>
+
+            <h3>Real-Time Safe</h3>
+            <p>The audio processing path uses a lock-free architecture with no memory allocations on the audio thread, making M2DX-Core suitable for use in professional audio applications and AUv3 plugins.</p>
+
+            <h3>Pure Swift</h3>
+            <p>No C, no C++, no Objective-C bridging headers. M2DX-Core is written entirely in Swift, making it easy to integrate into any Swift or SwiftUI project as a Swift Package.</p>
 
             <hr>
 
-            <h2>1TakeとSpatial Audio</h2>
-            <p>1Takeのシグナルプロセッシングチェーンは、Spatial Audio時代においても変わらず重要です。なぜなら：</p>
-            <ul>
-                <li><strong>AGCの問題は空間録音でも同じ</strong>：空間情報を保持しながらもダイナミクスは失われる</li>
-                <li><strong>ノイズゲートの重要性が増す</strong>：立体的な録音では背景ノイズも立体的に記録される</li>
-                <li><strong>コンプレッションの役割</strong>：空間オーディオの広がりを保ちながら音量を制御する繊細なバランスが必要</li>
-            </ul>
+            <h2>Integration</h2>
+
+            <h3>Swift Package Manager</h3>
+            <p>Add M2DX-Core to your project using Swift Package Manager. In Xcode, go to <strong>File &gt; Add Package Dependencies</strong> and enter the GitHub URL:</p>
+            <pre>https://github.com/hakaru/M2DX-Core</pre>
+            <p>Or add it directly to your <code>Package.swift</code>:</p>
+            <pre>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.0.0")</pre>
 
             <hr>
 
-            <h2>iPhoneマイクの空間配置</h2>
-            <p>iPhone 15 Pro以降のモデルは、前面・底面・背面に複数のマイクを搭載しています。この配置により、iOS 26 APIを通じて真の空間情報をキャプチャできます。</p>
+            <h2>Open Source</h2>
+            <p>M2DX-Core is open source software released under the MIT License. Contributions, issues, and pull requests are welcome on GitHub:</p>
+            <p><a href="https://github.com/hakaru/M2DX-Core"><strong>github.com/hakaru/M2DX-Core</strong></a></p>
 
             <hr>
 
-            <h2>今後の展望</h2>
-            <p>1Takeは次のメジャーアップデートでSpatial Audio録音のサポートを予定しています。空間情報を保持しながら、プロクオリティのシグナルプロセッシングを適用する——それが次の1Takeの目標です。</p>
-            <p>更新情報はブログとApp Storeの更新履歴でお知らせします。</p>
-
-            <hr>
-
-            <ul>
-                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Storeでダウンロード</a></li>
-                <li><a href="/1Take-support/index-ja">サポートページ</a></li>
-                <li><a href="mailto:onetake@hakaru.net">フィードバックを送る</a></li>
-            </ul>
-
-            <div class="related">
-                <h3>関連記事</h3>
-                <ul>
-                    <li><a href="/1Take-support/blog/ja/2026-03-08-iphone-pro-recording-guide/">iPhoneで高音質録音するための完全ガイド</a></li>
-                    <li><a href="/1Take-support/blog/ja/2026-01-24-iphone-mic-secrets/">iPhoneマイクの「聖域」を解体する</a></li>
-                    <li><a href="/1Take-support/blog/ja/2026-01-22-introducing-1take/">iPhoneを究極のレコーダーに変える</a></li>
-                </ul>
-            </div>
+            <h2>Contact</h2>
+            <p>If you have questions or feedback, please contact us at:<br>
+            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
+
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>
             <p style="margin-top: 10px;">
                 <a href="/tokushoho.html">特定商取引法に基づく表記</a>
                 <span style="margin: 0 10px;">|</span>
-                <a href="mailto:onetake@hakaru.net">Contact</a>
+                <a href="mailto:support@hakaru.net">Contact</a>
             </p>
         </footer>
     </div>
