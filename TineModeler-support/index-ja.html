@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TineModeler サポート | hakaru</title>
+    <meta name="description" content="TineModelerサポートページ。Fender Rhodesを再現する物理モデリングシンセサイザー。">
+    <meta property="og:title" content="TineModeler サポート">
+    <meta property="og:description" content="TineModelerサポートページ。Fender Rhodesを再現する物理モデリングシンセサイザー。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/TineModeler-support/index-ja">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content table {
+            width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.95em;
+        }
+        .content table th {
+            background: rgba(255,255,255,0.08); color: #fff;
+            padding: 10px 14px; text-align: left; font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .content table td {
+            padding: 10px 14px; border: 1px solid rgba(255,255,255,0.08); color: #c0c0c0;
+        }
+        .content table tr:hover td { background: rgba(255,255,255,0.03); }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+        }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/index-ja">サポート</a>
+      <a href="/1Take-support/manual/ja/">マニュアル</a>
+      <a href="/1Take-support/blog/ja/">ブログ</a>
+      <a href="/1Take-support/changelog-ja">更新履歴</a>
+      <a href="/1Take-support/privacy-ja">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/index-ja">サポート</a>
+      <a href="/GitInflow-support/manual/ja/">マニュアル</a>
+      <a href="/GitInflow-support/blog/ja/">ブログ</a>
+      <a href="/GitInflow-support/changelog-ja">更新履歴</a>
+      <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/index-ja">サポート</a>
+      <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
+      <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
+      <a href="/SonicDNACollector-support/changelog/">更新履歴</a>
+      <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/index-ja">サポート</a>
+      <a href="/SonicDNAEngine-support/blog/ja/">ブログ</a>
+      <a href="/SonicDNAEngine-support/changelog">更新履歴</a>
+      <a href="/SonicDNAEngine-support/privacy-ja">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/index-ja">サポート</a>
+      <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
+      <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
+      <a href="/simpleMIDIController-support/privacy/">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/TineModeler-support/index-ja" class="active">サポート</a>
+      <a href="/TineModeler-support/privacy-ja">プライバシー</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/">サポート</a>
+      <a href="/ChatArchive-support/blog/">ブログ</a>
+      <a href="/ChatArchive-support/privacy">プライバシー</a>
+      <a href="/ChatArchive-support/terms">利用規約</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/TineModeler-support/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img src="/assets/tinemodeler-icon.png" alt="TineModeler" class="hero-icon">
+            <h1>TineModeler</h1>
+            <p>物理モデリングシンセサイザー — Fender Rhodes を再現</p>
+        </div>
+
+        <div class="content">
+            <p>TineModelerサポートページへようこそ。</p>
+            <p>TineModelerは、Fender Rhodesエレクトリックピアノのサウンドをサンプルを一切使わず、物理モデルだけで再現するシンセサイザーです。</p>
+
+            <hr>
+
+            <h2>機能</h2>
+
+            <h3>物理モデリング</h3>
+            <p>Rhodesサウンドのあらゆる要素を数学的モデルでリアルタイム生成しています。ティン（弦）の振動（オイラー・ベルヌーイ梁）、ハンマーの打撃（ヘルツ接触力）、電磁ピックアップ（ファラデーの法則）、フェルトダンパーのシミュレーションが含まれます。</p>
+
+            <h3>AUv3プラグイン</h3>
+            <p>GarageBand、Logic Pro、Cubasis、その他のAUv3対応ホストでAudio Unitプラグインとして使用できます。</p>
+
+            <h3>リアルタイムパラメーター（Pro）</h3>
+            <p>ピックアップ位置、磁場強度、ハンマーの硬さなどを調整し、サンプルベースの楽器では不可能な音作りを実現します。</p>
+
+            <h3>軽量動作</h3>
+            <p>Apple Siliconで効率よく動作します。大容量のサンプルライブラリは不要です。</p>
+
+            <hr>
+
+            <h2>エディション</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>エディション</th>
+                        <th>プラットフォーム</th>
+                        <th>価格</th>
+                        <th>機能</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Free</strong></td>
+                        <td>iPhone / iPad</td>
+                        <td>無料</td>
+                        <td>Fender Rhodesサウンド1種、鍵盤 + AUv3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pro</strong></td>
+                        <td>iPhone / iPad</td>
+                        <td>アプリ内購入</td>
+                        <td>パラメーター編集、複数プリセット</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full</strong></td>
+                        <td>Mac</td>
+                        <td>$49（ローンチ価格）/ $79</td>
+                        <td>全パラメーター、Logic Pro AUv3プラグイン</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2>お問い合わせ</h2>
+            <p>ご質問やご意見は、以下のメールアドレスまでお気軽にどうぞ：<br>
+            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">お問い合わせ</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    // Language auto-detection
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        return navLang.startsWith('ja') ? 'ja' : 'en';
+    }
+
+    function isJaPage() {
+        return currentPath.includes('/index-ja') ||
+               currentPath.includes('/privacy-ja') ||
+               currentPath.includes('/changelog-ja') ||
+               currentPath.includes('/manual/ja/') ||
+               currentPath.includes('/blog/ja/') ||
+               (currentPath.includes('/ChatArchive-support/') &&
+                !currentPath.includes('/en/') &&
+                !currentPath.includes('/th/') &&
+                !currentPath.includes('/zh-Hant/'));
+    }
+
+    function getCurrentPageLang() {
+        if (currentPath.includes('/th/')) return 'th';
+        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
+        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
+        return isJaPage() ? 'ja' : 'en';
+    }
+
+    // Auto-redirect on first visit (no saved preference, not coming from same site)
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    // Accordion
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            // Collapse all
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            // Toggle clicked
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    // Auto-expand current app
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    // Mobile toggle
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    // Language switch saves preference
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

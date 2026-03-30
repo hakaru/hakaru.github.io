@@ -106,6 +106,22 @@
     }
   },
   {
+    "id": "TineModeler",
+    "name": "TineModeler",
+    "icon": "/assets/tinemodeler-icon.png",
+    "prefix": "/TineModeler-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/TineModeler-support/" },
+        { "label": "Privacy", "href": "/TineModeler-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/TineModeler-support/index-ja" },
+        { "label": "プライバシー", "href": "/TineModeler-support/privacy-ja" }
+      ]
+    }
+  },
+  {
     "id": "ChatArchive",
     "name": "ChatArchive",
     "icon": "/assets/chatarchive-icon.png",
