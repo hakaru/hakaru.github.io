@@ -1,0 +1,17 @@
+# Case-sensitive URL redirects (lowercase -> correct case)
+/1take-support/*              /1Take-support/:splat              301
+/1take-support                /1Take-support/                    301
+/chatarchive-support/*        /ChatArchive-support/:splat        301
+/chatarchive-support          /ChatArchive-support/              301
+/gitinflow-support/*          /GitInflow-support/:splat          301
+/gitinflow-support            /GitInflow-support/                301
+/m2dx-core-support/*          /M2DX-Core-support/:splat          301
+/m2dx-core-support            /M2DX-Core-support/                301
+/simplemidicontroller-support/*  /simpleMIDIController-support/:splat  301
+/simplemidicontroller-support    /simpleMIDIController-support/        301
+/sonicdnacollector-support/*  /SonicDNACollector-support/:splat  301
+/sonicdnacollector-support    /SonicDNACollector-support/        301
+/sonicdnaengine-support/*     /SonicDNAEngine-support/:splat     301
+/sonicdnaengine-support       /SonicDNAEngine-support/           301
+/tinemodeler-support/*        /TineModeler-support/:splat        301
+/tinemodeler-support          /TineModeler-support/              301
