@@ -3,60 +3,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>1Take Changelog | hakaru</title>
-    <meta name="description" content="Version history and release notes for 1Take - Professional Audio Recorder for iOS.">
-    <meta property="og:title" content="1Take Changelog">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hakaru.net/1Take-support/changelog">
+    <title>1Take v1.4.1: AI Optimization Pro Gating &amp; Bug Fixes | 1Take Blog</title>
+    <meta name="description" content="1Take v1.4.1 adds Pro gating for AI auto-optimization and fixes critical bugs including silent recording compressor issues and cloud sync OAuth sessions.">
+    <meta property="og:title" content="1Take v1.4.1: AI Optimization Pro Gating & Bug Fixes">
+    <meta property="og:description" content="1Take v1.4.1 adds Pro gating for AI auto-optimization and fixes critical bugs including silent recording compressor issues and cloud sync OAuth sessions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/en/2026-04-01-1take-v141-released/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"1Take v1.4.1: AI Optimization Pro Gating & Bug Fixes","datePublished":"April 1, 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/en/2026-04-01-1take-v141-released/"}</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-N0830V28FD');
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
-            line-height: 1.7;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        .back-link {
-            display: inline-flex; align-items: center; gap: 8px;
-            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
-            margin-bottom: 30px; transition: color 0.3s;
-        }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
         .back-link:hover { color: #e94560; }
-        .hero { text-align: center; margin-bottom: 40px; }
-        .hero-icon {
-            width: 100px; height: 100px; border-radius: 22px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 2em; font-weight: 700; margin-bottom: 10px;
-            background: linear-gradient(90deg, #e94560, #ff6b6b);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .hero p { color: #a0a0a0; font-size: 1.1em; }
-        .support-nav {
-            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-            margin: 30px 0; padding: 20px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .support-nav a {
-            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
-            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
-        }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
         .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
-        .content h2 {
-            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
-            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
         .content p { margin-bottom: 16px; }
         .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
@@ -64,19 +32,25 @@
         .content a { color: #e94560; text-decoration: none; }
         .content a:hover { text-decoration: underline; }
         .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
         .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
-        footer {
-            text-align: center; margin-top: 60px; padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
-        }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
         footer a { color: #888; text-decoration: none; }
         footer a:hover { color: #e94560; }
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.5em; }
-            .support-nav { gap: 4px; }
-            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
-        }
-    
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+
 /* Sidebar styles */
 body {
     display: flex;
@@ -205,8 +179,8 @@ body {
     <div class="sidebar-app-links show">
       <a href="/1Take-support/">Support</a>
       <a href="/1Take-support/manual/en/">Manual</a>
-      <a href="/1Take-support/blog/en/">Blog</a>
-      <a href="/1Take-support/changelog" class="active">Changelog</a>
+      <a href="/1Take-support/blog/en/" class="active">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
       <a href="/1Take-support/privacy">Privacy</a>
     </div>
   </div>
@@ -301,203 +275,56 @@ body {
   </div>
   <div class="sidebar-lang">
     <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/1Take-support/changelog-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/1Take-support/blog/ja/2026-04-01-1take-v141-released/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
   </div>
 </nav>
 <div class="content-pane">
     <div class="container">
-        
-        <div class="hero">
-            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
-            <h1>1Take</h1>
-            <p>Professional Audio Recorder for iOS</p>
+
+        <div class="article-header">
+            <h1>1Take v1.4.1: AI Optimization Pro Gating &amp; Bug Fixes</h1>
+            <div class="article-meta">April 1, 2026</div>
         </div>
-        
+
         <div class="content">
-            <h2>Changelog</h2>
-            <p>All notable changes to 1Take will be documented here.</p>
+            <h2>Overview</h2>
+            <p>1Take v1.4.1 is now available on the App Store. This update refines the AI auto-optimization feature with Pro subscription gating and fixes critical bugs affecting audio processing and cloud sync.</p>
 
             <hr>
 
-            <h2>[1.4.1] - 2026-04-01</h2>
-            <p>Pro gating for AI optimization and critical bug fixes.</p>
+            <h2>What's New</h2>
 
-            <h3>Added</h3>
-            <ul>
-                <li><strong>AI Optimization Pro Gating</strong> - AI auto-optimization results now require Pro to apply. Free users can view analysis results but adjustments are not applied</li>
-                <li>Added <code>wasApplied</code> flag to optimization history to prevent unapplied analyses from contaminating history</li>
-            </ul>
-
-            <h3>Fixed</h3>
-            <ul>
-                <li>Fixed AI optimization on silent recordings driving compressor threshold to unrecoverable values</li>
-                <li>Fixed OAuth authentication session persistence and token URL encoding for cloud sync</li>
-                <li>Fixed cloud sync timing edge cases causing intermittent upload failures</li>
-            </ul>
+            <h3>AI Optimization Pro Gating</h3>
+            <p>AI auto-optimization results now require a <strong>Pro subscription</strong> to apply. Free users can still view the full analysis results and see exactly what adjustments would be made, but the settings are not applied automatically.</p>
+            <p>A Pro upsell UI appears in both the optimization banner and the detail sheet, making it easy to upgrade when you're ready.</p>
+            <p>Optimization history now tracks a <code>wasApplied</code> flag so that unapplied free-tier analyses don't contaminate your optimization history.</p>
 
             <hr>
 
-            <h2>[1.3.2] - 2026-03-23</h2>
-            <p>Stability improvements and recoverable deletion.</p>
+            <h2>Bug Fixes</h2>
 
-            <h3>Added</h3>
-            <ul>
-                <li><strong>Recoverable Recording Deletion</strong> - Deleted recordings now move to "Recently Deleted" in Files app, recoverable for 30 days</li>
-            </ul>
+            <h3>Silent Recording Compressor Fix</h3>
+            <p>AI optimization on silent or near-silent recordings could drive the compressor threshold to unrecoverable values. A guard now prevents pathological audio conditions from corrupting your settings.</p>
 
-            <h3>Fixed</h3>
-            <ul>
-                <li>Fixed rare crash during audio playback caused by recursive call on session interruption</li>
-                <li>Fixed rare crash when tapping record button before audio hardware was ready</li>
-                <li>Better recovery from phone calls and Siri activation during playback</li>
-                <li>Full compliance with Swift 6 strict concurrency checking</li>
-            </ul>
+            <h3>Cloud Sync OAuth &amp; Timing Fixes</h3>
+            <p>Fixed OAuth authentication session persistence, token URL encoding, and sync timing edge cases that could cause cloud uploads to fail intermittently.</p>
 
             <hr>
 
-            <h2>[1.3.2] - 2026-03-08</h2>
-            <p>MP3/AAC Export, Batch Export, and Pro Enhancements.</p>
-
-            <h3>Added</h3>
             <ul>
-                <li><strong>MP3/AAC Export (Pro)</strong> - Export recordings in compressed formats for easy sharing</li>
-                <li><strong>Batch Export (Pro)</strong> - Export multiple recordings at once</li>
-                <li><strong>High-Quality Export (Pro)</strong> - 24-bit WAV/BWF export for maximum audio fidelity</li>
-                <li>Improved Pro feature discovery with one-tap access from locked features</li>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Update on App Store</a></li>
+                <li><a href="/1Take-support/changelog">Full Changelog</a></li>
+                <li><a href="/1Take-support/">Support Page</a></li>
             </ul>
 
-            <hr>
-
-            <h2>[1.3.0] - 2026-02-03</h2>
-            <p>Recording analysis, intelligent auto-calibration, 5-band EQ, and performance optimizations.</p>
-
-            <h3>Added</h3>
-            <ul>
-                <li><strong>Recording Analysis System</strong>
-                    <ul>
-                        <li>Automatic audio quality assessment after recording</li>
-                        <li>Peak level, RMS level, Crest Factor, LUFS analysis</li>
-                        <li>Dynamic Range evaluation</li>
-                        <li>Recording quality report with recommendations</li>
-                    </ul>
-                </li>
-                <li><strong>Auto-Record Intelligent Calibration</strong>
-                    <ul>
-                        <li>Automatic threshold calculation based on ambient noise</li>
-                        <li>Hysteresis control for stable triggering</li>
-                        <li>One-tap setup via Auto button</li>
-                        <li>Background noise measurement</li>
-                    </ul>
-                </li>
-                <li><strong>5-Band Parametric EQ</strong>
-                    <ul>
-                        <li>Professional-grade 5-band parametric equalizer</li>
-                        <li>Frequency, Gain, Q (bandwidth) control per band</li>
-                        <li>Visual frequency response curve with draggable control points</li>
-                    </ul>
-                </li>
-                <li><strong>Sleep Prevention Setting</strong> - Optional "Keep Screen On" setting</li>
-                <li><strong>Enhanced Microphone Recognition</strong></li>
-            </ul>
-
-            <h3>Changed</h3>
-            <ul>
-                <li>Renamed "Analyze" button to "Auto" (Auto-Record calibration)</li>
-                <li>Recording quality analysis now runs automatically after recording stops</li>
-                <li>Marker system simplified: Removed manual Good/Bad/Memo markers (kept automatic CLIP/OVER markers)</li>
-                <li>4-Band EQ upgraded to 5-Band Parametric EQ</li>
-            </ul>
-
-            <h3>Fixed</h3>
-            <ul>
-                <li>Fixed long-duration recording crashes</li>
-                <li>Improved audio engine error handling and recovery</li>
-                <li>Better resource cleanup on audio route changes</li>
-                <li>Thread-safe audio processing with lock-free atomics</li>
-            </ul>
-
-            <h3>Performance</h3>
-            <ul>
-                <li>Eliminated NSLock usage in real-time audio callback</li>
-                <li>Introduced Swift Atomics for lock-free concurrency</li>
-                <li>VU ballistics now computed in audio thread (zero latency)</li>
-            </ul>
-
-            <hr>
-
-            <h2>[1.2.0] - 2026-01-24</h2>
-            <p>Professional LUFS metering, enhanced Pro features, and Firebase integration.</p>
-
-            <h3>Added</h3>
-            <ul>
-                <li><strong>LUFS Metering (ITU-R BS.1770-4)</strong>
-                    <ul>
-                        <li>Momentary (400ms), Short-term (3s), Integrated loudness</li>
-                        <li>True Peak measurement with 4x oversampling</li>
-                        <li>Tap meter to cycle: VU → GR → LUFS → VU</li>
-                    </ul>
-                </li>
-                <li><strong>Pro Features (In-App Purchase)</strong>
-                    <ul>
-                        <li>24-bit WAV/BWF export for professional workflows</li>
-                        <li>Custom audio presets with full parameter control</li>
-                        <li>BWF (Broadcast Wave Format) with embedded metadata</li>
-                    </ul>
-                </li>
-                <li><strong>BWF Format Support</strong></li>
-            </ul>
-
-            <h3>Fixed</h3>
-            <ul>
-                <li>Audio route change recovery with retry logic</li>
-                <li>USB-C microphone disconnect handling improved</li>
-                <li>LUFS analyzer thread safety</li>
-            </ul>
-
-            <hr>
-
-            <h2>[1.1.0] - 2026-01-22</h2>
-            <p>Arm mode, Pre-roll, and Spectrum Analyzer.</p>
-
-            <h3>Added</h3>
-            <ul>
-                <li><strong>Arm Mode</strong> - ARM button to enter waiting state with circular buffer</li>
-                <li><strong>Pre-roll Recording</strong> - 5 seconds of audio captured before record button</li>
-                <li><strong>Real-time Spectrum Analyzer</strong> - FFT-based with 32-band logarithmic scale</li>
-                <li><strong>GR (Gain Reduction) Meter</strong> - Tap VU meter to switch</li>
-                <li><strong>Input Source Badge</strong> - Display current input source</li>
-                <li><strong>In-App Help System</strong> - 10+ help topics with English/Japanese localization</li>
-            </ul>
-
-            <h3>Changed</h3>
-            <ul>
-                <li>Spectrum tab removed from main navigation (now 2 tabs: Record, Recordings)</li>
-                <li>Peak Reset changed to fixed 5-second interval</li>
-            </ul>
-
-            <h3>Fixed</h3>
-            <ul>
-                <li>Stereo recording now works correctly</li>
-                <li>Route change during recording: safe stop + file close</li>
-            </ul>
-
-            <hr>
-
-            <h2>[1.0.0] - 2026-01-21</h2>
-            <p>Initial release.</p>
-
-            <h3>Added</h3>
-            <ul>
-                <li>High-quality audio recording (WAV 16-bit PCM, 48kHz)</li>
-                <li>Stereo recording on supported devices</li>
-                <li>Professional signal chain: Noise Gate → EQ → Compressor → Limiter</li>
-                <li>Four presets: Flat, Studio, Studio+, Live</li>
-                <li>VU meter with peak hold and clip detection</li>
-                <li>Smart Context Markers (GOOD, BAD, MEMO, CLIP)</li>
-                <li>Clip Guard with haptic feedback</li>
-                <li>Recording management with Share Sheet export</li>
-                <li>English and Japanese localization</li>
-            </ul>
+            <div class="related">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-1take-v14-released/">1Take v1.4: Cloud Sync, AI Optimization, GPS Tagging and More</a></li>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-ai-auto-optimization/">AI Auto-Optimization: How 1Take Tunes Your Sound in Real Time</a></li>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-cloud-sync-multi-provider/">Cloud Sync: Auto-Backup to iCloud, Google Drive, Dropbox, and Backblaze B2</a></li>
+                </ul>
+            </div>
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>
@@ -511,7 +338,6 @@ body {
 </div>
 <script>
 (function() {
-    // Language auto-detection
     var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
 
@@ -540,7 +366,6 @@ body {
         return isJaPage() ? 'ja' : 'en';
     }
 
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
@@ -551,17 +376,14 @@ body {
         }
     }
 
-    // Accordion
     document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
         header.addEventListener('click', function() {
             var links = this.nextElementSibling;
             var wasExpanded = this.classList.contains('expanded');
-            // Collapse all
             document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
                 h.classList.remove('expanded');
                 if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
             });
-            // Toggle clicked
             if (!wasExpanded) {
                 this.classList.add('expanded');
                 if (links) links.classList.add('show');
@@ -569,7 +391,6 @@ body {
         });
     });
 
-    // Auto-expand current app
     var currentApp = document.querySelector('.sidebar-app-header.active');
     if (currentApp) {
         currentApp.classList.add('expanded');
@@ -578,7 +399,6 @@ body {
         }
     }
 
-    // Mobile toggle
     var toggle = document.querySelector('.sidebar-toggle');
     var sidebar = document.querySelector('.sidebar');
     var overlay = document.querySelector('.sidebar-overlay');
@@ -595,7 +415,6 @@ body {
         });
     }
 
-    // Language switch saves preference
     document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             localStorage.setItem('hakaru-lang', this.dataset.lang);
