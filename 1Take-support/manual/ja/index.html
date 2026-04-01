@@ -339,6 +339,9 @@ body {
                 <li><a href="#getting-started">はじめに</a></li>
                 <li><a href="#recording-basics">録音の基本</a></li>
                 <li><a href="#recording-analysis">録音分析</a></li>
+                <li><a href="#ai-optimization">AI自動最適化</a></li>
+                <li><a href="#cloud-sync">クラウド同期</a></li>
+                <li><a href="#gps-location">GPS位置タグ</a></li>
                 <li><a href="#presets">プリセット</a></li>
                 <li><a href="#signal-chain">信号処理チェーン</a></li>
                 <li><a href="#preroll">Pre-roll録音</a></li>
@@ -346,6 +349,7 @@ body {
                 <li><a href="#meters">メーター</a></li>
                 <li><a href="#markers">マーカー</a></li>
                 <li><a href="#recordings-library">録音ライブラリ</a></li>
+                <li><a href="#export">エクスポート</a></li>
                 <li><a href="#settings">設定</a></li>
                 <li><a href="#pro-features">Pro機能</a></li>
             </ol>
@@ -415,6 +419,98 @@ body {
                     <tr><td>クレストファクター</td><td>8-14 dB</td><td>バランスの取れたダイナミクス</td></tr>
                 </tbody>
             </table>
+
+            <hr>
+
+            <h2 id="ai-optimization">AI自動最適化</h2>
+            <p>録音が終わるたびに、1Takeが自動的にオーディオを分析し、次のテイクの音質を向上させるためにプリセット設定を調整します。すべてデバイス上で処理され、インターネット接続は不要です。</p>
+
+            <h3>仕組み</h3>
+            <ol>
+                <li>録音を停止（5秒以上の録音が対象）</li>
+                <li>1Takeがラウドネス、ピーク、ノイズフロア、ダイナミックレンジ、周波数バランスを分析</li>
+                <li>問題が検出された場合、現在のプリセットの設定を調整</li>
+                <li>最適化された設定数を示すバナーが表示されます</li>
+            </ol>
+            <p>バナーをタップすると、各調整のビフォー/アフター値と理由が表示されます（例：「クリッピング検出 — Input Trim: −6 dB → −9 dB」）。</p>
+
+            <h3>調整される内容</h3>
+            <table>
+                <thead>
+                    <tr><th>検出された問題</th><th>調整内容</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>クリッピング（トゥルーピーク > −1 dBTP）</td><td>Input Trimを下げる</td></tr>
+                    <tr><td>音量不足（LUFS < −24）</td><td>Input TrimとリミッターPre-Gainを上げる</td></tr>
+                    <tr><td>高いノイズフロア</td><td>ノイズゲートを有効化し適切なスレッショルドを設定</td></tr>
+                    <tr><td>広いダイナミックレンジ</td><td>コンプレッサーレシオを増加</td></tr>
+                    <tr><td>低域の膨らみ</td><td>ローカットフィルターを有効化</td></tr>
+                    <tr><td>高域不足</td><td>ハイシェルフゲインをブースト</td></tr>
+                    <tr><td>バッファドロップ</td><td>バッファサイズを増加</td></tr>
+                </tbody>
+            </table>
+            <p>ドリフトガードにより、パラメータがデフォルトから±12 dB以上変化することを防止。連続する録音で同一パラメータが逆方向に調整される振動も防止します。</p>
+
+            <h3>無料版 vs Pro</h3>
+            <p>すべてのユーザーが分析結果を確認でき、どのような調整が行われるかを閲覧できます。<strong>調整の自動適用にはProが必要です。</strong>無料ユーザーには最適化バナーをタップするとアップグレードの案内が表示されます。</p>
+            <p>Proユーザーは詳細シートの<strong>すべて元に戻す</strong>ボタンで、そのセッションの変更をすべて取り消すこともできます。</p>
+            <p>AI最適化を完全に無効にするには、設定で<strong>自動最適化</strong>をオフにしてください。</p>
+
+            <hr>
+
+            <h2 id="cloud-sync">クラウド同期</h2>
+            <p>1Takeは録音後に自動的にクラウドストレージにアップロードできます。クラウド同期はすべてのユーザーに無料で提供されます。</p>
+
+            <h3>対応プロバイダ</h3>
+            <table>
+                <thead>
+                    <tr><th>プロバイダ</th><th>認証方法</th><th>備考</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>iCloud Drive</strong></td><td>システムApple ID</td><td>ログイン不要。Macの場合Finderに自動表示。</td></tr>
+                    <tr><td><strong>Google Drive</strong></td><td>OAuth（Safari）</td><td>専用の1Takeフォルダに保存。</td></tr>
+                    <tr><td><strong>Dropbox</strong></td><td>OAuth with PKCE</td><td>Apps/1Takeに保存。</td></tr>
+                    <tr><td><strong>Backblaze B2</strong></td><td>APIキー</td><td>キーID、キー、バケット名、パスプレフィックスを入力。</td></tr>
+                </tbody>
+            </table>
+            <p>複数のプロバイダを同時に有効化でき、すべての有効なプロバイダに並列でアップロードされます。</p>
+
+            <h3>設定方法</h3>
+            <ol>
+                <li><strong>設定</strong> → <strong>クラウド同期</strong>を開く</li>
+                <li>設定したいプロバイダをタップ</li>
+                <li>認証を完了（iCloud Driveはログイン不要）</li>
+                <li>プロバイダをオンに切り替え</li>
+            </ol>
+
+            <h3>同期設定</h3>
+            <ul>
+                <li><strong>自動同期</strong>: 有効時、録音後に自動的にアップロード</li>
+                <li><strong>Wi-Fiのみ</strong>: 有効時（デフォルト）、Wi-Fi接続時のみアップロード</li>
+            </ul>
+
+            <h3>同期ステータス</h3>
+            <p>ライブラリの各録音に同期ステータスアイコンが表示されます：</p>
+            <ul>
+                <li><strong>矢印付きクラウド</strong>: アップロード待ち</li>
+                <li><strong>スピナー</strong>: アップロード中</li>
+                <li><strong>緑のチェックマーク</strong>: 全プロバイダに同期済み</li>
+                <li><strong>赤のエクスクラメーション</strong>: アップロード失敗（タップでリトライ）</li>
+            </ul>
+            <p>オフライン時に録音が完了した場合、接続が回復すると自動的にリトライされます。</p>
+
+            <hr>
+
+            <h2 id="gps-location">GPS位置タグ</h2>
+            <p>1Takeは録音開始時に位置情報を取得し、すべてのテイクがどこで録音されたかを記録します。</p>
+
+            <h3>仕組み</h3>
+            <ul>
+                <li>録音開始時に1回だけGPS位置を取得（精度100m）</li>
+                <li>位置情報が録音に保存されます</li>
+                <li>録音一覧と詳細画面に逆ジオコーディングされた場所名（例：「渋谷区、東京」）が表示されます</li>
+            </ul>
+            <p>位置情報タグには「使用中のみ」の位置情報許可が必要です。許可が拒否された場合やGPSが取得できない場合、録音は位置情報なしで通常通り続行されます。</p>
 
             <hr>
 
@@ -557,10 +653,36 @@ body {
             <hr>
 
             <h2 id="recordings-library">録音ライブラリ</h2>
-            <p>リストアイコンをタップして録音にアクセス。タイトル、長さ、日時、FXプリセット、完全性パーセンテージ、マーカー数が表示されます。</p>
+            <p>リストアイコンをタップして録音にアクセス。タイトル、長さ、日時、FXプリセット、完全性パーセンテージ、マーカー数、GPS位置情報、クラウド同期ステータスが表示されます。</p>
 
-            <h3>エクスポート</h3>
-            <p>様々なフォーマットで録音を共有。ProユーザーはBWFと24ビットフォーマットでエクスポート可能。</p>
+            <h3>録音の削除</h3>
+            <p>削除された録音はiOSファイルアプリの<strong>最近削除した項目</strong>に移動し、最大30日間復元可能です。ファイルアプリでの復元はオーディオファイルのみを回復し、1Takeの録音一覧には再追加されません。</p>
+
+            <hr>
+
+            <h2 id="export">エクスポート</h2>
+
+            <h3>エクスポート形式</h3>
+            <table>
+                <thead>
+                    <tr><th>形式</th><th>説明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>オリジナル</strong></td><td>録音時のフォーマット（WAV、BWF、MP3、AAC）を維持</td></tr>
+                    <tr><td><strong>MP3</strong></td><td>MP3に変換（128/192/256/320 kbps）</td></tr>
+                    <tr><td><strong>AAC</strong></td><td>AAC（.m4a）に変換（128/192/256/320 kbps）</td></tr>
+                </tbody>
+            </table>
+            <p>エクスポート変換はすべてのユーザーに無料。Proユーザーは録音時に直接MP3/AAC形式で録音することもできます。</p>
+
+            <h3>一括エクスポート</h3>
+            <p>ライブラリで複数の録音を選択し、エクスポートをタップ。選択したすべての録音が共通のフォーマットとビットレートで変換されます。リアルタイムで進捗が表示され、アプリをバックグラウンドに移しても変換は続行されます。</p>
+
+            <h3>Proエクスポート形式</h3>
+            <ul>
+                <li><strong>BWF（16/24ビット）</strong>: DAW連携用タイムコード埋め込みのBroadcast Wave Format</li>
+                <li><strong>WAV 24ビット</strong>: プロフェッショナルなポストプロダクション向け高ビット深度</li>
+            </ul>
 
             <hr>
 
@@ -577,7 +699,13 @@ body {
                 <li><strong>BWF（24ビット）</strong>: DAW連携用プロフェッショナルフォーマット（Pro）</li>
             </ul>
 
-            <h3>画面をオンのまま維持（v1.3.0新機能）</h3>
+            <h3>クラウド同期</h3>
+            <p>クラウドストレージプロバイダの設定、自動同期のオン/オフ、Wi-Fiのみモードの切り替え。詳細は<a href="#cloud-sync">クラウド同期</a>セクションを参照。</p>
+
+            <h3>自動最適化</h3>
+            <p>AI自動最適化のオン/オフ。有効時、1Takeが各録音を分析し設定調整を提案（Proユーザーは自動適用）。詳細は<a href="#ai-optimization">AI自動最適化</a>セクションを参照。</p>
+
+            <h3>画面をオンのまま維持</h3>
             <p>長時間の録音セッション中にデバイスがスリープしないようにするオプション。</p>
 
             <hr>
@@ -585,12 +713,12 @@ body {
             <h2 id="pro-features">Pro機能</h2>
             <p>Proにアップグレードして以下を解除：</p>
             <ul>
+                <li><strong>AI自動適用</strong> - 録音ごとにAI最適化の調整を自動適用</li>
                 <li><strong>拡張Pre-roll</strong> - Pre-rollバッファを10秒から30秒に延長</li>
                 <li><strong>カスタムプリセット</strong> - 各プリセットのすべてのパラメータを調整可能</li>
                 <li><strong>BWFフォーマット</strong> - タイムコード埋め込みのBroadcast Wave Format</li>
                 <li><strong>24ビット録音</strong> - プロフェッショナルなポストプロダクション向け</li>
-                <li><strong>MP3/AACエクスポート</strong> - 圧縮フォーマットでのエクスポート</li>
-                <li><strong>一括エクスポート</strong> - 複数の録音をまとめてエクスポート</li>
+                <li><strong>直接MP3/AAC録音</strong> - 圧縮フォーマットで直接録音</li>
             </ul>
 
             <hr>

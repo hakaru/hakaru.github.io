@@ -339,6 +339,9 @@ body {
                 <li><a href="#getting-started">Getting Started</a></li>
                 <li><a href="#recording-basics">Recording Basics</a></li>
                 <li><a href="#recording-analysis">Recording Analysis</a></li>
+                <li><a href="#ai-optimization">AI Auto-Optimization</a></li>
+                <li><a href="#cloud-sync">Cloud Sync</a></li>
+                <li><a href="#gps-location">GPS Location Tagging</a></li>
                 <li><a href="#presets">Presets</a></li>
                 <li><a href="#signal-chain">Signal Processing Chain</a></li>
                 <li><a href="#preroll">Pre-roll Recording</a></li>
@@ -346,6 +349,7 @@ body {
                 <li><a href="#meters">Meters</a></li>
                 <li><a href="#markers">Markers</a></li>
                 <li><a href="#recordings-library">Recordings Library</a></li>
+                <li><a href="#export">Export</a></li>
                 <li><a href="#settings">Settings</a></li>
                 <li><a href="#pro-features">Pro Features</a></li>
             </ol>
@@ -416,6 +420,98 @@ body {
                     <tr><td>Crest Factor</td><td>8-14 dB</td><td>Balanced dynamics</td></tr>
                 </tbody>
             </table>
+
+            <hr>
+
+            <h2 id="ai-optimization">AI Auto-Optimization</h2>
+            <p>After each recording, 1Take automatically analyzes your audio and adjusts your preset settings to improve the next take. Everything runs on-device — no internet connection required.</p>
+
+            <h3>How It Works</h3>
+            <ol>
+                <li>Stop a recording (must be at least 5 seconds long)</li>
+                <li>1Take analyzes loudness, peaks, noise floor, dynamic range, and frequency balance</li>
+                <li>If issues are detected, the app adjusts your current preset's settings</li>
+                <li>A banner appears showing how many settings were optimized</li>
+            </ol>
+            <p>Tap the banner to see each adjustment with before/after values and the reason (e.g., "Clipping Detected — Input Trim: −6 dB → −9 dB").</p>
+
+            <h3>What Gets Adjusted</h3>
+            <table>
+                <thead>
+                    <tr><th>Issue Detected</th><th>Adjustment</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Clipping (True Peak > −1 dBTP)</td><td>Input Trim reduced</td></tr>
+                    <tr><td>Too quiet (LUFS < −24)</td><td>Input Trim and Limiter Pre-Gain increased</td></tr>
+                    <tr><td>High noise floor</td><td>Noise Gate enabled with appropriate threshold</td></tr>
+                    <tr><td>Wide dynamic range</td><td>Compressor ratio increased</td></tr>
+                    <tr><td>Low-frequency buildup</td><td>Low-cut filter enabled</td></tr>
+                    <tr><td>Lacks brightness</td><td>High shelf gain boosted</td></tr>
+                    <tr><td>Buffer drops</td><td>Buffer size increased</td></tr>
+                </tbody>
+            </table>
+            <p>A drift guard prevents any parameter from changing more than ±12 dB from its default, and an anti-oscillation rule prevents the same parameter from being adjusted in opposite directions on consecutive recordings.</p>
+
+            <h3>Free vs Pro</h3>
+            <p>All users can view the analysis results and see what adjustments would be made. <strong>Applying the adjustments automatically requires Pro.</strong> Free users see a prompt to upgrade when tapping the optimization banner.</p>
+            <p>Pro users can also tap <strong>Undo All</strong> in the detail sheet to revert all changes from a session.</p>
+            <p>To disable AI optimization entirely, turn off <strong>Auto-Optimize</strong> in Settings.</p>
+
+            <hr>
+
+            <h2 id="cloud-sync">Cloud Sync</h2>
+            <p>1Take can automatically upload recordings to cloud storage after every take. Cloud Sync is free for all users.</p>
+
+            <h3>Supported Providers</h3>
+            <table>
+                <thead>
+                    <tr><th>Provider</th><th>Auth Method</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>iCloud Drive</strong></td><td>System Apple ID</td><td>No login needed. Recordings appear in Finder on Mac.</td></tr>
+                    <tr><td><strong>Google Drive</strong></td><td>OAuth (Safari)</td><td>Stored in a dedicated 1Take folder.</td></tr>
+                    <tr><td><strong>Dropbox</strong></td><td>OAuth with PKCE</td><td>Stored in Apps/1Take.</td></tr>
+                    <tr><td><strong>Backblaze B2</strong></td><td>API Key</td><td>Enter Key ID, Key, bucket name, and optional path prefix.</td></tr>
+                </tbody>
+            </table>
+            <p>You can enable multiple providers at the same time. Recordings are uploaded to all enabled providers in parallel.</p>
+
+            <h3>Setting Up</h3>
+            <ol>
+                <li>Open <strong>Settings</strong> → <strong>Cloud Sync</strong></li>
+                <li>Tap the provider you want to set up</li>
+                <li>Authenticate (iCloud Drive requires no login)</li>
+                <li>Toggle the provider on</li>
+            </ol>
+
+            <h3>Sync Settings</h3>
+            <ul>
+                <li><strong>Auto Sync</strong>: When enabled, recordings upload automatically after each take</li>
+                <li><strong>Wi-Fi Only</strong>: When enabled (default), uploads only happen on Wi-Fi</li>
+            </ul>
+
+            <h3>Sync Status</h3>
+            <p>Each recording in the library shows a sync status icon:</p>
+            <ul>
+                <li><strong>Cloud with arrow</strong>: Pending upload</li>
+                <li><strong>Spinner</strong>: Uploading</li>
+                <li><strong>Green checkmark</strong>: Synced to all providers</li>
+                <li><strong>Red exclamation</strong>: Upload failed (tap to retry)</li>
+            </ul>
+            <p>If you're offline when a recording finishes, 1Take retries automatically when a connection is restored.</p>
+
+            <hr>
+
+            <h2 id="gps-location">GPS Location Tagging</h2>
+            <p>1Take captures your location when you start recording, so you can remember where every take was made.</p>
+
+            <h3>How It Works</h3>
+            <ul>
+                <li>When recording starts, 1Take requests a single GPS fix (100m accuracy)</li>
+                <li>The location is saved with the recording</li>
+                <li>A reverse-geocoded place name (e.g., "Shibuya, Tokyo") appears in the recording list and detail view</li>
+            </ul>
+            <p>Location tagging requires "When In Use" location permission. If permission is denied or a GPS fix is unavailable, recording continues normally without location data.</p>
 
             <hr>
 
@@ -571,10 +667,36 @@ body {
             <p>Access your recordings by tapping the list icon.</p>
 
             <h3>Recording Info</h3>
-            <p>Each recording shows: Title, Duration, Date/Time, FX preset used, Audio integrity percentage, Marker counts.</p>
+            <p>Each recording shows: Title, Duration, Date/Time, FX preset used, Audio integrity percentage, Marker counts, GPS location, and Cloud Sync status.</p>
 
-            <h3>Export</h3>
-            <p>Share your recordings in various formats. Pro users can export in BWF and 24-bit formats.</p>
+            <h3>Deleting Recordings</h3>
+            <p>Deleted recordings are moved to <strong>Recently Deleted</strong> in the iOS Files app and can be recovered for up to 30 days. Note that restoring a file in the Files app recovers the audio file but does not re-add it to 1Take's recording list.</p>
+
+            <hr>
+
+            <h2 id="export">Export</h2>
+
+            <h3>Export Formats</h3>
+            <table>
+                <thead>
+                    <tr><th>Format</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Original</strong></td><td>Keep the file in its recorded format (WAV, BWF, MP3, or AAC)</td></tr>
+                    <tr><td><strong>MP3</strong></td><td>Convert to MP3 (128/192/256/320 kbps)</td></tr>
+                    <tr><td><strong>AAC</strong></td><td>Convert to AAC (.m4a) (128/192/256/320 kbps)</td></tr>
+                </tbody>
+            </table>
+            <p>Export conversion is free for all users. Pro users can also record directly to MP3 or AAC format.</p>
+
+            <h3>Batch Export</h3>
+            <p>Select multiple recordings in the library, then tap Export. All selected recordings are converted with a common format and bitrate. Progress is shown in real-time, and conversion continues in the background if you leave the app.</p>
+
+            <h3>Pro Export Formats</h3>
+            <ul>
+                <li><strong>BWF (16/24-bit)</strong>: Broadcast Wave Format with embedded timecode for DAW integration</li>
+                <li><strong>WAV 24-bit</strong>: Higher bit depth for professional post-production</li>
+            </ul>
 
             <hr>
 
@@ -591,7 +713,13 @@ body {
                 <li><strong>BWF (24-bit)</strong>: Professional format for DAW integration (Pro)</li>
             </ul>
 
-            <h3>Keep Screen On (New in v1.3.0)</h3>
+            <h3>Cloud Sync</h3>
+            <p>Configure cloud storage providers, enable/disable Auto Sync, and toggle Wi-Fi Only mode. See the <a href="#cloud-sync">Cloud Sync</a> section for details.</p>
+
+            <h3>Auto-Optimize</h3>
+            <p>Toggle AI auto-optimization on or off. When enabled, 1Take analyzes each recording and suggests (or applies, for Pro users) settings adjustments. See the <a href="#ai-optimization">AI Auto-Optimization</a> section for details.</p>
+
+            <h3>Keep Screen On</h3>
             <p>Enable this option to prevent your device from sleeping during long recording sessions.</p>
 
             <hr>
@@ -599,12 +727,12 @@ body {
             <h2 id="pro-features">Pro Features</h2>
             <p>Upgrade to Pro to unlock:</p>
             <ul>
+                <li><strong>AI Auto-Apply</strong> - Automatically apply AI optimization adjustments after every recording</li>
                 <li><strong>Extended Pre-roll</strong> - Increase pre-roll buffer from 10 to 30 seconds</li>
                 <li><strong>Custom Presets</strong> - Full access to adjust all parameters for each preset</li>
                 <li><strong>BWF Format</strong> - Broadcast Wave Format with embedded timecode</li>
                 <li><strong>24-bit Recording</strong> - Higher bit depth for professional post-production</li>
-                <li><strong>MP3/AAC Export</strong> - Export in compressed formats</li>
-                <li><strong>Batch Export</strong> - Export multiple recordings at once</li>
+                <li><strong>Direct MP3/AAC Recording</strong> - Record directly to compressed formats</li>
             </ul>
 
             <hr>
