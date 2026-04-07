@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>We Put an LA-2A and 1176 Inside Your iPhone | 1Take Blog</title>
+    <meta name="description" content="1Take v1.5.0 introduces custom DSP compressors modeled after the Teletronix LA-2A and UREI 1176 — running as real-time per-sample audio processing on iPhone.">
+    <meta property="og:title" content="We Put an LA-2A and 1176 Inside Your iPhone">
+    <meta property="og:description" content="1Take v1.5.0 introduces custom DSP compressors modeled after the Teletronix LA-2A and UREI 1176 — real-time per-sample DSP on iPhone.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/en/2026-04-07-physical-modeling-compressors/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"We Put an LA-2A and 1176 Inside Your iPhone","datePublished":"April 7, 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/en/2026-04-07-physical-modeling-compressors/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/" class="active">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
+    <a href="/1Take-support/blog/en/2026-04-07-physical-modeling-compressors/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="article-header">
+            <h1>We Put an LA-2A and 1176 Inside Your iPhone</h1>
+            <div class="article-meta">April 7, 2026</div>
+        </div>
+
+        <div class="content">
+            <p>1Take v1.5.0 ships with custom DSP compressors modeled after two of the most recorded-through pieces of hardware in music history. Here's what they are, why they matter, and how we got them running on an iPhone.</p>
+
+            <h2>The Problem With "LA-2A Style"</h2>
+            <p>Until now, 1Take's presets said "Studio (LA-2A style)" and "Studio+ (1176 style)" on the label, but under the hood it was Apple's generic <code>DynamicsProcessor</code> audio unit. You could dial in similar threshold and ratio numbers, sure. But the <em>sound</em> of an LA-2A doesn't come from its threshold setting. It comes from the way the hardware responds to the signal&mdash;non-linearly, inconsistently, musically.</p>
+            <p>We decided to fix that.</p>
+
+            <h2>What Is the LA-2A?</h2>
+            <p>The Teletronix LA-2A is an opto-compressor from the early 1960s. Inside it, there's a light-dependent resistor (photocell) and an electroluminescent panel. When the signal gets louder, the panel glows brighter, and the photocell's resistance drops, reducing the signal level.</p>
+            <p>The magic is in how the photocell recovers. When compression is light, it lets go quickly. When compression is deep, it holds on much longer. This non-linear release is what makes the LA-2A sound "musical"&mdash;it automatically adapts to the dynamics of whatever you feed it.</p>
+            <p>On top of that, the entire signal path runs through vacuum tubes, which add even-order harmonics. That's the "warmth" people talk about.</p>
+            <p>Vocals, acoustic guitar, bass&mdash;anything where you want the level to stay consistent without sounding squeezed. That's LA-2A territory.</p>
+
+            <h2>What Is the 1176?</h2>
+            <p>The UREI 1176 (1967) is the opposite personality. It uses a field-effect transistor (FET) instead of a photocell, and it's <em>fast</em>. Attack times down to 20 microseconds. The harder you hit it, the faster it grabs.</p>
+            <p>Where the LA-2A smooths things out gently, the 1176 clamps down on transients with authority. Snare drums get punchy. Electric guitars get tight. The FET circuit adds odd-order harmonics&mdash;a grittier, more aggressive color than the LA-2A's warmth.</p>
+            <p>The famous "All Buttons In" trick (pressing all four ratio buttons simultaneously) produces a unique, heavily compressed sound with a distinctive distortion character. Drum room mics through an 1176 with all buttons in is one of the most recognizable sounds in rock recording.</p>
+
+            <h2>How We Modeled Them</h2>
+            <p>We wrote a custom <code>AUAudioUnit</code> subclass that processes audio sample-by-sample at 48kHz. Three things make it sound different from a generic compressor:</p>
+
+            <h3>1. Non-linear release (LA-2A model)</h3>
+            <p>The release time coefficient changes based on how much gain reduction is happening. Deeper compression = slower release. This single behavior accounts for most of what people mean when they say the LA-2A sounds "smooth."</p>
+
+            <h3>2. Soft-knee compression</h3>
+            <p>Instead of compression switching on abruptly at the threshold, a quadratic curve gradually transitions into full compression over a configurable knee width. The Studio preset uses a 24dB knee&mdash;so gentle you barely notice it engaging.</p>
+
+            <h3>3. Harmonic saturation</h3>
+            <p>The LA-2A model applies <code>tanh</code> waveshaping (soft saturation, like tubes). The 1176 model uses polynomial waveshaping (<code>x + 0.1x&sup2; - 0.01x&sup3;</code>) for the grittier FET character. These are subtle&mdash;you feel them more than hear them.</p>
+
+            <h2>Two-Stage Compression</h2>
+            <p>1Take runs two compressors in series:</p>
+            <p><code>Input &rarr; Gate &rarr; EQ &rarr; Comp 1 &rarr; Comp 2 &rarr; Saturation &rarr; M/S &rarr; Maximizer</code></p>
+            <p>Comp 1 (Transparent Compressor) tames the dynamics. Comp 2 (the character model) shapes the tone. This "level first, color second" approach is standard in professional studios.</p>
+
+            <h2>Real-Time Audio on iPhone</h2>
+            <p>The entire DSP chain runs in the audio render callback&mdash;a real-time thread where you can't allocate memory, acquire locks, or do anything that might block. We learned this the hard way when our first implementation used an <code>NSLock</code> to protect shared state and produced audible glitches under load.</p>
+            <p>The fix: store compressor settings as Swift value types and let the render thread read a snapshot without any synchronization. On arm64, struct assignment is atomic, so the render thread never sees a half-written state.</p>
+            <p>CPU cost: under 1% on A15 and newer chips. iPhone has more than enough horsepower for this.</p>
+
+            <h2>Parameter Guide</h2>
+            <p>Every slider now has a hint label underneath explaining what it does. Here's the quick version:</p>
+            <table>
+                <tr><th>Parameter</th><th>What it does</th><th>Starting point</th></tr>
+                <tr><td>Threshold</td><td>Level where compression begins</td><td>-24dB, adjust until GR meter shows 2-3dB</td></tr>
+                <tr><td>Ratio</td><td>How much compression</td><td>3:1-4:1 for LA-2A feel, 8:1-12:1 for 1176</td></tr>
+                <tr><td>Knee</td><td>How compression transitions in</td><td>24 = smooth, 0 = aggressive</td></tr>
+                <tr><td>Attack</td><td>How fast it grabs</td><td>Slower = more transient punch</td></tr>
+                <tr><td>Release</td><td>How fast it lets go</td><td>LA-2A model adjusts this automatically</td></tr>
+                <tr><td>Makeup Gain</td><td>Compensate for volume loss</td><td>Match the average GR reading</td></tr>
+            </table>
+
+            <h2>What Else Is in v1.5.0</h2>
+            <ul>
+                <li>Parameter hint text on every effect slider</li>
+                <li>Saturation help topic added to in-app help</li>
+                <li>Expanded compressor and preset help with DSP details</li>
+                <li>English-standardized effect labels across all settings</li>
+                <li>A/B test paywall variants with Firebase Analytics</li>
+                <li>Security hardening (log privacy, API key management)</li>
+                <li>No Audio Input detection with retry</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Get 1Take on the App Store</a></li>
+                <li><a href="/1Take-support/changelog">Full Changelog</a></li>
+                <li><a href="/1Take-support/">Support Page</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>Related Articles</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-1take-v14-released/">1Take v1.4: Cloud Sync, AI Optimization, GPS Tagging and More</a></li>
+                    <li><a href="/1Take-support/blog/en/2026-03-29-ai-auto-optimization/">AI Auto-Optimization: How 1Take Tunes Your Sound</a></li>
+                    <li><a href="/1Take-support/blog/en/2026-01-22-introducing-1take/">Introducing 1Take</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        return navLang.startsWith('ja') ? 'ja' : 'en';
+    }
+
+    function isJaPage() {
+        return currentPath.includes('/index-ja') ||
+               currentPath.includes('/privacy-ja') ||
+               currentPath.includes('/changelog-ja') ||
+               currentPath.includes('/manual/ja/') ||
+               currentPath.includes('/blog/ja/') ||
+               (currentPath.includes('/ChatArchive-support/') &&
+                !currentPath.includes('/en/') &&
+                !currentPath.includes('/th/') &&
+                !currentPath.includes('/zh-Hant/'));
+    }
+
+    function getCurrentPageLang() {
+        if (currentPath.includes('/th/')) return 'th';
+        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
+        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
+        return isJaPage() ? 'ja' : 'en';
+    }
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>
