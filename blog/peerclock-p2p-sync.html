@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeerClock - Peer-Equal P2P Clock Sync for Apple Devices | hakaru</title>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/icon-180.png">
+    <meta property="og:title" content="PeerClock - P2P Clock Synchronization for Apple Devices">
+    <meta property="og:description" content="Synchronize clocks across iPhones and Macs within ±2ms on a local network. No server, no master device. Peer-equal architecture with generic commands, status sharing, and precision event scheduling.">
+    <meta property="og:url" content="https://hakaru.net/blog/peerclock-p2p-sync">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="A Swift library for peer-equal P2P clock synchronization across Apple devices. ±2ms precision, no server, generic command channel, status sharing, and event scheduling.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .back-link:hover { color: #e94560; }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3);
+            font-size: 3em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15em;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge-orange { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-blue { background: rgba(9, 105, 218, 0.2); color: #58a6ff; border: 1px solid rgba(9, 105, 218, 0.3); }
+        .badge-green { background: rgba(40, 167, 69, 0.2); color: #56d364; border: 1px solid rgba(40, 167, 69, 0.3); }
+        .badge-purple { background: rgba(139, 92, 246, 0.2); color: #bc8cff; border: 1px solid rgba(139, 92, 246, 0.3); }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 40px 0 16px;
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 1.15em;
+            color: #58a6ff;
+            margin: 24px 0 8px;
+        }
+
+        p, li {
+            line-height: 1.8;
+            color: #c0c0c0;
+        }
+
+        p { margin-bottom: 16px; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #56d364;
+            font-weight: bold;
+        }
+
+        ul.cross li::before {
+            content: '✗';
+            color: #f85149;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-card .emoji {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+
+        .feature-card h3 {
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+
+        .feature-card p {
+            font-size: 0.9em;
+            color: #999;
+            margin-bottom: 0;
+        }
+
+        .code-block {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0 24px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .code-block code {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.85em;
+            color: #c9d1d9;
+            white-space: pre;
+        }
+
+        .code-label {
+            font-size: 0.75em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .arch-block {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0 24px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.82em;
+            color: #8b949e;
+            white-space: pre;
+            line-height: 1.5;
+        }
+
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+        }
+
+        .status-table th, .status-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .status-table th {
+            color: #888;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-table td { color: #c0c0c0; }
+
+        .cta {
+            text-align: center;
+            margin: 50px 0 30px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cta h2 { margin-top: 0; }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: white;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+        .comparison {
+            margin: 24px 0;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .comparison-card.before { border-color: rgba(220, 53, 69, 0.3); }
+        .comparison-card.after { border-color: rgba(40, 167, 69, 0.3); }
+
+        .comparison-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .comparison-card.before .comparison-label { color: #f85149; }
+        .comparison-card.after .comparison-label { color: #56d364; }
+
+        .comparison-card p {
+            font-size: 0.9em;
+            margin-bottom: 0;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-right: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        footer a { color: #666; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6em; }
+            .comparison-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">&larr; hakaru Apps</a>
+
+        <div class="hero">
+            <div class="hero-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="white">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+            </div>
+            <h1>PeerClock</h1>
+            <p>Peer-equal P2P clock synchronization for Apple devices. No server. No master. ±2ms precision.</p>
+            <div class="badge-row">
+                <span class="badge badge-orange">Swift 6.0</span>
+                <span class="badge badge-blue">iOS 17+ / macOS 14+</span>
+                <span class="badge badge-green">Open Source</span>
+                <span class="badge badge-purple">MIT License</span>
+            </div>
+        </div>
+
+        <h2>The Problem</h2>
+        <div class="comparison">
+            <div class="comparison-row">
+                <div class="comparison-card before">
+                    <div class="comparison-label">Before PeerClock</div>
+                    <p>No way to synchronize clocks between iPhones on a local network. NTP libraries need an internet server. P2P frameworks don't do clock sync. Multi-device apps are stuck with ±100ms guesswork.</p>
+                </div>
+                <div class="comparison-card after">
+                    <div class="comparison-label">With PeerClock</div>
+                    <p>All devices agree on "now" within ±2ms. No internet. No server. No master device. Every peer runs the same 5 lines of code.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>What PeerClock Does</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="emoji">&#9201;</div>
+                <h3>±2ms Clock Sync</h3>
+                <p>NTP-inspired 4-timestamp exchange with best-half filtering across 40 measurements</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#9878;</div>
+                <h3>Peer-Equal</h3>
+                <p>No master, no slave. Coordinator auto-elected by smallest UUID, invisible to your app</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#128225;</div>
+                <h3>Generic Commands</h3>
+                <p>Send/broadcast any command. PeerClock routes it &mdash; your app defines the semantics</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#128203;</div>
+                <h3>Status Sharing</h3>
+                <p>Push/pull peer status with debounce and generation-based deduplication</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#127919;</div>
+                <h3>Event Scheduling</h3>
+                <p>Schedule actions to fire simultaneously on all devices with ±2ms precision</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#128148;</div>
+                <h3>Heartbeat Monitor</h3>
+                <p>3-state connection health: connected &rarr; degraded &rarr; disconnected</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#128260;</div>
+                <h3>Transport Failover</h3>
+                <p>Automatic WiFi &rarr; MultipeerConnectivity fallback when network changes</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#129514;</div>
+                <h3>Zero Dependencies</h3>
+                <p>Pure Swift. Foundation + Network.framework only. No third-party libraries</p>
+            </div>
+        </div>
+
+        <h2>Quick Start</h2>
+
+        <h3><span class="step-num">1</span> Add Dependency</h3>
+        <div class="code-block">
+            <div class="code-label">Package.swift</div>
+            <code>dependencies: [
+    .package(url: "https://github.com/hakaru/PeerClock.git", from: "0.2.0")
+]</code>
+        </div>
+
+        <h3><span class="step-num">2</span> Sync Clocks</h3>
+        <div class="code-block">
+            <div class="code-label">Swift</div>
+            <code>import PeerClock
+
+let clock = PeerClock()
+try await clock.start()
+
+// Synchronized time &mdash; agrees across all devices ±2ms
+let timestamp = clock.now</code>
+        </div>
+
+        <h3><span class="step-num">3</span> Send Commands</h3>
+        <div class="code-block">
+            <div class="code-label">Swift</div>
+            <code>// Broadcast to all peers
+try await clock.broadcast(
+    Command(type: "com.myapp.record.start")
+)
+
+// Receive
+for await (sender, command) in clock.commands {
+    handleCommand(command, from: sender)
+}</code>
+        </div>
+
+        <h3><span class="step-num">4</span> Schedule Simultaneous Actions</h3>
+        <div class="code-block">
+            <div class="code-label">Swift</div>
+            <code>// Fire on all devices at the same time (±2ms)
+let fireTime = clock.now + 3_000_000_000  // 3 seconds from now
+let handle = try await clock.schedule(atSyncedTime: fireTime) {
+    startRecording()
+}</code>
+        </div>
+
+        <h2>Architecture</h2>
+        <div class="arch-block">PeerClock (Facade &mdash; all peers equal, no roles)
+&#9474;
+&#9500;&#9472;&#9472; Transport          reliable + unreliable channels
+&#9474;   &#9500;&#9472;&#9472; WiFiTransport  Network.framework (UDP + TCP)
+&#9474;   &#9500;&#9472;&#9472; MultipeerTransport  MPC fallback
+&#9474;   &#9500;&#9472;&#9472; FailoverTransport   Auto WiFi &rarr; MPC
+&#9474;   &#9492;&#9472;&#9472; MockTransport  In-memory (testing)
+&#9474;
+&#9500;&#9472;&#9472; ClockSync          NTP-inspired 4-timestamp exchange
+&#9474;   &#9500;&#9472;&#9472; NTPSyncEngine  40 measurements, best-half filtering
+&#9474;   &#9500;&#9472;&#9472; DriftMonitor   Jump detection (&gt;10ms &rarr; re-sync)
+&#9474;   &#9492;&#9472;&#9472; BackoffController  Dynamic interval [5&rarr;30s]
+&#9474;
+&#9500;&#9472;&#9472; Command / Status / Heartbeat / EventScheduler
+&#9492;&#9472;&#9472; Wire               Binary protocol (5-byte header)</div>
+
+        <h2>How Clock Sync Works</h2>
+
+        <p>PeerClock uses an NTP-inspired 4-timestamp protocol:</p>
+
+        <div class="arch-block">Peer A (follower)          Peer B (coordinator)
+    &#9474;                            &#9474;
+    &#9474;&#9472;&#9472; SYNC_REQUEST [t0] &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&gt;&#9474;
+    &#9474;                      t1 = receive time
+    &#9474;                      t2 = send time
+    &#9474;&lt;&#9472;&#9472; SYNC_RESPONSE [t0,t1,t2]&#9474;
+    &#9474; t3 = receive time          &#9474;
+    &#9474;                            &#9474;
+    offset = ((t1 - t0) + (t2 - t3)) / 2</div>
+
+        <ul>
+            <li>40 measurements at 30ms intervals (~1.2s total sync time)</li>
+            <li>Sort by round-trip delay, keep fastest 50% (best-half filtering)</li>
+            <li>Dynamic re-sync interval: 5s &rarr; 10s &rarr; 20s &rarr; 30s as quality stabilizes</li>
+            <li>Offset jump &gt;10ms triggers immediate full re-sync</li>
+        </ul>
+
+        <h3>Precision Budget</h3>
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Error Source</th>
+                    <th>Raw Error</th>
+                    <th>Mitigation</th>
+                    <th>Residual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Wi-Fi UDP jitter</td><td>1&ndash;10ms</td><td>Best-half filtering</td><td>~1&ndash;2ms</td></tr>
+                <tr><td>Crystal oscillator drift</td><td>50ppm</td><td>Periodic re-sync</td><td>&lt;0.25ms</td></tr>
+                <tr><td>iOS scheduling</td><td>&lt;1ms</td><td>mach_continuous_time</td><td>&lt;1ms</td></tr>
+                <tr><td><strong>Total</strong></td><td></td><td></td><td><strong>±2ms</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h2>What PeerClock Does NOT Do</h2>
+        <ul class="cross">
+            <li>Sub-microsecond precision (requires hardware word clock)</li>
+            <li>Audio/video processing (your app handles media)</li>
+            <li>File transfer between devices</li>
+            <li>20+ device groups (designed for 2&ndash;10 peers)</li>
+            <li>Cross-platform (Apple-only: iOS 17+ / macOS 14+)</li>
+            <li>Internet-based sync (local network only)</li>
+        </ul>
+
+        <h2>Use Cases</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="emoji">&#127908;</div>
+                <h3>Multi-Device Recording</h3>
+                <p>Start recording on multiple iPhones simultaneously with sample-accurate alignment</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#127909;</div>
+                <h3>Multi-Camera Video</h3>
+                <p>Synchronize timecode across devices for post-production editing</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#127925;</div>
+                <h3>Synchronized Playback</h3>
+                <p>Play audio/video in perfect sync across a room of devices</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">&#128241;</div>
+                <h3>Device Fleet Management</h3>
+                <p>Monitor battery, storage, and state across connected devices in real-time</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Get Started</h2>
+            <p>Open source, zero dependencies, MIT licensed. 127 tests passing.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/hakaru/PeerClock" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+                <a href="https://github.com/hakaru/PeerClock/blob/main/docs/ARCHITECTURE.md" class="btn btn-secondary">
+                    Architecture Docs
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru</p>
+            <p style="margin-top: 8px;">
+                <a href="/">hakaru Apps</a>
+                <span style="margin: 0 8px;">|</span>
+                <a href="https://github.com/hakaru">GitHub</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
