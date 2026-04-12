@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TineModeler 지원 | hakaru</title>
+    <meta name="description" content="TineModeler 지원 페이지. Fender Rhodes를 재현하는 물리 모델링 신시사이저.">
+    <meta property="og:title" content="TineModeler 지원">
+    <meta property="og:description" content="TineModeler 지원 페이지. Fender Rhodes를 재현하는 물리 모델링 신시사이저.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/TineModeler-support/index-ko">
+    <meta property="og:locale" content="ko_KR">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.95em; }
+        .content table th { background: rgba(255,255,255,0.08); color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); }
+        .content table td { padding: 10px 14px; border: 1px solid rgba(255,255,255,0.08); color: #c0c0c0; }
+        .content table tr:hover td { background: rgba(255,255,255,0.03); }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="메뉴">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/index-ko">지원</a>
+      <a href="/1Take-support/manual/en/">매뉴얼</a>
+      <a href="/1Take-support/blog/en/">블로그</a>
+      <a href="/1Take-support/changelog">변경 이력</a>
+      <a href="/1Take-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">지원</a>
+      <a href="/GitInflow-support/manual/en/">매뉴얼</a>
+      <a href="/GitInflow-support/blog/en/">블로그</a>
+      <a href="/GitInflow-support/changelog">변경 이력</a>
+      <a href="/GitInflow-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">지원</a>
+      <a href="/SonicDNACollector-support/manual/en/">매뉴얼</a>
+      <a href="/SonicDNACollector-support/blog/en/">블로그</a>
+      <a href="/SonicDNACollector-support/changelog/">변경 이력</a>
+      <a href="/SonicDNACollector-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">지원</a>
+      <a href="/SonicDNAEngine-support/blog/en/">블로그</a>
+      <a href="/SonicDNAEngine-support/changelog">변경 이력</a>
+      <a href="/SonicDNAEngine-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">지원</a>
+      <a href="/simpleMIDIController-support/manual/en/">매뉴얼</a>
+      <a href="/simpleMIDIController-support/blog/en/">블로그</a>
+      <a href="/simpleMIDIController-support/privacy/">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/TineModeler-support/index-ko" class="active">지원</a>
+      <a href="/TineModeler-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">지원</a>
+      <a href="/M2DX-Core-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">지원</a>
+      <a href="/ChatArchive-support/en/blog/">블로그</a>
+      <a href="/ChatArchive-support/en/privacy">개인정보</a>
+      <a href="/ChatArchive-support/en/terms">이용약관</a>
+    </div>
+  </div>
+  <div class="sidebar-lang" style="display:flex;flex-wrap:wrap;gap:2px;">
+    <a href="/TineModeler-support/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <a href="/TineModeler-support/index-ja" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/TineModeler-support/index-fr" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/TineModeler-support/index-de" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/TineModeler-support/index-es" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/TineModeler-support/index-it" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+    <a href="/TineModeler-support/index-nl" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
+    <a href="/TineModeler-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/TineModeler-support/index-sv" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/TineModeler-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/assets/tinemodeler-icon.png" alt="TineModeler" class="hero-icon">
+            <h1>TineModeler</h1>
+            <p>물리 모델링 신시사이저 — Fender Rhodes 재현</p>
+        </div>
+        <div class="content">
+            <p>TineModeler 지원 페이지에 오신 것을 환영합니다.</p>
+            <p>TineModeler는 샘플 없이 오직 물리 모델만으로 Fender Rhodes 일렉트릭 피아노 사운드를 재현하는 신시사이저입니다.</p>
+            <hr>
+            <h2>기능</h2>
+            <h3>물리 모델링</h3>
+            <p>Rhodes 사운드의 모든 요소를 수학적 모델로 실시간 생성합니다: 틴(tine) 진동(오일러-베르누이 빔), 해머 타격(헤르츠 접촉력), 전자기 픽업(패러데이 법칙), 펠트 댐퍼 시뮬레이션.</p>
+            <h3>AUv3 플러그인</h3>
+            <p>GarageBand, Logic Pro, Cubasis 및 기타 AUv3 호환 호스트에서 Audio Unit 플러그인으로 사용하세요.</p>
+            <h3>실시간 파라미터 (Pro)</h3>
+            <p>픽업 위치, 자기장 세기, 해머 강도 등을 조정하여 샘플 기반 악기로는 불가능한 사운드 메이킹을 실현합니다.</p>
+            <h3>가벼운 동작</h3>
+            <p>Apple Silicon에서 효율적으로 작동합니다. 대용량 샘플 라이브러리 다운로드 불필요.</p>
+            <hr>
+            <h2>에디션</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>에디션</th>
+                        <th>플랫폼</th>
+                        <th>가격</th>
+                        <th>기능</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Free</strong></td>
+                        <td>iPhone / iPad</td>
+                        <td>무료</td>
+                        <td>Fender Rhodes 사운드 1종, 건반 + AUv3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pro</strong></td>
+                        <td>iPhone / iPad</td>
+                        <td>앱 내 구매</td>
+                        <td>파라미터 편집, 다수 프리셋</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full</strong></td>
+                        <td>Mac</td>
+                        <td>$49 (출시가) / $79</td>
+                        <td>전체 파라미터, Logic Pro AUv3 플러그인</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2>문의</h2>
+            <p>질문이나 피드백이 있으시면 아래로 연락해 주세요:<br>
+            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">문의</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+        }
+        return 'en';
+    }
+    var langUrlMap = {
+        'en': '/TineModeler-support/', 'ja': '/TineModeler-support/index-ja',
+        'fr': '/TineModeler-support/index-fr', 'de': '/TineModeler-support/index-de',
+        'es': '/TineModeler-support/index-es', 'it': '/TineModeler-support/index-it',
+        'ko': '/TineModeler-support/index-ko', 'nl': '/TineModeler-support/index-nl',
+        'pt-BR': '/TineModeler-support/index-pt-BR', 'sv': '/TineModeler-support/index-sv',
+        'zh-Hant': '/TineModeler-support/index-zh-Hant'
+    };
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang]; return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>
