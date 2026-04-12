@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hakaru Apps</title>
+        <link rel="icon" href="/assets/favicon.ico">
+        <link rel="apple-touch-icon" href="/assets/icon-180.png">
+        <meta property="og:title" content="hakaru Apps">
+        <meta property="og:description" content="Aplicaciones iOS para Músicos y Creativos">
+        <meta property="og:image" content="https://hakaru.net/assets/og-1200x630.png">
+        <meta property="og:url" content="https://hakaru.net/index-es.html">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; margin-bottom: 60px; position: relative; }
+        h1 {
+            font-size: 3em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .site-logo { max-width: 400px; height: auto; display: block; margin: 0 auto; }
+        .subtitle { font-size: 1.2em; color: #a0a0a0; }
+        .lang-switcher { position: absolute; top: 0; right: 0; }
+        .lang-switcher select {
+            background: rgba(255,255,255,0.08); color: #ccc;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 8px;
+            padding: 6px 10px; font-size: 0.85em; cursor: pointer;
+            outline: none; appearance: none; -webkit-appearance: none;
+            padding-right: 28px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23aaa' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 8px center;
+        }
+        .lang-switcher select:hover { background-color: rgba(255,255,255,0.13); }
+        .lang-switcher select option { background: #1a1a2e; color: #fff; }
+        .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .app-card {
+            background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px;
+            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .app-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+        .app-icon { width: 80px; height: 80px; border-radius: 18px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .app-icon-placeholder {
+            width: 80px; height: 80px; border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5em; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .app-info h2 { font-size: 1.5em; margin-bottom: 5px; }
+        .app-category { font-size: 0.9em; color: #888; }
+        .app-description { color: #b0b0b0; line-height: 1.6; margin-bottom: 20px; }
+        .app-links { display: flex; gap: 10px; flex-wrap: wrap; }
+        .app-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 10px; text-decoration: none;
+            font-size: 0.9em; font-weight: 500; transition: all 0.3s ease;
+        }
+        .app-link.primary { background: linear-gradient(90deg, #e94560, #ff6b6b); color: white; }
+        .app-link.primary:hover { opacity: 0.9; transform: scale(1.02); }
+        .app-link.secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+        .app-link.secondary:hover { background: rgba(255,255,255,0.15); }
+        .app-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600; margin-left: 10px; }
+        .badge-new { background: linear-gradient(90deg, #00d4aa, #00b894); color: white; }
+        .badge-coming { background: rgba(255,255,255,0.2); color: #ccc; }
+        footer { text-align: center; margin-top: 80px; padding: 30px; color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .app-header { flex-direction: column; text-align: center; }
+            .app-links { justify-content: center; }
+            .lang-switcher { position: static; text-align: right; margin-bottom: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="lang-switcher">
+                <select onchange="location.href=this.value">
+                    <option value="/index.html">English</option>
+                    <option value="/index-ja.html">日本語</option>
+                    <option value="/index-fr.html">Français</option>
+                    <option value="/index-de.html">Deutsch</option>
+                    <option value="/index-es.html" selected>Español</option>
+                    <option value="/index-it.html">Italiano</option>
+                    <option value="/index-ko.html">한국어</option>
+                    <option value="/index-nl.html">Nederlands</option>
+                    <option value="/index-pt-BR.html">Português</option>
+                    <option value="/index-sv.html">Svenska</option>
+                    <option value="/index-zh-Hant.html">繁體中文</option>
+                </select>
+            </div>
+            <h1><img src="assets/logo-horizontal-transparent.png" alt="hakaru Apps" class="site-logo" srcset="assets/logo-horizontal-transparent-400w.png 400w, assets/logo-horizontal-transparent-560w.png 560w, assets/logo-horizontal-transparent-800w.png 800w, assets/logo-horizontal-transparent.png 1200w" sizes="(max-width: 600px) 280px, 400px"></h1>
+            <p class="subtitle">Aplicaciones iOS para Músicos &amp; Creativos</p>
+        </header>
+
+        <div class="apps-grid">
+            <!-- TineModeler -->
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-icon-placeholder" style="background: linear-gradient(135deg, #c9a84c, #8b6914);">🎹</div>
+                    <div class="app-info">
+                        <h2>TineModeler <span class="app-badge badge-coming">PRÓXIMAMENTE</span></h2>
+                        <p class="app-category">Música • Sintetizador</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Sintetizador de piano eléctrico Rhodes por modelado físico. Sin muestras — física pura. Vibración de viga Euler-Bernoulli, captador electromagnético y martillo de contacto Hertz en tiempo real.
+                </p>
+                <div class="app-links">
+                    <a href="/TineModeler-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- 1Take -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/1take-icon.png" alt="1Take" class="app-icon">
+                    <div class="app-info">
+                        <h2>1Take <span class="app-badge badge-new">NUEVO</span></h2>
+                        <p class="app-category">Música • Grabación</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Aplicación de grabación de audio profesional para músicos. Captura ensayos y actuaciones con sonido de calidad de estudio, marcadores inteligentes y procesamiento de efectos en tiempo real.
+                </p>
+                <div class="app-links">
+                    <a href="https://apps.apple.com/us/app/1take/id6757945099" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="/1Take-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- GitInflow -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/gitinflow-icon.png" alt="GitInflow" class="app-icon">
+                    <div class="app-info">
+                        <h2>GitInflow <span class="app-badge badge-new">NUEVO</span></h2>
+                        <p class="app-category">Productividad • Herramientas de Desarrollo</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Cliente kanban de GitHub Issues para iOS. Gestiona tareas en múltiples repositorios con flujo de trabajo kanban — Backlog, Listo, En Progreso, Hecho. Hoja de compartir, widgets y notificaciones locales.
+                </p>
+                <div class="app-links">
+                    <a href="/GitInflow-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- SonicDNA Collector -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/sonicdna-icon.png" alt="SonicDNA Collector" class="app-icon">
+                    <div class="app-info">
+                        <h2>SonicDNA Collector <span class="app-badge badge-new">NUEVO</span></h2>
+                        <p class="app-category">Música • Análisis de Audio</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Herramienta de medición de audio profesional para capturar características sonoras de equipos analógicos. Genera señales de barrido y analiza la respuesta en frecuencia para modelado digital.
+                </p>
+                <div class="app-links">
+                    <a href="https://apps.apple.com/us/app/sonicdnacollector/id6758269736" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="/SonicDNACollector-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- SonicDNA Engine -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/sonicdna-icon.png" alt="SonicDNA Engine" class="app-icon">
+                    <div class="app-info">
+                        <h2>SonicDNA Engine <span class="app-badge badge-coming">PRÓXIMAMENTE</span></h2>
+                        <p class="app-category">Música • Procesador de Audio</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Procesador de audio IR/NAM versátil con soporte de plugin AUv3. Procesa guitarra, bajo, teclados, sintetizadores y voces mediante modelado de equipos con IA y convolución con procesamiento en tiempo real de baja latencia.
+                </p>
+                <div class="app-links">
+                    <a href="/SonicDNAEngine-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- simpleMIDIController -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/simplemidi-icon.png" alt="simpleMIDIController" class="app-icon">
+                    <div class="app-info">
+                        <h2>simpleMIDIController</h2>
+                        <p class="app-category">Música • Utilidades</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Controlador MIDI simple e intuitivo para iOS. Envía mensajes MIDI a tu software y hardware musical con controles personalizables.
+                </p>
+                <div class="app-links">
+                    <a href="https://apps.apple.com/jp/app/simplemidicontroller/id6757380884" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                    </a>
+                    <a href="/simpleMIDIController-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- ChatArchive -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/chatarchive-icon.png" alt="ChatArchive" class="app-icon">
+                    <div class="app-info">
+                        <h2>ChatArchive</h2>
+                        <p class="app-category">Utilidades • macOS</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Una aplicación macOS para descargar todo tu historial de chat de LINE.
+                </p>
+                <div class="app-links">
+                    <a href="https://hakaru.lemonsqueezy.com" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        Descargar
+                    </a>
+                    <a href="/ChatArchive-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+
+            <!-- MIDI2Kit -->
+            <div class="app-card">
+                <div class="app-header">
+                    <img src="assets/midi2kit-icon.svg" alt="MIDI2Kit" class="app-icon">
+                    <div class="app-info">
+                        <h2>MIDI2Kit</h2>
+                        <p class="app-category">Desarrollador • Open Source</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Biblioteca Swift para implementar MIDI 2.0 — UMP, MIDI-CI y Property Exchange. Crea aplicaciones MIDI de próxima generación para macOS e iOS.
+                </p>
+                <div class="app-links">
+                    <a href="https://midi2kit.dev/" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        Sitio Web
+                    </a>
+                    <a href="https://github.com/midi2kit/MIDI2Kit-SDK" class="app-link secondary">GitHub</a>
+                </div>
+            </div>
+
+            <!-- PeerClock -->
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-icon-placeholder" style="background: linear-gradient(135deg, #e94560, #ff6b6b);">🕐</div>
+                    <div class="app-info">
+                        <h2>PeerClock <span class="app-badge badge-new">NUEVO</span></h2>
+                        <p class="app-category">Desarrollador • Open Source</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Sincronización de reloj P2P entre iguales para dispositivos Apple. Sincroniza relojes entre iPhones y Macs con ±2ms en una red local. Sin servidor, sin dispositivo maestro. Comandos genéricos, compartición de estado y programación de eventos con precisión.
+                </p>
+                <div class="app-links">
+                    <a href="https://github.com/hakaru/PeerClock" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="/blog/peerclock-p2p-sync" class="app-link secondary">Acerca de</a>
+                </div>
+            </div>
+
+            <!-- M2DX-Core -->
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-icon-placeholder" style="background: linear-gradient(135deg, #4a90d9, #357abd);">🎛️</div>
+                    <div class="app-info">
+                        <h2>M2DX-Core</h2>
+                        <p class="app-category">Desarrollador • Open Source</p>
+                    </div>
+                </div>
+                <p class="app-description">
+                    Motor de síntesis FM DX7 en Swift puro. Emulación de hardware bit-precisa con aritmética de punto fijo Int32, soporte nativo MIDI 2.0 y arquitectura lock-free segura en tiempo real.
+                </p>
+                <div class="app-links">
+                    <a href="https://github.com/hakaru/M2DX-Core" class="app-link primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="/M2DX-Core-support/" class="app-link secondary">Soporte</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contacto</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

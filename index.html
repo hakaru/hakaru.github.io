@@ -8,8 +8,8 @@
         <link rel="apple-touch-icon" href="/assets/icon-180.png">
         <meta property="og:title" content="hakaru Apps">
         <meta property="og:description" content="iOS Applications for Musicians & Creators">
-        <meta property="og:image" content="https://hakaru.github.io/assets/og-1200x630.png">
-        <meta property="og:url" content="https://hakaru.github.io/">
+        <meta property="og:image" content="https://hakaru.net/assets/og-1200x630.png">
+        <meta property="og:url" content="https://hakaru.net/">
         <meta property="og:type" content="website">
         <meta name="twitter:card" content="summary_large_image">
     <!-- Google tag (gtag.js) -->
@@ -20,31 +20,58 @@
       gtag('js', new Date());
       gtag('config', 'G-N0830V28FD');
     </script>
+    <script>
+      (function() {
+        var langUrlMap = {
+          'en': '/index.html',
+          'ja': '/index-ja.html',
+          'fr': '/index-fr.html',
+          'de': '/index-de.html',
+          'es': '/index-es.html',
+          'it': '/index-it.html',
+          'ko': '/index-ko.html',
+          'nl': '/index-nl.html',
+          'pt': '/index-pt-BR.html',
+          'sv': '/index-sv.html',
+          'zh': '/index-zh-Hant.html'
+        };
+        if (!localStorage.getItem('lang-redirected')) {
+          localStorage.setItem('lang-redirected', '1');
+          var nav = navigator.language || navigator.userLanguage || '';
+          var lang = nav.toLowerCase().slice(0, 2);
+          if (lang === 'zh') lang = 'zh';
+          if (langUrlMap[lang] && lang !== 'en') {
+            window.location.replace(langUrlMap[lang]);
+          }
+        }
+      })();
+    </script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             color: #fff;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
         }
-        
+
         header {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
         }
-        
+
         h1 {
             font-size: 3em;
             font-weight: 700;
@@ -55,25 +82,57 @@
             background-clip: text;
         }
 
-                .site-logo {
-                                max-width: 400px;
-                                height: auto;
-                                display: block;
-                                margin: 0 auto;
-                }
-        
+        .site-logo {
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         .subtitle {
             font-size: 1.2em;
             color: #a0a0a0;
         }
-        
+
+        .lang-switcher {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .lang-switcher select {
+            background: rgba(255,255,255,0.08);
+            color: #ccc;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 0.85em;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            padding-right: 28px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23aaa' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+        }
+
+        .lang-switcher select:hover {
+            background-color: rgba(255,255,255,0.13);
+        }
+
+        .lang-switcher select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .app-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
@@ -82,19 +141,19 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .app-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .app-header {
             display: flex;
             align-items: center;
             gap: 20px;
             margin-bottom: 20px;
         }
-        
+
         .app-icon {
             width: 80px;
             height: 80px;
@@ -102,7 +161,7 @@
             object-fit: cover;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-        
+
         .app-icon-placeholder {
             width: 80px;
             height: 80px;
@@ -113,29 +172,29 @@
             font-size: 2.5em;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-        
+
         .app-info h2 {
             font-size: 1.5em;
             margin-bottom: 5px;
         }
-        
+
         .app-category {
             font-size: 0.9em;
             color: #888;
         }
-        
+
         .app-description {
             color: #b0b0b0;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-        
+
         .app-links {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-        
+
         .app-link {
             display: inline-flex;
             align-items: center;
@@ -147,27 +206,27 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .app-link.primary {
             background: linear-gradient(90deg, #e94560, #ff6b6b);
             color: white;
         }
-        
+
         .app-link.primary:hover {
             opacity: 0.9;
             transform: scale(1.02);
         }
-        
+
         .app-link.secondary {
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .app-link.secondary:hover {
             background: rgba(255, 255, 255, 0.15);
         }
-        
+
         .app-badge {
             display: inline-block;
             padding: 4px 10px;
@@ -176,17 +235,17 @@
             font-weight: 600;
             margin-left: 10px;
         }
-        
+
         .badge-new {
             background: linear-gradient(90deg, #00d4aa, #00b894);
             color: white;
         }
-        
+
         .badge-coming {
             background: rgba(255, 255, 255, 0.2);
             color: #ccc;
         }
-        
+
         footer {
             text-align: center;
             margin-top: 80px;
@@ -194,28 +253,34 @@
             color: #666;
             font-size: 0.9em;
         }
-        
+
         footer a {
             color: #888;
             text-decoration: none;
         }
-        
+
         footer a:hover {
             color: #e94560;
         }
-        
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em;
             }
-            
+
             .app-header {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .app-links {
                 justify-content: center;
+            }
+
+            .lang-switcher {
+                position: static;
+                text-align: right;
+                margin-bottom: 16px;
             }
         }
     </style>
@@ -223,9 +288,25 @@
 <body>
     <div class="container">
         <header>
-            <h1><img src="assets/logo-horizontal-transparent.png" alt="hakaru Apps" class="site-logo" srcset="assets/logo-horizontal-transparent-400w.png 400w, assets/logo-horizontal-transparent-560w.png 560w, assets/logo-horizontal-transparent-800w.png 800w, assets/logo-horizontal-transparent.png 1200w" sizes="(max-width: 600px) 280px, 400px"></h1>            <p class="subtitle">iOS Applications for Musicians & Creators</p>
+            <div class="lang-switcher">
+                <select onchange="location.href=this.value">
+                    <option value="/index.html" selected>English</option>
+                    <option value="/index-ja.html">日本語</option>
+                    <option value="/index-fr.html">Français</option>
+                    <option value="/index-de.html">Deutsch</option>
+                    <option value="/index-es.html">Español</option>
+                    <option value="/index-it.html">Italiano</option>
+                    <option value="/index-ko.html">한국어</option>
+                    <option value="/index-nl.html">Nederlands</option>
+                    <option value="/index-pt-BR.html">Português</option>
+                    <option value="/index-sv.html">Svenska</option>
+                    <option value="/index-zh-Hant.html">繁體中文</option>
+                </select>
+            </div>
+            <h1><img src="assets/logo-horizontal-transparent.png" alt="hakaru Apps" class="site-logo" srcset="assets/logo-horizontal-transparent-400w.png 400w, assets/logo-horizontal-transparent-560w.png 560w, assets/logo-horizontal-transparent-800w.png 800w, assets/logo-horizontal-transparent.png 1200w" sizes="(max-width: 600px) 280px, 400px"></h1>
+            <p class="subtitle">iOS Applications for Musicians &amp; Creators</p>
         </header>
-        
+
         <div class="apps-grid">
             <!-- TineModeler -->
             <div class="app-card">
@@ -272,7 +353,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- GitInflow -->
             <div class="app-card">
                 <div class="app-header">
@@ -316,7 +397,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <!-- SonicDNA Engine -->
             <div class="app-card">
                 <div class="app-header">
@@ -411,7 +492,6 @@
                 </div>
             </div>
 
-
             <!-- PeerClock -->
             <div class="app-card">
                 <div class="app-header">
@@ -466,7 +546,7 @@
         </div>
 
         <footer>
-            <p>© 2026 hakaru. All rights reserved.</p>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
             <p style="margin-top: 10px;">
                 <a href="/tokushoho.html">特定商取引法に基づく表記</a>
                 <span style="margin: 0 10px;">|</span>
@@ -476,4 +556,3 @@
     </div>
 </body>
 </html>
-<!-- 20260329194446 -->
