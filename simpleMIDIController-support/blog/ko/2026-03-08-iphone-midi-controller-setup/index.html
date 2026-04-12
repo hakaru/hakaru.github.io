@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드 | simpleMIDIController Blog</title>
+    <meta name="description" content="아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드">
+    <meta property="og:title" content="아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드 | simpleMIDIController Blog">
+    <meta property="og:description" content="아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/simpleMIDIController-support/blog/ko/2026-03-08-iphone-midi-controller-setup/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드","datePublished":"2026-03-08","author":{"@type":"Organization","name":"hakaru"},"publisher":{"@type":"Organization","name":"hakaru","url":"https://hakaru.net"},"url":"https://hakaru.net/simpleMIDIController-support/blog/ko/2026-03-08-iphone-midi-controller-setup/"}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);min-height:100vh;color:#e0e0e0;line-height:1.7;}
+        .container{max-width:800px;margin:0 auto;padding:60px 20px;}
+        .article-header{margin-bottom:40px;}
+        .article-header h1{font-size:1.8em;font-weight:700;margin-bottom:12px;background:linear-gradient(90deg,#e94560,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .article-date{color:#666;font-size:0.9em;}
+        .content h2{font-size:1.4em;color:#fff;margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1);}
+        .content h3{font-size:1.1em;color:#e0e0e0;margin:24px 0 12px;}
+        .content p{margin-bottom:16px;}
+        .content ul,.content ol{margin:0 0 16px 24px;color:#b0b0b0;}
+        .content li{margin-bottom:8px;}
+        .content a{color:#e94560;text-decoration:none;}
+        .content a:hover{text-decoration:underline;}
+        .content hr{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:30px 0;}
+        .content strong{color:#fff;}
+        .app-store-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;margin:20px 0;background:rgba(233,69,96,0.15);border:1px solid rgba(233,69,96,0.4);border-radius:10px;text-decoration:none;color:#fff;transition:all 0.3s;font-size:0.95em;}
+        .app-store-btn:hover{background:rgba(233,69,96,0.3);transform:translateY(-2px);}
+        footer{text-align:center;margin-top:60px;padding:30px 0;border-top:1px solid rgba(255,255,255,0.1);color:#666;font-size:0.9em;}
+        footer a{color:#888;text-decoration:none;}
+        footer a:hover{color:#e94560;}
+
+body{display:flex;min-height:100vh;}
+.sidebar{width:250px;min-width:250px;background:rgba(10,10,30,0.95);backdrop-filter:blur(10px);border-right:1px solid rgba(255,255,255,0.08);padding:20px 0;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;}
+.sidebar-logo{padding:10px 20px 20px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:10px;}
+.sidebar-logo a{color:#fff;text-decoration:none;font-size:1.2em;font-weight:700;}
+.sidebar-logo a:hover{color:#e94560;}
+.sidebar-app{margin-bottom:2px;}
+.sidebar-app-header{display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:#a0a0a0;font-size:0.95em;font-weight:500;transition:all 0.2s;border:none;background:none;width:100%;text-align:left;font-family:inherit;}
+.sidebar-app-header:hover{color:#fff;background:rgba(255,255,255,0.05);}
+.sidebar-app-header.active{color:#e94560;}
+.sidebar-app-header img{width:24px;height:24px;border-radius:6px;}
+.sidebar-app-header .arrow{margin-left:auto;font-size:0.7em;transition:transform 0.2s;}
+.sidebar-app-header.expanded .arrow{transform:rotate(90deg);}
+.sidebar-app-links{display:none;padding:4px 0 8px;}
+.sidebar-app-links.show{display:block;}
+.sidebar-app-links a{display:block;padding:6px 20px 6px 54px;color:#808080;text-decoration:none;font-size:0.85em;transition:all 0.2s;}
+.sidebar-app-links a:hover{color:#fff;background:rgba(255,255,255,0.05);}
+.sidebar-app-links a.active{color:#e94560;}
+.sidebar-lang{padding:15px 20px;border-top:1px solid rgba(255,255,255,0.08);margin-top:10px;display:flex;flex-wrap:wrap;gap:2px;}
+.sidebar-lang-btn{display:inline-block;padding:4px 12px;color:#808080;text-decoration:none;font-size:0.85em;border-radius:4px;transition:all 0.2s;}
+.sidebar-lang-btn:hover{color:#fff;}
+.sidebar-lang-btn.active{color:#e94560;font-weight:600;}
+.content-pane{flex:1;margin-left:250px;min-height:100vh;}
+.content-pane .container{max-width:800px;margin:0 auto;padding:60px 20px;}
+.sidebar-toggle{display:none;position:fixed;top:15px;left:15px;z-index:200;background:rgba(10,10,30,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:1.3em;padding:8px 12px;cursor:pointer;}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:90;}
+@media(max-width:768px){.sidebar{transform:translateX(-100%);transition:transform 0.3s;}.sidebar.open{transform:translateX(0);}.sidebar-toggle{display:block;}.sidebar-overlay.show{display:block;}.content-pane{margin-left:0;padding-top:60px;}}
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/simpleMIDIController-support/index-ko">지원</a>
+      <a href="/simpleMIDIController-support/manual/ko/">매뉴얼</a>
+      <a href="/simpleMIDIController-support/blog/ko/" class="active">블로그</a>
+      <a href="/simpleMIDIController-support/privacy/ko/">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div></div>
+  <div class="sidebar-lang">
+    <a href="/simpleMIDIController-support/blog/en/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <a href="/simpleMIDIController-support/blog/ja/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/simpleMIDIController-support/blog/fr/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/simpleMIDIController-support/blog/de/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/simpleMIDIController-support/blog/es/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/simpleMIDIController-support/blog/it/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+    <a href="/simpleMIDIController-support/blog/nl/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
+    <a href="/simpleMIDIController-support/blog/pt-BR/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/simpleMIDIController-support/blog/sv/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/simpleMIDIController-support/blog/zh-Hant/2026-03-08-iphone-midi-controller-setup/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="article-header">
+            <h1>아이폰을 MIDI 컨트롤러로 — 완전한 DAW 통합 가이드</h1>
+            <div class="article-date">2026년 3월 8일</div>
+        </div>
+        <div class="content">
+<p>모든 공연, 리허설, 스튜디오 세션에 전용 MIDI 컨트롤러를 들고 다니는 것은 항상 실용적이지 않습니다. 이미 주머니에 있는 기기가 그 역할을 할 수 있다면 어떨까요? 올바른 앱으로 iPhone이 강력한 MIDI 컨트롤러가 됩니다.</p><h2>MIDI란?</h2><p><strong>MIDI(Musical Instrument Digital Interface)</strong>는 전자 악기와 컴퓨터를 위한 범용 프로토콜입니다. MIDI는 오디오를 전송하지 않고 <strong>퍼포먼스 지시사항</strong>을 전송합니다.</p><h2>연결 방법</h2><h3>Bluetooth MIDI</h3><p>가장 편리한 옵션. iOS 8 이상이 탑재된 모든 iPhone이 Bluetooth MIDI를 지원합니다.</p><h3>USB MIDI</h3><p>Lightning to USB 또는 USB-C 어댑터를 통한 유선 연결. 가장 낮은 지연.</p><h2>시작하기</h2><p>simpleMIDIController를 다운로드하고, Bluetooth 또는 USB로 연결하여 즉시 DAW 제어를 시작하세요.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top:10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin:0 10px;">|</span><a href="mailto:support@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function(){
+var s=localStorage.getItem('hakaru-lang'),p=window.location.pathname;
+function d(){if(s)return s;var n=(navigator.language||'en').toLowerCase();
+if(n.startsWith('ja'))return 'ja';if(n.startsWith('fr'))return 'fr';if(n.startsWith('de'))return 'de';
+if(n.startsWith('es'))return 'es';if(n.startsWith('it'))return 'it';if(n.startsWith('ko'))return 'ko';
+if(n.startsWith('nl'))return 'nl';if(n.startsWith('pt'))return 'pt-BR';if(n.startsWith('sv'))return 'sv';
+if(n.startsWith('zh'))return 'zh-Hant';return 'en';}
+function gl(){var m=p.match(/\/blog\/(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant|en|ja)\//);if(m)return m[1];
+m=p.match(/index-(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)/);if(m)return m[1];
+if(p.includes('/index-ja')||p.includes('/blog/ja/')||p.includes('/manual/ja/'))return 'ja';return 'en';}
+var pl=gl(),ul=d();
+if(!s&&(!document.referrer||!document.referrer.includes('hakaru.net'))&&pl!==ul){
+var a=document.querySelector('.sidebar-lang-btn[data-lang="'+ul+'"]');
+if(a&&a.href){window.location.href=a.href;return;}}
+document.querySelectorAll('.sidebar-app-header').forEach(function(h){
+h.addEventListener('click',function(){var l=this.nextElementSibling,w=this.classList.contains('expanded');
+document.querySelectorAll('.sidebar-app-header').forEach(function(x){x.classList.remove('expanded');if(x.nextElementSibling)x.nextElementSibling.classList.remove('show');});
+if(!w){this.classList.add('expanded');if(l)l.classList.add('show');}});});
+var ca=document.querySelector('.sidebar-app-header.active');
+if(ca){ca.classList.add('expanded');if(ca.nextElementSibling)ca.nextElementSibling.classList.add('show');}
+var t=document.querySelector('.sidebar-toggle'),sb=document.querySelector('.sidebar'),ov=document.querySelector('.sidebar-overlay');
+if(t){t.addEventListener('click',function(){sb.classList.toggle('open');ov.classList.toggle('show');});}
+if(ov){ov.addEventListener('click',function(){sb.classList.remove('open');ov.classList.remove('show');});}
+document.querySelectorAll('.sidebar-lang-btn').forEach(function(b){b.addEventListener('click',function(){localStorage.setItem('hakaru-lang',this.dataset.lang);});});
+})();
+</script>
+</body>
+</html>

@@ -300,9 +300,18 @@ body {
       <a href="/ChatArchive-support/en/terms">Terms</a>
     </div>
   </div>
-  <div class="sidebar-lang">
-    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/simpleMIDIController-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <div class="sidebar-lang" style="display:flex;flex-wrap:wrap;gap:2px;">
+    <span class="sidebar-lang-btn active" data-lang="en">English</span>
+    <a href="/simpleMIDIController-support/privacy/" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/simpleMIDIController-support/privacy/fr/" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/simpleMIDIController-support/privacy/de/" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/simpleMIDIController-support/privacy/es/" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/simpleMIDIController-support/privacy/it/" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <a href="/simpleMIDIController-support/privacy/ko/" class="sidebar-lang-btn" data-lang="ko">한국어</a>
+    <a href="/simpleMIDIController-support/privacy/nl/" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
+    <a href="/simpleMIDIController-support/privacy/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/simpleMIDIController-support/privacy/sv/" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/simpleMIDIController-support/privacy/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -379,99 +388,58 @@ body {
     </div>
 </div>
 <script>
-(function() {
-    // Language auto-detection
-    var savedLang = localStorage.getItem('hakaru-lang');
-    var currentPath = window.location.pathname;
-
-    function detectLang() {
-        if (savedLang) return savedLang;
-        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
-    }
-
-    function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
-    }
-
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
-    var pageLang = getCurrentPageLang();
-    var userLang = detectLang();
-    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
-            return;
-        }
-    }
-
-    // Accordion
-    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
-        header.addEventListener('click', function() {
-            var links = this.nextElementSibling;
-            var wasExpanded = this.classList.contains('expanded');
-            // Collapse all
-            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
-                h.classList.remove('expanded');
-                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
-            });
-            // Toggle clicked
-            if (!wasExpanded) {
-                this.classList.add('expanded');
-                if (links) links.classList.add('show');
-            }
-        });
-    });
-
-    // Auto-expand current app
-    var currentApp = document.querySelector('.sidebar-app-header.active');
-    if (currentApp) {
-        currentApp.classList.add('expanded');
-        if (currentApp.nextElementSibling) {
-            currentApp.nextElementSibling.classList.add('show');
-        }
-    }
-
-    // Mobile toggle
-    var toggle = document.querySelector('.sidebar-toggle');
-    var sidebar = document.querySelector('.sidebar');
-    var overlay = document.querySelector('.sidebar-overlay');
-    if (toggle) {
-        toggle.addEventListener('click', function() {
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('show');
-        });
-    }
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-        });
-    }
-
-    // Language switch saves preference
-    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            localStorage.setItem('hakaru-lang', this.dataset.lang);
-        });
-    });
+(function(){
+var s=localStorage.getItem('hakaru-lang'),p=window.location.pathname;
+function detectLang(){
+  if(s)return s;
+  var n=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+  if(n.startsWith('ja'))return 'ja';
+  if(n.startsWith('fr'))return 'fr';
+  if(n.startsWith('de'))return 'de';
+  if(n.startsWith('es'))return 'es';
+  if(n.startsWith('it'))return 'it';
+  if(n.startsWith('ko'))return 'ko';
+  if(n.startsWith('nl'))return 'nl';
+  if(n.startsWith('pt'))return 'pt-BR';
+  if(n.startsWith('sv'))return 'sv';
+  if(n.startsWith('zh'))return 'zh-Hant';
+  return 'en';
+}
+function getCurrentPageLang(){
+  var m=p.match(/\/blog\/(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant|en|ja)\//);
+  if(m)return m[1];
+  m=p.match(/\/manual\/(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant|en|ja)\//);
+  if(m)return m[1];
+  m=p.match(/\/privacy\/(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+  if(m)return m[1];
+  m=p.match(/\/support\/(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+  if(m)return m[1];
+  m=p.match(/index-(fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)/);
+  if(m)return m[1];
+  if(p.includes('/index-ja')||p.includes('/manual/ja/')||p.includes('/blog/ja/'))return 'ja';
+  return 'en';
+}
+var pageLang=getCurrentPageLang(),userLang=detectLang();
+if(!s&&(!document.referrer||!document.referrer.includes('hakaru.net'))&&pageLang!==userLang){
+  var el=document.querySelector('.sidebar-lang-btn[data-lang="'+userLang+'"]');
+  if(el&&el.href){window.location.href=el.href;return;}
+}
+document.querySelectorAll('.sidebar-app-header').forEach(function(h){
+  h.addEventListener('click',function(){
+    var l=this.nextElementSibling,was=this.classList.contains('expanded');
+    document.querySelectorAll('.sidebar-app-header').forEach(function(x){x.classList.remove('expanded');if(x.nextElementSibling)x.nextElementSibling.classList.remove('show');});
+    if(!was){this.classList.add('expanded');if(l)l.classList.add('show');}
+  });
+});
+var ca=document.querySelector('.sidebar-app-header.active');
+if(ca){ca.classList.add('expanded');if(ca.nextElementSibling)ca.nextElementSibling.classList.add('show');}
+var tog=document.querySelector('.sidebar-toggle'),sb=document.querySelector('.sidebar'),ov=document.querySelector('.sidebar-overlay');
+if(tog){tog.addEventListener('click',function(){sb.classList.toggle('open');ov.classList.toggle('show');});}
+if(ov){ov.addEventListener('click',function(){sb.classList.remove('open');ov.classList.remove('show');});}
+document.querySelectorAll('.sidebar-lang-btn').forEach(function(b){
+  b.addEventListener('click',function(){localStorage.setItem('hakaru-lang',this.dataset.lang);});
+});
 })();
-
 </script>
 </body>
 </html>
