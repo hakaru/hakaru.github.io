@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Upload LINE Chat History to NotebookLM for AI Analysis</title>
+    <meta name="description" content="Learn how to export LINE chat history as text and upload it to Google NotebookLM for AI-powered analysis, summarization, and search.">
+    <meta property="og:title" content="How to Upload LINE Chat History to NotebookLM for AI Analysis">
+    <meta property="og:description" content="Learn how to export LINE chat history as text and upload it to Google NotebookLM for AI-powered analysis, summarization, and search.">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Upload LINE Chat History to NotebookLM for AI Analysis",
+        "datePublished": "2026-03-08",
+        "dateModified": "2026-03-08",
+        "author": { "@type": "Person", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru apps", "url": "https://hakaru.net/" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hakaru.net/ChatArchive-support/ko/blog/line-backup-notebooklm.html" },
+        "description": "Learn how to export LINE chat history as text and upload it to Google NotebookLM for AI-powered analysis, summarization, and search.",
+        "inLanguage": "ko"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .breadcrumb { font-size: 0.85em; color: #666; margin-bottom: 20px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #e94560; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin: 0 0 12px; border: none; padding: 0; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        .blog-step { display: flex; gap: 16px; margin: 16px 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; }
+        .blog-step-number { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, #e94560, #ff6b6b); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9em; color: #fff; }
+        .blog-step-body h3 { color: #fff; margin-bottom: 6px; font-size: 1em; }
+        .blog-step-body p { color: #a0a0a0; font-size: 0.9em; margin: 0; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; font-size: 0.9em; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box a { color: #e94560; text-decoration: none; }
+        .feature-list { list-style: none; margin: 0 0 16px 0; }
+        .feature-list li { padding: 6px 0; color: #b0b0b0; display: flex; align-items: flex-start; gap: 8px; }
+        .feature-list li::before { content: '✓'; color: #e94560; font-weight: bold; flex-shrink: 0; }
+        .prompt-example {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+            border-left: 3px solid #e94560; border-radius: 6px; padding: 12px 16px;
+            margin: 10px 0; font-family: monospace; font-size: 0.9em; color: #d0d0d0;
+        }
+        .code-sample {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 16px 20px; margin: 16px 0;
+            font-family: monospace; font-size: 0.85em; color: #c0c0c0;
+            white-space: pre-line; line-height: 1.6;
+        }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 24px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { color: #fff; font-size: 1.3em; margin-bottom: 10px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download, .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s; }
+        .btn-download { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; box-shadow: 0 4px 15px rgba(233,69,96,0.3); }
+        .btn-download:hover { transform: translateY(-2px); }
+        .btn-license { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/ChatArchive-support/ko/">Support</a>
+      <a href="/ChatArchive-support/ko/blog/" class="active">Blog</a>
+      <a href="/ChatArchive-support/ko/privacy.html">Privacy</a>
+      <a href="/ChatArchive-support/ko/terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/ChatArchive-support/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/ChatArchive-support/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/ChatArchive-support/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">KO</span>
+    <a href="/ChatArchive-support/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/ChatArchive-support/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/ChatArchive-support/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/ChatArchive-support/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/th/" class="sidebar-lang-btn" data-lang="th">TH</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        
+        
+        <div class="article-header">
+            <nav class="breadcrumb">
+                <a href="/ChatArchive-support/en/">Home</a> &gt; <a href="/ChatArchive-support/en/blog/">Blog</a> &gt; LINE Chat History &times; NotebookLM
+            </nav>
+            <h1>How to Upload LINE Chat History to NotebookLM for AI Analysis</h1>
+            <p class="article-meta">Published: February 22, 2025 &middot; Reading time: 8 min</p>
+        </div>
+        <div class="content">
+            <p>Have years of LINE chat history sitting untouched? Upload them to Google's <strong>NotebookLM</strong>, and AI will summarize, analyze, and search through your massive chat logs for you.</p>
+            <p>In this guide, we walk you through exporting your LINE chat history and loading it into NotebookLM for AI-powered analysis.</p>
+
+            <nav class="toc">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#what">What is NotebookLM</a></li>
+                    <li><a href="#what-can">What You Can Do &#8212; Use Cases</a></li>
+                    <li><a href="#prepare">What You'll Need</a></li>
+                    <li><a href="#export-line">Step 1: Export Chat History from LINE</a></li>
+                    <li><a href="#export-chatarchive">Exporting with ChatArchive</a></li>
+                    <li><a href="#upload">Step 2: Upload to NotebookLM</a></li>
+                    <li><a href="#analyze">Step 3: Ask AI to Analyze</a></li>
+                    <li><a href="#prompts">Useful Prompts</a></li>
+                    <li><a href="#privacy-note">Privacy Notes</a></li>
+                    <li><a href="#tips">More Tips</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="what">1. What is NotebookLM</h2>
+            <p><strong>NotebookLM</strong> is an AI-powered research and note-taking tool provided by Google. Upload documents such as PDFs or text files, and the AI will understand their content to provide summaries, answer questions, and perform analysis.</p>
+
+            <ul class="feature-list">
+                <li>Answers based solely on your uploaded sources (minimal hallucination)</li>
+                <li>Supports text files (.txt), PDFs, Google Docs, web pages, and more</li>
+                <li>Handles up to 500,000 words and 200 MB per source</li>
+                <li>Upload up to 50 sources on the free plan</li>
+                <li>Available immediately with a Google account</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>Key point:</strong> NotebookLM only references the content of your uploaded documents when generating answers. Unlike general-purpose AI chatbots, it does not mix in outside information, making it ideal for analyzing chat history.</p>
+            </div>
+
+            <h2 id="what-can">2. What You Can Do &#8212; Use Cases</h2>
+            <p>Once you load your LINE chat history into NotebookLM, here is what you can do.</p>
+
+            <h3>Revisiting Memories</h3>
+            <p>"What were we talking about in the summer of 2023?" "Where did we decide on the trip plans?" &#8212; the AI can dig through massive chat logs to find specific topics for you.</p>
+
+            <h3>Organizing and Discovering Information</h3>
+            <p>"List all the restaurant names that were shared." "Summarize everything we discussed about the move." &#8212; you can structure scattered information from your chats.</p>
+
+            <h3>Summarizing Conversations</h3>
+            <p>Extract key points from long group chats. Ask "Summarize last month's conversations" to skip through messages you do not need to read.</p>
+
+            <h3>Sentiment Analysis and Trend Detection</h3>
+            <p>"Did the tone of our conversations change over time?" "What word patterns come up frequently?" &#8212; meta-level analysis is also possible.</p>
+
+            <h2 id="prepare">3. What You'll Need</h2>
+            <ul>
+                <li><strong>Google account</strong> (required for NotebookLM)</li>
+                <li><strong>LINE</strong> installed on your smartphone or PC</li>
+                <li><strong>PC browser</strong> (NotebookLM is used in a desktop browser)</li>
+            </ul>
+
+            <h2 id="export-line">4. Step 1: Export Chat History from LINE</h2>
+            <p>LINE has a built-in feature to export chat history as a text file (.txt).</p>
+
+            <h3>iPhone / Android</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>Open the chat room</h3>
+                    <p>Open the chat room you want to export.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>Select "Export Chat History" from the menu</h3>
+                    <p>Tap the <strong>&#8801;</strong> (menu) icon in the top right &gt; <strong>More</strong> &gt; <strong>Export Chat History</strong>.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>Choose a save destination</h3>
+                    <p>Select a method that makes it easy to transfer the file to your PC, such as "Save to Files," email, AirDrop, or Google Drive.</p>
+                </div>
+            </div>
+
+            <div class="info-box note">
+                <p><strong>Export format:</strong> LINE chat history is exported in <strong>.txt (plain text) format</strong>. Date, time, sender name, and message content are recorded chronologically. Images and videos are not included.</p>
+            </div>
+
+            <h3>PC LINE (Windows / Mac)</h3>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>Open the chat room</h3>
+                    <p>Open the chat room you want to export in LINE for PC.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>Select "Save Chat"</h3>
+                    <p>Click the <strong>&#8801;</strong> (menu) icon in the top right &gt; <strong>Save Chat</strong>, then choose a save location.</p>
+                </div>
+            </div>
+
+            <h3>What the exported file looks like</h3>
+            <p>The exported text file will have a format similar to the following.</p>
+
+            <div class="code-sample">[LINE] Chat with Person A
+Saved: 2025/02/22 15:30
+
+2024/01/15 Mon
+10:23	Person A	Good morning! What are we doing for lunch today?
+10:24	Me	I feel like pasta
+10:25	Person A	Nice! How about that new Italian place near the station?
+10:26	Me	Let's go! Meet at 12?
+10:27	Person A	Sounds good!
+
+2024/01/16 Tue
+09:15	Person A	That pasta yesterday was so good
+09:16	Me	We should go again!</div>
+
+            <h2 id="export-chatarchive">5. Exporting with ChatArchive</h2>
+            <p>LINE's built-in export requires <strong>manual operation for each chat room, one at a time</strong>. If you have many chat rooms, <strong>ChatArchive</strong> lets you back up all chats in one go.</p>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>Import LINE data with ChatArchive</h3>
+                    <p>Launch ChatArchive and click "Import." It will automatically detect your LINE database and import all chats at once.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>Export in .chatarchive format</h3>
+                    <p>Use the export feature to save all your chat history. You can then convert it to text as needed and feed it into NotebookLM.</p>
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <p><strong>Advantages of ChatArchive:</strong> Back up all chat rooms at once. Even if you have over 100 chat rooms, it only takes a single operation. All processing is done locally, so your privacy is fully protected.<br><a href="/ChatArchive-support/en/blog/chatarchive-getting-started.html">Learn more about how to use ChatArchive</a></p>
+            </div>
+
+            <h2 id="upload">6. Step 2: Upload to NotebookLM</h2>
+
+            <div class="blog-step">
+                <div class="blog-step-number">1</div>
+                <div class="blog-step-body">
+                    <h3>Open NotebookLM</h3>
+                    <p>Go to <strong>notebooklm.google.com</strong> in your browser and sign in with your Google account.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">2</div>
+                <div class="blog-step-body">
+                    <h3>Create a new notebook</h3>
+                    <p>Click "New Notebook" to create one. Give it a descriptive name like "LINE Chat Analysis."</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">3</div>
+                <div class="blog-step-body">
+                    <h3>Upload your source</h3>
+                    <p>Click "Add Source," select <strong>"Upload File,"</strong> and upload the .txt file you exported earlier.</p>
+                </div>
+            </div>
+
+            <div class="blog-step">
+                <div class="blog-step-number">4</div>
+                <div class="blog-step-body">
+                    <h3>Multiple files are OK</h3>
+                    <p>If you exported each chat room separately, you can upload multiple .txt files at once. The free plan supports up to <strong>50 files</strong>.</p>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <p><strong>File size limits:</strong> Each file can be up to <strong>200 MB</strong> and <strong>500,000 words</strong>. This is more than enough for several years of chat history, but if your file exceeds the limit, split it by time period.</p>
+            </div>
+
+            <h2 id="analyze">7. Step 3: Ask AI to Analyze</h2>
+            <p>Once the upload is complete, NotebookLM will process the source. You can then ask questions in natural language using the chat box at the bottom of the screen, and the AI will respond.</p>
+
+            <h3>Auto-generated summary by NotebookLM</h3>
+            <p>When you upload a source, NotebookLM automatically generates a <strong>source overview</strong>. This alone gives you a quick grasp of your entire chat history.</p>
+
+            <h3>Answers with citations</h3>
+            <p>NotebookLM's answers include <strong>citations to the source</strong>. You can see exactly which messages the AI's response is based on, making fact-checking easy.</p>
+
+            <h2 id="prompts">8. Useful Prompts</h2>
+            <p>Here are some example prompts you can use with NotebookLM. Feel free to copy and use them as-is.</p>
+
+            <h3>Summary &amp; Reflection</h3>
+            <div class="prompt-example">Summarize this entire conversation in chronological order</div>
+            <div class="prompt-example">What was the most talked-about topic in 2024?</div>
+            <div class="prompt-example">List the main topics discussed over the past year</div>
+
+            <h3>Information Search</h3>
+            <div class="prompt-example">Extract all restaurant and shop names mentioned in the conversation</div>
+            <div class="prompt-example">Summarize all conversations related to travel</div>
+            <div class="prompt-example">List all messages about appointments and plans in chronological order</div>
+
+            <h3>Analysis</h3>
+            <div class="prompt-example">What topics come up most frequently in the conversation?</div>
+            <div class="prompt-example">Has the tone or mood of the conversation changed over time?</div>
+            <div class="prompt-example">Analyze the characteristics of each participant in this conversation</div>
+
+            <h3>Practical Uses</h3>
+            <div class="prompt-example">List all URLs shared in the conversation</div>
+            <div class="prompt-example">Extract all conversations related to moving, and organize them chronologically</div>
+            <div class="prompt-example">Summarize all recipes and cooking-related information mentioned in the conversation</div>
+
+            <h2 id="privacy-note">9. Privacy Notes</h2>
+
+            <div class="info-box warning">
+                <p><strong>Important:</strong> Chat history contains personal information. Please understand the following before proceeding.</p>
+            </div>
+
+            <h3>How NotebookLM handles data</h3>
+            <ul>
+                <li>Data is processed in accordance with Google's Privacy Policy</li>
+                <li>Uploaded data is tied to your account and is not shared with other users</li>
+                <li>Deleting a notebook also deletes the data</li>
+            </ul>
+
+            <h3>Before uploading</h3>
+            <ul>
+                <li><strong>Consent from others:</strong> If possible, inform the other parties before loading their conversations into an AI tool</li>
+                <li><strong>Check for sensitive information:</strong> Make sure the chat history does not contain addresses, phone numbers, passwords, or other confidential data</li>
+                <li><strong>Limit the purpose of use:</strong> Use the data only for personal reflection and organization, and do not share the conversation content with third parties</li>
+            </ul>
+
+            <div class="info-box tip">
+                <p><strong>Want to analyze locally?</strong> If you prefer not to upload data to the cloud, you can use <strong>ChatArchive's</strong> full-text search feature to search and browse your chat history entirely on your local machine.</p>
+            </div>
+
+            <h2 id="tips">10. More Tips</h2>
+
+            <h3>Analyzing group chats</h3>
+            <p>Group chats can be exported using the same steps. Try asking "Analyze each member's messaging tendencies" to discover communication patterns within the group.</p>
+
+            <h3>Cross-room analysis</h3>
+            <p>Upload text files from multiple chat rooms into the same notebook to search and analyze information across different conversations.</p>
+
+            <h3>Using Audio Overview</h3>
+            <p>NotebookLM has an "Audio Overview" feature that automatically generates a podcast-style audio summary based on your sources. You can listen to a spoken overview of long chat histories.</p>
+
+            <h3>Regular backups</h3>
+            <p>Export your chat history once a month and add it to NotebookLM to track changes over time.</p>
+
+            <h2>Related Articles</h2>
+            <ul>
+                <li><a href="/ChatArchive-support/en/blog/line-backup-complete-guide.html">The Complete Guide to Backing Up All LINE Chat History on Mac</a></li>
+                <li><a href="/ChatArchive-support/en/blog/line-export-all-chats.html">How to Export All LINE Chat History to Text Files</a></li>
+                <li><a href="/ChatArchive-support/en/blog/chatarchive-getting-started.html">How to Use ChatArchive &#8212; Complete Guide from Installation to Advanced Usage</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <h2>Batch Backup All Chats with ChatArchive</h2>
+                <p>No more exporting one chat at a time. ChatArchive backs up all your chat history with one click.</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Buy License
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('th')) return 'th';
+        if (navLang.startsWith('zh-hant') || navLang === 'zh-tw' || navLang === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var p = currentPath;
+        if (p.includes('/ChatArchive-support/fr/')) return 'fr';
+        if (p.includes('/ChatArchive-support/de/')) return 'de';
+        if (p.includes('/ChatArchive-support/es/')) return 'es';
+        if (p.includes('/ChatArchive-support/it/')) return 'it';
+        if (p.includes('/ChatArchive-support/ko/')) return 'ko';
+        if (p.includes('/ChatArchive-support/nl/')) return 'nl';
+        if (p.includes('/ChatArchive-support/pt-BR/')) return 'pt-BR';
+        if (p.includes('/ChatArchive-support/sv/')) return 'sv';
+        if (p.includes('/ChatArchive-support/zh-Hant/')) return 'zh-Hant';
+        if (p.includes('/ChatArchive-support/th/')) return 'th';
+        if (p.includes('/ChatArchive-support/en/')) return 'en';
+        return 'ja';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) { window.location.href = langAlt.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+})();
+
+</script>
+</body>
+</html>

@@ -300,9 +300,17 @@ body {
   </div>
   <div class="sidebar-lang">
     <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
-    <a href="#" class="sidebar-lang-btn" data-lang="en">EN</a>
-    <a href="#" class="sidebar-lang-btn" data-lang="th">TH</a>
-    <a href="#" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/ChatArchive-support/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/ChatArchive-support/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/ChatArchive-support/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/ChatArchive-support/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/ChatArchive-support/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/th/" class="sidebar-lang-btn" data-lang="th">TH</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -414,36 +422,42 @@ body {
 </div>
 <script>
 (function() {
-    // Language auto-detection
     var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
 
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('th')) return 'th';
+        if (navLang.startsWith('zh-hant') || navLang === 'zh-tw' || navLang === 'zh-hk') return 'zh-Hant';
+        return 'en';
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var p = currentPath;
+        if (p.includes('/ChatArchive-support/fr/')) return 'fr';
+        if (p.includes('/ChatArchive-support/de/')) return 'de';
+        if (p.includes('/ChatArchive-support/es/')) return 'es';
+        if (p.includes('/ChatArchive-support/it/')) return 'it';
+        if (p.includes('/ChatArchive-support/ko/')) return 'ko';
+        if (p.includes('/ChatArchive-support/nl/')) return 'nl';
+        if (p.includes('/ChatArchive-support/pt-BR/')) return 'pt-BR';
+        if (p.includes('/ChatArchive-support/sv/')) return 'sv';
+        if (p.includes('/ChatArchive-support/zh-Hant/')) return 'zh-Hant';
+        if (p.includes('/ChatArchive-support/th/')) return 'th';
+        if (p.includes('/ChatArchive-support/en/')) return 'en';
+        return 'ja';
     }
 
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
@@ -459,12 +473,10 @@ body {
         header.addEventListener('click', function() {
             var links = this.nextElementSibling;
             var wasExpanded = this.classList.contains('expanded');
-            // Collapse all
             document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
                 h.classList.remove('expanded');
                 if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
             });
-            // Toggle clicked
             if (!wasExpanded) {
                 this.classList.add('expanded');
                 if (links) links.classList.add('show');
@@ -472,16 +484,12 @@ body {
         });
     });
 
-    // Auto-expand current app
     var currentApp = document.querySelector('.sidebar-app-header.active');
     if (currentApp) {
         currentApp.classList.add('expanded');
-        if (currentApp.nextElementSibling) {
-            currentApp.nextElementSibling.classList.add('show');
-        }
+        if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show');
     }
 
-    // Mobile toggle
     var toggle = document.querySelector('.sidebar-toggle');
     var sidebar = document.querySelector('.sidebar');
     var overlay = document.querySelector('.sidebar-overlay');
@@ -498,7 +506,6 @@ body {
         });
     }
 
-    // Language switch saves preference
     document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             localStorage.setItem('hakaru-lang', this.dataset.lang);

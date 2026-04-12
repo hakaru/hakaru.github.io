@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatArchive Ondersteuning | LINE-chatback-uptool voor Mac</title>
+    <meta name="description" content="ChatArchive - Een macOS-app om uw LINE-chatgeschiedenis veilig te back-uppen en te bekijken. Volledig lokale verwerking beschermt uw privacy.">
+    <meta property="og:title" content="ChatArchive Ondersteuning">
+    <meta property="og:description" content="Een macOS-app om uw LINE-chatgeschiedenis veilig te back-uppen en te bekijken.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/ChatArchive-support/nl/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 6px 14px; font-size: 0.85em; color: #b0b0b0; margin: 12px 0 20px; }
+        .hero-badge svg { width: 16px; height: 16px; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px; }
+        .btn-download, .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s; }
+        .btn-download { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; box-shadow: 0 4px 15px rgba(233,69,96,0.3); }
+        .btn-download:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(233,69,96,0.4); }
+        .btn-license { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 24px 0; }
+        .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-align: center; }
+        .feature-icon { font-size: 2em; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 1em; color: #fff; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.9em; color: #a0a0a0; margin: 0; }
+        .steps { display: flex; flex-direction: column; gap: 20px; margin: 24px 0; }
+        .step { display: flex; gap: 20px; align-items: flex-start; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; }
+        .step-number { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, #e94560, #ff6b6b); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1em; color: #fff; }
+        .step-content h3 { color: #fff; margin-bottom: 6px; font-size: 1em; }
+        .step-content p { color: #a0a0a0; font-size: 0.9em; margin: 0; }
+        .faq-list { margin: 24px 0; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 16px 0; }
+        .faq-item summary { cursor: pointer; color: #e0e0e0; font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; color: #e94560; font-size: 1.2em; }
+        .faq-item[open] summary::after { content: '−'; }
+        .faq-answer { padding-top: 12px; color: #a0a0a0; font-size: 0.95em; }
+        .legal-content { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; }
+        .legal-content h3 { color: #fff; margin-bottom: 8px; }
+        .legal-content p { color: #a0a0a0; margin-bottom: 16px; }
+        .legal-content a { color: #e94560; text-decoration: none; }
+        .contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; text-decoration: none; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; font-weight: 600; transition: all 0.3s; margin-top: 16px; }
+        .contact-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        .section-note { font-size: 0.85em; color: #888; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 10px 14px; margin-bottom: 20px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } .features-grid { grid-template-columns: 1fr 1fr; } }
+    
+/* Sidebar styles */
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 8px; color: #808080; text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/ChatArchive-support/nl/" class="active">Support</a>
+      <a href="/ChatArchive-support/nl/blog/">Blog</a>
+      <a href="/ChatArchive-support/nl/privacy.html">Privacy</a>
+      <a href="/ChatArchive-support/nl/terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/ChatArchive-support/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/ChatArchive-support/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/ChatArchive-support/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <span class="sidebar-lang-btn active" data-lang="nl">NL</span>
+    <a href="/ChatArchive-support/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/ChatArchive-support/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/ChatArchive-support/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/th/" class="sidebar-lang-btn" data-lang="th">TH</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        
+        <div class="hero">
+            <img src="/ChatArchive-support/assets/app-icon.png" alt="ChatArchive" class="hero-icon">
+            <h1>ChatArchive</h1>
+            <p>LINE-chat back-up & archiveertool voor Mac</p>
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                macOS 14.0+
+            </div>
+            <div class="hero-buttons">
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-download" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Downloaden
+                </a>
+                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Licentie kopen
+                </a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2 id="features">Hoofdfuncties</h2>
+            <p class="section-note">Werkt met LINE voor iPhone en Mac. LINE voor Android wordt niet ondersteund.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F513;</div>
+                    <h3>Versleutelde DB-ontsleuteling</h3>
+                    <p>Ontsleutelt automatisch de versleutelde database van de berichtenapp.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F5B1;</div>
+                    <h3>Automatisch importeren met één klik</h3>
+                    <p>Geen ingewikkelde installatie. Detecteer en importeer chatgegevens met één klik.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F4AC;</div>
+                    <h3>Chat-interface</h3>
+                    <p>Blader door uw geschiedenis in een vertrouwde chat-interface.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F50D;</div>
+                    <h3>Volledige tekstzoekfunctie</h3>
+                    <p>Zoek door al uw chatgeschiedenis. Vind snel oude berichten.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#x1F512;</div>
+                    <h3>Volledig lokale verwerking</h3>
+                    <p>Alle gegevensverwerking vindt uitsluitend op uw apparaat plaats. Geen netwerkcommunicatie.</p>
+                </div>
+            </div>
+
+            <h2 id="howto">Hoe te gebruiken</h2>
+            <p>Blader door uw chatgeschiedenis in 3 eenvoudige stappen</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>App starten</h3>
+                        <p>Start ChatArchive. Zorg ervoor dat LINE voor Mac op uw computer is geïnstalleerd.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Klik op «Importeren»</h3>
+                        <p>Klik op de importeerknop. De app detecteert, ontsleutelt en importeert de database automatisch.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Chatgeschiedenis bekijken</h3>
+                        <p>Na het importeren kunt u door uw chatgeschiedenis bladeren en zoeken.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="faq">Veelgestelde vragen</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Melding «Gegevens niet gevonden» verschijnt</summary>
+                    <div class="faq-answer"><p>Zorg ervoor dat LINE voor Mac is geïnstalleerd en dat u ten minste één keer bent ingelogd.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Melding «Toegangsmachtiging vereist» verschijnt</summary>
+                    <div class="faq-answer"><p>Verleen «Volledige schijftoegang» in Systeeminstellingen > Privacy en beveiliging > Volledige schijftoegang.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Zijn mijn gegevens veilig?</summary>
+                    <div class="faq-answer"><p>Ja. ChatArchive verwerkt alle gegevens lokaal. Geen netwerkcommunicatie, geen gegevens naar externe servers.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Welke berichtformaten worden ondersteund?</summary>
+                    <div class="faq-answer"><p>Tekstberichten, afbeeldingen, stickers, video's, spraakberichten, bestanden, locatiegegevens en contacten.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Worden afbeeldingen en stickers weergegeven?</summary>
+                    <div class="faq-answer"><p>Afbeeldingen en stickers in de cache worden weergegeven. Als de cache is gewist, worden miniaturen weergegeven.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is een internetverbinding vereist?</summary>
+                    <div class="faq-answer"><p>Nee. ChatArchive werkt volledig offline. Geen netwerkcommunicatie.</p></div>
+                </details>
+            </div>
+
+            <h2 id="privacy">Privacybeleid (samenvatting)</h2>
+            <div class="legal-content">
+                <h3>Gegevensverzameling</h3>
+                <p>ChatArchive verzamelt geen persoonlijke informatie of chatgegevens. Alle verwerking vindt lokaal plaats.</p>
+                <h3>Netwerkcommunicatie</h3>
+                <p>Deze app voert geen netwerkcommunicatie uit. Het werkt volledig offline.</p>
+                <h3>Delen met derden</h3>
+                <p>We verstrekken, delen of verkopen gebruikersgegevens niet aan derden.</p>
+                <p><a href="/ChatArchive-support/nl/privacy.html">Lees het volledige privacybeleid →</a></p>
+            </div>
+
+            <h2 id="contact">Contact</h2>
+            <p>Neem gerust contact met ons op voor vragen of feedback.</p>
+            <a href="https://forms.gle/PLACEHOLDER" class="contact-btn" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Contactformulier
+            </a>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="/ChatArchive-support/nl/privacy.html">Privacybeleid</a></li>
+                <li><a href="/ChatArchive-support/nl/terms.html">Gebruiksvoorwaarden</a></li>
+                <li><a href="/ChatArchive-support/nl/blog/">Blog</a></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('th')) return 'th';
+        if (navLang.startsWith('zh-hant') || navLang === 'zh-tw' || navLang === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var p = currentPath;
+        if (p.includes('/ChatArchive-support/fr/')) return 'fr';
+        if (p.includes('/ChatArchive-support/de/')) return 'de';
+        if (p.includes('/ChatArchive-support/es/')) return 'es';
+        if (p.includes('/ChatArchive-support/it/')) return 'it';
+        if (p.includes('/ChatArchive-support/ko/')) return 'ko';
+        if (p.includes('/ChatArchive-support/nl/')) return 'nl';
+        if (p.includes('/ChatArchive-support/pt-BR/')) return 'pt-BR';
+        if (p.includes('/ChatArchive-support/sv/')) return 'sv';
+        if (p.includes('/ChatArchive-support/zh-Hant/')) return 'zh-Hant';
+        if (p.includes('/ChatArchive-support/th/')) return 'th';
+        if (p.includes('/ChatArchive-support/en/')) return 'en';
+        return 'ja';
+    }
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show');
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>

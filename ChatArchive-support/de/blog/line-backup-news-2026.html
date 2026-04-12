@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LINE Backup in 2026: Current State, Limitations, and Why ChatArchive Matters</title>
+    <meta name="description" content="Explore LINE's backup options in 2026 — Standard Backup, Premium Backup, and export features. Learn how ChatArchive provides complete local backup for Mac users.">
+    <meta property="og:title" content="LINE Backup in 2026: Current State, Limitations, and Why ChatArchive Matters">
+    <meta property="og:description" content="Explore LINE's backup options in 2026 — Standard Backup, Premium Backup, and export features. Learn how ChatArchive provides complete local backup for Mac users.">
+    <meta property="og:type" content="article">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LINE Backup in 2026: Current State, Limitations, and Why ChatArchive Matters",
+        "datePublished": "2026-03-08",
+        "dateModified": "2026-03-08",
+        "author": { "@type": "Person", "name": "hakaru" },
+        "publisher": { "@type": "Organization", "name": "hakaru apps", "url": "https://hakaru.net/" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://hakaru.net/ChatArchive-support/de/blog/line-backup-news-2026.html" },
+        "description": "Explore LINE's backup options in 2026 — Standard Backup, Premium Backup, and export features. Learn how ChatArchive provides complete local backup for Mac users.",
+        "inLanguage": "de"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .article-header { margin-bottom: 40px; }
+        .breadcrumb { font-size: 0.85em; color: #666; margin-bottom: 20px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #e94560; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; color: #b0b0b0; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+        .toc h2 { font-size: 1em; color: #fff; margin: 0 0 12px; border: none; padding: 0; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: #a0a0a0; text-decoration: none; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        .info-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; font-size: 0.9em; }
+        .info-box.tip { background: rgba(46,213,115,0.08); border: 1px solid rgba(46,213,115,0.2); color: #a0d0b0; }
+        .info-box.note { background: rgba(52,152,219,0.08); border: 1px solid rgba(52,152,219,0.2); color: #a0b8d0; }
+        .info-box.warning { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.2); color: #d0b880; }
+        .info-box a { color: #e94560; text-decoration: none; }
+        .cta-box { background: rgba(233,69,96,0.08); border: 1px solid rgba(233,69,96,0.2); border-radius: 12px; padding: 24px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { color: #fff; font-size: 1.3em; margin-bottom: 10px; border: none; padding: 0; }
+        .cta-box p { color: #a0a0a0; margin-bottom: 20px; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-download, .btn-license { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95em; transition: all 0.3s; }
+        .btn-download { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; box-shadow: 0 4px 15px rgba(233,69,96,0.3); }
+        .btn-download:hover { transform: translateY(-2px); }
+        .btn-license { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e0e0e0; }
+        .btn-license:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .article-header h1 { font-size: 1.4em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/ChatArchive-support/de/">Support</a>
+      <a href="/ChatArchive-support/de/blog/" class="active">Blog</a>
+      <a href="/ChatArchive-support/de/privacy.html">Privacy</a>
+      <a href="/ChatArchive-support/de/terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/ChatArchive-support/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/ChatArchive-support/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/ChatArchive-support/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <span class="sidebar-lang-btn active" data-lang="de">DE</span>
+    <a href="/ChatArchive-support/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/ChatArchive-support/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/ChatArchive-support/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/ChatArchive-support/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/ChatArchive-support/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/th/" class="sidebar-lang-btn" data-lang="th">TH</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        
+        
+        <div class="article-header">
+            <nav class="breadcrumb">
+                <a href="/ChatArchive-support/en/">Home</a> &gt; <a href="/ChatArchive-support/en/blog/">Blog</a> &gt; LINE Backup in 2026
+            </nav>
+            <h1>LINE Backup in 2026: Current State, Limitations, and Why ChatArchive Matters</h1>
+            <p class="article-meta">Published: March 8, 2026 &middot; 8 min read</p>
+        </div>
+        <div class="content">
+            <p>As of 2026, LINE remains one of the most widely used messaging apps in Japan, with approximately 97 million active users. Daily conversations, business communications, and family memories &#8212; all accumulate within LINE. However, the backup features designed to protect this valuable data still have significant gaps. This article covers the latest state of LINE backup in 2026, each feature's limitations, and how ChatArchive provides a comprehensive solution.</p>
+
+            <nav class="toc">
+                <h2>Contents</h2>
+                <ol>
+                    <li><a href="#standard">Standard Backup: Current State</a></li>
+                    <li><a href="#premium">Premium Backup (LYP Premium): Latest Updates</a></li>
+                    <li><a href="#export">The Reality of LINE's Export Feature</a></li>
+                    <li><a href="#os-migration">Data Lost During OS Migration</a></li>
+                    <li><a href="#official">The Official Account and System Message Gap</a></li>
+                    <li><a href="#chatarchive">Complete Protection with ChatArchive</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="standard">1. Standard Backup: Current State</h2>
+            <p>LINE's Standard Backup saves chat history to iCloud Drive (iOS) or Google Drive (Android). It's a free feature, and as of 2026, the basic mechanism remains unchanged.</p>
+
+            <h3>Text Messages Only</h3>
+            <p>Standard Backup saves <strong>text messages only</strong>. Photos, videos, voice messages, stickers, and file attachments are not backed up at all. Precious photos shared with friends and family could vanish when you switch devices.</p>
+
+            <h3>Cloud Storage Dependent</h3>
+            <p>If your iCloud or Google Drive runs out of space, the backup fails. iCloud's free tier is limited to just 5GB, and it's often consumed by photos and other app data. Many users find themselves forced to upgrade to a paid plan solely to back up LINE.</p>
+
+            <h3>Manual Execution and Automation Limits</h3>
+            <p>Standard Backup is primarily manual. While an automatic backup setting exists, it requires both a Wi-Fi connection and charging &#8212; with no guarantee it will actually run. If you forget to back up before switching phones, every message since your last backup is permanently lost.</p>
+
+            <h2 id="premium">2. Premium Backup (LYP Premium): Latest Updates</h2>
+            <p>Premium Backup is an enhanced backup feature offered as part of LYP Premium (the merged Yahoo! Premium/LINE Premium service). It addresses many Standard Backup weaknesses, but comes with its own constraints.</p>
+
+            <h3>Real-Time Backup</h3>
+            <p>Premium Backup automatically saves messages &#8212; including photos and videos &#8212; in real time. No manual action required; every message sent or received is backed up automatically.</p>
+
+            <h3>100GB Storage Limit</h3>
+            <p>Despite its advantages, Premium Backup has a <strong>100GB storage cap</strong>. For users who frequently exchange photos and videos or participate in many group chats, reaching this limit is only a matter of time. When exceeded, older media may be automatically deleted, potentially causing data loss without warning.</p>
+
+            <h3>Paid Service Required</h3>
+            <p>Premium Backup is exclusively available to LYP Premium subscribers (monthly fee required). If you cancel for any reason, Premium Backup protection is lost. Even if you re-subscribe later, no backups were performed during the gap.</p>
+
+            <h2 id="export">3. The Reality of LINE's Export Feature</h2>
+            <p>LINE offers a "Send Chat History" feature that exports individual chat rooms as text files. In practice, the limitations are substantial.</p>
+            <ul>
+                <li><strong>One chat at a time</strong>: No bulk export is available. With over 100 chat rooms, you'd need to repeat the process more than 100 times</li>
+                <li><strong>Text format only</strong>: Images, videos, stickers, and files are completely excluded</li>
+                <li><strong>Limited formatting</strong>: Plain text (.txt) only, with no sender icons, read receipts, or other metadata</li>
+                <li><strong>No re-import</strong>: Exported data cannot be imported back into LINE. It's a one-way, read-only operation</li>
+            </ul>
+            <p>For anyone with a significant number of conversations across work and personal life, manual export is not a practical option.</p>
+
+            <h2 id="os-migration">4. Data Lost During OS Migration</h2>
+            <p>Switching between iPhone and Android represents the highest-risk moment for your LINE chat history.</p>
+
+            <div class="info-box warning">
+                <p><strong>Warning:</strong> Without Premium Backup, cross-OS migration restores only the <strong>last 14 days of text messages</strong>. Everything before that &#8212; potentially years of conversations &#8212; is permanently lost in an instant.</p>
+            </div>
+
+            <p>Premium Backup enables full history migration across platforms, but requires the paid subscription. Countless users only discover this limitation at the moment of switching, when it's already too late to act.</p>
+
+            <h2 id="official">5. The Official Account and System Message Gap</h2>
+            <p>A lesser-known issue involves <strong>LINE official account messages and system messages</strong> and their backup limitations.</p>
+            <ul>
+                <li><strong>Official account messages</strong>: Conversations with business LINE official accounts may not be backed up, even with Premium Backup</li>
+                <li><strong>System messages</strong>: Group invitations, member join/leave notifications, and call history may not be preserved</li>
+                <li><strong>Time-limited content</strong>: Coupons and limited-time messages from official accounts may become inaccessible after expiration</li>
+            </ul>
+            <p>For users who rely on LINE official accounts for business communication, this is a serious concern. Important correspondence and contract-related conversations may not be preserved.</p>
+
+            <h2 id="chatarchive">6. Complete Protection with ChatArchive</h2>
+            <p>LINE's official backup alone cannot fully protect your precious chat history. <strong>ChatArchive</strong> is a local backup tool for Mac users that addresses all of these issues in one solution.</p>
+
+            <h3>Local Storage &#8212; No Capacity Limits</h3>
+            <p>No cloud storage quotas to worry about. Store your entire chat history safely on your Mac. Your available disk space is your only limit &#8212; no more stressing over the 100GB cap.</p>
+
+            <h3>Fast Full-Text Search</h3>
+            <p>Search through past conversations instantly. "When was that appointment?" "What was that quote amount?" &#8212; whether for business or personal use, the information you need is always at your fingertips.</p>
+
+            <h3>Long-Term Archival</h3>
+            <p>Create a permanent archive independent of your LINE account status or device condition. Years from now, even after switching devices multiple times, your Mac backup remains intact and accessible.</p>
+
+            <h3>Complete Privacy Protection</h3>
+            <p>Your data exists only on your Mac. No uploads to external servers, ever. Zero network communication, zero cloud dependency &#8212; your private conversations stay completely private.</p>
+
+            <h2>Related Articles</h2>
+            <ul>
+                <li><a href="/ChatArchive-support/en/blog/line-backup-complete-guide.html">The Complete Guide to Backing Up All LINE Chat History on Mac</a></li>
+                <li><a href="/ChatArchive-support/en/blog/line-export-all-chats.html">How to Export All LINE Chats as Text Files</a></li>
+                <li><a href="/ChatArchive-support/en/blog/chatarchive-getting-started.html">Getting Started with ChatArchive</a></li>
+            </ul>
+
+            <div class="cta-box">
+                <h2>Protect Your Chat History Today</h2>
+                <p>Concerned about LINE's backup limitations?<br>Start backing up locally with ChatArchive &#8212; unlimited storage, full privacy, one-time purchase.</p>
+                <div class="cta-buttons">
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-download" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Buy License
+                    </a>
+                    <a href="https://hakaru.lemonsqueezy.com/checkout/buy/22d0c5ae-3b31-4834-837d-7373fd1d5bba" class="btn-license" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Free Download
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 ChatArchive. All rights reserved.</p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('th')) return 'th';
+        if (navLang.startsWith('zh-hant') || navLang === 'zh-tw' || navLang === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var p = currentPath;
+        if (p.includes('/ChatArchive-support/fr/')) return 'fr';
+        if (p.includes('/ChatArchive-support/de/')) return 'de';
+        if (p.includes('/ChatArchive-support/es/')) return 'es';
+        if (p.includes('/ChatArchive-support/it/')) return 'it';
+        if (p.includes('/ChatArchive-support/ko/')) return 'ko';
+        if (p.includes('/ChatArchive-support/nl/')) return 'nl';
+        if (p.includes('/ChatArchive-support/pt-BR/')) return 'pt-BR';
+        if (p.includes('/ChatArchive-support/sv/')) return 'sv';
+        if (p.includes('/ChatArchive-support/zh-Hant/')) return 'zh-Hant';
+        if (p.includes('/ChatArchive-support/th/')) return 'th';
+        if (p.includes('/ChatArchive-support/en/')) return 'en';
+        return 'ja';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) { window.location.href = langAlt.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+})();
+
+</script>
+</body>
+</html>
