@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memoria di Luce e Violenza FET sull'iPhone: Compressione a Due Stadi | 1Take Blog</title>
+    <meta name="description" content="La compressione ottica dell'LA-2A e la compressione FET dell'1176. Come 1Take ricrea l'estetica non lineare dell'attrezzatura vintage.">
+    <meta property="og:title" content="Memoria di Luce e Violenza FET sull'iPhone: La Follia della Compressione a Due Stadi">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/it/2026-01-22-note-nd2887d7c0b9d/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Memoria di Luce e Violenza FET sull'iPhone: La Follia della Compressione a Due Stadi","datePublished":"2026-01-22","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/it/2026-01-22-note-nd2887d7c0b9d/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-it">Supporto</a>
+      <a href="/1Take-support/manual/it/">Manuale</a>
+      <a href="/1Take-support/blog/it/" class="active">Blog</a>
+      <a href="/1Take-support/changelog-it">Modifiche</a>
+      <a href="/1Take-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-01-22-note-nd2887d7c0b9d/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="it">Italiano</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="article-header">
+            <h1>Memoria di Luce e Violenza FET sull'iPhone: La Follia della Compressione a Due Stadi Oltre il Semplice Registratore</h1>
+            <div class="article-meta">22 gennaio 2026</div>
+        </div>
+
+        <div class="content">
+            <h2>Introduzione</h2>
+            <p>Sono lo sviluppatore di 1Take. Nel mio articolo precedente ho trattato le basi della compressione, ma questa volta vado un po' più in profondità.</p>
+            <p>Quando ho progettato 1Take, il mio punto di riferimento non erano gli ultimi plugin digitali. Era il comportamento fisico degli anni '60 — quando le valvole termoioniche e i primi transistor creavano una "magia musicale".</p>
+            <p>Perché Memo Vocali non ci soddisfa? Perché manca l'"estetica non lineare" che dovrebbe esserci. Lasciami raccontare la "texture" che 1Take ricrea sull'iPhone — qualcosa di cui si preoccupano solo i nerd dell'attrezzatura, ma di importanza critica per i musicisti.</p>
+
+            <hr>
+
+            <h2>1. Il Respiro Non Lineare della Cellula T4: Modalità Studio che Eredita l'LA-2A</h2>
+            <p>Il modello del preset "Studio" è il re indiscusso dei compressori ottici: <strong>Teletronix LA-2A</strong>.</p>
+
+            <h3>Approfondimento: Il Romanticismo della Lampadina e della Fotocellula</h3>
+            <p>Il cuore dell'LA-2A è l'"attenuatore ottico T4", che combina una lampadina e una fotocellula. Quando il suono diventa più forte, la lampadina all'interno brilla, e la "cella fotoconduttrice" rileva quella luce per ridurre il volume. La magia avviene in quel momento in cui l'elettricità si converte in luce.</p>
+
+            <h3>L'Approccio di 1Take</h3>
+            <p>Ho ricreato il caratteristico "rilascio a due stadi" dell'LA-2A che torna lentamente dopo essere stato colpito. Dopo un picco importante, fluttua lentamente nell'arco di secondi, mentre risponde rapidamente ai suoni sottili. Questo "respiro" è il motivo per cui le voci "fluttuano sopra" il mix.</p>
+            <p><strong>Osserva questo</strong>: Guarda come l'ago del misuratore GR torna con una sensazione "appiccicosa", come se avesse una mente propria.</p>
+
+            <hr>
+
+            <h2>2. La Scossa Elettrica del FET e il Bordo di Distorsione: La Potenza Distruttiva della Modalità Studio+</h2>
+            <p>"Studio+" modella il mostro del 1967: <strong>UREI 1176</strong>.</p>
+
+            <h3>Approfondimento: L'Estetica "All Buttons In" di 0,00002 Secondi</h3>
+            <p>La caratteristica principale dell'1176 è la sua velocità di attacco insana grazie all'uso del FET (Field Effect Transistor) come elemento di controllo. Al massimo: 20 microsecondi. Plasma praticamente l'"attacco" del suono stesso.</p>
+
+            <h3>L'Approccio di 1Take</h3>
+            <p>Quando pensi all'1176, pensi alla modalità "All Buttons In" — premere tutti i pulsanti del ratio simultaneamente. Studio+ simula anche quella distintiva <strong>"saturazione aggressiva".</strong></p>
+            <p><strong>Ascolta questo</strong>: L'esplosione "BANG!" quando colpisci un rullante. Il suono non diventa più piccolo — le armoniche ad alta frequenza aumentano e il suono viene "in avanti". Estraiamo quel carattere FET violentemente punchante dall'ingresso del minuscolo microfono dell'iPhone.</p>
+
+            <hr>
+
+            <h2>3. Collegamento in Serie Comp A→B: Ricreando la Tecnica Classica dello Studio</h2>
+            <p>1Take collega due compressori in serie:</p>
+            <pre><code>Ingresso → [Comp A: Domatore di Picchi] → [Comp B: Costruttore di Corpo] → Uscita</code></pre>
+            <ul>
+                <li><strong>Comp A (stile 1176)</strong>: Attacco rapido per "disciplinare" i picchi improvvisi in millisecondi.</li>
+                <li><strong>Comp B (stile LA-2A/VCA)</strong>: Aggiunge "densità" al segnale domato dal Comp A, dando un corpo ricco con rilascio lento.</li>
+            </ul>
+
+            <hr>
+
+            <h2>4. Il "Min (Linea Gialla)" del Misuratore GR è l'Occhio dell'Ingegnere</h2>
+            <p>Il misuratore GR di 1Take ha un <strong>"Min (linea gialla)"</strong> che mantiene la compressione massima degli ultimi 5 secondi.</p>
+            <blockquote style="border-left: 3px solid rgba(255,255,255,0.2); padding-left: 16px; color: #a0a0a0; margin: 16px 0;">
+                "Quel take — l'1176 (Studio+) stava prendendo 12dB sulla nota alta del ritornello. Ma poiché il rilascio dell'LA-2A (Studio) è morbido, non si è disfatto musicalmente."
+            </blockquote>
+            <p>Volevo creare quella "conversazione con l'attrezzatura" nell'esperienza di registrazione sull'iPhone.</p>
+
+            <hr>
+
+            <h2>Conclusione</h2>
+            <p>La grandezza dell'attrezzatura vintage non sta nei numeri del foglio specifiche — sta in quel "comportamento goffo eppure musicale".</p>
+            <p><strong>1Take mira a intrappolare la "fluttuazione" e la "passione" analogiche all'interno del freddo dispositivo digitale che è l'iPhone.</strong></p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Scarica su App Store</a></li>
+                <li><a href="/1Take-support/index-it">Pagina di Supporto</a></li>
+                <li><a href="/1Take-support/privacy-it">Privacy Policy</a></li>
+            </ul>
+            <p style="color: #666; font-size: 0.9em; margin-top: 16px;"><em>Articolo originale: <a href="https://note.com/hakaru/n/nd2887d7c0b9d">note.com</a> (giapponese)</em></p>
+
+            <div class="related">
+                <h3>Articoli Correlati</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/it/2026-01-22-introducing-1take/">Trasforma il tuo iPhone nel Registratore Definitivo</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-01-24-iphone-mic-secrets/">Smontare il "Territorio Sacro" del Microfono iPhone</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-02-03-understanding-recording-analysis/">Approfondimento: Come Funziona il Sistema di Analisi delle Registrazioni di 1Take</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); });
+        }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang]; return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded'); if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

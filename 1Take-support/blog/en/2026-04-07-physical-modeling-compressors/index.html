@@ -120,6 +120,9 @@ body {
     padding: 15px 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
 }
 .sidebar-lang-btn {
     display: inline-block;
@@ -274,8 +277,7 @@ body {
     </div>
   </div>
   <div class="sidebar-lang">
-    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/1Take-support/blog/en/2026-04-07-physical-modeling-compressors/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <span class="sidebar-lang-btn active" data-lang="en">English</span>
   </div>
 </nav>
 <div class="content-pane">
@@ -384,36 +386,54 @@ body {
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
     }
+
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) {
+                map[lang] = basePath.replace('LANG', lang);
+            });
+        }
+        return map;
+    })();
 
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
-    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
-            return;
-        }
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
     }
 
     document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
@@ -461,7 +481,6 @@ body {
         });
     });
 })();
-
 </script>
 </body>
 </html>

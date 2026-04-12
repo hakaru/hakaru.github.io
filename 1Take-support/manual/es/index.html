@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual de usuario 1Take | hakaru</title>
+    <meta name="description" content="Guía completa para usar 1Take – Aplicación de grabación de audio profesional para iPhone.">
+    <meta property="og:title" content="Manual de usuario 1Take">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/manual/es/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 20px 20px 40px; margin-bottom: 30px; }
+        .toc li { margin-bottom: 6px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menú">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-es">Soporte</a>
+      <a href="/1Take-support/manual/es/" class="active">Manual</a>
+      <a href="/1Take-support/blog/es/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacidad</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/manual/en/">Manual</a><a href="/GitInflow-support/blog/en/">Blog</a><a href="/GitInflow-support/changelog">Changelog</a><a href="/GitInflow-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div></div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/manual/en/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="es">Español</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Grabador de audio profesional para iOS</p>
+        </div>
+        <div class="content">
+            <h2>Manual de usuario 1Take</h2>
+            <p>Bienvenido a 1Take, la aplicación de grabación de audio profesional diseñada para músicos. Este manual le guiará por todas las funciones para sacar el máximo partido de sus grabaciones.</p>
+
+            <ol class="toc">
+                <li><a href="#getting-started">Primeros pasos</a></li>
+                <li><a href="#recording-basics">Conceptos básicos de grabación</a></li>
+                <li><a href="#recording-analysis">Análisis de grabación</a></li>
+                <li><a href="#ai-optimization">Optimización automática con IA</a></li>
+                <li><a href="#cloud-sync">Sincronización en la nube</a></li>
+                <li><a href="#gps-location">Etiquetado de ubicación GPS</a></li>
+                <li><a href="#presets">Presets</a></li>
+                <li><a href="#signal-chain">Cadena de procesamiento de señal</a></li>
+                <li><a href="#preroll">Grabación pre-roll</a></li>
+                <li><a href="#auto-record">Grabación automática</a></li>
+                <li><a href="#meters">Medidores</a></li>
+                <li><a href="#markers">Marcadores</a></li>
+                <li><a href="#recordings-library">Biblioteca de grabaciones</a></li>
+                <li><a href="#export">Exportar</a></li>
+                <li><a href="#settings">Ajustes</a></li>
+                <li><a href="#pro-features">Funciones Pro</a></li>
+            </ol>
+
+            <hr>
+
+            <h2 id="getting-started">Primeros pasos</h2>
+            <h3>Primer inicio</h3>
+            <p>Al abrir 1Take por primera vez, se le pedirá que conceda acceso al micrófono. Esto es necesario para que la app pueda grabar audio.</p>
+            <h3>Pantalla principal</h3>
+            <p>La pantalla principal consta de:</p>
+            <ul>
+                <li><strong>Medidor de nivel</strong>: Muestra los niveles de audio en tiempo real (pulse para alternar entre VU/GR/Espectro/LUFS)</li>
+                <li><strong>Botón de grabación</strong>: Iniciar/detener la grabación (centro)</li>
+                <li><strong>Mando TRIM</strong>: Ajustar la ganancia de entrada (izquierda)</li>
+                <li><strong>Mando THRESH</strong>: Ajustar el umbral del gate (derecha)</li>
+                <li><strong>Selector de preset</strong>: Elegir perfil de sonido (arriba)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording-basics">Conceptos básicos de grabación</h2>
+            <h3>Iniciar una grabación</h3>
+            <ol>
+                <li>Pulse el botón <strong>Grabar</strong> para iniciar</li>
+                <li>El botón se vuelve rojo y aparece un temporizador</li>
+                <li>Pulse de nuevo para detener y guardar</li>
+            </ol>
+            <h3>Añadir marcadores</h3>
+            <p>Durante la grabación, pulse el botón <strong>Marcador</strong> para añadir un marcador en la posición actual.</p>
+            <h3>Alerta al detener la grabación</h3>
+            <p>Al detener la grabación, aparece una alerta con:</p>
+            <ul>
+                <li><strong>Duración</strong>: Duración total de la grabación</li>
+                <li><strong>Integridad</strong>: Porcentaje de datos de audio capturados correctamente (objetivo: 100%)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording-analysis">Análisis de grabación</h2>
+            <p>1Take v1.3.0 introduce el análisis automático de calidad de grabación usando algoritmos de radiodifusión estándar (ITU-R BS.1770-4).</p>
+            <h3>Qué se analiza</h3>
+            <p>Después de cada grabación, 1Take evalúa automáticamente:</p>
+            <ul>
+                <li><strong>Nivel de pico (dBFS)</strong>: Valor de muestra máximo (de -6 a -12 dBFS es ideal)</li>
+                <li><strong>Nivel RMS (dBFS)</strong>: Volumen promedio a lo largo del tiempo</li>
+                <li><strong>Factor de cresta (dB)</strong>: Rango dinámico (pico menos RMS)</li>
+                <li><strong>LUFS</strong>: Sonoridad percibida (objetivo -14 a -16 LUFS para streaming)</li>
+                <li><strong>True Peak (dBTP)</strong>: Nivel de pico entre muestras (mantener por debajo de -1 dBTP)</li>
+                <li><strong>Rango de sonoridad (LRA)</strong>: Variación estadística de sonoridad</li>
+            </ul>
+            <h3>Valores de referencia</h3>
+            <table>
+                <thead><tr><th>Métrica</th><th>Rango óptimo</th><th>Notas</th></tr></thead>
+                <tbody>
+                    <tr><td>Pico</td><td>-12 a -6 dBFS</td><td>Dejar headroom</td></tr>
+                    <tr><td>LUFS</td><td>-16 a -14 LUFS</td><td>Estándar streaming</td></tr>
+                    <tr><td>True Peak</td><td>Por debajo de -1 dBTP</td><td>Evita clipping</td></tr>
+                    <tr><td>Factor de cresta</td><td>8-14 dB</td><td>Dinámica equilibrada</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="ai-optimization">Optimización automática con IA</h2>
+            <p>Después de cada grabación, 1Take analiza automáticamente su audio y ajusta los parámetros del preset para mejorar la siguiente toma. Todo se ejecuta en el dispositivo, sin conexión a Internet.</p>
+            <h3>Cómo funciona</h3>
+            <ol>
+                <li>Detener una grabación (debe durar al menos 5 segundos)</li>
+                <li>1Take analiza sonoridad, picos, piso de ruido, dinámica y balance de frecuencias</li>
+                <li>Si se detectan problemas, la app ajusta los ajustes del preset actual</li>
+                <li>Aparece un banner indicando cuántos ajustes se optimizaron</li>
+            </ol>
+            <p>Pulse el banner para ver cada ajuste con valores antes/después y la razón (p. ej., «Clipping detectado — Trim entrada: −6 dB → −9 dB»).</p>
+            <h3>Libre vs Pro</h3>
+            <p>Todos los usuarios pueden ver los resultados del análisis. <strong>Aplicar los ajustes automáticamente requiere Pro.</strong></p>
+            <p>Para desactivar la optimización con IA, desactive <strong>Auto-Optimizar</strong> en Ajustes.</p>
+
+            <hr>
+
+            <h2 id="cloud-sync">Sincronización en la nube</h2>
+            <p>1Take puede subir automáticamente las grabaciones al almacenamiento en la nube. La sincronización es gratuita para todos los usuarios.</p>
+            <h3>Proveedores compatibles</h3>
+            <table>
+                <thead><tr><th>Proveedor</th><th>Autenticación</th><th>Notas</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>iCloud Drive</strong></td><td>Apple ID del sistema</td><td>Sin inicio de sesión. Las grabaciones aparecen en Finder en Mac.</td></tr>
+                    <tr><td><strong>Google Drive</strong></td><td>OAuth (Safari)</td><td>Almacenado en carpeta 1Take.</td></tr>
+                    <tr><td><strong>Dropbox</strong></td><td>OAuth con PKCE</td><td>Almacenado en Apps/1Take.</td></tr>
+                    <tr><td><strong>Backblaze B2</strong></td><td>Clave API</td><td>Introducir ID de clave, clave, nombre del bucket y prefijo de ruta opcional.</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="gps-location">Etiquetado de ubicación GPS</h2>
+            <p>1Take captura su ubicación al iniciar la grabación para recordar dónde se realizó cada toma.</p>
+
+            <hr>
+
+            <h2 id="presets">Presets</h2>
+            <p>1Take incluye tres presets elaborados con inspiración en equipos de audio legendarios:</p>
+            <h3>Studio (estilo LA-2A)</h3>
+            <ul>
+                <li><strong>Ideal para</strong>: Voz, guitarra acústica, podcasts</li>
+                <li><strong>Carácter</strong>: Compresión cálida y suave con cualidades de tubo</li>
+                <li><strong>Expansión estéreo</strong>: OFF</li>
+            </ul>
+            <h3>Studio+ (estilo 1176)</h3>
+            <ul>
+                <li><strong>Ideal para</strong>: Batería, guitarra eléctrica, actuaciones enérgicas</li>
+                <li><strong>Carácter</strong>: Compresión contundente y agresiva con ataque rápido</li>
+                <li><strong>Expansión estéreo</strong>: OFF</li>
+            </ul>
+            <h3>Live (estilo VCA)</h3>
+            <ul>
+                <li><strong>Ideal para</strong>: Actuaciones en directo, ensayos con alto volumen</li>
+                <li><strong>Carácter</strong>: Compresión limpia y transparente sin distorsión</li>
+                <li><strong>Expansión estéreo</strong>: ON (anchura mejorada)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="signal-chain">Cadena de procesamiento de señal</h2>
+            <p>1Take procesa el audio en tiempo real a través de una cadena de señal profesional:</p>
+            <pre><code>Entrada → Trim → Gate → EQ → Comp A → Comp B → Saturación → Estéreo → Maximizer → Salida</code></pre>
+
+            <hr>
+
+            <h2 id="preroll">Grabación pre-roll</h2>
+            <p>¡No pierda nunca una buena toma! El pre-roll almacena continuamente el audio en búfer para capturar momentos ocurridos <em>antes</em> de pulsar grabar.</p>
+
+            <hr>
+
+            <h2 id="auto-record">Grabación automática</h2>
+            <p>La grabación automática inicia y detiene la grabación según los niveles de audio.</p>
+
+            <hr>
+
+            <h2 id="meters">Medidores</h2>
+            <p>Pulse la pantalla de medidor para cambiar entre cuatro modos: VU, GR, Espectro y LUFS.</p>
+
+            <hr>
+
+            <h2 id="markers">Marcadores</h2>
+            <h3>Marcadores de usuario</h3><p>Añadidos manualmente pulsando el botón Marcador durante la grabación.</p>
+            <h3>Marcadores de clipping (CLIP)</h3><p>Añadidos automáticamente cuando el audio supera 0 dBFS.</p>
+            <h3>Marcadores Over (OVER)</h3><p>Añadidos automáticamente cuando True Peak supera -1 dBTP.</p>
+
+            <hr>
+
+            <h2 id="recordings-library">Biblioteca de grabaciones</h2>
+            <p>Acceda a sus grabaciones pulsando el icono de lista.</p>
+
+            <hr>
+
+            <h2 id="export">Exportar</h2>
+            <h3>Formatos de exportación</h3>
+            <table>
+                <thead><tr><th>Formato</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Original</strong></td><td>Mantener el archivo en su formato grabado (WAV, BWF, MP3 o AAC)</td></tr>
+                    <tr><td><strong>MP3</strong></td><td>Convertir a MP3 (128/192/256/320 kbps)</td></tr>
+                    <tr><td><strong>AAC</strong></td><td>Convertir a AAC (.m4a) (128/192/256/320 kbps)</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="settings">Ajustes</h2>
+            <h3>Rendimiento</h3>
+            <p><strong>Tamaño de búfer</strong>: Controla la compensación entre latencia y estabilidad. Recomendado: 4096.</p>
+            <h3>Formato de archivo</h3>
+            <ul>
+                <li><strong>WAV (16 bits)</strong>: Calidad estándar, archivos más pequeños</li>
+                <li><strong>WAV (24 bits)</strong>: Mayor calidad (Pro)</li>
+                <li><strong>BWF (16/24 bits)</strong>: Broadcast Wave con timecode (Pro)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="pro-features">Funciones Pro</h2>
+            <p>Actualice a Pro para desbloquear:</p>
+            <ul>
+                <li><strong>Aplicación automática de IA</strong> — Aplicar ajustes de optimización automáticamente</li>
+                <li><strong>Pre-roll ampliado</strong> — Hasta 30 segundos de búfer</li>
+                <li><strong>Presets personalizados</strong> — Ajuste completo de todos los parámetros</li>
+                <li><strong>Formato BWF</strong> — Broadcast Wave con timecode integrado</li>
+                <li><strong>Grabación 24 bits</strong> — Mayor profundidad de bits</li>
+                <li><strong>Grabación directa MP3/AAC</strong> — Grabar directamente en formatos comprimidos</li>
+            </ul>
+
+            <hr>
+
+            <h2>Soporte</h2>
+            <p>¿Necesita ayuda? Visite nuestra <a href="/1Take-support/">página de soporte</a> o contáctenos en <a href="mailto:onetake@hakaru.net">onetake@hakaru.net</a>.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:onetake@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    var langUrlMap = {'en':'/1Take-support/manual/en/','ja':'/1Take-support/manual/ja/','fr':'/1Take-support/manual/fr/','de':'/1Take-support/manual/de/','es':'/1Take-support/manual/es/','it':'/1Take-support/manual/it/','ko':'/1Take-support/manual/ko/','nl':'/1Take-support/manual/nl/','pt-BR':'/1Take-support/manual/pt-BR/','sv':'/1Take-support/manual/sv/','zh-Hant':'/1Take-support/manual/zh-Hant/'};
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja'; if (n.startsWith('fr')) return 'fr'; if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es'; if (n.startsWith('it')) return 'it'; if (n === 'ko') return 'ko';
+        if (n.startsWith('nl')) return 'nl'; if (n === 'pt-br' || n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv'; if (n.startsWith('zh-hant') || n === 'zh-tw' || n === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang(), userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var d = langUrlMap[userLang]; if (d) { window.location.href = d; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+        h.addEventListener('click', function() {
+            var links = this.nextElementSibling, was = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(x) { x.classList.remove('expanded'); if (x.nextElementSibling) x.nextElementSibling.classList.remove('show'); });
+            if (!was) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var ca = document.querySelector('.sidebar-app-header.active');
+    if (ca) { ca.classList.add('expanded'); if (ca.nextElementSibling) ca.nextElementSibling.classList.add('show'); }
+    var tog = document.querySelector('.sidebar-toggle'), sb = document.querySelector('.sidebar'), ov = document.querySelector('.sidebar-overlay');
+    if (tog) { tog.addEventListener('click', function() { sb.classList.toggle('open'); ov.classList.toggle('show'); }); }
+    if (ov) { ov.addEventListener('click', function() { sb.classList.remove('open'); ov.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b) { b.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take Política de Privacidade | hakaru</title>
+    <meta name="description" content="Política de privacidade do 1Take - Gravador de áudio profissional para iOS.">
+    <meta property="og:title" content="1Take Política de Privacidade">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/privacy-pt-BR">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-pt-BR">Suporte</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Alterações</a>
+      <a href="/1Take-support/privacy-pt-BR" class="active">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/privacy" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="pt-BR">Português</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Gravador de Áudio Profissional para iOS</p>
+        </div>
+
+        <div class="content">
+            <h2>Política de Privacidade</h2>
+            <p><strong>Última atualização: 24 de janeiro de 2026</strong></p>
+
+            <h2>Introdução</h2>
+            <p>O 1Take ("nós", "nosso" ou "o aplicativo") está comprometido em proteger sua privacidade. Esta política de privacidade explica como tratamos as informações quando você usa nosso aplicativo iOS.</p>
+
+            <h2>Resumo</h2>
+            <p>O 1Take coleta dados de diagnóstico anônimos para melhorar a estabilidade do aplicativo e a experiência do usuário. Todas as suas gravações de áudio permanecem armazenadas apenas localmente no seu dispositivo e nunca são enviadas para nenhum servidor.</p>
+
+            <h2>Gravações de Áudio</h2>
+            <p>Todas as gravações de áudio que você cria com o 1Take são:</p>
+            <ul>
+                <li>Armazenadas <strong>apenas localmente no seu dispositivo</strong></li>
+                <li><strong>Nunca enviadas</strong> para nenhum servidor</li>
+                <li>Acessíveis somente por você</li>
+                <li>Exportáveis pelo aplicativo Arquivos ou pela folha de compartilhamento</li>
+            </ul>
+
+            <h2>Dados que Coletamos</h2>
+            <p>O 1Take usa o Firebase, um serviço fornecido pelo Google, para coletar dados de diagnóstico anônimos. Isso nos ajuda a melhorar a estabilidade do aplicativo e a entender como ele é utilizado.</p>
+
+            <h3>Dados de Falhas (Firebase Crashlytics)</h3>
+            <p>Quando o aplicativo trava, coletamos automaticamente:</p>
+            <ul>
+                <li>Tipo de dispositivo e versão do iOS</li>
+                <li>Versão do aplicativo e número de build</li>
+                <li>Logs de falha e rastreamentos de pilha</li>
+                <li>Uso de memória e disco no momento da falha</li>
+            </ul>
+
+            <h3>Estatísticas de Uso (Firebase Analytics)</h3>
+            <p>Coletamos dados de uso anônimos, incluindo:</p>
+            <ul>
+                <li>Aberturas do aplicativo e duração da sessão</li>
+                <li>Padrões de uso de recursos</li>
+                <li>Tipo de dispositivo e versão do iOS</li>
+                <li>Identificador de dispositivo anônimo (não vinculado à sua identidade)</li>
+            </ul>
+
+            <h3>Resumo da Coleta de Dados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Dado</th>
+                        <th>Finalidade</th>
+                        <th>Vinculado a Você</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dados de Falha</td>
+                        <td>Funcionalidade do App</td>
+                        <td>Não</td>
+                    </tr>
+                    <tr>
+                        <td>Dados de Desempenho</td>
+                        <td>Funcionalidade do App</td>
+                        <td>Não</td>
+                    </tr>
+                    <tr>
+                        <td>Dados de Uso</td>
+                        <td>Analytics</td>
+                        <td>Não</td>
+                    </tr>
+                    <tr>
+                        <td>ID do Dispositivo</td>
+                        <td>Analytics</td>
+                        <td>Não</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>O que NÃO Coletamos</h2>
+            <ul>
+                <li>Suas gravações de áudio ou qualquer conteúdo que você cria</li>
+                <li>Informações pessoais (nome, e-mail, etc.)</li>
+                <li>Dados de localização</li>
+                <li>Dados de contatos ou calendário</li>
+                <li>Dados para fins publicitários</li>
+            </ul>
+
+            <h2>Rastreamento e Publicidade</h2>
+            <p><strong>Não rastreamos você para fins publicitários.</strong> O 1Take:</p>
+            <ul>
+                <li>Não usa identificadores de publicidade (IDFA)</li>
+                <li>Não compartilha dados com anunciantes</li>
+                <li>Não rastreia você em outros aplicativos ou sites</li>
+                <li>Não requer permissão de Transparência de Rastreamento de Aplicativos</li>
+            </ul>
+
+            <h2>Acesso ao Microfone</h2>
+            <p>O 1Take requer acesso ao microfone para gravar áudio. Esta permissão é:</p>
+            <ul>
+                <li>Usada exclusivamente para a funcionalidade de gravação de áudio</li>
+                <li>Ativa apenas quando você inicia explicitamente uma gravação</li>
+                <li>Controlável pelas Configurações do iOS a qualquer momento</li>
+            </ul>
+
+            <h2>Serviços de Terceiros</h2>
+            <p>O 1Take utiliza os seguintes serviços de terceiros:</p>
+            <ul>
+                <li><strong>Firebase Crashlytics</strong> - Relatórios de falhas e diagnósticos</li>
+                <li><strong>Firebase Analytics</strong> - Estatísticas de uso anônimas</li>
+            </ul>
+            <p>Esses serviços são fornecidos pelo Google. Para mais informações, consulte a <a href="https://firebase.google.com/support/privacy">Política de Privacidade do Firebase</a>.</p>
+
+            <h2>Retenção de Dados</h2>
+            <p>Os dados de falhas e análises são retidos pelo Firebase de acordo com suas políticas de retenção padrão. Esses dados são anônimos e não podem ser usados para identificá-lo.</p>
+
+            <h2>Exclusão de Dados</h2>
+            <p>Você pode excluir suas gravações a qualquer momento pela aba Gravações do aplicativo. Desinstalar o aplicativo removerá todos os dados locais do seu dispositivo.</p>
+
+            <h2>Privacidade de Crianças</h2>
+            <p>O 1Take não coleta intencionalmente informações pessoais de crianças menores de 13 anos. Os dados de diagnóstico anônimos que coletamos não estão vinculados a nenhum usuário individual.</p>
+
+            <h2>Alterações nesta Política</h2>
+            <p>Podemos atualizar esta política de privacidade periodicamente. Notificaremos você sobre quaisquer alterações publicando a nova política de privacidade nesta página e atualizando a data de "Última atualização".</p>
+
+            <h2>Entre em Contato</h2>
+            <p>Se você tiver alguma dúvida sobre esta política de privacidade, entre em contato conosco em:<br>
+            <a href="mailto:onetake@hakaru.net"><strong>onetake@hakaru.net</strong></a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/ja/') !== -1 || currentPath.indexOf('/blog/ja/') !== -1) return 'ja';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+
+    var langUrlMap = {
+        'en': '/1Take-support/privacy',
+        'ja': '/1Take-support/privacy-ja',
+        'fr': '/1Take-support/privacy-fr',
+        'de': '/1Take-support/privacy-de',
+        'es': '/1Take-support/privacy-es',
+        'it': '/1Take-support/privacy-it',
+        'ko': '/1Take-support/privacy-ko',
+        'nl': '/1Take-support/privacy-nl',
+        'pt-BR': '/1Take-support/privacy-pt-BR',
+        'sv': '/1Take-support/privacy-sv',
+        'zh-Hant': '/1Take-support/privacy-zh-Hant'
+    };
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>

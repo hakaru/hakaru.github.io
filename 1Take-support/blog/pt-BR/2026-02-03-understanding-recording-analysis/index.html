@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entendendo a Análise de Gravação | Blog 1Take</title>
+    <meta name="description" content="Uma análise técnica das métricas de Análise de Gravação do 1Take: ITU-R BS.1770-4, Peak/RMS/Fator de Crista/LUFS/True Peak e oversampling 4x.">
+    <meta property="og:title" content="Entendendo a Análise de Gravação">
+    <meta property="og:description" content="Uma análise técnica das métricas de Análise de Gravação do 1Take: ITU-R BS.1770-4, Peak/RMS/Fator de Crista/LUFS/True Peak e oversampling 4x.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/pt-BR/2026-02-03-understanding-recording-analysis/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Entendendo a Análise de Gravação","datePublished":"3 de fevereiro de 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/pt-BR/2026-02-03-understanding-recording-analysis/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-pt-BR">Suporte</a>
+      <a href="/1Take-support/manual/pt-BR/">Manual</a>
+      <a href="/1Take-support/blog/pt-BR/" class="active">Blog</a>
+      <a href="/1Take-support/changelog-pt-BR">Alterações</a>
+      <a href="/1Take-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-02-03-understanding-recording-analysis/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="pt-BR">Português</span>
+  </div>
+</nav>
+<div class="content-pane">
+  <div class="container">
+    <div class="article-header">
+      <h1>Entendendo a Análise de Gravação</h1>
+      <div class="article-meta">3 de fevereiro de 2026</div>
+    </div>
+    <div class="content">
+      <p>O 1Take v1.3.0 introduziu a Análise de Gravação — um conjunto de métricas calculadas após cada gravação. Aqui está o que cada número significa e por que é importante.</p>
+
+      <h2>O Padrão: ITU-R BS.1770-4</h2>
+      <p>O loudness de áudio não é simples. A amplitude de pico diz "o sinal chegou até aqui", mas não diz como o som será percebido. O padrão ITU-R BS.1770-4 define como calcular o loudness integrado de forma que corresponda à percepção humana — levando em conta que ouvidos humanos são mais sensíveis a certas frequências.</p>
+      <p>É o padrão usado por Spotify, YouTube, Apple Music e todas as principais plataformas de streaming para normalizar o volume entre faixas.</p>
+
+      <h2>As Métricas</h2>
+
+      <h3>Peak (Pico)</h3>
+      <p>O nível de amostra mais alto na gravação. Expresso em dBFS (decibéis relativo ao fundo de escala). 0 dBFS é o máximo antes do clipping digital. Boas gravações ficam em torno de -3 dBFS a -6 dBFS de pico.</p>
+
+      <h3>RMS</h3>
+      <p>Root Mean Square — uma medida de loudness médio ao longo do tempo. Mais próxima da percepção de volume que o Peak, mas sem a sofisticação de ponderação de frequência do LUFS.</p>
+
+      <h3>Fator de Crista (Crest Factor)</h3>
+      <p>A diferença entre Peak e RMS em dB. Um fator de crista alto indica uma gravação dinâmica — há muita diferença entre os momentos mais suaves e os mais altos. Um fator de crista baixo indica compressão pesada ou clipping.</p>
+
+      <h3>LUFS (Integrated)</h3>
+      <p>Loudness Units relativo ao Fundo de Escala — a medida de loudness integrado segundo o ITU-R BS.1770-4, ponderado por frequência e por tempo. É o número que as plataformas de streaming usam. Alvos comuns:</p>
+      <table>
+        <tr><th>Plataforma</th><th>Alvo LUFS</th></tr>
+        <tr><td>Spotify</td><td>-14 LUFS</td></tr>
+        <tr><td>YouTube</td><td>-14 LUFS</td></tr>
+        <tr><td>Apple Music</td><td>-16 LUFS</td></tr>
+        <tr><td>Podcast típico</td><td>-16 a -19 LUFS</td></tr>
+      </table>
+
+      <h3>True Peak</h3>
+      <p>O nível de pico entre as amostras — calculado com oversampling 4x. O 1Take usa oversampling 4x para detectar inter-sample peaks que não aparecem no Peak normal. True Peak acima de -1 dBTP pode causar distorção em alguns sistemas de reprodução e é rejeitado por algumas plataformas de distribuição.</p>
+
+      <h3>THD+N (Distorção Harmônica Total + Ruído)</h3>
+      <p>Uma medida da coloração introduzida pelo processamento de sinal. Expresso como porcentagem ou dB. Valores mais baixos indicam um caminho de sinal mais limpo. Os compressores do 1Take introduzem THD+N intencionalmente — é parte do que os torna "musicais".</p>
+
+      <h3>Piso de Ruído</h3>
+      <p>O nível de ruído durante os momentos silenciosos da gravação. Expresso em dBFS. Quanto mais baixo, melhor. Um piso de ruído de -60 dBFS ou inferior é considerado bom para gravações de iPhone.</p>
+
+      <h2>Como Usar os Números</h2>
+      <p>Na prática, os números mais úteis são:</p>
+      <ul>
+        <li><strong>LUFS</strong> — Para saber se sua gravação vai ser muito baixa ou muito alta nas plataformas de streaming</li>
+        <li><strong>True Peak</strong> — Para verificar se há distorção oculta entre amostras</li>
+        <li><strong>Piso de Ruído</strong> — Para avaliar a qualidade acústica do ambiente de gravação</li>
+      </ul>
+
+      <div class="related">
+        <h3>Artigos Relacionados</h3>
+        <ul>
+          <li><a href="/1Take-support/blog/pt-BR/2026-02-03-1take-v130-released/">1Take v1.3.0: Análise de Gravação e Calibração Automática</a></li>
+          <li><a href="/1Take-support/blog/pt-BR/2026-03-29-ai-auto-optimization/">Otimização Automática por IA: Como o 1Take Ajusta Seu Som</a></li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2026 hakaru. All rights reserved.</p>
+      <p style="margin-top: 10px;">
+        <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+        <span style="margin: 0 10px;">|</span>
+        <a href="mailto:onetake@hakaru.net">Contact</a>
+      </p>
+    </footer>
+  </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';if (navLang.startsWith('fr')) return 'fr';if (navLang.startsWith('de')) return 'de';if (navLang.startsWith('es')) return 'es';if (navLang.startsWith('it')) return 'it';if (navLang.startsWith('ko')) return 'ko';if (navLang.startsWith('nl')) return 'nl';if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';if (navLang.startsWith('sv')) return 'sv';if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) { if (currentPath.indexOf('/th/') !== -1) return 'th';if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant'; }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) { var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); }); }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) { window.location.href = langUrlMap[userLang];return; }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) { header.addEventListener('click', function() { var links = this.nextElementSibling;var wasExpanded = this.classList.contains('expanded');document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded');if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });if (!wasExpanded) { this.classList.add('expanded');if (links) links.classList.add('show'); } }); });
+    var currentApp = document.querySelector('.sidebar-app-header.active');if (currentApp) { currentApp.classList.add('expanded');if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');var sidebar = document.querySelector('.sidebar');var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open');overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open');overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) { btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>

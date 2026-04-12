@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take Änderungsprotokoll | hakaru</title>
+    <meta name="description" content="Versionshistorie und Versionshinweise für 1Take - Professionelles Audioaufnahmegerät für iOS.">
+    <meta property="og:title" content="1Take Änderungsprotokoll">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/changelog-de">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-de">Support</a>
+      <a href="/1Take-support/manual/en/">Handbuch</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog-de" class="active">Änderungen</a>
+      <a href="/1Take-support/privacy">Datenschutz</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/changelog" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="de">Deutsch</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Professioneller Audio-Rekorder für iOS</p>
+        </div>
+
+        <div class="content">
+            <h2>Änderungsprotokoll</h2>
+            <p>Alle nennenswerten Änderungen an 1Take werden hier dokumentiert.</p>
+
+            <hr>
+
+            <h2>[1.4.1] - 2026-04-01</h2>
+            <p>Pro-Einschränkung für KI-Optimierung und kritische Fehlerbehebungen.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>KI-Optimierung nur für Pro</strong> - Das Anwenden von KI-Optimierungsergebnissen erfordert nun Pro. Kostenlose Nutzer können Analyseergebnisse einsehen, Anpassungen werden jedoch nicht übernommen</li>
+                <li><code>wasApplied</code>-Flag zur Optimierungshistorie hinzugefügt, um zu verhindern, dass nicht angewendete Analysen die Historie verunreinigen</li>
+            </ul>
+
+            <h3>Behoben</h3>
+            <ul>
+                <li>KI-Optimierung bei stillen Aufnahmen, die den Kompressor-Schwellenwert auf nicht wiederherstellbare Werte setzte, behoben</li>
+                <li>OAuth-Authentifizierungssitzungs-Persistenz und Token-URL-Kodierung für die Cloud-Synchronisierung behoben</li>
+                <li>Grenzfälle bei der Cloud-Synchronisierungstaktung, die zu gelegentlichen Upload-Fehlern führten, behoben</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-23</h2>
+            <p>Stabilitätsverbesserungen und wiederherstellbares Löschen.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>Wiederherstellbares Löschen von Aufnahmen</strong> - Gelöschte Aufnahmen werden in der Dateien-App in den Ordner „Zuletzt gelöscht" verschoben und können 30 Tage lang wiederhergestellt werden</li>
+            </ul>
+
+            <h3>Behoben</h3>
+            <ul>
+                <li>Seltenen Absturz während der Audiowiedergabe behoben, der durch einen rekursiven Aufruf bei Sitzungsunterbrechung verursacht wurde</li>
+                <li>Seltenen Absturz beim Tippen auf die Aufnahmetaste behoben, bevor die Audiohardware bereit war</li>
+                <li>Bessere Wiederherstellung nach Telefonanrufen und Siri-Aktivierung während der Wiedergabe</li>
+                <li>Vollständige Konformität mit der strikten Nebenläufigkeitsprüfung von Swift 6</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-08</h2>
+            <p>MP3/AAC-Export, Stapelexport und Pro-Verbesserungen.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>MP3/AAC-Export (Pro)</strong> - Aufnahmen in komprimierte Formate zum einfachen Teilen exportieren</li>
+                <li><strong>Stapelexport (Pro)</strong> - Mehrere Aufnahmen gleichzeitig exportieren</li>
+                <li><strong>Hochqualitätsexport (Pro)</strong> - 24-Bit-WAV/BWF-Export für maximale Audioqualität</li>
+                <li>Verbesserte Pro-Funktionsentdeckung mit Eintippen-Zugriff von gesperrten Funktionen</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.0] - 2026-02-03</h2>
+            <p>Aufnahmeanalyse, intelligente Auto-Kalibrierung, 5-Band-EQ und Performance-Optimierungen.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>Aufnahmeanalysesystem</strong>
+                    <ul>
+                        <li>Automatische Audioqualitätsbewertung nach der Aufnahme</li>
+                        <li>Analyse von Spitzenpegel, RMS-Pegel, Crest Factor und LUFS</li>
+                        <li>Dynamikumfangsbewertung</li>
+                        <li>Aufnahmequalitätsbericht mit Empfehlungen</li>
+                    </ul>
+                </li>
+                <li><strong>Intelligente Auto-Kalibrierung für Auto-Aufnahme</strong>
+                    <ul>
+                        <li>Automatische Schwellenwertberechnung basierend auf dem Umgebungsgeräusch</li>
+                        <li>Hysterese-Steuerung für stabiles Auslösen</li>
+                        <li>Eintippen-Einrichtung über die Auto-Schaltfläche</li>
+                        <li>Hintergrundgeräuschmessung</li>
+                    </ul>
+                </li>
+                <li><strong>5-Band-Parametrischer-EQ</strong>
+                    <ul>
+                        <li>Professioneller 5-Band-Parametrischer-Equalizer</li>
+                        <li>Frequenz-, Gain- und Q-Steuerung (Bandbreite) pro Band</li>
+                        <li>Visuelle Frequenzgangkurve mit ziehbaren Steuerpunkten</li>
+                    </ul>
+                </li>
+                <li><strong>Schlafverhindungseinstellung</strong> - Optionale Einstellung „Bildschirm eingeschaltet lassen"</li>
+                <li><strong>Verbesserte Mikrofonerkennung</strong></li>
+            </ul>
+
+            <h3>Geändert</h3>
+            <ul>
+                <li>Schaltfläche „Analyze" in „Auto" umbenannt (Auto-Aufnahme-Kalibrierung)</li>
+                <li>Aufnahmequalitätsanalyse läuft nun automatisch nach dem Ende der Aufnahme</li>
+                <li>Markersystem vereinfacht: Manuelle Good/Bad/Memo-Marker entfernt (automatische CLIP/OVER-Marker beibehalten)</li>
+                <li>4-Band-EQ auf 5-Band-Parametrischen-EQ aufgerüstet</li>
+            </ul>
+
+            <h3>Behoben</h3>
+            <ul>
+                <li>Abstürze bei Aufnahmen langer Dauer behoben</li>
+                <li>Fehlerbehandlung und Wiederherstellung der Audio-Engine verbessert</li>
+                <li>Bessere Ressourcenbereinigung bei Audio-Routenänderungen</li>
+                <li>Thread-sicheres Audio-Processing mit sperrenfreien Atomics</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <ul>
+                <li>NSLock-Nutzung im Echtzeit-Audio-Callback eliminiert</li>
+                <li>Swift Atomics für sperrenfreie Nebenläufigkeit eingeführt</li>
+                <li>VU-Ballistics jetzt im Audio-Thread berechnet (null Latenz)</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.2.0] - 2026-01-24</h2>
+            <p>Professionelle LUFS-Messung, verbesserte Pro-Funktionen und Firebase-Integration.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>LUFS-Messung (ITU-R BS.1770-4)</strong>
+                    <ul>
+                        <li>Momentan (400 ms), Kurzzeit (3 s), Integrierte Lautheit</li>
+                        <li>True-Peak-Messung mit 4-facher Überabtastung</li>
+                        <li>Zum Wechseln auf Messgerät tippen: VU → GR → LUFS → VU</li>
+                    </ul>
+                </li>
+                <li><strong>Pro-Funktionen (In-App-Kauf)</strong>
+                    <ul>
+                        <li>24-Bit-WAV/BWF-Export für professionelle Workflows</li>
+                        <li>Benutzerdefinierte Audio-Voreinstellungen mit vollständiger Parametersteuerung</li>
+                        <li>BWF-Format (Broadcast Wave Format) mit eingebetteten Metadaten</li>
+                    </ul>
+                </li>
+                <li><strong>BWF-Formatunterstützung</strong></li>
+            </ul>
+
+            <h3>Behoben</h3>
+            <ul>
+                <li>Wiederherstellung bei Audio-Routenänderungen mit Wiederholungslogik</li>
+                <li>Verbessertes Trennen von USB-C-Mikrofonen</li>
+                <li>Thread-Sicherheit des LUFS-Analysators</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.1.0] - 2026-01-22</h2>
+            <p>Arm-Modus, Pre-Roll und Spektrum-Analysator.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li><strong>Arm-Modus</strong> - ARM-Schaltfläche zum Betreten des Wartezustands mit Ringpuffer</li>
+                <li><strong>Pre-Roll-Aufnahme</strong> - 5 Sekunden Audio vor dem Aufnahmeknopf erfasst</li>
+                <li><strong>Echtzeit-Spektrum-Analysator</strong> - FFT-basiert mit 32-Band-logarithmischer Skala</li>
+                <li><strong>GR-Messgerät (Gain Reduction)</strong> - Auf VU-Messgerät tippen zum Wechseln</li>
+                <li><strong>Eingabequellen-Badge</strong> - Aktuelle Eingabequelle anzeigen</li>
+                <li><strong>In-App-Hilfesystem</strong> - 10+ Hilfethemen mit Englisch/Japanisch-Lokalisierung</li>
+            </ul>
+
+            <h3>Geändert</h3>
+            <ul>
+                <li>Spektrum-Tab aus der Hauptnavigation entfernt (jetzt 2 Tabs: Aufnehmen, Aufnahmen)</li>
+                <li>Peak-Reset auf festes 5-Sekunden-Intervall geändert</li>
+            </ul>
+
+            <h3>Behoben</h3>
+            <ul>
+                <li>Stereoaufnahme funktioniert jetzt korrekt</li>
+                <li>Routenänderung während der Aufnahme: sicheres Stoppen + Datei schließen</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.0.0] - 2026-01-21</h2>
+            <p>Erstveröffentlichung.</p>
+
+            <h3>Hinzugefügt</h3>
+            <ul>
+                <li>Hochwertige Audioaufnahme (WAV 16-Bit-PCM, 48 kHz)</li>
+                <li>Stereoaufnahme auf unterstützten Geräten</li>
+                <li>Professionelle Signalkette: Noise Gate → EQ → Kompressor → Limiter</li>
+                <li>Vier Voreinstellungen: Flat, Studio, Studio+, Live</li>
+                <li>VU-Messgerät mit Peak-Hold und Clip-Erkennung</li>
+                <li>Smart-Kontext-Marker (GOOD, BAD, MEMO, CLIP)</li>
+                <li>Clip Guard mit haptischem Feedback</li>
+                <li>Aufnahmeverwaltung mit Share-Sheet-Export</li>
+                <li>Englische und japanische Lokalisierung</li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/ja/') !== -1 || currentPath.indexOf('/blog/ja/') !== -1) return 'ja';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+
+    var langUrlMap = {
+        'en': '/1Take-support/changelog',
+        'ja': '/1Take-support/changelog-ja',
+        'fr': '/1Take-support/changelog-fr',
+        'de': '/1Take-support/changelog-de',
+        'es': '/1Take-support/changelog-es',
+        'it': '/1Take-support/changelog-it',
+        'ko': '/1Take-support/changelog-ko',
+        'nl': '/1Take-support/changelog-nl',
+        'pt-BR': '/1Take-support/changelog-pt-BR',
+        'sv': '/1Take-support/changelog-sv',
+        'zh-Hant': '/1Take-support/changelog-zh-Hant'
+    };
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dall'iPhone al DAW in Secondi: Il Flusso di Lavoro BWF a 24 bit di 1Take Pro | 1Take Blog</title>
+    <meta name="description" content="L'uscita BWF a 24 bit di 1Take Pro ti permette di portare le registrazioni iPhone direttamente nel tuo DAW. Guida passo-passo per Logic Pro, GarageBand e Ableton Live.">
+    <meta property="og:title" content="Dall'iPhone al DAW in Secondi: Il Flusso di Lavoro BWF a 24 bit di 1Take Pro">
+    <meta property="og:description" content="L'uscita BWF a 24 bit di 1Take Pro ti permette di portare le registrazioni iPhone direttamente nel tuo DAW. Guida passo-passo per Logic Pro, GarageBand e Ableton Live.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/it/2026-03-08-daw-workflow-with-1take-pro/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Dall'iPhone al DAW in Secondi: Il Flusso di Lavoro BWF a 24 bit di 1Take Pro","datePublished":"8 marzo 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/it/2026-03-08-daw-workflow-with-1take-pro/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+/* Sidebar styles */
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-it">Supporto</a>
+      <a href="/1Take-support/manual/it/">Manuale</a>
+      <a href="/1Take-support/blog/it/" class="active">Blog</a>
+      <a href="/1Take-support/changelog-it">Modifiche</a>
+      <a href="/1Take-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-03-08-daw-workflow-with-1take-pro/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="it">Italiano</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="article-header">
+            <h1>Dall'iPhone al DAW in Secondi: Il Flusso di Lavoro BWF a 24 bit di 1Take Pro</h1>
+            <div class="article-meta">8 marzo 2026</div>
+        </div>
+        <div class="content">
+            <h2>Ti Suona Familiare?</h2>
+            <ul>
+                <li>Hai registrato una grande take su Voice Memos, ma il file AAC suona degradato nel tuo DAW</li>
+                <li>Le tue registrazioni a 16 bit si sgretolano quando aggiungi EQ e compressione</li>
+                <li>Hai segnato un momento importante durante la registrazione, ma non riesci a trovarlo nella timeline del DAW</li>
+            </ul>
+            <p><strong>1Take Pro</strong> risolve tutti questi problemi.</p>
+            <hr>
+            <h2>Perché il BWF a 24 bit è Importante</h2>
+            <h3>Cosa Significano i Bit in Più</h3>
+            <table>
+                <thead><tr><th></th><th>16 bit (Voice Memos)</th><th>24 bit (1Take Pro)</th></tr></thead>
+                <tbody>
+                    <tr><td>Gamma dinamica</td><td>96 dB</td><td><strong>144 dB</strong></td></tr>
+                    <tr><td>Rumore di fondo</td><td>-96 dBFS</td><td><strong>-144 dBFS</strong></td></tr>
+                    <tr><td>Margine di editing</td><td>EQ/compressione espone il rumore</td><td><strong>Gestisce la lavorazione intensa</strong></td></tr>
+                </tbody>
+            </table>
+            <h3>Cos'è il BWF (Broadcast Wave Format)?</h3>
+            <p>Il BWF è il formato standard del settore broadcast — un'estensione del WAV che <strong>incorpora metadati</strong> direttamente nel file. L'uscita BWF di 1Take Pro include il chunk BEXT, i cue marker (punti CLIP/OVER) e i timestamp.</p>
+            <hr>
+            <h2>Guida all'Integrazione con il DAW</h2>
+            <h3>Logic Pro</h3>
+            <ol>
+                <li>Registra con 1Take — seleziona BWF a 24 bit nelle impostazioni Pro</li>
+                <li>Trasferisci — pulsante Condividi → AirDrop o app File su Mac</li>
+                <li>Trascina e rilascia in Logic — nessuna conversione necessaria</li>
+                <li>Controlla i marker — i cue marker BWF appaiono come metadati della regione</li>
+            </ol>
+            <h3>GarageBand (Mac / iPad)</h3>
+            <ol>
+                <li>Invia il file di registrazione tramite AirDrop</li>
+                <li>Rilascialo nell'area delle tracce di GarageBand</li>
+                <li>Modifica immediatamente — GarageBand supporta pienamente WAV/BWF a 24 bit</li>
+            </ol>
+            <h3>Ableton Live</h3>
+            <ol>
+                <li>Trasferisci su Mac (AirDrop / iCloud / cavo)</li>
+                <li>Trascina dal browser di Ableton</li>
+                <li>Imposta la modalità Warp se sincronizzi al tempo</li>
+            </ol>
+            <hr>
+            <h2>Riepilogo</h2>
+            <p>L'uscita BWF a 24 bit di 1Take Pro rende reale il concetto di "registra su iPhone, finisci nel DAW".</p>
+            <ul>
+                <li><strong>24 bit</strong> = gamma dinamica enorme per un editing senza paure</li>
+                <li><strong>BWF</strong> = marker e metadati trasferiti nel DAW</li>
+                <li><strong>Nessuna conversione</strong> = trascina, rilascia, fatto</li>
+            </ul>
+            <hr>
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Scarica su App Store</a></li>
+                <li><a href="/1Take-support/index-it">Pagina di Supporto</a></li>
+                <li><a href="/1Take-support/privacy-it">Informativa sulla Privacy</a></li>
+            </ul>
+            <div class="related">
+                <h3>Articoli Correlati</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/it/2026-03-08-voice-memos-vs-1take/">Voice Memos vs 1Take: 5 Motivi per cui i Musicisti Dovrebbero Passare</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-03-08-iphone-pro-recording-guide/">La Guida Completa alla Registrazione Professionale con iPhone</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-03-08-1take-v132-new-features/">1Take v1.3.2: Esportazione MP3/AAC, Esportazione in Batch e Miglioramenti Pro</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); });
+        }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

@@ -313,17 +313,8 @@ body {
     </div>
   </div>
   <div class="sidebar-lang">
-    <a href="/1Take-support/" class="sidebar-lang-btn" data-lang="en">EN</a>
-    <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
-    <a href="/1Take-support/index-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
-    <a href="/1Take-support/index-de" class="sidebar-lang-btn" data-lang="de">DE</a>
-    <a href="/1Take-support/index-es" class="sidebar-lang-btn" data-lang="es">ES</a>
-    <a href="/1Take-support/index-it" class="sidebar-lang-btn" data-lang="it">IT</a>
-    <a href="/1Take-support/index-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
-    <a href="/1Take-support/index-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
-    <a href="/1Take-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
-    <a href="/1Take-support/index-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
-    <a href="/1Take-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
+    <a href="/1Take-support/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="ja">日本語</span>
   </div>
 </nav>
 <div class="content-pane">
@@ -452,14 +443,25 @@ body {
         return 'en';
     }
 
+    var langUrlMap = {
+        'en': '/1Take-support/',
+        'ja': '/1Take-support/index-ja',
+        'fr': '/1Take-support/index-fr',
+        'de': '/1Take-support/index-de',
+        'es': '/1Take-support/index-es',
+        'it': '/1Take-support/index-it',
+        'ko': '/1Take-support/index-ko',
+        'nl': '/1Take-support/index-nl',
+        'pt-BR': '/1Take-support/index-pt-BR',
+        'sv': '/1Take-support/index-sv',
+        'zh-Hant': '/1Take-support/index-zh-Hant'
+    };
+
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
-    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
-            return;
-        }
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
     }
 
     document.querySelectorAll('.sidebar-app-header').forEach(function(header) {

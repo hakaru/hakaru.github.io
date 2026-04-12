@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perché Backblaze B2 è il Miglior Backup Cloud per i Musicisti | 1Take Blog</title>
+    <meta name="description" content="Caricamenti gratuiti, storage a $0.006/GB, durabilità a undici nani. Ecco perché B2 si adatta naturalmente al flusso di lavoro di registrazione audio.">
+    <meta property="og:title" content="Perché Backblaze B2 è il Miglior Backup Cloud per i Musicisti">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/it/2026-03-29-backblaze-b2-musicians-backup/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Perché Backblaze B2 è il Miglior Backup Cloud per i Musicisti","datePublished":"29 marzo 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/it/2026-03-29-backblaze-b2-musicians-backup/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-it">Supporto</a>
+      <a href="/1Take-support/manual/it/">Manuale</a>
+      <a href="/1Take-support/blog/it/" class="active">Blog</a>
+      <a href="/1Take-support/changelog-it">Modifiche</a>
+      <a href="/1Take-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-03-29-backblaze-b2-musicians-backup/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="it">Italiano</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="article-header">
+            <h1>Perché Backblaze B2 è il Miglior Backup Cloud per i Musicisti</h1>
+            <div class="article-meta">29 marzo 2026</div>
+        </div>
+        <div class="content">
+            <h2>Il Problema con la Maggior Parte del Cloud Storage per l'Audio</h2>
+            <p>I musicisti generano molti dati. Una singola sessione WAV a 24 bit può raggiungere diversi gigabyte. Registra regolarmente a casa per un anno e ti ritrovi con decine di gigabyte di take, demo e registrazioni dal vivo che semplicemente non possono essere ricreate se un disco si guasta.</p>
+            <p>I servizi consumer come iCloud e Google One vanno bene per uso generale, ma hanno livelli di storage fissi, cap relativamente bassi e nessuna API che consenta a un'app come 1Take di automatizzare i caricamenti in background. Lo storage a oggetti per sviluppatori (Amazon S3, Google Cloud Storage, Wasabi) ha accesso completo alle API, ma i prezzi hanno alcune insidie che contano davvero per i flussi di lavoro di registrazione.</p>
+            <p>B2 si trova tra questi due mondi. API per sviluppatori, prezzi adatti a come i musicisti usano effettivamente lo storage.</p>
+            <hr>
+            <h2>Come Funzionano i Prezzi di B2</h2>
+            <p>A marzo 2026, Backblaze B2 applica i seguenti prezzi:</p>
+            <ul>
+                <li>Storage: $0.006/GB al mese ($6/TB). Sale a $0.00695/GB ($6.95/TB) dall'1 maggio 2026.</li>
+                <li>Primi 10 GB: sempre gratuiti, nessuna carta di credito richiesta.</li>
+                <li>Caricamenti: gratuiti. Non paghi mai per inviare dati a B2.</li>
+                <li>Download: gratuiti fino a 3 volte i tuoi dati medi memorizzati al mese, poi $0.01/GB dopo.</li>
+                <li>Chiamate API: Classe A (caricamenti, creazioni) sempre gratuite. Classe B e C attualmente con 2.500 gratuite al giorno; accesso gratuito completo pianificato da maggio 2026.</li>
+            </ul>
+            <p>Il numero più importante per il backup di registrazioni: i caricamenti costano <strong>$0</strong>. Ogni file WAV, ogni take, ogni backup di sessione arriva in B2 senza toccare il tuo conto. Paghi solo per lo storage che usi effettivamente.</p>
+            <hr>
+            <h2>Confronto dei Costi</h2>
+            <p>Queste stime assumono un musicista che registra circa 10 GB di audio al mese — tipico per la registrazione WAV domestica regolare.</p>
+            <table>
+                <thead>
+                    <tr><th>Servizio</th><th>Costo Anno 1 (stima)</th><th>Costo Caricamento</th><th>Note</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Backblaze B2</strong></td><td>~$4–5</td><td>Gratuito</td><td>Primi 10 GB gratuiti; paghi solo per lo storage oltre quel limite</td></tr>
+                    <tr><td>Amazon S3</td><td>~$18–20</td><td>Gratuito</td><td>Storage a $0.023/GB — circa 4 volte il tasso B2</td></tr>
+                    <tr><td>Wasabi</td><td>~$84</td><td>Gratuito</td><td>Addebito minimo di 1 TB ($6.99/mese indipendentemente da quanto poco memorizzi)</td></tr>
+                    <tr><td>Google One 100 GB</td><td>$35.88</td><td>N/D</td><td>Piano consumer; nessuna API per backup automatizzato</td></tr>
+                    <tr><td>iCloud 50 GB</td><td>$11.88</td><td>N/D</td><td>Limitato a 50 GB; nessun accesso API esterno</td></tr>
+                </tbody>
+            </table>
+            <p>Il numero di Wasabi necessita di qualche spiegazione. $6.99/TB sembra competitivo, ma Wasabi ti addebita un intero terabyte anche se memorizzi 10 GB. Inoltre, c'è una politica di storage minimo di 90 giorni per oggetto — elimina un file dopo un giorno e ti viene comunque addebitato per 90. Per un archivio audio in lenta crescita, si accumula rapidamente.</p>
+            <p>S3 non ha minimi, ma $0.023/GB è quasi quattro volte quello che B2 applica. Un archivio da 120 GB a fine anno costa circa $2.76/mese su S3 rispetto a $0.72/mese su B2.</p>
+            <hr>
+            <h2>Perché il Pattern di Caricamento Conta</h2>
+            <p>La maggior parte dei prezzi del cloud storage presuppone che tu scarichi frequentemente. Il backup di registrazioni non funziona così.</p>
+            <p>Il pattern è: carica costantemente, scarica quasi mai. I file vengono caricati dopo ogni sessione. Tornano quando un disco si guasta, quando cambi computer o quando devi condividere stem con un produttore remoto. Forse alcune volte all'anno, se non meno.</p>
+            <p>Il limite di download gratuito di B2 è 3 volte i tuoi dati medi memorizzati al mese. Con un archivio da 120 GB, sono 360 GB gratuiti ogni mese. Anche un ripristino completo di tutto usa solo un terzo di quel limite. Dovresti essere piuttosto creativo per superare il tier gratuito con un backup di registrazioni.</p>
+            <hr>
+            <h2>Affidabilità</h2>
+            <p>La durabilità dei dati dichiarata da Backblaze è del <strong>99.999999999% (undici nani)</strong> — lo stesso numero che Amazon cita per S3. Architetture diverse, stesso risultato pratico: perdere un file per un guasto hardware è statisticamente trascurabile.</p>
+            <p>Backblaze ottiene questo attraverso la sua architettura Vault: ogni file viene distribuito su 20 pod di storage usando codifica di cancellazione Reed-Solomon. Più pod possono guastarsi simultaneamente e ogni file può ancora essere ricostruito.</p>
+            <p>Al contrario, un hard disk consumer si guasta a circa 1–3% all'anno. Memorizzare le registrazioni solo su un disco locale e le probabilità ti raggiungeranno nel corso di alcuni anni, anche con più copie locali. Il backup off-site con durabilità a undici nani elimina quel rischio, per meno del costo di un disco sostitutivo nello stesso periodo.</p>
+            <hr>
+            <h2>Un Primo Anno Realistico</h2>
+            <p>Ecco come appaiono effettivamente i numeri per 10 GB/mese, tenendo tutto:</p>
+            <ul>
+                <li>Mese 1: 10 GB memorizzati — $0 (nel tier gratuito)</li>
+                <li>Mese 2: 20 GB memorizzati — $0.06/mese</li>
+                <li>Mese 6: 60 GB memorizzati — $0.30/mese</li>
+                <li>Mese 12: 120 GB memorizzati — $0.66/mese</li>
+                <li>Totale per l'anno: circa $4–5</li>
+            </ul>
+            <p>Tutti i caricamenti sono gratuiti. Se scarichi occasionalmente file per mixare su un altro computer, sarai comunque ampiamente entro il limite di download gratuito per l'intero anno.</p>
+            <p>Dopo maggio 2026, il tasso sale a $0.00695/GB, quindi lo stesso scenario costa circa $4.50–5.50 per il primo anno. Ancora meno di $5.50.</p>
+            <hr>
+            <h2>Come 1Take Funziona con Backblaze B2</h2>
+            <p>Ho integrato il supporto B2 in 1Take v1.4 come parte di Cloud Sync. La configurazione richiede tre cose: il tuo Application Key ID B2, Application Key e un nome bucket. Puoi anche aggiungere un prefisso di percorso se vuoi tenere le registrazioni in una cartella specifica all'interno del bucket.</p>
+            <p>Dopo di che, tutto funziona automaticamente:</p>
+            <ul>
+                <li>Ogni registrazione viene messa in coda per il caricamento nel momento in cui smetti di registrare.</li>
+                <li>I caricamenti avvengono in background tramite Wi-Fi (o dati mobili, se lo abiliti nelle Impostazioni).</li>
+                <li>Se un caricamento fallisce per una connessione caduta o un'interruzione temporanea di B2, 1Take riprova. Il limite di tentativi e l'intervallo sono entrambi configurabili.</li>
+                <li>Ogni tentativo di caricamento viene registrato, così puoi vedere esattamente cosa è stato salvato e cosa è ancora in sospeso.</li>
+            </ul>
+            <p>L'integrazione B2 è disponibile per tutti gli utenti di 1Take, incluso il tier gratuito. Nessun costo aggiuntivo da parte mia.</p>
+            <h3>Ottenere un Account B2</h3>
+            <p>Registrati su <a href="https://www.backblaze.com/cloud-storage" target="_blank" rel="noopener">backblaze.com</a>. I primi 10 GB sono gratuiti, nessuna carta di credito necessaria. Per connettere 1Take, crea una Application Key con accesso in lettura e scrittura al tuo bucket — richiede circa due minuti nel dashboard B2.</p>
+            <hr>
+            <h2>Conclusione</h2>
+            <p>Se registri regolarmente e vuoi backup off-site automatizzato che non costi molto, B2 è la migliore opzione che ho trovato tra i servizi che hanno effettivamente un'API per sviluppatori. I caricamenti gratuiti si adattano naturalmente al flusso di lavoro di registrazione. Il tier di storage gratuito gestisce completamente l'uso leggero. E i numeri di durabilità sono alla pari con S3 a una frazione del prezzo.</p>
+            <p>Se al momento ti affidi a un disco locale o a un piano consumer con capacità limitata, configurare B2 in Cloud Sync di 1Take è probabilmente il modo più rapido per risolvere effettivamente il problema.</p>
+            <div class="related">
+                <h3>Articoli Correlati</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/it/2026-03-29-cloud-sync-multi-provider/">Cloud Sync: Backup Automatico su iCloud, Google Drive, Dropbox e Altro</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-03-29-1take-v14-released/">1Take v1.4: Cloud Sync, Ottimizzazione AI, Tag GPS e Altro</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); });
+        }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

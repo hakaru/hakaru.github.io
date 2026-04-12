@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take Historique des versions | hakaru</title>
+    <meta name="description" content="Historique des versions et notes de mise à jour pour 1Take - Enregistreur audio professionnel pour iOS.">
+    <meta property="og:title" content="1Take Historique des versions">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/changelog-fr">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-fr">Assistance</a>
+      <a href="/1Take-support/manual/en/">Manuel</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog-fr" class="active">Historique</a>
+      <a href="/1Take-support/privacy">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/changelog" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="fr">Français</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Enregistreur audio professionnel pour iOS</p>
+        </div>
+
+        <div class="content">
+            <h2>Historique des versions</h2>
+            <p>Toutes les modifications notables de 1Take sont documentées ici.</p>
+
+            <hr>
+
+            <h2>[1.4.1] - 2026-04-01</h2>
+            <p>Restriction Pro pour l'optimisation IA et corrections de bugs critiques.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Optimisation IA réservée aux abonnés Pro</strong> - L'application des résultats d'optimisation automatique IA nécessite désormais un abonnement Pro. Les utilisateurs gratuits peuvent consulter les résultats d'analyse mais les ajustements ne sont pas appliqués</li>
+                <li>Ajout du drapeau <code>wasApplied</code> à l'historique d'optimisation pour éviter que les analyses non appliquées ne contaminent l'historique</li>
+            </ul>
+
+            <h3>Corrigé</h3>
+            <ul>
+                <li>Correction de l'optimisation IA sur les enregistrements silencieux qui amenait le seuil du compresseur à des valeurs irrécupérables</li>
+                <li>Correction de la persistance de session d'authentification OAuth et de l'encodage URL des tokens pour la synchronisation cloud</li>
+                <li>Correction des cas limites de synchronisation cloud provoquant des échecs d'envoi intermittents</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-23</h2>
+            <p>Améliorations de stabilité et suppression récupérable.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Suppression récupérable des enregistrements</strong> - Les enregistrements supprimés sont déplacés vers « Supprimés récemment » dans l'app Fichiers, récupérables pendant 30 jours</li>
+            </ul>
+
+            <h3>Corrigé</h3>
+            <ul>
+                <li>Correction d'un crash rare lors de la lecture audio causé par un appel récursif lors d'une interruption de session</li>
+                <li>Correction d'un crash rare lors d'un appui sur le bouton d'enregistrement avant que le matériel audio soit prêt</li>
+                <li>Meilleure récupération après les appels téléphoniques et l'activation de Siri pendant la lecture</li>
+                <li>Conformité totale avec la vérification de concurrence stricte de Swift 6</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.2] - 2026-03-08</h2>
+            <p>Export MP3/AAC, export par lot et améliorations Pro.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Export MP3/AAC (Pro)</strong> - Exportez vos enregistrements en formats compressés pour un partage facile</li>
+                <li><strong>Export par lot (Pro)</strong> - Exportez plusieurs enregistrements en une seule fois</li>
+                <li><strong>Export haute qualité (Pro)</strong> - Export WAV/BWF 24 bits pour une fidélité audio maximale</li>
+                <li>Amélioration de la découverte des fonctionnalités Pro avec un accès en un clic depuis les fonctions verrouillées</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.3.0] - 2026-02-03</h2>
+            <p>Analyse d'enregistrement, calibration automatique intelligente, égaliseur 5 bandes et optimisations des performances.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Système d'analyse d'enregistrement</strong>
+                    <ul>
+                        <li>Évaluation automatique de la qualité audio après l'enregistrement</li>
+                        <li>Analyse du niveau de crête, niveau RMS, facteur de crête, LUFS</li>
+                        <li>Évaluation de la plage dynamique</li>
+                        <li>Rapport de qualité d'enregistrement avec recommandations</li>
+                    </ul>
+                </li>
+                <li><strong>Calibration intelligente de l'enregistrement automatique</strong>
+                    <ul>
+                        <li>Calcul automatique du seuil basé sur le bruit ambiant</li>
+                        <li>Contrôle de l'hystérésis pour un déclenchement stable</li>
+                        <li>Configuration en un clic via le bouton Auto</li>
+                        <li>Mesure du bruit de fond</li>
+                    </ul>
+                </li>
+                <li><strong>Égaliseur paramétrique 5 bandes</strong>
+                    <ul>
+                        <li>Égaliseur paramétrique 5 bandes de qualité professionnelle</li>
+                        <li>Contrôle de la fréquence, du gain et du Q (largeur de bande) par bande</li>
+                        <li>Courbe de réponse en fréquence visuelle avec points de contrôle déplaçables</li>
+                    </ul>
+                </li>
+                <li><strong>Paramètre de prévention de veille</strong> - Option « Garder l'écran allumé »</li>
+                <li><strong>Reconnaissance améliorée du microphone</strong></li>
+            </ul>
+
+            <h3>Modifié</h3>
+            <ul>
+                <li>Renommage du bouton « Analyze » en « Auto » (calibration de l'enregistrement automatique)</li>
+                <li>L'analyse de qualité d'enregistrement s'exécute automatiquement après l'arrêt de l'enregistrement</li>
+                <li>Système de marqueurs simplifié : suppression des marqueurs manuels Good/Bad/Memo (conservation des marqueurs automatiques CLIP/OVER)</li>
+                <li>Égaliseur 4 bandes remplacé par un égaliseur paramétrique 5 bandes</li>
+            </ul>
+
+            <h3>Corrigé</h3>
+            <ul>
+                <li>Correction des crashs lors d'enregistrements de longue durée</li>
+                <li>Amélioration de la gestion des erreurs et de la récupération du moteur audio</li>
+                <li>Meilleur nettoyage des ressources lors des changements de route audio</li>
+                <li>Traitement audio thread-safe avec atomiques sans verrou</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <ul>
+                <li>Élimination de NSLock dans le callback audio en temps réel</li>
+                <li>Introduction de Swift Atomics pour la concurrence sans verrou</li>
+                <li>Calcul des ballistics VU dans le thread audio (latence zéro)</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.2.0] - 2026-01-24</h2>
+            <p>Mesure LUFS professionnelle, fonctionnalités Pro améliorées et intégration Firebase.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Mesure LUFS (ITU-R BS.1770-4)</strong>
+                    <ul>
+                        <li>Momentané (400 ms), court terme (3 s), sonie intégrée</li>
+                        <li>Mesure True Peak avec suréchantillonnage 4x</li>
+                        <li>Appuyez sur le mesureur pour cycler : VU → GR → LUFS → VU</li>
+                    </ul>
+                </li>
+                <li><strong>Fonctionnalités Pro (achat intégré)</strong>
+                    <ul>
+                        <li>Export WAV/BWF 24 bits pour les flux de travail professionnels</li>
+                        <li>Préréglages audio personnalisés avec contrôle total des paramètres</li>
+                        <li>Format BWF (Broadcast Wave Format) avec métadonnées intégrées</li>
+                    </ul>
+                </li>
+                <li><strong>Prise en charge du format BWF</strong></li>
+            </ul>
+
+            <h3>Corrigé</h3>
+            <ul>
+                <li>Récupération des changements de route audio avec logique de réessai</li>
+                <li>Gestion améliorée de la déconnexion du microphone USB-C</li>
+                <li>Thread-safety de l'analyseur LUFS</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.1.0] - 2026-01-22</h2>
+            <p>Mode Arm, Pre-roll et analyseur de spectre.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li><strong>Mode Arm</strong> - Bouton ARM pour entrer en état d'attente avec tampon circulaire</li>
+                <li><strong>Enregistrement Pre-roll</strong> - 5 secondes d'audio capturées avant le bouton d'enregistrement</li>
+                <li><strong>Analyseur de spectre en temps réel</strong> - Basé sur FFT avec échelle logarithmique à 32 bandes</li>
+                <li><strong>Mesureur GR (réduction de gain)</strong> - Appuyez sur le mesureur VU pour basculer</li>
+                <li><strong>Badge de source d'entrée</strong> - Affiche la source d'entrée actuelle</li>
+                <li><strong>Système d'aide intégré</strong> - Plus de 10 sujets d'aide avec localisation anglais/japonais</li>
+            </ul>
+
+            <h3>Modifié</h3>
+            <ul>
+                <li>Onglet Spectre supprimé de la navigation principale (désormais 2 onglets : Enregistrer, Enregistrements)</li>
+                <li>Réinitialisation du crête modifiée à un intervalle fixe de 5 secondes</li>
+            </ul>
+
+            <h3>Corrigé</h3>
+            <ul>
+                <li>L'enregistrement stéréo fonctionne maintenant correctement</li>
+                <li>Changement de route pendant l'enregistrement : arrêt sécurisé + fermeture du fichier</li>
+            </ul>
+
+            <hr>
+
+            <h2>[1.0.0] - 2026-01-21</h2>
+            <p>Version initiale.</p>
+
+            <h3>Ajouté</h3>
+            <ul>
+                <li>Enregistrement audio haute qualité (WAV PCM 16 bits, 48 kHz)</li>
+                <li>Enregistrement stéréo sur les appareils compatibles</li>
+                <li>Chaîne de signal professionnelle : Noise Gate → EQ → Compresseur → Limiteur</li>
+                <li>Quatre préréglages : Flat, Studio, Studio+, Live</li>
+                <li>Mesureur VU avec maintien de crête et détection d'écrêtage</li>
+                <li>Marqueurs de contexte intelligents (GOOD, BAD, MEMO, CLIP)</li>
+                <li>Clip Guard avec retour haptique</li>
+                <li>Gestion des enregistrements avec export via Share Sheet</li>
+                <li>Localisation en anglais et en japonais</li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/ja/') !== -1 || currentPath.indexOf('/blog/ja/') !== -1) return 'ja';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+
+    var langUrlMap = {
+        'en': '/1Take-support/changelog',
+        'ja': '/1Take-support/changelog-ja',
+        'fr': '/1Take-support/changelog-fr',
+        'de': '/1Take-support/changelog-de',
+        'es': '/1Take-support/changelog-es',
+        'it': '/1Take-support/changelog-it',
+        'ko': '/1Take-support/changelog-ko',
+        'nl': '/1Take-support/changelog-nl',
+        'pt-BR': '/1Take-support/changelog-pt-BR',
+        'sv': '/1Take-support/changelog-sv',
+        'zh-Hant': '/1Take-support/changelog-zh-Hant'
+    };
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>

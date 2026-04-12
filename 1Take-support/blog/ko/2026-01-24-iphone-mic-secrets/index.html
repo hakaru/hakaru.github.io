@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhone 마이크의 '성역' 해체: iOS가 숨기는 AGC의 광기, Pro Max 회전, 1Take의 Input Trim 집착 | 1Take 블로그</title>
+    <meta name="description" content="Apple의 '평탄한' iPhone 마이크 뒤에 숨겨진 진실. AGC의 불필요한 개입, 모델별 마이크 배치의 미로, 그리고 1Take가 그것들을 음악 악기로 바꾼 방법.">
+    <meta property="og:title" content="iPhone 마이크의 '성역' 해체: iOS가 숨기는 AGC의 광기, Pro Max 회전, 1Take의 Input Trim 집착">
+    <meta property="og:description" content="Apple의 '평탄한' iPhone 마이크 뒤에 숨겨진 진실. AGC의 불필요한 개입, 모델별 마이크 배치의 미로, 그리고 1Take가 그것들을 음악 악기로 바꾼 방법.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ko/2026-01-24-iphone-mic-secrets/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"iPhone 마이크의 '성역' 해체: iOS가 숨기는 AGC의 광기, Pro Max 회전, 1Take의 Input Trim 집착","datePublished":"2026-01-24","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ko/2026-01-24-iphone-mic-secrets/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/index-ko">지원</a>
+      <a href="/1Take-support/manual/ko/">매뉴얼</a>
+      <a href="/1Take-support/blog/ko/" class="active">블로그</a>
+      <a href="/1Take-support/changelog-ko">변경 이력</a>
+      <a href="/1Take-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-01-24-iphone-mic-secrets/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="article-header">
+            <h1>iPhone 마이크의 '성역' 해체: iOS가 숨기는 AGC의 광기, Pro Max 회전, 그리고 1Take의 Input Trim 집착</h1>
+            <div class="article-meta">2026년 1월 24일</div>
+        </div>
+        <div class="content">
+            <h2>소개</h2>
+            <p>저는 1Take의 개발자입니다. 오디오의 "출력 측"——컴프레서, LUFS 미터링——에 대해 이야기해 왔는데, 오늘은 가장 큰 블랙박스를 해부하겠습니다: iPhone의 내장 마이크입니다.</p>
+            <p>"왜 iPhone 녹음이 모두 다르게 들릴까?" "왜 Apple은 평탄한 응답이라고 주장하는데, 실제로는 고역이 롤오프되고 저역이 부자연스럽게 커트된 것처럼 느껴질까?" Apple이 문서 뒤에 숨긴 스펙, 모델별로 완전히 다른 마이크 배치의 "미로", 그리고 1Take가 그것들을 "음악 악기"로 조율한 기술적 전투 기록을 공유합니다.</p>
+            <hr>
+            <h2>1. Apple의 "평탄" 주장 vs 물리적 현실</h2>
+            <p>Apple의 개발자 문서에는 iPhone 마이크가 "극도로 평탄하고 고충실도의 응답"을 제공한다고 자랑스럽게 명시되어 있습니다. 하지만 엔지니어가 실제로 측정해보면 의도적인 처리의 명확한 흔적이 나타납니다.</p>
+            <h3>미스터리 1: 100Hz 이하의 "공백"</h3>
+            <p>iPhone 마이크에는 OS 레벨에서 항상 실행되는 강력한 하이패스 필터(HPF)가 있어 섀시 진동과 바람 소리를 제거합니다. 이것이 "iPhone 녹음이 가늘게 들리는" 진짜 이유입니다.</p>
+            <h3>미스터리 2: 프레전스 영역의 처리</h3>
+            <p>통화 명료도를 높이기 위해 4kHz-8kHz 부근에서 위상 불규칙성을 확인할 수 있습니다. 이것은 다기능 마이크 어레이의 빔포밍에서 오는 부작용입니다.</p>
+            <p>1Take는 "측정 모드"를 통해 이것들을 우회해, 가능한 한 Apple의 진정한 "원시 특성"을 추출합니다.</p>
+            <hr>
+            <h2>2. AGC로부터 해방: "참견쟁이" 자동 게인 컨트롤</h2>
+            <p>왜 iPhone에는 표준적인 "Input Trim"(감도 조절)이 없을까요? iOS가 <strong>AGC (Auto Gain Control)</strong>——"누가 녹음해도 나름대로 들리도록" 자동 조정——을 전제하고 있기 때문입니다.</p>
+            <p>뮤지션에게 AGC는 다이나믹스를 파괴하는 천적입니다. 조용한 소리를 강제로 부스트해 노이즈를 증가시키고, 큰 소리를 부자연스럽게 억제합니다. 이 "혼자 움직이는 게인"을 죽이지 않으면 1176이나 LA-2A 컴프레션을 시뮬레이션하는 것은 불가능합니다.</p>
+            <h3>1Take의 커스텀 Input Trim 구현</h3>
+            <p>1Take는 내부 부동소수점 연산(Float32)을 사용해 OS의 게인 조정을 완전히 우회하는 자체 게인 스테이지를 구축했습니다. AVAudioEngine의 최상단에서 원시 신호를 포착해 <strong>vDSP (SIMD 최적화)</strong>를 사용해 실시간으로 스케일합니다. 이를 통해 마이크가 포착한 에너지를 컴프레서가 가장 "음악적으로" 반응하는 스위트 스팟에 정확하게 전달할 수 있습니다.</p>
+            <hr>
+            <h2>3. 모델별 마이크 배치의 미로</h2>
+            <p>iPhone 개발에서 가장 답답한 점은 물리적인 마이크 배치와 "어느 것이 메인 마이크인가"가 모델(Pro / Max / 스탠다드)과 세대에 따라 완전히 달라진다는 것입니다.</p>
+            <h3>Pro Max의 "뒤집기" 문제</h3>
+            <p>1Take는 가속도계와 AVAudioSession 포트 정보를 지속적으로 모니터링합니다. iPhone Pro Max를 왼쪽이나 오른쪽으로 회전시켜도, <strong>"항상 하단 마이크(Lightning/USB-C 포트 측)를 주 축으로 사용"</strong>할지 또는 <strong>"스테레오 녹음 일관성을 위해 L/R을 올바르게 위상 반전"</strong>할지를 자동으로 결정합니다.</p>
+            <hr>
+            <h2>4. Input Trim이 "음악"을 바꾸는 방법</h2>
+            <p>"나중에 녹음 후 부스트하면 된다"는 디지털적 사고방식입니다. 엔지니어의 사고방식은: <strong>"컴프레서를 얼마나 세게 구동할까?"</strong>입니다.</p>
+            <p>1Take의 Trim 노브를 돌리는 것은 튜브 앰프의 입력 게인을 올리는 것과 동일합니다.</p>
+            <ul>
+                <li><strong>Studio (LA-2A 스타일):</strong> 낮게 밀어 넣어 편안하고 부드러운 레벨링을 유도합니다.</li>
+                <li><strong>Studio+ (1176 스타일):</strong> 높게 밀어 넣어 FET의 공격적인 새추레이션을 이끌어냅니다.</li>
+            </ul>
+            <hr>
+            <h2>결론: 블랙박스를 파트너로</h2>
+            <p>iPhone 마이크는 OS라는 커튼으로 싸인 극도로 유능한 "악기"입니다. 1Take는 그 커튼을 벗겨내고 Input Trim의 핸들을 당신에게 돌려줍니다.</p>
+            <hr>
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Store에서 다운로드</a></li>
+                <li><a href="/1Take-support/index-ko">지원 페이지</a></li>
+                <li><a href="/1Take-support/privacy-ko">개인정보 보호정책</a></li>
+            </ul>
+            <div class="related">
+                <h3>관련 기사</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ko/2026-01-22-note-nd2887d7c0b9d/">iPhone에 담긴 빛의 기억과 FET의 폭력: 2단계 컴프레션</a></li>
+                    <li><a href="/1Take-support/blog/ko/2026-01-22-introducing-1take/">iPhone을 궁극의 레코더로</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); });
+        }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang]; return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded'); if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

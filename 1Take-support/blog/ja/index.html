@@ -144,6 +144,7 @@ body {
     padding: 15px 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
     margin-top: 10px;
+    display: flex; flex-wrap: wrap; gap: 2px;
 }
 .sidebar-lang-btn {
     display: inline-block;
@@ -298,8 +299,8 @@ body {
     </div>
   </div>
   <div class="sidebar-lang">
-    <a href="/1Take-support/blog/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
-    <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
+    <a href="/1Take-support/blog/en/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="ja">日本語</span>
   </div>
 </nav>
 <div class="content-pane">
@@ -432,38 +433,60 @@ body {
     var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
 
+    var langUrlMap = {
+        'en': '/1Take-support/blog/en/',
+        'ja': '/1Take-support/blog/ja/',
+        'fr': '/1Take-support/blog/fr/',
+        'de': '/1Take-support/blog/de/',
+        'es': '/1Take-support/blog/es/',
+        'it': '/1Take-support/blog/it/',
+        'ko': '/1Take-support/blog/ko/',
+        'nl': '/1Take-support/blog/nl/',
+        'pt-BR': '/1Take-support/blog/pt-BR/',
+        'sv': '/1Take-support/blog/sv/',
+        'zh-Hant': '/1Take-support/blog/zh-Hant/'
+    };
+
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang === 'ko') return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('zh-hant') || navLang === 'zh-tw' || navLang === 'zh-hk') return 'zh-Hant';
+        return 'en';
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
     }
 
     // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
+        var destUrl = langUrlMap[userLang];
+        if (destUrl) {
+            window.location.href = destUrl;
             return;
         }
     }

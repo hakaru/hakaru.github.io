@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhone 上的光學記憶與 FET 暴力：雙段式壓縮的瘋狂 | 1Take 部落格</title>
+    <meta name="description" content="LA-2A 的光學壓縮與 1176 的 FET 壓縮。1Take 如何重現古董設備的「非線性美學」。">
+    <meta property="og:title" content="iPhone 上的光學記憶與 FET 暴力：超越單純錄音機的雙段式壓縮瘋狂">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/zh-Hant/2026-01-22-note-nd2887d7c0b9d/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"iPhone 上的光學記憶與 FET 暴力：雙段式壓縮的瘋狂","datePublished":"2026-01-22","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/zh-Hant/2026-01-22-note-nd2887d7c0b9d/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-zh-Hant">支援</a>
+      <a href="/1Take-support/manual/zh-Hant/">手冊</a>
+      <a href="/1Take-support/blog/zh-Hant/" class="active">部落格</a>
+      <a href="/1Take-support/changelog-zh-Hant">更新記錄</a>
+      <a href="/1Take-support/privacy-zh-Hant">隱私權</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-01-22-note-nd2887d7c0b9d/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體中文</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="article-header">
+            <h1>iPhone 上的光學記憶與 FET 暴力：超越單純錄音機的雙段式壓縮瘋狂</h1>
+            <div class="article-meta">2026 年 1 月 22 日</div>
+        </div>
+
+        <div class="content">
+            <h2>前言</h2>
+            <p>我是 1Take 的開發者。上一篇文章介紹了壓縮器的基礎知識，這次要深入探討更多細節。</p>
+            <p>在設計 1Take 時，我的參考基準不是最新的數位外掛程式，而是 1960 年代真空管與早期電晶體創造出「音樂魔法」的物理行為。</p>
+            <p>為什麼語音備忘錄無法滿足我們？因為那個「應該存在的非線性美學」不見了。讓我來談談 1Take 在 iPhone 上重現的「質感」——這是只有器材宅才在乎的東西，但對音樂人來說至關重要。</p>
+
+            <hr>
+
+            <h2>1. T4 感光元件的非線性呼吸：繼承 LA-2A 的 Studio 模式</h2>
+            <p>「Studio」預設的範本，是光學壓縮器無可爭辯的王者：<strong>Teletronix LA-2A</strong>。</p>
+
+            <h3>深入解析：燈泡與光電管的浪漫</h3>
+            <p>LA-2A 的核心是「T4 光學衰減器」，結合了一顆燈泡和光電管。當聲音變大，內部的燈泡就會發光，而「光導電管」偵測到光線後減小音量。電力轉換為光的那一刻，魔法就發生了。</p>
+
+            <h3>1Take 的做法</h3>
+            <p>我重現了 LA-2A 特有的「雙段釋放（dual-stage release）」——被大力壓縮後緩緩回彈。大峰值之後，它會在幾秒內緩慢浮回，同時對細微的聲音快速響應。這種「呼吸感」正是為什麼人聲會「浮在」混音之上的原因。</p>
+            <p><strong>請注意</strong>：觀察 GR 表的指針如何以「黏稠」的感覺回彈，彷彿有自己的意志一般。</p>
+
+            <hr>
+
+            <h2>2. FET 的電擊與失真邊緣：Studio+ 模式的破壞力</h2>
+            <p>「Studio+」以 1967 年的怪物為範本：<strong>UREI 1176</strong>。</p>
+
+            <h3>深入解析：0.00002 秒的「All Buttons In」美學</h3>
+            <p>1176 最大的特色是使用 FET（場效電晶體）作為控制元件所帶來的瘋狂攻擊速度。最快可達：20 微秒。它幾乎是在雕塑聲音本身的「attack」。</p>
+
+            <h3>1Take 的做法</h3>
+            <p>說到 1176，就不能不提「All Buttons In」模式——同時按下所有比率按鈕。Studio+ 也模擬了那獨特的<strong>「狂烈飽和感」。</strong></p>
+            <p><strong>請仔細聆聽</strong>：打擊小鼓時的「碰！」聲。聲音不會變小——高頻泛音上升，聲音向前推出。我們從 iPhone 的小小麥克風輸入中，提取出那暴力有衝勁的 FET 特性。</p>
+
+            <hr>
+
+            <h2>3. Comp A→B 串聯：重現經典錄音室技術</h2>
+            <p>1Take 將兩個壓縮器串聯在一起：</p>
+            <pre><code>輸入 → [Comp A：峰值馴服器] → [Comp B：音體塑造器] → 輸出</code></pre>
+            <ul>
+                <li><strong>Comp A（1176 風格）</strong>：快速攻擊，以毫秒為單位「管教」突發的峰值。</li>
+                <li><strong>Comp B（LA-2A/VCA 風格）</strong>：對 Comp A 整理好的訊號增加「密度」，以緩慢的釋放給予豐富的音體。</li>
+            </ul>
+
+            <hr>
+
+            <h2>4. GR 表的「Min（黃線）」是工程師之眼</h2>
+            <p>1Take 的 GR 表有一條<strong>「Min（黃線）」</strong>，記錄過去 5 秒內的最大壓縮量。</p>
+            <blockquote style="border-left: 3px solid rgba(255,255,255,0.2); padding-left: 16px; color: #a0a0a0; margin: 16px 0;">
+                「那個 take——1176（Studio+）在副歌高音的地方壓了 12dB。但因為 LA-2A（Studio）的釋放很滑順，音樂性沒有崩潰。」
+            </blockquote>
+            <p>我想在 iPhone 上重現那種「與器材對話」的錄音體驗。</p>
+
+            <hr>
+
+            <h2>結語</h2>
+            <p>古董設備的偉大之處，不在於規格表上的數字——而在於那種「笨拙卻有音樂性的行為」。</p>
+            <p><strong>1Take 的目標，就是將類比的「波動」與「熱情」，封印在 iPhone 這個冰冷的數位裝置之中。</strong></p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">在 App Store 下載</a></li>
+                <li><a href="/1Take-support/index-zh-Hant">支援頁面</a></li>
+                <li><a href="/1Take-support/privacy-zh-Hant">隱私權政策</a></li>
+            </ul>
+            <p style="color: #666; font-size: 0.9em; margin-top: 16px;"><em>原文：<a href="https://note.com/hakaru/n/nd2887d7c0b9d">note.com</a>（日文）</em></p>
+
+            <div class="related">
+                <h3>相關文章</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/zh-Hant/2026-01-22-introducing-1take/">將 iPhone 打造成終極錄音機</a></li>
+                    <li><a href="/1Take-support/blog/zh-Hant/2026-01-24-iphone-mic-secrets/">拆解 iPhone 麥克風的「禁區」</a></li>
+                    <li><a href="/1Take-support/blog/zh-Hant/2026-02-03-understanding-recording-analysis/">深度解析：1Take 錄音分析系統的運作原理</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';if (navLang.startsWith('fr')) return 'fr';if (navLang.startsWith('de')) return 'de';if (navLang.startsWith('es')) return 'es';if (navLang.startsWith('it')) return 'it';if (navLang.startsWith('ko')) return 'ko';if (navLang.startsWith('nl')) return 'nl';if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';if (navLang.startsWith('sv')) return 'sv';if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) { if (currentPath.indexOf('/th/') !== -1) return 'th';if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant'; }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) { var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); }); }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) { window.location.href = langUrlMap[userLang];return; }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) { header.addEventListener('click', function() { var links = this.nextElementSibling;var wasExpanded = this.classList.contains('expanded');document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded');if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });if (!wasExpanded) { this.classList.add('expanded');if (links) links.classList.add('show'); } }); });
+    var currentApp = document.querySelector('.sidebar-app-header.active');if (currentApp) { currentApp.classList.add('expanded');if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');var sidebar = document.querySelector('.sidebar');var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open');overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open');overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) { btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>

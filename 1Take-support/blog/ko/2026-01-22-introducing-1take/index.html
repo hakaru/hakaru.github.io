@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhone을 궁극의 레코더로: 보이스 메모에 불만을 가진 뮤지션을 위해 만든 앱 | 1Take 블로그</title>
+    <meta name="description" content="보이스 메모로는 만족할 수 없는 뮤지션을 위해. 프로 수준의 신호 처리 체인을 탑재한 녹음 앱 1Take를 소개합니다.">
+    <meta property="og:title" content="iPhone을 궁극의 레코더로: 보이스 메모에 불만을 가진 뮤지션을 위해 만든 앱">
+    <meta property="og:description" content="보이스 메모로는 만족할 수 없는 뮤지션을 위해. 프로 수준의 신호 처리 체인을 탑재한 녹음 앱 1Take를 소개합니다.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ko/2026-01-22-introducing-1take/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"iPhone을 궁극의 레코더로: 보이스 메모에 불만을 가진 뮤지션을 위해 만든 앱","datePublished":"2026-01-22","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/ko/2026-01-22-introducing-1take/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .support-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 30px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .support-nav a { color: #a0a0a0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 0.9em; transition: all 0.3s; }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } .support-nav { gap: 4px; } .support-nav a { padding: 4px 10px; font-size: 0.8em; } }
+/* Sidebar styles */
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/index-ko">지원</a>
+      <a href="/1Take-support/manual/ko/">매뉴얼</a>
+      <a href="/1Take-support/blog/ko/" class="active">블로그</a>
+      <a href="/1Take-support/changelog-ko">변경 이력</a>
+      <a href="/1Take-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-01-22-introducing-1take/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="article-header">
+            <h1>iPhone을 궁극의 레코더로: 보이스 메모에 불만을 가진 뮤지션을 위해 만든 앱</h1>
+            <div class="article-meta">2026년 1월 22일</div>
+        </div>
+        <div class="content">
+            <h2>소개</h2>
+            <p>iPhone으로 녹음할 때, 아마 "보이스 메모"를 켜겠죠. 하지만 솔직히 말해봅시다. 보이스 메모의 소리가 음악적으로 "좋다"고 느낀 적이 있나요?</p>
+            <ul>
+                <li>"스튜디오에서 큰 볼륨으로 녹음했더니, 왜곡돼서 들을 수 없는 소리가 됐다"</li>
+                <li>"볼륨이 혼자 막 변한다 (그게 AGC인데), 퍼포먼스의 다이나믹스가 다 망가진다"</li>
+                <li>"수십 개의 테이크를 녹음했는데, 베스트 테이크 찾는 것만으로 반나절이 걸린다"</li>
+            </ul>
+            <p>그런 절망을 수없이 경험해 왔습니다. "iPhone의 가능성은 이 이상이어야 한다...!"는 집념으로 만든 것이 <strong>1Take</strong>——뮤지션이, 뮤지션을 위해 만든 앱입니다!</p>
+
+            <hr>
+
+            <h2>동기: 왜 "레코더"를 처음부터 만드는가</h2>
+            <p>스마트폰이 뭐든 다 되는 시대에도, "녹음"과 "표현" 사이에는 여전히 큰 간극이 남아 있습니다.</p>
+            <p>전용 하드웨어 레코더(ZOOM, TASCAM——기어 백에 들어있는 그것)를 쓰는 사람에게 <strong>"게인 컨트롤, EQ, 컴프레션"은 당연한 기능</strong>입니다. 이것들 없이 녹음 버튼을 누르는 건 무서워서 못 합니다.</p>
+            <p><strong>"iPhone의 보이스 메모는 음악적이지 않다."</strong></p>
+            <p>한마디로 그렇습니다. 그렇다면 프로 장비와 같은 철학으로 iPhone의 내부를 다시 만들면 되지 않을까? 그게 1Take에 담긴 "기어 덕후의 자존심"입니다.</p>
+
+            <hr>
+
+            <h2>"음악 전용"인 이유! 1Take의 집착</h2>
+
+            <h3>1. 프로 수준의 신호 처리 체인</h3>
+            <p>1Take의 내부는 작은 레코딩 스튜디오 그 자체입니다. 입력 음성은 <strong>실시간</strong>으로 이 처리 과정들을 거칩니다:</p>
+            <ul>
+                <li><strong>Input Trim</strong>: 먼저 적정 볼륨을 확보하기 위한 디지털 게인.</li>
+                <li><strong>노이즈 게이트</strong>: 연주 사이의 히스 노이즈나 스튜디오 에어컨 소리를 차단.</li>
+                <li><strong>4밴드 EQ</strong>: "저역의 먹먹함을 커트, 고역에 에어를 더하는" 같은 음악적 보정.</li>
+                <li><strong>2단계 컴프레서</strong>: 이게 핵심입니다. Comp A로 빠른 피크를 잡고, Comp B로 밀도와 굵기를 더합니다. 이것만으로 녹음한 순간부터 "CD 음질"에 가까운 완성도로.</li>
+                <li><strong>맥시마이저</strong>: 최종 단에서 디지털 클리핑을 철통 방어. 마음 편히 연주에 집중할 수 있습니다.</li>
+            </ul>
+
+            <h3>2. "그 전설의 장비"를 재현한 프리셋</h3>
+            <p>복잡한 파라미터(스레숄드, 레이쇼 등)를 몰라도 괜찮습니다. 음악사를 만든 전설의 장비를 모델로 한 프리셋을 준비했습니다.</p>
+            <ul>
+                <li><strong>Studio (LA-2A 스타일)</strong>: 보컬과 어쿠스틱 기타에. 튜브 같은 따뜻함과 기분 좋을 정도로 부드러운 컴프레션.</li>
+                <li><strong>Studio+ (1176 스타일)</strong>: 드럼과 일렉기타에. 펀치감 있고 공격적인 음압.</li>
+                <li><strong>Live (VCA 스타일)</strong>: 라이브나 시끄러운 리허설에. "무너지지 않는" 클리어하고 안정적인 사운드를 목표로.</li>
+            </ul>
+
+            <h3>3. 뮤지션의 "공통된 고민"을 해결하는 기능</h3>
+            <ul>
+                <li><strong>프리롤 녹음</strong>: "그 테이크 최고였어!"라고 생각한 다음에 녹음 버튼을 눌러도, 몇 초 전(최대 30초!)의 데이터를 저장해줍니다. "녹음 버튼 누르는 걸 잊었다!"며 머리를 싸맬 일은 이제 없습니다.</li>
+                <li><strong>아날로그 스타일 VU 미터</strong>: 300ms 타임 상수로 "저 바늘"의 움직임을 재현. 숫자가 아닌 감각으로 볼륨을 파악.</li>
+                <li><strong>클립 가드 & 마커</strong>: 녹음 중 소리가 클립되면 즉시 경고. 게다가 자동 "CLIP 마커"로 "여기만 고치고 싶다"는 부분을 초 단위로 찾을 수 있습니다.</li>
+            </ul>
+
+            <hr>
+
+            <h2>진지한 분들을 위해: "DAW 연동"의 프로 기능</h2>
+            <p>v1.1.0부터 프로 포맷 <strong>BWF (Broadcast Wave Format)</strong>를 지원합니다.</p>
+            <p>놀라운 점은, 녹음 데이터에 "언제 녹음했는지"의 메타데이터가 삽입된다는 것입니다. DaVinci Resolve나 Logic Pro에 드롭하는 것만으로, <strong>정확한 녹음 시각 포지션에 자동으로 파일이 맞춰집니다.</strong> "이 음성, 어떤 영상과 맞추는 건지?"라며 싱크 작업에서 고민할 필요가 없어집니다.</p>
+
+            <hr>
+
+            <h2>마지막으로: 퍼포먼스 자체에 집중하기 위해</h2>
+            <p>1Take는 기술로 "녹음 실패에 대한 불안"을 없애기 위해 만들어졌습니다.</p>
+            <p><strong>스마트폰을 만지는 시간을 줄이고, 악기를 만지는 시간을 늘리세요.</strong></p>
+            <p>iPhone을 단순한 스마트폰이 아닌, 음악 활동에 없어서는 안 될 "궁극의 파트너(레코더)"로 만드세요.</p>
+            <p>먼저 무료 버전으로 "소리의 차이"에 놀라보세요. 다음 스튜디오 연습을 1Take로 녹음해보는 건 어떨까요?</p>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">App Store에서 다운로드</a></li>
+                <li><a href="/1Take-support/index-ko">지원 페이지</a></li>
+                <li><a href="/1Take-support/privacy-ko">개인정보 보호정책</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>관련 기사</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/ko/2026-01-22-note-nd2887d7c0b9d/">iPhone에 담긴 빛의 기억과 FET의 폭력: 2단계 컴프레션</a></li>
+                    <li><a href="/1Take-support/blog/ko/2026-03-08-voice-memos-vs-1take/">보이스 메모 vs 1Take: 뮤지션이 갈아타야 할 5가지 이유</a></li>
+                    <li><a href="/1Take-support/blog/ko/2026-03-08-iphone-pro-recording-guide/">iPhone 고음질 녹음 완전 가이드</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) { map[lang] = basePath.replace('LANG', lang); });
+        }
+        return map;
+    })();
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang]; return;
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded'); if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

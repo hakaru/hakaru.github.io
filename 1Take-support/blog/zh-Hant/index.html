@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>部落格 1Take | hakaru</title>
+    <meta name="description" content="關於 1Take 的文章與最新消息 – iOS 專業錄音機。">
+    <meta property="og:title" content="部落格 1Take">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/zh-Hant/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        .blog-summary { color: #a0a0a0; font-size: 0.9em; margin-top: 6px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="選單">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-zh-Hant">支援</a>
+      <a href="/1Take-support/manual/zh-Hant/">使用手冊</a>
+      <a href="/1Take-support/blog/zh-Hant/" class="active">部落格</a>
+      <a href="/1Take-support/changelog">更新記錄</a>
+      <a href="/1Take-support/privacy">隱私權</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/manual/en/">Manual</a><a href="/GitInflow-support/blog/en/">Blog</a><a href="/GitInflow-support/changelog">Changelog</a><a href="/GitInflow-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div></div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體中文</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>iOS 專業錄音機</p>
+        </div>
+        <div class="content">
+            <h2>部落格</h2>
+            <ul class="blog-list">
+                <li><a href="/1Take-support/blog/zh-Hant/2026-04-07-physical-modeling-compressors/">我們把 LA-2A 和 1176 放進了你的 iPhone</a><div class="blog-date">2026年4月7日</div><div class="blog-summary">1Take v1.5.0 推出仿照 Teletronix LA-2A 和 UREI 1176 設計的自訂 DSP 壓縮器——在 iPhone 上實現即時逐樣本物理建模。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-04-01-v14-crash-reports-and-fixes/">v1.4 崩潰報告：我們發現了什麼，正在修復什麼</a><div class="blog-date">2026年4月1日</div><div class="blog-summary">v1.4 吸引了比以往更多的用戶。隨著實際使用，Firebase 傳來了崩潰報告。以下是我們的發現及修復方式。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-04-01-1take-v141-released/">1Take v1.4.1：AI 最佳化的 Pro 閘控器與錯誤修復</a><div class="blog-date">2026年4月1日</div><div class="blog-summary">v1.4.1 新增 Pro 閘控器以支援 AI 自動最佳化，並修復靜音錄音時的壓縮器問題及雲端同步 OAuth 工作階段問題。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-29-backblaze-b2-musicians-backup/">為什麼 Backblaze B2 是音樂人最佳的雲端備份</a><div class="blog-date">2026年3月29日</div><div class="blog-summary">上傳免費，120 GB 錄音的儲存費用約為每年 $5。與 S3、Wasabi 及消費者雲端服務的數據比較。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-29-1take-v14-released/">1Take v1.4：雲端同步、AI 最佳化、GPS 及更多功能</a><div class="blog-date">2026年3月29日</div><div class="blog-summary">v1.4 帶來 iCloud/Google Drive/Dropbox 雲端同步、強化的 AI 最佳化、GPS 位置標記及情境建議。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-29-cloud-sync-multi-provider/">雲端同步：自動備份至 iCloud、Google Drive、Dropbox 等</a><div class="blog-date">2026年3月29日</div><div class="blog-summary">自動將錄音備份至多個雲端服務。所有用戶免費使用。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-29-ai-auto-optimization/">AI 自動最佳化：1Take 如何即時調整你的聲音</a><div class="blog-date">2026年3月29日</div><div class="blog-summary">1Take 的 AI 引擎分析你的錄音，在演奏時自動調整 EQ、壓縮和增益。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-29-gps-location-tagging/">GPS 標記：記住每次錄音的地點</a><div class="blog-date">2026年3月29日</div><div class="blog-summary">1Take v1.4 自動擷取錄音地點，在錄音清單中顯示地名。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-23-recoverable-recording-deletion/">不小心刪除了錄音？你可以復原它</a><div class="blog-date">2026年3月23日</div><div class="blog-summary">從 v1.3.2 起，已刪除的錄音可在「檔案」App 中復原，時限 30 天。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-23-1take-v132-stability-update/">1Take v1.3.2：穩定性改善</a><div class="blog-date">2026年3月23日</div><div class="blog-summary">v1.3.2 修復崩潰問題，並讓已刪除的錄音可從「檔案」App 復原。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-08-voice-memos-vs-1take/">語音備忘錄 vs 1Take——音樂人應該換用的 5 個理由</a><div class="blog-date">2026年3月8日</div><div class="blog-summary">還在用 iPhone「語音備忘錄」錄音嗎？以下是與 1Take 的詳細比較。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-08-iphone-pro-recording-guide/">iPhone 專業錄音完整指南</a><div class="blog-date">2026年3月8日</div><div class="blog-summary">在 iPhone 上掌握專業品質的錄音技術。從麥克風技巧到 App 選擇一次涵蓋。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-08-ios26-spatial-audio-recording/">iOS 26 空間音訊與 iPhone 錄音的未來</a><div class="blog-date">2026年3月8日</div><div class="blog-summary">iOS 26 為第三方 App 開放空間音訊錄音。1Take 為何比以往更加重要。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-08-daw-workflow-with-1take-pro/">從 iPhone 到 DAW 只需幾秒——1Take Pro 的 BWF 24 位元工作流程</a><div class="blog-date">2026年3月8日</div><div class="blog-summary">1Take Pro 的 BWF 24 位元輸出讓你能直接將 iPhone 錄音帶入 DAW。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-03-08-1take-v132-new-features/">1Take v1.3.2：MP3/AAC 匯出、批次匯出與 Pro 強化</a><div class="blog-date">2026年3月8日</div><div class="blog-summary">v1.3.2 帶來 MP3/AAC 匯出、批次匯出、高品質 24 位元匯出，以及更好的 Pro 功能探索體驗。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-02-03-understanding-recording-analysis/">深入解析：1Take 錄音分析系統的運作原理</a><div class="blog-date">2026年2月3日</div><div class="blog-summary">技術性深入了解 1Take v1.3.0 的錄音分析系統，以及每項指標的含義。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-02-03-1take-v130-released/">1Take v1.3.0：錄音分析、自動校正與效能提升</a><div class="blog-date">2026年2月3日</div><div class="blog-summary">1Take v1.3.0 帶來自動錄音品質分析、智慧校正及 5 段 EQ。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-02-03-1take-now-on-product-hunt/">1Take 現已登陸 Product Hunt！</a><div class="blog-date">2026年2月3日</div><div class="blog-summary">很高興宣布 1Take 現已在 Product Hunt 上架。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-01-24-iphone-mic-secrets/">拆解 iPhone 麥克風的「神聖領域」</a><div class="blog-date">2026年1月24日</div><div class="blog-summary">Apple「平坦」iPhone 麥克風、AGC 背後的真相，以及 1Take 對 Input Trim 的執著。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-01-22-note-nd2887d7c0b9d/">iPhone 上的光學記憶與 FET 暴力：雙級壓縮</a><div class="blog-date">2026年1月22日</div><div class="blog-summary">1Take 如何重現復古 LA-2A 和 1176 設備的「非線性美學」。</div></li>
+                <li><a href="/1Take-support/blog/zh-Hant/2026-01-22-introducing-1take/">將你的 iPhone 變成終極錄音機</a><div class="blog-date">2026年1月22日</div><div class="blog-summary">介紹 1Take——一款為音樂人打造的專業信號處理鏈錄音 App。</div></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:onetake@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    var langUrlMap = {'en':'/1Take-support/blog/en/','ja':'/1Take-support/blog/ja/','fr':'/1Take-support/blog/fr/','de':'/1Take-support/blog/de/','es':'/1Take-support/blog/es/','it':'/1Take-support/blog/it/','ko':'/1Take-support/blog/ko/','nl':'/1Take-support/blog/nl/','pt-BR':'/1Take-support/blog/pt-BR/','sv':'/1Take-support/blog/sv/','zh-Hant':'/1Take-support/blog/zh-Hant/'};
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja'; if (n.startsWith('fr')) return 'fr'; if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es'; if (n.startsWith('it')) return 'it'; if (n === 'ko') return 'ko';
+        if (n.startsWith('nl')) return 'nl'; if (n === 'pt-br' || n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv'; if (n.startsWith('zh-hant') || n === 'zh-tw' || n === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) { if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i]; if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i]; }
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang(), userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) { var d=langUrlMap[userLang]; if(d){window.location.href=d;return;} }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.addEventListener('click', function() { var l=this.nextElementSibling,w=this.classList.contains('expanded'); document.querySelectorAll('.sidebar-app-header').forEach(function(x){x.classList.remove('expanded');if(x.nextElementSibling)x.nextElementSibling.classList.remove('show');}); if(!w){this.classList.add('expanded');if(l)l.classList.add('show');} }); });
+    var ca=document.querySelector('.sidebar-app-header.active'); if(ca){ca.classList.add('expanded');if(ca.nextElementSibling)ca.nextElementSibling.classList.add('show');}
+    var tog=document.querySelector('.sidebar-toggle'),sb=document.querySelector('.sidebar'),ov=document.querySelector('.sidebar-overlay');
+    if(tog){tog.addEventListener('click',function(){sb.classList.toggle('open');ov.classList.toggle('show');});}
+    if(ov){ov.addEventListener('click',function(){sb.classList.remove('open');ov.classList.remove('show');});}
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b){b.addEventListener('click',function(){localStorage.setItem('hakaru-lang',this.dataset.lang);});});
+})();
+</script>
+</body>
+</html>

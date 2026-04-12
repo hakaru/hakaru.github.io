@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1Take Användarmanual | hakaru</title>
+    <meta name="description" content="Komplett guide till 1Take – Professionell ljudinspelningsapp för iPhone.">
+    <meta property="og:title" content="1Take Användarmanual">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/manual/sv/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content pre { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .toc { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 20px 20px 40px; margin-bottom: 30px; }
+        .toc li { margin-bottom: 6px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Meny">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-sv">Support</a>
+      <a href="/1Take-support/manual/sv/" class="active">Manual</a>
+      <a href="/1Take-support/blog/sv/">Blogg</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/manual/en/">Manual</a><a href="/GitInflow-support/blog/en/">Blog</a><a href="/GitInflow-support/changelog">Changelog</a><a href="/GitInflow-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div></div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/manual/en/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="sv">Svenska</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>Professionell ljudinspelning för iOS</p>
+        </div>
+        <div class="content">
+            <h2>1Take Användarmanual</h2>
+            <p>Välkommen till 1Take, den professionella ljudinspelningsappen för musiker. Den här manualen guidar dig genom alla funktioner för att få ut det mesta av dina inspelningar.</p>
+
+            <ol class="toc">
+                <li><a href="#getting-started">Kom igång</a></li>
+                <li><a href="#recording-basics">Inspelningsgrunder</a></li>
+                <li><a href="#recording-analysis">Inspelningsanalys</a></li>
+                <li><a href="#ai-optimization">AI-autooptimering</a></li>
+                <li><a href="#cloud-sync">Molnsynkronisering</a></li>
+                <li><a href="#gps-location">GPS-platstagning</a></li>
+                <li><a href="#presets">Förval</a></li>
+                <li><a href="#signal-chain">Signalbearbetningskedja</a></li>
+                <li><a href="#preroll">Pre-roll-inspelning</a></li>
+                <li><a href="#auto-record">Automatisk inspelning</a></li>
+                <li><a href="#meters">Mätare</a></li>
+                <li><a href="#markers">Markeringar</a></li>
+                <li><a href="#recordings-library">Inspelningsbibliotek</a></li>
+                <li><a href="#export">Exportera</a></li>
+                <li><a href="#settings">Inställningar</a></li>
+                <li><a href="#pro-features">Pro-funktioner</a></li>
+            </ol>
+
+            <hr>
+
+            <h2 id="getting-started">Kom igång</h2>
+            <h3>Första start</h3>
+            <p>När du öppnar 1Take första gången ombeds du ge mikrofonåtkomst. Det krävs för att appen ska kunna spela in ljud.</p>
+            <h3>Översikt huvudskärm</h3>
+            <p>Huvudskärmen består av:</p>
+            <ul>
+                <li><strong>Nivåmätare</strong>: Visar ljudnivåer i realtid (tryck för att växla mellan VU/GR/Spektrum/LUFS)</li>
+                <li><strong>Inspelningsknapp</strong>: Starta/stoppa inspelning (mitten)</li>
+                <li><strong>TRIM-ratt</strong>: Justera ingångsförstärkning (vänster)</li>
+                <li><strong>THRESH-ratt</strong>: Justera gate-tröskel (höger)</li>
+                <li><strong>Förvalsselektor</strong>: Välj ljudprofil (uppe)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="recording-basics">Inspelningsgrunder</h2>
+            <h3>Starta en inspelning</h3>
+            <ol>
+                <li>Tryck på <strong>Spela in</strong> för att starta</li>
+                <li>Knappen blir röd och en timer visas</li>
+                <li>Tryck igen för att stoppa och spara</li>
+            </ol>
+
+            <hr>
+
+            <h2 id="recording-analysis">Inspelningsanalys</h2>
+            <p>1Take v1.3.0 introducerar automatisk inspelningskvalitetsanalys med sändningsstandard-algoritmer (ITU-R BS.1770-4).</p>
+
+            <hr>
+
+            <h2 id="ai-optimization">AI-autooptimering</h2>
+            <p>Efter varje inspelning analyserar 1Take automatiskt ditt ljud och justerar förvalsinställningarna. Allt körs på enheten — ingen internetanslutning krävs.</p>
+            <h3>Gratis vs Pro</h3>
+            <p>Alla användare kan se analysresultaten. <strong>Att automatiskt tillämpa justeringar kräver Pro.</strong></p>
+
+            <hr>
+
+            <h2 id="cloud-sync">Molnsynkronisering</h2>
+            <p>1Take kan automatiskt ladda upp inspelningar till molnlagring. Molnsynk är gratis för alla användare.</p>
+            <h3>Leverantörer som stöds</h3>
+            <table>
+                <thead><tr><th>Leverantör</th><th>Autentisering</th><th>Anteckningar</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>iCloud Drive</strong></td><td>System-Apple ID</td><td>Ingen inloggning krävs.</td></tr>
+                    <tr><td><strong>Google Drive</strong></td><td>OAuth (Safari)</td><td>Lagras i dedikerad 1Take-mapp.</td></tr>
+                    <tr><td><strong>Dropbox</strong></td><td>OAuth med PKCE</td><td>Lagras i Apps/1Take.</td></tr>
+                    <tr><td><strong>Backblaze B2</strong></td><td>API-nyckel</td><td>Ange nyckel-ID, nyckel, bucket-namn och valfritt sökvägsprefix.</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="gps-location">GPS-platstagning</h2>
+            <p>1Take registrerar din plats när inspelningen startar, så du kan komma ihåg var varje take gjordes.</p>
+
+            <hr>
+
+            <h2 id="presets">Förval</h2>
+            <p>1Take innehåller tre noggrant utformade förval inspirerade av legendarisk audioutrustning:</p>
+            <h3>Studio (LA-2A-stil)</h3>
+            <ul><li><strong>Lämplig för</strong>: Sång, akustisk gitarr, podcasts</li><li><strong>Karaktär</strong>: Varm, mjuk kompression</li><li><strong>Stereoutbredning</strong>: AV</li></ul>
+            <h3>Studio+ (1176-stil)</h3>
+            <ul><li><strong>Lämplig för</strong>: Trummor, elgitarr, energiska framträdanden</li><li><strong>Karaktär</strong>: Kraftfull, aggressiv kompression med snabb attack</li><li><strong>Stereoutbredning</strong>: AV</li></ul>
+            <h3>Live (VCA-stil)</h3>
+            <ul><li><strong>Lämplig för</strong>: Liveframträdanden, högvolymrep</li><li><strong>Karaktär</strong>: Ren, transparent kompression utan distorsion</li><li><strong>Stereoutbredning</strong>: PÅ</li></ul>
+
+            <hr>
+
+            <h2 id="signal-chain">Signalbearbetningskedja</h2>
+            <pre><code>Ingång → Trim → Gate → EQ → Comp A → Comp B → Mättnad → Stereo → Maximizer → Utgång</code></pre>
+
+            <hr>
+
+            <h2 id="preroll">Pre-roll-inspelning</h2>
+            <p>Missa aldrig ett bra take! Pre-roll buffrar kontinuerligt ljud för att fånga moment som hände <em>innan</em> du tryckte på inspelning.</p>
+
+            <hr>
+
+            <h2 id="auto-record">Automatisk inspelning</h2>
+            <p>Automatisk inspelning startar och stoppar inspelning baserat på ljudnivåer.</p>
+
+            <hr>
+
+            <h2 id="meters">Mätare</h2>
+            <p>Tryck på mätarskärmen för att växla mellan fyra lägen: VU, GR, Spektrum och LUFS.</p>
+
+            <hr>
+
+            <h2 id="markers">Markeringar</h2>
+            <h3>Användarmarkeringar</h3><p>Läggs till manuellt genom att trycka på Markering-knappen under inspelning.</p>
+            <h3>Klipp-markeringar (CLIP)</h3><p>Läggs till automatiskt när ljud klipper (överstiger 0 dBFS).</p>
+            <h3>Over-markeringar (OVER)</h3><p>Läggs till automatiskt när True Peak överstiger -1 dBTP.</p>
+
+            <hr>
+
+            <h2 id="recordings-library">Inspelningsbibliotek</h2>
+            <p>Få åtkomst till dina inspelningar via listikonen.</p>
+
+            <hr>
+
+            <h2 id="export">Exportera</h2>
+            <h3>Exportformat</h3>
+            <table>
+                <thead><tr><th>Format</th><th>Beskrivning</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Original</strong></td><td>Behåll filen i inspelat format (WAV, BWF, MP3 eller AAC)</td></tr>
+                    <tr><td><strong>MP3</strong></td><td>Konvertera till MP3 (128/192/256/320 kbps)</td></tr>
+                    <tr><td><strong>AAC</strong></td><td>Konvertera till AAC (.m4a) (128/192/256/320 kbps)</td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h2 id="settings">Inställningar</h2>
+            <h3>Prestanda</h3>
+            <p><strong>Buffertstorlek</strong>: Styr avvägningen mellan latens och stabilitet. Rekommenderat: 4096.</p>
+            <h3>Filformat</h3>
+            <ul>
+                <li><strong>WAV (16-bit)</strong>: Standardkvalitet, mindre filer</li>
+                <li><strong>WAV (24-bit)</strong>: Högre kvalitet (Pro)</li>
+                <li><strong>BWF (16/24-bit)</strong>: Broadcast Wave med tidskod (Pro)</li>
+            </ul>
+
+            <hr>
+
+            <h2 id="pro-features">Pro-funktioner</h2>
+            <p>Uppgradera till Pro för att låsa upp:</p>
+            <ul>
+                <li><strong>AI auto-tillämpning</strong> — Tillämpa AI-optimeringar automatiskt efter varje inspelning</li>
+                <li><strong>Utökad pre-roll</strong> — Buffert upp till 30 sekunder</li>
+                <li><strong>Anpassade förval</strong> — Full åtkomst till alla parametrar</li>
+                <li><strong>BWF-format</strong> — Broadcast Wave med inbäddad tidskod</li>
+                <li><strong>24-bitarsinspelning</strong> — Högre bitdjup</li>
+                <li><strong>Direkt MP3/AAC-inspelning</strong> — Spela in direkt till komprimerade format</li>
+            </ul>
+
+            <hr>
+
+            <h2>Support</h2>
+            <p>Behöver du hjälp? Besök vår <a href="/1Take-support/">supportsida</a> eller kontakta oss på <a href="mailto:onetake@hakaru.net">onetake@hakaru.net</a>.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:onetake@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    var langUrlMap = {'en':'/1Take-support/manual/en/','ja':'/1Take-support/manual/ja/','fr':'/1Take-support/manual/fr/','de':'/1Take-support/manual/de/','es':'/1Take-support/manual/es/','it':'/1Take-support/manual/it/','ko':'/1Take-support/manual/ko/','nl':'/1Take-support/manual/nl/','pt-BR':'/1Take-support/manual/pt-BR/','sv':'/1Take-support/manual/sv/','zh-Hant':'/1Take-support/manual/zh-Hant/'};
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja'; if (n.startsWith('fr')) return 'fr'; if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es'; if (n.startsWith('it')) return 'it'; if (n === 'ko') return 'ko';
+        if (n.startsWith('nl')) return 'nl'; if (n === 'pt-br' || n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv'; if (n.startsWith('zh-hant') || n === 'zh-tw' || n === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var s = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i=0;i<s.length;i++) { if (currentPath.indexOf('/manual/'+s[i]+'/') !== -1) return s[i]; if (currentPath.indexOf('/blog/'+s[i]+'/') !== -1) return s[i]; }
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang(), userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) { var d=langUrlMap[userLang]; if(d){window.location.href=d;return;} }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.addEventListener('click', function() { var l=this.nextElementSibling,w=this.classList.contains('expanded'); document.querySelectorAll('.sidebar-app-header').forEach(function(x){x.classList.remove('expanded');if(x.nextElementSibling)x.nextElementSibling.classList.remove('show');}); if(!w){this.classList.add('expanded');if(l)l.classList.add('show');} }); });
+    var ca=document.querySelector('.sidebar-app-header.active'); if(ca){ca.classList.add('expanded');if(ca.nextElementSibling)ca.nextElementSibling.classList.add('show');}
+    var tog=document.querySelector('.sidebar-toggle'),sb=document.querySelector('.sidebar'),ov=document.querySelector('.sidebar-overlay');
+    if(tog){tog.addEventListener('click',function(){sb.classList.toggle('open');ov.classList.toggle('show');});}
+    if(ov){ov.addEventListener('click',function(){sb.classList.remove('open');ov.classList.remove('show');});}
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b){b.addEventListener('click',function(){localStorage.setItem('hakaru-lang',this.dataset.lang);});});
+})();
+</script>
+</body>
+</html>

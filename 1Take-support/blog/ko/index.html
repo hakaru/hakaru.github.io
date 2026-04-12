@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>블로그 1Take | hakaru</title>
+    <meta name="description" content="1Take에 관한 글과 새로운 소식 – iOS용 전문 오디오 레코더.">
+    <meta property="og:title" content="블로그 1Take">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/ko/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.1em; font-weight: 500; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 4px; }
+        .blog-summary { color: #a0a0a0; font-size: 0.9em; margin-top: 6px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="메뉴">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-ko">지원</a>
+      <a href="/1Take-support/manual/ko/">매뉴얼</a>
+      <a href="/1Take-support/blog/ko/" class="active">블로그</a>
+      <a href="/1Take-support/changelog">변경 내역</a>
+      <a href="/1Take-support/privacy">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/manual/en/">Manual</a><a href="/GitInflow-support/blog/en/">Blog</a><a href="/GitInflow-support/changelog">Changelog</a><a href="/GitInflow-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div></div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/1Take-support/assets/app-icon.png" alt="1Take" class="hero-icon">
+            <h1>1Take</h1>
+            <p>iOS용 전문 오디오 레코더</p>
+        </div>
+        <div class="content">
+            <h2>블로그</h2>
+            <ul class="blog-list">
+                <li><a href="/1Take-support/blog/ko/2026-04-07-physical-modeling-compressors/">LA-2A와 1176을 iPhone에 넣었습니다</a><div class="blog-date">2026년 4월 7일</div><div class="blog-summary">1Take v1.5.0은 Teletronix LA-2A와 UREI 1176을 모델링한 커스텀 DSP 컴프레서를 도입합니다 — iPhone에서 실시간 샘플 단위 물리 모델링.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-04-01-v14-crash-reports-and-fixes/">v1.4 크래시 보고서: 발견한 것과 수정 중인 것</a><div class="blog-date">2026년 4월 1일</div><div class="blog-summary">v1.4는 그 어느 때보다 많은 사용자를 끌어들였습니다. 실제 사용과 함께 Firebase에서 크래시 보고서가 들어왔습니다. 발견한 것과 수정 방법입니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-04-01-1take-v141-released/">1Take v1.4.1: AI 최적화를 위한 Pro 게이팅 및 버그 수정</a><div class="blog-date">2026년 4월 1일</div><div class="blog-summary">v1.4.1은 AI 자동 최적화를 위한 Pro 게이팅을 추가하고 무음 녹음 시 컴프레서 문제와 클라우드 동기화 OAuth 세션을 수정합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-29-backblaze-b2-musicians-backup/">Backblaze B2가 뮤지션에게 최고의 클라우드 백업인 이유</a><div class="blog-date">2026년 3월 29일</div><div class="blog-summary">업로드는 무료이고, 120GB 녹음을 위한 저장 비용은 연간 ~$5입니다. S3, Wasabi 및 소비자 클라우드 서비스와의 데이터 기반 비교.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-29-1take-v14-released/">1Take v1.4: 클라우드 동기화, AI 최적화, GPS 및 더 많은 기능</a><div class="blog-date">2026년 3월 29일</div><div class="blog-summary">v1.4는 iCloud/Google Drive/Dropbox 클라우드 동기화, 향상된 AI 최적화, GPS 위치 태깅 및 상황별 제안을 제공합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-29-cloud-sync-multi-provider/">클라우드 동기화: iCloud, Google Drive, Dropbox 등에 자동 백업</a><div class="blog-date">2026년 3월 29일</div><div class="blog-summary">여러 클라우드 서비스에 녹음을 자동으로 백업하세요. 모든 사용자에게 무료.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-29-ai-auto-optimization/">AI 자동 최적화: 1Take가 실시간으로 소리를 조정하는 방법</a><div class="blog-date">2026년 3월 29일</div><div class="blog-summary">1Take의 AI 엔진이 녹음을 분석하고 연주하는 동안 자동으로 EQ, 컴프레션 및 게인을 조정합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-29-gps-location-tagging/">GPS 태깅: 각 녹음이 어디서 이루어졌는지 기억하세요</a><div class="blog-date">2026년 3월 29일</div><div class="blog-summary">1Take v1.4는 녹음 위치를 자동으로 캡처하여 녹음 목록에 장소 이름을 표시합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-23-recoverable-recording-deletion/">실수로 녹음을 삭제했나요? 복구할 수 있습니다</a><div class="blog-date">2026년 3월 23일</div><div class="blog-summary">v1.3.2부터 삭제된 녹음은 파일 앱에서 30일 동안 복구할 수 있습니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-23-1take-v132-stability-update/">1Take v1.3.2: 안정성 향상</a><div class="blog-date">2026년 3월 23일</div><div class="blog-summary">v1.3.2는 크래시를 수정하고 삭제된 녹음을 파일 앱에서 복구할 수 있게 합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-08-voice-memos-vs-1take/">음성 메모 vs 1Take – 뮤지션이 전환해야 하는 5가지 이유</a><div class="blog-date">2026년 3월 8일</div><div class="blog-summary">아직도 iPhone 음성 메모로 음악을 녹음하고 있나요? 1Take와의 상세 비교입니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-08-iphone-pro-recording-guide/">iPhone 전문 녹음 완전 가이드</a><div class="blog-date">2026년 3월 8일</div><div class="blog-summary">iPhone에서 전문적인 품질의 녹음을 마스터하세요. 마이크 기법부터 앱 선택까지.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-08-ios26-spatial-audio-recording/">iOS 26 공간 오디오와 iPhone 녹음의 미래</a><div class="blog-date">2026년 3월 8일</div><div class="blog-summary">iOS 26은 서드파티 앱을 위한 공간 오디오 녹음을 열어줍니다. 1Take가 그 어느 때보다 중요한 이유.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-08-daw-workflow-with-1take-pro/">iPhone에서 DAW까지 순식간에 – 1Take Pro의 BWF 24비트 워크플로우</a><div class="blog-date">2026년 3월 8일</div><div class="blog-summary">1Take Pro의 BWF 24비트 출력을 통해 iPhone 녹음을 DAW로 직접 가져갈 수 있습니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-03-08-1take-v132-new-features/">1Take v1.3.2: MP3/AAC 내보내기, 일괄 내보내기 및 Pro 향상</a><div class="blog-date">2026년 3월 8일</div><div class="blog-summary">v1.3.2는 MP3/AAC 내보내기, 일괄 내보내기, 고품질 24비트 내보내기 및 Pro 기능 탐색 개선을 제공합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-02-03-understanding-recording-analysis/">심층 분석: 1Take의 녹음 분석 시스템 작동 방식</a><div class="blog-date">2026년 2월 3일</div><div class="blog-summary">1Take v1.3.0의 녹음 분석 시스템과 각 지표의 의미에 대한 기술적 살펴보기.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-02-03-1take-v130-released/">1Take v1.3.0: 녹음 분석, 자동 보정 및 성능 향상</a><div class="blog-date">2026년 2월 3일</div><div class="blog-summary">1Take v1.3.0은 자동 녹음 품질 분석, 스마트 보정 및 5밴드 EQ를 제공합니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-02-03-1take-now-on-product-hunt/">1Take가 Product Hunt에 출시되었습니다!</a><div class="blog-date">2026년 2월 3일</div><div class="blog-summary">1Take가 Product Hunt에서 이제 이용 가능함을 알려드립니다.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-01-24-iphone-mic-secrets/">iPhone 마이크의 '신성한 영역' 해체하기</a><div class="blog-date">2026년 1월 24일</div><div class="blog-summary">Apple의 '플랫한' iPhone 마이크, AGC, 그리고 1Take의 Input Trim에 대한 집착 뒤의 진실.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-01-22-note-nd2887d7c0b9d/">iPhone의 광학 메모리와 FET 폭력: 2단계 압축</a><div class="blog-date">2026년 1월 22일</div><div class="blog-summary">1Take가 빈티지 LA-2A와 1176 장비의 '비선형 미학'을 재현하는 방법.</div></li>
+                <li><a href="/1Take-support/blog/ko/2026-01-22-introducing-1take/">iPhone을 궁극의 레코더로 변신시키세요</a><div class="blog-date">2026년 1월 22일</div><div class="blog-summary">뮤지션을 위한 전문 신호 처리 체인을 갖춘 녹음 앱, 1Take를 소개합니다.</div></li>
+            </ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:onetake@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    var langUrlMap = {'en':'/1Take-support/blog/en/','ja':'/1Take-support/blog/ja/','fr':'/1Take-support/blog/fr/','de':'/1Take-support/blog/de/','es':'/1Take-support/blog/es/','it':'/1Take-support/blog/it/','ko':'/1Take-support/blog/ko/','nl':'/1Take-support/blog/nl/','pt-BR':'/1Take-support/blog/pt-BR/','sv':'/1Take-support/blog/sv/','zh-Hant':'/1Take-support/blog/zh-Hant/'};
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja'; if (n.startsWith('fr')) return 'fr'; if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es'; if (n.startsWith('it')) return 'it'; if (n === 'ko') return 'ko';
+        if (n.startsWith('nl')) return 'nl'; if (n === 'pt-br' || n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv'; if (n.startsWith('zh-hant') || n === 'zh-tw' || n === 'zh-hk') return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) { if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i]; if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i]; }
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang(), userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) { var d=langUrlMap[userLang]; if(d){window.location.href=d;return;} }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.addEventListener('click', function() { var l=this.nextElementSibling,w=this.classList.contains('expanded'); document.querySelectorAll('.sidebar-app-header').forEach(function(x){x.classList.remove('expanded');if(x.nextElementSibling)x.nextElementSibling.classList.remove('show');}); if(!w){this.classList.add('expanded');if(l)l.classList.add('show');} }); });
+    var ca=document.querySelector('.sidebar-app-header.active'); if(ca){ca.classList.add('expanded');if(ca.nextElementSibling)ca.nextElementSibling.classList.add('show');}
+    var tog=document.querySelector('.sidebar-toggle'),sb=document.querySelector('.sidebar'),ov=document.querySelector('.sidebar-overlay');
+    if(tog){tog.addEventListener('click',function(){sb.classList.toggle('open');ov.classList.toggle('show');});}
+    if(ov){ov.addEventListener('click',function(){sb.classList.remove('open');ov.classList.remove('show');});}
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b){b.addEventListener('click',function(){localStorage.setItem('hakaru-lang',this.dataset.lang);});});
+})();
+</script>
+</body>
+</html>

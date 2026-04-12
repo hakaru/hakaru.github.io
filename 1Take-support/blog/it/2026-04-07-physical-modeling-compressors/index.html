@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abbiamo Messo un LA-2A e un 1176 Dentro il Tuo iPhone | 1Take Blog</title>
+    <meta name="description" content="1Take v1.5.0 include compressori DSP personalizzati modellati su due dei processori hardware più iconici della storia della musica. Ecco come funzionano e come li abbiamo portati su iPhone.">
+    <meta property="og:title" content="Abbiamo Messo un LA-2A e un 1176 Dentro il Tuo iPhone">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/1Take-support/blog/it/2026-04-07-physical-modeling-compressors/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Abbiamo Messo un LA-2A e un 1176 Dentro il Tuo iPhone","datePublished":"7 aprile 2026","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/1Take-support/blog/it/2026-04-07-physical-modeling-compressors/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content em { color: #c0c0c0; font-style: italic; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+        .content th { background: rgba(255,255,255,0.1); color: #fff; padding: 10px 14px; text-align: left; }
+        .content td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.07); color: #b0b0b0; }
+        .content tr:hover td { background: rgba(255,255,255,0.03); }
+        .related { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .related h3 { color: #a0a0a0; font-size: 0.9em; margin-bottom: 12px; }
+        .related ul { list-style: none; padding: 0; margin: 0; }
+        .related li { margin-bottom: 8px; }
+        .related a { color: #e94560; text-decoration: none; font-size: 0.95em; }
+        .related a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1Take-support/index-it">Supporto</a>
+      <a href="/1Take-support/manual/it/">Manuale</a>
+      <a href="/1Take-support/blog/it/" class="active">Blog</a>
+      <a href="/1Take-support/changelog-it">Modifiche</a>
+      <a href="/1Take-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/1Take-support/blog/en/2026-04-07-physical-modeling-compressors/" class="sidebar-lang-btn" data-lang="en">English</a>
+    <span class="sidebar-lang-btn active" data-lang="it">Italiano</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="article-header">
+            <h1>Abbiamo Messo un LA-2A e un 1176 Dentro il Tuo iPhone</h1>
+            <div class="article-meta">7 aprile 2026</div>
+        </div>
+
+        <div class="content">
+            <p>1Take v1.5.0 include compressori DSP personalizzati modellati su due dei processori hardware più registrati nella storia della musica. Ecco cosa sono, perché contano e come siamo riusciti a farli girare su un iPhone.</p>
+
+            <h2>Il Problema con "Stile LA-2A"</h2>
+            <p>Fino ad ora, i preset di 1Take recitavano "Studio (stile LA-2A)" e "Studio+ (stile 1176)" sull'etichetta, ma sotto il cofano c'era l'unità audio generica <code>DynamicsProcessor</code> di Apple. Si potevano impostare soglie e rapporti simili, certo. Ma il <em>suono</em> di un LA-2A non deriva dalla sua impostazione di soglia. Deriva dal modo in cui l'hardware risponde al segnale — non linearmente, in modo incoerente, musicalmente.</p>
+            <p>Abbiamo deciso di rimediare.</p>
+
+            <h2>Cos'è il LA-2A?</h2>
+            <p>Il Teletronix LA-2A è un compressore ottico degli inizi degli anni '60. Al suo interno c'è una resistenza dipendente dalla luce (fotocellula) e un pannello elettroluminescente. Quando il segnale diventa più forte, il pannello si illumina di più e la resistenza della fotocellula diminuisce, riducendo il livello del segnale.</p>
+            <p>La magia sta nel modo in cui la fotocellula si riprende. Quando la compressione è leggera, si libera rapidamente. Quando la compressione è profonda, mantiene molto più a lungo. Questo rilascio non lineare è ciò che rende il LA-2A "musicale" — si adatta automaticamente alla dinamica di qualsiasi sorgente.</p>
+            <p>Oltre a ciò, l'intero percorso del segnale passa attraverso valvole termoioniche, che aggiungono armoniche di ordine pari. Questa è la "calore" di cui si parla.</p>
+            <p>Voce, chitarra acustica, basso — tutto ciò dove vuoi che il livello rimanga consistente senza sembrare schiacciato. Questo è il territorio del LA-2A.</p>
+
+            <h2>Cos'è il 1176?</h2>
+            <p>L'UREI 1176 (1967) ha una personalità opposta. Usa un transistor a effetto di campo (FET) invece di una fotocellula, ed è <em>veloce</em>. Tempi di attacco fino a 20 microsecondi. Più forte lo colpisci, più rapidamente interviene.</p>
+            <p>Dove il LA-2A ammorbidisce delicatamente, il 1176 si abbatte sui transienti con autorità. Le casse diventano incisive. Le chitarre elettriche diventano precise. Il circuito FET aggiunge armoniche di ordine dispari — un colore più granuloso e aggressivo rispetto al calore del LA-2A.</p>
+            <p>Il famoso trucco "All Buttons In" (premendo tutti e quattro i pulsanti del rapporto simultaneamente) produce un suono fortemente compresso con un carattere di distorsione distintivo. I microfoni per batteria in stanza attraverso un 1176 con tutti i pulsanti premuti è uno dei suoni più riconoscibili nella registrazione rock.</p>
+
+            <h2>Come Li Abbiamo Modellati</h2>
+            <p>Abbiamo scritto una sottoclasse personalizzata di <code>AUAudioUnit</code> che elabora l'audio campione per campione a 48 kHz. Tre cose lo rendono diverso da un compressore generico:</p>
+
+            <h3>1. Rilascio non lineare (modello LA-2A)</h3>
+            <p>Il coefficiente del tempo di rilascio cambia in base alla quantità di riduzione del guadagno in corso. Più compressione = rilascio più lento. Questo singolo comportamento è responsabile della maggior parte di ciò che le persone intendono quando dicono che il LA-2A suona "morbido".</p>
+
+            <h3>2. Compressione a ginocchio morbido</h3>
+            <p>Invece di attivare bruscamente la compressione alla soglia, una curva quadratica passa gradualmente alla compressione completa su una larghezza di ginocchio configurabile. Il preset Studio usa un ginocchio di 24 dB — così gentile che a malapena lo si nota.</p>
+
+            <h3>3. Saturazione armonica</h3>
+            <p>Il modello LA-2A applica la modellatura d'onda <code>tanh</code> (saturazione morbida, come le valvole). Il modello 1176 usa la modellatura d'onda polinomiale (<code>x + 0.1x&sup2; - 0.01x&sup3;</code>) per il carattere FET più granuloso. Questi sono sottili — li si sente più che li si percepisce.</p>
+
+            <h2>Compressione a Due Stadi</h2>
+            <p>1Take esegue due compressori in serie:</p>
+            <p><code>Ingresso &rarr; Gate &rarr; EQ &rarr; Comp 1 &rarr; Comp 2 &rarr; Saturazione &rarr; M/S &rarr; Maximizer</code></p>
+            <p>Comp 1 (Compressore Trasparente) doma la dinamica. Comp 2 (il modello di carattere) plasma il timbro. Questo approccio "prima il livello, poi il colore" è standard negli studi professionali.</p>
+
+            <h2>Audio in Tempo Reale su iPhone</h2>
+            <p>L'intera catena DSP viene eseguita nella callback di rendering audio — un thread in tempo reale dove non puoi allocare memoria, acquisire lock, o fare nulla che possa bloccarsi. Lo abbiamo imparato a nostre spese quando la nostra prima implementazione usava un <code>NSLock</code> per proteggere lo stato condiviso e produceva artefatti udibili sotto carico.</p>
+            <p>La correzione: memorizzare le impostazioni del compressore come value type Swift e consentire al thread di rendering di leggere uno snapshot senza alcuna sincronizzazione. Su arm64, l'assegnazione di struct è atomica, quindi il thread di rendering non vede mai uno stato scritto a metà.</p>
+            <p>Costo CPU: meno dell'1% su A15 e chip più recenti. iPhone ha più che sufficiente potenza di calcolo per questo.</p>
+
+            <h2>Guida ai Parametri</h2>
+            <p>Ogni slider ora ha un'etichetta di suggerimento sottostante che spiega cosa fa. Ecco la versione rapida:</p>
+            <table>
+                <tr><th>Parametro</th><th>Cosa fa</th><th>Punto di partenza</th></tr>
+                <tr><td>Threshold (Soglia)</td><td>Livello a cui inizia la compressione</td><td>-24 dB, regola finché il meter GR mostra 2-3 dB</td></tr>
+                <tr><td>Ratio (Rapporto)</td><td>Quantità di compressione</td><td>3:1-4:1 per il feel LA-2A, 8:1-12:1 per il 1176</td></tr>
+                <tr><td>Knee (Ginocchio)</td><td>Come si attiva la compressione</td><td>24 = morbido, 0 = aggressivo</td></tr>
+                <tr><td>Attack (Attacco)</td><td>Con quale rapidità interviene</td><td>Più lento = più punch nei transienti</td></tr>
+                <tr><td>Release (Rilascio)</td><td>Con quale rapidità si libera</td><td>Il modello LA-2A regola questo automaticamente</td></tr>
+                <tr><td>Makeup Gain (Guadagno di compensazione)</td><td>Compensa la perdita di volume</td><td>Corrisponde alla lettura media del GR</td></tr>
+            </table>
+
+            <h2>Cos'Altro c'è in v1.5.0</h2>
+            <ul>
+                <li>Testo di suggerimento dei parametri su ogni slider degli effetti</li>
+                <li>Argomento di aiuto sulla saturazione aggiunto all'aiuto in-app</li>
+                <li>Aiuto sul compressore e sui preset ampliato con dettagli DSP</li>
+                <li>Etichette degli effetti standardizzate in inglese in tutte le impostazioni</li>
+                <li>Varianti A/B test del paywall con Firebase Analytics</li>
+                <li>Protezione della sicurezza (privacy dei log, gestione delle chiavi API)</li>
+                <li>Rilevamento nessun input audio con nuovo tentativo</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li><a href="https://apps.apple.com/app/1take-audio-recorder/id6738947830">Ottieni 1Take sull'App Store</a></li>
+                <li><a href="/1Take-support/changelog-it">Registro Modifiche Completo</a></li>
+                <li><a href="/1Take-support/index-it">Pagina di Supporto</a></li>
+            </ul>
+
+            <div class="related">
+                <h3>Articoli Correlati</h3>
+                <ul>
+                    <li><a href="/1Take-support/blog/it/2026-03-29-1take-v14-released/">1Take v1.4: Cloud Sync, Ottimizzazione AI, Tag GPS e Altro</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-03-29-ai-auto-optimization/">Ottimizzazione AI Automatica: Perfezionamento del Suono in Tempo Reale in 1Take v1.4</a></li>
+                    <li><a href="/1Take-support/blog/it/2026-01-22-introducing-1take/">Presentazione di 1Take</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/changelog-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/manual/' + suffixes[i] + '/') !== -1) return suffixes[i];
+            if (currentPath.indexOf('/blog/' + suffixes[i] + '/') !== -1) return suffixes[i];
+        }
+        if (currentPath.indexOf('/manual/en/') !== -1 || currentPath.indexOf('/blog/en/') !== -1) return 'en';
+        if (currentPath.indexOf('/ChatArchive-support/') !== -1) {
+            if (currentPath.indexOf('/th/') !== -1) return 'th';
+            if (currentPath.indexOf('/zh-Hant/') !== -1) return 'zh-Hant';
+        }
+        return 'en';
+    }
+
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) {
+                map[lang] = basePath.replace('LANG', lang);
+            });
+        }
+        return map;
+    })();
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>
