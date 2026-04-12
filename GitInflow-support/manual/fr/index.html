@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manuel utilisateur | GitInflow Support</title>
+    <meta name="description" content="Manuel utilisateur GitInflow. Guide complet de toutes les fonctionnalités.">
+    <meta property="og:title" content="Manuel utilisateur | GitInflow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/manual/fr/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h1 { font-size: 1.8em; color: #fff; margin-bottom: 16px; font-weight: 700; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content blockquote { border-left: 3px solid rgba(233,69,96,0.5); padding-left: 16px; margin: 16px 0; color: #a0a0a0; }
+        .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; margin-bottom: 40px; }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 4px; }
+        .toc a { color: #a0a0a0; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        body { display: flex; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 8px; color: #808080; text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">1Take<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a><a href="/1Take-support/manual/en/">Manual</a><a href="/1Take-support/blog/en/">Blog</a><a href="/1Take-support/changelog">Changelog</a><a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links show">
+      <a href="/GitInflow-support/index-fr">Support</a>
+      <a href="/GitInflow-support/manual/fr/" class="active">Manuel</a>
+      <a href="/GitInflow-support/blog/fr/">Blog</a>
+      <a href="/GitInflow-support/changelog-fr">Changelog</a>
+      <a href="/GitInflow-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/GitInflow-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/GitInflow-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <span class="sidebar-lang-btn active" data-lang="fr">FR</span>
+    <a href="/GitInflow-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/GitInflow-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/GitInflow-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/GitInflow-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/GitInflow-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/GitInflow-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/GitInflow-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/GitInflow-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
+  </div>
+</nav>
+<div class="content-pane">
+  <div class="container">
+    <div class="hero">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" class="hero-icon">
+      <h1>GitInflow</h1>
+      <p>Client Kanban GitHub Issues pour iOS</p>
+    </div>
+    <div class="content">
+      <h1>Manuel utilisateur GitInflow</h1>
+      <p>GitInflow est un client kanban GitHub Issues pour iOS. Ce manuel couvre toutes les fonctionnalités en détail.</p>
+      <hr>
+      <div class="toc">
+        <h3>Table des matières</h3>
+        <ol>
+          <li><a href="#getting-started">Démarrage</a></li>
+          <li><a href="#kanban-tabs">Onglets Kanban</a></li>
+          <li><a href="#changing-status">Changer le statut</a></li>
+          <li><a href="#search">Recherche</a></li>
+          <li><a href="#repository-filter">Filtre de dépôt</a></li>
+          <li><a href="#creating-issues">Créer des issues</a></li>
+          <li><a href="#issue-detail">Détail de l'issue</a></li>
+          <li><a href="#labels-milestones">Étiquettes &amp; Jalons</a></li>
+          <li><a href="#comments">Commentaires</a></li>
+          <li><a href="#share-extension">Extension de partage</a></li>
+          <li><a href="#pull-requests-tab">Onglet Pull Requests</a></li>
+          <li><a href="#widget">Widget</a></li>
+          <li><a href="#notifications">Notifications</a></li>
+          <li><a href="#settings">Paramètres</a></li>
+          <li><a href="#error-handling">Gestion des erreurs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+      <hr>
+      <h2 id="getting-started">Démarrage</h2>
+      <h3>Connexion</h3>
+      <ol>
+        <li>Lancez GitInflow.</li>
+        <li>Appuyez sur <strong>« Se connecter avec GitHub »</strong> sur l'écran de connexion.</li>
+        <li>Authentifiez-vous dans le navigateur ou via l'application GitHub. GitInflow utilise OAuth et ne stocke jamais votre mot de passe.</li>
+      </ol>
+      <h3>Sélectionner des dépôts</h3>
+      <ol>
+        <li>Après la connexion, accédez à l'onglet <strong>Paramètres</strong> (icône d'engrenage).</li>
+        <li>Appuyez sur les dépôts pour les sélectionner. Les dépôts sélectionnés sont cochés.</li>
+        <li>Vous pouvez sélectionner <strong>jusqu'à 5 dépôts</strong> simultanément.</li>
+      </ol>
+      <h3>Définir un dépôt par défaut</h3>
+      <p>Dans l'onglet Paramètres, appuyez sur l'<strong>icône étoile</strong> à côté d'un dépôt pour le définir par défaut. Le dépôt par défaut est utilisé lors de :</p>
+      <ul>
+        <li>La création d'une nouvelle issue via le bouton <strong>+</strong></li>
+        <li>L'utilisation de l'<strong>Extension de partage</strong> sans choisir manuellement un dépôt</li>
+      </ul>
+      <hr>
+      <h2 id="kanban-tabs">Onglets Kanban</h2>
+      <p>GitInflow organise les issues en quatre colonnes de statut, chacune représentée par un onglet :</p>
+      <table>
+        <thead><tr><th>Onglet</th><th>Description</th><th>Étiquette GitHub</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Backlog</strong></td><td>Issues sans étiquette de statut — la boîte de réception des nouveaux travaux</td><td><em>(aucune étiquette)</em></td></tr>
+          <tr><td><strong>Ready</strong></td><td>Issues triées et prêtes à démarrer</td><td><code>status:ready</code></td></tr>
+          <tr><td><strong>In Progress</strong></td><td>Issues en cours de traitement</td><td><code>status:inProgress</code></td></tr>
+          <tr><td><strong>Done</strong></td><td>Issues terminées — fermées automatiquement sur GitHub</td><td><code>status:done</code></td></tr>
+        </tbody>
+      </table>
+      <p>Appuyez sur un onglet pour y accéder. Chaque onglet affiche uniquement les issues correspondant à ce statut dans vos dépôts sélectionnés.</p>
+      <hr>
+      <h2 id="changing-status">Changer le statut</h2>
+      <p>Il existe quatre façons de changer le statut d'une issue :</p>
+      <h3>Glisser à gauche — Ajouter / Avancer</h3>
+      <p>Glissez une carte d'issue <strong>vers la gauche</strong> pour révéler des actions rapides :</p>
+      <ul>
+        <li><strong>Étiquette</strong> — Ouvrir le sélecteur d'étiquettes</li>
+        <li><strong>Jalon</strong> — Ouvrir le sélecteur de jalons</li>
+        <li><strong>Avancer</strong> — Déplacer l'issue vers le statut suivant (ex. Backlog → Ready → In Progress → Done)</li>
+      </ul>
+      <h3>Glisser à droite — Reculer / Commenter</h3>
+      <p>Glissez une carte d'issue <strong>vers la droite</strong> pour révéler :</p>
+      <ul>
+        <li><strong>Reculer</strong> — Déplacer l'issue vers le statut précédent (ex. In Progress → Ready)</li>
+        <li><strong>Commenter</strong> — Ouvrir une feuille de commentaire pour ajouter un commentaire à l'issue</li>
+      </ul>
+      <h3>Menu contextuel (appui long)</h3>
+      <p>Appuyez longuement sur une carte d'issue pour ouvrir un menu contextuel avec toutes les options de statut disponibles. Cela permet d'accéder directement à n'importe quel statut sans glisser plusieurs fois.</p>
+      <h3>Boutons de détail de l'issue</h3>
+      <p>Appuyez sur une issue pour ouvrir l'écran <strong>Détail de l'issue</strong>. Les boutons de changement de statut sont affichés en bas de l'écran — appuyez sur <strong>Avancer</strong> ou <strong>Reculer</strong> pour déplacer l'issue.</p>
+      <hr>
+      <h2 id="search">Recherche</h2>
+      <p>Chaque onglet kanban dispose d'une <strong>barre de recherche</strong> en haut. Appuyez dessus pour filtrer les issues de l'onglet actuel par mot-clé.</p>
+      <ul>
+        <li>La recherche correspond aux <strong>titres</strong> des issues.</li>
+        <li>La recherche est locale (pas de requête réseau supplémentaire) et se met à jour en temps réel.</li>
+        <li>Effacer la barre de recherche restaure la liste complète.</li>
+      </ul>
+      <hr>
+      <h2 id="repository-filter">Filtre de dépôt</h2>
+      <p>Lorsque vous avez <strong>deux dépôts ou plus</strong> sélectionnés dans Paramètres, une rangée de <strong>puces de filtre</strong> apparaît sous la barre d'onglets sur l'écran kanban.</p>
+      <ul>
+        <li>Appuyez sur une puce pour afficher les issues de ce dépôt uniquement.</li>
+        <li>Appuyez sur <strong>Tous</strong> (la puce la plus à gauche) pour afficher les issues de tous les dépôts sélectionnés.</li>
+        <li>Le filtre s'applique à l'onglet actuel uniquement ; changer d'onglet conserve votre sélection de filtre.</li>
+      </ul>
+      <hr>
+      <h2 id="creating-issues">Créer des issues</h2>
+      <ol>
+        <li>Accédez à n'importe quel onglet kanban (le bouton <strong>+</strong> est toujours visible en haut à droite).</li>
+        <li>Appuyez sur <strong>+</strong>.</li>
+        <li>Si vous avez plusieurs dépôts sélectionnés, un <strong>sélecteur de dépôt</strong> apparaît — choisissez le dépôt cible. Si vous avez un dépôt par défaut défini, il est présélectionné.</li>
+        <li>Entrez un <strong>titre</strong> (obligatoire) et un <strong>corps</strong> optionnel.</li>
+        <li>Appuyez sur <strong>Soumettre</strong> pour créer l'issue sur GitHub. La nouvelle issue apparaît dans l'onglet <strong>Backlog</strong>.</li>
+      </ol>
+      <hr>
+      <h2 id="issue-detail">Détail de l'issue</h2>
+      <p>Appuyez sur une carte d'issue pour ouvrir son écran de détail. L'écran de détail affiche :</p>
+      <ul>
+        <li><strong>Titre</strong> — Titre et numéro de l'issue</li>
+        <li><strong>Badge de statut</strong> — Statut kanban actuel (Backlog / Ready / In Progress / Done)</li>
+        <li><strong>Étiquettes</strong> — Toutes les étiquettes assignées à l'issue</li>
+        <li><strong>Jalon</strong> — Jalon assigné, le cas échéant</li>
+        <li><strong>Corps</strong> — Description de l'issue (rendue en texte brut)</li>
+        <li><strong>Commentaires</strong> — Tous les commentaires existants par ordre chronologique</li>
+        <li><strong>Boutons de changement de statut</strong> — Boutons Avancer et Reculer en bas</li>
+      </ul>
+      <hr>
+      <h2 id="labels-milestones">Étiquettes &amp; Jalons</h2>
+      <h3>Ajouter une étiquette via le glissement</h3>
+      <ol>
+        <li>Glissez une carte d'issue <strong>vers la gauche</strong>.</li>
+        <li>Appuyez sur l'action <strong>Étiquette</strong>.</li>
+        <li>Une feuille de sélection apparaît avec toutes les étiquettes du dépôt de l'issue.</li>
+        <li>Appuyez sur une étiquette pour l'activer ou la désactiver.</li>
+        <li>Appuyez sur <strong>Terminé</strong> pour appliquer.</li>
+      </ol>
+      <h3>Ajouter un jalon via le glissement</h3>
+      <ol>
+        <li>Glissez une carte d'issue <strong>vers la gauche</strong>.</li>
+        <li>Appuyez sur l'action <strong>Jalon</strong>.</li>
+        <li>Une feuille de sélection apparaît avec tous les jalons ouverts du dépôt.</li>
+        <li>Appuyez sur un jalon pour l'assigner, ou appuyez sur <strong>Aucun</strong> pour supprimer le jalon actuel.</li>
+        <li>Appuyez sur <strong>Terminé</strong> pour appliquer.</li>
+      </ol>
+      <blockquote><strong>Remarque :</strong> Les étiquettes et jalons sont récupérés depuis GitHub. Créez-les sur GitHub.com ou l'application GitHub d'abord.</blockquote>
+      <hr>
+      <h2 id="comments">Commentaires</h2>
+      <h3>Ajouter un commentaire via le glissement</h3>
+      <ol>
+        <li>Glissez une carte d'issue <strong>vers la droite</strong>.</li>
+        <li>Appuyez sur l'action <strong>Commenter</strong>.</li>
+        <li>Une feuille de commentaire apparaît. Tapez votre commentaire.</li>
+        <li>Appuyez sur <strong>Publier</strong> pour soumettre.</li>
+      </ol>
+      <h3>Ajouter un commentaire depuis le détail de l'issue</h3>
+      <ol>
+        <li>Appuyez sur une issue pour ouvrir l'écran de détail.</li>
+        <li>Faites défiler jusqu'en bas de la liste des commentaires.</li>
+        <li>Appuyez sur le champ <strong>Ajouter un commentaire</strong>.</li>
+        <li>Tapez votre commentaire et appuyez sur <strong>Publier</strong>.</li>
+      </ol>
+      <hr>
+      <h2 id="share-extension">Extension de partage</h2>
+      <p>L'extension de partage vous permet de créer ou mettre à jour des GitHub Issues directement depuis n'importe quelle application — navigateur, Notes, Safari, etc.</p>
+      <h3>Activer l'extension de partage</h3>
+      <ol>
+        <li>Dans n'importe quelle application, appuyez sur le bouton <strong>Partager</strong> (boîte avec flèche).</li>
+        <li>Faites défiler la feuille de partage et appuyez sur <strong>GitInflow Share</strong>. Si elle n'apparaît pas, appuyez sur <strong>Plus</strong> et activez-la.</li>
+      </ol>
+      <h3>Mode Nouvelle issue</h3>
+      <ol>
+        <li>Dans l'extension de partage, sélectionnez <strong>Nouvelle issue</strong> dans le sélecteur de mode.</li>
+        <li>Choisissez un dépôt (votre dépôt par défaut est présélectionné).</li>
+        <li>Le contenu partagé (URL, texte sélectionné, image) est pré-rempli dans le corps.</li>
+        <li>Modifiez le titre et le corps si nécessaire.</li>
+        <li>Appuyez sur <strong>Créer</strong> pour publier l'issue.</li>
+      </ol>
+      <h3>Mode Ajouter à une issue existante</h3>
+      <ol>
+        <li>Sélectionnez <strong>Ajouter à une issue existante</strong> dans le sélecteur de mode.</li>
+        <li>Choisissez un dépôt.</li>
+        <li>Une liste des issues ouvertes dans ce dépôt apparaît — appuyez sur l'issue à laquelle vous souhaitez ajouter.</li>
+        <li>Le contenu partagé est pré-rempli comme commentaire.</li>
+        <li>Appuyez sur <strong>Publier</strong> pour ajouter le commentaire.</li>
+      </ol>
+      <hr>
+      <h2 id="pull-requests-tab">Onglet Pull Requests</h2>
+      <p>Appuyez sur l'onglet <strong>PRs</strong> pour voir toutes les pull requests ouvertes de vos dépôts sélectionnés.</p>
+      <ul>
+        <li>Chaque ligne affiche le titre de la PR, le dépôt et l'auteur.</li>
+        <li>Appuyez sur une PR pour l'ouvrir dans Safari (GitHub web).</li>
+        <li>Utilisez les <strong>puces de filtre de dépôt</strong> pour filtrer par dépôt.</li>
+      </ul>
+      <blockquote>Les pull requests sont en lecture seule dans GitInflow. Utilisez GitHub.com ou l'application GitHub pour réviser et fusionner les PRs.</blockquote>
+      <hr>
+      <h2 id="widget">Widget</h2>
+      <p>GitInflow fournit un widget d'écran d'accueil qui affiche le nombre de vos issues en un coup d'œil.</p>
+      <table>
+        <thead><tr><th>Taille</th><th>Contenu</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Petit</strong></td><td>Nombre d'issues <strong>In Progress</strong></td></tr>
+          <tr><td><strong>Moyen</strong></td><td>Nombre pour les quatre statuts : Backlog / Ready / In Progress / Done</td></tr>
+        </tbody>
+      </table>
+      <h3>Ajouter le widget</h3>
+      <ol>
+        <li>Appuyez longuement sur une zone vide de votre écran d'accueil.</li>
+        <li>Appuyez sur <strong>+</strong> (coin supérieur gauche) pour ouvrir la galerie de widgets.</li>
+        <li>Recherchez <strong>GitInflow</strong>.</li>
+        <li>Sélectionnez <strong>Petit</strong> ou <strong>Moyen</strong>.</li>
+        <li>Appuyez sur <strong>Ajouter un widget</strong> et positionnez-le.</li>
+      </ol>
+      <hr>
+      <h2 id="notifications">Notifications</h2>
+      <p>GitInflow peut envoyer des <strong>notifications locales</strong> lorsque de nouvelles issues apparaissent dans vos dépôts sélectionnés.</p>
+      <ul>
+        <li>Les notifications sont générées lors de l'actualisation des données d'issues (en premier plan ou en arrière-plan).</li>
+        <li>Les nouvelles issues absentes lors de l'actualisation précédente déclenchent une notification.</li>
+        <li>Appuyez sur une notification pour ouvrir GitInflow directement sur l'issue concernée.</li>
+      </ul>
+      <h3>Activer les notifications</h3>
+      <p>iOS vous invitera à autoriser les notifications au premier lancement. Si vous avez refusé, allez dans <strong>Réglages iOS → GitInflow → Notifications</strong> et activez-les.</p>
+      <hr>
+      <h2 id="settings">Paramètres</h2>
+      <p>Ouvrez l'onglet <strong>Paramètres</strong> (icône d'engrenage) pour gérer :</p>
+      <h3>Sélection des dépôts</h3>
+      <ul>
+        <li>Appuyez sur n'importe quel dépôt dans la liste pour le <strong>sélectionner ou désélectionner</strong>.</li>
+        <li>Une coche indique un dépôt sélectionné.</li>
+        <li>Vous pouvez sélectionner jusqu'à <strong>5 dépôts</strong>.</li>
+      </ul>
+      <h3>Dépôt par défaut</h3>
+      <ul>
+        <li>Appuyez sur l'<strong>icône étoile</strong> à côté d'un dépôt pour le définir par défaut.</li>
+        <li>L'étoile devient pleine/jaune sur le défaut sélectionné.</li>
+        <li>Un seul défaut peut être défini à la fois.</li>
+      </ul>
+      <h3>Déconnexion</h3>
+      <p>Appuyez sur <strong>Déconnexion</strong> (en bas des Paramètres) pour vous déconnecter de votre compte GitHub. Toutes les données mises en cache localement sont effacées lors de la déconnexion.</p>
+      <hr>
+      <h2 id="error-handling">Gestion des erreurs</h2>
+      <h3>Bannière d'erreur de dépôt</h3>
+      <p>Si GitInflow ne peut pas charger les issues d'un dépôt (ex. erreur réseau, accès révoqué), une <strong>bannière d'erreur rouge</strong> apparaît en haut de l'écran kanban indiquant quel dépôt a échoué.</p>
+      <h3>Bouton Réessayer</h3>
+      <p>Appuyez sur le bouton <strong>Réessayer</strong> dans la bannière d'erreur pour re-récupérer immédiatement les issues du dépôt en erreur.</p>
+      <hr>
+      <h2 id="faq">FAQ</h2>
+      <h3>Combien de dépôts puis-je sélectionner ?</h3>
+      <p>Jusqu'à 5 dépôts peuvent être sélectionnés simultanément dans Paramètres.</p>
+      <h3>Que fait le statut « Done » sur GitHub ?</h3>
+      <p>Lorsque vous déplacez une issue vers Done, GitInflow ajoute l'étiquette <code>status:done</code> et <strong>ferme</strong> l'issue sur GitHub. La ramener à tout autre statut rouvre l'issue.</p>
+      <h3>Puis-je utiliser GitInflow avec des dépôts privés ?</h3>
+      <p>Oui. GitInflow utilise votre token OAuth GitHub qui a accès à tous les dépôts que vous avez autorisés lors de la connexion.</p>
+      <h3>L'extension de partage n'apparaît pas. Que faire ?</h3>
+      <p>Dans la feuille de partage, appuyez sur <strong>Plus</strong>, trouvez GitInflow Share dans la liste et activez-le.</p>
+      <h3>Pourquoi mes étiquettes ou jalons n'apparaissent pas ?</h3>
+      <p>Les étiquettes et jalons sont récupérés depuis GitHub. Assurez-vous que le dépôt en possède et que vous avez accès au réseau.</p>
+      <h3>Pourquoi le widget ne se met pas à jour ?</h3>
+      <p>Les widgets iOS se rafraîchissent selon un planning géré par le système. Ouvrez GitInflow au moins une fois pour déclencher une actualisation des données.</p>
+      <h3>J'ai déplacé accidentellement une issue vers Done. Comment annuler ?</h3>
+      <p>Glissez la carte d'issue vers la droite dans l'onglet Done et appuyez sur <strong>Reculer</strong>, ou appuyez longuement sur la carte et sélectionnez un statut dans le menu contextuel.</p>
+    </div>
+    <footer>
+      <p>&copy; 2026 hakaru. All rights reserved.</p>
+      <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:hakaruapps-contact@hakaru.net">Contact</a></p>
+    </footer>
+  </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja';
+        if (n.startsWith('fr')) return 'fr';
+        if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es';
+        if (n.startsWith('it')) return 'it';
+        if (n.startsWith('ko')) return 'ko';
+        if (n.startsWith('nl')) return 'nl';
+        if (n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv';
+        if (n.startsWith('zh')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var m = currentPath.match(/\/manual\/([^\/]+)\//);
+        return m ? m[1] : 'en';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var el = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (el && el.href) { window.location.href = el.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+        h.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(x) { x.classList.remove('expanded'); if (x.nextElementSibling) x.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var ca = document.querySelector('.sidebar-app-header.active');
+    if (ca) { ca.classList.add('expanded'); if (ca.nextElementSibling) ca.nextElementSibling.classList.add('show'); }
+    var tog = document.querySelector('.sidebar-toggle'), sb = document.querySelector('.sidebar'), ov = document.querySelector('.sidebar-overlay');
+    if (tog) { tog.addEventListener('click', function() { sb.classList.toggle('open'); ov.classList.toggle('show'); }); }
+    if (ov) { ov.addEventListener('click', function() { sb.classList.remove('open'); ov.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b) { b.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>

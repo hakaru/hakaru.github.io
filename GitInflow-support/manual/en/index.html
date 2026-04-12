@@ -180,10 +180,10 @@ body {
 }
 .sidebar-lang-btn {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 4px 8px;
     color: #808080;
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.8em;
     border-radius: 4px;
     transition: all 0.2s;
 }
@@ -332,7 +332,16 @@ body {
   </div>
   <div class="sidebar-lang">
     <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/GitInflow-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/GitInflow-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/GitInflow-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/GitInflow-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/GitInflow-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/GitInflow-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/GitInflow-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/GitInflow-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/GitInflow-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/GitInflow-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/GitInflow-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -739,7 +748,17 @@ body {
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('zh')) return 'zh-Hant';
+        return 'en';
     }
 
     function isJaPage() {
@@ -755,10 +774,11 @@ body {
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var m = currentPath.match(/\/manual\/([^\/]+)\//);
+        if (m) return m[1];
+        var m2 = currentPath.match(/\/blog\/([^\/]+)\//);
+        if (m2) return m2[1];
+        return 'en';
     }
 
     // Auto-redirect on first visit (no saved preference, not coming from same site)

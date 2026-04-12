@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Användarmanual | GitInflow Support</title>
+    <meta name="description" content="GitInflow användarmanual. Komplett guide för alla funktioner.">
+    <meta property="og:title" content="Användarmanual | GitInflow Support">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/manual/sv/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h1 { font-size: 1.8em; color: #fff; margin-bottom: 16px; font-weight: 700; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content blockquote { border-left: 3px solid rgba(233,69,96,0.5); padding-left: 16px; margin: 16px 0; color: #a0a0a0; }
+        .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; margin-bottom: 40px; }
+        .toc h3 { color: #fff; margin-bottom: 12px; font-size: 1em; }
+        .toc ol { margin: 0 0 0 20px; }
+        .toc li { margin-bottom: 4px; }
+        .toc a { color: #a0a0a0; font-size: 0.9em; }
+        .toc a:hover { color: #e94560; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        .sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #e94560; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #e94560; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #e94560; }
+        .sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; }
+        .sidebar-lang-btn { display: inline-block; padding: 4px 8px; color: #808080; text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s; }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">1Take<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a><a href="/1Take-support/manual/en/">Manual</a><a href="/1Take-support/blog/en/">Blog</a><a href="/1Take-support/changelog">Changelog</a><a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links show">
+      <a href="/GitInflow-support/index-sv">Support</a>
+      <a href="/GitInflow-support/manual/sv/" class="active">Manual</a>
+      <a href="/GitInflow-support/blog/sv/">Blogg</a>
+      <a href="/GitInflow-support/changelog-sv">Ändringslogg</a>
+      <a href="/GitInflow-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a><a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/blog/en/">Blog</a><a href="/SonicDNAEngine-support/changelog">Changelog</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a><a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button>
+    <div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a><a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a></div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/GitInflow-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/GitInflow-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/GitInflow-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/GitInflow-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/GitInflow-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/GitInflow-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/GitInflow-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/GitInflow-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/GitInflow-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <span class="sidebar-lang-btn active" data-lang="sv">SV</span>
+    <a href="/GitInflow-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
+  </div>
+</nav>
+<div class="content-pane">
+  <div class="container">
+    <div class="hero">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" class="hero-icon">
+      <h1>GitInflow</h1>
+      <p>GitHub Issues Kanban-klient för iOS</p>
+    </div>
+    <div class="content">
+
+      <h1>GitInflow Användarmanual</h1>
+      <p>GitInflow är en GitHub Issues kanban-klient för iOS. Denna manual täcker alla funktioner i detalj.</p>
+      <hr>
+      <div class="toc">
+        <h3>Innehållsförteckning</h3>
+        <ol>
+          <li><a href="#getting-started">Kom igång</a></li>
+          <li><a href="#kanban-tabs">Kanban-flikar</a></li>
+          <li><a href="#changing-status">Ändra status</a></li>
+          <li><a href="#search">Sök</a></li>
+          <li><a href="#repository-filter">Repositoryfilter</a></li>
+          <li><a href="#creating-issues">Skapa ärenden</a></li>
+          <li><a href="#issue-detail">Ärendedetaljer</a></li>
+          <li><a href="#labels-milestones">Etiketter &amp; Milstolpar</a></li>
+          <li><a href="#comments">Kommentarer</a></li>
+          <li><a href="#share-extension">Delningstillägg</a></li>
+          <li><a href="#pull-requests-tab">Pull Requests-flik</a></li>
+          <li><a href="#widget">Widget</a></li>
+          <li><a href="#notifications">Aviseringar</a></li>
+          <li><a href="#settings">Inställningar</a></li>
+          <li><a href="#error-handling">Felhantering</a></li>
+          <li><a href="#faq">Vanliga frågor</a></li>
+        </ol>
+      </div>
+      <hr>
+      <h2 id="getting-started">Kom igång</h2>
+      <h3>Logga in</h3>
+      <ol>
+        <li>Starta GitInflow.</li>
+        <li>Tryck på <strong>"Logga in med GitHub"</strong> på inloggningsskärmen.</li>
+        <li>Autentisera i webbläsaren eller via GitHub-appen. GitInflow använder OAuth och lagrar aldrig ditt lösenord.</li>
+      </ol>
+      <h3>Välj repositorier</h3>
+      <ol>
+        <li>Gå till fliken <strong>Inställningar</strong> (kugghjulsikon) efter inloggning.</li>
+        <li>Tryck på repositorier för att välja dem.</li>
+        <li>Du kan välja <strong>upp till 5 repositorier</strong> åt gången.</li>
+      </ol>
+      <hr>
+      <h2 id="kanban-tabs">Kanban-flikar</h2>
+      <p>GitInflow organiserar ärenden i fyra statuskolumner:</p>
+      <table>
+        <thead><tr><th>Flik</th><th>Beskrivning</th><th>GitHub-etikett</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Backlog</strong></td><td>Ärenden utan statusetikett — inkorg för nytt arbete</td><td><em>(ingen etikett)</em></td></tr>
+          <tr><td><strong>Ready</strong></td><td>Triagerade ärenden redo att starta</td><td><code>status:ready</code></td></tr>
+          <tr><td><strong>In Progress</strong></td><td>Aktivt bearbetade ärenden</td><td><code>status:inProgress</code></td></tr>
+          <tr><td><strong>Done</strong></td><td>Slutförda ärenden — stängs automatiskt på GitHub</td><td><code>status:done</code></td></tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2 id="changing-status">Ändra status</h2>
+      <h3>Svep åt vänster — Lägg till / Framåt</h3>
+      <ul>
+        <li><strong>Etikett</strong> — Öppna etikettväljare</li>
+        <li><strong>Milstolpe</strong> — Öppna milstolpeväljare</li>
+        <li><strong>Framåt</strong> — Flytta ärendet till nästa status</li>
+      </ul>
+      <h3>Svep åt höger — Bakåt / Kommentera</h3>
+      <ul>
+        <li><strong>Bakåt</strong> — Flytta ärendet till föregående status</li>
+        <li><strong>Kommentera</strong> — Öppna kommentarsark</li>
+      </ul>
+      <h3>Snabbmeny (långtryckning)</h3>
+      <p>Håll in ett ärendekort för att öppna en snabbmeny med alla tillgängliga statusalternativ.</p>
+      <hr>
+      <h2 id="search">Sök</h2>
+      <p>Varje kanban-flik har ett <strong>sökfält</strong> längst upp för realtidsfiltrering med nyckelord.</p>
+      <hr>
+      <h2 id="repository-filter">Repositoryfilter</h2>
+      <p>Med <strong>två eller fler repositorier</strong> valda visas en rad <strong>filterchips</strong> under flikraden.</p>
+      <hr>
+      <h2 id="creating-issues">Skapa ärenden</h2>
+      <ol>
+        <li>Navigera till en kanban-flik och tryck på <strong>+</strong>.</li>
+        <li>Ange en <strong>titel</strong> (obligatorisk) och valfri brödtext.</li>
+        <li>Tryck på <strong>Skicka</strong> för att skapa ärendet på GitHub.</li>
+      </ol>
+      <hr>
+      <h2 id="issue-detail">Ärendedetaljer</h2>
+      <p>Tryck på ett ärendekort för att se: titel, statusbricka, etiketter, milstolpe, brödtext, kommentarer och statusknappar.</p>
+      <hr>
+      <h2 id="labels-milestones">Etiketter &amp; Milstolpar</h2>
+      <ol>
+        <li>Svep ett ärendekort <strong>åt vänster</strong> och tryck på <strong>Etikett</strong> eller <strong>Milstolpe</strong>.</li>
+        <li>Välj i väljaren och tryck på <strong>Klar</strong>.</li>
+      </ol>
+      <blockquote><strong>Obs:</strong> Skapa etiketter och milstolpar på GitHub.com först.</blockquote>
+      <hr>
+      <h2 id="comments">Kommentarer</h2>
+      <ol>
+        <li>Svep ett ärendekort <strong>åt höger</strong> och tryck på <strong>Kommentera</strong>.</li>
+        <li>Skriv din kommentar och tryck på <strong>Publicera</strong>.</li>
+      </ol>
+      <hr>
+      <h2 id="share-extension">Delningstillägg</h2>
+      <p>Skapa eller uppdatera GitHub Issues från vilken app som helst. Tryck på <strong>Dela</strong> → <strong>GitInflow Share</strong>.</p>
+      <hr>
+      <h2 id="pull-requests-tab">Pull Requests-flik</h2>
+      <p>Tryck på fliken <strong>PRs</strong> för att se alla öppna pull requests. PR:er är skrivskyddade i GitInflow.</p>
+      <hr>
+      <h2 id="widget">Widget</h2>
+      <p>GitInflow erbjuder en hemskärmswidget (liten: In Progress-ärenden; medium: alla fyra statusar).</p>
+      <hr>
+      <h2 id="notifications">Aviseringar</h2>
+      <p>GitInflow kan skicka <strong>lokala aviseringar</strong> när nya ärenden visas i dina valda repositorier.</p>
+      <hr>
+      <h2 id="settings">Inställningar</h2>
+      <p>Öppna fliken <strong>Inställningar</strong> för att hantera repositorier, ange standard och logga ut.</p>
+      <hr>
+      <h2 id="error-handling">Felhantering</h2>
+      <p>Om GitInflow inte kan läsa in ärenden visas en <strong>röd felbanner</strong>. Tryck på <strong>Försök igen</strong>.</p>
+      <hr>
+      <h2 id="faq">Vanliga frågor</h2>
+      <h3>Hur många repositorier kan jag välja?</h3>
+      <p>Upp till 5 åt gången.</p>
+      <h3>Vad gör "Done"-statusen på GitHub?</h3>
+      <p>GitInflow lägger till etiketten <code>status:done</code> och <strong>stänger</strong> ärendet på GitHub.</p>
+      <h3>Kan jag använda GitInflow med privata repositorier?</h3>
+      <p>Ja. GitInflow använder din GitHub OAuth-token med tillgång till alla auktoriserade repositorier.</p>
+
+    </div>
+    <footer>
+      <p>&copy; 2026 hakaru. All rights reserved.</p>
+      <p style="margin-top: 10px;"><a href="/tokushoho.html">特定商取引法に基づく表記</a><span style="margin: 0 10px;">|</span><a href="mailto:hakaruapps-contact@hakaru.net">Contact</a></p>
+    </footer>
+  </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja';
+        if (n.startsWith('fr')) return 'fr';
+        if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es';
+        if (n.startsWith('it')) return 'it';
+        if (n.startsWith('ko')) return 'ko';
+        if (n.startsWith('nl')) return 'nl';
+        if (n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv';
+        if (n.startsWith('zh')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var m = currentPath.match(/\/manual\/([^\/]+)\//);
+        return m ? m[1] : 'en';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var el = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (el && el.href) { window.location.href = el.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+        h.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(x) { x.classList.remove('expanded'); if (x.nextElementSibling) x.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var ca = document.querySelector('.sidebar-app-header.active');
+    if (ca) { ca.classList.add('expanded'); if (ca.nextElementSibling) ca.nextElementSibling.classList.add('show'); }
+    var tog = document.querySelector('.sidebar-toggle'), sb = document.querySelector('.sidebar'), ov = document.querySelector('.sidebar-overlay');
+    if (tog) { tog.addEventListener('click', function() { sb.classList.toggle('open'); ov.classList.toggle('show'); }); }
+    if (ov) { ov.addEventListener('click', function() { sb.classList.remove('open'); ov.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(b) { b.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>

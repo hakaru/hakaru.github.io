@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Política de privacidad | GitInflow Support | hakaru</title>
+    <meta name="description" content="Política de privacidad | GitInflow Support.">
+    <meta property="og:title" content="Política de privacidad | GitInflow Support">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/GitInflow-support/privacy-es">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h1 { font-size: 1.8em; color: #fff; margin-bottom: 8px; font-weight: 700; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        .content .meta { color: #666; font-size: 0.9em; margin-bottom: 30px; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 8px; color: #808080; text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy-es" class="active">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/GitInflow-support/privacy" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/GitInflow-support/privacy-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/GitInflow-support/privacy-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/GitInflow-support/privacy-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <span class="sidebar-lang-btn active" data-lang="es">ES</span>
+    <a href="/GitInflow-support/privacy-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/GitInflow-support/privacy-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/GitInflow-support/privacy-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/GitInflow-support/privacy-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/GitInflow-support/privacy-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/GitInflow-support/privacy-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/GitInflow-support/assets/app-icon.png" alt="GitInflow" class="hero-icon">
+            <h1>GitInflow</h1>
+            <p>Cliente Kanban de GitHub Issues para iOS</p>
+        </div>
+        <div class="content">
+            <h1>Política de privacidad</h1>
+            <p class="meta"><strong>Última actualización:</strong></p>
+            <p>GitInflow es desarrollado por hakaru. Esta política de privacidad explica cómo manejamos sus datos.</p>
+            <h2>Datos a los que accedemos</h2>
+            <h3>Datos de la cuenta GitHub</h3>
+            <ul>
+                <li>La aplicación accede a su cuenta GitHub mediante autenticación OAuth con el alcance <code>repo</code></li>
+                <li>Esto proporciona acceso de lectura/escritura a sus repositorios, issues, etiquetas, hitos y comentarios</li>
+                <li>Los tokens de autenticación se almacenan de forma segura en el Keychain de iOS</li>
+                <li>El intercambio de tokens se realiza a través de un proxy seguro del lado del servidor (Cloudflare Workers)</li>
+            </ul>
+            <h3>Datos almacenados en su dispositivo</h3>
+            <ul>
+                <li><strong>Token OAuth:</strong> Almacenado en el Keychain de iOS (cifrado, protegido por hardware)</li>
+                <li><strong>Preferencias de repositorio:</strong> Repositorios seleccionados almacenados en UserDefaults</li>
+                <li><strong>Caché de issues:</strong> Caché temporal de datos de issues con fines de visualización</li>
+            </ul>
+            <h2>Datos que NO recopilamos</h2>
+            <ul>
+                <li>No recopilamos, almacenamos ni transmitimos sus datos personales a ningún servidor</li>
+                <li>No utilizamos servicios de análisis ni seguimiento</li>
+                <li>No utilizamos publicidad ni seguimiento publicitario (sin IDFA)</li>
+                <li>No accedemos a sus datos de GitHub para ningún otro propósito que no sea su visualización en la aplicación</li>
+            </ul>
+            <h2>Servicios de terceros</h2>
+            <ul>
+                <li><strong>API de GitHub:</strong> La aplicación se comunica directamente con la API REST de GitHub. La política de privacidad de GitHub se aplica a los datos almacenados en GitHub.</li>
+                <li><strong>Cloudflare Workers:</strong> Se usa exclusivamente para el intercambio de tokens OAuth. No se almacenan ni registran datos de usuarios.</li>
+            </ul>
+            <h2>Compartir datos</h2>
+            <p>No compartimos sus datos con terceros.</p>
+            <h2>Eliminación de datos</h2>
+            <ul>
+                <li>Puede revocar el acceso de la aplicación a su cuenta GitHub en cualquier momento desde <a href="https://github.com/settings/applications">Configuración de GitHub &gt; Aplicaciones</a></li>
+                <li>Desinstalar la aplicación elimina todos los datos almacenados localmente incluido el token OAuth</li>
+                <li>Puede cerrar sesión desde la pestaña Ajustes de la aplicación para eliminar el token almacenado</li>
+            </ul>
+            <h2>Privacidad de los niños</h2>
+            <p>La aplicación no está dirigida a menores de 13 años.</p>
+            <h2>Contacto</h2>
+            <p>Si tiene preguntas sobre esta política de privacidad:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:gitinflow@hakaru.net">gitinflow@hakaru.net</a></li>
+            </ul>
+            <h2>Cambios</h2>
+            <p>Podemos actualizar esta política de privacidad de vez en cuando. Los cambios se publicarán en esta página con una fecha actualizada.</p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang.startsWith('zh')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var m = currentPath.match(/\/privacy-([^\/\.\?]+)|\/index-([^\/\.\?]+)|\/blog\/([^\/]+)\/|\/manual\/([^\/]+)\//);
+        if (m) return m[1] || m[2] || m[3] || m[4];
+        if (currentPath.includes('/privacy-ja') || currentPath.includes('/changelog-ja') || currentPath.includes('/blog/ja/') || currentPath.includes('/manual/ja/')) return 'ja';
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) { window.location.href = langAlt.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded'); if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); });
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) { btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>
