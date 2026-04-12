@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacybeleid | SonicDNA Engine | hakaru</title>
+    <meta name="description" content="Privacybeleid van SonicDNA Engine.">
+    <meta property="og:title" content="Privacybeleid">
+    <meta property="og:description" content="Privacybeleid van SonicDNA Engine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNAEngine-support/privacy-nl">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td { padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .app-store-link { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; margin: 16px 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s; }
+        .app-store-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .app-store-link .app-icon-small { width: 50px; height: 50px; border-radius: 11px; }
+        .app-store-text { font-size: 12px; line-height: 1.3; }
+        .app-store-text .download { font-size: 16px; font-weight: 600; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+/* Sidebar styles */
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 4px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 8px; color: #808080; text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">1Take<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a><a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a><a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a><a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a><a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy" class="active">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a><a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a><a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/SonicDNAEngine-support/privacy" class="sidebar-lang-btn" data-lang="en">English</a>
+    <a href="/SonicDNAEngine-support/privacy-ja" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/SonicDNAEngine-support/privacy-fr" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/SonicDNAEngine-support/privacy-de" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/SonicDNAEngine-support/privacy-es" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/SonicDNAEngine-support/privacy-it" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <a href="/SonicDNAEngine-support/privacy-ko" class="sidebar-lang-btn" data-lang="ko">한국어</a>
+    <span class="sidebar-lang-btn active" data-lang="nl">Nederlands</span>
+    <a href="/SonicDNAEngine-support/privacy-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/SonicDNAEngine-support/privacy-sv" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/SonicDNAEngine-support/privacy-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+                <div class="hero">
+            <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="hero-icon">
+            <h1>SonicDNA Engine</h1>
+            <p>IR/NAM Audio Processor &amp; AUv3 Plugin for iOS</p>
+            <a href="#" class="app-store-link">
+                <img src="/SonicDNAEngine-support/assets/app-icon.png" alt="SonicDNA Engine" class="app-icon-small">
+                <div class="app-store-text">
+                    <div>Coming Soon on the</div>
+                    <div class="download">App Store</div>
+                </div>
+            </a>
+        </div>
+        <div class="content">
+            <h2>Privacybeleid</h2>
+            <p><strong>Laatst bijgewerkt: 10 maart 2026</strong></p>
+
+            <h2>Inleiding</h2>
+            <p>SonicDNA Engine hecht veel waarde aan de bescherming van uw privacy. Dit beleid legt uit hoe we informatie verwerken wanneer u onze iOS-app gebruikt.</p>
+
+            <h2>Samenvatting</h2>
+            <p>SonicDNA Engine verwerkt audio volledig op uw apparaat in realtime. IR- en NAM-bestanden worden lokaal opgeslagen en worden nooit door de app naar een server geüpload. De app maakt echter gebruik van diensten van derden — Firebase Analytics &amp; Crashlytics, de Tone3000 API en iCloud Drive.</p>
+
+            <h2>Audioverwerking</h2>
+            <p>Alle audioverwerking vindt volledig op uw apparaat plaats. Audio wordt nooit opgenomen, opgeslagen of verzonden naar een server.</p>
+
+            <h2>IR- en NAM-bestanden</h2>
+            <p>Lokaal opgeslagen, gesynchroniseerd op iCloud Drive indien ingeschakeld, nooit door de app geüpload naar een server.</p>
+
+            <h2>Verzamelde gegevens</h2>
+            <h3>Firebase Analytics &amp; Crashlytics</h3>
+            <p>Anonieme gebruiksgegevens en crashrapporten. Verwerkt door Google LLC. Zie <a href="https://policies.google.com/privacy">Googles privacybeleid</a>.</p>
+
+            <h3>Tone3000 API</h3>
+            <p>Bij gebruik van de modellenverkenner worden zoekopdrachten en Tone3000-accountgegevens verzonden. Zie <a href="https://www.tone3000.com/privacy">Tone3000s privacybeleid</a>.</p>
+
+            <h3>iCloud Drive</h3>
+            <p>IR-, NAM- en presetbestanden gesynchroniseerd via Apples iCloud Drive. Zie <a href="https://www.apple.com/privacy/">Apples privacybeleid</a>.</p>
+
+            <h2>Contact</h2>
+            <p>Voor vragen: <a href="mailto:sonicdna@hakaru.net"><strong>sonicdna@hakaru.net</strong></a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja';
+        if (n.startsWith('fr')) return 'fr';
+        if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es';
+        if (n.startsWith('it')) return 'it';
+        if (n.startsWith('ko')) return 'ko';
+        if (n.startsWith('nl')) return 'nl';
+        if (n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv';
+        if (n.startsWith('zh')) return 'zh-Hant';
+        return 'en';
+    }
+    function getCurrentPageLang() {
+        var p = currentPath;
+        if (p.includes('/blog/ja/') || p.includes('/index-ja') || p.includes('/privacy-ja') || p.includes('/changelog-ja')) return 'ja';
+        if (p.includes('/blog/fr/') || p.includes('/index-fr') || p.includes('/privacy-fr') || p.includes('/changelog-fr')) return 'fr';
+        if (p.includes('/blog/de/') || p.includes('/index-de') || p.includes('/privacy-de') || p.includes('/changelog-de')) return 'de';
+        if (p.includes('/blog/es/') || p.includes('/index-es') || p.includes('/privacy-es') || p.includes('/changelog-es')) return 'es';
+        if (p.includes('/blog/it/') || p.includes('/index-it') || p.includes('/privacy-it') || p.includes('/changelog-it')) return 'it';
+        if (p.includes('/blog/ko/') || p.includes('/index-ko') || p.includes('/privacy-ko') || p.includes('/changelog-ko')) return 'ko';
+        if (p.includes('/blog/nl/') || p.includes('/index-nl') || p.includes('/privacy-nl') || p.includes('/changelog-nl')) return 'nl';
+        if (p.includes('/blog/pt-BR/') || p.includes('/index-pt-BR') || p.includes('/privacy-pt-BR') || p.includes('/changelog-pt-BR')) return 'pt-BR';
+        if (p.includes('/blog/sv/') || p.includes('/index-sv') || p.includes('/privacy-sv') || p.includes('/changelog-sv')) return 'sv';
+        if (p.includes('/blog/zh-Hant/') || p.includes('/index-zh-Hant') || p.includes('/privacy-zh-Hant') || p.includes('/changelog-zh-Hant')) return 'zh-Hant';
+        return 'en';
+    }
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var el = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (el && el.href) { window.location.href = el.href; return; }
+    }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+        h.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var was = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(x) { x.classList.remove('expanded'); if (x.nextElementSibling) x.nextElementSibling.classList.remove('show'); });
+            if (!was) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
+        });
+    });
+    var cur = document.querySelector('.sidebar-app-header.active');
+    if (cur) { cur.classList.add('expanded'); if (cur.nextElementSibling) cur.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
+    });
+})();
+</script>
+</body>
+</html>

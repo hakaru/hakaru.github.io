@@ -177,13 +177,16 @@ body {
     padding: 15px 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 .sidebar-lang-btn {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 4px 8px;
     color: #808080;
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.8em;
     border-radius: 4px;
     transition: all 0.2s;
 }
@@ -330,9 +333,18 @@ body {
       <a href="/ChatArchive-support/en/terms">Terms</a>
     </div>
   </div>
-  <div class="sidebar-lang">
-    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/SonicDNAEngine-support/changelog-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <div class="sidebar-lang">
+    <span class="sidebar-lang-btn active" data-lang="en">English</span>
+    <a href="/SonicDNAEngine-support/changelog-ja" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/SonicDNAEngine-support/changelog-fr" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/SonicDNAEngine-support/changelog-de" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/SonicDNAEngine-support/changelog-es" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/SonicDNAEngine-support/changelog-it" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <a href="/SonicDNAEngine-support/changelog-ko" class="sidebar-lang-btn" data-lang="ko">한국어</a>
+    <a href="/SonicDNAEngine-support/changelog-nl" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
+    <a href="/SonicDNAEngine-support/changelog-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/SonicDNAEngine-support/changelog-sv" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/SonicDNAEngine-support/changelog-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -428,98 +440,58 @@ body {
 </div>
 <script>
 (function() {
-    // Language auto-detection
     var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
-
     function detectLang() {
         if (savedLang) return savedLang;
-        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
+        var n = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (n.startsWith('ja')) return 'ja';
+        if (n.startsWith('fr')) return 'fr';
+        if (n.startsWith('de')) return 'de';
+        if (n.startsWith('es')) return 'es';
+        if (n.startsWith('it')) return 'it';
+        if (n.startsWith('ko')) return 'ko';
+        if (n.startsWith('nl')) return 'nl';
+        if (n.startsWith('pt')) return 'pt-BR';
+        if (n.startsWith('sv')) return 'sv';
+        if (n.startsWith('zh')) return 'zh-Hant';
+        return 'en';
     }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
-    }
-
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var p = currentPath;
+        if (p.includes('/blog/ja/') || p.includes('/index-ja') || p.includes('/privacy-ja') || p.includes('/changelog-ja')) return 'ja';
+        if (p.includes('/blog/fr/') || p.includes('/index-fr') || p.includes('/privacy-fr') || p.includes('/changelog-fr')) return 'fr';
+        if (p.includes('/blog/de/') || p.includes('/index-de') || p.includes('/privacy-de') || p.includes('/changelog-de')) return 'de';
+        if (p.includes('/blog/es/') || p.includes('/index-es') || p.includes('/privacy-es') || p.includes('/changelog-es')) return 'es';
+        if (p.includes('/blog/it/') || p.includes('/index-it') || p.includes('/privacy-it') || p.includes('/changelog-it')) return 'it';
+        if (p.includes('/blog/ko/') || p.includes('/index-ko') || p.includes('/privacy-ko') || p.includes('/changelog-ko')) return 'ko';
+        if (p.includes('/blog/nl/') || p.includes('/index-nl') || p.includes('/privacy-nl') || p.includes('/changelog-nl')) return 'nl';
+        if (p.includes('/blog/pt-BR/') || p.includes('/index-pt-BR') || p.includes('/privacy-pt-BR') || p.includes('/changelog-pt-BR')) return 'pt-BR';
+        if (p.includes('/blog/sv/') || p.includes('/index-sv') || p.includes('/privacy-sv') || p.includes('/changelog-sv')) return 'sv';
+        if (p.includes('/blog/zh-Hant/') || p.includes('/index-zh-Hant') || p.includes('/privacy-zh-Hant') || p.includes('/changelog-zh-Hant')) return 'zh-Hant';
+        return 'en';
     }
-
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
-            return;
-        }
+        var el = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (el && el.href) { window.location.href = el.href; return; }
     }
-
-    // Accordion
-    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
-        header.addEventListener('click', function() {
+    document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+        h.addEventListener('click', function() {
             var links = this.nextElementSibling;
-            var wasExpanded = this.classList.contains('expanded');
-            // Collapse all
-            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
-                h.classList.remove('expanded');
-                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
-            });
-            // Toggle clicked
-            if (!wasExpanded) {
-                this.classList.add('expanded');
-                if (links) links.classList.add('show');
-            }
+            var was = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(x) { x.classList.remove('expanded'); if (x.nextElementSibling) x.nextElementSibling.classList.remove('show'); });
+            if (!was) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
         });
     });
-
-    // Auto-expand current app
-    var currentApp = document.querySelector('.sidebar-app-header.active');
-    if (currentApp) {
-        currentApp.classList.add('expanded');
-        if (currentApp.nextElementSibling) {
-            currentApp.nextElementSibling.classList.add('show');
-        }
-    }
-
-    // Mobile toggle
-    var toggle = document.querySelector('.sidebar-toggle');
-    var sidebar = document.querySelector('.sidebar');
-    var overlay = document.querySelector('.sidebar-overlay');
-    if (toggle) {
-        toggle.addEventListener('click', function() {
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('show');
-        });
-    }
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-        });
-    }
-
-    // Language switch saves preference
-    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            localStorage.setItem('hakaru-lang', this.dataset.lang);
-        });
-    });
+    var cur = document.querySelector('.sidebar-app-header.active');
+    if (cur) { cur.classList.add('expanded'); if (cur.nextElementSibling) cur.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle'), sidebar = document.querySelector('.sidebar'), overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) { btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
 })();
-
 </script>
 </body>
 </html>
