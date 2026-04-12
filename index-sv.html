@@ -93,18 +93,18 @@
     <div class="container">
         <header>
             <div class="lang-switcher">
-                <select onchange="location.href=this.value">
-                    <option value="/index.html">English</option>
-                    <option value="/index-ja.html">日本語</option>
-                    <option value="/index-fr.html">Français</option>
-                    <option value="/index-de.html">Deutsch</option>
-                    <option value="/index-es.html">Español</option>
-                    <option value="/index-it.html">Italiano</option>
-                    <option value="/index-ko.html">한국어</option>
-                    <option value="/index-nl.html">Nederlands</option>
-                    <option value="/index-pt-BR.html">Português</option>
-                    <option value="/index-sv.html" selected>Svenska</option>
-                    <option value="/index-zh-Hant.html">繁體中文</option>
+                <select onchange="localStorage.setItem('hakaru-lang',this.selectedOptions[0].dataset.lang);location.href=this.value">
+                    <option value="/index.html" data-lang="en">English</option>
+                    <option value="/index-ja.html" data-lang="ja">日本語</option>
+                    <option value="/index-fr.html" data-lang="fr">Français</option>
+                    <option value="/index-de.html" data-lang="de">Deutsch</option>
+                    <option value="/index-es.html" data-lang="es">Español</option>
+                    <option value="/index-it.html" data-lang="it">Italiano</option>
+                    <option value="/index-ko.html" data-lang="ko">한국어</option>
+                    <option value="/index-nl.html" data-lang="nl">Nederlands</option>
+                    <option value="/index-pt-BR.html" data-lang="pt-BR">Português</option>
+                    <option value="/index-sv.html" data-lang="sv" selected>Svenska</option>
+                    <option value="/index-zh-Hant.html" data-lang="zh-Hant">繁體中文</option>
                 </select>
             </div>
             <h1><img src="assets/logo-horizontal-transparent.png" alt="hakaru Apps" class="site-logo" srcset="assets/logo-horizontal-transparent-400w.png 400w, assets/logo-horizontal-transparent-560w.png 560w, assets/logo-horizontal-transparent-800w.png 800w, assets/logo-horizontal-transparent.png 1200w" sizes="(max-width: 600px) 280px, 400px"></h1>
