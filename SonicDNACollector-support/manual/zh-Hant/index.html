@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>使用手冊 | SonicDNA Collector</title>
+    <meta name="description" content="SonicDNA Collector 使用手冊.">
+    <meta property="og:title" content="使用手冊 | SonicDNA Collector">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/SonicDNACollector-support/manual/zh-Hant/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .app-store-link {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 12px 20px; margin: 16px 0;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s;
+        }
+        .app-store-link:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .app-store-link .app-icon-small { width: 50px; height: 50px; border-radius: 11px; }
+        .app-store-text { font-size: 12px; line-height: 1.3; }
+        .app-store-text .download { font-size: 16px; font-weight: 600; }
+        .support-nav {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 30px 0; padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .support-nav a {
+            color: #a0a0a0; text-decoration: none; padding: 6px 14px;
+            border-radius: 8px; font-size: 0.9em; transition: all 0.3s;
+        }
+        .support-nav a:hover, .support-nav a.active { color: #fff; background: rgba(255,255,255,0.1); }
+        .page-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 8px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .page-subtitle { color: #a0a0a0; margin-bottom: 40px; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content code {
+            background: rgba(255,255,255,0.1); padding: 2px 6px;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        .content pre {
+            background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 16px; overflow-x: auto; margin-bottom: 16px;
+        }
+        .content pre code { background: none; padding: 0; }
+        .content table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .content th, .content td {
+            padding: 10px 14px; text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content th { color: #fff; font-weight: 600; }
+        .content td { color: #b0b0b0; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .content strong { color: #fff; }
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-list li { padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .blog-list li:first-child { padding-top: 0; }
+        .blog-list a { color: #fff; text-decoration: none; font-size: 1.15em; font-weight: 600; }
+        .blog-list a:hover { color: #e94560; }
+        .blog-date { color: #666; font-size: 0.85em; margin-top: 6px; }
+        .blog-summary { color: #a0a0a0; font-size: 0.95em; margin-top: 8px; }
+        .article-header { margin-bottom: 40px; }
+        .article-title {
+            font-size: 2em; font-weight: 700; margin-bottom: 12px; color: #fff;
+            line-height: 1.3;
+        }
+        .article-meta { color: #666; font-size: 0.9em; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.5em; }
+            .article-title { font-size: 1.5em; }
+            .page-title { font-size: 1.5em; }
+            .support-nav { gap: 4px; }
+            .support-nav a { padding: 4px 10px; font-size: 0.8em; }
+        }
+    
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 8px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.8em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+        .toc {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 20px 30px; margin-bottom: 40px;
+        }
+        .toc h3 { color: #fff; margin-bottom: 12px; }
+        .toc ol { color: #a0a0a0; }
+        .toc a { color: #e94560; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/SonicDNACollector-support/">支援</a>
+      <a href="/SonicDNACollector-support/manual/zh-Hant/" class="active">使用手冊</a>
+      <a href="/SonicDNACollector-support/blog/zh-Hant/">部落格</a>
+      <a href="/SonicDNACollector-support/changelog/zh-Hant/">更新記錄</a>
+      <a href="/SonicDNACollector-support/privacy-zh-Hant">隱私權</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/SonicDNACollector-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/SonicDNACollector-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/SonicDNACollector-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/SonicDNACollector-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/SonicDNACollector-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/SonicDNACollector-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/SonicDNACollector-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/SonicDNACollector-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/SonicDNACollector-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/SonicDNACollector-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁中</span>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        
+        <h1 class="page-title">使用手冊</h1>
+        
+        <div class="toc">
+            <h3>目錄</h3>
+            <ol>
+                <li><a href="#getting-started">入門</a></li>
+                <li><a href="#interface-overview">介面概述</a></li>
+                <li><a href="#equipment-setup">設備設定</a></li>
+                <li><a href="#gain-calibration">增益校準</a></li>
+                <li><a href="#recording">錄音</a></li>
+                <li><a href="#analysis">分析</a></li>
+                <li><a href="#troubleshooting">疑難排解</a></li>
+            </ol>
+        </div>
+        <div class="content">
+            <h2 id="getting-started">入門</h2>
+            <h3>系統需求</h3>
+            <ul>
+                <li>搭載 iOS 17.0 或更高版本的 iPhone 或 iPad</li>
+                <li>USB 音訊介面（符合類別標準）</li>
+                <li>Lightning 轉 USB 或 USB-C 轉接器（如需要）</li>
+                <li>設備用音訊線纜</li>
+            </ul>
+            <h3>首次啟動</h3>
+            <ol>
+                <li>從 App Store 安裝 SonicDNA Collector</li>
+                <li>在提示時授予麥克風權限</li>
+                <li>連接您的音訊介面</li>
+                <li>應用程式將自動偵測介面</li>
+            </ol>
+            <hr>
+            <h2 id="interface-overview">介面概述</h2>
+            <h3>控制項</h3>
+            <table>
+                <thead><tr><th>控制項</th><th>功能</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>5 步 / 11 步</strong></td><td>選擇增益階梯模式</td></tr>
+                    <tr><td><strong>錄音按鈕</strong></td><td>開始/停止錄音</td></tr>
+                    <tr><td><strong>0dBFS</strong></td><td>播放/停止 1kHz 測試音</td></tr>
+                    <tr><td><strong>[?]</strong></td><td>說明畫面</td></tr>
+                    <tr><td><strong>[📁]</strong></td><td>錄音資料庫</td></tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2 id="equipment-setup">設備設定</h2>
+            <p>訊號流程：iPhone 輸出 → 音訊介面輸出 → 被測設備 → 音訊介面輸入 → iPhone 輸入</p>
+            <h3>連接步驟</h3>
+            <ol>
+                <li>將音訊介面連接至 iPhone/iPad</li>
+                <li>將介面輸出連接至設備輸入</li>
+                <li>將設備輸出連接至介面輸入</li>
+                <li>啟動 SonicDNA Collector</li>
+            </ol>
+            <hr>
+            <h2 id="gain-calibration">增益校準</h2>
+            <ol>
+                <li><strong>先降低監聽音量</strong></li>
+                <li>點擊 <strong>0dBFS</strong> 按鈕</li>
+                <li>確認警告對話框</li>
+                <li>調整介面增益，直至輸入顯示 -18dB 至 -12dB</li>
+                <li>再次點擊 <strong>0dBFS</strong> 以停止</li>
+            </ol>
+            <hr>
+            <h2 id="recording">錄音</h2>
+            <p><strong>5 步模式</strong>（推薦）：-30dB、-24dB、-18dB、-12dB、-6dB。總時間：約 35 秒。</p>
+            <p><strong>11 步模式</strong>（完整）：-100dB 至 0dB，每步 10dB。約 77 秒。</p>
+            <h3>錄音流程</h3>
+            <ol>
+                <li>輸入設備名稱</li>
+                <li>選擇步數</li>
+                <li>點擊紅色錄音按鈕</li>
+                <li>等待完成</li>
+                <li>在資料庫中找到錄音</li>
+            </ol>
+            <hr>
+            <h2 id="analysis">分析</h2>
+            <p><strong>錄音</strong> → 選擇工作階段 → <strong>分析</strong></p>
+            <ul>
+                <li><strong>頻率響應</strong> - 振幅與頻率的關係圖</li>
+                <li><strong>THD</strong> - 每個電平的總諧波失真</li>
+                <li><strong>諧波</strong> - 個別諧波電平</li>
+            </ul>
+            <hr>
+            <h2 id="troubleshooting">疑難排解</h2>
+            <h3>未偵測到音訊介面</h3>
+            <ol>
+                <li>檢查實體連接</li>
+                <li>嘗試不同的 USB 連接埠/轉接器</li>
+                <li>重新啟動應用程式</li>
+                <li>檢查 iOS 設定 → 隱私權 → 麥克風</li>
+            </ol>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:hakaruapps-contact@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hant') return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        if (currentPath.includes('/index-fr') || currentPath.includes('/blog/fr/') || currentPath.includes('/manual/fr/') || currentPath.includes('/changelog/fr/')) return 'fr';
+        if (currentPath.includes('/index-de') || currentPath.includes('/blog/de/') || currentPath.includes('/manual/de/') || currentPath.includes('/changelog/de/')) return 'de';
+        if (currentPath.includes('/index-es') || currentPath.includes('/blog/es/') || currentPath.includes('/manual/es/') || currentPath.includes('/changelog/es/')) return 'es';
+        if (currentPath.includes('/index-it') || currentPath.includes('/blog/it/') || currentPath.includes('/manual/it/') || currentPath.includes('/changelog/it/')) return 'it';
+        if (currentPath.includes('/index-ko') || currentPath.includes('/blog/ko/') || currentPath.includes('/manual/ko/') || currentPath.includes('/changelog/ko/')) return 'ko';
+        if (currentPath.includes('/index-nl') || currentPath.includes('/blog/nl/') || currentPath.includes('/manual/nl/') || currentPath.includes('/changelog/nl/')) return 'nl';
+        if (currentPath.includes('/index-pt-BR') || currentPath.includes('/blog/pt-BR/') || currentPath.includes('/manual/pt-BR/') || currentPath.includes('/changelog/pt-BR/')) return 'pt-BR';
+        if (currentPath.includes('/index-sv') || currentPath.includes('/blog/sv/') || currentPath.includes('/manual/sv/') || currentPath.includes('/changelog/sv/')) return 'sv';
+        if (currentPath.includes('/index-zh-Hant') || currentPath.includes('/blog/zh-Hant/') || currentPath.includes('/manual/zh-Hant/') || currentPath.includes('/changelog/zh-Hant/')) return 'zh-Hant';
+        if (currentPath.includes('/index-ja') || currentPath.includes('/privacy-ja') || currentPath.includes('/manual/ja/') || currentPath.includes('/blog/ja/') || currentPath.includes('/changelog/ja/')) return 'ja';
+        return 'en';
+    }
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>

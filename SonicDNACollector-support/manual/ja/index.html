@@ -324,8 +324,17 @@ body {
     </div>
   </div>
   <div class="sidebar-lang">
-    <a href="/SonicDNACollector-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/SonicDNACollector-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
     <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
+    <a href="/SonicDNACollector-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/SonicDNACollector-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/SonicDNACollector-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/SonicDNACollector-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/SonicDNACollector-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/SonicDNACollector-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/SonicDNACollector-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT</a>
+    <a href="/SonicDNACollector-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/SonicDNACollector-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁中</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -608,32 +617,37 @@ python -m sonicdna analyze /path/to/session/</code></pre>
 <script>
 (function() {
     // Language auto-detection
-    var savedLang = localStorage.getItem('hakaru-lang');
+        var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
 
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hant') return 'zh-Hant';
+        return 'en';
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        if (currentPath.includes('/index-fr') || currentPath.includes('/blog/fr/') || currentPath.includes('/manual/fr/') || currentPath.includes('/changelog/fr/')) return 'fr';
+        if (currentPath.includes('/index-de') || currentPath.includes('/blog/de/') || currentPath.includes('/manual/de/') || currentPath.includes('/changelog/de/')) return 'de';
+        if (currentPath.includes('/index-es') || currentPath.includes('/blog/es/') || currentPath.includes('/manual/es/') || currentPath.includes('/changelog/es/')) return 'es';
+        if (currentPath.includes('/index-it') || currentPath.includes('/blog/it/') || currentPath.includes('/manual/it/') || currentPath.includes('/changelog/it/')) return 'it';
+        if (currentPath.includes('/index-ko') || currentPath.includes('/blog/ko/') || currentPath.includes('/manual/ko/') || currentPath.includes('/changelog/ko/')) return 'ko';
+        if (currentPath.includes('/index-nl') || currentPath.includes('/blog/nl/') || currentPath.includes('/manual/nl/') || currentPath.includes('/changelog/nl/')) return 'nl';
+        if (currentPath.includes('/index-pt-BR') || currentPath.includes('/blog/pt-BR/') || currentPath.includes('/manual/pt-BR/') || currentPath.includes('/changelog/pt-BR/')) return 'pt-BR';
+        if (currentPath.includes('/index-sv') || currentPath.includes('/blog/sv/') || currentPath.includes('/manual/sv/') || currentPath.includes('/changelog/sv/')) return 'sv';
+        if (currentPath.includes('/index-zh-Hant') || currentPath.includes('/blog/zh-Hant/') || currentPath.includes('/manual/zh-Hant/') || currentPath.includes('/changelog/zh-Hant/')) return 'zh-Hant';
+        if (currentPath.includes('/index-ja') || currentPath.includes('/privacy-ja') || currentPath.includes('/manual/ja/') || currentPath.includes('/blog/ja/') || currentPath.includes('/changelog/ja/')) return 'ja';
+        return 'en';
     }
 
     // Auto-redirect on first visit (no saved preference, not coming from same site)
