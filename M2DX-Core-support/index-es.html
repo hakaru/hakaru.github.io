@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M2DX-Core サポート | hakaru</title>
-    <meta name="description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7 FMシンセシスエンジン。ビット精度のハードウェアエミュレーション。">
-    <meta property="og:title" content="M2DX-Core サポート">
-    <meta property="og:description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7 FMシンセシスエンジン。ビット精度のハードウェアエミュレーション。">
+    <title>Soporte M2DX-Core | hakaru</title>
+    <meta name="description" content="Página de soporte de M2DX-Core. Motor de síntesis FM DX7 en Swift puro con emulación de hardware bit a bit.">
+    <meta property="og:title" content="Soporte M2DX-Core">
+    <meta property="og:description" content="Página de soporte de M2DX-Core. Motor de síntesis FM DX7 en Swift puro con emulación de hardware bit a bit.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-ja">
+    <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-es">
+    <meta property="og:locale" content="es_ES">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -27,10 +28,6 @@
         }
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
         .hero { text-align: center; margin-bottom: 40px; }
-        .hero-icon {
-            width: 100px; height: 100px; border-radius: 22px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
-        }
         .hero h1 {
             font-size: 2em; font-weight: 700; margin-bottom: 10px;
             background: linear-gradient(90deg, #e94560, #ff6b6b);
@@ -64,57 +61,22 @@
         }
         footer a { color: #888; text-decoration: none; }
         footer a:hover { color: #e94560; }
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.5em; }
-        }
-
-/* Sidebar styles */
-body {
-    display: flex;
-    min-height: 100vh;
-}
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+body { display: flex; min-height: 100vh; }
 .sidebar {
-    width: 250px;
-    min-width: 250px;
-    background: rgba(10, 10, 30, 0.95);
-    backdrop-filter: blur(10px);
-    border-right: 1px solid rgba(255,255,255,0.08);
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    overflow-y: auto;
-    z-index: 100;
+    width: 250px; min-width: 250px;
+    background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0;
+    position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100;
 }
-.sidebar-logo {
-    padding: 10px 20px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 10px;
-}
-.sidebar-logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 700;
-}
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
 .sidebar-logo a:hover { color: #e94560; }
 .sidebar-app { margin-bottom: 2px; }
 .sidebar-app-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    color: #a0a0a0;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: all 0.2s;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    font-family: inherit;
+    display: flex; align-items: center; gap: 10px; padding: 10px 20px;
+    cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500;
+    transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit;
 }
 .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
 .sidebar-app-header.active { color: #e94560; }
@@ -124,57 +86,29 @@ body {
 .sidebar-app-links { display: none; padding: 4px 0 8px; }
 .sidebar-app-links.show { display: block; }
 .sidebar-app-links a {
-    display: block;
-    padding: 6px 20px 6px 54px;
-    color: #808080;
-    text-decoration: none;
-    font-size: 0.85em;
-    transition: all 0.2s;
+    display: block; padding: 6px 20px 6px 54px; color: #808080;
+    text-decoration: none; font-size: 0.85em; transition: all 0.2s;
 }
 .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
 .sidebar-app-links a.active { color: #e94560; }
 .sidebar-lang {
-    padding: 15px 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
+    padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px;
 }
 .sidebar-lang-btn {
-    display: inline-block;
-    padding: 4px 8px;
-    color: #808080;
-    text-decoration: none;
-    font-size: 0.8em;
-    border-radius: 4px;
-    transition: all 0.2s;
+    display: inline-block; padding: 4px 8px; color: #808080;
+    text-decoration: none; font-size: 0.8em; border-radius: 4px; transition: all 0.2s;
 }
 .sidebar-lang-btn:hover { color: #fff; }
 .sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
 .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
 .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 .sidebar-toggle {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 200;
-    background: rgba(10, 10, 30, 0.9);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1.3em;
-    padding: 8px 12px;
-    cursor: pointer;
+    display: none; position: fixed; top: 15px; left: 15px; z-index: 200;
+    background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer;
 }
-.sidebar-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 90;
-}
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
 @media (max-width: 768px) {
     .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
     .sidebar.open { transform: translateX(0); }
@@ -182,7 +116,6 @@ body {
     .sidebar-overlay.show { display: block; }
     .content-pane { margin-left: 0; padding-top: 60px; }
 }
-
     </style>
 </head>
 <body>
@@ -193,112 +126,104 @@ body {
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
-      1Take
-      <span class="arrow">&#9654;</span>
+      1Take <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/1Take-support/index-ja">サポート</a>
-      <a href="/1Take-support/manual/ja/">マニュアル</a>
-      <a href="/1Take-support/blog/ja/">ブログ</a>
-      <a href="/1Take-support/changelog-ja">更新履歴</a>
-      <a href="/1Take-support/privacy-ja">プライバシー</a>
+      <a href="/1Take-support/index-es">Soporte</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Historial</a>
+      <a href="/1Take-support/privacy">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
-      GitInflow
-      <span class="arrow">&#9654;</span>
+      GitInflow <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/GitInflow-support/index-ja">サポート</a>
-      <a href="/GitInflow-support/manual/ja/">マニュアル</a>
-      <a href="/GitInflow-support/blog/ja/">ブログ</a>
-      <a href="/GitInflow-support/changelog-ja">更新履歴</a>
-      <a href="/GitInflow-support/privacy-ja">プライバシー</a>
+      <a href="/GitInflow-support/">Soporte</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Historial</a>
+      <a href="/GitInflow-support/privacy">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
-      SonicDNA Collector
-      <span class="arrow">&#9654;</span>
+      SonicDNA Collector <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/SonicDNACollector-support/index-ja">サポート</a>
-      <a href="/SonicDNACollector-support/manual/ja/">マニュアル</a>
-      <a href="/SonicDNACollector-support/blog/ja/">ブログ</a>
-      <a href="/SonicDNACollector-support/changelog/">更新履歴</a>
-      <a href="/SonicDNACollector-support/privacy-ja">プライバシー</a>
+      <a href="/SonicDNACollector-support/">Soporte</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Historial</a>
+      <a href="/SonicDNACollector-support/privacy">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
-      SonicDNA Engine
-      <span class="arrow">&#9654;</span>
+      SonicDNA Engine <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/SonicDNAEngine-support/index-ja">サポート</a>
-      <a href="/SonicDNAEngine-support/blog/ja/">ブログ</a>
-      <a href="/SonicDNAEngine-support/changelog">更新履歴</a>
-      <a href="/SonicDNAEngine-support/privacy-ja">プライバシー</a>
+      <a href="/SonicDNAEngine-support/">Soporte</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Historial</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
-      simpleMIDI Controller
-      <span class="arrow">&#9654;</span>
+      simpleMIDI Controller <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/simpleMIDIController-support/index-ja">サポート</a>
-      <a href="/simpleMIDIController-support/manual/ja/">マニュアル</a>
-      <a href="/simpleMIDIController-support/blog/ja/">ブログ</a>
-      <a href="/simpleMIDIController-support/privacy/">プライバシー</a>
+      <a href="/simpleMIDIController-support/">Soporte</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
-      TineModeler
-      <span class="arrow">&#9654;</span>
+      TineModeler <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/TineModeler-support/index-ja">サポート</a>
-      <a href="/TineModeler-support/privacy-ja">プライバシー</a>
+      <a href="/TineModeler-support/">Soporte</a>
+      <a href="/TineModeler-support/privacy">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header active expanded">
       <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
-      M2DX-Core
-      <span class="arrow">&#9654;</span>
+      M2DX-Core <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links show">
-      <a href="/M2DX-Core-support/index-ja" class="active">サポート</a>
-      <a href="/M2DX-Core-support/privacy-ja">プライバシー</a>
+      <a href="/M2DX-Core-support/index-es" class="active">Soporte</a>
+      <a href="/M2DX-Core-support/privacy-es">Privacidad</a>
     </div>
   </div>
   <div class="sidebar-app">
     <button class="sidebar-app-header">
       <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
-      ChatArchive
-      <span class="arrow">&#9654;</span>
+      ChatArchive <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/">サポート</a>
-      <a href="/ChatArchive-support/blog/">ブログ</a>
-      <a href="/ChatArchive-support/privacy">プライバシー</a>
-      <a href="/ChatArchive-support/terms">利用規約</a>
+      <a href="/ChatArchive-support/en/">Soporte</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacidad</a>
+      <a href="/ChatArchive-support/en/terms">Términos</a>
     </div>
   </div>
   <div class="sidebar-lang">
     <a href="/M2DX-Core-support/" class="sidebar-lang-btn" data-lang="en">English</a>
-    <span class="sidebar-lang-btn active" data-lang="ja">日本語</span>
+    <a href="/M2DX-Core-support/index-ja" class="sidebar-lang-btn" data-lang="ja">日本語</a>
     <a href="/M2DX-Core-support/index-fr" class="sidebar-lang-btn" data-lang="fr">Français</a>
     <a href="/M2DX-Core-support/index-de" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
-    <a href="/M2DX-Core-support/index-es" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <span class="sidebar-lang-btn active" data-lang="es">Español</span>
     <a href="/M2DX-Core-support/index-it" class="sidebar-lang-btn" data-lang="it">Italiano</a>
     <a href="/M2DX-Core-support/index-ko" class="sidebar-lang-btn" data-lang="ko">한국어</a>
     <a href="/M2DX-Core-support/index-nl" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
@@ -309,71 +234,66 @@ body {
 </nav>
 <div class="content-pane">
     <div class="container">
-
         <div class="hero">
             <h1>M2DX-Core</h1>
-            <p>Pure SwiftによるDX7 FMシンセシスエンジン</p>
+            <p>Motor de síntesis FM DX7 en Swift puro</p>
         </div>
-
         <div class="content">
-            <p>M2DX-Coreサポートページへようこそ。</p>
-            <p>M2DX-Coreは、Pure SwiftでゼロからすべてをInt32固定小数点演算で実装した、ビット精度のDX7 FMシンセシスエンジンです。C/C++を一切使わず、オリジナルのYamaha OPSチップの動作を完全に再現します。</p>
+            <p>Bienvenido a la página de soporte de M2DX-Core.</p>
+            <p>M2DX-Core es un motor de síntesis FM DX7 bit a bit, escrito completamente en Swift puro. Emula el chip OPS original de Yamaha usando aritmética de punto fijo Int32, proporcionando el sonido exacto del sintetizador de hardware sin ningún código C o C++.</p>
 
             <hr>
 
-            <h2>特徴</h2>
+            <h2>Características</h2>
 
-            <h3>ビット精度のエミュレーション</h3>
-            <p>Int32固定小数点演算を全体で使用し、オリジナルのYamaha OPSチップのビットレベルの動作を忠実に再現します。すべてのオペレーター、エンベロープ、LFO演算がハードウェアと一致します。</p>
+            <h3>Emulación bit a bit</h3>
+            <p>M2DX-Core usa aritmética de punto fijo Int32 en todo momento, coincidiendo con el comportamiento del chip OPS Yamaha original a nivel de bit. Cada operador, envolvente y cálculo LFO reproduce fielmente el hardware.</p>
 
-            <h3>MIDI 2.0ネイティブ対応</h3>
-            <p>MIDI 2.0をネイティブサポートし、ノートごとのピッチベンド、ノートごとのエクスプレッション、高解像度コントロールデータを活用できます。MIDI 1.0では実現できなかった表現力豊かな演奏が可能です。</p>
+            <h3>MIDI 2.0 nativo</h3>
+            <p>Construido con soporte nativo MIDI 2.0, M2DX-Core aprovecha al máximo el pitch bend por nota, la expresión por nota y los datos de control de alta resolución — permitiendo un juego expresivo imposible con MIDI 1.0.</p>
 
-            <h3>リアルタイムセーフ</h3>
-            <p>オーディオ処理パスはロックフリーアーキテクチャを採用し、オーディオスレッドでのメモリアロケーションがありません。プロフェッショナルなオーディオアプリやAUv3プラグインでの使用に最適です。</p>
+            <h3>Seguro en tiempo real</h3>
+            <p>La ruta de procesamiento de audio usa una arquitectura sin bloqueos sin asignaciones de memoria en el hilo de audio, haciendo M2DX-Core adecuado para aplicaciones de audio profesionales y plugins AUv3.</p>
 
-            <h3>Pure Swift</h3>
-            <p>C、C++、Objective-Cのブリッジングヘッダーは一切不要です。M2DX-CoreはSwiftのみで実装されており、Swift PackageとしてあらゆるSwift・SwiftUIプロジェクトに簡単に統合できます。</p>
+            <h3>Swift puro</h3>
+            <p>Sin C, sin C++, sin cabeceras de puente Objective-C. M2DX-Core está escrito completamente en Swift, facilitando la integración en cualquier proyecto Swift o SwiftUI como Swift Package.</p>
 
             <hr>
 
-            <h2>導入方法</h2>
+            <h2>Integración</h2>
 
             <h3>Swift Package Manager</h3>
-            <p>XcodeでSwift Package Managerを使って追加できます。<strong>File &gt; Add Package Dependencies</strong> からGitHub URLを入力してください：</p>
+            <p>Añada M2DX-Core a su proyecto con Swift Package Manager. En Xcode, vaya a <strong>File &gt; Add Package Dependencies</strong> e ingrese la URL de GitHub:</p>
             <pre>https://github.com/hakaru/M2DX-Core</pre>
-            <p>または <code>Package.swift</code> に直接追記する場合：</p>
+            <p>O añádalo directamente a su <code>Package.swift</code>:</p>
             <pre>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.0.0")</pre>
 
             <hr>
 
-            <h2>オープンソース</h2>
-            <p>M2DX-CoreはMITライセンスのオープンソースソフトウェアです。IssueやPull Requestを歓迎します：</p>
+            <h2>Código abierto</h2>
+            <p>M2DX-Core es software de código abierto lanzado bajo la Licencia MIT. Las contribuciones, issues y pull requests son bienvenidos en GitHub:</p>
             <p><a href="https://github.com/hakaru/M2DX-Core"><strong>github.com/hakaru/M2DX-Core</strong></a></p>
 
             <hr>
 
-            <h2>お問い合わせ</h2>
-            <p>ご質問やご意見は、以下のメールアドレスまでお気軽にどうぞ：<br>
+            <h2>Contacto</h2>
+            <p>Si tiene preguntas o comentarios, contáctenos en:<br>
             <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
-
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>
             <p style="margin-top: 10px;">
                 <a href="/tokushoho.html">特定商取引法に基づく表記</a>
                 <span style="margin: 0 10px;">|</span>
-                <a href="mailto:support@hakaru.net">お問い合わせ</a>
+                <a href="mailto:support@hakaru.net">Contacto</a>
             </p>
         </footer>
     </div>
 </div>
 <script>
 (function() {
-    // Language auto-detection
     var savedLang = localStorage.getItem('hakaru-lang');
     var currentPath = window.location.pathname;
-
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
@@ -389,7 +309,6 @@ body {
         if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
         return 'en';
     }
-
     function getCurrentPageLang() {
         var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
         for (var i = 0; i < suffixes.length; i++) {
@@ -398,84 +317,41 @@ body {
         }
         return 'en';
     }
-
     var langUrlMap = {
-        'en': '/M2DX-Core-support/',
-        'ja': '/M2DX-Core-support/index-ja',
-        'fr': '/M2DX-Core-support/index-fr',
-        'de': '/M2DX-Core-support/index-de',
-        'es': '/M2DX-Core-support/index-es',
-        'it': '/M2DX-Core-support/index-it',
-        'ko': '/M2DX-Core-support/index-ko',
-        'nl': '/M2DX-Core-support/index-nl',
-        'pt-BR': '/M2DX-Core-support/index-pt-BR',
-        'sv': '/M2DX-Core-support/index-sv',
+        'en': '/M2DX-Core-support/', 'ja': '/M2DX-Core-support/index-ja',
+        'fr': '/M2DX-Core-support/index-fr', 'de': '/M2DX-Core-support/index-de',
+        'es': '/M2DX-Core-support/index-es', 'it': '/M2DX-Core-support/index-it',
+        'ko': '/M2DX-Core-support/index-ko', 'nl': '/M2DX-Core-support/index-nl',
+        'pt-BR': '/M2DX-Core-support/index-pt-BR', 'sv': '/M2DX-Core-support/index-sv',
         'zh-Hant': '/M2DX-Core-support/index-zh-Hant'
     };
-
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
-    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var targetUrl = langUrlMap[userLang];
-        if (targetUrl) {
-            window.location.href = targetUrl;
-            return;
-        }
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang]; return;
     }
-
-    // Accordion
     document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
         header.addEventListener('click', function() {
             var links = this.nextElementSibling;
             var wasExpanded = this.classList.contains('expanded');
-            // Collapse all
             document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
                 h.classList.remove('expanded');
                 if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
             });
-            // Toggle clicked
-            if (!wasExpanded) {
-                this.classList.add('expanded');
-                if (links) links.classList.add('show');
-            }
+            if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); }
         });
     });
-
-    // Auto-expand current app
     var currentApp = document.querySelector('.sidebar-app-header.active');
-    if (currentApp) {
-        currentApp.classList.add('expanded');
-        if (currentApp.nextElementSibling) {
-            currentApp.nextElementSibling.classList.add('show');
-        }
-    }
-
-    // Mobile toggle
+    if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
     var toggle = document.querySelector('.sidebar-toggle');
     var sidebar = document.querySelector('.sidebar');
     var overlay = document.querySelector('.sidebar-overlay');
-    if (toggle) {
-        toggle.addEventListener('click', function() {
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('show');
-        });
-    }
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('show');
-        });
-    }
-
-    // Language switch saves preference
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
     document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            localStorage.setItem('hakaru-lang', this.dataset.lang);
-        });
+        btn.addEventListener('click', function() { localStorage.setItem('hakaru-lang', this.dataset.lang); });
     });
 })();
-
 </script>
 </body>
 </html>

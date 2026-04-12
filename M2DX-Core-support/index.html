@@ -137,13 +137,16 @@ body {
     padding: 15px 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
 }
 .sidebar-lang-btn {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 4px 8px;
     color: #808080;
     text-decoration: none;
-    font-size: 0.85em;
+    font-size: 0.8em;
     border-radius: 4px;
     transition: all 0.2s;
 }
@@ -291,8 +294,17 @@ body {
     </div>
   </div>
   <div class="sidebar-lang">
-    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
-    <a href="/M2DX-Core-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <span class="sidebar-lang-btn active" data-lang="en">English</span>
+    <a href="/M2DX-Core-support/index-ja" class="sidebar-lang-btn" data-lang="ja">日本語</a>
+    <a href="/M2DX-Core-support/index-fr" class="sidebar-lang-btn" data-lang="fr">Français</a>
+    <a href="/M2DX-Core-support/index-de" class="sidebar-lang-btn" data-lang="de">Deutsch</a>
+    <a href="/M2DX-Core-support/index-es" class="sidebar-lang-btn" data-lang="es">Español</a>
+    <a href="/M2DX-Core-support/index-it" class="sidebar-lang-btn" data-lang="it">Italiano</a>
+    <a href="/M2DX-Core-support/index-ko" class="sidebar-lang-btn" data-lang="ko">한국어</a>
+    <a href="/M2DX-Core-support/index-nl" class="sidebar-lang-btn" data-lang="nl">Nederlands</a>
+    <a href="/M2DX-Core-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">Português</a>
+    <a href="/M2DX-Core-support/index-sv" class="sidebar-lang-btn" data-lang="sv">Svenska</a>
+    <a href="/M2DX-Core-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體中文</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -365,35 +377,49 @@ body {
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
-    }
-
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
     }
 
     function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
+        var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < suffixes.length; i++) {
+            if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i];
+            if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i];
+        }
+        return 'en';
     }
+
+    var langUrlMap = {
+        'en': '/M2DX-Core-support/',
+        'ja': '/M2DX-Core-support/index-ja',
+        'fr': '/M2DX-Core-support/index-fr',
+        'de': '/M2DX-Core-support/index-de',
+        'es': '/M2DX-Core-support/index-es',
+        'it': '/M2DX-Core-support/index-it',
+        'ko': '/M2DX-Core-support/index-ko',
+        'nl': '/M2DX-Core-support/index-nl',
+        'pt-BR': '/M2DX-Core-support/index-pt-BR',
+        'sv': '/M2DX-Core-support/index-sv',
+        'zh-Hant': '/M2DX-Core-support/index-zh-Hant'
+    };
 
     // Auto-redirect on first visit (no saved preference, not coming from same site)
     var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
-        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
-        if (langAlt && langAlt.href) {
-            window.location.href = langAlt.href;
+        var targetUrl = langUrlMap[userLang];
+        if (targetUrl) {
+            window.location.href = targetUrl;
             return;
         }
     }
