@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PeerClock Metronome 지원 | hakaru</title>
+    <meta name="description" content="PeerClock Metronome 지원 페이지. Apple 기기용 P2P 동기화 메트로놈.">
+    <meta property="og:title" content="PeerClock Metronome 지원">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-ko">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; display: flex; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon { width: 100px; height: 100px; border-radius: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px; }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 10px; background: linear-gradient(90deg, #00e6ff, #00bcd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .coming-soon { display: inline-block; padding: 10px 20px; margin: 16px 0; background: rgba(0,230,255,0.08); border: 1px solid rgba(0,230,255,0.2); border-radius: 12px; color: #00bcd4; font-size: 0.95em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #00e6ff; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #00e6ff; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10,10,30,0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #00e6ff; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #00e6ff; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #00e6ff; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; cursor: pointer; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #00e6ff; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10,10,30,0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) { .sidebar { transform: translateX(-100%); transition: transform 0.3s; } .sidebar.open { transform: translateX(0); } .sidebar-toggle { display: block; } .sidebar-overlay.show { display: block; } .content-pane { margin-left: 0; padding-top: 60px; } }
+    </style>
+    <link rel="canonical" href="https://hakaru.net/PeerClockMetronome-support/index-ko">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/PeerClockMetronome-support/index-de">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/PeerClockMetronome-support/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/PeerClockMetronome-support/index-es">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/PeerClockMetronome-support/index-fr">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/PeerClockMetronome-support/index-it">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/PeerClockMetronome-support/index-ja">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/PeerClockMetronome-support/index-ko">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/PeerClockMetronome-support/index-nl">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/PeerClockMetronome-support/index-pt-BR">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/PeerClockMetronome-support/index-ko" class="active">지원</a>
+      <a href="/PeerClockMetronome-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">1Take<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/1Take-support/">Support</a><a href="/1Take-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">GitInflow<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/GitInflow-support/">Support</a><a href="/GitInflow-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">SonicDNA Collector<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNACollector-support/">Support</a><a href="/SonicDNACollector-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">SonicDNA Engine<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/SonicDNAEngine-support/">Support</a><a href="/SonicDNAEngine-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">simpleMIDI Controller<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/simpleMIDIController-support/">Support</a><a href="/simpleMIDIController-support/privacy/">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">TineModeler<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/TineModeler-support/">Support</a><a href="/TineModeler-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">M2DX-Core<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/M2DX-Core-support/">Support</a><a href="/M2DX-Core-support/privacy">Privacy</a></div></div>
+  <div class="sidebar-app"><button class="sidebar-app-header"><img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">ChatArchive<span class="arrow">&#9654;</span></button><div class="sidebar-app-links"><a href="/ChatArchive-support/en/">Support</a><a href="/ChatArchive-support/en/privacy">Privacy</a></div></div>
+  <div class="sidebar-lang">
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/" data-lang="en">English</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-ja" data-lang="ja">日本語</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-de" data-lang="de">Deutsch</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-es" data-lang="es">Español</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-fr" data-lang="fr">Français</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-it" data-lang="it">Italiano</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">한국어</span>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-nl" data-lang="nl">Nederlands</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-pt-BR" data-lang="pt-BR">Português</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-sv" data-lang="sv">Svenska</a>
+    <a class="sidebar-lang-btn" href="/PeerClockMetronome-support/index-zh-Hant" data-lang="zh-Hant">繁體中文</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" class="hero-icon">
+            <h1>PeerClock Metronome</h1>
+            <p>Apple 기기용 P2P 동기화 메트로놈</p>
+            <div class="coming-soon">App Store 출시 예정</div>
+        </div>
+        <div class="content">
+            <p>PeerClock Metronome 지원 페이지에 오신 것을 환영합니다.</p>
+            <p>PeerClock Metronome은 Apple 기기를 위한 피어투피어 동기화 메트로놈입니다. 여러 iPhone 또는 iPad를 동일한 Wi-Fi 네트워크에 연결하면 서버 없이 ±2ms 정밀도의 자동 클록 동기화가 이루어집니다.</p>
+            <hr>
+            <h2>기능</h2>
+            <h3>피어투피어 동기화 (마스터/슬레이브 없음)</h3>
+            <p>모든 기기는 동등한 피어입니다. 지정된 "마스터" 기기가 없으며, 어느 기기든 다른 기기에 영향을 주지 않고 자유롭게 참여하거나 나갈 수 있습니다.</p>
+            <h3>±2ms 클록 동기화</h3>
+            <p>NTP 기반의 4-타임스탬프 알고리즘과 최적 절반 필터링을 사용하여 연결된 모든 기기에서 서브밀리초 정밀도를 달성합니다.</p>
+            <h3>Wi-Fi 전용 (서버 불필요)</h3>
+            <p>동기화는 로컬 Wi-Fi 네트워크에서만 이루어집니다. 외부 서버로 데이터가 전송되지 않으며, 완전히 오프라인으로 작동합니다.</p>
+            <h3>자동 기기 검색</h3>
+            <p>동일한 Wi-Fi 네트워크의 기기는 Bonjour를 통해 자동으로 검색됩니다. IP 수동 입력이나 페어링이 필요 없습니다.</p>
+            <h3>지휘자 경로 애니메이션</h3>
+            <p>화면에 박자 패턴을 시각적으로 추적하는 지휘자 경로 애니메이션으로 연주자가 한눈에 박자를 따라갈 수 있습니다.</p>
+            <h3>다양한 박자 지원</h3>
+            <p>4/4, 3/4, 4/8, 3/8, 6/8, 9/8, 12/8 박자를 지원합니다.</p>
+            <h3>실시간 BPM 변경</h3>
+            <p>템포 변경은 연결된 모든 기기에 즉시 동기화됩니다. 지연이나 드리프트가 없습니다.</p>
+            <hr>
+            <h2>자주 묻는 질문</h2>
+            <h3>여러 기기를 동기화하는 방법은?</h3>
+            <ol>
+                <li>모든 기기를 동일한 Wi-Fi 네트워크에 연결합니다</li>
+                <li>각 기기에서 PeerClock Metronome을 엽니다</li>
+                <li>몇 초 내에 기기가 자동으로 검색됩니다</li>
+                <li>아무 기기에서나 메트로놈을 시작하면 동기화된 모든 기기가 따라갑니다</li>
+            </ol>
+            <h3>지휘자 경로란 무엇인가요?</h3>
+            <p>지휘자 경로는 선택한 박자의 전통적인 지휘 패턴을 애니메이션으로 표시하는 기능입니다. 헤드폰 없이도 연주자가 동기화를 유지할 수 있도록 시각적 참조를 제공합니다.</p>
+            <h3>동기화 정밀도는 어느 정도인가요?</h3>
+            <p>PeerClock Metronome은 일반적인 Wi-Fi 환경에서 ±2ms의 클록 동기화를 달성합니다. 인간의 타이밍 지각은 약 10–20ms이므로, 이 동기화 정밀도는 지각 가능한 차이의 임계값보다 훨씬 낮습니다.</p>
+            <h3>인터넷 없이도 작동하나요?</h3>
+            <p>네. PeerClock Metronome은 로컬 Wi-Fi 네트워크만 사용합니다. 동기화에 인터넷 연결이 필요하지 않습니다.</p>
+            <h3>지원 기기는 무엇인가요?</h3>
+            <p>PeerClock Metronome은 iOS 17.0 이상이 필요합니다. iOS 17 이상을 실행하는 모든 iPhone 또는 iPad를 지원합니다.</p>
+            <hr>
+            <h2>문의</h2>
+            <p>질문이나 피드백이 있으시면 아래로 연락해 주세요:<br>
+            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
+            <hr>
+            <h2>링크</h2>
+            <ul><li><a href="/PeerClockMetronome-support/privacy-ko">개인정보 처리방침</a></li></ul>
+        </div>
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="mailto:hirose@hakaru.net">Contact</a></p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang'); var currentPath = window.location.pathname;
+    function detectLang() { if (savedLang) return savedLang; var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase(); if (navLang.startsWith('ja')) return 'ja'; if (navLang.startsWith('fr')) return 'fr'; if (navLang.startsWith('de')) return 'de'; if (navLang.startsWith('es')) return 'es'; if (navLang.startsWith('it')) return 'it'; if (navLang.startsWith('ko')) return 'ko'; if (navLang.startsWith('nl')) return 'nl'; if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR'; if (navLang.startsWith('sv')) return 'sv'; if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant'; return 'en'; }
+    function getCurrentPageLang() { var suffixes = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant']; for (var i = 0; i < suffixes.length; i++) { if (currentPath.indexOf('/index-' + suffixes[i]) !== -1) return suffixes[i]; if (currentPath.indexOf('/privacy-' + suffixes[i]) !== -1) return suffixes[i]; } return 'en'; }
+    var langUrlMap = { 'en':'/PeerClockMetronome-support/','ja':'/PeerClockMetronome-support/index-ja','fr':'/PeerClockMetronome-support/index-fr','de':'/PeerClockMetronome-support/index-de','es':'/PeerClockMetronome-support/index-es','it':'/PeerClockMetronome-support/index-it','ko':'/PeerClockMetronome-support/index-ko','nl':'/PeerClockMetronome-support/index-nl','pt-BR':'/PeerClockMetronome-support/index-pt-BR','sv':'/PeerClockMetronome-support/index-sv','zh-Hant':'/PeerClockMetronome-support/index-zh-Hant' };
+    var pageLang = getCurrentPageLang(); var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) { window.location.href = langUrlMap[userLang]; return; }
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) { header.addEventListener('click', function() { var links = this.nextElementSibling; var wasExpanded = this.classList.contains('expanded'); document.querySelectorAll('.sidebar-app-header').forEach(function(h) { h.classList.remove('expanded'); if (h.nextElementSibling) h.nextElementSibling.classList.remove('show'); }); if (!wasExpanded) { this.classList.add('expanded'); if (links) links.classList.add('show'); } }); });
+    var currentApp = document.querySelector('.sidebar-app-header.active'); if (currentApp) { currentApp.classList.add('expanded'); if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show'); }
+    var toggle = document.querySelector('.sidebar-toggle'); var sidebar = document.querySelector('.sidebar'); var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) { toggle.addEventListener('click', function() { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); }); }
+    if (overlay) { overlay.addEventListener('click', function() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }); }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) { btn.addEventListener('click', function() { if (this.dataset.lang) localStorage.setItem('hakaru-lang', this.dataset.lang); }); });
+})();
+</script>
+</body>
+</html>
