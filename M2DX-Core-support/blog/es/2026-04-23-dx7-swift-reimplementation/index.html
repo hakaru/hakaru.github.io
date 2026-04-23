@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reescribiendo el DX7 en Swift — un año con un sintetizador FM | M2DX-Core Blog</title>
+    <meta name="description" content="Reimplementar el Yamaha DX7 en Swift puro. Un año leyendo el código C de MSFA, persiguiendo aritmética de punto fijo Int32, tablas exp2, envelopes, 32 algoritmos y la concurrencia estricta de Swift 6 — bit a bit igual al chip original.">
+    <meta property="og:title" content="Reescribiendo el DX7 en Swift — un año con un sintetizador FM">
+    <meta property="og:description" content="Reimplementar el Yamaha DX7 en Swift puro. Un año leyendo el código C de MSFA, persiguiendo aritmética de punto fijo Int32, tablas exp2, envelopes, 32 algoritmos y la concurrencia estricta de Swift 6.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/blog/es/2026-04-23-dx7-swift-reimplementation/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Reescribiendo el DX7 en Swift — un año con un sintetizador FM","datePublished":"2026-04-23","author":{"@type":"Person","name":"hakaru"},"url":"https://hakaru.net/M2DX-Core-support/blog/es/2026-04-23-dx7-swift-reimplementation/"}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N0830V28FD');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #a0a0a0; text-decoration: none; font-size: 0.9em; margin-bottom: 30px; transition: color 0.3s; }
+        .back-link:hover { color: #e94560; }
+        .article-header { margin-bottom: 40px; }
+        .article-header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 12px; color: #fff; line-height: 1.3; }
+        .article-meta { color: #666; font-size: 0.9em; }
+        .content h2 { font-size: 1.4em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content code { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; font-family: 'SF Mono', 'Fira Code', monospace; }
+        .content pre { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px; margin: 0 0 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.88em; color: #c0c0c0; overflow-x: auto; line-height: 1.55; }
+        .content pre code { background: transparent; padding: 0; border-radius: 0; font-size: inherit; }
+        .content table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 0.92em; }
+        .content th, .content td { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.12); text-align: left; }
+        .content th { background: rgba(255,255,255,0.05); color: #fff; }
+        .content blockquote { border-left: 3px solid #e94560; padding: 4px 14px; margin: 0 0 16px; color: #c0c0c0; background: rgba(233,69,96,0.06); }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(90deg, #e94560, #ff6b6b); color: #0a0a1e; border-radius: 10px; text-decoration: none; font-weight: 600; margin-top: 8px; }
+        .cta:hover { opacity: 0.9; text-decoration: none; }
+        footer { text-align: center; margin-top: 60px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .article-header h1 { font-size: 1.4em; } }
+
+/* Sidebar styles */
+body { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; min-width: 250px; background: rgba(10, 10, 30, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.08); padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+.sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+.sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500; transition: all 0.2s; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a { display: block; padding: 6px 20px 6px 54px; color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px; }
+.sidebar-lang-btn { display: inline-block; padding: 4px 12px; color: #808080; text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s; cursor: pointer; }
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle { display: none; position: fixed; top: 15px; left: 15px; z-index: 200; background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90; }
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+    </style>
+    <link rel="canonical" href="https://hakaru.net/M2DX-Core-support/blog/es/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-Core-support/blog/de/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-Core-support/blog/en/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-Core-support/blog/es/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-Core-support/blog/fr/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-Core-support/blog/it/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-Core-support/blog/ja/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-Core-support/blog/ko/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-Core-support/blog/nl/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-Core-support/blog/pt-BR/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-Core-support/blog/sv/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-Core-support/blog/zh-Hant/2026-04-23-dx7-swift-reimplementation/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-Core-support/blog/en/2026-04-23-dx7-swift-reimplementation/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-Core-support/index-es">Soporte</a>
+      <a href="/M2DX-Core-support/blog/es/" class="active">Blog</a>
+      <a href="/M2DX-Core-support/privacy-es">Privacidad</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/">Support</a>
+      <a href="/PeerClockMetronome-support/blog/en/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/en/2026-04-23-dx7-swift-reimplementation/" data-lang="en">English</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/ja/2026-04-23-dx7-swift-reimplementation/" data-lang="ja">日本語</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/de/2026-04-23-dx7-swift-reimplementation/" data-lang="de">Deutsch</a>
+    <span class="sidebar-lang-btn active" data-lang="es">Español</span>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/fr/2026-04-23-dx7-swift-reimplementation/" data-lang="fr">Français</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/it/2026-04-23-dx7-swift-reimplementation/" data-lang="it">Italiano</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/ko/2026-04-23-dx7-swift-reimplementation/" data-lang="ko">한국어</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/nl/2026-04-23-dx7-swift-reimplementation/" data-lang="nl">Nederlands</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/pt-BR/2026-04-23-dx7-swift-reimplementation/" data-lang="pt-BR">Português</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/sv/2026-04-23-dx7-swift-reimplementation/" data-lang="sv">Svenska</a>
+    <a class="sidebar-lang-btn" href="/M2DX-Core-support/blog/zh-Hant/2026-04-23-dx7-swift-reimplementation/" data-lang="zh-Hant">繁體中文</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <a href="/M2DX-Core-support/blog/es/" class="back-link">&larr; Volver al blog</a>
+
+        <div class="article-header">
+            <h1>Reescribiendo el DX7 en Swift — un año con un sintetizador FM</h1>
+            <div class="article-meta">23 de abril de 2026</div>
+        </div>
+
+        <div class="content">
+            <h2>Por qué empecé con esto</h2>
+            <p>Si alguna vez buscaste versiones en software del DX7, seguro te topaste con <strong>Dexed</strong>, el plugin VST. Lo que hay detrás de Dexed es <strong>music-synthesizer-for-android (MSFA)</strong>, un motor C++ que Raph Levien escribió en 2012.</p>
+            <p>Abrí el código fuente y hay unas 2.000 líneas. 32 algoritmos, envelopes, LFO, feedback — todo ahí dentro. La densidad es casi sospechosa. Quería tomar eso y reescribirlo en Swift para plataformas Apple.</p>
+
+            <h2>Síntesis FM, versión rápida</h2>
+            <p>Si modulás la frecuencia de una onda senoidal con otra onda senoidal, obtenés armónicos. Eso es FM. El DX7 tiene seis "operadores" y 32 patrones para cablearlos entre sí (los algoritmos).</p>
+<pre><code>Algoritmo 1:
+OP6 → OP5 → OP4 → OP3 → OP2 → OP1 → out
+(seis en serie, feedback en OP6)
+
+Algoritmo 32:
+OP6 ─┐
+OP5 ─┤
+OP4 ─┼→ out
+OP3 ─┤
+OP2 ─┤
+OP1 ─┘
+(todos carriers, básicamente síntesis aditiva)</code></pre>
+
+            <h2>Lo que MSFA me enseñó</h2>
+
+            <h3>El cálculo de ganancia ocurre en el dominio logarítmico</h3>
+            <p>El chip OPS del DX7 hace todos sus cálculos de ganancia en el dominio logarítmico. La multiplicación se convierte en suma, que es la única razón por la que esto corrió en hardware de los 80. Tanto la frecuencia como la ganancia viven como valores logarítmicos en punto fijo Q24. Sin eso en la cabeza, el resto del código no tiene ningún sentido.</p>
+
+            <h3>Tabla de onda senoidal</h3>
+            <p>Una tabla de consulta de 1.024 entradas con interpolación lineal. No llamás <code>sin()</code> por muestra. MSFA también mantiene una segunda tabla basada en diferencias para poder intercambiar precisión por velocidad donde hace falta.</p>
+
+            <h3>El envelope no es ADSR</h3>
+            <p>Los envelopes del DX7 no son un ADSR normal. El ataque es no lineal (rápido al principio, lento al final), el decay es una rampa lineal. Los valores de rate 0–99 se cuantizan internamente encima de eso. La hoja de especificaciones sola no te dice cómo se comporta esto en la práctica.</p>
+
+            <h3>32 algoritmos caben en seis bytes</h3>
+            <p>Un byte de flags de bits por operador, así que todo el ruteo de un algoritmo son seis operadores × 1 byte = seis bytes.</p>
+<pre><code>bits 0-1: bus de salida (0=main, 1=bus1, 2=bus2)
+bit  2:   flag de suma
+bits 4-5: bus de entrada
+bits 6-7: feedback</code></pre>
+            <p>Ver esta codificación fue el momento en que me di cuenta de lo ajustados que estaban trabajando los ingenieros de los 80. Sinceramente me impresionó.</p>
+
+            <h2>Escribiéndolo en Swift</h2>
+
+            <h3>Aritmética de punto fijo</h3>
+            <p>El DX7 corre con aritmética entera. En Swift usé Int32 Q24.</p>
+<pre><code>// Acumulador de fase en Q24 — un ciclo = 2^24
+var phase: Int32 = 0
+let phaseIncrement: Int32  // freq / sampleRate * (1 &lt;&lt; 24)
+
+// Aplicar ganancia, ampliar a Int64 para evitar overflow
+let output = Int32((Int64(sineValue) &amp;* Int64(gain)) &gt;&gt; 24)</code></pre>
+            <p>Acá está la trampa de Swift. El overflow de <code>Int32</code> termina en crash. Cuando realmente querés que el valor dé la vuelta, tenés que usar <code>&amp;*</code> o <code>&amp;+</code>. Copiar el código C línea a línea va a crashear, seguro.</p>
+
+            <h3>Tabla senoidal vía matriz de rotación</h3>
+<pre><code>// Avanzar sin/cos con una matriz de rotación — error acumulado pequeño
+// [cos(θ+dθ)]   [cos(dθ) -sin(dθ)] [cos(θ)]
+// [sin(θ+dθ)] = [sin(dθ)  cos(dθ)] [sin(θ)]</code></pre>
+            <p>Numéricamente estable porque el error acumulado se mantiene pequeño. 2.048 entradas (valor y delta intercalados), interpolación lineal de 14 bits.</p>
+
+            <h3>El problema con la tabla exp2</h3>
+            <p>La tabla exp2, que convierte de logarítmico de vuelta a lineal, es una tabla de consulta Q30 de 1.024 entradas más un desplazamiento de octava. Acá es donde Swift y C divergen en el comportamiento de overflow, y lo pisé varias veces. Un solo bit de error en esta capa se convierte en varios dB de ganancia más adelante en la cadena.</p>
+
+            <h3>Generador de envelope</h3>
+<pre><code>// Ataque: no lineal (más lento a medida que el nivel sube)
+let step = ((17 &lt;&lt; 24 - level) &gt;&gt; 24) &amp;* inc
+
+// Decay / release: lineal
+level -= inc</code></pre>
+            <p>Esa sensación característica del DX7 de subir rápido y luego asentarse suave al final. No se puede escribir esto solo desde la especificación — tuve la spec, el código de MSFA, el wiki de Dexed y el manual de servicio del DX7 abiertos al mismo tiempo.</p>
+
+            <h3>Sin allocations en el hilo de audio</h3>
+            <p>El hilo de renderizado de audio no hace allocations. En esto no cedo.</p>
+            <ul>
+                <li>Los 128 buffers de voces se asignan al inicio, en el arranque</li>
+                <li>El traspaso de parámetros de UI a audio va por un ring SPSC sin locks</li>
+                <li><code>SynthParamSnapshot</code> es una tupla de tamaño fijo (un Array haría dealloc al soltarse)</li>
+            </ul>
+<pre><code>// Array accede al heap
+var slots: [SlotSnapshot]
+
+// La tupla es un tipo valor y queda en el stack
+var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
+            SlotSnapshot, SlotSnapshot, SlotSnapshot,
+            SlotSnapshot, SlotSnapshot)</code></pre>
+            <p>Cuando escribís audio en tiempo real en Swift, la versión idiomática que se ve limpia suele ser la que produce glitches.</p>
+
+            <h2>Igualando bit a bit</h2>
+            <p>Compilé el código C de MSFA en el target de tests y comparé las salidas muestra a muestra como Int32.</p>
+<pre><code>@Test func voiceOutputMatchesReference() {
+    let swiftOutput = swiftVoice.renderBlock(samples: 64)
+    let refOutput = dx7ref_voice_render(patch, note, 64)
+
+    for i in 0..&lt;64 {
+        #expect(swiftOutput[i] == refOutput[i])
+    }
+}</code></pre>
+            <p>Este test encontró bugs que la inspección visual de formas de onda nunca habría detectado. A simple vista, las formas de onda siempre parecen "más o menos iguales". FM es no lineal, así que "más o menos" se convierte en un timbre completamente distinto antes de que te des cuenta.</p>
+
+            <h2>Leyendo parches SysEx</h2>
+            <p>Los parches del DX7 viven en mensajes MIDI <strong>SysEx (System Exclusive)</strong>. Un bulk dump de 32 voces son 4.104 bytes. Una voz son 128 bytes: seis operadores × 17 bytes más 26 bytes de parámetros globales.</p>
+            <p>El empaquetado de bits no tiene piedad. El detune sale como <code>(byte[offset+12] &gt;&gt; 3) &amp; 0x0F</code>, y hay varios campos compartiendo un solo byte. El ROM de fábrica, VRC, parches específicos de DX7II y los parches de expansión Grey Matter E! están todos incluidos.</p>
+
+            <h2>Multitímbrico</h2>
+            <p>Un DX7 real es monotímbrico, pero también implementé un modo multitímbrico estilo TX816 (el hermano en rack).</p>
+            <table>
+                <thead>
+                    <tr><th>Modo</th><th>Slots</th><th>Voces por slot</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Single</td><td>1</td><td>16</td></tr>
+                    <tr><td>Dual</td><td>2</td><td>8</td></tr>
+                    <tr><td>Split</td><td>2</td><td>8</td></tr>
+                    <tr><td>TX816</td><td>8</td><td>2</td></tr>
+                </tbody>
+            </table>
+            <p>El total de 16 voces es un límite fijo, así que el modo TX816 te da ocho parches con dos voces cada uno.</p>
+
+            <h2>Swift 6 strict concurrency</h2>
+            <p>Todo compila bajo la concurrencia estricta de Swift 6. Las carreras de datos entre el hilo de UI y el de audio son un error de compilación, no una sorpresa en tiempo de ejecución.</p>
+            <p>Dos tipos de ring buffer:</p>
+            <ul>
+                <li><code>SnapshotRing</code> — para "dame el valor más reciente". La UI escribe en cada cambio de parámetro, el hilo de audio toma el último.</li>
+                <li><code>SPSCRing</code> — FIFO para eventos MIDI. El orden de note on/off tiene significado, así que nada se descarta.</li>
+            </ul>
+            <p>Ambos están construidos sobre <code>Synchronization.Atomic</code> con ordenamiento acquire/release. Sin mutexes, sin bucles CAS.</p>
+
+            <h2>La parte difícil</h2>
+            <p>Lo peor fue rastrear "el audio está un poco mal".</p>
+            <p>No se ve en la forma de onda. Apenas se escucha como "algo raro". Pero la comparación Int32 muestra a muestra revela un error de un bit en exp2 que se convierte en varios dB a través del envelope, y una vez que lo pasás por feedback tenés un parche completamente distinto. Con FM, "básicamente correcto" no sobrevive la cadena de señal.</p>
+            <p>Después estaba el overflow de Int32. El código C depende de comportamiento indefinido que por casualidad da la vuelta. En Swift crashea al instante. Fui por el código fuente de MSFA línea a línea, reemplazando con <code>&amp;+</code> / <code>&amp;*</code> en cada punto de overflow. No es difícil, solo tedioso y largo.</p>
+
+            <h2>Para terminar</h2>
+            <p>Desde que abrí MSFA por primera vez hasta que los 107 tests de M2DX-Core pasaron todos en verde fue aproximadamente un año.</p>
+            <p>El principio del FM está en los libros de texto, pero "el sonido del DX7" requiere perseguir el chip real bit a bit. Esta implementación en Swift se apoya en el trabajo de Raph Levien (que hizo capturas de hardware real a 192kHz/24 bits) y Pascal Gauthier (el motor Dexed Mark I), entre otros.</p>
+            <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">Ver el repositorio en GitHub &rarr;</a></p>
+
+            <hr>
+
+            <p>Los ring buffers sin locks y el diseño del hilo de audio en tiempo real de este proyecto son los mismos que uso en <a href="/1Take-support/">1Take</a>, la app de grabación iOS que también desarrollo.</p>
+            <p>La versión original de este post está en <a href="https://zenn.dev/hakaru/articles/m2dx-core-dx7-fm-synth-swift">Zenn</a> (en japonés). Tuvo más atención de la que esperaba, así que lo estoy replicando acá. Preguntas o correcciones, escribí a <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
+
+            <ul>
+                <li><a href="/M2DX-Core-support/index-es">Soporte de M2DX-Core</a></li>
+                <li><a href="/M2DX-Core-support/privacy-es">Política de privacidad</a></li>
+                <li><a href="https://github.com/hakaru/M2DX-Core">Repositorio en GitHub</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contacto</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var currentPath = window.location.pathname;
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) return 'zh-Hant';
+        return 'en';
+    }
+
+    function getCurrentPageLang() {
+        var langs = ['ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        for (var i = 0; i < langs.length; i++) {
+            if (currentPath.indexOf('/blog/' + langs[i] + '/') !== -1) return langs[i];
+        }
+        return 'en';
+    }
+
+    var langUrlMap = (function() {
+        var map = {};
+        var langs = ['en','ja','fr','de','es','it','ko','nl','pt-BR','sv','zh-Hant'];
+        var match = currentPath.match(/\/blog\/(en|ja|fr|de|es|it|ko|nl|pt-BR|sv|zh-Hant)\//);
+        if (match) {
+            var basePath = currentPath.replace('/blog/' + match[1] + '/', '/blog/LANG/');
+            langs.forEach(function(lang) {
+                map[lang] = basePath.replace('LANG', lang);
+            });
+        }
+        return map;
+    })();
+
+    var pageLang = getCurrentPageLang();
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang && langUrlMap[userLang]) {
+        window.location.href = langUrlMap[userLang];
+        return;
+    }
+
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            if (this.dataset.lang) localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>
