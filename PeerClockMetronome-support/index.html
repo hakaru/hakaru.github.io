@@ -49,6 +49,15 @@
             background: rgba(0,230,255,0.08); border: 1px solid rgba(0,230,255,0.2);
             border-radius: 12px; color: #00bcd4; font-size: 0.95em;
         }
+        .app-store-link {
+            display: inline-block;
+            padding: 10px 22px; margin: 16px 0;
+            background: linear-gradient(90deg, #00e6ff, #00bcd4);
+            color: #0a0a1e; font-size: 0.95em; font-weight: 600;
+            border-radius: 12px; text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .app-store-link:hover { opacity: 0.9; transform: translateY(-1px); }
         .support-nav {
             display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
             margin: 30px 0; padding: 20px 0;
@@ -229,6 +238,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/" class="active">Support</a>
+      <a href="/PeerClockMetronome-support/blog/en/">Blog</a>
       <a href="/PeerClockMetronome-support/privacy">Privacy</a>
     </div>
   </div>
@@ -355,7 +365,7 @@ body {
             <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" class="hero-icon">
             <h1>PeerClock Metronome</h1>
             <p>P2P Synchronized Metronome for Apple Devices</p>
-            <div class="coming-soon">Coming Soon to the App Store</div>
+            <a class="app-store-link" href="https://apps.apple.com/app/peerclock-metronome/id6762972307">Download on the App Store &rarr;</a>
         </div>
 
         <div class="content">
