@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync サポート | hakaru</title>
+    <meta name="description" content="TenSyncのサポートページ。Wi-Fi上の複数端末で同時スタートできる10秒チャレンジ。">
+    <meta property="og:title" content="TenSync サポート">
+    <meta property="og:description" content="Wi-Fi上の複数端末で同時スタートできる10秒チャレンジ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/tensync/index-ja.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            background: #000; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        h2 { font-size: 1.3em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h3 { font-size: 1.05em; color: #e0e0e0; margin: 24px 0 10px; }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul, ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 6px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./">EN</a>
+            <a href="./index-ja.html" class="active">JA</a>
+        </div>
+        <div class="hero">
+            <div class="hero-icon">10</div>
+            <h1>TenSync</h1>
+            <p>複数端末で同時スタートできる10秒チャレンジ。</p>
+        </div>
+
+        <h2>TenSyncとは</h2>
+        <p>シンプルなタイミングゲームです。<strong>START</strong>をタップして、ちょうど10.00秒で<strong>STOP</strong>を押してください。10秒に近いほど精度が上がります。</p>
+        <p>特徴は<strong>同期機能</strong>。同じWi-FiにいるTenSyncを自動で見つけ合い、すべての端末がぴったり同じ瞬間（±2ms以内）にスタートします。STOPは各端末で独立に計測されるので、サーバー不要・アカウント不要で複数台での競争ができます。</p>
+
+        <h2>遊び方</h2>
+        <ol>
+            <li><strong>START</strong>をタップして計測開始。指が触れた瞬間に時計が動き始めます。</li>
+            <li>10秒だと感じた瞬間に<strong>STOP</strong>をタップ。両ボタンとも押下した瞬間に作動します（指を離すまでの遅延なし）。</li>
+            <li>経過秒数、10.00秒からのズレ、精度（％）が表示されます。</li>
+            <li>15秒以内にSTOPしないと「失敗」になります。</li>
+            <li><strong>RETRY</strong>でもう一度プレイ。</li>
+        </ol>
+
+        <h2>同期モード</h2>
+        <p>同じWi-FiにいるTenSyncが見つかると、ヘッダーにWi-Fiアイコンと接続中の台数が表示されます。接続中：</p>
+        <ul>
+            <li>どの端末でも<strong>START</strong>を押すと、約0.5秒後に全端末がぴったり同時に走り出します。</li>
+            <li><strong>STOP</strong>は各端末で独立に計測。結果は他の端末には共有されません。</li>
+            <li>初回起動時にiOSが「ローカルネットワーク」の許可を求めます。同期機能を使うには「許可」してください。</li>
+        </ul>
+
+        <h2>ティック音</h2>
+        <p>計測中、1秒ごとに「カチッ」という音が鳴ります（t=0のダウンビート含む）。<strong>設定</strong>でON/OFF可能。本体のサイレントスイッチがONの場合は鳴りません。</p>
+
+        <h2>ベスト記録</h2>
+        <p>過去最小のズレが画面右上に <code>ベスト x.xx</code> として表示されます。失敗ラウンドや同点では更新されません。記録は端末内にローカル保存されます。</p>
+
+        <h2>プライバシー</h2>
+        <p>TenSyncは利用解析・クラッシュ診断のためにFirebase（Analytics + Crashlytics）を、無料配布のための広告表示にGoogle AdMobを使用しています。詳細は<a href="./privacy-ja.html">プライバシーポリシー</a>をご覧ください。個人情報は収集せず、サーバーへのデータ保存もアカウント登録も不要です。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>メール: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

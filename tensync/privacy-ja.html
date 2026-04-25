@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync プライバシーポリシー | hakaru</title>
+    <meta name="description" content="TenSyncのプライバシーポリシー。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .back { color: #4dd0e1; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 1.8em; color: #fff; margin-bottom: 8px; }
+        .updated { color: #888; font-size: 0.9em; margin-bottom: 30px; }
+        h2 { font-size: 1.25em; color: #fff; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 8px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        strong { color: #fff; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./privacy.html">EN</a>
+            <a href="./privacy-ja.html" class="active">JA</a>
+        </div>
+        <a href="./index-ja.html" class="back">← TenSyncサポートへ戻る</a>
+        <h1>TenSync プライバシーポリシー</h1>
+        <p class="updated">最終更新日: 2026年4月25日</p>
+
+        <p>TenSync（以下「本アプリ」）は、サービスの維持と無料配布のための広告表示に必要な範囲で、限定的なデータを収集します。アカウント登録は不要です。当方のサーバーにデータを保存することはなく、以下に記載する以外の目的でデータを共有することはありません。</p>
+
+        <h2>収集するデータ</h2>
+        <ul>
+            <li><strong>診断データ（Firebase Crashlytics）</strong>: アプリがクラッシュした際、不具合修正のために匿名化されたクラッシュレポートが送信されます。レポートにはスタックトレース、デバイスモデル、OSバージョン、ランダム生成のインストール識別子が含まれます。個人情報は含まれません。</li>
+            <li><strong>解析データ（Firebase Analytics）</strong>: アプリ起動・画面表示などの匿名化された利用イベントがGoogle Analyticsに送信されます。どの機能が使われているかを把握するために使用します。位置情報、連絡先、ユーザーアカウントは扱いません。</li>
+            <li><strong>広告データ（Google AdMob）</strong>: 本アプリはGoogle AdMobによる広告を表示します。AdMobはパーソナライズ広告のためにデバイス識別子（IDFA）を使用することがありますが、これはiOSのApp Tracking Transparencyダイアログでユーザーが明示的に許可した場合のみです。許可しなくても広告は表示されますが、パーソナライズはされません。</li>
+        </ul>
+
+        <h2>収集しないデータ</h2>
+        <ul>
+            <li>アカウント・氏名・連絡先情報</li>
+            <li>正確な位置情報</li>
+            <li>写真・連絡先・マイク・カメラ</li>
+            <li>当方サーバーへユーザーがアップロードするデータ（そもそもアップロード機能はありません）</li>
+        </ul>
+
+        <h2>ローカル保存</h2>
+        <p>ベスト記録と設定はiOSのUserDefaults経由でデバイス内にのみ保存されます。デバイスの外に出ることはありません。</p>
+
+        <h2>同期モード</h2>
+        <p>本アプリが同じWi-Fi上の他のTenSyncデバイスを見つけた場合、ラウンドの開始を同期するために必要な通信メッセージ（時刻同期パケットと「この時刻に開始」コマンド）のみがやり取りされます。個人データはピア間で共有されず、これらのメッセージはローカルネットワークから外に出ることはありません。</p>
+
+        <h2>第三者のプライバシーポリシー</h2>
+        <ul>
+            <li>Google（Firebase + AdMob）: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        </ul>
+
+        <h2>子どものプライバシー</h2>
+        <p>本アプリは13歳未満の子どもから故意に個人情報を収集することはありません。年齢制限は4+ですが、子ども向けのアプリではありません。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>プライバシーに関するご質問は <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a> までご連絡ください。</p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

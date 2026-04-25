@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync Support | hakaru</title>
+    <meta name="description" content="TenSync support. A 10-second timing game with synchronized multi-device start over Wi-Fi.">
+    <meta property="og:title" content="TenSync Support">
+    <meta property="og:description" content="A 10-second timing game with synchronized multi-device start over Wi-Fi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/tensync/">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            background: #000; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        h2 { font-size: 1.3em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h3 { font-size: 1.05em; color: #e0e0e0; margin: 24px 0 10px; }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul, ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 6px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./" class="active">EN</a>
+            <a href="./index-ja.html">JA</a>
+        </div>
+        <div class="hero">
+            <div class="hero-icon">10</div>
+            <h1>TenSync</h1>
+            <p>A 10-second timing game with synchronized multi-device start.</p>
+        </div>
+
+        <h2>What is TenSync?</h2>
+        <p>TenSync is a minimal timing game. Tap <strong>START</strong>, then tap <strong>STOP</strong> at exactly 10.00 seconds. The closer you are, the higher your accuracy.</p>
+        <p>The twist: when other iPhones running TenSync are on the same Wi-Fi network, they automatically discover each other and start every round at the exact same moment, synchronized within ±2 ms. Each device measures its own STOP independently. Race friends in the same room with no setup, no accounts, no servers.</p>
+
+        <h2>How to play</h2>
+        <ol>
+            <li>Tap <strong>START</strong> to begin. The timer starts immediately.</li>
+            <li>When you think 10 seconds have passed, tap <strong>STOP</strong>. Both buttons fire on touch-down (no release-delay).</li>
+            <li>You see your elapsed time, the deviation from 10.00s, and an accuracy percentage.</li>
+            <li>If you do not stop within 15 seconds, the round ends as <strong>FAILED</strong>.</li>
+            <li>Tap <strong>RETRY</strong> to play again.</li>
+        </ol>
+
+        <h2>Sync mode</h2>
+        <p>If other iPhones running TenSync are on the same Wi-Fi, the header shows a Wi-Fi icon and a peer count. When connected:</p>
+        <ul>
+            <li>Tapping <strong>START</strong> on any device broadcasts a synchronized start. All connected devices begin the round about 0.5 seconds later, at the exact same instant.</li>
+            <li>Each device's <strong>STOP</strong> is measured independently. Results are not shared between devices.</li>
+            <li>iOS will ask for "Local Network" permission on first launch. Allow it for sync to work.</li>
+        </ul>
+
+        <h2>Tick sound</h2>
+        <p>An optional tick fires every 1 second while running, with a downbeat at t=0, to help you stay in rhythm. Toggle it in <strong>Settings</strong>. The hardware silent switch always silences it.</p>
+
+        <h2>Best score</h2>
+        <p>The smallest absolute deviation across all your attempts is shown in the header as <code>BEST x.xx</code>. Failed rounds and ties do not update Best. Best is stored locally on your device.</p>
+
+        <h2>Privacy</h2>
+        <p>TenSync uses Firebase (Analytics + Crashlytics) for usage and crash diagnostics, and Google AdMob to serve ads in this free app. See the <a href="./privacy.html">Privacy Policy</a> for details. We do not collect personal information, do not store data on our servers, and do not require an account.</p>
+
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>
