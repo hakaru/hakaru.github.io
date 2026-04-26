@@ -1,2 +1,5 @@
 # Local Netlify folder
 .netlify
+
+# Brainstorming visual-companion working dir
+.superpowers/
