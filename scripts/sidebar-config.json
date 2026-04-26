@@ -138,6 +138,121 @@
     }
   },
   {
+    "id": "M2DX",
+    "name": "M2DX",
+    "icon": "/assets/midi2kit-icon.svg",
+    "prefix": "/M2DX-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/M2DX-support/" },
+        { "label": "Privacy", "href": "/M2DX-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/M2DX-support/index-ja" },
+        { "label": "プライバシー", "href": "/M2DX-support/privacy-ja" }
+      ],
+      "de": [
+        { "label": "Support", "href": "/M2DX-support/index-de" },
+        { "label": "Datenschutz", "href": "/M2DX-support/privacy-de" }
+      ],
+      "es": [
+        { "label": "Soporte", "href": "/M2DX-support/index-es" },
+        { "label": "Privacidad", "href": "/M2DX-support/privacy-es" }
+      ],
+      "fr": [
+        { "label": "Support", "href": "/M2DX-support/index-fr" },
+        { "label": "Confidentialité", "href": "/M2DX-support/privacy-fr" }
+      ],
+      "it": [
+        { "label": "Supporto", "href": "/M2DX-support/index-it" },
+        { "label": "Privacy", "href": "/M2DX-support/privacy-it" }
+      ],
+      "ko": [
+        { "label": "지원", "href": "/M2DX-support/index-ko" },
+        { "label": "개인정보", "href": "/M2DX-support/privacy-ko" }
+      ],
+      "nl": [
+        { "label": "Support", "href": "/M2DX-support/index-nl" },
+        { "label": "Privacy", "href": "/M2DX-support/privacy-nl" }
+      ],
+      "pt-BR": [
+        { "label": "Suporte", "href": "/M2DX-support/index-pt-BR" },
+        { "label": "Privacidade", "href": "/M2DX-support/privacy-pt-BR" }
+      ],
+      "sv": [
+        { "label": "Support", "href": "/M2DX-support/index-sv" },
+        { "label": "Integritet", "href": "/M2DX-support/privacy-sv" }
+      ],
+      "zh-Hant": [
+        { "label": "支援", "href": "/M2DX-support/index-zh-Hant" },
+        { "label": "隱私", "href": "/M2DX-support/privacy-zh-Hant" }
+      ]
+    }
+  },
+  {
+    "id": "PeerClockMetronome",
+    "name": "PeerClock Metronome",
+    "icon": "/PeerClockMetronome-support/assets/app-icon.svg",
+    "prefix": "/PeerClockMetronome-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/PeerClockMetronome-support/" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/en/" },
+        { "label": "Privacy", "href": "/PeerClockMetronome-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/PeerClockMetronome-support/index-ja" },
+        { "label": "ブログ", "href": "/PeerClockMetronome-support/blog/ja/" },
+        { "label": "プライバシー", "href": "/PeerClockMetronome-support/privacy-ja" }
+      ],
+      "de": [
+        { "label": "Support", "href": "/PeerClockMetronome-support/index-de" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/de/" },
+        { "label": "Datenschutz", "href": "/PeerClockMetronome-support/privacy-de" }
+      ],
+      "es": [
+        { "label": "Soporte", "href": "/PeerClockMetronome-support/index-es" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/es/" },
+        { "label": "Privacidad", "href": "/PeerClockMetronome-support/privacy-es" }
+      ],
+      "fr": [
+        { "label": "Support", "href": "/PeerClockMetronome-support/index-fr" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/fr/" },
+        { "label": "Confidentialité", "href": "/PeerClockMetronome-support/privacy-fr" }
+      ],
+      "it": [
+        { "label": "Supporto", "href": "/PeerClockMetronome-support/index-it" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/it/" },
+        { "label": "Privacy", "href": "/PeerClockMetronome-support/privacy-it" }
+      ],
+      "ko": [
+        { "label": "지원", "href": "/PeerClockMetronome-support/index-ko" },
+        { "label": "블로그", "href": "/PeerClockMetronome-support/blog/ko/" },
+        { "label": "개인정보", "href": "/PeerClockMetronome-support/privacy-ko" }
+      ],
+      "nl": [
+        { "label": "Support", "href": "/PeerClockMetronome-support/index-nl" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/nl/" },
+        { "label": "Privacy", "href": "/PeerClockMetronome-support/privacy-nl" }
+      ],
+      "pt-BR": [
+        { "label": "Suporte", "href": "/PeerClockMetronome-support/index-pt-BR" },
+        { "label": "Blog", "href": "/PeerClockMetronome-support/blog/pt-BR/" },
+        { "label": "Privacidade", "href": "/PeerClockMetronome-support/privacy-pt-BR" }
+      ],
+      "sv": [
+        { "label": "Support", "href": "/PeerClockMetronome-support/index-sv" },
+        { "label": "Blogg", "href": "/PeerClockMetronome-support/blog/sv/" },
+        { "label": "Integritet", "href": "/PeerClockMetronome-support/privacy-sv" }
+      ],
+      "zh-Hant": [
+        { "label": "支援", "href": "/PeerClockMetronome-support/index-zh-Hant" },
+        { "label": "部落格", "href": "/PeerClockMetronome-support/blog/zh-Hant/" },
+        { "label": "隱私", "href": "/PeerClockMetronome-support/privacy-zh-Hant" }
+      ]
+    }
+  },
+  {
     "id": "ChatArchive",
     "name": "ChatArchive",
     "icon": "/assets/chatarchive-icon.png",

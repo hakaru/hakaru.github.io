@@ -23,6 +23,8 @@ TARGET_DIRS = [
     "ChatArchive-support",
     "TineModeler-support",
     "M2DX-Core-support",
+    "M2DX-support",
+    "PeerClockMetronome-support",
 ]
 
 LANG_LABELS = {
@@ -47,28 +49,36 @@ def get_app_for_path(rel_path, config):
     return None
 
 
+def get_subpath(rel_path, app):
+    prefix = app["prefix"].lstrip("/")
+    if rel_path == prefix:
+        return ""
+    if rel_path.startswith(prefix + "/"):
+        return rel_path[len(prefix) + 1 :]
+    return rel_path
+
+
 def detect_language(rel_path, app):
     """Detect the current page language based on path rules."""
-    app_id = app["id"]
+    subpath = get_subpath(rel_path, app)
+    available_langs = list(app["links"].keys())
 
-    if app_id == "ChatArchive":
-        if "/en/" in rel_path:
-            return "en"
-        if "/th/" in rel_path:
-            return "th"
-        if "/zh-Hant/" in rel_path:
-            return "zh-Hant"
-        return "ja"  # root is JA for ChatArchive
-    else:
-        # Standard apps: JA indicators
-        if (
-            "index-ja" in rel_path
-            or "privacy-ja" in rel_path
-            or "changelog-ja" in rel_path
-            or "/ja/" in rel_path
+    for lang in sorted(available_langs, key=len, reverse=True):
+        if lang == "en":
+            continue
+        if subpath.startswith(f"{lang}/") or f"/{lang}/" in f"/{subpath}":
+            return lang
+        if re.search(
+            rf"(?:^|/)(?:index|privacy|terms|changelog)-{re.escape(lang)}(?:\.html)?$",
+            subpath,
         ):
-            return "ja"
+            return lang
+
+    if app["id"] == "ChatArchive" and "ja" in app["links"]:
+        return "ja"
+    if "en" in app["links"]:
         return "en"
+    return available_langs[0]
 
 
 def get_active_section(rel_path):
@@ -90,84 +100,106 @@ def label_matches_section(label, section):
     """Check if a link label corresponds to the active section."""
     label_lower = label.lower()
     mapping = {
-        "blog": ["blog", "ブログ"],
-        "manual": ["manual", "マニュアル"],
-        "changelog": ["changelog", "更新履歴"],
-        "privacy": ["privacy", "プライバシー"],
-        "terms": ["terms", "利用規約"],
-        "support": ["support", "サポート"],
+        "blog": [
+            "blog", "ブログ", "blogg", "部落格", "블로그",
+        ],
+        "manual": [
+            "manual", "マニュアル", "handbuch", "guia", "guide", "guida", "manuale",
+            "handleiding", "manual", "手冊", "매뉴얼",
+        ],
+        "changelog": [
+            "changelog", "更新履歴", "versionsverlauf", "registro de cambios",
+            "journal des modifications", "registro modifiche", "wijzigingslog",
+            "registro de alterações", "andringslogg", "變更記錄", "변경 기록",
+        ],
+        "privacy": [
+            "privacy", "プライバシー", "datenschutz", "privacidad", "confidentialité",
+            "privacybeleid", "privacidade", "integritet", "隱私", "개인정보",
+        ],
+        "terms": [
+            "terms", "利用規約", "bedingungen", "términos", "conditions",
+            "termini", "voorwaarden", "termos", "villkor", "條款", "약관",
+        ],
+        "support": [
+            "support", "サポート", "soporte", "supporto", "suporte", "支援", "지원",
+        ],
     }
     return label_lower in [x.lower() for x in mapping.get(section, [])]
 
 
-def compute_lang_switch_url(rel_path, app, current_lang):
+def get_section_fallback_url(app, target_lang, active_section):
+    links = app["links"].get(target_lang) or app["links"].get("en") or []
+    for link in links:
+        if label_matches_section(link["label"], active_section):
+            return link["href"]
+    if links:
+        return links[0]["href"]
+    return app["prefix"] + "/"
+
+
+def compute_lang_switch_url(rel_path, app, current_lang, target_lang, active_section):
     """Compute the URL to switch language for the current page."""
-    app_id = app["id"]
+    if target_lang == current_lang:
+        return None
 
-    if app_id == "ChatArchive":
-        # ChatArchive: JA is root, others have lang prefix
-        if current_lang == "ja":
-            prefix = app["prefix"]
-            path_within = rel_path[len("ChatArchive-support"):].lstrip("/")
-            if path_within in ("", "index.html"):
-                return prefix + "/en/"
-            if path_within.startswith("blog/"):
-                return prefix + "/en/" + path_within
-            if path_within in ("privacy.html", "privacy"):
-                return prefix + "/en/privacy"
-            if path_within in ("terms.html", "terms"):
-                return prefix + "/en/terms"
-            return prefix + "/en/"
-        else:
-            prefix = app["prefix"]
-            path_within = rel_path[len("ChatArchive-support"):].lstrip("/")
-            for lang_seg in ("en/", "th/", "zh-Hant/"):
-                if path_within.startswith(lang_seg):
-                    path_within = path_within[len(lang_seg):]
-                    break
-            if path_within in ("", "index.html"):
+    prefix = app["prefix"]
+    subpath = get_subpath(rel_path, app)
+
+    if app["id"] == "ChatArchive":
+        path_without_lang = subpath
+        for lang in sorted(app["links"].keys(), key=len, reverse=True):
+            lang_prefix = f"{lang}/"
+            if path_without_lang.startswith(lang_prefix):
+                path_without_lang = path_without_lang[len(lang_prefix) :]
+                break
+
+        if target_lang == "ja":
+            if path_without_lang in ("", "index.html"):
                 return prefix + "/"
-            if path_within.startswith("blog/"):
-                return prefix + "/" + path_within
-            if path_within in ("privacy.html", "privacy"):
+            if path_without_lang in ("privacy", "privacy.html"):
                 return prefix + "/privacy"
-            if path_within in ("terms.html", "terms"):
+            if path_without_lang in ("terms", "terms.html"):
                 return prefix + "/terms"
-            return prefix + "/"
-    else:
-        # Standard apps
-        prefix = "/" + app["prefix"].lstrip("/")
-        path_within = rel_path[len(app["prefix"].lstrip("/") + "/"):]
+            return prefix + "/" + path_without_lang
 
-        if current_lang == "en":
-            # Switch to JA
-            if "/blog/en/" in rel_path:
-                return "/" + rel_path.replace("/blog/en/", "/blog/ja/")
-            if "/manual/en/" in rel_path:
-                return "/" + rel_path.replace("/manual/en/", "/manual/ja/")
-            if "index.html" in path_within or path_within == "":
-                return prefix + "/index-ja"
-            if "privacy.html" in path_within or path_within == "privacy.html":
-                return prefix + "/privacy-ja"
-            if "changelog.html" in path_within or path_within == "changelog.html":
-                return prefix + "/changelog-ja"
-            return prefix + "/index-ja"
-        else:
-            # Switch to EN
-            if "/blog/ja/" in rel_path:
-                return "/" + rel_path.replace("/blog/ja/", "/blog/en/")
-            if "/manual/ja/" in rel_path:
-                return "/" + rel_path.replace("/manual/ja/", "/manual/en/")
-            if "index-ja.html" in path_within or "index-ja" in path_within:
-                return prefix + "/"
-            if "privacy-ja.html" in path_within or "privacy-ja" in path_within:
-                return prefix + "/privacy"
-            if "changelog-ja.html" in path_within or "changelog-ja" in path_within:
-                return prefix + "/changelog"
-            return prefix + "/"
+        if path_without_lang in ("", "index.html"):
+            return prefix + f"/{target_lang}/"
+        if path_without_lang in ("privacy", "privacy.html"):
+            return prefix + f"/{target_lang}/privacy"
+        if path_without_lang in ("terms", "terms.html"):
+            return prefix + f"/{target_lang}/terms"
+        return prefix + f"/{target_lang}/" + path_without_lang
+
+    if subpath in ("", "index.html") or re.fullmatch(r"index-[^/]+(?:\.html)?", subpath):
+        return prefix + "/" if target_lang == "en" else prefix + f"/index-{target_lang}"
+
+    for section in ("blog", "manual"):
+        match = re.match(rf"{section}/([^/]+)/(.*)", subpath)
+        if match:
+            _, rest = match.groups()
+            return prefix + f"/{section}/{target_lang}/{rest}"
+
+    for section in ("privacy", "support", "changelog"):
+        match = re.match(rf"{section}/([^/]+)/(.*)", subpath)
+        if match:
+            _, rest = match.groups()
+            if target_lang == "en":
+                return prefix + f"/{section}/{rest}"
+            return prefix + f"/{section}/{target_lang}/{rest}"
+
+    file_match = re.fullmatch(r"([a-zA-Z0-9-]+?)(?:-([A-Za-z0-9-]+))?(?:\.html)?", subpath)
+    if file_match:
+        stem, maybe_lang = file_match.groups()
+        if maybe_lang in app["links"]:
+            return prefix + f"/{stem}" if target_lang == "en" else prefix + f"/{stem}-{target_lang}"
+        if target_lang == "en":
+            return prefix + f"/{stem}"
+        return prefix + f"/{stem}-{target_lang}"
+
+    return get_section_fallback_url(app, target_lang, active_section)
 
 
-def build_sidebar_html(config, current_app, current_lang, active_section, lang_switch_url):
+def build_sidebar_html(config, current_app, rel_path, current_lang, active_section):
     """Build the full sidebar navigation HTML."""
     lines = []
     lines.append('<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>')
@@ -218,10 +250,6 @@ def build_sidebar_html(config, current_app, current_lang, active_section, lang_s
 
     available_langs = list(current_app["links"].keys())
 
-    # For standard apps (non-ChatArchive), only show en/ja
-    if current_app["id"] != "ChatArchive":
-        available_langs = [l for l in available_langs if l in ("en", "ja")]
-
     for lang in available_langs:
         label = LANG_LABELS.get(lang, lang.upper())
         if lang == current_lang:
@@ -229,11 +257,12 @@ def build_sidebar_html(config, current_app, current_lang, active_section, lang_s
                 f'    <span class="sidebar-lang-btn active" data-lang="{lang}">{label}</span>'
             )
         else:
-            if current_app["id"] != "ChatArchive" or lang != current_lang:
-                switch_url = lang_switch_url if len(available_langs) == 2 else "#"
-                lines.append(
-                    f'    <a href="{switch_url}" class="sidebar-lang-btn" data-lang="{lang}">{label}</a>'
-                )
+            switch_url = compute_lang_switch_url(
+                rel_path, current_app, current_lang, lang, active_section
+            )
+            lines.append(
+                f'    <a href="{switch_url}" class="sidebar-lang-btn" data-lang="{lang}">{label}</a>'
+            )
 
     lines.append('  </div>')
     lines.append('</nav>')
@@ -300,12 +329,9 @@ def main():
         # Determine active section
         active_section = get_active_section(rel_path)
 
-        # Compute language switch URL
-        lang_switch_url = compute_lang_switch_url(rel_path, app, current_lang)
-
         # Build new sidebar HTML
         new_sidebar = build_sidebar_html(
-            config, app, current_lang, active_section, lang_switch_url
+            config, app, rel_path, current_lang, active_section
         )
 
         # Replace the old sidebar block
