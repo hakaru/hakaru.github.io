@@ -294,6 +294,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>Current Status — Why TestFlight</h2>
+            <p>M2DX is <strong>not yet at instrument-grade quality</strong>. We are publishing the public TestFlight beta with the constraints and untested items below, in order to gather feedback and iterate.</p>
+
+            <h3>MIDI 2.0 coverage is limited</h3>
+            <ul>
+                <li>We have not been able to procure enough MIDI 2.0-capable hardware, so UMP behavior has only been verified across a limited set of device combinations</li>
+                <li>Differences in MIDI 2.0 support across macOS versions (CoreMIDI behavior, etc.) are not fully characterized</li>
+                <li>Vendor-specific extensions and proprietary profiles built on top of MIDI 2.0 have only been partially analyzed (specifically, parts of KORG's implementation); other vendors' proprietary implementations remain untouched</li>
+            </ul>
+
+            <h3>DX7 preset compatibility</h3>
+            <ul>
+                <li>32 factory presets are bundled, but 1:1 tonal parity with the original DX7 has not been fully verified across all presets</li>
+                <li>Bank loading and SysEx patch import compatibility will be improved progressively across upcoming TestFlight builds</li>
+            </ul>
+
+            <h3>FX chain</h3>
+            <ul>
+                <li>The 6-stage FX chain (EQ → Drive → Chorus → Reverb → Stereo → Maximizer) is <strong>at the "working implementation" stage</strong>. Musical tuning of parameter ranges and endpoints, CPU efficiency, and interaction optimization are still ahead</li>
+            </ul>
+
+            <h3>If you spot bugs or oddities</h3>
+            <p>Crashes are auto-reported via Firebase Crashlytics (see the <a href="/M2DX-support/privacy">Privacy Policy</a> for details). Reproducible issues are easier to fix — if you can, please send a report to <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
+
+            <hr>
+
             <h2>Features</h2>
 
             <h3>Full MIDI 2.0 UMP Support</h3>

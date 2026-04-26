@@ -297,6 +297,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>현재 상태 — TestFlight로 공개하는 이유</h2>
+            <p>M2DX는 아직 <strong>악기로서 실용 수준에 도달하지 못했습니다</strong>. 아래의 제약 사항과 미검증 항목을 안고 있는 상태이지만, 피드백을 수집하고 개선해 나가기 위해 TestFlight에서 퍼블릭 베타로 공개하고 있습니다.</p>
+
+            <h3>MIDI 2.0 검증 범위가 제한적입니다</h3>
+            <ul>
+                <li>MIDI 2.0 지원 하드웨어를 충분히 확보하지 못해, UMP 동작 확인은 한정된 기기 조합에서만 진행한 상태입니다</li>
+                <li>macOS 버전별 MIDI 2.0 지원 차이(CoreMIDI 동작 차이 등)는 완전히 파악하지 못했습니다</li>
+                <li>각 제조사가 MIDI 2.0 사양 위에 얹은 독자 확장 및 독자 프로파일에 대한 분석은 일부(구체적으로는 KORG의 일부)만 대응되어 있으며, 타사의 독자 구현은 아직 손대지 못한 상태입니다</li>
+            </ul>
+
+            <h3>DX7 프리셋 호환성 검증</h3>
+            <ul>
+                <li>32종의 팩토리 프리셋을 내장하고 있지만, 오리지널 DX7과의 1:1 사운드 완전 일치 여부는 모든 프리셋에 대해 검증을 마치지 못했습니다</li>
+                <li>뱅크 전체 및 SysEx 패치 로딩 호환성은 향후 TestFlight 빌드를 통해 단계적으로 정비해 나갈 예정입니다</li>
+            </ul>
+
+            <h3>이펙트 체인</h3>
+            <ul>
+                <li>6단 FX 체인(EQ → Drive → Chorus → Reverb → Stereo → Maximizer)은 <strong>일단 동작하는 형태로 구현한 단계</strong>입니다. 파라미터 가청 범위 및 엔드포인트 값의 음악적 조정, CPU 효율, 상호작용 최적화는 앞으로 진행할 예정입니다</li>
+            </ul>
+
+            <h3>버그나 이상 동작을 발견하신 분께</h3>
+            <p>크래시는 Firebase Crashlytics를 통해 자동으로 수집됩니다(자세한 내용은 <a href="/M2DX-support/privacy-ko">개인정보 처리방침</a>을 참조해 주십시오). 재현 조건이 명확한 버그는 원인 파악이 빨라지므로, 가능하시다면 <a href="mailto:support@hakaru.net">support@hakaru.net</a>으로 보고해 주시면 감사하겠습니다.</p>
+
+            <hr>
+
             <h2>주요 특징</h2>
 
             <h3>MIDI 2.0 UMP 완전 지원</h3>

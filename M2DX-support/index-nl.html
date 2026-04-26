@@ -297,6 +297,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>Huidige status — waarom TestFlight</h2>
+            <p>M2DX heeft <strong>nog niet het kwaliteitsniveau van een volwaardig instrument</strong> bereikt. We brengen de publieke TestFlight-bèta uit met de onderstaande beperkingen en onbeproefde onderdelen, om feedback te verzamelen en de app stap voor stap te verbeteren.</p>
+
+            <h3>MIDI 2.0-dekking is beperkt</h3>
+            <ul>
+                <li>We hebben onvoldoende MIDI 2.0-hardware kunnen aanschaffen, waardoor het UMP-gedrag slechts met een beperkt aantal apparaatcombinaties is gecontroleerd</li>
+                <li>De verschillen in MIDI 2.0-ondersteuning tussen macOS-versies (afwijkend gedrag van CoreMIDI en dergelijke) zijn nog niet volledig in kaart gebracht</li>
+                <li>Fabrikantspecifieke uitbreidingen en eigen profielen bovenop MIDI 2.0 zijn slechts gedeeltelijk geanalyseerd (concreet: delen van de implementatie van KORG); eigen implementaties van andere fabrikanten zijn nog niet aangeraakt</li>
+            </ul>
+
+            <h3>Compatibiliteit van DX7-presets</h3>
+            <ul>
+                <li>Er zijn 32 fabriekspresets meegeleverd, maar een 1-op-1 klankgelijkheid met de originele DX7 is nog niet voor alle presets volledig geverifieerd</li>
+                <li>De compatibiliteit van het laden van complete banks en het importeren van SysEx-patches wordt geleidelijk verbeterd in toekomstige TestFlight-builds</li>
+            </ul>
+
+            <h3>FX-keten</h3>
+            <ul>
+                <li>De zesdelige FX-keten (EQ → Drive → Chorus → Reverb → Stereo → Maximizer) bevindt zich <strong>in de fase van een werkende implementatie</strong>. Het muzikaal afstemmen van parameterbereiken en eindwaarden, de CPU-efficiëntie en het optimaliseren van de onderlinge wisselwerking moeten nog gebeuren</li>
+            </ul>
+
+            <h3>Bugs of vreemd gedrag tegengekomen?</h3>
+            <p>Crashes worden automatisch gemeld via Firebase Crashlytics (zie het <a href="/M2DX-support/privacy-nl">privacybeleid</a> voor meer informatie). Reproduceerbare problemen zijn makkelijker op te lossen — als het lukt, stuur dan graag een melding naar <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
+
+            <hr>
+
             <h2>Belangrijkste functies</h2>
 
             <h3>Volledige ondersteuning voor MIDI 2.0 UMP</h3>

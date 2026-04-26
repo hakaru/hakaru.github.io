@@ -297,6 +297,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>Aktuell status — därför kör vi via TestFlight</h2>
+            <p>M2DX håller <strong>ännu inte instrumentkvalitet</strong>. Vi släpper ändå en öppen beta via TestFlight, med begränsningarna och de otestade punkterna nedan, för att kunna samla in återkoppling och förbättra appen steg för steg.</p>
+
+            <h3>Begränsad täckning för MIDI 2.0</h3>
+            <ul>
+                <li>Vi har inte lyckats få tag på tillräckligt med MIDI 2.0-kompatibel hårdvara, så UMP-beteendet är bara verifierat för ett fåtal kombinationer av enheter.</li>
+                <li>Skillnader i hur MIDI 2.0 stöds mellan olika macOS-versioner (till exempel hur CoreMIDI uppför sig) är inte fullt kartlagda.</li>
+                <li>Tillverkarspecifika tillägg och egna profiler ovanpå MIDI 2.0 är bara delvis analyserade (närmare bestämt delar av KORG:s implementation); andra tillverkares egna lösningar har vi ännu inte tittat på.</li>
+            </ul>
+
+            <h3>DX7-presetkompatibilitet</h3>
+            <ul>
+                <li>32 fabrikspresets följer med, men 1:1-likhet i klang med originalets DX7 är inte fullt verifierad för samtliga presets.</li>
+                <li>Inläsning av hela banker och import av SysEx-patcher förbättras gradvis i kommande TestFlight-builds.</li>
+            </ul>
+
+            <h3>FX-kedjan</h3>
+            <ul>
+                <li>Den sexstegs FX-kedjan (EQ → Drive → Chorus → Reverb → Stereo → Maximizer) är <strong>på "fungerande implementation"-nivå</strong>. Musikalisk finjustering av parameterintervall och ändpunkter, CPU-effektivitet och optimering av samspelet mellan stegen återstår.</li>
+            </ul>
+
+            <h3>Om du hittar buggar eller något som känns konstigt</h3>
+            <p>Krascher rapporteras automatiskt via Firebase Crashlytics (se <a href="/M2DX-support/privacy-sv">integritetspolicyn</a> för mer information). Buggar som går att återskapa är lättare att åtgärda — om du har möjlighet, skicka gärna en rapport till <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
+
+            <hr>
+
             <h2>Funktioner i korthet</h2>
 
             <h3>Fullt stöd för MIDI 2.0 UMP</h3>

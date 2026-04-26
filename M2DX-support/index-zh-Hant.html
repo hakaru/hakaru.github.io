@@ -297,6 +297,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>目前的狀態 — 為何採用 TestFlight 公開</h2>
+            <p>M2DX 目前還<strong>尚未達到可作為樂器實際使用的成熟度</strong>。我們在仍存在以下限制與未驗證項目的情況下，於 TestFlight 公開 Beta 版本，目的是收集使用者回饋並持續改進。</p>
+
+            <h3>MIDI 2.0 的驗證範圍有限</h3>
+            <ul>
+                <li>由於尚未充分取得支援 MIDI 2.0 的硬體裝置，UMP 的實機驗證僅能在有限的器材組合上進行</li>
+                <li>各個 macOS 版本之間的 MIDI 2.0 支援差異（例如 CoreMIDI 的行為差異等）尚未完整掌握</li>
+                <li>各家廠商在 MIDI 2.0 規範之上加入的獨家擴充與專屬 Profile，目前僅部分（具體而言為 KORG 的部分內容）有解析支援，其他廠商的獨家實作尚未著手</li>
+            </ul>
+
+            <h3>DX7 音色相容性驗證</h3>
+            <ul>
+                <li>雖然內建了 32 種原廠音色，但與原版 DX7 是否能達到 1:1 的聲音完全一致，目前尚未針對所有音色完成驗證</li>
+                <li>整個音色庫（Bank）以及 SysEx Patch 的載入相容性，將於後續 TestFlight 版本中分階段陸續完善</li>
+            </ul>
+
+            <h3>效果鏈</h3>
+            <ul>
+                <li>6 段 FX 鏈（EQ → Drive → Chorus → Reverb → Stereo → Maximizer）<strong>目前僅停留在「能運作」的實作階段</strong>。參數的可聽範圍、端點數值的音樂性調整、CPU 效率以及彼此之間的交互作用最佳化，都將於後續陸續處理</li>
+            </ul>
+
+            <h3>若您發現任何 Bug 或不對勁之處</h3>
+            <p>當機資訊會由 Firebase Crashlytics 自動收集（詳情請參閱<a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a>）。具有可重現條件的問題能更快被定位，因此若可行的話，懇請您透過 <a href="mailto:support@hakaru.net">support@hakaru.net</a> 回報，我們將不勝感激。</p>
+
+            <hr>
+
             <h2>主要特色</h2>
 
             <h3>完整支援 MIDI 2.0 UMP</h3>

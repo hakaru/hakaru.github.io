@@ -297,6 +297,32 @@ body { display: flex; min-height: 100vh; }
 
             <hr>
 
+            <h2>État actuel — Pourquoi TestFlight</h2>
+            <p>M2DX <strong>n'a pas encore atteint un niveau de qualité digne d'un véritable instrument</strong>. Nous publions cette bêta publique sur TestFlight avec les limites et les points non vérifiés énumérés ci-dessous, afin de recueillir vos retours et de progresser à partir de là.</p>
+
+            <h3>Couverture MIDI 2.0 limitée</h3>
+            <ul>
+                <li>Faute d'avoir pu réunir suffisamment de matériel compatible MIDI 2.0, le comportement UMP n'a été vérifié que sur un éventail restreint de combinaisons d'appareils</li>
+                <li>Les différences de prise en charge de MIDI 2.0 selon les versions de macOS (variations du comportement de CoreMIDI, etc.) ne sont pas encore entièrement caractérisées</li>
+                <li>Les extensions et profils propriétaires que chaque fabricant ajoute par-dessus la spécification MIDI 2.0 ne sont analysés que partiellement (en l'occurrence une partie de l'implémentation KORG) ; les implémentations propriétaires des autres fabricants n'ont pas encore été abordées</li>
+            </ul>
+
+            <h3>Compatibilité des presets DX7</h3>
+            <ul>
+                <li>32 presets d'usine sont fournis, mais la parité sonore exacte avec le DX7 d'origine n'a pas été entièrement vérifiée pour l'ensemble des presets</li>
+                <li>Le chargement de banques complètes et la compatibilité d'import de patches SysEx seront améliorés progressivement au fil des prochaines builds TestFlight</li>
+            </ul>
+
+            <h3>Chaîne FX</h3>
+            <ul>
+                <li>La chaîne FX à 6 étages (EQ → Drive → Chorus → Reverb → Stereo → Maximizer) <strong>n'en est qu'au stade « implémentation fonctionnelle »</strong>. Le réglage musical des plages de paramètres et de leurs valeurs limites, l'efficacité CPU et l'optimisation des interactions restent à faire</li>
+            </ul>
+
+            <h3>Si vous repérez des bugs ou des comportements étranges</h3>
+            <p>Les crashes sont remontés automatiquement via Firebase Crashlytics (voir la <a href="/M2DX-support/privacy-fr">politique de confidentialité</a> pour plus de détails). Les anomalies reproductibles sont nettement plus rapides à corriger : si possible, merci d'envoyer un rapport à <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
+
+            <hr>
+
             <h2>Caractéristiques principales</h2>
 
             <h3>Prise en charge complète de MIDI 2.0 UMP</h3>
