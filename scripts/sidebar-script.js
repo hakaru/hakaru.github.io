@@ -1,35 +1,27 @@
 (function() {
-    // Language auto-detection
     var savedLang = localStorage.getItem('hakaru-lang');
-    var currentPath = window.location.pathname;
+    var activeLangButton = document.querySelector('.sidebar-lang-btn.active');
+    var pageLang = activeLangButton ? activeLangButton.dataset.lang : 'en';
 
     function detectLang() {
         if (savedLang) return savedLang;
         var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-        return navLang.startsWith('ja') ? 'ja' : 'en';
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) {
+            return 'zh-Hant';
+        }
+        if (navLang.startsWith('th')) return 'th';
+        return 'en';
     }
 
-    function isJaPage() {
-        return currentPath.includes('/index-ja') ||
-               currentPath.includes('/privacy-ja') ||
-               currentPath.includes('/changelog-ja') ||
-               currentPath.includes('/manual/ja/') ||
-               currentPath.includes('/blog/ja/') ||
-               (currentPath.includes('/ChatArchive-support/') &&
-                !currentPath.includes('/en/') &&
-                !currentPath.includes('/th/') &&
-                !currentPath.includes('/zh-Hant/'));
-    }
-
-    function getCurrentPageLang() {
-        if (currentPath.includes('/th/')) return 'th';
-        if (currentPath.includes('/zh-Hant/')) return 'zh-Hant';
-        if (currentPath.includes('/en/') && currentPath.includes('/ChatArchive-support/')) return 'en';
-        return isJaPage() ? 'ja' : 'en';
-    }
-
-    // Auto-redirect on first visit (no saved preference, not coming from same site)
-    var pageLang = getCurrentPageLang();
     var userLang = detectLang();
     if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
         var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
