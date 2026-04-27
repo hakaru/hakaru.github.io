@@ -309,7 +309,7 @@ body { display: flex; min-height: 100vh; }
 
             <h3>Compatibiliteit van DX7-presets</h3>
             <ul>
-                <li>Er zijn 32 fabriekspresets meegeleverd, maar een 1-op-1 klankgelijkheid met de originele DX7 is nog niet voor alle presets volledig geverifieerd</li>
+                <li>Er zijn 32 initiële presets meegeleverd, maar het klankkarakter ten opzichte van klassieke FM-synthese is nog niet voor alle presets volledig geverifieerd</li>
                 <li>De compatibiliteit van het laden van complete banks en het importeren van SysEx-patches wordt geleidelijk verbeterd in toekomstige TestFlight-builds</li>
             </ul>
 
@@ -329,7 +329,7 @@ body { display: flex; min-height: 100vh; }
             <p>Native ondersteuning voor Universal MIDI Packet (UMP). Met 16-bits velocity (65.536 stappen), 32-bits CC en 32-bits pitchbend speel je vloeiend en bijzonder expressief. Bij MIDI 1.0-apparatuur valt M2DX automatisch terug.</p>
 
             <h3>DX7-compatibele FM-engine</h3>
-            <p>De volledige DX7-algoritmeset met 6 operators en 32 algoritmes. Dankzij de Int32 Q24-vastekommarekening, rechtstreeks geport van de msfa- en Dexed-engines, wordt het gedrag van de originele Yamaha OPS-chip bit voor bit gereproduceerd. M2DX bevat 32 fabriekspresets (BRASS1, E.PIANO1, WOOD BASS, FLUTE 1 en meer).</p>
+            <p>Een DX7-achtige FM-synthese-engine met 6 operators en 32 algoritmes, geïmplementeerd in puur Swift. De Int32 Q24-vastekommarekening streeft naar het karakter van klassieke FM-synthese. 32 initiële presets zijn meegeleverd.</p>
 
             <h3>16-stemmige polyfonie</h3>
             <p>Speel 16 noten tegelijk, met ondersteuning voor het sustainpedaal (CC64) en pitchbend (±2 halve tonen). Soft clipping op basis van een Padé-benadering van tanh houdt digitale vervorming buiten de deur.</p>
@@ -362,7 +362,7 @@ body { display: flex; min-height: 100vh; }
             <p>Vanaf v1.3.1 (build 5) staan automatische crashrapporten via Firebase Crashlytics aan. Als je de crash kunt reproduceren, kunnen we via de logs snel de oorzaak vinden en oplossen. Voor details over welke gegevens we verzamelen verwijzen we naar het <a href="/M2DX-support/privacy-nl">privacybeleid</a>.</p>
 
             <h3>Kan ik DX7 SysEx-presets inladen?</h3>
-            <p>Op dit moment zijn er 32 fabriekspresets meegeleverd. Over SysEx-compatibiliteit volgt meer informatie in een toekomstige TestFlight-build.</p>
+            <p>Op dit moment zijn er 32 initiële presets meegeleverd. Over het importeren van eigen SysEx-banken volgt meer informatie in een toekomstige TestFlight-build.</p>
 
             <h3>Heb ik een MIDI 2.0-DAW nodig?</h3>
             <p>Nee. Omdat M2DX automatisch terugvalt op MIDI 1.0, werkt het ook prima met je bestaande MIDI-controllers en DAW's. In een MIDI 2.0-omgeving krijg je daarbovenop een veel hogere expressieresolutie.</p>

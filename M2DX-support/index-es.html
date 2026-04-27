@@ -309,7 +309,7 @@ body { display: flex; min-height: 100vh; }
 
             <h3>Verificación de la compatibilidad con presets del DX7</h3>
             <ul>
-                <li>La app incluye 32 presets de fábrica, pero todavía no hemos podido confirmar una coincidencia sonora 1:1 con el DX7 original en todos ellos.</li>
+                <li>La app incluye 32 presets iniciales, pero todavía no hemos verificado el carácter sonoro frente a la síntesis FM clásica en todos ellos.</li>
                 <li>La compatibilidad con la carga de bancos completos y de patches SysEx la iremos ampliando en próximas builds de TestFlight.</li>
             </ul>
 
@@ -329,7 +329,7 @@ body { display: flex; min-height: 100vh; }
             <p>Soporte nativo para Universal MIDI Packet (UMP). Velocidad de 16 bits (65 536 niveles), CC de 32 bits y pitch bend de 32 bits para una interpretación fluida y muy expresiva. Si el entorno solo admite MIDI 1.0, la app cambia automáticamente a ese modo.</p>
 
             <h3>Motor FM compatible con DX7</h3>
-            <p>Conjunto completo de algoritmos del DX7: 6 operadores y 32 algoritmos. Aritmética en punto fijo Int32 Q24 portada directamente del núcleo msfa / Dexed, que reproduce bit a bit el comportamiento del chip Yamaha OPS original. Incluye 32 presets de fábrica (BRASS1, E.PIANO1, WOOD BASS, FLUTE 1, etc.).</p>
+            <p>Motor de síntesis FM al estilo DX7 con 6 operadores y 32 algoritmos, implementado en Swift puro. La aritmética en punto fijo Int32 Q24 busca el carácter de la síntesis FM clásica. Incluye 32 presets iniciales.</p>
 
             <h3>Polifonía de 16 voces</h3>
             <p>16 voces simultáneas, pedal de sustain (CC64) y pitch bend (±2 semitonos). El soft clipping mediante la aproximación de tanh con Padé evita la distorsión digital.</p>
@@ -362,7 +362,7 @@ body { display: flex; min-height: 100vh; }
             <p>Desde la versión 1.3.1 (build 5) están activos los informes automáticos de fallos mediante Firebase Crashlytics. Si puedes reproducir el problema, los registros nos permiten encontrar la causa y publicar una corrección rápidamente. Encontrarás el detalle de los datos recogidos en la <a href="/M2DX-support/privacy-es">política de privacidad</a>.</p>
 
             <h3>¿Se pueden cargar presets SysEx del DX7?</h3>
-            <p>La app incluye 32 presets de fábrica. Sobre la compatibilidad con SysEx, daremos más información en próximas versiones de TestFlight.</p>
+            <p>La app incluye 32 presets iniciales. Sobre la importación de SysEx propios, daremos más información en próximas versiones de TestFlight.</p>
 
             <h3>¿Hace falta un DAW compatible con MIDI 2.0?</h3>
             <p>No. Como existe fallback automático a MIDI 1.0, puedes usar M2DX con cualquier controlador o DAW MIDI tradicional. En entornos compatibles con MIDI 2.0 obtendrás una resolución y una expresividad mayores.</p>

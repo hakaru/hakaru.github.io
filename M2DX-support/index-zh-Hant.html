@@ -309,7 +309,7 @@ body { display: flex; min-height: 100vh; }
 
             <h3>DX7 音色相容性驗證</h3>
             <ul>
-                <li>雖然內建了 32 種原廠音色，但與原版 DX7 是否能達到 1:1 的聲音完全一致，目前尚未針對所有音色完成驗證</li>
+                <li>雖然內建了 32 種初始音色，但與經典 FM 合成的音色比較目前尚未針對所有音色完成驗證</li>
                 <li>整個音色庫（Bank）以及 SysEx Patch 的載入相容性，將於後續 TestFlight 版本中分階段陸續完善</li>
             </ul>
 
@@ -329,7 +329,7 @@ body { display: flex; min-height: 100vh; }
             <p>原生支援 Universal MIDI Packet (UMP)。透過 16 位元力度（65,536 階）、32 位元 CC 與 32 位元 Pitch Bend，呈現流暢且富表現力的演奏。同時自動向下相容 MIDI 1.0。</p>
 
             <h3>DX7 相容 FM 引擎</h3>
-            <p>具備完整的 DX7 演算法集（6 組運算器 × 32 種演算法）。直接移植 msfa / Dexed 核心引擎，採用 Int32 Q24 定點運算，逐位元重現原版 Yamaha OPS 晶片的運作。內建 32 種原廠音色（BRASS1、E.PIANO1、WOOD BASS、FLUTE 1 等）。</p>
+            <p>具備 6 組運算器 × 32 種演算法的 DX7 風格 FM 合成引擎，以 Pure Swift 實作。透過 Int32 Q24 定點運算，追求經典 FM 音色的特性。內建 32 種初始音色。</p>
 
             <h3>16 複音</h3>
             <p>支援 16 複音同時發聲、延音踏板（CC64）以及 Pitch Bend（±2 半音）。採用 Padé 近似 tanh 軟切削，避免數位破音。</p>
@@ -362,7 +362,7 @@ body { display: flex; min-height: 100vh; }
             <p>自 v1.3.1 (build 5) 起，已啟用 Firebase Crashlytics 自動回報當機。若您能重現該當機，我們便能從紀錄中找出原因並迅速修正。關於收集資料的詳細內容，請參閱<a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a>。</p>
 
             <h3>是否可以匯入 DX7 的 SysEx 音色？</h3>
-            <p>內建 32 種原廠音色。SysEx 相容性將於後續 TestFlight 版本中提供更多資訊。</p>
+            <p>內建 32 種初始音色。使用者自備 SysEx 音色檔的匯入功能將於後續 TestFlight 版本中提供更多資訊。</p>
 
             <h3>是否需要支援 MIDI 2.0 的 DAW？</h3>
             <p>不需要。由於可向下相容 MIDI 1.0，您仍可搭配傳統的 MIDI 控制器或 DAW 使用。在支援 MIDI 2.0 的環境下，則能享有更高解析度的演奏表現。</p>

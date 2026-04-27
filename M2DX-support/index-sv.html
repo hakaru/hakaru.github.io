@@ -309,7 +309,7 @@ body { display: flex; min-height: 100vh; }
 
             <h3>DX7-presetkompatibilitet</h3>
             <ul>
-                <li>32 fabrikspresets följer med, men 1:1-likhet i klang med originalets DX7 är inte fullt verifierad för samtliga presets.</li>
+                <li>32 inledande presets följer med, men klangkaraktären jämfört med klassisk FM-syntes är inte fullt verifierad för samtliga presets.</li>
                 <li>Inläsning av hela banker och import av SysEx-patcher förbättras gradvis i kommande TestFlight-builds.</li>
             </ul>
 
@@ -329,7 +329,7 @@ body { display: flex; min-height: 100vh; }
             <p>Universal MIDI Packet (UMP) hanteras nativt. Du får 16-bitars velocity (65 536 nivåer), 32-bitars CC och 32-bitars pitch bend för ett mjukt och uttrycksfullt spel. Vid behov går synthen automatiskt tillbaka till MIDI 1.0.</p>
 
             <h3>DX7-kompatibel FM-motor</h3>
-            <p>Sex operatorer och hela uppsättningen av 32 DX7-algoritmer. Genom en direktportering av msfa- och Dexed-kärnan med Int32 Q24-fixpunktsaritmetik återskapas Yamahas ursprungliga OPS-chip bit för bit. 32 fabrikspresets ingår, däribland BRASS1, E.PIANO1, WOOD BASS och FLUTE 1.</p>
+            <p>En FM-syntesmotor i DX7-stil med 6 operatorer och 32 algoritmer, implementerad i ren Swift. Int32 Q24-fixpunktsaritmetiken siktar på klangkaraktären hos klassisk FM-syntes. 32 inledande presets ingår.</p>
 
             <h3>16-stämmig polyfoni</h3>
             <p>Spela upp till 16 toner samtidigt med stöd för sustainpedal (CC64) och pitch bend (±2 halvtoner). En mjuk klippning baserad på Padé-approximerad tanh håller den digitala distorsionen borta.</p>
@@ -362,7 +362,7 @@ body { display: flex; min-height: 100vh; }
             <p>Från och med v1.3.1 (build 5) skickar appen automatiska kraschrapporter via Firebase Crashlytics. Om du kan reproducera kraschen hjälper loggarna oss att hitta orsaken och åtgärda problemet snabbt. Vad som samlas in beskrivs i vår <a href="/M2DX-support/privacy-sv">integritetspolicy</a>.</p>
 
             <h3>Kan jag läsa in SysEx-presets från DX7?</h3>
-            <p>Just nu följer 32 fabrikspresets med appen. Hur SysEx-stödet utvecklas berättar vi mer om i kommande TestFlight-builds.</p>
+            <p>Just nu följer 32 inledande presets med appen. Hur import av egna SysEx-banker fungerar berättar vi mer om i kommande TestFlight-builds.</p>
 
             <h3>Behöver jag en DAW med MIDI 2.0?</h3>
             <p>Nej. Eftersom M2DX även hanterar MIDI 1.0 fungerar appen utmärkt med traditionella MIDI-styrenheter och DAW:ar. I en MIDI 2.0-miljö får du dock tillgång till uttrycksmedel med högre upplösning.</p>

@@ -306,7 +306,7 @@ body { display: flex; min-height: 100vh; }
 
             <h3>DX7 preset compatibility</h3>
             <ul>
-                <li>32 factory presets are bundled, but 1:1 tonal parity with the original DX7 has not been fully verified across all presets</li>
+                <li>32 initial presets are bundled, but the tonal character compared to vintage FM has not been fully verified across all presets</li>
                 <li>Bank loading and SysEx patch import compatibility will be improved progressively across upcoming TestFlight builds</li>
             </ul>
 
@@ -326,7 +326,7 @@ body { display: flex; min-height: 100vh; }
             <p>Native Universal MIDI Packet (UMP) decoding with 16-bit velocity (65,536 levels), 32-bit CC values, and 32-bit pitch bend for smooth, expressive control. MIDI 1.0 fallback is automatic.</p>
 
             <h3>DX7-Compatible FM Engine</h3>
-            <p>The complete DX7 algorithm set — 6 operators across 32 algorithms — built on a direct port of the msfa / Dexed core engine using Int32 Q24 fixed-point arithmetic. Bit-accurate emulation of the original Yamaha OPS chip. Includes 32 factory presets (BRASS1, E.PIANO1, WOOD BASS, FLUTE 1, etc.).</p>
+            <p>A 6-operator / 32-algorithm DX7-style FM synthesis engine implemented in pure Swift. Int32 Q24 fixed-point arithmetic targets the character of vintage FM. 32 initial presets are bundled.</p>
 
             <h3>16-Voice Polyphony</h3>
             <p>16 simultaneous voices with sustain pedal (CC64) and pitch bend (±2 semitones) support. Padé-approximation tanh soft-clipping prevents digital distortion.</p>
@@ -359,7 +359,7 @@ body { display: flex; min-height: 100vh; }
             <p>Starting with v1.3.1 (build 5), Firebase Crashlytics auto-reports crashes. Reproducing a crash helps us identify and fix it quickly. See the <a href="/M2DX-support/privacy">Privacy Policy</a> for details on the data we collect.</p>
 
             <h3>Can I load DX7 SysEx presets?</h3>
-            <p>32 factory presets are built in. SysEx compatibility will be announced in upcoming TestFlight builds.</p>
+            <p>32 initial presets are built in. SysEx import for user-supplied banks will be announced in upcoming TestFlight builds.</p>
 
             <h3>Do I need a MIDI 2.0-compatible DAW?</h3>
             <p>No. MIDI 1.0 fallback is automatic, so any traditional MIDI controller or DAW works. A MIDI 2.0 environment unlocks higher-resolution expression.</p>
