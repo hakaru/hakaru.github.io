@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1TakePro Support | hakaru</title>
+    <meta name="description" content="1TakePro support page. Pro Recording App — Audio, Camera &amp; Multi-Device Sync for iOS.">
+    <meta property="og:title" content="1TakePro Support">
+    <meta property="og:description" content="1TakePro support page. Pro Recording App — Audio, Camera &amp; Multi-Device Sync for iOS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/1TakePro-support/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #4a90e2, #7b68ee);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .beta-note {
+            display: inline-block; margin: 12px 0 8px;
+            background: rgba(74,144,226,0.15); border: 1px solid rgba(74,144,226,0.3);
+            border-radius: 8px; padding: 8px 16px; font-size: 0.9em; color: #a0c4e8;
+        }
+        .testflight-link {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 14px 24px; margin: 8px 0;
+            background: linear-gradient(135deg, rgba(74,144,226,0.2), rgba(123,104,238,0.2));
+            border: 1px solid rgba(74,144,226,0.4);
+            border-radius: 12px; text-decoration: none; color: #fff; transition: all 0.3s;
+        }
+        .testflight-link:hover { background: linear-gradient(135deg, rgba(74,144,226,0.35), rgba(123,104,238,0.35)); transform: translateY(-2px); }
+        .testflight-link .tf-icon { font-size: 2em; line-height: 1; }
+        .testflight-text { font-size: 12px; line-height: 1.3; text-align: left; }
+        .testflight-text .tf-label { font-size: 16px; font-weight: 600; color: #7eb8f7; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #7eb8f7; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .badge {
+            display: inline-block; font-size: 0.75em; font-weight: 600;
+            padding: 2px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle;
+            background: linear-gradient(90deg, #4a90e2, #7b68ee); color: #fff;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #7eb8f7; }
+        body { display: flex; min-height: 100vh; }
+        .sidebar {
+            width: 250px; min-width: 250px;
+            background: rgba(10, 10, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(255,255,255,0.08);
+            padding: 20px 0; position: fixed; top: 0; left: 0; bottom: 0;
+            overflow-y: auto; z-index: 100;
+        }
+        .sidebar-logo { padding: 10px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+        .sidebar-logo a { color: #fff; text-decoration: none; font-size: 1.2em; font-weight: 700; }
+        .sidebar-logo a:hover { color: #7eb8f7; }
+        .sidebar-app { margin-bottom: 2px; }
+        .sidebar-app-header {
+            display: flex; align-items: center; gap: 10px; padding: 10px 20px;
+            cursor: pointer; color: #a0a0a0; font-size: 0.95em; font-weight: 500;
+            transition: all 0.2s; border: none; background: none;
+            width: 100%; text-align: left; font-family: inherit;
+        }
+        .sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-header.active { color: #7eb8f7; }
+        .sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+        .sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+        .sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+        .sidebar-app-links { display: none; padding: 4px 0 8px; }
+        .sidebar-app-links.show { display: block; }
+        .sidebar-app-links a {
+            display: block; padding: 6px 20px 6px 54px;
+            color: #808080; text-decoration: none; font-size: 0.85em; transition: all 0.2s;
+        }
+        .sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+        .sidebar-app-links a.active { color: #7eb8f7; }
+        .sidebar-lang {
+            padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 10px; display: flex; flex-wrap: wrap; gap: 2px;
+        }
+        .sidebar-lang-btn {
+            display: inline-block; padding: 4px 12px; color: #808080;
+            text-decoration: none; font-size: 0.85em; border-radius: 4px; transition: all 0.2s;
+        }
+        .sidebar-lang-btn:hover { color: #fff; }
+        .sidebar-lang-btn.active { color: #7eb8f7; font-weight: 600; }
+        .content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+        .content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .sidebar-toggle {
+            display: none; position: fixed; top: 15px; left: 15px; z-index: 200;
+            background: rgba(10, 10, 30, 0.9); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: #fff; font-size: 1.3em; padding: 8px 12px; cursor: pointer;
+        }
+        .sidebar-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 90;
+        }
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar-toggle { display: block; }
+            .sidebar-overlay.show { display: block; }
+            .content-pane { margin-left: 0; padding-top: 60px; }
+        }
+    </style>
+    <link rel="canonical" href="https://hakaru.net/1TakePro-support/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/1TakePro-support/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/1TakePro-support/index-ja">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/1TakePro-support/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/1takepro-icon.png" alt="1TakePro" width="24" height="24">
+      1TakePro
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/1TakePro-support/" class="active">Support</a>
+      <a href="/1TakePro-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/">Support</a>
+      <a href="/M2DX-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/">Support</a>
+      <a href="/PeerClockMetronome-support/blog/en/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
+    <a href="/1TakePro-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+        <div class="hero">
+            <img src="/1TakePro-support/assets/app-icon.png" alt="1TakePro" class="hero-icon">
+            <h1>1TakePro</h1>
+            <p>Pro Recording App — Audio, Camera &amp; Multi-Device Sync</p>
+            <p class="beta-note">1TakePro is currently in beta. Join TestFlight to try it early.</p>
+            <a href="https://testflight.apple.com/join/Vk9S4kmn" class="testflight-link">
+                <span class="tf-icon">✈️</span>
+                <div class="testflight-text">
+                    <div>Join Beta on</div>
+                    <div class="tf-label">TestFlight</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="content">
+            <p>Welcome to 1TakePro — the professional recording app that adds camera recording and multi-device sync to everything you love about 1Take.</p>
+            <p>All Pro features are included with no in-app purchases. Record audio, capture video, and sync multiple devices simultaneously.</p>
+
+            <hr>
+
+            <h2>Features</h2>
+
+            <h3>All 1Take Audio Features</h3>
+            <p>Everything in 1Take is included: real-time EQ, Compressor, Noise Gate, and Limiter. Three professional presets (Studio, Studio+, Live), pre-roll recording, VU/GR metering, and 24-bit studio quality.</p>
+
+            <h3>Camera Recording <span class="badge">Pro</span></h3>
+            <p>Record video with synchronized high-quality audio using the same DSP chain. The camera tab lets you capture performances with professional sound — ideal for instrument demos, rehearsal reviews, and live session footage.</p>
+
+            <h3>Multi-Device Sync <span class="badge">Pro</span></h3>
+            <p>Start recordings simultaneously across multiple iPhones and iPads using PeerClock NTP synchronization. Sub-millisecond accuracy ensures all devices are in perfect time, so you can capture different perspectives of the same performance without manual alignment in post.</p>
+
+            <h3>No In-App Purchases</h3>
+            <p>1TakePro is a separate app with all Pro features fully unlocked. No subscriptions, no paywalls.</p>
+
+            <hr>
+
+            <h2>FAQ</h2>
+
+            <h3>What is the difference between 1Take and 1TakePro?</h3>
+            <p>1Take is the audio-only version available on the App Store. 1TakePro adds camera recording and multi-device sync. Both share the same core audio engine and presets.</p>
+
+            <h3>How does Multi-Device Sync work?</h3>
+            <p>Open 1TakePro on multiple devices connected to the same Wi-Fi network. Go to the Multi tab, and all devices will synchronize their clocks using PeerClock NTP. When you start recording on one device, all others start at the same instant.</p>
+
+            <h3>Is the beta stable enough to use?</h3>
+            <p>Yes. The core audio engine is the same as 1Take, which is already on the App Store. Camera and multi-device sync are the new areas being tested in this beta.</p>
+
+            <h3>How do I join the beta?</h3>
+            <ol>
+                <li>Install <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> from the App Store</li>
+                <li>Tap the <a href="https://testflight.apple.com/join/Vk9S4kmn">Join Beta</a> link</li>
+                <li>Install 1TakePro from TestFlight</li>
+            </ol>
+
+            <h3>How do I send feedback?</h3>
+            <p>Use the shake gesture in TestFlight to send feedback, or email us directly: <a href="mailto:onetake@hakaru.net">onetake@hakaru.net</a></p>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <p>Questions or feedback:<br>
+            <a href="mailto:onetake@hakaru.net"><strong>onetake@hakaru.net</strong></a></p>
+
+            <hr>
+
+            <h2>Links</h2>
+            <ul>
+                <li><a href="https://testflight.apple.com/join/Vk9S4kmn">Join Beta on TestFlight</a></li>
+                <li><a href="https://apps.apple.com/us/app/1take/id6757945099">1Take on the App Store</a></li>
+                <li><a href="/1TakePro-support/privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:onetake@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) currentApp.nextElementSibling.classList.add('show');
+    }
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            if (this.dataset.lang) localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+</script>
+</body>
+</html>
