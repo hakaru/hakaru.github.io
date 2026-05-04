@@ -24,6 +24,7 @@ TARGET_DIRS = [
     "TineModeler-support",
     "M2DX-Core-support",
     "PeerClockMetronome-support",
+    "MacSlowCooker-support",
 ]
 
 LANG_LABELS = {
@@ -345,8 +346,10 @@ def main():
         with open(file_path, encoding="utf-8") as f:
             html = f.read()
 
-        # Skip if already transformed
-        if "content-pane" in html:
+        # Skip if already transformed (unless --force is passed to
+        # re-apply the sidebar after a sidebar-config.json change).
+        force = "--force" in sys.argv
+        if "content-pane" in html and not force:
             skipped += 1
             continue
 

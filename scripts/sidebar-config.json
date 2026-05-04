@@ -283,5 +283,21 @@
         { "label": "Terms", "href": "/ChatArchive-support/zh-Hant/terms" }
       ]
     }
+  },
+  {
+    "id": "MacSlowCooker",
+    "name": "MacSlowCooker",
+    "icon": "/MacSlowCooker-support/assets/app-icon.png",
+    "prefix": "/MacSlowCooker-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/MacSlowCooker-support/" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/MacSlowCooker-support/index-ja" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ]
+    }
   }
 ]

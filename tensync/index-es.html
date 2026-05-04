@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soporte de TenSync | hakaru</title>
+    <meta name="description" content="Soporte de TenSync. Un juego de precisión de 10 segundos con inicio sincronizado en varios dispositivos por Wi-Fi.">
+    <meta property="og:title" content="Soporte de TenSync">
+    <meta property="og:description" content="Un juego de precisión de 10 segundos con inicio sincronizado en varios dispositivos por Wi-Fi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/tensync/index-es.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            background: #000; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        h2 { font-size: 1.3em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h3 { font-size: 1.05em; color: #e0e0e0; margin: 24px 0 10px; }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul, ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 6px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./">EN</a>
+            <a href="./index-de.html">DE</a>
+            <a href="./index-es.html" class="active">ES</a>
+            <a href="./index-fr.html">FR</a>
+            <a href="./index-it.html">IT</a>
+            <a href="./index-ja.html">JA</a>
+            <a href="./index-ko.html">KO</a>
+            <a href="./index-nl.html">NL</a>
+            <a href="./index-pt-BR.html">PT</a>
+            <a href="./index-sv.html">SV</a>
+            <a href="./index-zh-Hant.html">ZH</a>
+        </div>
+        <div class="hero">
+            <div class="hero-icon">10</div>
+            <h1>TenSync</h1>
+            <p>Un juego de precisión de 10 segundos con inicio sincronizado en varios dispositivos.</p>
+        </div>
+
+        <h2>¿Qué es TenSync?</h2>
+        <p>TenSync es un juego de precisión minimalista. Toca <strong>START</strong> y luego toca <strong>STOP</strong> exactamente en 10.00 segundos. Cuanto más cerca estés, mayor será tu precisión.</p>
+        <p>El giro: cuando otros iPhones con TenSync están en la misma red Wi-Fi, se descubren entre sí automáticamente y comienzan cada ronda en el mismo instante exacto, sincronizados con un margen de ±2 ms. Cada dispositivo mide su propio STOP de forma independiente. Compite con amigos en la misma habitación sin configuración, sin cuentas y sin servidores.</p>
+
+        <h2>Cómo jugar</h2>
+        <ol>
+            <li>Toca <strong>START</strong> para comenzar. El cronómetro arranca de inmediato.</li>
+            <li>Cuando creas que han pasado 10 segundos, toca <strong>STOP</strong>. Ambos botones se activan al pulsar (sin retardo de liberación).</li>
+            <li>Verás tu tiempo transcurrido, la desviación respecto a 10.00 s y un porcentaje de precisión.</li>
+            <li>Si no paras antes de los 11 segundos, la ronda termina como <strong>FAILED</strong>.</li>
+            <li>Toca <strong>RETRY</strong> para volver a jugar.</li>
+        </ol>
+
+        <h2>Modo sincronizado</h2>
+        <p>Si otros iPhones con TenSync están en la misma red Wi-Fi, la cabecera muestra un icono de Wi-Fi y el número de dispositivos conectados. Cuando hay conexión:</p>
+        <ul>
+            <li>Tocar <strong>START</strong> en cualquier dispositivo emite un inicio sincronizado. Todos los dispositivos conectados comienzan la ronda unos 0,5 segundos después, en el mismo instante exacto.</li>
+            <li>El <strong>STOP</strong> de cada dispositivo se mide de forma independiente. Los resultados no se comparten entre dispositivos.</li>
+            <li>iOS pedirá permiso de "Red local" en el primer arranque. Acéptalo para que la sincronización funcione.</li>
+        </ul>
+
+        <h2>Sonido del tic</h2>
+        <p>Un tic opcional suena cada 1 segundo durante la partida, con un golpe inicial en t=0, para ayudarte a mantener el ritmo. Actívalo o desactívalo en <strong>Ajustes</strong>. El interruptor físico de silencio siempre lo silencia.</p>
+
+        <h2>Mejor puntuación</h2>
+        <p>La menor desviación absoluta de todos tus intentos se muestra en la cabecera como <code>BEST x.xx</code>. Las rondas fallidas y los empates no actualizan la mejor marca. La mejor puntuación se guarda localmente en tu dispositivo.</p>
+
+        <h2>Privacidad</h2>
+        <p>TenSync utiliza Firebase (Analytics + Crashlytics) para diagnósticos anónimos de uso y caídas. Sin anuncios, sin identificadores de publicidad, sin rastreo. Consulta la <a href="./privacy-es.html">Política de privacidad</a> para más detalles. No recopilamos información personal, no almacenamos datos en nuestros servidores y no requerimos cuenta.</p>
+
+        <h2>Contacto</h2>
+        <p>Correo: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

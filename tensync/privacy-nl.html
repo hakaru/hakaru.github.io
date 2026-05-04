@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync-privacybeleid | hakaru</title>
+    <meta name="description" content="Privacybeleid voor TenSync.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .back { color: #4dd0e1; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 1.8em; color: #fff; margin-bottom: 8px; }
+        .updated { color: #888; font-size: 0.9em; margin-bottom: 30px; }
+        h2 { font-size: 1.25em; color: #fff; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 8px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        strong { color: #fff; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./privacy.html">EN</a>
+            <a href="./privacy-de.html">DE</a>
+            <a href="./privacy-es.html">ES</a>
+            <a href="./privacy-fr.html">FR</a>
+            <a href="./privacy-it.html">IT</a>
+            <a href="./privacy-ja.html">JA</a>
+            <a href="./privacy-ko.html">KO</a>
+            <a href="./privacy-nl.html" class="active">NL</a>
+            <a href="./privacy-pt-BR.html">PT</a>
+            <a href="./privacy-sv.html">SV</a>
+            <a href="./privacy-zh-Hant.html">ZH</a>
+        </div>
+        <a href="./index-nl.html" class="back">← Terug naar TenSync-ondersteuning</a>
+        <h1>TenSync-privacybeleid</h1>
+        <p class="updated">Laatst bijgewerkt: 25-04-2026</p>
+
+        <p>TenSync ("de app") verzamelt slechts een kleine hoeveelheid gegevens om de app goed te laten werken. We vereisen geen account, slaan geen gegevens op onze eigen servers op, tonen geen advertenties en delen geen gegevens buiten wat hieronder wordt beschreven.</p>
+
+        <h2>Gegevens die we verzamelen</h2>
+        <ul>
+            <li><strong>Diagnostiek (Firebase Crashlytics)</strong>: Wanneer de app crasht, wordt een geanonimiseerd crashrapport geüpload zodat we bugs kunnen oplossen. Het rapport bevat stack traces, het apparaatmodel, de OS-versie en een willekeurig gegenereerde installatie-identificator. Er zijn geen persoonlijke gegevens opgenomen.</li>
+            <li><strong>Analytics (Firebase Analytics)</strong>: Geanonimiseerde gebruiksgebeurtenissen zoals het openen van de app en schermweergaven worden naar Google Analytics verzonden. Dit helpt ons te begrijpen welke functies worden gebruikt. Er is geen precieze locatie, geen contactinformatie en geen gebruikersaccount bij betrokken.</li>
+        </ul>
+
+        <h2>Gegevens die we niet verzamelen</h2>
+        <ul>
+            <li>Geen accounts, namen of contactgegevens.</li>
+            <li>Geen precieze locatie.</li>
+            <li>Geen foto's, contacten, microfoon of camera.</li>
+            <li>Geen reclame-identificatoren.</li>
+            <li>Geen door jou geüploade gegevens naar onze servers.</li>
+        </ul>
+
+        <h2>Lokale opslag</h2>
+        <p>Je beste score en instellingen worden alleen op je apparaat opgeslagen, via iOS UserDefaults. Ze verlaten het apparaat nooit.</p>
+
+        <h2>Synchronisatiemodus</h2>
+        <p>Wanneer TenSync andere TenSync-apparaten op hetzelfde wifi-netwerk ontdekt, wisselt de app alleen de protocolberichten uit die nodig zijn om de start van een ronde te synchroniseren (clock-sync-pakketten en een "start op dit tijdstip"-commando). Er worden geen persoonlijke gegevens tussen peers gedeeld en de berichten verlaten het lokale netwerk niet.</p>
+
+        <h2>Privacybeleid van derden</h2>
+        <ul>
+            <li>Google (Firebase Analytics + Crashlytics): <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        </ul>
+
+        <h2>Privacy van kinderen</h2>
+        <p>TenSync verzamelt niet bewust persoonlijke gegevens van kinderen. De leeftijdsclassificatie is 4+, maar de app is niet gericht op kinderen jonger dan 13 jaar.</p>
+
+        <h2>Contact</h2>
+        <p>Voor privacyvragen, e-mail naar <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

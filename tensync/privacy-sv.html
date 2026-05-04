@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync integritetspolicy | hakaru</title>
+    <meta name="description" content="Integritetspolicy för TenSync.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .back { color: #4dd0e1; text-decoration: none; font-size: 0.9em; margin-bottom: 24px; display: inline-block; }
+        .back:hover { text-decoration: underline; }
+        h1 { font-size: 1.8em; color: #fff; margin-bottom: 8px; }
+        .updated { color: #888; font-size: 0.9em; margin-bottom: 30px; }
+        h2 { font-size: 1.25em; color: #fff; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 8px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        strong { color: #fff; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./privacy.html">EN</a>
+            <a href="./privacy-de.html">DE</a>
+            <a href="./privacy-es.html">ES</a>
+            <a href="./privacy-fr.html">FR</a>
+            <a href="./privacy-it.html">IT</a>
+            <a href="./privacy-ja.html">JA</a>
+            <a href="./privacy-ko.html">KO</a>
+            <a href="./privacy-nl.html">NL</a>
+            <a href="./privacy-pt-BR.html">PT</a>
+            <a href="./privacy-sv.html" class="active">SV</a>
+            <a href="./privacy-zh-Hant.html">ZH</a>
+        </div>
+        <a href="./index-sv.html" class="back">← Tillbaka till TenSync-supporten</a>
+        <h1>TenSync integritetspolicy</h1>
+        <p class="updated">Senast uppdaterad: 2026-04-25</p>
+
+        <p>TenSync ("appen") samlar in en liten mängd data enbart för att hålla appen i gott skick. Vi kräver inget konto, lagrar inte data på våra egna servrar, visar inga annonser och delar ingen data utöver det som beskrivs nedan.</p>
+
+        <h2>Data vi samlar in</h2>
+        <ul>
+            <li><strong>Diagnostik (Firebase Crashlytics)</strong>: När appen kraschar laddas en anonymiserad kraschrapport upp så att vi kan rätta buggar. Rapporten innehåller stackspår, enhetsmodell, OS-version och en slumpmässigt genererad installationsidentifierare. Ingen personlig information ingår.</li>
+            <li><strong>Analys (Firebase Analytics)</strong>: Anonymiserade användningshändelser såsom appöppningar och skärmvisningar skickas till Google Analytics. Detta hjälper oss att förstå vilka funktioner som används. Ingen exakt plats, ingen kontaktinformation, inget användarkonto är inblandat.</li>
+        </ul>
+
+        <h2>Data vi inte samlar in</h2>
+        <ul>
+            <li>Inga konton, namn eller kontaktuppgifter.</li>
+            <li>Ingen exakt plats.</li>
+            <li>Inga foton, kontakter, mikrofon eller kamera.</li>
+            <li>Inga annonsidentifierare.</li>
+            <li>Ingen data uppladdad av dig till våra servrar.</li>
+        </ul>
+
+        <h2>Lokal lagring</h2>
+        <p>Ditt bästa resultat och dina inställningar sparas endast på din enhet via iOS UserDefaults. De lämnar aldrig enheten.</p>
+
+        <h2>Synkläge</h2>
+        <p>När TenSync upptäcker andra TenSync-enheter på samma Wi-Fi-nätverk utbyter appen endast de protokollmeddelanden som behövs för att synkronisera starten av en omgång (klocksynkpaket och ett "starta vid denna tid"-kommando). Inga personuppgifter delas mellan enheter, och meddelandena lämnar inte det lokala nätverket.</p>
+
+        <h2>Tredjeparts integritetspolicyer</h2>
+        <ul>
+            <li>Google (Firebase Analytics + Crashlytics): <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+        </ul>
+
+        <h2>Barns integritet</h2>
+        <p>TenSync samlar inte medvetet in personlig information från barn. Åldersgränsen är 4+ men appen riktar sig inte till barn under 13 år.</p>
+
+        <h2>Kontakt</h2>
+        <p>För integritetsfrågor, mejla <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

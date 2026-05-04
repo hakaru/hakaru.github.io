@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync 支援 | hakaru</title>
+    <meta name="description" content="TenSync 支援。一款 10 秒計時遊戲，可透過 Wi-Fi 在多台裝置上同步開始。">
+    <meta property="og:title" content="TenSync 支援">
+    <meta property="og:description" content="一款 10 秒計時遊戲，可透過 Wi-Fi 在多台裝置上同步開始。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/tensync/index-zh-Hant.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            background: #000; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        h2 { font-size: 1.3em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h3 { font-size: 1.05em; color: #e0e0e0; margin: 24px 0 10px; }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul, ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 6px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./">EN</a>
+            <a href="./index-de.html">DE</a>
+            <a href="./index-es.html">ES</a>
+            <a href="./index-fr.html">FR</a>
+            <a href="./index-it.html">IT</a>
+            <a href="./index-ja.html">JA</a>
+            <a href="./index-ko.html">KO</a>
+            <a href="./index-nl.html">NL</a>
+            <a href="./index-pt-BR.html">PT</a>
+            <a href="./index-sv.html">SV</a>
+            <a href="./index-zh-Hant.html" class="active">ZH</a>
+        </div>
+        <div class="hero">
+            <div class="hero-icon">10</div>
+            <h1>TenSync</h1>
+            <p>一款 10 秒計時遊戲，可在多台裝置上同步開始。</p>
+        </div>
+
+        <h2>什麼是 TenSync？</h2>
+        <p>TenSync 是一款極簡計時遊戲。點擊 <strong>START</strong>，然後在恰好 10.00 秒時點擊 <strong>STOP</strong>。越接近，準確率越高。</p>
+        <p>有趣的地方：當同一 Wi-Fi 網路上有其他執行 TenSync 的 iPhone 時，它們會自動互相發現，並在完全相同的時刻開始每一輪，同步精度為 ±2 毫秒。每台裝置獨立測量自己的 STOP。在同一房間與朋友一較高下，無需任何設定、帳號或伺服器。</p>
+
+        <h2>如何遊玩</h2>
+        <ol>
+            <li>點擊 <strong>START</strong> 開始。計時器立即啟動。</li>
+            <li>當你認為 10 秒已過時，點擊 <strong>STOP</strong>。兩個按鈕都在按下時觸發（無釋放延遲）。</li>
+            <li>你會看到自己的經過時間、與 10.00 秒的偏差，以及準確率百分比。</li>
+            <li>若你在 11 秒內未停止，該輪以 <strong>FAILED</strong> 結束。</li>
+            <li>點擊 <strong>RETRY</strong> 再玩一次。</li>
+        </ol>
+
+        <h2>同步模式</h2>
+        <p>若同一 Wi-Fi 上有其他執行 TenSync 的 iPhone，標題列會顯示 Wi-Fi 圖示與連線裝置數量。連線後：</p>
+        <ul>
+            <li>在任何一台裝置上點擊 <strong>START</strong> 都會廣播一個同步開始的指令。所有已連線的裝置會在約 0.5 秒後，於完全相同的瞬間開始該輪。</li>
+            <li>每台裝置的 <strong>STOP</strong> 都獨立測量。結果不會在裝置之間共享。</li>
+            <li>iOS 會在首次啟動時詢問「本地網路」權限。請允許以使同步功能正常運作。</li>
+        </ul>
+
+        <h2>節拍聲</h2>
+        <p>計時進行時，可選的節拍聲會每 1 秒響一次，在 t=0 時有重拍音，幫助你保持節奏。可在 <strong>設定</strong> 中切換。硬體靜音開關一律會將其靜音。</p>
+
+        <h2>最佳成績</h2>
+        <p>你所有嘗試中最小的絕對偏差會以 <code>BEST x.xx</code> 顯示在標題列中。失敗的輪次與平手不會更新最佳成績。最佳成績儲存在你的裝置本機。</p>
+
+        <h2>隱私權</h2>
+        <p>TenSync 使用 Firebase（Analytics + Crashlytics）進行匿名化使用情況與當機診斷。沒有廣告、沒有廣告識別碼、沒有追蹤。詳情請參閱<a href="./privacy-zh-Hant.html">隱私權政策</a>。我們不收集個人資訊、不在伺服器上儲存資料，也不需要帳號。</p>
+
+        <h2>聯絡方式</h2>
+        <p>電子郵件：<a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>

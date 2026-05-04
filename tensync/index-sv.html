@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TenSync-support | hakaru</title>
+    <meta name="description" content="TenSync-support. Ett tidtagningsspel på 10 sekunder med synkroniserad start på flera enheter över Wi-Fi.">
+    <meta property="og:title" content="TenSync-support">
+    <meta property="og:description" content="Ett tidtagningsspel på 10 sekunder med synkroniserad start på flera enheter över Wi-Fi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/tensync/index-sv.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 20px; }
+        .lang-nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 24px; }
+        .lang-nav a { color: #a0a0a0; text-decoration: none; padding: 4px 10px; border-radius: 6px; font-size: 0.85em; }
+        .lang-nav a:hover, .lang-nav a.active { color: #fff; background: rgba(255,255,255,0.08); }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero-icon {
+            width: 96px; height: 96px; border-radius: 22px;
+            background: #000; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; letter-spacing: -0.02em;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: #a0a0a0; font-size: 1em; }
+        h2 { font-size: 1.3em; color: #fff; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h3 { font-size: 1.05em; color: #e0e0e0; margin: 24px 0 10px; }
+        p { margin-bottom: 14px; color: #c0c0c0; }
+        ul, ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        li { margin-bottom: 6px; }
+        a { color: #4dd0e1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); color: #666; font-size: 0.85em; }
+        footer a { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-nav">
+            <a href="./">EN</a>
+            <a href="./index-de.html">DE</a>
+            <a href="./index-es.html">ES</a>
+            <a href="./index-fr.html">FR</a>
+            <a href="./index-it.html">IT</a>
+            <a href="./index-ja.html">JA</a>
+            <a href="./index-ko.html">KO</a>
+            <a href="./index-nl.html">NL</a>
+            <a href="./index-pt-BR.html">PT</a>
+            <a href="./index-sv.html" class="active">SV</a>
+            <a href="./index-zh-Hant.html">ZH</a>
+        </div>
+        <div class="hero">
+            <div class="hero-icon">10</div>
+            <h1>TenSync</h1>
+            <p>Ett tidtagningsspel på 10 sekunder med synkroniserad start på flera enheter.</p>
+        </div>
+
+        <h2>Vad är TenSync?</h2>
+        <p>TenSync är ett minimalistiskt tidtagningsspel. Tryck på <strong>START</strong> och tryck sedan på <strong>STOP</strong> exakt vid 10,00 sekunder. Ju närmare du kommer, desto högre blir din precision.</p>
+        <p>Det speciella: när andra iPhones som kör TenSync finns på samma Wi-Fi-nätverk hittar de varandra automatiskt och startar varje omgång i exakt samma ögonblick, synkroniserat inom ±2 ms. Varje enhet mäter sitt eget STOP självständigt. Tävla med vänner i samma rum utan installation, utan konton, utan servrar.</p>
+
+        <h2>Så spelar du</h2>
+        <ol>
+            <li>Tryck på <strong>START</strong> för att börja. Tidtagningen startar omedelbart.</li>
+            <li>När du tror att 10 sekunder har gått, tryck på <strong>STOP</strong>. Båda knapparna reagerar vid nedtryckning (ingen släppfördröjning).</li>
+            <li>Du ser din förflutna tid, avvikelsen från 10,00 s och en precisionsprocent.</li>
+            <li>Om du inte stoppar inom 11 sekunder slutar omgången som <strong>FAILED</strong>.</li>
+            <li>Tryck på <strong>RETRY</strong> för att spela igen.</li>
+        </ol>
+
+        <h2>Synkläge</h2>
+        <p>Om andra iPhones som kör TenSync finns på samma Wi-Fi visar rubriken en Wi-Fi-ikon och ett antal anslutna enheter. När de är anslutna:</p>
+        <ul>
+            <li>När du trycker på <strong>START</strong> på vilken enhet som helst sänds en synkroniserad start. Alla anslutna enheter börjar omgången cirka 0,5 sekunder senare, i exakt samma ögonblick.</li>
+            <li>Varje enhets <strong>STOP</strong> mäts självständigt. Resultaten delas inte mellan enheter.</li>
+            <li>iOS frågar om behörighet till "Lokalt nätverk" vid första start. Tillåt det för att synk ska fungera.</li>
+        </ul>
+
+        <h2>Tickljud</h2>
+        <p>Ett valfritt tick spelas varje sekund medan tidtagningen pågår, med ett betonat slag vid t=0, för att hjälpa dig att hålla rytmen. Slå på eller av det i <strong>Inställningar</strong>. Den fysiska ljud av-knappen tystar det alltid.</p>
+
+        <h2>Bästa resultat</h2>
+        <p>Den minsta absoluta avvikelsen över alla dina försök visas i rubriken som <code>BEST x.xx</code>. Misslyckade omgångar och oavgjorda uppdaterar inte Bästa. Bästa resultat sparas lokalt på din enhet.</p>
+
+        <h2>Integritet</h2>
+        <p>TenSync använder Firebase (Analytics + Crashlytics) för anonymiserad användnings- och kraschdiagnostik. Inga annonser, inga annonsidentifierare, ingen spårning. Se <a href="./privacy-sv.html">integritetspolicyn</a> för detaljer. Vi samlar inte in personlig information, lagrar inte data på våra servrar och kräver inget konto.</p>
+
+        <h2>Kontakt</h2>
+        <p>E-post: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+        <footer>
+            <p>&copy; 2026 hakaru — <a href="https://hakaru.net">hakaru.net</a></p>
+        </footer>
+    </div>
+</body>
+</html>
