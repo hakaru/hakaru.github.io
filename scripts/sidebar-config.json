@@ -297,6 +297,42 @@
       "ja": [
         { "label": "サポート", "href": "/MacSlowCooker-support/index-ja" },
         { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "de": [
+        { "label": "Unterstützung", "href": "/MacSlowCooker-support/index-de" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "es": [
+        { "label": "Soporte", "href": "/MacSlowCooker-support/index-es" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "fr": [
+        { "label": "Support", "href": "/MacSlowCooker-support/index-fr" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "it": [
+        { "label": "Supporto", "href": "/MacSlowCooker-support/index-it" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "ko": [
+        { "label": "지원", "href": "/MacSlowCooker-support/index-ko" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "nl": [
+        { "label": "Support", "href": "/MacSlowCooker-support/index-nl" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "pt-BR": [
+        { "label": "Suporte", "href": "/MacSlowCooker-support/index-pt-BR" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "sv": [
+        { "label": "Support", "href": "/MacSlowCooker-support/index-sv" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
+      ],
+      "zh-Hant": [
+        { "label": "支援", "href": "/MacSlowCooker-support/index-zh-Hant" },
+        { "label": "GitHub", "href": "https://github.com/hakaru/MacSlowCooker" }
       ]
     }
   }
