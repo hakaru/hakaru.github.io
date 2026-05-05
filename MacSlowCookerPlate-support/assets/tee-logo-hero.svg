@@ -1,0 +1,88 @@
+<svg width="600" height="540" viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teeBlack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2a2c"/>
+      <stop offset="50%" stop-color="#1d1d1f"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </linearGradient>
+    <radialGradient id="teeShade" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#3a3a3c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1d1d1f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="300" cy="500" rx="180" ry="10" fill="#000" opacity="0.18"/>
+
+  <!-- T-shirt silhouette: front view, laid flat / on hanger feel -->
+  <!-- Body: collar curve, shoulders, sleeves, torso, hem -->
+  <path d="M 220 130
+           L 175 145
+           L 110 200
+           L 130 240
+           L 165 220
+           L 165 470
+           Q 165 480 175 480
+           L 425 480
+           Q 435 480 435 470
+           L 435 220
+           L 470 240
+           L 490 200
+           L 425 145
+           L 380 130
+           Q 380 175 300 175
+           Q 220 175 220 130 Z"
+        fill="url(#teeBlack)" stroke="#0a0a0c" stroke-width="1.5"/>
+
+  <!-- Subtle highlight across chest -->
+  <ellipse cx="300" cy="280" rx="180" ry="120" fill="url(#teeShade)"/>
+
+  <!-- Rib of crew neck -->
+  <path d="M 220 130 Q 300 178 380 130" fill="none" stroke="#3a3a3c" stroke-width="2"/>
+  <path d="M 222 134 Q 300 174 378 134" fill="none" stroke="#0a0a0c" stroke-width="0.8"/>
+
+  <!-- Sleeve seams -->
+  <path d="M 165 220 Q 178 215 195 218" fill="none" stroke="#0a0a0c" stroke-width="0.8" opacity="0.5"/>
+  <path d="M 435 220 Q 422 215 405 218" fill="none" stroke="#0a0a0c" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Hem stitching -->
+  <line x1="170" y1="468" x2="430" y2="468" stroke="#0a0a0c" stroke-width="0.6" stroke-dasharray="3 2" opacity="0.6"/>
+
+  <!-- Dutch oven pot logo printed on chest -->
+  <g transform="translate(300, 320)">
+    <!-- Pot lid handle (knob) -->
+    <ellipse cx="0" cy="-72" rx="10" ry="4" fill="#fff"/>
+    <rect x="-4" y="-76" width="8" height="6" rx="2" fill="#fff"/>
+
+    <!-- Lid -->
+    <ellipse cx="0" cy="-58" rx="76" ry="10" fill="#fff"/>
+    <path d="M -76 -58 Q -76 -68 0 -68 Q 76 -68 76 -58" fill="#fff"/>
+
+    <!-- Pot body -->
+    <path d="M -82 -50
+             Q -82 -52 -78 -52
+             L 78 -52
+             Q 82 -52 82 -50
+             L 78 30
+             Q 76 42 60 44
+             L -60 44
+             Q -76 42 -78 30 Z"
+          fill="#fff"/>
+
+    <!-- Side handles -->
+    <path d="M -82 -40 L -98 -36 L -98 -22 L -82 -26" fill="#fff"/>
+    <path d="M 82 -40 L 98 -36 L 98 -22 L 82 -26" fill="#fff"/>
+
+    <!-- Black inner cutouts to give it definition (negative space inside the pot) -->
+    <ellipse cx="0" cy="-58" rx="68" ry="6" fill="#1d1d1f"/>
+    <!-- Steam wisps above the lid -->
+    <g stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.9">
+      <path d="M -22 -88 Q -18 -98 -22 -108 Q -26 -118 -22 -128"/>
+      <path d="M 0 -90 Q 4 -100 0 -110 Q -4 -120 0 -130"/>
+      <path d="M 22 -88 Q 26 -98 22 -108 Q 18 -118 22 -128"/>
+    </g>
+  </g>
+
+  <!-- Tiny wordmark below the pot -->
+  <text x="300" y="410" text-anchor="middle" font-size="13" font-family="-apple-system, SF Pro" font-weight="600" fill="#fff" letter-spacing="3">MacSlowCooker</text>
+</svg>
