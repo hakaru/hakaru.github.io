@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MacSlowCooker Cooking Plate (Koncept) | hakaru</title>
+    <meta name="description" content="Din Mac Studio. Nu en köksmaskin. (Koncept)">
+    <meta property="og:title" content="MacSlowCooker Cooking Plate">
+    <meta property="og:description" content="Din Mac Studio. Nu en köksmaskin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/MacSlowCookerPlate-support/index-sv.html">
+    <meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-sv.jpeg">
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.back-link { display: inline-block; color: #7eb8f7; text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: #a8d3ff; }
+h1 {
+    font-size: 2em; font-weight: 700; margin: 16px 0 8px;
+    background: linear-gradient(90deg, #4a90e2, #7b68ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.tagline { color: #a0a0a0; font-size: 1.1em; margin-bottom: 24px; }
+.badge {
+    display: inline-block; padding: 4px 10px; font-size: 0.8em;
+    font-weight: 600; border-radius: 4px;
+    background: linear-gradient(90deg, #e94560, #c2185b); color: #fff;
+    margin-bottom: 24px;
+}
+.product-img {
+    width: 100%; max-width: 720px; margin: 24px auto;
+    display: block; border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+h2 {
+    font-size: 1.3em; color: #fff; margin: 40px 0 14px;
+    padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+p { margin-bottom: 16px; }
+ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+li { margin-bottom: 6px; }
+a { color: #7eb8f7; text-decoration: none; }
+a:hover { color: #a8d3ff; text-decoration: underline; }
+.disclaimer {
+    background: rgba(233,69,96,0.1); border-left: 3px solid #e94560;
+    padding: 14px 18px; margin: 24px 0; border-radius: 4px; font-size: 0.95em;
+}
+footer {
+    text-align: center; margin-top: 60px; padding: 30px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #666; font-size: 0.9em;
+}
+footer a { color: #888; }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="/index-sv.html" class="back-link">← hakaru Apps</a>
+
+    <span class="badge">KONCEPT / PARODI</span>
+    <h1>MacSlowCooker Cooking Plate</h1>
+    <p class="tagline">Din Mac Studio. Nu en köksmaskin.</p>
+
+    <img src="assets/concept-sv.jpeg" alt="MacSlowCooker Cooking Plate" class="product-img">
+
+    <div class="disclaimer">
+        <strong>Det här är ett skämt.</strong> MacSlowCooker Cooking Plate är ingen riktig produkt, tillbehör eller varumärke. Sidan ovan är en parodi på en Apple-produktlansering. Apple är inte ansluten till och känner inte till detta koncept.
+    </div>
+
+    <h2>Var skämtet kommer ifrån</h2>
+    <p>Under utvecklingen av <a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker</a> — en riktig macOS-app som visualiserar GPU-användning i Dock som en kokgryta — värmde lokal LLM-inferens på en Mac Studio M3 Ultra upp chassit så pass att skämtet "skulle du faktiskt kunna laga mat på det här?" kom upp gång på gång.</p>
+    <p>Så den här konceptsidan finns. Den ramar in värmeutvecklingen från en hårt arbetande Mac som om det vore en köksfunktion. Siffrorna är verkliga, produkten är inte.</p>
+
+    <h2>De verkliga siffrorna</h2>
+    <ul>
+        <li>Mac Studio M3 Ultra når ungefär <strong>65 °C / 149 °F</strong> på övre plattan vid 100 % GPU-användning under längre tid.</li>
+        <li>Tid att nå den temperaturen under lokal LLM-inferens i 70B-klass: ~8 min.</li>
+        <li>Apples termiska design håller övre plattan långt under normala matlagningstemperaturer. <strong>Sous vide-intervall, inte wok.</strong></li>
+        <li>Du kan övervaka allt detta i realtid med den riktiga MacSlowCooker-appen (Dock-ikon, popup-fönster, MRTG-style 4-panels historikvisning).</li>
+    </ul>
+
+    <h2>Gör det inte på riktigt</h2>
+    <p>Att ställa varma kärl, vätskor eller något värmekänsligt på en aktiv dator är en dålig idé. Mac Studios övre platta är aluminium men luftflödet är kritiskt för att hålla SoC under termiska gränser. Blockera det och du förkortar maskinens livslängd och kan ogiltigförklara garantin.</p>
+
+    <h2>Läs mer</h2>
+    <ul>
+        <li><a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker (GitHub)</a></li>
+        <li><a href="https://zenn.dev/hakaru/articles/macslowcooker-app-store-impossible">「GPU で料理しよう。MacSlowCooker」 — Hela artikeln (på japanska)</a></li>
+        <li><a href="/MacSlowCooker-support/">MacSlowCooker supportsida</a></li>
+    </ul>
+
+    <footer>
+        © hakaru — <a href="/index-sv.html">hakaru Apps</a>
+    </footer>
+</div>
+</body>
+</html>

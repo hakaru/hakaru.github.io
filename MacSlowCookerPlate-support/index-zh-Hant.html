@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MacSlowCooker Cooking Plate (概念) | hakaru</title>
+    <meta name="description" content="你的 Mac Studio。現在是烹飪電器。 (概念)">
+    <meta property="og:title" content="MacSlowCooker Cooking Plate">
+    <meta property="og:description" content="你的 Mac Studio。現在是烹飪電器。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/MacSlowCookerPlate-support/index-zh-Hant.html">
+    <meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-zh-Hant.jpeg">
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh; color: #e0e0e0; line-height: 1.7;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.back-link { display: inline-block; color: #7eb8f7; text-decoration: none; margin-bottom: 20px; }
+.back-link:hover { color: #a8d3ff; }
+h1 {
+    font-size: 2em; font-weight: 700; margin: 16px 0 8px;
+    background: linear-gradient(90deg, #4a90e2, #7b68ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.tagline { color: #a0a0a0; font-size: 1.1em; margin-bottom: 24px; }
+.badge {
+    display: inline-block; padding: 4px 10px; font-size: 0.8em;
+    font-weight: 600; border-radius: 4px;
+    background: linear-gradient(90deg, #e94560, #c2185b); color: #fff;
+    margin-bottom: 24px;
+}
+.product-img {
+    width: 100%; max-width: 720px; margin: 24px auto;
+    display: block; border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+h2 {
+    font-size: 1.3em; color: #fff; margin: 40px 0 14px;
+    padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+p { margin-bottom: 16px; }
+ul { margin: 0 0 16px 24px; color: #b0b0b0; }
+li { margin-bottom: 6px; }
+a { color: #7eb8f7; text-decoration: none; }
+a:hover { color: #a8d3ff; text-decoration: underline; }
+.disclaimer {
+    background: rgba(233,69,96,0.1); border-left: 3px solid #e94560;
+    padding: 14px 18px; margin: 24px 0; border-radius: 4px; font-size: 0.95em;
+}
+footer {
+    text-align: center; margin-top: 60px; padding: 30px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #666; font-size: 0.9em;
+}
+footer a { color: #888; }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="/index-zh-Hant.html" class="back-link">← hakaru Apps</a>
+
+    <span class="badge">概念 / 仿諷</span>
+    <h1>MacSlowCooker Cooking Plate</h1>
+    <p class="tagline">你的 Mac Studio。現在是烹飪電器。</p>
+
+    <img src="assets/concept-zh-Hant.jpeg" alt="MacSlowCooker Cooking Plate" class="product-img">
+
+    <div class="disclaimer">
+        <strong>這是一個玩笑。</strong> MacSlowCooker Cooking Plate 並非實際產品、配件或商標。上方頁面是仿照 Apple 風格的產品發表會的仿諷。Apple 與本概念無關亦不知情。
+    </div>
+
+    <h2>這個玩笑的由來</h2>
+    <p>開發實際存在的 macOS 應用程式 <a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker</a> 期間 — 它在 Dock 上把 GPU 使用率視覺化成一個鍋子 — 在 Mac Studio M3 Ultra 上跑本地 LLM 推論時機殼變得相當燙，「這上面真的可以煮東西吧？」這個玩笑反覆出現。</p>
+    <p>於是有了這個概念頁面。它把一台拚命運轉的 Mac 的散熱當成烹飪功能來呈現。**數字是真的，產品是假的**。</p>
+
+    <h2>真實的數字</h2>
+    <ul>
+        <li>Mac Studio M3 Ultra 在 GPU 100% 持續運作下，頂蓋表面約達 <strong>65 °C / 149 °F</strong>。</li>
+        <li>在 70B 等級本地 LLM 推論期間達到該溫度的時間：約 8 分鐘。</li>
+        <li>Apple 的散熱設計把頂蓋溫度壓在正常烹飪溫度以下相當多。<strong>低溫慢煮範圍，無法快炒。</strong></li>
+        <li>這些數據都可以用真實的 MacSlowCooker 應用程式即時監控（Dock 圖示、彈出視窗、MRTG 風格 4 面板歷史檢視器）。</li>
+    </ul>
+
+    <h2>請不要真的這麼做</h2>
+    <p>把熱的烹飪器具、液體或任何怕熱的東西放在運轉中的電腦上是壞主意。Mac Studio 的頂蓋是鋁製，但空氣流動是把 SoC 維持在熱限制以下的關鍵。擋住會縮短機器壽命，也可能讓保固失效。</p>
+
+    <h2>延伸閱讀</h2>
+    <ul>
+        <li><a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker (GitHub)</a></li>
+        <li><a href="https://zenn.dev/hakaru/articles/macslowcooker-app-store-impossible">「GPU で料理しよう。MacSlowCooker」 — 完整文章（日文）</a></li>
+        <li><a href="/MacSlowCooker-support/">MacSlowCooker 支援頁面</a></li>
+    </ul>
+
+    <footer>
+        © hakaru — <a href="/index-zh-Hant.html">hakaru Apps</a>
+    </footer>
+</div>
+</body>
+</html>
