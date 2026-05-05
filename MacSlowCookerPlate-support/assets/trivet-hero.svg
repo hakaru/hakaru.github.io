@@ -1,0 +1,67 @@
+<svg width="600" height="540" viewBox="0 0 600 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ipadAlum" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dcdce0"/>
+      <stop offset="50%" stop-color="#bcbcc0"/>
+      <stop offset="100%" stop-color="#9a9a9d"/>
+    </linearGradient>
+    <linearGradient id="butter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff5cc"/>
+      <stop offset="100%" stop-color="#f0e0a0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="300" cy="430" rx="220" ry="10" fill="#000" opacity="0.18"/>
+
+  <!-- iPad Pro lying flat (back face up), slight 3/4 perspective -->
+  <!-- Side thickness -->
+  <path d="M 90 410 L 105 425 L 495 425 L 510 410 Z" fill="#7a7a7d"/>
+  <!-- Back face (facing up, slight perspective) -->
+  <polygon points="90,410 510,410 480,140 120,140" fill="url(#ipadAlum)"/>
+  <!-- Subtle bezel -->
+  <polygon points="125,405 495,405 470,150 130,150" fill="none" stroke="#999" stroke-width="0.8"/>
+
+  <!-- Apple logo etched in middle of back -->
+  <g transform="translate(290, 270)" fill="#7a7a7d" opacity="0.6">
+    <path d="M 11 5
+             C 9 5 7 4 6 4
+             C 3 4 1 6 1 11
+             C 1 16 4 22 7 22
+             C 8 22 9 21 10 21
+             C 11 21 12 22 13 22
+             C 16 22 19 16 19 11
+             C 19 6 17 4 15 4
+             C 14 4 13 5 11 5 Z"/>
+    <path d="M 12 1 C 12 -1 13 -2 16 -2 C 16 0 14 1 12 1 Z"/>
+  </g>
+
+  <!-- Camera bump (top-left area) -->
+  <rect x="148" y="166" width="60" height="48" rx="10" fill="#888"/>
+  <circle cx="172" cy="184" r="9" fill="#1d1d1f"/>
+  <circle cx="172" cy="184" r="6" fill="#3a3a3c"/>
+  <circle cx="194" cy="184" r="6" fill="#3a3a3c"/>
+  <circle cx="172" cy="200" r="3" fill="#5a5a5d"/>
+
+  <!-- Butter dish on the back -->
+  <ellipse cx="335" cy="335" rx="78" ry="12" fill="#888"/>
+  <rect x="260" y="307" width="150" height="32" rx="6" fill="#fff"/>
+  <rect x="260" y="307" width="150" height="4" rx="2" fill="#dadade"/>
+  <rect x="260" y="335" width="150" height="4" rx="2" fill="#999"/>
+  <!-- Butter slab -->
+  <rect x="280" y="289" width="110" height="22" rx="2" fill="url(#butter)"/>
+  <rect x="280" y="289" width="110" height="3" fill="#ffe9a0"/>
+  <!-- Butter knife -->
+  <path d="M 386 295 L 440 280 L 445 285 L 392 300 Z" fill="#c8c8cc"/>
+  <path d="M 440 280 L 458 275 L 462 280 L 445 285 Z" fill="#7a4a25"/>
+
+  <!-- Steam wisps from butter (warm-soft) -->
+  <g opacity="0.4" stroke="#ff9a5a" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <path d="M 305 285 Q 308 280 305 275 Q 302 270 305 265"/>
+    <path d="M 335 285 Q 338 280 335 275 Q 332 270 335 265"/>
+    <path d="M 365 285 Q 368 280 365 275 Q 362 270 365 265"/>
+  </g>
+
+  <!-- Faint engraved label -->
+  <text x="300" y="395" text-anchor="middle" font-size="9" font-family="-apple-system" fill="#888" letter-spacing="2">iCook · TRIVET</text>
+</svg>
