@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mac Cooking Store | hakaru</title>
+<meta name="description" content="Toute la ligne d'accessoires MacSlowCooker.">
+<meta property="og:title" content="Mac Cooking Store">
+<meta property="og:description" content="Toute la ligne d'accessoires MacSlowCooker. (Produits conceptuels uniquement — non affiliés à Apple.)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hakaru.net/MacCookingStore/index-fr">
+<meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-fr.jpeg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", sans-serif; background: #fff; color: #1d1d1f; -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  .nav { background: rgba(0,0,0,0.85); color: #f5f5f7; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 14px; letter-spacing: 0.02em; }
+  .nav > div { display: flex; gap: 24px; }
+  .nav span { opacity: 0.85; } .nav span.active { opacity: 1; font-weight: 600; }
+  .nav a { color: inherit; text-decoration: none; opacity: 0.85; }
+  .nav a:hover { opacity: 1; }
+  .hero { text-align: center; padding: 64px 24px 48px; background: linear-gradient(180deg, #fafafa 0%, #fff 100%); }
+  .hero .eyebrow { color: #06c; font-size: 17px; margin-bottom: 8px; }
+  .hero h1 { font-size: 56px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .hero .tagline { font-size: 22px; color: #424245; margin-bottom: 8px; }
+  .hero .subtagline { font-size: 14px; color: #86868b; font-style: italic; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .section-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; margin: 56px 0 16px; }
+  .featured { display: flex; align-items: center; gap: 32px; background: linear-gradient(135deg, #f5f5f7 0%, #ebebed 100%); border-radius: 22px; padding: 40px; margin-bottom: 48px; }
+  .featured img { width: 180px; height: 180px; border-radius: 24px; flex-shrink: 0; box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+  .featured-info h2 { font-size: 32px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .featured-info .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: linear-gradient(90deg, #2ecc71, #27ae60); color: #fff; margin-left: 8px; vertical-align: middle; }
+  .featured-info .price-line { font-size: 17px; color: #424245; margin-bottom: 16px; }
+  .featured-info p { font-size: 17px; color: #424245; margin-bottom: 20px; max-width: 580px; }
+  .btn { display: inline-block; padding: 11px 22px; background: #06c; color: #fff; border-radius: 980px; font-size: 15px; font-weight: 400; text-decoration: none; transition: background 0.15s; }
+  .btn:hover { background: #0077ed; }
+  .btn.secondary { background: transparent; color: #06c; padding: 11px 0; margin-left: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: #f5f5f7; border-radius: 18px; padding: 32px 24px 24px; text-align: center; transition: transform 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,0.08); }
+  .card img { width: 200px; height: 200px; object-fit: cover; border-radius: 14px; margin: 0 auto 20px; background: #fff; }
+  .card .product-eyebrow { color: #06c; font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .card h3 { font-size: 22px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; line-height: 1.2; }
+  .card .for { font-size: 14px; color: #6e6e73; margin-bottom: 14px; }
+  .card .tagline { font-size: 14px; color: #424245; margin-bottom: 16px; flex-grow: 1; }
+  .card .price { font-size: 17px; font-weight: 500; margin-bottom: 16px; }
+  .card .actions { display: flex; gap: 8px; justify-content: center; }
+  .card .btn { padding: 8px 16px; font-size: 14px; }
+  @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .featured { flex-direction: column; text-align: center; } .featured-info p { margin-left: auto; margin-right: auto; } .hero h1 { font-size: 40px; } }
+  .disclaimer { background: rgba(233,69,96,0.06); border: 1px solid rgba(233,69,96,0.25); color: #424245; font-size: 14px; padding: 20px 24px; border-radius: 14px; margin-top: 56px; line-height: 1.7; }
+  .disclaimer strong { color: #c2185b; }
+  footer { text-align: center; margin-top: 64px; padding: 32px 24px; border-top: 1px solid #d2d2d7; color: #86868b; font-size: 12px; }
+  footer a { color: #06c; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <div>
+    <span></span>
+    <a href="/index-fr.html">Store</a>
+    <a href="/index-fr.html">Mac</a>
+    <span class="active">Cooking Store</span>
+    <a href="/MacSlowCooker-support/index-fr">Assistance</a>
+  </div>
+</div>
+<section class="hero">
+  <div class="eyebrow">Nouvelle collection</div>
+  <h1>Mac Cooking Store</h1>
+  <p class="tagline">Toute la ligne d'accessoires MacSlowCooker.</p>
+  <p class="subtagline">Produits conceptuels uniquement — non affiliés à Apple.</p>
+</section>
+<div class="container">
+  <div class="section-label">Sélection · L'app réelle</div>
+  <div class="featured">
+    <img src="assets/thumb-app.jpeg" alt="MacSlowCooker">
+    <div class="featured-info">
+      <h2>MacSlowCooker <span class="badge">REAL · OSS</span></h2>
+      <p class="price-line">Gratuit · Apache 2.0 · Apple Silicon &amp; Intel</p>
+      <p>Moniteur Dock-icône macOS pour GPU / température / ventilateur / consommation, avec une métaphore de marmite. Fenêtre flottante, historique 4 panneaux style MRTG, exporteur Prometheus, export PNG. Logiciel réel.</p>
+      <a href="https://github.com/hakaru/MacSlowCooker" class="btn">Obtenir sur GitHub</a>
+      <a href="/MacSlowCooker-support/index-fr" class="btn secondary">Assistance →</a>
+    </div>
+  </div>
+  <div class="section-label">Accessoires · Parodies conceptuelles</div>
+  <div class="grid">
+    <div class="card">
+      <img src="assets/thumb-cooking-plate.jpeg" alt="Cooking Plate">
+      <div class="product-eyebrow">Pour Mac Studio</div>
+      <h3>Cooking Plate</h3>
+      <p class="for">Mac Studio (M1/M2/M3 Max · Ultra)</p>
+      <p class="tagline">Votre Mac Studio. Désormais un appareil de cuisson.</p>
+      <p class="price">À partir de <strong>89 €</strong></p>
+      <div class="actions"><a href="/MacSlowCookerPlate-support/index-fr" class="btn">En savoir plus</a></div>
+    </div>
+    <div class="card">
+      <img src="assets/thumb-cluster.jpeg" alt="Cluster Edition">
+      <div class="product-eyebrow">Pour Mac mini ×4</div>
+      <h3>Cluster Edition</h3>
+      <p class="for">Mac mini (M1–M4)</p>
+      <p class="tagline">Quatre Mac mini. Une plaque. Une vraie puissance de cuisson.</p>
+      <p class="price">À partir de <strong>189 €</strong></p>
+      <div class="actions"><a href="/MacSlowCookerPlate-support/index-fr#cluster" class="btn">En savoir plus</a></div>
+    </div>
+    <div class="card">
+      <img src="assets/thumb-brew-stand.jpeg" alt="Brew Stand">
+      <div class="product-eyebrow">Pour Mac mini</div>
+      <h3>Brew Stand</h3>
+      <p class="for">Mac mini (M1–M4)</p>
+      <p class="tagline">Votre Mac mini. Désormais votre barista.</p>
+      <p class="price">À partir de <strong>49 €</strong></p>
+      <div class="actions"><a href="/MacSlowCookerPlate-support/index-fr#brew-stand" class="btn">En savoir plus</a></div>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <strong>À propos de cette boutique.</strong> Tous les accessoires listés ci-dessus sont des concepts parodiques. Ils n'existent pas en tant que produits physiques et ne sont pas à vendre. Apple n'est pas affilié à cette collection. Les températures et durées indiquées sont des mesures réelles de MacSlowCooker (l'app réelle) tournant sur du matériel Mac réel — nous les avons simplement présentées comme une ligne d'appareils de cuisson. Ne posez vraiment pas d'ustensiles de cuisine sur votre Mac.
+  </div>
+  <div class="section-label" style="margin-top: 56px">Bientôt disponibles (également pas réels)</div>
+  <p style="color: #6e6e73; font-size: 14px;">Manchon chauffant MacBook Pro · Mac Pro Édition Fumoir · Dessous-de-plat iPad mini · Bain sous-vide AirPort Time Capsule</p>
+</div>
+<footer>© hakaru — MacSlowCooker est un vrai logiciel (Apache 2.0). Tout le reste ici est une blague.</footer>
+</body>
+</html>
