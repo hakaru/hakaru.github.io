@@ -11,7 +11,7 @@ DX7-compatibele FM-synthesizer met MIDI 2.0
 
 Welkom op de supportpagina van M2DX.
 
-M2DX is een DX7-compatibele FM-synthesizer voor iOS met ondersteuning voor MIDI 2.0. De klassieke FM-klank van 6 operators en 32 algoritmes is volledig opnieuw geïmplementeerd in pure Swift 6. De synthesemotor draait op de bibliotheek [M2DX-Core](/M2DX-Core-support/index-nl).
+M2DX is een DX7-compatibele FM-synthesizer voor iOS met ondersteuning voor MIDI 2.0. De klassieke FM-klank van 6 operators en 32 algoritmes is volledig opnieuw geïmplementeerd in pure Swift 6. De synthesemotor draait op de bibliotheek [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-nl).
 
 ---
 
@@ -48,7 +48,7 @@ M2DX heeft **nog niet het kwaliteitsniveau van een volwaardig instrument** berei
 
 ### Bugs of vreemd gedrag tegengekomen?
 
-Crashes worden automatisch gemeld via Firebase Crashlytics (zie het [privacybeleid](/M2DX-support/privacy-nl) voor meer informatie). Reproduceerbare problemen zijn makkelijker op te lossen — als het lukt, stuur dan graag een melding naar [support@hakaru.net](mailto:support@hakaru.net).
+Crashes worden automatisch gemeld via Firebase Crashlytics (zie het [privacybeleid](https://hakaru.net/M2DX-support/privacy-nl) voor meer informatie). Reproduceerbare problemen zijn makkelijker op te lossen — als het lukt, stuur dan graag een melding naar [support@hakaru.net](mailto:support@hakaru.net).
 
 ---
 
@@ -95,7 +95,7 @@ Vlak nadat de App Review een bètabuild heeft goedgekeurd, duurt het soms even v
 
 ### Wat moet ik doen als de app crasht?
 
-Vanaf v1.3.1 (build 5) staan automatische crashrapporten via Firebase Crashlytics aan. Als je de crash kunt reproduceren, kunnen we via de logs snel de oorzaak vinden en oplossen. Voor details over welke gegevens we verzamelen verwijzen we naar het [privacybeleid](/M2DX-support/privacy-nl).
+Vanaf v1.3.1 (build 5) staan automatische crashrapporten via Firebase Crashlytics aan. Als je de crash kunt reproduceren, kunnen we via de logs snel de oorzaak vinden en oplossen. Voor details over welke gegevens we verzamelen verwijzen we naar het [privacybeleid](https://hakaru.net/M2DX-support/privacy-nl).
 
 ### Kan ik DX7 SysEx-presets inladen?
 
@@ -114,8 +114,8 @@ Voorlopig is het een standalone iOS / iPadOS-app. Een AUv3-versie wordt overwoge
 ## Links
 
 * GitHub: [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* Synthesemotor: [M2DX-Core](/M2DX-Core-support/index-nl) (pure-Swift DX7 FM-bibliotheek)
-* [Privacybeleid](/M2DX-support/privacy-nl)
+* Synthesemotor: [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-nl) (pure-Swift DX7 FM-bibliotheek)
+* [Privacybeleid](https://hakaru.net/M2DX-support/privacy-nl)
 
 ---
 

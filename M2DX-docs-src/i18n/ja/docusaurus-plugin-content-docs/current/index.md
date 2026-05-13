@@ -11,7 +11,7 @@ MIDI 2.0 対応 DX7 互換 FM シンセサイザー
 
 M2DX サポートページへようこそ。
 
-M2DX は、MIDI 2.0 に対応した iOS 向けの DX7 互換 FM シンセサイザーアプリです。6 オペレータ × 32 アルゴリズムによるクラシックな FM サウンドを、Pure Swift 6 で完全再実装しています。シンセシスエンジンには [M2DX-Core](/M2DX-Core-support/index-ja) ライブラリを使用しています。
+M2DX は、MIDI 2.0 に対応した iOS 向けの DX7 互換 FM シンセサイザーアプリです。6 オペレータ × 32 アルゴリズムによるクラシックな FM サウンドを、Pure Swift 6 で完全再実装しています。シンセシスエンジンには [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-ja) ライブラリを使用しています。
 
 ---
 
@@ -48,7 +48,7 @@ M2DX はまだ**楽器として実用レベルには達していません**。�
 
 ### 不具合・違和感を見つけた方へ
 
-クラッシュは Firebase Crashlytics で自動収集されます（詳細は[プライバシーポリシー](/M2DX-support/privacy-ja)）。再現条件のある不具合は特定が早まりますので、可能であれば [support@hakaru.net](mailto:support@hakaru.net) までご報告いただけると助かります。
+クラッシュは Firebase Crashlytics で自動収集されます（詳細は[プライバシーポリシー](https://hakaru.net/M2DX-support/privacy-ja)）。再現条件のある不具合は特定が早まりますので、可能であれば [support@hakaru.net](mailto:support@hakaru.net) までご報告いただけると助かります。
 
 ---
 
@@ -95,7 +95,7 @@ AVAudioSourceNode による直接レンダリングで、CoreAudio レンダー�
 
 ### クラッシュした場合は？
 
-v1.3.1 (build 5) から Firebase Crashlytics による自動クラッシュレポートが有効になっています。クラッシュを再現していただくと、ログから原因を特定して迅速に修正できます。収集データの詳細は[プライバシーポリシー](/M2DX-support/privacy-ja)をご覧ください。
+v1.3.1 (build 5) から Firebase Crashlytics による自動クラッシュレポートが有効になっています。クラッシュを再現していただくと、ログから原因を特定して迅速に修正できます。収集データの詳細は[プライバシーポリシー](https://hakaru.net/M2DX-support/privacy-ja)をご覧ください。
 
 ### DX7 の SysEx プリセットは読み込めますか？
 
@@ -114,8 +114,8 @@ v1.3.1 (build 5) から Firebase Crashlytics による自動クラッシュレ�
 ## リンク
 
 * GitHub: [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* シンセシスエンジン: [M2DX-Core](/M2DX-Core-support/index-ja)（Pure Swift DX7 FM ライブラリ）
-* [プライバシーポリシー](/M2DX-support/privacy-ja)
+* シンセシスエンジン: [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-ja)（Pure Swift DX7 FM ライブラリ）
+* [プライバシーポリシー](https://hakaru.net/M2DX-support/privacy-ja)
 
 ---
 

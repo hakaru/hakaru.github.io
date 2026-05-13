@@ -11,7 +11,7 @@ Synthétiseur FM compatible DX7 avec MIDI 2.0
 
 Bienvenue sur la page de support de M2DX.
 
-M2DX est une application de synthétiseur FM pour iOS, compatible DX7 et compatible MIDI 2.0. Le son FM classique signé 6 opérateurs et 32 algorithmes y est entièrement réimplémenté en pur Swift 6. Le moteur de synthèse repose sur la bibliothèque [M2DX-Core](/M2DX-Core-support/index-fr).
+M2DX est une application de synthétiseur FM pour iOS, compatible DX7 et compatible MIDI 2.0. Le son FM classique signé 6 opérateurs et 32 algorithmes y est entièrement réimplémenté en pur Swift 6. Le moteur de synthèse repose sur la bibliothèque [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-fr).
 
 ---
 
@@ -48,7 +48,7 @@ M2DX **n'a pas encore atteint un niveau de qualité digne d'un véritable instru
 
 ### Si vous repérez des bugs ou des comportements étranges
 
-Les crashes sont remontés automatiquement via Firebase Crashlytics (voir la [politique de confidentialité](/M2DX-support/privacy-fr) pour plus de détails). Les anomalies reproductibles sont nettement plus rapides à corriger : si possible, merci d'envoyer un rapport à [support@hakaru.net](mailto:support@hakaru.net).
+Les crashes sont remontés automatiquement via Firebase Crashlytics (voir la [politique de confidentialité](https://hakaru.net/M2DX-support/privacy-fr) pour plus de détails). Les anomalies reproductibles sont nettement plus rapides à corriger : si possible, merci d'envoyer un rapport à [support@hakaru.net](mailto:support@hakaru.net).
 
 ---
 
@@ -96,7 +96,7 @@ Juste après la validation par Beta App Review, la propagation vers TestFlight p
 
 ### Que faire en cas de plantage ?
 
-Depuis la version 1.3.1 (build 5), la remontée automatique des plantages via Firebase Crashlytics est activée. Si vous parvenez à reproduire le plantage, les journaux nous permettent d'identifier la cause et de corriger rapidement. Pour le détail des données collectées, consultez notre [politique de confidentialité](/M2DX-support/privacy-fr).
+Depuis la version 1.3.1 (build 5), la remontée automatique des plantages via Firebase Crashlytics est activée. Si vous parvenez à reproduire le plantage, les journaux nous permettent d'identifier la cause et de corriger rapidement. Pour le détail des données collectées, consultez notre [politique de confidentialité](https://hakaru.net/M2DX-support/privacy-fr).
 
 ### Peut-on charger des presets SysEx du DX7 ?
 
@@ -115,8 +115,8 @@ Pour le moment, c'est une app standalone iOS / iPadOS. Une version AUv3 est à l
 ## Liens
 
 * GitHub : [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* Moteur de synthèse : [M2DX-Core](/M2DX-Core-support/index-fr) (bibliothèque FM DX7 en pur Swift)
-* [Politique de confidentialité](/M2DX-support/privacy-fr)
+* Moteur de synthèse : [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-fr) (bibliothèque FM DX7 en pur Swift)
+* [Politique de confidentialité](https://hakaru.net/M2DX-support/privacy-fr)
 
 ---
 

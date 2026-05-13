@@ -125,6 +125,21 @@ def convert_admonitions(markdown: str) -> str:
     return pattern.sub(repl, markdown)
 
 
+def absolutize_internal_links(markdown: str) -> str:
+    """`](/foo/bar)` の root-relative リンクを `](https://hakaru.net/foo/bar)` に置換。
+
+    Docusaurus は `/` 始まりリンクを baseUrl + locale プレフィックスで再解釈するため、
+    元 HTML 内の `/M2DX-Core-support/...` 等が `/M2DX-docs/<locale>/M2DX-Core-support/...`
+    に化けて broken link になる。これを抑止するため、`/M2DX-docs/...` 自身を除いて
+    全部フル URL に書き換える。
+    """
+    return re.sub(
+        r"\]\((/(?!M2DX-docs/)[^)\s]+)\)",
+        lambda m: f"](https://hakaru.net{m.group(1)})",
+        markdown,
+    )
+
+
 def build_frontmatter(page: str, meta: dict) -> str:
     title = meta["title"].split(" | ")[0].strip() or ("M2DX" if page == "index" else "Privacy Policy")
     description = meta["description"]
@@ -149,6 +164,7 @@ def convert_one(lang: str, page: str) -> Path:
     meta = extract_meta(soup)
     body = extract_content(soup)
     body = convert_admonitions(body)
+    body = absolutize_internal_links(body)
 
     out = build_frontmatter(page, meta) + body.strip() + "\n"
 

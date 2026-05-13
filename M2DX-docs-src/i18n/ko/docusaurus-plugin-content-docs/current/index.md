@@ -11,7 +11,7 @@ MIDI 2.0 지원 DX7 호환 FM 신디사이저
 
 M2DX 지원 페이지에 오신 것을 환영합니다.
 
-M2DX는 MIDI 2.0을 지원하는 iOS용 DX7 호환 FM 신디사이저 앱입니다. 6 오퍼레이터 × 32 알고리즘이 만들어내는 클래식 FM 사운드를 Pure Swift 6로 완전히 재구현했습니다. 신디시스 엔진은 [M2DX-Core](/M2DX-Core-support/index-ko) 라이브러리를 사용합니다.
+M2DX는 MIDI 2.0을 지원하는 iOS용 DX7 호환 FM 신디사이저 앱입니다. 6 오퍼레이터 × 32 알고리즘이 만들어내는 클래식 FM 사운드를 Pure Swift 6로 완전히 재구현했습니다. 신디시스 엔진은 [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-ko) 라이브러리를 사용합니다.
 
 ---
 
@@ -48,7 +48,7 @@ M2DX는 아직 **악기로서 실용 수준에 도달하지 못했습니다**. �
 
 ### 버그나 이상 동작을 발견하신 분께
 
-크래시는 Firebase Crashlytics를 통해 자동으로 수집됩니다(자세한 내용은 [개인정보 처리방침](/M2DX-support/privacy-ko)을 참조해 주십시오). 재현 조건이 명확한 버그는 원인 파악이 빨라지므로, 가능하시다면 [support@hakaru.net](mailto:support@hakaru.net)으로 보고해 주시면 감사하겠습니다.
+크래시는 Firebase Crashlytics를 통해 자동으로 수집됩니다(자세한 내용은 [개인정보 처리방침](https://hakaru.net/M2DX-support/privacy-ko)을 참조해 주십시오). 재현 조건이 명확한 버그는 원인 파악이 빨라지므로, 가능하시다면 [support@hakaru.net](mailto:support@hakaru.net)으로 보고해 주시면 감사하겠습니다.
 
 ---
 
@@ -95,7 +95,7 @@ AVAudioSourceNode로 직접 렌더링하여 CoreAudio 렌더 콜백 위에서 FM
 
 ### 크래시가 발생했을 때는 어떻게 하나요?
 
-v1.3.1 (build 5)부터 Firebase Crashlytics를 통한 자동 크래시 리포트가 활성화되어 있습니다. 크래시를 재현해 주시면 로그를 통해 원인을 파악하여 신속하게 수정할 수 있습니다. 수집되는 데이터에 대한 자세한 내용은 [개인정보 처리방침](/M2DX-support/privacy-ko)을 참고해 주세요.
+v1.3.1 (build 5)부터 Firebase Crashlytics를 통한 자동 크래시 리포트가 활성화되어 있습니다. 크래시를 재현해 주시면 로그를 통해 원인을 파악하여 신속하게 수정할 수 있습니다. 수집되는 데이터에 대한 자세한 내용은 [개인정보 처리방침](https://hakaru.net/M2DX-support/privacy-ko)을 참고해 주세요.
 
 ### DX7 SysEx 프리셋을 불러올 수 있나요?
 
@@ -114,8 +114,8 @@ v1.3.1 (build 5)부터 Firebase Crashlytics를 통한 자동 크래시 리포트
 ## 링크
 
 * GitHub: [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* 신디시스 엔진: [M2DX-Core](/M2DX-Core-support/index-ko) (Pure Swift DX7 FM 라이브러리)
-* [개인정보 처리방침](/M2DX-support/privacy-ko)
+* 신디시스 엔진: [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-ko) (Pure Swift DX7 FM 라이브러리)
+* [개인정보 처리방침](https://hakaru.net/M2DX-support/privacy-ko)
 
 ---
 

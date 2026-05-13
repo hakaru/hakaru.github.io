@@ -11,7 +11,7 @@ Sintetizzatore FM compatibile DX7 con MIDI 2.0
 
 Benvenuto nella pagina di supporto di M2DX.
 
-M2DX è un'app per iOS che riproduce fedelmente il sintetizzatore FM DX7, con il supporto nativo per MIDI 2.0. Le sonorità FM classiche, ottenute da 6 operatori e 32 algoritmi, sono state riscritte completamente in Pure Swift 6. Il motore di sintesi si basa sulla libreria [M2DX-Core](/M2DX-Core-support/index-it).
+M2DX è un'app per iOS che riproduce fedelmente il sintetizzatore FM DX7, con il supporto nativo per MIDI 2.0. Le sonorità FM classiche, ottenute da 6 operatori e 32 algoritmi, sono state riscritte completamente in Pure Swift 6. Il motore di sintesi si basa sulla libreria [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-it).
 
 ---
 
@@ -48,7 +48,7 @@ M2DX **non ha ancora raggiunto una qualità da strumento professionale**. Pubbli
 
 ### Se incontri bug o comportamenti strani
 
-I crash vengono raccolti automaticamente tramite Firebase Crashlytics (per i dettagli consulta la [Privacy Policy](/M2DX-support/privacy-it)). I problemi riproducibili sono più facili da risolvere: se puoi, ti chiediamo di inviare una segnalazione a [support@hakaru.net](mailto:support@hakaru.net).
+I crash vengono raccolti automaticamente tramite Firebase Crashlytics (per i dettagli consulta la [Privacy Policy](https://hakaru.net/M2DX-support/privacy-it)). I problemi riproducibili sono più facili da risolvere: se puoi, ti chiediamo di inviare una segnalazione a [support@hakaru.net](mailto:support@hakaru.net).
 
 ---
 
@@ -96,7 +96,7 @@ Subito dopo l'approvazione della Beta App Review può servire un po' di tempo pe
 
 ### Cosa fare in caso di crash?
 
-A partire dalla versione 1.3.1 (build 5) i report automatici dei crash, gestiti tramite Firebase Crashlytics, sono attivi. Se riesci a riprodurre il problema, possiamo individuare la causa nei log e correggerla rapidamente. Per i dettagli sui dati raccolti consulta la [privacy policy](/M2DX-support/privacy-it).
+A partire dalla versione 1.3.1 (build 5) i report automatici dei crash, gestiti tramite Firebase Crashlytics, sono attivi. Se riesci a riprodurre il problema, possiamo individuare la causa nei log e correggerla rapidamente. Per i dettagli sui dati raccolti consulta la [privacy policy](https://hakaru.net/M2DX-support/privacy-it).
 
 ### Posso caricare i preset SysEx del DX7?
 
@@ -115,8 +115,8 @@ Per ora M2DX è un'app standalone per iOS / iPadOS. Stiamo valutando il supporto
 ## Link
 
 * GitHub: [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* Motore di sintesi: [M2DX-Core](/M2DX-Core-support/index-it) (libreria FM DX7 in Pure Swift)
-* [Privacy policy](/M2DX-support/privacy-it)
+* Motore di sintesi: [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-it) (libreria FM DX7 in Pure Swift)
+* [Privacy policy](https://hakaru.net/M2DX-support/privacy-it)
 
 ---
 

@@ -11,7 +11,7 @@ slug: /
 
 歡迎來到 M2DX 支援頁面。
 
-M2DX 是一款支援 MIDI 2.0 的 iOS 平台 DX7 相容 FM 合成器應用程式。透過 6 組運算器搭配 32 種演算法，重現經典的 FM 音色，並以 Pure Swift 6 完整重新實作。合成引擎採用 [M2DX-Core](/M2DX-Core-support/index-zh-Hant) 函式庫。
+M2DX 是一款支援 MIDI 2.0 的 iOS 平台 DX7 相容 FM 合成器應用程式。透過 6 組運算器搭配 32 種演算法，重現經典的 FM 音色，並以 Pure Swift 6 完整重新實作。合成引擎採用 [M2DX-Core](https://hakaru.net/M2DX-Core-support/index-zh-Hant) 函式庫。
 
 ---
 
@@ -48,7 +48,7 @@ M2DX 目前還**尚未達到可作為樂器實際使用的成熟度**。我們�
 
 ### 若您發現任何 Bug 或不對勁之處
 
-當機資訊會由 Firebase Crashlytics 自動收集（詳情請參閱[隱私權政策](/M2DX-support/privacy-zh-Hant)）。具有可重現條件的問題能更快被定位，因此若可行的話，懇請您透過 [support@hakaru.net](mailto:support@hakaru.net) 回報，我們將不勝感激。
+當機資訊會由 Firebase Crashlytics 自動收集（詳情請參閱[隱私權政策](https://hakaru.net/M2DX-support/privacy-zh-Hant)）。具有可重現條件的問題能更快被定位，因此若可行的話，懇請您透過 [support@hakaru.net](mailto:support@hakaru.net) 回報，我們將不勝感激。
 
 ---
 
@@ -95,7 +95,7 @@ Beta App 審查剛通過時，可能需要一些時間才會反映到 TestFlight
 
 ### 應用程式發生當機時該怎麼辦？
 
-自 v1.3.1 (build 5) 起，已啟用 Firebase Crashlytics 自動回報當機。若您能重現該當機，我們便能從紀錄中找出原因並迅速修正。關於收集資料的詳細內容，請參閱[隱私權政策](/M2DX-support/privacy-zh-Hant)。
+自 v1.3.1 (build 5) 起，已啟用 Firebase Crashlytics 自動回報當機。若您能重現該當機，我們便能從紀錄中找出原因並迅速修正。關於收集資料的詳細內容，請參閱[隱私權政策](https://hakaru.net/M2DX-support/privacy-zh-Hant)。
 
 ### 是否可以匯入 DX7 的 SysEx 音色？
 
@@ -114,8 +114,8 @@ Beta App 審查剛通過時，可能需要一些時間才會反映到 TestFlight
 ## 相關連結
 
 * GitHub：[github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* 合成引擎：[M2DX-Core](/M2DX-Core-support/index-zh-Hant)（Pure Swift DX7 FM 函式庫）
-* [隱私權政策](/M2DX-support/privacy-zh-Hant)
+* 合成引擎：[M2DX-Core](https://hakaru.net/M2DX-Core-support/index-zh-Hant)（Pure Swift DX7 FM 函式庫）
+* [隱私權政策](https://hakaru.net/M2DX-support/privacy-zh-Hant)
 
 ---
 

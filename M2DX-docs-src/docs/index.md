@@ -11,7 +11,7 @@ MIDI 2.0 + DX7-compatible FM Synthesizer
 
 Welcome to M2DX support.
 
-M2DX is a MIDI 2.0-compatible DX7 FM synthesizer for iOS, delivering classic 6-operator / 32-algorithm FM tones reimplemented entirely in Swift 6. The synthesis engine is provided by the [M2DX-Core](/M2DX-Core-support/) library.
+M2DX is a MIDI 2.0-compatible DX7 FM synthesizer for iOS, delivering classic 6-operator / 32-algorithm FM tones reimplemented entirely in Swift 6. The synthesis engine is provided by the [M2DX-Core](https://hakaru.net/M2DX-Core-support/) library.
 
 ---
 
@@ -48,7 +48,7 @@ M2DX is **not yet at instrument-grade quality**. We are publishing the public Te
 
 ### If you spot bugs or oddities
 
-Crashes are auto-reported via Firebase Crashlytics (see the [Privacy Policy](/M2DX-support/privacy) for details). Reproducible issues are easier to fix — if you can, please send a report to [support@hakaru.net](mailto:support@hakaru.net).
+Crashes are auto-reported via Firebase Crashlytics (see the [Privacy Policy](https://hakaru.net/M2DX-support/privacy) for details). Reproducible issues are easier to fix — if you can, please send a report to [support@hakaru.net](mailto:support@hakaru.net).
 
 ---
 
@@ -96,7 +96,7 @@ Right after Beta App Review approval, propagation to TestFlight can take a while
 
 ### What happens if the app crashes?
 
-Starting with v1.3.1 (build 5), Firebase Crashlytics auto-reports crashes. Reproducing a crash helps us identify and fix it quickly. See the [Privacy Policy](/M2DX-support/privacy) for details on the data we collect.
+Starting with v1.3.1 (build 5), Firebase Crashlytics auto-reports crashes. Reproducing a crash helps us identify and fix it quickly. See the [Privacy Policy](https://hakaru.net/M2DX-support/privacy) for details on the data we collect.
 
 ### Can I load DX7 SysEx presets?
 
@@ -115,8 +115,8 @@ Currently it ships as a standalone iOS / iPadOS app. AUv3 support is under consi
 ## Links
 
 * GitHub: [github.com/hakaru/M2DX](https://github.com/hakaru/M2DX)
-* Synthesis engine: [M2DX-Core](/M2DX-Core-support/) (Pure Swift DX7 FM library)
-* [Privacy Policy](/M2DX-support/privacy)
+* Synthesis engine: [M2DX-Core](https://hakaru.net/M2DX-Core-support/) (Pure Swift DX7 FM library)
+* [Privacy Policy](https://hakaru.net/M2DX-support/privacy)
 
 ---
 
