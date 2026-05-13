@@ -12,7 +12,11 @@ const config: Config = {
   organizationName: 'hakaru',
   projectName: 'hakaru.github.io',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'sv', 'zh-Hant'],
@@ -47,9 +51,10 @@ const config: Config = {
       },
       items: [
         {
-          href: '/M2DX-support/',
+          href: 'https://hakaru.net/M2DX-support/',
           label: 'Main site',
           position: 'right',
+          target: '_self',
         },
         {
           type: 'localeDropdown',
