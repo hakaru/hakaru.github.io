@@ -42,12 +42,12 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    image: 'img/m2dx-icon.png',
+    image: 'img/m2dx-icon.svg',
     navbar: {
       title: 'M2DX',
       logo: {
         alt: 'M2DX',
-        src: 'img/m2dx-icon.png',
+        src: 'img/m2dx-icon.svg',
       },
       items: [
         {
