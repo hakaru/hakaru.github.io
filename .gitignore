@@ -3,3 +3,9 @@
 
 # Brainstorming visual-companion working dir
 .superpowers/
+
+# Docusaurus build artifacts
+/dist/
+/M2DX-docs-src/build/
+/M2DX-docs-src/node_modules/
+/M2DX-docs-src/.docusaurus/
