@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>M2DX-Core 支援 | hakaru</title>
-    <meta name="description" content="M2DX-Core 支援頁面。純 Swift 編寫的 DX7 FM 合成引擎，具備位元精確的硬體模擬。">
+    <meta name="description" content="M2DX-Core 支援頁面。純 Swift 編寫的 DX7 相容 FM 合成引擎，已對照 Dexed/msfa 參考實作驗證。">
     <meta property="og:title" content="M2DX-Core 支援">
-    <meta property="og:description" content="M2DX-Core 支援頁面。純 Swift 編寫的 DX7 FM 合成引擎，具備位元精確的硬體模擬。">
+    <meta property="og:description" content="M2DX-Core 支援頁面。純 Swift 編寫的 DX7 相容 FM 合成引擎，已對照 Dexed/msfa 參考實作驗證。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-zh-Hant">
     <meta property="og:locale" content="zh_TW">
@@ -754,14 +754,14 @@ body {
         </div>
         <div class="content">
             <p>歡迎來到 M2DX-Core 支援頁面。</p>
-            <p>M2DX-Core 是一個完全以純 Swift 編寫的位元精確 DX7 FM 合成引擎。它使用 Int32 定點運算模擬原始 Yamaha OPS 晶片，在不使用任何 C 或 C++ 程式碼的情況下，精確重現硬體合成器的音色。</p>
+            <p>M2DX-Core 是一個完全以純 Swift 實作的 DX7 相容 FM 合成引擎。其 Int32 定點核心已對照開源 Dexed/msfa 參考實作逐取樣驗證——忠實重現 DX7 風格 FM，而非對原始 Yamaha OPS 晶片做週期精確模擬。發行程式碼中不含 C 或 C++。</p>
 
             <hr>
 
             <h2>功能特色</h2>
 
-            <h3>位元精確模擬</h3>
-            <p>M2DX-Core 全程使用 Int32 定點運算，在位元層級精確匹配原始 Yamaha OPS 晶片的行為。每個運算子、包絡線和 LFO 計算都忠實還原硬體。</p>
+            <h3>DEXED 驗證的精度</h3>
+            <p>M2DX-Core 全程使用 Int32 定點運算，在運算子、包絡線與縮放測試中對照 Dexed/msfa 參考實作逐取樣驗證。它忠實地模擬 DX7 風格 FM，而非對原始硬體做週期精確模擬。</p>
 
             <h3>原生 MIDI 2.0 支援</h3>
             <p>M2DX-Core 具備原生 MIDI 2.0 支援，充分利用每音符音高彎曲、每音符表情和高解析度控制資料，實現 MIDI 1.0 無法達到的表情演奏。</p>

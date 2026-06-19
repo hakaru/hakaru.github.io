@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Supporto M2DX-Core | hakaru</title>
-    <meta name="description" content="Pagina di supporto di M2DX-Core. Motore di sintesi FM DX7 in Swift puro con emulazione hardware bit a bit.">
+    <meta name="description" content="Pagina di supporto di M2DX-Core. Motore di sintesi FM compatibile DX7 in Swift puro, validato rispetto al riferimento Dexed/msfa.">
     <meta property="og:title" content="Supporto M2DX-Core">
-    <meta property="og:description" content="Pagina di supporto di M2DX-Core. Motore di sintesi FM DX7 in Swift puro con emulazione hardware bit a bit.">
+    <meta property="og:description" content="Pagina di supporto di M2DX-Core. Motore di sintesi FM compatibile DX7 in Swift puro, validato rispetto al riferimento Dexed/msfa.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-it">
     <meta property="og:locale" content="it_IT">
@@ -762,14 +762,14 @@ body {
         </div>
         <div class="content">
             <p>Benvenuto nella pagina di supporto di M2DX-Core.</p>
-            <p>M2DX-Core è un motore di sintesi FM DX7 bit a bit, scritto interamente in Swift puro. Emula il chip OPS originale Yamaha usando l'aritmetica a virgola fissa Int32, fornendo il suono esatto del sintetizzatore hardware senza alcun codice C o C++.</p>
+            <p>M2DX-Core è un motore di sintesi FM compatibile DX7, scritto interamente in Swift puro. Il suo kernel a virgola fissa Int32 è validato campione per campione rispetto al riferimento open source Dexed/msfa — un motore FM fedele in stile DX7, non un'emulazione cycle-accurate del chip OPS originale Yamaha. Nessun codice C o C++ nel codice distribuito.</p>
 
             <hr>
 
             <h2>Funzionalità</h2>
 
-            <h3>Emulazione bit a bit</h3>
-            <p>M2DX-Core usa l'aritmetica a virgola fissa Int32 in tutto il processo, corrispondendo al comportamento del chip OPS Yamaha originale a livello di bit. Ogni operatore, inviluppo e calcolo LFO riproduce fedelmente l'hardware.</p>
+            <h3>Precisione validata con DEXED</h3>
+            <p>M2DX-Core usa l'aritmetica a virgola fissa Int32 ovunque, validata campione per campione rispetto al riferimento Dexed/msfa nei test di operatore, inviluppo e scaling. Modella fedelmente la FM in stile DX7 anziché emulare cycle-accurate l'hardware originale.</p>
 
             <h3>MIDI 2.0 nativo</h3>
             <p>Costruito con supporto MIDI 2.0 nativo, M2DX-Core sfrutta appieno il pitch bend per nota, l'espressione per nota e i dati di controllo ad alta risoluzione — abilitando un'esecuzione espressiva impossibile con MIDI 1.0.</p>

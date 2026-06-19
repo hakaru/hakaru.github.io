@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>用 Swift 重寫 DX7 — 和 FM 音源相處的一年 | M2DX-Core 部落格</title>
-    <meta name="description" content="用純 Swift 重新實作 Yamaha DX7。花了一年讀 MSFA 的 C 程式碼，追著 Int32 定點數、exp2 表、包絡線、32 個演算法跑，再搞定 Swift 6 嚴格並行性，最後做到和原始晶片逐位元吻合。">
+    <meta name="description" content="用純 Swift 重新實作 Yamaha DX7。花了一年讀 MSFA 的 C 程式碼，追著 Int32 定點數、exp2 表、包絡線、32 個演算法跑，再搞定 Swift 6 嚴格並行性，最後做到對照 Dexed/msfa 參考實作驗證。">
     <meta property="og:title" content="用 Swift 重寫 DX7 — 和 FM 音源相處的一年">
     <meta property="og:description" content="用純 Swift 重新實作 Yamaha DX7。花了一年讀 MSFA 的 C 程式碼，追著 Int32 定點數、exp2 表、包絡線、32 個演算法跑，再搞定 Swift 6 嚴格並行性。">
     <meta property="og:type" content="article">
@@ -852,7 +852,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
             SlotSnapshot, SlotSnapshot)</code></pre>
             <p>用 Swift 寫即時音訊時，看起來最漂亮的慣用寫法，通常就是那個會出雜音的寫法。</p>
 
-            <h2>逐位元比對</h2>
+            <h2>對照參考實作驗證</h2>
             <p>我把 MSFA 的 C 程式碼編進測試目標，然後用 Int32 逐取樣比對輸出結果。</p>
 <pre><code>@Test func voiceOutputMatchesReference() {
     let swiftOutput = swiftVoice.renderBlock(samples: 64)
@@ -899,7 +899,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
 
             <h2>收尾</h2>
             <p>從第一次打開 MSFA，到 M2DX-Core 的 107 個測試全部變綠，大概花了一年。</p>
-            <p>FM 的原理教科書裡有，但「DX7 的聲音」要靠著追晶片的每一個位元才能得到。這個 Swift 實作站在 Raph Levien（做了 192kHz/24-bit 的真實硬體擷取）和 Pascal Gauthier（Dexed Mark I 引擎）等人的工作之上。</p>
+            <p>FM 的原理教科書裡有，但要接近「DX7 的聲音」，得逐取樣追著 Dexed/msfa 參考實作的定點行為跑——而不是原始晶片本身（這是 DX7 風格 FM，而非週期精確的硬體模擬）。這個 Swift 實作站在 Raph Levien（MSFA，一個忠實的 DX7 風格定點 FM 引擎）和 Pascal Gauthier（Dexed）等人的工作之上。</p>
             <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">在 GitHub 看原始碼 &rarr;</a></p>
 
             <hr>

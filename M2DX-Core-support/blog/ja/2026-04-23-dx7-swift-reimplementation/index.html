@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DX7をSwiftで書き直した — 1年がかりのFM音源移植 | M2DX-Core Blog</title>
-    <meta name="description" content="Yamaha DX7をPure Swiftで再実装した話。MSFAのCコードを読み解きつつ、Int32固定小数点、exp2テーブル、エンベロープ、32アルゴリズム、Swift 6のStrict Concurrencyまで、1年がかりで移植した記録。">
+    <meta name="description" content="Yamaha DX7をPure Swiftで再実装した話。MSFAのCコードを読み解きつつ、Int32固定小数点、exp2テーブル、エンベロープ、32アルゴリズム、Swift 6のStrict Concurrencyまで、Dexed/msfaリファレンスと照合検証しながら1年がかりで実装した記録。">
     <meta property="og:title" content="DX7をSwiftで書き直した — 1年がかりのFM音源移植">
     <meta property="og:description" content="Yamaha DX7をPure Swiftで再実装。MSFAのCコードを読みながら、Int32固定小数点、exp2テーブル、エンベロープ、32アルゴリズム、Swift 6のStrict Concurrencyまで、ビット単位で合わせる1年。">
     <meta property="og:type" content="article">
@@ -852,7 +852,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
             SlotSnapshot, SlotSnapshot)</code></pre>
             <p>Swiftでリアルタイムオーディオを書くと、一見キレイな書き方で普通にグリッチが出ます。</p>
 
-            <h2>ビット単位で合わせる</h2>
+            <h2>リファレンスとの照合検証</h2>
             <p>MSFAのCコードをテストターゲットに組み込んで、サンプル単位でInt32比較しています。</p>
 <pre><code>@Test func voiceOutputMatchesReference() {
     let swiftOutput = swiftVoice.renderBlock(samples: 64)
@@ -899,7 +899,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
 
             <h2>おわりに</h2>
             <p>MSFAのコードを開いてから、M2DX-Coreの107本のテストが全部パスするまで、ざっくり1年でした。</p>
-            <p>FMの原理は教科書でわかっても、「DX7の音」を出すには実機チップの挙動を1ビット単位で追いかけないと届かない、というのが実感です。Raph Levienがやった192kHz/24bitの実機波形解析、Pascal GauthierのDexed Mark Iエンジン、そういう積み重ねの上に今回のSwift実装が乗っています。</p>
+            <p>FMの原理は教科書でわかっても、「DX7の音」に近づくには、Dexed/msfaリファレンスの固定小数点の挙動をサンプル単位で追いかける必要がありました——実機チップそのものではありません（これは実機のサイクル精度エミュではなくDX7系FMです）。今回のSwift実装は、Raph Levien（MSFA、DX7系の忠実な固定小数点FMエンジン）やPascal Gauthier（Dexed）らの仕事の上に乗っています。</p>
             <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">GitHubでリポジトリを見る &rarr;</a></p>
 
             <hr>

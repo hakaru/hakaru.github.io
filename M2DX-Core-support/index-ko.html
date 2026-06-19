@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>M2DX-Core 지원 | hakaru</title>
-    <meta name="description" content="M2DX-Core 지원 페이지. 비트 정밀 하드웨어 에뮬레이션을 갖춘 순수 Swift DX7 FM 합성 엔진.">
+    <meta name="description" content="M2DX-Core 지원 페이지. 순수 Swift로 만든 DX7 호환 FM 합성 엔진. Dexed/msfa 레퍼런스와 대조 검증.">
     <meta property="og:title" content="M2DX-Core 지원">
-    <meta property="og:description" content="M2DX-Core 지원 페이지. 비트 정밀 하드웨어 에뮬레이션을 갖춘 순수 Swift DX7 FM 합성 엔진.">
+    <meta property="og:description" content="M2DX-Core 지원 페이지. 순수 Swift로 만든 DX7 호환 FM 합성 엔진. Dexed/msfa 레퍼런스와 대조 검증.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-ko">
     <meta property="og:locale" content="ko_KR">
@@ -754,14 +754,14 @@ body {
         </div>
         <div class="content">
             <p>M2DX-Core 지원 페이지에 오신 것을 환영합니다.</p>
-            <p>M2DX-Core는 순수 Swift로 완전히 작성된 비트 정밀 DX7 FM 합성 엔진입니다. Int32 고정 소수점 연산을 사용하여 오리지널 Yamaha OPS 칩을 에뮬레이션하며, C 또는 C++ 코드 없이 하드웨어 신세사이저의 정확한 사운드를 제공합니다.</p>
+            <p>M2DX-Core는 순수 Swift로 완전히 구현한 DX7 호환 FM 합성 엔진입니다. Int32 고정 소수점 커널을 오픈소스 Dexed/msfa 레퍼런스와 샘플 단위로 대조 검증합니다. 원본 Yamaha OPS 칩의 사이클 단위 에뮬레이션이 아니라 DX7 스타일 FM을 충실히 재현하는 엔진입니다. 배포 코드에는 C/C++가 없습니다.</p>
 
             <hr>
 
             <h2>기능</h2>
 
-            <h3>비트 정밀 에뮬레이션</h3>
-            <p>M2DX-Core는 전체적으로 Int32 고정 소수점 연산을 사용하여 오리지널 Yamaha OPS 칩의 비트 수준 동작을 그대로 재현합니다. 모든 오퍼레이터, 엔벨로프, LFO 계산이 하드웨어를 충실히 재현합니다.</p>
+            <h3>DEXED로 검증한 정밀도</h3>
+            <p>M2DX-Core는 전체적으로 Int32 고정 소수점 연산을 사용하며, 오퍼레이터·엔벨로프·스케일링 테스트에서 Dexed/msfa 레퍼런스와 샘플 단위로 대조 검증합니다. 원본 하드웨어를 사이클 단위로 에뮬레이션하는 것이 아니라 DX7 스타일 FM을 충실히 모델링합니다.</p>
 
             <h3>MIDI 2.0 네이티브</h3>
             <p>네이티브 MIDI 2.0 지원으로 제작된 M2DX-Core는 노트별 피치 벤드, 노트별 익스프레션, 고해상도 컨트롤 데이터를 완전히 활용합니다 — MIDI 1.0에서는 불가능했던 표현력 있는 연주를 가능하게 합니다.</p>

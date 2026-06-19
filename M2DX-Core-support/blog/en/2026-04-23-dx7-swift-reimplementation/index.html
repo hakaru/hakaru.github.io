@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rewriting the DX7 in Swift — a year with an FM synth | M2DX-Core Blog</title>
-    <meta name="description" content="Reimplementing the Yamaha DX7 in pure Swift. A year of reading MSFA's C code, chasing Int32 fixed-point, exp2 tables, envelopes, 32 algorithms, and Swift 6 strict concurrency — matched to the original chip bit for bit.">
+    <meta name="description" content="Reimplementing the Yamaha DX7 in pure Swift. A year of reading MSFA's C code, chasing Int32 fixed-point, exp2 tables, envelopes, 32 algorithms, and Swift 6 strict concurrency — cross-validated against the Dexed/msfa reference.">
     <meta property="og:title" content="Rewriting the DX7 in Swift — a year with an FM synth">
     <meta property="og:description" content="Reimplementing the Yamaha DX7 in pure Swift. A year of reading MSFA's C code, chasing Int32 fixed-point, exp2 tables, envelopes, 32 algorithms, and Swift 6 strict concurrency.">
     <meta property="og:type" content="article">
@@ -852,7 +852,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
             SlotSnapshot, SlotSnapshot)</code></pre>
             <p>When you write realtime audio in Swift, the nice-looking idiomatic version is usually the one that glitches.</p>
 
-            <h2>Matching bit for bit</h2>
+            <h2>Validating against the reference</h2>
             <p>I built the MSFA C code into the test target and compared outputs sample by sample as Int32.</p>
 <pre><code>@Test func voiceOutputMatchesReference() {
     let swiftOutput = swiftVoice.renderBlock(samples: 64)

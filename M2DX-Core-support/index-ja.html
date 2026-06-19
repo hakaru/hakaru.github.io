@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>M2DX-Core サポート | hakaru</title>
-    <meta name="description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7 FMシンセシスエンジン。ビット精度のハードウェアエミュレーション。">
+    <meta name="description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7互換FMシンセシスエンジン。Dexed/msfaリファレンスと照合検証済み。">
     <meta property="og:title" content="M2DX-Core サポート">
-    <meta property="og:description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7 FMシンセシスエンジン。ビット精度のハードウェアエミュレーション。">
+    <meta property="og:description" content="M2DX-Coreサポートページ。Pure SwiftによるDX7互換FMシンセシスエンジン。Dexed/msfaリファレンスと照合検証済み。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-ja">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
@@ -875,14 +875,14 @@ body {
 
         <div class="content">
             <p>M2DX-Coreサポートページへようこそ。</p>
-            <p>M2DX-Coreは、Pure SwiftでゼロからすべてをInt32固定小数点演算で実装した、ビット精度のDX7 FMシンセシスエンジンです。C/C++を一切使わず、オリジナルのYamaha OPSチップの動作を完全に再現します。</p>
+            <p>M2DX-Coreは、Pure Swiftで完全に実装したDX7互換のFMシンセシスエンジンです。Int32固定小数点カーネルをオープンソースのDexed/msfaリファレンスとサンプル単位で照合検証しています。実機Yamaha OPSチップのサイクル精度エミュレーションではなく、DX7系FMを忠実に再現するエンジンです。出荷コードにC/C++は含みません。</p>
 
             <hr>
 
             <h2>特徴</h2>
 
-            <h3>ビット精度のエミュレーション</h3>
-            <p>Int32固定小数点演算を全体で使用し、オリジナルのYamaha OPSチップのビットレベルの動作を忠実に再現します。すべてのオペレーター、エンベロープ、LFO演算がハードウェアと一致します。</p>
+            <h3>DEXEDで検証した精度</h3>
+            <p>Int32固定小数点演算を全体で使用し、オペレーター・エンベロープ・スケーリングの各テストでDexed/msfaリファレンスとサンプル単位で照合検証しています。実機をサイクル精度でエミュレートするのではなく、DX7系FMを忠実にモデル化します。</p>
 
             <h3>MIDI 2.0ネイティブ対応</h3>
             <p>MIDI 2.0をネイティブサポートし、ノートごとのピッチベンド、ノートごとのエクスプレッション、高解像度コントロールデータを活用できます。MIDI 1.0では実現できなかった表現力豊かな演奏が可能です。</p>

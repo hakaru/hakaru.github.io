@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DX7를 Swift로 다시 쓰다 — FM 신스와 보낸 1년 | M2DX-Core Blog</title>
-    <meta name="description" content="Yamaha DX7를 순수 Swift로 다시 구현했습니다. MSFA C 코드를 읽고, Int32 고정소수점, exp2 테이블, 엔벨로프, 32가지 알고리즘, Swift 6 Strict Concurrency까지 — 1년에 걸쳐 원본 칩과 비트 단위로 맞춰나간 기록입니다.">
+    <meta name="description" content="Yamaha DX7를 순수 Swift로 다시 구현했습니다. MSFA C 코드를 읽고, Int32 고정소수점, exp2 테이블, 엔벨로프, 32가지 알고리즘, Swift 6 Strict Concurrency까지 — 1년에 걸쳐 Dexed/msfa 레퍼런스와 대조 검증해 나간 기록입니다.">
     <meta property="og:title" content="DX7를 Swift로 다시 쓰다 — FM 신스와 보낸 1년">
     <meta property="og:description" content="Yamaha DX7를 순수 Swift로 다시 구현했습니다. MSFA C 코드, Int32 고정소수점, exp2 테이블, 엔벨로프, 32가지 알고리즘, Swift 6 Strict Concurrency까지 1년에 걸친 이식 기록.">
     <meta property="og:type" content="article">
@@ -852,7 +852,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
             SlotSnapshot, SlotSnapshot)</code></pre>
             <p>Swift로 리얼타임 오디오를 짜다 보면, 겉보기에 깔끔한 관용구가 글리치를 내는 쪽인 경우가 많습니다.</p>
 
-            <h2>비트 단위로 맞추기</h2>
+            <h2>레퍼런스와 대조 검증</h2>
             <p>MSFA C 코드를 테스트 타겟에 내장하고, 샘플 단위로 Int32 비교를 했습니다.</p>
 <pre><code>@Test func voiceOutputMatchesReference() {
     let swiftOutput = swiftVoice.renderBlock(samples: 64)
@@ -899,7 +899,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
 
             <h2>마무리</h2>
             <p>MSFA 코드를 처음 연 때부터 M2DX-Core의 테스트 107개가 전부 통과할 때까지 대략 1년이 걸렸습니다.</p>
-            <p>FM의 원리는 교과서로 이해할 수 있어도, "DX7의 소리"를 내려면 실제 칩의 동작을 비트 단위로 추적해야 한다는 게 체감으로 와닿았습니다. 이 Swift 구현은 Raph Levien(실기 하드웨어의 192kHz/24bit 캡처를 했습니다)과 Pascal Gauthier(Dexed Mark I 엔진) 등의 작업 위에 올라가 있습니다.</p>
+            <p>FM의 원리는 교과서로 이해할 수 있어도, "DX7의 소리"에 가까워지려면 Dexed/msfa 레퍼런스의 고정 소수점 동작을 샘플 단위로 따라가야 했습니다 — 원본 칩 자체가 아니라요(이는 사이클 단위 하드웨어 에뮬레이션이 아닌 DX7 스타일 FM입니다). 이 Swift 구현은 Raph Levien(MSFA, DX7 스타일의 충실한 고정 소수점 FM 엔진)과 Pascal Gauthier(Dexed) 등의 작업 위에 올라가 있습니다.</p>
             <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">GitHub에서 리포지토리 보기 &rarr;</a></p>
 
             <hr>

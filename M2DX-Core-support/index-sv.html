@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>M2DX-Core Support | hakaru</title>
-    <meta name="description" content="Supportsida för M2DX-Core. DX7 FM-syntesmotor i ren Swift med bitexakt hårdvaruemulering.">
+    <meta name="description" content="Supportsida för M2DX-Core. DX7-kompatibel FM-syntesmotor i ren Swift, validerad mot Dexed/msfa-referensen.">
     <meta property="og:title" content="M2DX-Core Support">
-    <meta property="og:description" content="Supportsida för M2DX-Core. DX7 FM-syntesmotor i ren Swift med bitexakt hårdvaruemulering.">
+    <meta property="og:description" content="Supportsida för M2DX-Core. DX7-kompatibel FM-syntesmotor i ren Swift, validerad mot Dexed/msfa-referensen.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/M2DX-Core-support/index-sv">
     <meta property="og:locale" content="sv_SE">
@@ -754,14 +754,14 @@ body {
         </div>
         <div class="content">
             <p>Välkommen till M2DX-Cores supportsida.</p>
-            <p>M2DX-Core är en bitexakt DX7 FM-syntesmotor skriven helt i ren Swift. Den emulerar det ursprungliga Yamaha OPS-chippet med Int32 fastkommateknik och levererar det exakta ljudet från hårdvarusyntetisatorn utan någon C- eller C++-kod.</p>
+            <p>M2DX-Core är en DX7-kompatibel FM-syntesmotor skriven helt i ren Swift. Dess Int32-fastkommakärna är validerad sampel för sampel mot den öppna Dexed/msfa-referensen — en trogen FM-motor i DX7-stil, inte en cykelexakt emulering av det ursprungliga Yamaha OPS-chippet. Ingen C- eller C++-kod i den levererade koden.</p>
 
             <hr>
 
             <h2>Funktioner</h2>
 
-            <h3>Bitexakt emulering</h3>
-            <p>M2DX-Core använder Int32 fastkommaräkning genomgående, vilket matchar det ursprungliga Yamaha OPS-chippets beteende på bitnivå. Varje operator, envelope och LFO-beräkning återger hårdvaran troget.</p>
+            <h3>DEXED-validerad precision</h3>
+            <p>M2DX-Core använder Int32-fastkommaräkning genomgående, validerad sampel för sampel mot Dexed/msfa-referensen i operator-, envelope- och skalningstesterna. Den modellerar FM i DX7-stil troget i stället för att cykelexakt emulera den ursprungliga hårdvaran.</p>
 
             <h3>MIDI 2.0 nativt</h3>
             <p>Byggt med inbyggt MIDI 2.0-stöd utnyttjar M2DX-Core fullt ut per-nots pitch bend, per-nots expression och högupplöst kontrolldata — möjliggör expressivt spel som inte var möjligt med MIDI 1.0.</p>

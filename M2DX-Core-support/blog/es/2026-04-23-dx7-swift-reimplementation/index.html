@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reescribiendo el DX7 en Swift — un año con un sintetizador FM | M2DX-Core Blog</title>
-    <meta name="description" content="Reimplementar el Yamaha DX7 en Swift puro. Un año leyendo el código C de MSFA, persiguiendo aritmética de punto fijo Int32, tablas exp2, envelopes, 32 algoritmos y la concurrencia estricta de Swift 6 — bit a bit igual al chip original.">
+    <meta name="description" content="Reimplementar el Yamaha DX7 en Swift puro. Un año leyendo el código C de MSFA, persiguiendo aritmética de punto fijo Int32, tablas exp2, envelopes, 32 algoritmos y la concurrencia estricta de Swift 6 — validado contra la referencia Dexed/msfa.">
     <meta property="og:title" content="Reescribiendo el DX7 en Swift — un año con un sintetizador FM">
     <meta property="og:description" content="Reimplementar el Yamaha DX7 en Swift puro. Un año leyendo el código C de MSFA, persiguiendo aritmética de punto fijo Int32, tablas exp2, envelopes, 32 algoritmos y la concurrencia estricta de Swift 6.">
     <meta property="og:type" content="article">
@@ -852,7 +852,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
             SlotSnapshot, SlotSnapshot)</code></pre>
             <p>Cuando escribís audio en tiempo real en Swift, la versión idiomática que se ve limpia suele ser la que produce glitches.</p>
 
-            <h2>Igualando bit a bit</h2>
+            <h2>Validación contra la referencia</h2>
             <p>Compilé el código C de MSFA en el target de tests y comparé las salidas muestra a muestra como Int32.</p>
 <pre><code>@Test func voiceOutputMatchesReference() {
     let swiftOutput = swiftVoice.renderBlock(samples: 64)
@@ -899,7 +899,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
 
             <h2>Para terminar</h2>
             <p>Desde que abrí MSFA por primera vez hasta que los 107 tests de M2DX-Core pasaron todos en verde fue aproximadamente un año.</p>
-            <p>El principio del FM está en los libros de texto, pero "el sonido del DX7" requiere perseguir el chip real bit a bit. Esta implementación en Swift se apoya en el trabajo de Raph Levien (que hizo capturas de hardware real a 192kHz/24 bits) y Pascal Gauthier (el motor Dexed Mark I), entre otros.</p>
+            <p>El principio del FM está en los libros de texto, pero acercarse a "el sonido del DX7" significó seguir el comportamiento de punto fijo de la referencia Dexed/msfa muestra a muestra — no el chip real en sí (esto es FM al estilo DX7, no una emulación de hardware con precisión de ciclo). Esta implementación en Swift se apoya en el trabajo de Raph Levien (MSFA, un motor FM fiel de punto fijo al estilo DX7) y Pascal Gauthier (Dexed), entre otros.</p>
             <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">Ver el repositorio en GitHub &rarr;</a></p>
 
             <hr>
