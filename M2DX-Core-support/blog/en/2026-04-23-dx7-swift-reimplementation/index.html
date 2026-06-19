@@ -899,7 +899,7 @@ var slots: (SlotSnapshot, SlotSnapshot, SlotSnapshot,
 
             <h2>Wrapping up</h2>
             <p>From opening MSFA for the first time to getting all 107 of M2DX-Core's tests green was about a year.</p>
-            <p>The principle of FM is in the textbooks, but "the DX7 sound" requires chasing the actual chip bit by bit. This Swift implementation is sitting on top of the work of Raph Levien (who did 192kHz/24-bit captures of real hardware) and Pascal Gauthier (the Dexed Mark I engine), among others.</p>
+            <p>The principle of FM is in the textbooks, but getting close to "the DX7 sound" meant chasing the Dexed/msfa reference's fixed-point behaviour sample by sample — not the original chip itself (this is DX7-style FM, not a cycle-accurate hardware emulation). This Swift implementation stands on the work of Raph Levien (MSFA, a faithful fixed-point DX7-style FM engine) and Pascal Gauthier (Dexed), among others.</p>
             <p><a href="https://github.com/hakaru/M2DX-Core" class="cta">See the repo on GitHub &rarr;</a></p>
 
             <hr>
