@@ -294,6 +294,7 @@ body { display: flex; min-height: 100vh; }
         <div class="content">
             <p>Willkommen auf der M2DX Support-Seite.</p>
             <p>M2DX ist ein DX7-kompatibler FM-Synthesizer für iOS mit voller MIDI 2.0-Unterstützung. Der klassische FM-Sound aus 6 Operatoren und 32 Algorithmen wurde komplett in Pure Swift 6 neu implementiert. Als Synthese-Engine kommt die Bibliothek <a href="/M2DX-Core-support/index-de">M2DX-Core</a> zum Einsatz.</p>
+            <p><em>Neu in 1.7.1:</em> ein neu gestaltetes App-Icon – ein Vintage-FM-Hardware-Panel mit Dot-Matrix-Display, samt dunkler und getönter Variante für iOS&nbsp;18.</p>
 
             <hr>
 
@@ -353,6 +354,21 @@ body { display: flex; min-height: 100vh; }
             <h3>Niedrige Latenz</h3>
             <p>Dank direkter Wiedergabe über AVAudioSourceNode läuft die FM-Engine direkt im CoreAudio-Render-Callback. Buffer-Queueing-Overhead entfällt vollständig, sodass die effektive Latenz im Wesentlichen der iOS-IOBufferDuration (rund 5 ms) entspricht.</p>
 
+            <h3>AUv3-Plug-in</h3>
+            <p>M2DX bringt ein AUv3-Instrument-Plug-in („M2DX FM Synthesizer“) mit, das sich in GarageBand, AUM, Logic Pro und andere AUv3-Hosts laden lässt; die Host-Automation läuft über NRPN. Die eigenständige App ist ebenfalls enthalten.</p>
+
+            <hr>
+
+            <h2>M2DX Pro</h2>
+            <p>Alles bisher Beschriebene ist <strong>kostenlos</strong>. <strong>M2DX Pro</strong> ist eine optionale einmalige Freischaltung – kein Abo –, die tiefergehendes Layering und Vintage-Optionen für die Sound-Engine ergänzt:</p>
+            <ul>
+                <li><strong>TX816 LAYER</strong> – bis zu 8 Patches pro Note stapeln, mit Speichern &amp; Abrufen deiner geschichteten Stacks</li>
+                <li><strong>FM-Engine-Wahl</strong> – zwischen der Modern-Engine und Mark I umschalten, inklusive Mark-I-Tiefenregelung (÷2–÷16)</li>
+                <li><strong>Vintage 12-bit DAC</strong>-Emulation für eine rauere, an Hardware angelehnte Ausgangsstufe</li>
+                <li><strong>Voice Stack</strong> – bis zu 16× Unisono pro Note</li>
+            </ul>
+            <p>Die Pro-Funktionen arbeiten sowohl in der eigenständigen App als auch im AUv3-Plug-in. M2DX Pro freischalten – und <strong>Käufe wiederherstellen</strong> – im Bereich <strong>M2DX Pro</strong> in den Einstellungen. Die Freischaltung ist einmalig und unterstützt die Familienfreigabe.</p>
+
             <hr>
 
             <h2>Systemvoraussetzungen</h2>
@@ -378,7 +394,13 @@ body { display: flex; min-height: 100vh; }
             <p>Nein. Da M2DX automatisch auf MIDI 1.0 zurückfällt, funktioniert er problemlos mit klassischen MIDI-Controllern und DAWs. Mit MIDI 2.0-fähiger Hardware oder Software gewinnst du zusätzlich an Auflösung und Ausdruck.</p>
 
             <h3>Lässt sich M2DX als AUv3-Plug-in nutzen?</h3>
-            <p>Aktuell läuft M2DX als eigenständige App für iOS und iPadOS. Eine AUv3-Version ist in Überlegung.</p>
+            <p>Ja. M2DX enthält ein AUv3-Instrument-Plug-in („M2DX FM Synthesizer“), sodass du es in GarageBand, AUM, Logic Pro und anderen AUv3-Hosts spielen kannst. Die eigenständige App für iOS und iPadOS ist ebenfalls enthalten.</p>
+
+            <h3>Ist M2DX kostenlos? Was ist M2DX Pro?</h3>
+            <p>Die App ist kostenlos – inklusive AUv3-Plug-in und der vollständigen MIDI 2.0- / FM-Engine. <strong>M2DX Pro</strong> ist eine optionale einmalige Freischaltung, die TX816 LAYER, die Mark-I-Engine und den Vintage 12-bit DAC sowie bis zu 16× Voice Stack-Unisono ergänzt. Ein Abo gibt es nicht.</p>
+
+            <h3>Ich habe M2DX Pro freigeschaltet, aber die Funktionen erscheinen nicht</h3>
+            <p>Öffne <strong>Einstellungen → M2DX Pro</strong> und tippe auf <strong>Käufe wiederherstellen</strong>. Stelle außerdem sicher, dass du mit demselben Apple-Account angemeldet bist, mit dem du den Kauf getätigt hast. Die Pro-Freischaltung ist einmalig und unterstützt die Familienfreigabe.</p>
 
             <hr>
 

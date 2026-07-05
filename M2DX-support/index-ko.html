@@ -294,6 +294,7 @@ body { display: flex; min-height: 100vh; }
         <div class="content">
             <p>M2DX 지원 페이지에 오신 것을 환영합니다.</p>
             <p>M2DX는 MIDI 2.0을 지원하는 iOS용 DX7 호환 FM 신디사이저 앱입니다. 6 오퍼레이터 × 32 알고리즘이 만들어내는 클래식 FM 사운드를 Pure Swift 6로 완전히 재구현했습니다. 신디시스 엔진은 <a href="/M2DX-Core-support/index-ko">M2DX-Core</a> 라이브러리를 사용합니다.</p>
+            <p><em>1.7.1의 새로운 기능:</em> 새롭게 디자인한 앱 아이콘 — 도트 매트릭스 디스플레이를 갖춘 빈티지 FM 하드웨어 패널을 형상화했으며, iOS&nbsp;18용 다크 및 색조 변형도 포함합니다.</p>
 
             <hr>
 
@@ -352,6 +353,20 @@ body { display: flex; min-height: 100vh; }
 
             <h3>저지연</h3>
             <p>AVAudioSourceNode로 직접 렌더링하여 CoreAudio 렌더 콜백 위에서 FM 엔진을 구동합니다. 버퍼 큐잉 오버헤드를 제거하여 iOS의 IOBufferDuration (약 5ms)이 실질적인 지연 시간이 됩니다.</p>
+            <h3>AUv3 플러그인</h3>
+            <p>M2DX는 GarageBand, AUM, Logic Pro를 비롯한 다양한 AUv3 호스트에서 로드되는 AUv3 인스트루먼트 플러그인("M2DX FM Synthesizer")을 제공하며, 호스트 오토메이션은 NRPN으로 전달됩니다. 스탠드얼론 앱도 함께 포함되어 있습니다.</p>
+
+            <hr>
+
+            <h2>M2DX Pro</h2>
+            <p>위에서 설명한 모든 기능은 <strong>무료</strong>입니다. <strong>M2DX Pro</strong>는 선택 사항인 일회성 잠금 해제로 — 구독이 아닙니다 — 더 깊은 레이어링과 빈티지 사운드 엔진 옵션을 추가합니다:</p>
+            <ul>
+                <li><strong>TX816 LAYER</strong> — 음마다 최대 8개의 패치를 쌓고, 레이어드 스택을 저장 및 불러올 수 있습니다</li>
+                <li><strong>FM 엔진 선택</strong> — Modern 엔진과 Mark I 사이를 전환할 수 있으며, Mark I 뎁스 컨트롤(÷2–÷16)을 제공합니다</li>
+                <li><strong>Vintage 12-bit DAC</strong> 에뮬레이션으로 더 거칠고 하드웨어 느낌의 출력 스테이지를 구현합니다</li>
+                <li><strong>Voice Stack</strong> — 음마다 최대 16× 유니즌</li>
+            </ul>
+            <p>Pro 기능은 스탠드얼론 앱과 AUv3 플러그인 양쪽에서 모두 동작합니다. M2DX Pro 잠금 해제와 <strong>구입 복원</strong>은 설정의 <strong>M2DX Pro</strong> 섹션에서 할 수 있습니다. 잠금 해제는 일회성이며 가족 공유를 지원합니다.</p>
 
             <hr>
 
@@ -378,7 +393,13 @@ body { display: flex; min-height: 100vh; }
             <p>아니요. MIDI 1.0 폴백도 지원하므로 기존 MIDI 컨트롤러나 DAW에서도 사용하실 수 있습니다. MIDI 2.0 지원 환경에서는 더 높은 해상도의 표현이 가능해집니다.</p>
 
             <h3>AUv3 플러그인으로 사용할 수 있나요?</h3>
-            <p>현재는 스탠드얼론 iOS / iPadOS 앱입니다. AUv3 지원은 검토 중입니다.</p>
+            <p>네. M2DX에는 AUv3 인스트루먼트 플러그인("M2DX FM Synthesizer")이 포함되어 있어 GarageBand, AUM, Logic Pro를 비롯한 다양한 AUv3 호스트에서 연주할 수 있습니다. 스탠드얼론 iOS / iPadOS 앱도 함께 제공됩니다.</p>
+
+            <h3>M2DX는 무료인가요? M2DX Pro는 무엇인가요?</h3>
+            <p>앱은 무료이며 AUv3 플러그인과 완전한 MIDI 2.0 / FM 엔진을 모두 포함합니다. <strong>M2DX Pro</strong>는 선택 사항인 일회성 잠금 해제로 TX816 LAYER, Mark I 엔진, Vintage 12-bit DAC, 그리고 최대 16× Voice Stack 유니즌을 추가합니다. 구독은 없습니다.</p>
+
+            <h3>M2DX Pro를 잠금 해제했는데 기능이 나타나지 않아요</h3>
+            <p><strong>설정 → M2DX Pro</strong>를 열고 <strong>구입 복원</strong>을 탭한 뒤, 구입에 사용한 것과 동일한 Apple 계정으로 로그인되어 있는지 확인해 주세요. Pro 잠금 해제는 일회성이며 가족 공유를 지원합니다.</p>
 
             <hr>
 

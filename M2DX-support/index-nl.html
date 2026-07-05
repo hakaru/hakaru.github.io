@@ -294,6 +294,7 @@ body { display: flex; min-height: 100vh; }
         <div class="content">
             <p>Welkom op de supportpagina van M2DX.</p>
             <p>M2DX is een DX7-compatibele FM-synthesizer voor iOS met ondersteuning voor MIDI 2.0. De klassieke FM-klank van 6 operators en 32 algoritmes is volledig opnieuw geïmplementeerd in pure Swift 6. De synthesemotor draait op de bibliotheek <a href="/M2DX-Core-support/index-nl">M2DX-Core</a>.</p>
+            <p><em>Nieuw in 1.7.1:</em> een opnieuw ontworpen app-icoon — een vintage FM-hardwarepaneel met een dot-matrixdisplay, inclusief donkere en getinte varianten voor iOS&nbsp;18.</p>
 
             <hr>
 
@@ -353,6 +354,21 @@ body { display: flex; min-height: 100vh; }
             <h3>Lage latency</h3>
             <p>De FM-engine wordt rechtstreeks aangedreven door AVAudioSourceNode binnen de render-callback van CoreAudio. Doordat er geen overhead is van bufferqueues, valt de feitelijke latency samen met IOBufferDuration van iOS (circa 5 ms).</p>
 
+            <h3>AUv3-plug-in</h3>
+            <p>M2DX levert een AUv3-instrumentplug-in ("M2DX FM Synthesizer") die laadt in GarageBand, AUM, Logic Pro en andere AUv3-hosts, waarbij hostautomatisering via NRPN wordt gerouteerd. De standalone app is eveneens inbegrepen.</p>
+
+            <hr>
+
+            <h2>M2DX Pro</h2>
+            <p>Alles wat hierboven staat beschreven is <strong>gratis</strong>. <strong>M2DX Pro</strong> is een optionele eenmalige ontgrendeling — geen abonnement — die diepere layering en vintage geluidsmotoropties toevoegt:</p>
+            <ul>
+                <li><strong>TX816 LAYER</strong> — stapel tot 8 patches per noot, met bewaren &amp; oproepen van je gelaagde stacks</li>
+                <li><strong>Keuze uit FM-engines</strong> — schakel tussen de Modern-engine en Mark I, met dieptebesturing voor Mark I (÷2–÷16)</li>
+                <li><strong>Vintage 12-bit DAC</strong>-emulatie voor een ruwere, hardwareachtige uitgangstrap</li>
+                <li><strong>Voice Stack</strong> — tot 16× unisono per noot</li>
+            </ul>
+            <p>Pro-functies werken zowel in de standalone app als in de AUv3-plug-in. Ontgrendel M2DX Pro — en gebruik <strong>Herstel aankopen</strong> — in het gedeelte <strong>M2DX Pro</strong> in Instellingen. De ontgrendeling is eenmalig en ondersteunt Delen met gezin.</p>
+
             <hr>
 
             <h2>Systeemvereisten</h2>
@@ -378,7 +394,13 @@ body { display: flex; min-height: 100vh; }
             <p>Nee. Omdat M2DX automatisch terugvalt op MIDI 1.0, werkt het ook prima met je bestaande MIDI-controllers en DAW's. In een MIDI 2.0-omgeving krijg je daarbovenop een veel hogere expressieresolutie.</p>
 
             <h3>Is M2DX als AUv3-plug-in te gebruiken?</h3>
-            <p>Voorlopig is het een standalone iOS / iPadOS-app. Een AUv3-versie wordt overwogen.</p>
+            <p>Ja. M2DX bevat een AUv3-instrumentplug-in ("M2DX FM Synthesizer"), zodat je het kunt spelen in GarageBand, AUM, Logic Pro en andere AUv3-hosts. De standalone iOS / iPadOS-app is eveneens inbegrepen.</p>
+
+            <h3>Is M2DX gratis? Wat is M2DX Pro?</h3>
+            <p>De app is gratis, inclusief de AUv3-plug-in en de volledige MIDI 2.0 / FM-engine. <strong>M2DX Pro</strong> is een optionele eenmalige ontgrendeling die TX816 LAYER, de Mark I-engine en Vintage 12-bit DAC toevoegt, plus Voice Stack-unisono tot 16×. Er is geen abonnement.</p>
+
+            <h3>Ik heb M2DX Pro ontgrendeld, maar de functies verschijnen niet</h3>
+            <p>Open <strong>Instellingen → M2DX Pro</strong> en tik op <strong>Herstel aankopen</strong>, en zorg dat je bent ingelogd met dezelfde Apple Account waarmee je het hebt gekocht. De Pro-ontgrendeling is eenmalig en ondersteunt Delen met gezin.</p>
 
             <hr>
 

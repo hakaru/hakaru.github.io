@@ -294,6 +294,7 @@ body { display: flex; min-height: 100vh; }
         <div class="content">
             <p>歡迎來到 M2DX 支援頁面。</p>
             <p>M2DX 是一款支援 MIDI 2.0 的 iOS 平台 DX7 相容 FM 合成器應用程式。透過 6 組運算器搭配 32 種演算法，重現經典的 FM 音色，並以 Pure Swift 6 完整重新實作。合成引擎採用 <a href="/M2DX-Core-support/index-zh-Hant">M2DX-Core</a> 函式庫。</p>
+            <p><em>1.7.1 新功能：</em>全新設計的應用程式圖示 — 一個帶有點矩陣顯示器的復古 FM 硬體面板，並提供適用於 iOS&nbsp;18 的深色與著色變體。</p>
 
             <hr>
 
@@ -353,6 +354,21 @@ body { display: flex; min-height: 100vh; }
             <h3>低延遲</h3>
             <p>採用 AVAudioSourceNode 直接渲染，FM 引擎在 CoreAudio 渲染回呼上運作，省去緩衝佇列的額外開銷，實際延遲取決於 iOS 的 IOBufferDuration（約 5ms）。</p>
 
+            <h3>AUv3 外掛</h3>
+            <p>M2DX 隨附一個 AUv3 樂器外掛（「M2DX FM Synthesizer」），可於 GarageBand、AUM、Logic Pro 及其他 AUv3 宿主中載入，宿主自動化透過 NRPN 傳遞。獨立應用程式亦一併包含在內。</p>
+
+            <hr>
+
+            <h2>M2DX Pro</h2>
+            <p>以上所述的一切皆為<strong>免費</strong>。<strong>M2DX Pro</strong> 是選購的一次性解鎖項目 — 無訂閱制 — 可加入更深入的疊層與復古音源引擎選項：</p>
+            <ul>
+                <li><strong>TX816 LAYER</strong> — 每個音符最多可堆疊 8 個音色，並支援儲存與叫回您的疊層堆疊</li>
+                <li><strong>FM 引擎選擇</strong> — 可在 Modern 引擎與 Mark I 之間切換，並提供 Mark I 深度控制（÷2–÷16）</li>
+                <li><strong>Vintage 12-bit DAC</strong> 模擬，帶來更具顆粒感、富硬體風味的輸出級</li>
+                <li><strong>Voice Stack</strong> — 每個音符最多 16× 齊奏</li>
+            </ul>
+            <p>Pro 功能在獨立應用程式與 AUv3 外掛中皆可使用。您可在設定的 <strong>M2DX Pro</strong> 區塊解鎖 M2DX Pro，並使用<strong>回復購買項目</strong>。此解鎖為一次性，並支援家人共享。</p>
+
             <hr>
 
             <h2>系統需求</h2>
@@ -378,7 +394,13 @@ body { display: flex; min-height: 100vh; }
             <p>不需要。由於可向下相容 MIDI 1.0，您仍可搭配傳統的 MIDI 控制器或 DAW 使用。在支援 MIDI 2.0 的環境下，則能享有更高解析度的演奏表現。</p>
 
             <h3>可以作為 AUv3 外掛使用嗎？</h3>
-            <p>目前僅為獨立的 iOS / iPadOS 應用程式。AUv3 支援目前正在評估中。</p>
+            <p>可以。M2DX 內建一個 AUv3 樂器外掛（「M2DX FM Synthesizer」），因此您可以在 GarageBand、AUM、Logic Pro 及其他 AUv3 宿主中演奏它。獨立的 iOS / iPadOS 應用程式亦一併包含在內。</p>
+
+            <h3>M2DX 是免費的嗎？M2DX Pro 是什麼？</h3>
+            <p>本應用程式為免費，包含 AUv3 外掛以及完整的 MIDI 2.0 / FM 引擎。<strong>M2DX Pro</strong> 是選購的一次性解鎖項目，可加入 TX816 LAYER、Mark I 引擎與 Vintage 12-bit DAC，以及最多 16× 的 Voice Stack 齊奏。並無訂閱制。</p>
+
+            <h3>我已解鎖 M2DX Pro，但功能沒有出現</h3>
+            <p>請開啟<strong>設定 → M2DX Pro</strong> 並點選<strong>回復購買項目</strong>，並確認您登入的是購買時所使用的同一個 Apple 帳號。Pro 解鎖為一次性，並支援家人共享。</p>
 
             <hr>
 
