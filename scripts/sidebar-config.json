@@ -1,5 +1,17 @@
 [
   {
+    "id": "P73",
+    "name": "P73",
+    "icon": "/assets/p73-icon.png",
+    "prefix": "/P73-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/P73-support/" },
+        { "label": "Privacy", "href": "/P73-support/privacy" }
+      ]
+    }
+  },
+  {
     "id": "1Take",
     "name": "1Take",
     "icon": "/1Take-support/assets/app-icon.png",

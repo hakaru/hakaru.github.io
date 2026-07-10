@@ -1,4 +1,6 @@
 # Case-sensitive URL redirects (lowercase -> correct case)
+/p73-support/*                 /P73-support/:splat                301
+/p73-support                   /P73-support/                      301
 /1take-support/*              /1Take-support/:splat              301
 /1take-support                /1Take-support/                    301
 /chatarchive-support/*        /ChatArchive-support/:splat        301
