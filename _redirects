@@ -19,3 +19,15 @@
 /tinemodeler-support          /TineModeler-support/              301
 /eraverb-support/*            /EraVerb-support/:splat            301
 /eraverb-support              /EraVerb-support/                   301
+/m2dx-support/*               /M2DX-support/:splat               301
+/m2dx-support                 /M2DX-support/                     301
+/m2mx12-support/*             /M2MX12-support/:splat             301
+/m2mx12-support               /M2MX12-support/                   301
+/1takepro-support/*           /1TakePro-support/:splat           301
+/1takepro-support             /1TakePro-support/                 301
+/macslowcooker-support/*      /MacSlowCooker-support/:splat      301
+/macslowcooker-support        /MacSlowCooker-support/            301
+/macslowcookerplate-support/* /MacSlowCookerPlate-support/:splat 301
+/macslowcookerplate-support   /MacSlowCookerPlate-support/       301
+/peerclockmetronome-support/* /PeerClockMetronome-support/:splat 301
+/peerclockmetronome-support   /PeerClockMetronome-support/       301
