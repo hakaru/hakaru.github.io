@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M2MX12 Supporto | hakaru</title>
+    <meta name="description" content="Pagina di supporto di M2MX12. Sintetizzatore polifonico a 12 voci con modellazione analogica (standalone + AUv3) per iPhone e iPad — doppio VCO, filtro pole-mixing a 15 modalità, Voice Stack, MIDI 2.0.">
+    <meta property="og:title" content="M2MX12 Supporto">
+    <meta property="og:description" content="Pagina di supporto di M2MX12. Sintetizzatore polifonico a 12 voci con modellazione analogica (standalone + AUv3) per iPhone e iPad — doppio VCO, filtro pole-mixing a 15 modalità, Voice Stack, MIDI 2.0.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2MX12-support/index-it">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff9a2e, #ffc478);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #ff9a2e; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #ff9a2e; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+    <link rel="canonical" href="https://hakaru.net/M2MX12-support/index-it">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2MX12-support/index-de">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2MX12-support/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2MX12-support/index-es">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2MX12-support/index-fr">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2MX12-support/index-it">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2MX12-support/index-ja">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2MX12-support/index-ko">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2MX12-support/index-nl">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2MX12-support/index-pt-BR">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2MX12-support/index-sv">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2MX12-support/index-zh-Hant">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2MX12-support/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2MX12-support/index-it" class="active">Supporto</a>
+      <a href="/M2MX12-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-it">Supporto</a>
+      <a href="/EraVerb-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-it">Supporto</a>
+      <a href="/P73-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-it">Supporto</a>
+      <a href="/M2DX-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-it">Supporto</a>
+      <a href="/PeerClockMetronome-support/blog/it/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-it">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-it">Supporto</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2MX12-support/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2MX12-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2MX12-support/index-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2MX12-support/index-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2MX12-support/index-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <span class="sidebar-lang-btn active" data-lang="it">IT</span>
+    <a href="/M2MX12-support/index-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2MX12-support/index-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2MX12-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2MX12-support/index-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2MX12-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img class="hero-icon" src="/assets/m2mx12-icon.png" alt="M2MX12 icon">
+            <h1>M2MX12</h1>
+            <p>Sintetizzatore polifonico a 12 voci con modellazione analogica</p>
+        </div>
+
+        <div class="content">
+            <p>Benvenuto nella pagina di supporto di M2MX12.</p>
+            <p>M2MX12 è un sintetizzatore polifonico a 12 voci con modellazione analogica per iPhone e iPad, ispirato all'architettura di filtro pole-mixing dei leggendari polysynth a matrice della metà degli anni '80. Funziona come app standalone con tastiera touch integrata e come strumento Audio Unit AUv3 in GarageBand, AUM e altri host AUv3 — con ingresso MIDI 2.0 nativo ovunque.</p>
+
+            <hr>
+
+            <h2>Caratteristiche</h2>
+
+            <h3>Due oscillatori per voce</h3>
+            <p>Onde a dente di sega, impulso (con PWM) e triangolo band-limited, detune, hard sync, FM lineare VCO2&rarr;VCO1 valutata per campione e key tracking.</p>
+
+            <h3>Filtro pole-mixing a 15 modalità</h3>
+            <p>Un filtro ladder zero-delay-feedback a quattro stadi, le cui uscite dei singoli poli vengono miscelate in 15 risposte — passa-basso da 1 a 4 poli, passa-alto, passa-banda, notch e modalità phase — oltre alla saturazione del filter drive e alla compensazione del volume alla risonanza.</p>
+
+            <h3>Modulazione profonda</h3>
+            <p>Cinque inviluppi DADSR, cinque LFO (sei forme d'onda più sample &amp; hold, con retrigger, lag e controllo dell'ampiezza), una sezione vibrato dedicata e un portamento con curve a velocità costante / tempo costante, modalità legato e pieno supporto polifonico.</p>
+
+            <h3>Voice Stack</h3>
+            <p>Polifonia a 12 note con fino a 16 voci sovrapposte per nota, detune dello stack, spread del pan a potenza costante e una modalità mono UNISON per lead e bassi imponenti.</p>
+
+            <h3>Carattere analogico</h3>
+            <p>Deriva di intonazione per voce, varianza dei componenti per voce (cutoff del filtro e tempi degli inviluppi), velocity-to-cutoff e una tastiera touch umanizzata. Tutte le opzioni di carattere sono <strong>disattivate</strong> per impostazione predefinita, così i patch restano puliti finché non decidi tu quanto vintage dosare.</p>
+
+            <h3>MIDI 2.0</h3>
+            <p>Ingresso MIDI 2.0 (UMP) nativo con velocity, aftertouch e mod wheel ad alta risoluzione. Anche le tastiere e le interfacce MIDI 1.0 funzionano senza problemi.</p>
+
+            <h3>Plug-in AUv3</h3>
+            <p>Usa M2MX12 come strumento Audio Unit in qualsiasi host compatibile AUv3, con timing MIDI sample-accurate, automazione dei parametri dall'host e salvataggio/ripristino completo dello stato nei tuoi progetti.</p>
+
+            <h3>70 preset di fabbrica</h3>
+            <p>Preset di fabbrica organizzati per categoria, più il salvataggio dei preset utente. I tuoi preset sono condivisi tra l'app standalone e il plug-in AUv3 sullo stesso dispositivo.</p>
+
+            <hr>
+
+            <h2>Requisiti di sistema</h2>
+            <ul>
+                <li><strong>iOS / iPadOS 18 o successivi</strong> (iPhone e iPad)</li>
+                <li>Funziona in standalone con la tastiera touch integrata, oppure come strumento AUv3 in un host come GarageBand, AUM o Cubasis</li>
+            </ul>
+
+            <hr>
+
+            <h2>Domande frequenti</h2>
+
+            <h3>Come si usa M2MX12 in GarageBand o AUM?</h3>
+            <p>Crea una traccia strumento e scegli Estensioni Audio Unit &gt; <strong>M2MX12</strong> come sorgente sonora. Lo stesso vale per AUM, Cubasis e gli altri host AUv3.</p>
+
+            <h3>I preset si sincronizzano tra l'app standalone e il plug-in AUv3?</h3>
+            <p>Sì — sullo stesso dispositivo, i preset utente vengono condivisi automaticamente tra l'app standalone e l'estensione AUv3. Sono salvati in locale e non lasciano mai il tuo dispositivo.</p>
+
+            <h3>Posso suonarlo con una tastiera MIDI?</h3>
+            <p>Sì. Collega qualsiasi tastiera o interfaccia compatibile Core MIDI. M2MX12 accetta nativamente il MIDI 2.0 (UMP) per un'espressività ad alta risoluzione, e i dispositivi MIDI 1.0 standard funzionano altrettanto bene.</p>
+
+            <h3>Perché i preset suonano perfettamente puliti, senza alcuna deriva analogica?</h3>
+            <p>Le opzioni di Carattere analogico (deriva di intonazione, varianza delle voci, velocity-to-cutoff) sono disattivate per impostazione predefinita, così ogni preset suona identico su ogni dispositivo. Attivale nell'app per aggiungere instabilità vintage a piacere.</p>
+
+            <h3>M2MX12 raccoglie dati?</h3>
+            <p>No. M2MX12 non raccoglie, trasmette né memorizza alcun dato personale. Per i dettagli consulta la <a href="/M2MX12-support/privacy-it">Privacy Policy</a>.</p>
+
+            <hr>
+
+            <h2>Link</h2>
+            <ul>
+                <li><a href="/M2MX12-support/privacy-it">Privacy Policy</a></li>
+            </ul>
+
+            <hr>
+
+            <h2>Contatti</h2>
+            <p>Per domande, segnalazioni di bug o richieste di nuove funzionalità, scrivici pure all'indirizzo:<br>
+            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">Informativa ai sensi della legge giapponese sulle transazioni commerciali</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contatti</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var activeLangButton = document.querySelector('.sidebar-lang-btn.active');
+    var pageLang = activeLangButton ? activeLangButton.dataset.lang : 'en';
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) {
+            return 'zh-Hant';
+        }
+        if (navLang.startsWith('th')) return 'th';
+        return 'en';
+    }
+
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    // Accordion
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            // Collapse all
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            // Toggle clicked
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    // Auto-expand current app
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    // Mobile toggle
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    // Language switch saves preference
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

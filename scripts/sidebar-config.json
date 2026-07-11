@@ -14,6 +14,106 @@
           "label": "Privacy",
           "href": "/M2MX12-support/privacy"
         }
+      ],
+      "ja": [
+        {
+          "label": "サポート",
+          "href": "/M2MX12-support/index-ja"
+        },
+        {
+          "label": "プライバシー",
+          "href": "/M2MX12-support/privacy-ja"
+        }
+      ],
+      "de": [
+        {
+          "label": "Support",
+          "href": "/M2MX12-support/index-de"
+        },
+        {
+          "label": "Datenschutz",
+          "href": "/M2MX12-support/privacy-de"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte",
+          "href": "/M2MX12-support/index-es"
+        },
+        {
+          "label": "Privacidad",
+          "href": "/M2MX12-support/privacy-es"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Support",
+          "href": "/M2MX12-support/index-fr"
+        },
+        {
+          "label": "Confidentialité",
+          "href": "/M2MX12-support/privacy-fr"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto",
+          "href": "/M2MX12-support/index-it"
+        },
+        {
+          "label": "Privacy",
+          "href": "/M2MX12-support/privacy-it"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원",
+          "href": "/M2MX12-support/index-ko"
+        },
+        {
+          "label": "개인정보",
+          "href": "/M2MX12-support/privacy-ko"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Support",
+          "href": "/M2MX12-support/index-nl"
+        },
+        {
+          "label": "Privacy",
+          "href": "/M2MX12-support/privacy-nl"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte",
+          "href": "/M2MX12-support/index-pt-BR"
+        },
+        {
+          "label": "Privacidade",
+          "href": "/M2MX12-support/privacy-pt-BR"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support",
+          "href": "/M2MX12-support/index-sv"
+        },
+        {
+          "label": "Integritet",
+          "href": "/M2MX12-support/privacy-sv"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援",
+          "href": "/M2MX12-support/index-zh-Hant"
+        },
+        {
+          "label": "隱私",
+          "href": "/M2MX12-support/privacy-zh-Hant"
+        }
       ]
     }
   },
@@ -32,6 +132,106 @@
           "label": "Privacy",
           "href": "/EraVerb-support/privacy"
         }
+      ],
+      "ja": [
+        {
+          "label": "サポート",
+          "href": "/EraVerb-support/index-ja"
+        },
+        {
+          "label": "プライバシー",
+          "href": "/EraVerb-support/privacy-ja"
+        }
+      ],
+      "de": [
+        {
+          "label": "Support",
+          "href": "/EraVerb-support/index-de"
+        },
+        {
+          "label": "Datenschutz",
+          "href": "/EraVerb-support/privacy-de"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte",
+          "href": "/EraVerb-support/index-es"
+        },
+        {
+          "label": "Privacidad",
+          "href": "/EraVerb-support/privacy-es"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Support",
+          "href": "/EraVerb-support/index-fr"
+        },
+        {
+          "label": "Confidentialité",
+          "href": "/EraVerb-support/privacy-fr"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto",
+          "href": "/EraVerb-support/index-it"
+        },
+        {
+          "label": "Privacy",
+          "href": "/EraVerb-support/privacy-it"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원",
+          "href": "/EraVerb-support/index-ko"
+        },
+        {
+          "label": "개인정보",
+          "href": "/EraVerb-support/privacy-ko"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Support",
+          "href": "/EraVerb-support/index-nl"
+        },
+        {
+          "label": "Privacy",
+          "href": "/EraVerb-support/privacy-nl"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte",
+          "href": "/EraVerb-support/index-pt-BR"
+        },
+        {
+          "label": "Privacidade",
+          "href": "/EraVerb-support/privacy-pt-BR"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support",
+          "href": "/EraVerb-support/index-sv"
+        },
+        {
+          "label": "Integritet",
+          "href": "/EraVerb-support/privacy-sv"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援",
+          "href": "/EraVerb-support/index-zh-Hant"
+        },
+        {
+          "label": "隱私",
+          "href": "/EraVerb-support/privacy-zh-Hant"
+        }
       ]
     }
   },
@@ -49,6 +249,106 @@
         {
           "label": "Privacy",
           "href": "/P73-support/privacy"
+        }
+      ],
+      "ja": [
+        {
+          "label": "サポート",
+          "href": "/P73-support/index-ja"
+        },
+        {
+          "label": "プライバシー",
+          "href": "/P73-support/privacy-ja"
+        }
+      ],
+      "de": [
+        {
+          "label": "Support",
+          "href": "/P73-support/index-de"
+        },
+        {
+          "label": "Datenschutz",
+          "href": "/P73-support/privacy-de"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte",
+          "href": "/P73-support/index-es"
+        },
+        {
+          "label": "Privacidad",
+          "href": "/P73-support/privacy-es"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Support",
+          "href": "/P73-support/index-fr"
+        },
+        {
+          "label": "Confidentialité",
+          "href": "/P73-support/privacy-fr"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto",
+          "href": "/P73-support/index-it"
+        },
+        {
+          "label": "Privacy",
+          "href": "/P73-support/privacy-it"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원",
+          "href": "/P73-support/index-ko"
+        },
+        {
+          "label": "개인정보",
+          "href": "/P73-support/privacy-ko"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Support",
+          "href": "/P73-support/index-nl"
+        },
+        {
+          "label": "Privacy",
+          "href": "/P73-support/privacy-nl"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte",
+          "href": "/P73-support/index-pt-BR"
+        },
+        {
+          "label": "Privacidade",
+          "href": "/P73-support/privacy-pt-BR"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support",
+          "href": "/P73-support/index-sv"
+        },
+        {
+          "label": "Integritet",
+          "href": "/P73-support/privacy-sv"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援",
+          "href": "/P73-support/index-zh-Hant"
+        },
+        {
+          "label": "隱私",
+          "href": "/P73-support/privacy-zh-Hant"
         }
       ]
     }

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EraVerb Support | hakaru</title>
+    <meta name="description" content="Page de support d'EraVerb. Réverbération numérique vintage multi-moteurs (AUv3 + standalone) pour macOS et iOS — six machines de 1978 à 1999.">
+    <meta property="og:title" content="EraVerb Support">
+    <meta property="og:description" content="Page de support d'EraVerb. Réverbération numérique vintage multi-moteurs (AUv3 + standalone) pour macOS et iOS — six machines de 1978 à 1999.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/EraVerb-support/index-fr">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #59ff80, #a8ffb8);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #59ff80; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #59ff80; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+    <link rel="canonical" href="https://hakaru.net/EraVerb-support/index-fr">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/EraVerb-support/index-de">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/EraVerb-support/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/EraVerb-support/index-es">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/EraVerb-support/index-fr">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/EraVerb-support/index-it">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/EraVerb-support/index-ja">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/EraVerb-support/index-ko">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/EraVerb-support/index-nl">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/EraVerb-support/index-pt-BR">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/EraVerb-support/index-sv">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/EraVerb-support/index-zh-Hant">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/EraVerb-support/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-fr">Support</a>
+      <a href="/M2MX12-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/EraVerb-support/index-fr" class="active">Support</a>
+      <a href="/EraVerb-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-fr">Support</a>
+      <a href="/P73-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-fr">Support</a>
+      <a href="/M2DX-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-fr">Support</a>
+      <a href="/PeerClockMetronome-support/blog/fr/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-fr">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/EraVerb-support/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/EraVerb-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/EraVerb-support/index-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/EraVerb-support/index-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <span class="sidebar-lang-btn active" data-lang="fr">FR</span>
+    <a href="/EraVerb-support/index-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/EraVerb-support/index-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/EraVerb-support/index-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/EraVerb-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/EraVerb-support/index-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/EraVerb-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+    <div class="container">
+
+        <div class="hero">
+            <img class="hero-icon" src="/assets/eraverb-icon.png" alt="EraVerb icon">
+            <h1>EraVerb</h1>
+            <p>Rack de réverbération numérique vintage</p>
+        </div>
+
+        <div class="content">
+            <p>Bienvenue sur la page de support d'EraVerb.</p>
+            <p>EraVerb est une réverbération numérique multi-moteurs pour Mac, iPhone et iPad qui fait revivre six époques de matériel de studio classique — des halls somptueux de 1978 au miroitement numérique cristallin de 1999. Elle fonctionne comme effet Audio Unit AUv3 dans n'importe quel hôte (GarageBand, Logic Pro, AUM, Cubasis, etc.) et comme app standalone, et le panneau façon rack change de visage à chaque machine sélectionnée.</p>
+
+            <hr>
+
+            <h2>Caractéristiques</h2>
+
+            <h3>Six machines, six époques</h3>
+            <p>HALL '78, HALL '86, PLATE, NONLIN (gated / reverse), LO-FI '86 (12 bits / 24&nbsp;kHz) et HALL '99 — chacune rend hommage au son et au look de son époque, jusqu'à la couleur du panneau, au style d'affichage et aux vumètres.</p>
+
+            <h3>Des presets fidèles à chaque époque</h3>
+            <p>48 presets d'usine, organisés par machine et prêts à jouer.</p>
+
+            <h3>Un panneau rack à manipuler</h3>
+            <p>Huit contrôles communs (Mix, Decay, Pre-Delay, Size, Damp, Low&nbsp;Cut, Mod, Width) plus des paramètres propres à chaque machine, disposés comme sur le matériel.</p>
+
+            <h3>Plug-in AUv3</h3>
+            <p>Automation complète des paramètres et sauvegarde/restauration de l'état dans tout hôte compatible AUv3.</p>
+
+            <h3>App standalone avec entrée live</h3>
+            <p>Un signal de test intégré vous permet d'écouter la réverbération immédiatement, ou passez en Live Input pour faire passer un microphone ou une interface audio dans le rack.</p>
+
+            <h3>Bypass « soft tail »</h3>
+            <p>Comme sur le matériel d'origine, la queue de réverbération s'éteint naturellement lors du bypass au lieu d'être coupée brutalement.</p>
+
+            <hr>
+
+            <h2>Configuration requise</h2>
+            <ul>
+                <li><strong>macOS 13+</strong> ou <strong>iOS / iPadOS 16+</strong></li>
+                <li>Un hôte compatible AUv3 (GarageBand, Logic Pro, AUM, etc.), ou utilisez l'app standalone incluse</li>
+                <li>Achat universel — achetez une fois, utilisez sur les deux plateformes</li>
+            </ul>
+
+            <hr>
+
+            <h2>Foire aux questions</h2>
+
+            <h3>Comment utiliser EraVerb dans GarageBand ou Logic Pro ?</h3>
+            <p>Ajoutez un effet audio à une piste et choisissez Extensions Audio Unit &gt; <strong>Hakaru: EraVerb</strong>. La même méthode fonctionne dans AUM, Cubasis et les autres hôtes AUv3.</p>
+
+            <h3>Comment entendre la réverbération dans l'app standalone ?</h3>
+            <p>Lancez simplement l'app — un signal de test intégré est joué à travers la réverbération. Tournez les potentiomètres ou appuyez sur les boutons de machine (78 / 86 / PL / NL / LF / 99) pour changer le son.</p>
+
+            <h3>Comment fonctionne le Live Input ?</h3>
+            <p>Basculez le contrôle d'entrée de Test Tone vers <strong>Live Input</strong> pour traiter votre microphone ou votre interface audio en temps réel. iOS demande alors l'autorisation d'accéder au microphone. Nous recommandons vivement d'utiliser un casque — envoyer un microphone dans une réverbération diffusée par des haut-parleurs peut provoquer un effet de larsen.</p>
+
+            <h3>La réverbération continue de sonner après un appui sur le bouton d'alimentation. Est-ce un bug ?</h3>
+            <p>Non — c'est le bypass « soft tail ». La queue s'éteint naturellement lors du bypass, exactement comme sur le matériel classique.</p>
+
+            <h3>EraVerb collecte-t-il des données ?</h3>
+            <p>Non. EraVerb ne collecte, ne transmet et ne stocke aucune donnée personnelle. Consultez la <a href="/EraVerb-support/privacy-fr">politique de confidentialité</a> pour plus de détails.</p>
+
+            <hr>
+
+            <h2>Liens</h2>
+            <ul>
+                <li><a href="/EraVerb-support/privacy-fr">Politique de confidentialité</a></li>
+            </ul>
+
+            <hr>
+
+            <h2>Contact</h2>
+            <p>Pour toute question, rapport de bug ou suggestion de fonctionnalité, écrivez-nous à :<br>
+            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">Mentions légales (loi japonaise sur les transactions commerciales)</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var activeLangButton = document.querySelector('.sidebar-lang-btn.active');
+    var pageLang = activeLangButton ? activeLangButton.dataset.lang : 'en';
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) {
+            return 'zh-Hant';
+        }
+        if (navLang.startsWith('th')) return 'th';
+        return 'en';
+    }
+
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    // Accordion
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            // Collapse all
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            // Toggle clicked
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    // Auto-expand current app
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    // Mobile toggle
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    // Language switch saves preference
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>
