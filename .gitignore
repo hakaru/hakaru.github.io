@@ -3,3 +3,10 @@
 
 # Brainstorming visual-companion working dir
 .superpowers/
+
+# Local build/deploy artifacts (Docusaurus pilot leftovers, wrangler cache)
+/dist/
+/M2DX-docs-src/build/
+/M2DX-docs-src/node_modules/
+/M2DX-docs-src/.docusaurus/
+/.wrangler/
