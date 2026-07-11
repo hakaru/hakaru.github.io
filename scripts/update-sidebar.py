@@ -15,6 +15,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 TARGET_DIRS = [
+    "M2MX12-support",
     "EraVerb-support",
     "P73-support",
     "1Take-support",

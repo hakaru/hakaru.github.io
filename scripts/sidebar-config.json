@@ -1,5 +1,23 @@
 [
   {
+    "id": "M2MX12",
+    "name": "M2MX12",
+    "icon": "/assets/m2mx12-icon.png",
+    "prefix": "/M2MX12-support",
+    "links": {
+      "en": [
+        {
+          "label": "Support",
+          "href": "/M2MX12-support/"
+        },
+        {
+          "label": "Privacy",
+          "href": "/M2MX12-support/privacy"
+        }
+      ]
+    }
+  },
+  {
     "id": "EraVerb",
     "name": "EraVerb",
     "icon": "/assets/eraverb-icon.png",

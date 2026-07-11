@@ -10,3 +10,6 @@
 /M2DX-docs-src/node_modules/
 /M2DX-docs-src/.docusaurus/
 /.wrangler/
+
+# Project instructions for Claude Code (kept local, not published)
+/CLAUDE.md
