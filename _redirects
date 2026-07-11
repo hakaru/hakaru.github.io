@@ -17,3 +17,5 @@
 /sonicdnaengine-support       /SonicDNAEngine-support/           301
 /tinemodeler-support/*        /TineModeler-support/:splat        301
 /tinemodeler-support          /TineModeler-support/              301
+/eraverb-support/*            /EraVerb-support/:splat            301
+/eraverb-support              /EraVerb-support/                   301
