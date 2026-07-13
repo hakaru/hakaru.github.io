@@ -18,6 +18,7 @@ TARGET_DIRS = [
     "M2MX12-support",
     "EraVerb-support",
     "P73-support",
+    "TwinFET-support",
     "1Take-support",
     "GitInflow-support",
     "SonicDNACollector-support",

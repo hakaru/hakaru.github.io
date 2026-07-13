@@ -354,6 +354,124 @@
     }
   },
   {
+    "id": "TwinFET",
+    "name": "TwinFET",
+    "icon": "/assets/twinfet-icon.png",
+    "prefix": "/TwinFET-support",
+    "links": {
+      "en": [
+        {
+          "label": "Support",
+          "href": "/TwinFET-support/"
+        },
+        {
+          "label": "Privacy",
+          "href": "/TwinFET-support/privacy"
+        }
+      ],
+      "ja": [
+        {
+          "label": "サポート",
+          "href": "/TwinFET-support/index-ja"
+        },
+        {
+          "label": "プライバシー",
+          "href": "/TwinFET-support/privacy-ja"
+        }
+      ],
+      "de": [
+        {
+          "label": "Support",
+          "href": "/TwinFET-support/index-de"
+        },
+        {
+          "label": "Datenschutz",
+          "href": "/TwinFET-support/privacy-de"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte",
+          "href": "/TwinFET-support/index-es"
+        },
+        {
+          "label": "Privacidad",
+          "href": "/TwinFET-support/privacy-es"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Support",
+          "href": "/TwinFET-support/index-fr"
+        },
+        {
+          "label": "Confidentialité",
+          "href": "/TwinFET-support/privacy-fr"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto",
+          "href": "/TwinFET-support/index-it"
+        },
+        {
+          "label": "Privacy",
+          "href": "/TwinFET-support/privacy-it"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원",
+          "href": "/TwinFET-support/index-ko"
+        },
+        {
+          "label": "개인정보",
+          "href": "/TwinFET-support/privacy-ko"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Support",
+          "href": "/TwinFET-support/index-nl"
+        },
+        {
+          "label": "Privacy",
+          "href": "/TwinFET-support/privacy-nl"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte",
+          "href": "/TwinFET-support/index-pt-BR"
+        },
+        {
+          "label": "Privacidade",
+          "href": "/TwinFET-support/privacy-pt-BR"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support",
+          "href": "/TwinFET-support/index-sv"
+        },
+        {
+          "label": "Integritet",
+          "href": "/TwinFET-support/privacy-sv"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援",
+          "href": "/TwinFET-support/index-zh-Hant"
+        },
+        {
+          "label": "隱私",
+          "href": "/TwinFET-support/privacy-zh-Hant"
+        }
+      ]
+    }
+  },
+  {
     "id": "1Take",
     "name": "1Take",
     "icon": "/1Take-support/assets/app-icon.png",
