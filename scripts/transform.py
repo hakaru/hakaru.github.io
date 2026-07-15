@@ -15,6 +15,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 TARGET_DIRS = [
+    "AnalogRhythmKing-support",
     "TwinFET-support",
     "1Take-support",
     "GitInflow-support",

@@ -1,5 +1,57 @@
 [
   {
+    "id": "AnalogRhythmKing",
+    "name": "AnalogRhythmKing",
+    "icon": "/assets/analog-rhythm-king-icon.png",
+    "prefix": "/AnalogRhythmKing-support",
+    "links": {
+      "en": [
+        { "label": "Support", "href": "/AnalogRhythmKing-support/" },
+        { "label": "Privacy", "href": "/AnalogRhythmKing-support/privacy" }
+      ],
+      "ja": [
+        { "label": "サポート", "href": "/AnalogRhythmKing-support/index-ja" },
+        { "label": "プライバシー", "href": "/AnalogRhythmKing-support/privacy-ja" }
+      ],
+      "de": [
+        { "label": "Support", "href": "/AnalogRhythmKing-support/index-de" },
+        { "label": "Datenschutz", "href": "/AnalogRhythmKing-support/privacy-de" }
+      ],
+      "es": [
+        { "label": "Soporte", "href": "/AnalogRhythmKing-support/index-es" },
+        { "label": "Privacidad", "href": "/AnalogRhythmKing-support/privacy-es" }
+      ],
+      "fr": [
+        { "label": "Assistance", "href": "/AnalogRhythmKing-support/index-fr" },
+        { "label": "Confidentialité", "href": "/AnalogRhythmKing-support/privacy-fr" }
+      ],
+      "it": [
+        { "label": "Supporto", "href": "/AnalogRhythmKing-support/index-it" },
+        { "label": "Privacy", "href": "/AnalogRhythmKing-support/privacy-it" }
+      ],
+      "ko": [
+        { "label": "지원", "href": "/AnalogRhythmKing-support/index-ko" },
+        { "label": "개인정보", "href": "/AnalogRhythmKing-support/privacy-ko" }
+      ],
+      "nl": [
+        { "label": "Support", "href": "/AnalogRhythmKing-support/index-nl" },
+        { "label": "Privacy", "href": "/AnalogRhythmKing-support/privacy-nl" }
+      ],
+      "pt-BR": [
+        { "label": "Suporte", "href": "/AnalogRhythmKing-support/index-pt-BR" },
+        { "label": "Privacidade", "href": "/AnalogRhythmKing-support/privacy-pt-BR" }
+      ],
+      "sv": [
+        { "label": "Support", "href": "/AnalogRhythmKing-support/index-sv" },
+        { "label": "Integritet", "href": "/AnalogRhythmKing-support/privacy-sv" }
+      ],
+      "zh-Hant": [
+        { "label": "支援", "href": "/AnalogRhythmKing-support/index-zh-Hant" },
+        { "label": "隱私", "href": "/AnalogRhythmKing-support/privacy-zh-Hant" }
+      ]
+    }
+  },
+  {
     "id": "M2MX12",
     "name": "M2MX12",
     "icon": "/assets/m2mx12-icon.png",
