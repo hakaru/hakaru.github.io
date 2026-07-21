@@ -16,6 +16,7 @@ REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 TARGET_DIRS = [
     "BopBot-support",
+    "AnalogRhythmKing-support",
     "M2MX12-support",
     "EraVerb-support",
     "P73-support",
