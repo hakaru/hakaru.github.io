@@ -31,3 +31,5 @@
 /macslowcookerplate-support   /MacSlowCookerPlate-support/       301
 /peerclockmetronome-support/* /PeerClockMetronome-support/:splat 301
 /peerclockmetronome-support   /PeerClockMetronome-support/       301
+/bopbot-support/*             /BopBot-support/:splat             301
+/bopbot-support               /BopBot-support/                   301
