@@ -1379,6 +1379,10 @@
           "href": "/BopBot-support/"
         },
         {
+          "label": "Manual",
+          "href": "/BopBot-support/manual/en/"
+        },
+        {
           "label": "Privacy",
           "href": "/BopBot-support/privacy"
         }
@@ -1387,6 +1391,10 @@
         {
           "label": "サポート",
           "href": "/BopBot-support/index-ja"
+        },
+        {
+          "label": "マニュアル",
+          "href": "/BopBot-support/manual/ja/"
         },
         {
           "label": "プライバシー",
@@ -1399,6 +1407,10 @@
           "href": "/BopBot-support/index-de"
         },
         {
+          "label": "Handbuch",
+          "href": "/BopBot-support/manual/de/"
+        },
+        {
           "label": "Datenschutz",
           "href": "/BopBot-support/privacy-de"
         }
@@ -1407,6 +1419,10 @@
         {
           "label": "Soporte",
           "href": "/BopBot-support/index-es"
+        },
+        {
+          "label": "Manual",
+          "href": "/BopBot-support/manual/es/"
         },
         {
           "label": "Privacidad",
@@ -1419,6 +1435,10 @@
           "href": "/BopBot-support/index-fr"
         },
         {
+          "label": "Manuel",
+          "href": "/BopBot-support/manual/fr/"
+        },
+        {
           "label": "Confidentialité",
           "href": "/BopBot-support/privacy-fr"
         }
@@ -1427,6 +1447,10 @@
         {
           "label": "Supporto",
           "href": "/BopBot-support/index-it"
+        },
+        {
+          "label": "Manuale",
+          "href": "/BopBot-support/manual/it/"
         },
         {
           "label": "Privacy",
@@ -1439,6 +1463,10 @@
           "href": "/BopBot-support/index-ko"
         },
         {
+          "label": "매뉴얼",
+          "href": "/BopBot-support/manual/ko/"
+        },
+        {
           "label": "개인정보",
           "href": "/BopBot-support/privacy-ko"
         }
@@ -1447,6 +1475,10 @@
         {
           "label": "Support",
           "href": "/BopBot-support/index-nl"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/BopBot-support/manual/nl/"
         },
         {
           "label": "Privacy",
@@ -1459,6 +1491,10 @@
           "href": "/BopBot-support/index-pt-BR"
         },
         {
+          "label": "Manual",
+          "href": "/BopBot-support/manual/pt-BR/"
+        },
+        {
           "label": "Privacidade",
           "href": "/BopBot-support/privacy-pt-BR"
         }
@@ -1469,6 +1505,10 @@
           "href": "/BopBot-support/index-sv"
         },
         {
+          "label": "Manual",
+          "href": "/BopBot-support/manual/sv/"
+        },
+        {
           "label": "Integritet",
           "href": "/BopBot-support/privacy-sv"
         }
@@ -1477,6 +1517,10 @@
         {
           "label": "支援",
           "href": "/BopBot-support/index-zh-Hant"
+        },
+        {
+          "label": "使用手冊",
+          "href": "/BopBot-support/manual/zh-Hant/"
         },
         {
           "label": "隱私",

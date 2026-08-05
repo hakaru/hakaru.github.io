@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BopBot 使用手冊 | hakaru</title>
+    <meta name="description" content="BopBot 使用手冊。即時生成爵士獨奏的 iOS 應用程式完整指南——畫面說明、曲目與角色選擇、演奏參數、樂譜顯示與聲音設定。">
+    <meta property="og:title" content="BopBot 使用手冊">
+    <meta property="og:description" content="BopBot 使用手冊。即時生成爵士獨奏的 iOS 應用程式完整指南。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/BopBot-support/manual/zh-Hant/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .appstore-cta {
+            display: inline-block; margin: 24px 0 8px; padding: 14px 28px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff; font-weight: 600; text-decoration: none;
+            border-radius: 10px; box-shadow: 0 4px 14px rgba(233,69,96,0.3);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .appstore-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(233,69,96,0.4); }
+        .toc {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px 24px; margin: 30px 0;
+        }
+        .toc ol { margin: 8px 0 0 24px; color: #b0b0b0; }
+        .toc li { margin-bottom: 6px; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .table-wrap { overflow-x: auto; margin: 0 0 16px; }
+        .content table {
+            border-collapse: collapse; width: 100%; font-size: 0.92em; color: #b0b0b0;
+        }
+        .content th, .content td {
+            border: 1px solid rgba(255,255,255,0.12); padding: 8px 10px; text-align: left;
+            vertical-align: top;
+        }
+        .content th { color: #fff; background: rgba(255,255,255,0.05); white-space: nowrap; }
+        .note {
+            background: rgba(233,69,96,0.08); border-left: 3px solid #e94560;
+            border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 0 0 16px;
+            color: #c0c0c0; font-size: 0.95em;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+    <link rel="canonical" href="https://hakaru.net/BopBot-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/BopBot-support/manual/de/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/BopBot-support/manual/en/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/BopBot-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/BopBot-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/BopBot-support/manual/it/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/BopBot-support/manual/ja/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/BopBot-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/BopBot-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/BopBot-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/BopBot-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/BopBot-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/BopBot-support/manual/en/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-zh-Hant">支援</a>
+      <a href="/M2MX12-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-zh-Hant">支援</a>
+      <a href="/EraVerb-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-zh-Hant">支援</a>
+      <a href="/P73-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-zh-Hant">支援</a>
+      <a href="/TwinFET-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-zh-Hant">支援</a>
+      <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
+      <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/zh-Hant/">Support</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-zh-Hant">支援</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/BopBot-support/index-zh-Hant">支援</a>
+      <a href="/BopBot-support/manual/zh-Hant/">使用手冊</a>
+      <a href="/BopBot-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/BopBot-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/BopBot-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/BopBot-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/BopBot-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/BopBot-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/BopBot-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/BopBot-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/BopBot-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/BopBot-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/BopBot-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體</span>
+  </div>
+</nav>
+<div class="content-pane">
+
+    <div class="container">
+        <div class="hero">
+            <img class="hero-icon" src="/assets/bopbot-icon.png" alt="BopBot icon">
+            <h1>BopBot 使用手冊</h1>
+            <p>即時咆勃爵士獨奏生成器</p>
+            <a class="appstore-cta" href="https://apps.apple.com/app/id6793626502">在 App Store 下載</a>
+        </div>
+        <div class="content">
+            <div class="toc">
+                <strong>目錄</strong>
+                <ol>
+                    <li><a href="#about">BopBot 是什麼？</a></li>
+                    <li><a href="#quickstart">第一次演奏</a></li>
+                    <li><a href="#layout">認識畫面配置</a></li>
+                    <li><a href="#setup">曲目、角色、樂器與 Seed</a></li>
+                    <li><a href="#controls">演奏參數</a></li>
+                    <li><a href="#score">樂譜顯示</a></li>
+                    <li><a href="#sound">聲音設定</a></li>
+                    <li><a href="#background">背景播放與中斷</a></li>
+                    <li><a href="#troubleshooting">疑難排解</a></li>
+                    <li><a href="#requirements">系統需求</a></li>
+                </ol>
+            </div>
+
+            <h2 id="about">1. BopBot 是什麼？</h2>
+            <p>BopBot 是一款 iOS 應用程式，會依爵士標準曲的和弦進行即時生成咆勃（bebop）獨奏，並在播放的同時顯示樂譜。獨奏並非錄音——每一段獨奏都是基於音樂理論（線性和聲）全新生成的。</p>
+            <ul>
+                <li><strong>三種角色（persona）</strong>——Parker、Pres（Lester Young）與 Bud（Bud Powell），各自擁有獨特的語彙與樂句處理。</li>
+                <li><strong>內建十首爵士標準曲</strong>及其和弦進行。</li>
+                <li><strong>完全離線</strong>——不使用任何網路連線，也不需要帳號。</li>
+            </ul>
+
+            <h2 id="quickstart">2. 第一次演奏</h2>
+            <ol>
+                <li>點按畫面底部的 <strong>Play 按鈕</strong>。第一個 chorus 的獨奏隨即生成並顯示樂譜。</li>
+                <li>經過<strong>兩小節的預備拍</strong>（節拍器）後獨奏開始。第一句樂句可能在預備拍期間（第 −2 或 −1 小節）就先起奏。</li>
+                <li>播放會<strong>一個 chorus 接著一個 chorus 無限循環</strong>。每個 chorus 都是以新的 Seed 生成的全新獨奏，標題列顯示的 Seed 也會隨之遞進。</li>
+                <li>點按 <strong>Stop 按鈕</strong>即可停止。</li>
+                <li>停止時，點按 <strong>New solo</strong> 可在保留目前曲目、角色與樂器的情況下換一個新的 Seed（播放中無法使用）。</li>
+            </ol>
+
+            <h2 id="layout">3. 認識畫面配置</h2>
+            <h3>直向畫面——Cockpit</h3>
+            <ul>
+                <li><strong>標題列</strong>——曲名（點按可開啟<a href="#setup">演奏設定</a>）、「角色 · 樂器 · Seed」資訊列、附 Bar/Beat 計數器的 Chorus 編號，以及齒輪按鈕（<a href="#sound">設定</a>）。</li>
+                <li><strong>獨奏樂譜</strong>——以三行譜表顯示生成的獨奏。</li>
+                <li><strong>演奏控制</strong>——Tempo、Swing、Outline mix、Accents 與 New solo。</li>
+                <li><strong>Play/Stop 按鈕</strong>——固定於畫面底部。</li>
+            </ul>
+            <h3>橫向畫面——Deck</h3>
+            <p>將裝置轉為橫向即可切換到三欄式的 Deck 檢視（播放不會中斷）。左欄是曲名、狀態顯示與 Play/Stop；中央顯示更大的樂譜；右欄則有垂直的 Tempo 與 Swing 推桿，以及「Outlines」按鈕。</p>
+            <div class="note">Accents 開關只在直向畫面顯示。</div>
+            <p>點按各參數旁的 <strong>HELP</strong>，可查看應用程式內的簡要說明。</p>
+
+            <h2 id="setup">4. 曲目、角色、樂器與 Seed</h2>
+            <p>點按標題列中的曲名，即可開啟 Performance Setup（演奏設定）面板。</p>
+            <h3>曲目</h3>
+            <div class="table-wrap">
+            <table>
+                <tr><th>曲目</th><th>調性</th><th>拍號</th><th>小節數</th><th>預設速度</th></tr>
+                <tr><td>Donna Lee</td><td>A♭</td><td>4/4</td><td>32</td><td>200</td></tr>
+                <tr><td>Confirmation</td><td>F</td><td>4/4</td><td>32</td><td>210</td></tr>
+                <tr><td>Blues (F)</td><td>F</td><td>4/4</td><td>12</td><td>180</td></tr>
+                <tr><td>Rhythm Changes</td><td>B♭</td><td>4/4</td><td>32</td><td>220</td></tr>
+                <tr><td>How High the Moon</td><td>G</td><td>4/4</td><td>32</td><td>180</td></tr>
+                <tr><td>Giant Steps</td><td>E♭</td><td>4/4</td><td>16</td><td>170</td></tr>
+                <tr><td>All the Things You Are</td><td>A♭</td><td>4/4</td><td>36</td><td>140</td></tr>
+                <tr><td>Stella by Starlight</td><td>B♭</td><td>4/4</td><td>32</td><td>120</td></tr>
+                <tr><td>On the Sunny Side of the Street</td><td>C</td><td>4/4</td><td>32</td><td>140</td></tr>
+                <tr><td>Someday My Prince Will Come</td><td>B♭</td><td>3/4</td><td>32</td><td>150</td></tr>
+            </table>
+            </div>
+            <h3>角色（Persona）</h3>
+            <div class="table-wrap">
+            <table>
+                <tr><th>Persona</th><th>風格</th><th>預設樂器</th></tr>
+                <tr><td>Parker</td><td>咆勃</td><td>Alto</td></tr>
+                <tr><td>Pres · Lester Young</td><td>搖擺年代次中音薩克斯風</td><td>Tenor</td></tr>
+                <tr><td>Bud · Bud Powell</td><td>咆勃鋼琴</td><td>Piano</td></tr>
+            </table>
+            </div>
+            <p>切換角色時會自動選用該角色的預設樂器；之後可以再改選四種樂器中的任何一種——Alto（中音薩克斯風）、Tenor（次中音薩克斯風）、Trumpet（小號）或 Piano（鋼琴）。生成的動機與其發展在每個 chorus 都會更新。</p>
+            <h3>Seed</h3>
+            <p>相同的曲目、角色、樂器與 Seed 組合，<strong>一定會生成完全相同的獨奏</strong>。記下喜歡的獨奏的 Seed，之後輸入即可重現。<strong>Random</strong> 按鈕會隨機挑一個新的 Seed（範圍 0–999,999,999）。</p>
+            <div class="note">在播放中套用變更會停止目前的演奏。請按 Play 以新的選擇開始。</div>
+
+            <h2 id="controls">5. 演奏參數</h2>
+            <div class="table-wrap">
+            <table>
+                <tr><th>參數</th><th>範圍</th><th>生效時機</th><th>作用</th></tr>
+                <tr><td>Tempo</td><td>60–300 BPM</td><td>立即</td><td>播放速度。生成的音符本身不會改變。</td></tr>
+                <tr><td>Swing</td><td>0.50–0.667</td><td>立即</td><td>後半拍八分音符的落點。0.50 = 平直（straight），0.60 = 預設，0.667 = 三連音感。只改變時間點；記譜與音高維持不變。</td></tr>
+                <tr><td>Accents</td><td>ON / OFF</td><td>立即</td><td>力度的起伏。ON 會在樂句開頭、高點、大跳、先現音與句尾恢復完整的力度對比；OFF 則壓縮力度起伏，演奏更平均。</td></tr>
+                <tr><td>Outline mix</td><td>各 0–100%</td><td>下一段獨奏</td><td>三種線性和聲 outline 被用作獨奏骨架的頻率。</td></tr>
+            </table>
+            </div>
+            <h3>Outline mix</h3>
+            <ul>
+                <li><strong>Outline 1 · Guide descent</strong>——下行的引導音線（guide-tone line）：七音解決到下一個和弦的三音。</li>
+                <li><strong>Outline 2 · Arpeggio up</strong>——上行的 ii 和弦琶音，常延伸至屬和弦的九音。</li>
+                <li><strong>Outline 3 · Down then up</strong>——先下行的 ii 和弦琶音，在屬和弦上轉為上行。</li>
+            </ul>
+            <p>移動其中一支滑桿時，其餘滑桿會自動重新配比，使總和維持 100%。變更從<strong>下一段獨奏</strong>開始生效；畫面上已有樂譜時，區段標題會顯示「Next solo」標記。</p>
+
+            <h2 id="score">6. 樂譜顯示</h2>
+            <ul>
+                <li>三行譜表，含和弦記號、小節編號、調號與拍號。預備拍期間的小節編號為負值（−2、−1）。</li>
+                <li>樂譜會<strong>自動翻頁</strong>以跟隨播放位置。依螢幕寬度不同，每行譜表顯示兩小節或四小節。</li>
+                <li>右下角標籤顯示「樂器 · 音高模式 · 調性」（例如 Alto · Transposed score · E♭）。</li>
+                <li>在設定中的「Pitch display」可切換<strong>移調譜與實音（concert pitch）</strong>。實音顯示必要時會做八度移位（8va 等）以維持高音譜表的可讀性；播放音高不受影響。</li>
+            </ul>
+
+            <h2 id="sound">7. 聲音設定</h2>
+            <p>以齒輪按鈕開啟設定。</p>
+            <h3>獨奏音色</h3>
+            <ul>
+                <li><strong>Dunne</strong>（內建）——管樂器（Alto、Tenor、Trumpet）用的內建音源。</li>
+                <li><strong>Respiro</strong>——已安裝 Respiro AUv3 時可選。使用其目前選擇的 preset；BopBot 會把表情對應到 CC2。</li>
+                <li><strong>SWAM</strong>——已安裝與獨奏樂器相符的 SWAM AUv3 時可選。表情以 CC11 傳送。</li>
+            </ul>
+            <div class="note">Piano 一律以內建 SoundFont 發聲。新的獨奏音色會在下一次開始播放時生效。</div>
+            <h3>主音量</h3>
+            <p>0–100%，立即生效——即使在播放中也是。</p>
+
+            <h2 id="background">8. 背景播放與中斷</h2>
+            <ul>
+                <li>切換到主畫面或鎖定裝置時，播放會<strong>在背景繼續</strong>。</li>
+                <li>音訊被中斷時（例如來電），播放會停止，應用程式並顯示「<strong>Playback was interrupted</strong>」（播放已中斷）橫幅。點按 <strong>Resume</strong>（繼續）即可續播。</li>
+                <li><strong>拔除耳機會停止播放</strong>——這是刻意的設計，避免揚聲器突然發出過大的聲音。重新接上耳機並按 Play 即可繼續。</li>
+                <li>不支援鎖定畫面與控制中心的播放控制；請在應用程式內操作播放。</li>
+            </ul>
+
+            <h2 id="troubleshooting">9. 疑難排解</h2>
+            <h3>沒有聲音</h3>
+            <p>請確認裝置側邊的靜音開關與音量。若仍無法解決，請確認設定中的主音量（Master volume）沒有被調低。</p>
+            <h3>Respiro / SWAM 顯示「Unavailable」</h3>
+            <p>裝置上必須先安裝對應的 AUv3 應用程式。安裝後重新開啟設定面板，該選項就會變成可選。</p>
+            <h3>New solo 無法使用</h3>
+            <p>New solo 只在播放停止時可用。請先停止演奏。</p>
+            <h3>想再聽一次同一段獨奏</h3>
+            <p>在 Performance Setup 中輸入相同的曲目、角色、樂器與 Seed，即可完整重現同一段獨奏。由於 Seed 會在每個 chorus 遞進，標題列顯示的正是你當下所聽 chorus 的 Seed。</p>
+
+            <h2 id="requirements">10. 系統需求</h2>
+            <ul>
+                <li>iOS 17 以上版本（iPhone / iPad）</li>
+                <li>可完全離線運作——無需網際網路連線。</li>
+            </ul>
+
+            <hr>
+            <p>其他問題請造訪<a href="/BopBot-support/index-zh-Hant">支援頁面</a>，或來信 <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>。</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">日本特定商業交易法相關標示</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">聯絡我們</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var activeLangButton = document.querySelector('.sidebar-lang-btn.active');
+    var pageLang = activeLangButton ? activeLangButton.dataset.lang : 'en';
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) {
+            return 'zh-Hant';
+        }
+        if (navLang.startsWith('th')) return 'th';
+        return 'en';
+    }
+
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    // Accordion
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            // Collapse all
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            // Toggle clicked
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    // Auto-expand current app
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    // Mobile toggle
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    // Language switch saves preference
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

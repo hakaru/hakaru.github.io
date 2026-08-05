@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BopBot Gebruikershandleiding | hakaru</title>
+    <meta name="description" content="BopBot-gebruikershandleiding. Een complete gids voor de iOS-app die jazzsolo's in realtime genereert – schermen, keuze van song en persona, performanceparameters, notatie en geluidsinstellingen.">
+    <meta property="og:title" content="BopBot Gebruikershandleiding">
+    <meta property="og:description" content="BopBot-gebruikershandleiding. Een complete gids voor de iOS-app die jazzsolo's in realtime genereert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/BopBot-support/manual/nl/">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N0830V28FD');
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #a0a0a0; text-decoration: none; font-size: 0.9em;
+            margin-bottom: 30px; transition: color 0.3s;
+        }
+        .back-link:hover { color: #e94560; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .hero-icon {
+            width: 100px; height: 100px; border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2em; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { color: #a0a0a0; font-size: 1.1em; }
+        .appstore-cta {
+            display: inline-block; margin: 24px 0 8px; padding: 14px 28px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff; font-weight: 600; text-decoration: none;
+            border-radius: 10px; box-shadow: 0 4px 14px rgba(233,69,96,0.3);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .appstore-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(233,69,96,0.4); }
+        .toc {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 20px 24px; margin: 30px 0;
+        }
+        .toc ol { margin: 8px 0 0 24px; color: #b0b0b0; }
+        .toc li { margin-bottom: 6px; }
+        .content h2 {
+            font-size: 1.4em; color: #fff; margin: 40px 0 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .content h3 { font-size: 1.1em; color: #e0e0e0; margin: 24px 0 12px; }
+        .content p { margin-bottom: 16px; }
+        .content ul, .content ol { margin: 0 0 16px 24px; color: #b0b0b0; }
+        .content li { margin-bottom: 8px; }
+        .content a { color: #e94560; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content strong { color: #fff; }
+        .content hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
+        .table-wrap { overflow-x: auto; margin: 0 0 16px; }
+        .content table {
+            border-collapse: collapse; width: 100%; font-size: 0.92em; color: #b0b0b0;
+        }
+        .content th, .content td {
+            border: 1px solid rgba(255,255,255,0.12); padding: 8px 10px; text-align: left;
+            vertical-align: top;
+        }
+        .content th { color: #fff; background: rgba(255,255,255,0.05); white-space: nowrap; }
+        .note {
+            background: rgba(233,69,96,0.08); border-left: 3px solid #e94560;
+            border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 0 0 16px;
+            color: #c0c0c0; font-size: 0.95em;
+        }
+        footer {
+            text-align: center; margin-top: 60px; padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #e94560; }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.5em; } }
+
+
+/* Sidebar styles */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+}
+.sidebar-logo {
+    padding: 10px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+}
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.sidebar-logo a:hover { color: #e94560; }
+.sidebar-app { margin-bottom: 2px; }
+.sidebar-app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #a0a0a0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.sidebar-app-header:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-header.active { color: #e94560; }
+.sidebar-app-header img { width: 24px; height: 24px; border-radius: 6px; }
+.sidebar-app-header .arrow { margin-left: auto; font-size: 0.7em; transition: transform 0.2s; }
+.sidebar-app-header.expanded .arrow { transform: rotate(90deg); }
+.sidebar-app-links { display: none; padding: 4px 0 8px; }
+.sidebar-app-links.show { display: block; }
+.sidebar-app-links a {
+    display: block;
+    padding: 6px 20px 6px 54px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: all 0.2s;
+}
+.sidebar-app-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.sidebar-app-links a.active { color: #e94560; }
+.sidebar-lang {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 10px;
+}
+.sidebar-lang-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    color: #808080;
+    text-decoration: none;
+    font-size: 0.85em;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.sidebar-lang-btn:hover { color: #fff; }
+.sidebar-lang-btn.active { color: #e94560; font-weight: 600; }
+.content-pane { flex: 1; margin-left: 250px; min-height: 100vh; }
+.content-pane .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    background: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 90;
+}
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: block; }
+    .sidebar-overlay.show { display: block; }
+    .content-pane { margin-left: 0; padding-top: 60px; }
+}
+
+    </style>
+    <link rel="canonical" href="https://hakaru.net/BopBot-support/manual/nl/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/BopBot-support/manual/de/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/BopBot-support/manual/en/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/BopBot-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/BopBot-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/BopBot-support/manual/it/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/BopBot-support/manual/ja/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/BopBot-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/BopBot-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/BopBot-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/BopBot-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/BopBot-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/BopBot-support/manual/en/">
+</head>
+<body>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-nl">Support</a>
+      <a href="/AnalogRhythmKing-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-nl">Support</a>
+      <a href="/M2MX12-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-nl">Support</a>
+      <a href="/EraVerb-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-nl">Support</a>
+      <a href="/P73-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-nl">Support</a>
+      <a href="/TwinFET-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-nl">Support</a>
+      <a href="/M2DX-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-nl">Support</a>
+      <a href="/PeerClockMetronome-support/blog/nl/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-nl">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/BopBot-support/index-nl">Support</a>
+      <a href="/BopBot-support/manual/nl/" class="active">Handleiding</a>
+      <a href="/BopBot-support/privacy-nl">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/BopBot-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/BopBot-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/BopBot-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/BopBot-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/BopBot-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/BopBot-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/BopBot-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <span class="sidebar-lang-btn active" data-lang="nl">NL</span>
+    <a href="/BopBot-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/BopBot-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/BopBot-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+
+    <div class="container">
+        <div class="hero">
+            <img class="hero-icon" src="/assets/bopbot-icon.png" alt="BopBot icon">
+            <h1>BopBot Gebruikershandleiding</h1>
+            <p>Realtime bebop-sologenerator</p>
+            <a class="appstore-cta" href="https://apps.apple.com/app/id6793626502">Download in de App Store</a>
+        </div>
+        <div class="content">
+            <div class="toc">
+                <strong>Inhoud</strong>
+                <ol>
+                    <li><a href="#about">Wat is BopBot?</a></li>
+                    <li><a href="#quickstart">Je eerste performance</a></li>
+                    <li><a href="#layout">De schermen begrijpen</a></li>
+                    <li><a href="#setup">Song, persona, instrument &amp; seed</a></li>
+                    <li><a href="#controls">Performanceparameters</a></li>
+                    <li><a href="#score">De partituurweergave</a></li>
+                    <li><a href="#sound">Geluidsinstellingen</a></li>
+                    <li><a href="#background">Afspelen op de achtergrond &amp; onderbrekingen</a></li>
+                    <li><a href="#troubleshooting">Problemen oplossen</a></li>
+                    <li><a href="#requirements">Vereisten</a></li>
+                </ol>
+            </div>
+
+            <h2 id="about">1. Wat is BopBot?</h2>
+            <p>BopBot is een iOS-app die ter plekke bebopsolo's genereert over de akkoordwisselingen van jazzstandards en de notatie toont terwijl er wordt gespeeld. Solo's zijn geen opnames – elke solo wordt opnieuw gegenereerd op basis van muziektheorie (lineaire harmonie).</p>
+            <ul>
+                <li><strong>Drie persona's</strong> – Parker, Pres (Lester Young) en Bud (Bud Powell), elk met een eigen vocabulaire en frasering.</li>
+                <li><strong>Tien jazzstandards</strong> met ingebouwde akkoordenschema's.</li>
+                <li><strong>Volledig offline</strong> – er wordt geen netwerkverbinding gebruikt en er is geen account nodig.</li>
+            </ul>
+
+            <h2 id="quickstart">2. Je eerste performance</h2>
+            <ol>
+                <li>Tik op de <strong>Play-knop</strong> onderaan het scherm. Het eerste chorus wordt gegenereerd en de partituur ervan verschijnt.</li>
+                <li>Na een <strong>aftel van twee maten</strong> (metronoom) begint de solo. De eerste frase kan al tijdens de aftel beginnen (maat −2 of −1).</li>
+                <li>Het afspelen <strong>loopt chorus na chorus eindeloos door</strong>. Elk chorus is een nieuwe solo met een nieuwe seed, en de seed in de header telt overeenkomstig op.</li>
+                <li>Tik op de <strong>Stop-knop</strong> om te stoppen.</li>
+                <li>Tik in gestopte toestand op <strong>New solo</strong> om een verse seed te kiezen terwijl de huidige song, persona en instrument behouden blijven (niet beschikbaar tijdens het afspelen).</li>
+            </ol>
+
+            <h2 id="layout">3. De schermen begrijpen</h2>
+            <h3>Staand – Cockpit</h3>
+            <ul>
+                <li><strong>Header</strong> – de songtitel (tik erop om <a href="#setup">Performance Setup</a> te openen), een regel "persona · instrument · seed", het chorusnummer met maat-/teltellers en de tandwielknop (<a href="#sound">Instellingen</a>).</li>
+                <li><strong>Solopartituur</strong> – de gegenereerde solo in drie notenbalksystemen.</li>
+                <li><strong>Performance-bediening</strong> – Tempo, Swing, Outline mix, Accents en New solo.</li>
+                <li><strong>Play/Stop-knop</strong> – vast onderaan het scherm.</li>
+            </ul>
+            <h3>Liggend – Deck</h3>
+            <p>Draai het apparaat om over te schakelen naar de deck-weergave met drie kolommen (het afspelen loopt naadloos door). De linkerkolom bevat de songtitel, statusuitlezingen en Play/Stop; het midden toont een grotere partituur; de rechterkolom heeft verticale faders voor Tempo en Swing plus de knop "Outlines".</p>
+            <div class="note">De Accents-schakelaar wordt alleen in de staande stand getoond.</div>
+            <p>Tik op <strong>HELP</strong> naast een parameter voor een beknopte uitleg in de app.</p>
+
+            <h2 id="setup">4. Song, persona, instrument &amp; seed</h2>
+            <p>Tik op de songtitel in de header om het Performance Setup-paneel te openen.</p>
+            <h3>Songs</h3>
+            <div class="table-wrap">
+            <table>
+                <tr><th>Song</th><th>Toonsoort</th><th>Maatsoort</th><th>Maten</th><th>Standaardtempo</th></tr>
+                <tr><td>Donna Lee</td><td>A♭</td><td>4/4</td><td>32</td><td>200</td></tr>
+                <tr><td>Confirmation</td><td>F</td><td>4/4</td><td>32</td><td>210</td></tr>
+                <tr><td>Blues (F)</td><td>F</td><td>4/4</td><td>12</td><td>180</td></tr>
+                <tr><td>Rhythm Changes</td><td>B♭</td><td>4/4</td><td>32</td><td>220</td></tr>
+                <tr><td>How High the Moon</td><td>G</td><td>4/4</td><td>32</td><td>180</td></tr>
+                <tr><td>Giant Steps</td><td>E♭</td><td>4/4</td><td>16</td><td>170</td></tr>
+                <tr><td>All the Things You Are</td><td>A♭</td><td>4/4</td><td>36</td><td>140</td></tr>
+                <tr><td>Stella by Starlight</td><td>B♭</td><td>4/4</td><td>32</td><td>120</td></tr>
+                <tr><td>On the Sunny Side of the Street</td><td>C</td><td>4/4</td><td>32</td><td>140</td></tr>
+                <tr><td>Someday My Prince Will Come</td><td>B♭</td><td>3/4</td><td>32</td><td>150</td></tr>
+            </table>
+            </div>
+            <h3>Persona's</h3>
+            <div class="table-wrap">
+            <table>
+                <tr><th>Persona</th><th>Stijl</th><th>Standaardinstrument</th></tr>
+                <tr><td>Parker</td><td>Bebop</td><td>Alto</td></tr>
+                <tr><td>Pres · Lester Young</td><td>Tenorsax uit het swingtijdperk</td><td>Tenor</td></tr>
+                <tr><td>Bud · Bud Powell</td><td>Beboppiano</td><td>Piano</td></tr>
+            </table>
+            </div>
+            <p>Als je van persona wisselt, wordt automatisch het standaardinstrument van die persona geselecteerd; daarna kun je het vervangen door een van de vier instrumenten – Alto, Tenor, Trumpet of Piano. Gegenereerde motieven en hun ontwikkeling worden bij elk chorus vernieuwd.</p>
+            <h3>Seed</h3>
+            <p>Dezelfde combinatie van song, persona, instrument en seed <strong>genereert altijd exact dezelfde solo</strong>. Noteer de seed van een solo die je bevalt en voer die later opnieuw in om de solo te reproduceren. De knop <strong>Random</strong> kiest een verse seed (bereik 0–999.999.999).</p>
+            <div class="note">Als je tijdens het afspelen een wijziging toepast, stopt de huidige performance. Druk op Play om met de nieuwe selectie te starten.</div>
+
+            <h2 id="controls">5. Performanceparameters</h2>
+            <div class="table-wrap">
+            <table>
+                <tr><th>Parameter</th><th>Bereik</th><th>Wordt actief</th><th>Wat het doet</th></tr>
+                <tr><td>Tempo</td><td>60–300 BPM</td><td>Direct</td><td>Afspeelsnelheid. De gegenereerde noten blijven gelijk.</td></tr>
+                <tr><td>Swing</td><td>0.50–0.667</td><td>Direct</td><td>Waar de achtste noot op het offbeat valt. 0.50 = straight, 0.60 = standaard, 0.667 = triolengevoel. Alleen de timing verandert; notatie en toonhoogte blijven gelijk.</td></tr>
+                <tr><td>Accents</td><td>ON / OFF</td><td>Direct</td><td>De dynamische vorm. ON herstelt het volledige dynamische contrast bij frasebegin, hoogtepunten, sprongen, anticipaties en afsluitingen; OFF comprimeert het voor een vlakkere, gelijkmatigere performance.</td></tr>
+                <tr><td>Outline mix</td><td>0–100% elk</td><td>Volgende solo</td><td>Hoe vaak elk van de drie linear-harmony-outlines als skelet van de solo wordt gebruikt.</td></tr>
+            </table>
+            </div>
+            <h3>Outline mix</h3>
+            <ul>
+                <li><strong>Outline 1 · Guide descent</strong> – een dalende guide-tone-lijn: de septiem lost op naar de terts van het volgende akkoord.</li>
+                <li><strong>Outline 2 · Arpeggio up</strong> – een stijgend arpeggio op de ii, vaak doorlopend tot de none van de dominant.</li>
+                <li><strong>Outline 3 · Down then up</strong> – een dalend arpeggio op de ii dat op de dominant omhoog draait.</li>
+            </ul>
+            <p>Als je één schuifregelaar beweegt, worden de andere automatisch herverdeeld zodat het totaal 100% blijft. Wijzigingen gelden vanaf de <strong>volgende solo</strong>; zolang er een partituur op het scherm staat, verschijnt de badge "Next solo" in de sectiekop.</p>
+
+            <h2 id="score">6. De partituurweergave</h2>
+            <ul>
+                <li>Drie notenbalksystemen met akkoordsymbolen, maatnummers, voortekening en maatsoort. Tijdens de aftel zijn de maatnummers negatief (−2, −1).</li>
+                <li>Pagina's <strong>slaan automatisch om</strong> om de afspeelpositie te volgen. Elk systeem toont twee of vier maten, afhankelijk van de schermbreedte.</li>
+                <li>Het label rechtsonder toont "instrument · toonhoogteweergave · toonsoort" (bijv. Alto · Transposed score · E♭).</li>
+                <li>Gebruik "Pitch display" in de instellingen om te wisselen tussen <strong>getransponeerde notatie en klinkende toonhoogte (concert pitch)</strong>. Concert pitch wordt waar nodig een octaaf verplaatst (8va enz.) voor leesbare notatie in de vioolsleutel; de afgespeelde toonhoogte verandert niet.</li>
+            </ul>
+
+            <h2 id="sound">7. Geluidsinstellingen</h2>
+            <p>Open de instellingen met de tandwielknop.</p>
+            <h3>Sologeluid (Solo sound)</h3>
+            <ul>
+                <li><strong>Dunne</strong> (ingebouwd) – de ingebouwde engine voor blaasinstrumenten (Alto, Tenor, Trumpet).</li>
+                <li><strong>Respiro</strong> – selecteerbaar wanneer de Respiro-AUv3 is geïnstalleerd. Gebruikt de daar geselecteerde preset; BopBot stuurt expressie naar CC2.</li>
+                <li><strong>SWAM</strong> – selecteerbaar wanneer een SWAM-AUv3 is geïnstalleerd die bij het solo-instrument past. Expressie wordt verzonden als CC11.</li>
+            </ul>
+            <div class="note">Piano klinkt altijd via de ingebouwde SoundFont. Een nieuw sologeluid wordt actief zodra het afspelen opnieuw start.</div>
+            <h3>Mastervolume (Master volume)</h3>
+            <p>0–100%, direct toegepast – ook tijdens het afspelen.</p>
+
+            <h2 id="background">8. Afspelen op de achtergrond &amp; onderbrekingen</h2>
+            <ul>
+                <li>Het afspelen <strong>gaat door op de achtergrond</strong> wanneer je naar het beginscherm gaat of het apparaat vergrendelt.</li>
+                <li>Wanneer de audio wordt onderbroken (bijv. door een telefoongesprek), stopt het afspelen en toont de app de banner "<strong>Playback was interrupted</strong>" (afspelen onderbroken). Tik op <strong>Resume</strong> om verder te gaan.</li>
+                <li><strong>Het loskoppelen van de koptelefoon stopt het afspelen</strong> – bewust, om onverwacht luid geluid uit de luidspreker te voorkomen. Sluit de koptelefoon weer aan en druk op Play om verder te gaan.</li>
+                <li>Afspeelbediening op het toegangsscherm en in het Bedieningspaneel wordt niet ondersteund; bedien het afspelen vanuit de app.</li>
+            </ul>
+
+            <h2 id="troubleshooting">9. Problemen oplossen</h2>
+            <h3>Geen geluid</h3>
+            <p>Controleer de zijschakelaar (stille modus) aan de zijkant van het apparaat en het volume. Helpt dat niet, controleer dan of Mastervolume in de instellingen niet is teruggedraaid.</p>
+            <h3>Respiro / SWAM toont "Unavailable"</h3>
+            <p>De bijbehorende AUv3-app moet op het apparaat geïnstalleerd zijn. Open na de installatie het instellingenpaneel opnieuw; de optie wordt dan selecteerbaar.</p>
+            <h3>New solo is uitgeschakeld</h3>
+            <p>New solo is alleen beschikbaar terwijl het afspelen gestopt is. Stop eerst de performance.</p>
+            <h3>Ik wil dezelfde solo nog eens horen</h3>
+            <p>Voer in Performance Setup dezelfde song, persona, instrument en seed in om een solo exact te reproduceren. Omdat de seed bij elk chorus verder telt, toont de header de seed van het chorus dat je hoort.</p>
+
+            <h2 id="requirements">10. Vereisten</h2>
+            <ul>
+                <li>iOS 17 of later (iPhone / iPad)</li>
+                <li>Werkt volledig offline – geen internetverbinding nodig.</li>
+            </ul>
+
+            <hr>
+            <p>Voor al het overige kun je terecht op de <a href="/BopBot-support/index-nl">supportpagina</a> of mail naar <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 hakaru. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/tokushoho.html">Legal Notice (特定商取引法)</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="mailto:support@hakaru.net">Contact</a>
+            </p>
+        </footer>
+    </div>
+</div>
+<script>
+(function() {
+    var savedLang = localStorage.getItem('hakaru-lang');
+    var activeLangButton = document.querySelector('.sidebar-lang-btn.active');
+    var pageLang = activeLangButton ? activeLangButton.dataset.lang : 'en';
+
+    function detectLang() {
+        if (savedLang) return savedLang;
+        var navLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (navLang.startsWith('ja')) return 'ja';
+        if (navLang.startsWith('fr')) return 'fr';
+        if (navLang.startsWith('de')) return 'de';
+        if (navLang.startsWith('es')) return 'es';
+        if (navLang.startsWith('it')) return 'it';
+        if (navLang.startsWith('ko')) return 'ko';
+        if (navLang.startsWith('nl')) return 'nl';
+        if (navLang === 'pt-br' || navLang.startsWith('pt')) return 'pt-BR';
+        if (navLang.startsWith('sv')) return 'sv';
+        if (navLang === 'zh-tw' || navLang === 'zh-hk' || navLang.startsWith('zh-hant')) {
+            return 'zh-Hant';
+        }
+        if (navLang.startsWith('th')) return 'th';
+        return 'en';
+    }
+
+    var userLang = detectLang();
+    if (!savedLang && (!document.referrer || !document.referrer.includes('hakaru.net')) && pageLang !== userLang) {
+        var langAlt = document.querySelector('.sidebar-lang-btn[data-lang="' + userLang + '"]');
+        if (langAlt && langAlt.href) {
+            window.location.href = langAlt.href;
+            return;
+        }
+    }
+
+    // Accordion
+    document.querySelectorAll('.sidebar-app-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var links = this.nextElementSibling;
+            var wasExpanded = this.classList.contains('expanded');
+            // Collapse all
+            document.querySelectorAll('.sidebar-app-header').forEach(function(h) {
+                h.classList.remove('expanded');
+                if (h.nextElementSibling) h.nextElementSibling.classList.remove('show');
+            });
+            // Toggle clicked
+            if (!wasExpanded) {
+                this.classList.add('expanded');
+                if (links) links.classList.add('show');
+            }
+        });
+    });
+
+    // Auto-expand current app
+    var currentApp = document.querySelector('.sidebar-app-header.active');
+    if (currentApp) {
+        currentApp.classList.add('expanded');
+        if (currentApp.nextElementSibling) {
+            currentApp.nextElementSibling.classList.add('show');
+        }
+    }
+
+    // Mobile toggle
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('.sidebar');
+    var overlay = document.querySelector('.sidebar-overlay');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+    }
+
+    // Language switch saves preference
+    document.querySelectorAll('.sidebar-lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            localStorage.setItem('hakaru-lang', this.dataset.lang);
+        });
+    });
+})();
+
+</script>
+</body>
+</html>
