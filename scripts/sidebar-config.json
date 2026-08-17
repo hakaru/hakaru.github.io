@@ -1175,10 +1175,16 @@
     "icon": "/assets/myeq-icon.png",
     "prefix": "/MyEQ-support",
     "links": {
+      "en": [
+        {
+          "label": "Privacy",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
       "ja": [
         {
           "label": "プライバシー",
-          "href": "/MyEQ-support/privacy"
+          "href": "/MyEQ-support/privacy-ja"
         }
       ]
     }
