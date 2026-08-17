@@ -1170,6 +1170,20 @@
     }
   },
   {
+    "id": "MyEQ",
+    "name": "MyEQ",
+    "icon": "/assets/myeq-icon.png",
+    "prefix": "/MyEQ-support",
+    "links": {
+      "ja": [
+        {
+          "label": "プライバシー",
+          "href": "/MyEQ-support/privacy"
+        }
+      ]
+    }
+  },
+  {
     "id": "ChatArchive",
     "name": "ChatArchive",
     "icon": "/assets/chatarchive-icon.png",
