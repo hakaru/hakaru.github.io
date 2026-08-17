@@ -1177,11 +1177,19 @@
     "links": {
       "en": [
         {
+          "label": "Support",
+          "href": "/MyEQ-support/"
+        },
+        {
           "label": "Privacy",
           "href": "/MyEQ-support/privacy"
         }
       ],
       "ja": [
+        {
+          "label": "サポート",
+          "href": "/MyEQ-support/index-ja"
+        },
         {
           "label": "プライバシー",
           "href": "/MyEQ-support/privacy-ja"
