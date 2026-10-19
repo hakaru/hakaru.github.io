@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iCook Store | hakaru</title>
-<meta name="description" content="Die komplette MacSlowCooker-Zubehörserie.">
-<meta property="og:title" content="iCook Store">
-<meta property="og:description" content="Die komplette MacSlowCooker-Zubehörserie. (Nur Konzeptprodukte — nicht mit Apple verbunden.)">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hakaru.net/iCookStore/index-de">
-<meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-de.jpeg">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   iCook Store | hakaru
+  </title>
+  <meta content="Mac und iPhone als fiktive Küchengeräte: Cooking Plate, Brew Stand mini und Duo Press im iCook Store. Alle Zubehörprodukte sind parodistische Konzepte." name="description"/>
+  <meta content="iCook Store" property="og:title"/>
+  <meta content="Mac und iPhone als fiktive Küchengeräte: Cooking Plate, Brew Stand mini und Duo Press im iCook Store. Alle Zubehörprodukte sind parodistische Konzepte." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://hakaru.net/iCookStore/index-de" property="og:url"/>
+  <meta content="https://hakaru.net/MacSlowCookerPlate-support/assets/duo-press-2026.png" property="og:image"/>
+  <style>
+   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", sans-serif; background: #fff; color: #1d1d1f; -webkit-font-smoothing: antialiased; line-height: 1.5; }
   .nav { background: rgba(0,0,0,0.85); color: #f5f5f7; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 14px; letter-spacing: 0.02em; }
   .nav > div { display: flex; gap: 24px; }
@@ -38,6 +40,7 @@
   .card { background: #f5f5f7; border-radius: 18px; padding: 32px 24px 24px; text-align: center; transition: transform 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; }
   .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,0.08); }
   .card img { width: 200px; height: 200px; object-fit: cover; border-radius: 14px; margin: 0 auto 20px; background: #fff; }
+  .card#duo-press img { object-fit: contain; background: #e7e7e7; }
   .card .product-eyebrow { color: #06c; font-size: 13px; font-weight: 500; margin-bottom: 4px; }
   .card h3 { font-size: 22px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; line-height: 1.2; }
   .card .for { font-size: 14px; color: #6e6e73; margin-bottom: 14px; }
@@ -50,90 +53,238 @@
   .disclaimer strong { color: #c2185b; }
   footer { text-align: center; margin-top: 64px; padding: 32px 24px; border-top: 1px solid #d2d2d7; color: #86868b; font-size: 12px; }
   footer a { color: #06c; text-decoration: none; }
-</style>
-</head>
-<body>
-<div class="nav">
-  <div>
-    <span></span>
-    <a href="/index-de.html">Store</a>
-    <a href="/index-de.html">Mac</a>
-    <span class="active">Cooking Store</span>
-    <a href="/MacSlowCooker-support/index-de">Support</a>
+  </style>
+ </head>
+ <body>
+  <div class="nav">
+   <div>
+    <span>
+    </span>
+    <a href="/index-de.html">
+     Store
+    </a>
+    <a href="/index-de.html">
+     Mac
+    </a>
+    <span class="active">
+     Cooking Store
+    </span>
+    <a href="/MacSlowCooker-support/index-de">
+     Support
+    </a>
+   </div>
   </div>
-</div>
-<section class="hero">
-  <div class="eyebrow">Neue Kollektion</div>
-  <h1>iCook Store</h1>
-  <p class="tagline">Die komplette MacSlowCooker-Zubehörserie.</p>
-  <p class="subtagline">Nur Konzeptprodukte — nicht mit Apple verbunden.</p>
-</section>
-<div class="container">
-  <div class="section-label">Empfohlen · Die echte App</div>
-  <div class="featured">
-    <img src="assets/thumb-app.jpeg" alt="MacSlowCooker">
+  <section class="hero">
+   <div class="eyebrow">
+    Kollektion 2026
+   </div>
+   <h1>
+    iCook Store
+   </h1>
+   <p class="tagline">
+    Die komplette MacSlowCooker-Zubehörserie.
+   </p>
+   <p class="subtagline">
+    Nur Konzeptprodukte — nicht mit Apple verbunden.
+   </p>
+  </section>
+  <div class="container">
+   <div class="section-label">
+    Empfohlen · Die echte App
+   </div>
+   <div class="featured">
+    <img alt="MacSlowCooker" src="assets/thumb-app.jpeg"/>
     <div class="featured-info">
-      <h2>MacSlowCooker <span class="badge">REAL · OSS</span></h2>
-      <p class="price-line">Kostenlos · Apache 2.0 · Apple Silicon &amp; Intel</p>
-      <p>macOS Dock-Icon für GPU / Temperatur / Lüfter / Stromverbrauch in Form eines Kochtopfs. Schwebendes Fenster, MRTG-style 4-Panel-Verlauf, Prometheus-Exporter, PNG-Export. Echte Software.</p>
-      <a href="https://github.com/hakaru/MacSlowCooker" class="btn">Auf GitHub holen</a>
-      <a href="/MacSlowCooker-support/index-de" class="btn secondary">Support →</a>
+     <h2>
+      MacSlowCooker
+      <span class="badge">
+       REAL · OSS
+      </span>
+     </h2>
+     <p class="price-line">
+      Kostenlos · Apache 2.0 · Apple Silicon &amp; Intel
+     </p>
+     <p>
+      macOS Dock-Icon für GPU / Temperatur / Lüfter / Stromverbrauch in Form eines Kochtopfs. Schwebendes Fenster, MRTG-style 4-Panel-Verlauf, Prometheus-Exporter, PNG-Export. Echte Software.
+     </p>
+     <a class="btn" href="https://github.com/hakaru/MacSlowCooker">
+      Auf GitHub holen
+     </a>
+     <a class="btn secondary" href="/MacSlowCooker-support/index-de">
+      Support →
+     </a>
     </div>
+   </div>
+   <div class="section-label">
+    Zubehör · Konzeptparodien
+   </div>
+   <div class="grid">
+    <div class="card">
+     <img alt="Cooking Plate" loading="lazy" src="/MacSlowCookerPlate-support/assets/cooking-plate-2026.png"/>
+     <div class="product-eyebrow">
+      Für Mac Studio
+     </div>
+     <h3>
+      Cooking Plate
+     </h3>
+     <p class="for">
+      Mac Studio · M5 Max / M5 Ultra
+     </p>
+     <p class="tagline">
+      M5 Ultra. Lokal geschmort.
+     </p>
+     <p class="price">
+      Ab
+      <strong>
+       89 €
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de.html">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Cluster Edition" loading="lazy" src="/MacSlowCookerPlate-support/assets/cluster-2026.png"/>
+     <div class="product-eyebrow">
+      Für Mac mini ×4
+     </div>
+     <h3>
+      Cluster Edition
+     </h3>
+     <p class="for">
+      Mac mini · M6 / M5 Pro
+     </p>
+     <p class="tagline">
+      Vier Mac mini. Ein Speiseplan.
+     </p>
+     <p class="price">
+      Ab
+      <strong>
+       189 €
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de.html#cluster">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Brew Stand" loading="lazy" src="/MacSlowCookerPlate-support/assets/brew-stand-2026.png"/>
+     <div class="product-eyebrow">
+      Für Mac mini
+     </div>
+     <h3>
+      Brew Stand mini
+     </h3>
+     <p class="for">
+      Mac mini · M6 / M5 Pro
+     </p>
+     <p class="tagline">
+      KI im Dauerbetrieb. Ein Kaffee.
+     </p>
+     <p class="price">
+      Ab
+      <strong>
+       49 €
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de.html#brew-stand">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+    <div class="card" id="duo-press">
+     <img alt="Duo Press: Konzeptbild eines halb geöffneten iPhone als Sandwichmaker" loading="lazy" src="/MacSlowCookerPlate-support/assets/duo-press-2026.png"/>
+     <div class="product-eyebrow">
+      Für iPhone Duo
+     </div>
+     <h3>
+      Duo Press
+     </h3>
+     <p class="for">
+      iPhone Duo
+     </p>
+     <p class="tagline">
+      Aufklappen: iPhone. Zuklappen: Frühstück.
+     </p>
+     <p class="price">
+      Konzept
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de.html#duo-press">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Mac Pro Smoker Edition" src="assets/smoker-photo.jpeg"/>
+     <div class="product-eyebrow">
+      Für Mac Pro
+     </div>
+     <h3>
+      Smoker Edition
+     </h3>
+     <p class="for">
+      Mac Pro (2019, 2023 M2 Ultra)
+     </p>
+     <p class="tagline">
+      Die Käsereibe, endlich sinnvoll.
+     </p>
+     <p class="price">
+      Ab
+      <strong>
+       399 €
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de#smoker">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="MacSlowCooker T-Shirt — Cooking Plate" src="assets/tee-plate-photo.jpeg"/>
+     <div class="product-eyebrow">
+      Bekleidung · Natur
+     </div>
+     <h3>
+      T-Shirt — Cooking Plate
+     </h3>
+     <p class="for">
+      Alle Macs. Alle Menschen.
+     </p>
+     <p class="tagline">
+      Hardware. Jetzt zum Anziehen.
+     </p>
+     <p class="price">
+      Ab
+      <strong>
+       34 €
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-de#tee-plate">
+       Mehr erfahren
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="disclaimer">
+    Zubehör, Preise und Kochfunktionen sind erfundene Parodien und werden nicht verkauft. Apple ist nicht beteiligt. Modellnamen folgen offiziellen Apple-Ankündigungen; Messwerte zu Temperatur und Aufheizzeit der neuen Modelle liegen hier nicht vor. Bitte keine Töpfe oder Getränke auf den Mac stellen.
+   </div>
+   <div class="section-label" style="margin-top: 56px">
+    Demnächst (auch nicht echt)
+   </div>
+   <p style="color: #6e6e73; font-size: 14px;">
+    MacBook Pro Heizplatten-Sleeve · iPad mini Untersetzer · AirPort Time Capsule Sous-vide-Bad
+   </p>
   </div>
-  <div class="section-label">Zubehör · Konzeptparodien</div>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/thumb-cooking-plate.jpeg" alt="Cooking Plate">
-      <div class="product-eyebrow">Für Mac Studio</div>
-      <h3>Cooking Plate</h3>
-      <p class="for">Mac Studio (M1/M2/M3 Max · Ultra)</p>
-      <p class="tagline">Ihr Mac Studio. Jetzt ein Kochgerät.</p>
-      <p class="price">Ab <strong>89 €</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-de" class="btn">Mehr erfahren</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/thumb-cluster.jpeg" alt="Cluster Edition">
-      <div class="product-eyebrow">Für Mac mini ×4</div>
-      <h3>Cluster Edition</h3>
-      <p class="for">Mac mini (M1–M4)</p>
-      <p class="tagline">Vier Mac minis. Eine Platte. Echte Kochleistung.</p>
-      <p class="price">Ab <strong>189 €</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-de#cluster" class="btn">Mehr erfahren</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/thumb-brew-stand.jpeg" alt="Brew Stand">
-      <div class="product-eyebrow">Für Mac mini</div>
-      <h3>Brew Stand</h3>
-      <p class="for">Mac mini (M1–M4)</p>
-      <p class="tagline">Ihr Mac mini. Jetzt Ihr Barista.</p>
-      <p class="price">Ab <strong>49 €</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-de#brew-stand" class="btn">Mehr erfahren</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/smoker-photo.jpeg" alt="Mac Pro Smoker Edition">
-      <div class="product-eyebrow">Für Mac Pro</div>
-      <h3>Smoker Edition</h3>
-      <p class="for">Mac Pro (2019, 2023 M2 Ultra)</p>
-      <p class="tagline">Die Käsereibe, endlich sinnvoll.</p>
-      <p class="price">Ab <strong>399 €</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-de#smoker" class="btn">Mehr erfahren</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/tee-plate-photo.jpeg" alt="MacSlowCooker T-Shirt — Cooking Plate">
-      <div class="product-eyebrow">Bekleidung · Natur</div>
-      <h3>T-Shirt — Cooking Plate</h3>
-      <p class="for">Alle Macs. Alle Menschen.</p>
-      <p class="tagline">Hardware. Jetzt zum Anziehen.</p>
-      <p class="price">Ab <strong>34 €</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-de#tee-plate" class="btn">Mehr erfahren</a></div>
-    </div>
-  </div>
-  <div class="disclaimer">
-    <strong>Über diesen Store.</strong> Alle oben aufgeführten Zubehörteile sind parodische Konzepte. Sie existieren nicht als physische Produkte und sind nicht zum Verkauf. Apple ist nicht mit dieser Kollektion verbunden. Die angegebenen Temperaturen und Zeiten sind echte Messungen von MacSlowCooker (der echten App) auf echter Mac-Hardware — wir haben sie nur so dargestellt, als wären sie eine Kochgeräte-Produktlinie. Bitte stellen Sie wirklich kein Kochgeschirr auf Ihren Mac.
-  </div>
-  <div class="section-label" style="margin-top: 56px">Demnächst (auch nicht echt)</div>
-  <p style="color: #6e6e73; font-size: 14px;">MacBook Pro Heizplatten-Sleeve · Mac Pro Smoker Edition · iPad mini Untersetzer · AirPort Time Capsule Sous-vide-Bad</p>
-</div>
-<footer>© hakaru — MacSlowCooker ist echte Software (Apache 2.0). Alles andere hier ist ein Witz.</footer>
-</body>
+  <footer>
+   © hakaru — MacSlowCooker ist echte Software (Apache 2.0). Alles andere hier ist ein Witz.
+  </footer>
+ </body>
 </html>

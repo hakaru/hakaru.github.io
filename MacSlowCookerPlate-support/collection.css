@@ -1,0 +1,28 @@
+/* Shared presentation for the 2026 concept collection in all 11 locales. */
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+.collection-nav { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 28px; }
+.collection-nav a { display: inline-flex; align-items: center; min-height: 36px; font-size: 13px; }
+.collection-nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 5px; }
+.collection-label { color: #a5c9ff; font-size: 13px; font-weight: 600; letter-spacing: .05em; margin-bottom: 8px; }
+.container > h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.25; overflow-wrap: anywhere; }
+.container > .tagline { color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 600; line-height: 1.45; margin: 20px 0; }
+.model-line { color: #a5c9ff; font-size: 14px; margin: 10px 0 16px; }
+.collection-intro { color: #c5cddd; max-width: 680px; }
+.product-img { height: auto; background: #ddd; }
+.duo-tagline { color: #fff; font-size: clamp(24px, 4vw, 34px); font-weight: 600; line-height: 1.4; margin: 16px 0 24px; }
+.duo-features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.duo-features > div { padding: 20px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; }
+.duo-features dt { color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.duo-features dd { margin: 0; color: #c5cddd; }
+.duo-footnote, .duo-source { color: #bac4d4; font-size: 13px; }
+.model-sources a { overflow-wrap: anywhere; }
+.measurement-note { font-size: 14px; color: #bac4d4; border-left: 2px solid #7eb8f7; padding-left: 16px; margin-top: 20px; }
+.store-link { display: inline-block; min-height: 44px; padding: 10px 0; margin-top: 32px; }
+a:focus-visible { outline: 3px solid #a5c9ff; outline-offset: 4px; }
+@media (max-width: 600px) {
+    .container { padding-top: 28px; }
+    .collection-nav { gap: 4px 12px; }
+    .collection-nav a { min-height: 44px; }
+    .duo-features { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

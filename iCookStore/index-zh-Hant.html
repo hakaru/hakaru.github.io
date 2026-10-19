@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iCook Store | hakaru</title>
-<meta name="description" content="MacSlowCooker 配件全系列。">
-<meta property="og:title" content="iCook Store">
-<meta property="og:description" content="MacSlowCooker 配件全系列。 (僅為概念產品 — 與 Apple 無關。)">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hakaru.net/iCookStore/index-zh-Hant">
-<meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-zh-Hant.jpeg">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   iCook Store | hakaru
+  </title>
+  <meta content="讓 Mac 和 iPhone 化身想像中的廚房家電。iCook Store 集合 Cooking Plate、Brew Stand mini 與 Duo Press。所有配件皆為戲仿概念產品。" name="description"/>
+  <meta content="iCook Store" property="og:title"/>
+  <meta content="讓 Mac 和 iPhone 化身想像中的廚房家電。iCook Store 集合 Cooking Plate、Brew Stand mini 與 Duo Press。所有配件皆為戲仿概念產品。" property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://hakaru.net/iCookStore/index-zh-Hant" property="og:url"/>
+  <meta content="https://hakaru.net/MacSlowCookerPlate-support/assets/duo-press-2026.png" property="og:image"/>
+  <style>
+   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", sans-serif; background: #fff; color: #1d1d1f; -webkit-font-smoothing: antialiased; line-height: 1.5; }
   .nav { background: rgba(0,0,0,0.85); color: #f5f5f7; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 14px; letter-spacing: 0.02em; }
   .nav > div { display: flex; gap: 24px; }
@@ -38,6 +40,7 @@
   .card { background: #f5f5f7; border-radius: 18px; padding: 32px 24px 24px; text-align: center; transition: transform 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; }
   .card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,0.08); }
   .card img { width: 200px; height: 200px; object-fit: cover; border-radius: 14px; margin: 0 auto 20px; background: #fff; }
+  .card#duo-press img { object-fit: contain; background: #e7e7e7; }
   .card .product-eyebrow { color: #06c; font-size: 13px; font-weight: 500; margin-bottom: 4px; }
   .card h3 { font-size: 22px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; line-height: 1.2; }
   .card .for { font-size: 14px; color: #6e6e73; margin-bottom: 14px; }
@@ -50,90 +53,238 @@
   .disclaimer strong { color: #c2185b; }
   footer { text-align: center; margin-top: 64px; padding: 32px 24px; border-top: 1px solid #d2d2d7; color: #86868b; font-size: 12px; }
   footer a { color: #06c; text-decoration: none; }
-</style>
-</head>
-<body>
-<div class="nav">
-  <div>
-    <span></span>
-    <a href="/index-zh-Hant.html">Store</a>
-    <a href="/index-zh-Hant.html">Mac</a>
-    <span class="active">Cooking Store</span>
-    <a href="/MacSlowCooker-support/index-zh-Hant">支援</a>
+  </style>
+ </head>
+ <body>
+  <div class="nav">
+   <div>
+    <span>
+    </span>
+    <a href="/index-zh-Hant.html">
+     Store
+    </a>
+    <a href="/index-zh-Hant.html">
+     Mac
+    </a>
+    <span class="active">
+     Cooking Store
+    </span>
+    <a href="/MacSlowCooker-support/index-zh-Hant">
+     支援
+    </a>
+   </div>
   </div>
-</div>
-<section class="hero">
-  <div class="eyebrow">全新系列</div>
-  <h1>iCook Store</h1>
-  <p class="tagline">MacSlowCooker 配件全系列。</p>
-  <p class="subtagline">僅為概念產品 — 與 Apple 無關。</p>
-</section>
-<div class="container">
-  <div class="section-label">精選 · 真實的應用程式</div>
-  <div class="featured">
-    <img src="assets/thumb-app.jpeg" alt="MacSlowCooker">
+  <section class="hero">
+   <div class="eyebrow">
+    2026 系列
+   </div>
+   <h1>
+    iCook Store
+   </h1>
+   <p class="tagline">
+    MacSlowCooker 配件全系列。
+   </p>
+   <p class="subtagline">
+    僅為概念產品 — 與 Apple 無關。
+   </p>
+  </section>
+  <div class="container">
+   <div class="section-label">
+    精選 · 真實的應用程式
+   </div>
+   <div class="featured">
+    <img alt="MacSlowCooker" src="assets/thumb-app.jpeg"/>
     <div class="featured-info">
-      <h2>MacSlowCooker <span class="badge">REAL · OSS</span></h2>
-      <p class="price-line">免費 · Apache 2.0 · Apple Silicon 與 Intel</p>
-      <p>macOS Dock 圖示形式呈現 GPU / 溫度 / 風扇 / 電力，採用鍋子隱喻。浮動視窗、MRTG 風格 4 面板歷史、Prometheus 匯出器、PNG 匯出。真實的軟體。</p>
-      <a href="https://github.com/hakaru/MacSlowCooker" class="btn">從 GitHub 取得</a>
-      <a href="/MacSlowCooker-support/index-zh-Hant" class="btn secondary">支援 →</a>
+     <h2>
+      MacSlowCooker
+      <span class="badge">
+       REAL · OSS
+      </span>
+     </h2>
+     <p class="price-line">
+      免費 · Apache 2.0 · Apple Silicon 與 Intel
+     </p>
+     <p>
+      macOS Dock 圖示形式呈現 GPU / 溫度 / 風扇 / 電力，採用鍋子隱喻。浮動視窗、MRTG 風格 4 面板歷史、Prometheus 匯出器、PNG 匯出。真實的軟體。
+     </p>
+     <a class="btn" href="https://github.com/hakaru/MacSlowCooker">
+      從 GitHub 取得
+     </a>
+     <a class="btn secondary" href="/MacSlowCooker-support/index-zh-Hant">
+      支援 →
+     </a>
     </div>
+   </div>
+   <div class="section-label">
+    配件 · 概念仿諷
+   </div>
+   <div class="grid">
+    <div class="card">
+     <img alt="Cooking Plate" loading="lazy" src="/MacSlowCookerPlate-support/assets/cooking-plate-2026.png"/>
+     <div class="product-eyebrow">
+      Mac Studio 專用
+     </div>
+     <h3>
+      Cooking Plate
+     </h3>
+     <p class="for">
+      Mac Studio · M5 Max / M5 Ultra
+     </p>
+     <p class="tagline">
+      M5 Ultra。鮮味也在本機。
+     </p>
+     <p class="price">
+      售價
+      <strong>
+       NT$ 2,990 起
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant.html">
+       了解更多
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Cluster Edition" loading="lazy" src="/MacSlowCookerPlate-support/assets/cluster-2026.png"/>
+     <div class="product-eyebrow">
+      Mac mini ×4 專用
+     </div>
+     <h3>
+      Cluster Edition
+     </h3>
+     <p class="for">
+      Mac mini · M6 / M5 Pro
+     </p>
+     <p class="tagline">
+      四台 Mac mini，一份菜單。
+     </p>
+     <p class="price">
+      售價
+      <strong>
+       NT$ 6,290 起
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant.html#cluster">
+       了解更多
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Brew Stand" loading="lazy" src="/MacSlowCookerPlate-support/assets/brew-stand-2026.png"/>
+     <div class="product-eyebrow">
+      Mac mini 專用
+     </div>
+     <h3>
+      Brew Stand mini
+     </h3>
+     <p class="for">
+      Mac mini · M6 / M5 Pro
+     </p>
+     <p class="tagline">
+      AI 常駐，咖啡一杯。
+     </p>
+     <p class="price">
+      售價
+      <strong>
+       NT$ 1,690 起
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant.html#brew-stand">
+       了解更多
+      </a>
+     </div>
+    </div>
+    <div class="card" id="duo-press">
+     <img alt="Duo Press 概念圖：將半開的摺疊 iPhone 想像成熱壓吐司機" loading="lazy" src="/MacSlowCookerPlate-support/assets/duo-press-2026.png"/>
+     <div class="product-eyebrow">
+      適用於 iPhone Duo
+     </div>
+     <h3>
+      Duo Press
+     </h3>
+     <p class="for">
+      iPhone Duo
+     </p>
+     <p class="tagline">
+      打開是 iPhone。闔上，是早餐。
+     </p>
+     <p class="price">
+      概念產品
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant.html#duo-press">
+       了解更多
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="Mac Pro Smoker Edition" src="assets/smoker-photo.jpeg"/>
+     <div class="product-eyebrow">
+      Mac Pro 專用
+     </div>
+     <h3>
+      Smoker Edition
+     </h3>
+     <p class="for">
+      Mac Pro (2019, 2023 M2 Ultra)
+     </p>
+     <p class="tagline">
+      起司刨絲器，終於有意義了。
+     </p>
+     <p class="price">
+      售價
+      <strong>
+       NT$ 12,990 起
+      </strong>
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant#smoker">
+       了解更多
+      </a>
+     </div>
+    </div>
+    <div class="card">
+     <img alt="MacSlowCooker T 恤 — Cooking Plate" src="assets/tee-plate-photo.jpeg"/>
+     <div class="product-eyebrow">
+      服飾 · 自然色
+     </div>
+     <h3>
+      T 恤 — Cooking Plate
+     </h3>
+     <p class="for">
+      所有 Mac。所有人類。
+     </p>
+     <p class="tagline">
+      硬體,現在可穿。
+     </p>
+     <p class="price">
+      <strong>
+       NT$ 1,090
+      </strong>
+      起
+     </p>
+     <div class="actions">
+      <a class="btn" href="/MacSlowCookerPlate-support/index-zh-Hant#tee-plate">
+       了解更多
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="disclaimer">
+    配件、價格與烹飪功能均為虛構的戲仿設定，並未販售。Apple 與本企劃無關。機型名稱依據官方公告，但本頁不提供新機型的溫度或加熱時間測量結果。請勿真的在 Mac 上放置鍋具或飲品。
+   </div>
+   <div class="section-label" style="margin-top: 56px">
+    即將推出（也都不是真的）
+   </div>
+   <p style="color: #6e6e73; font-size: 14px;">
+    MacBook Pro 加熱袖套 · iPad mini 鍋墊 · AirPort Time Capsule 真空慢煮浴
+   </p>
   </div>
-  <div class="section-label">配件 · 概念仿諷</div>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/thumb-cooking-plate.jpeg" alt="Cooking Plate">
-      <div class="product-eyebrow">Mac Studio 專用</div>
-      <h3>Cooking Plate</h3>
-      <p class="for">Mac Studio (M1/M2/M3 Max · Ultra)</p>
-      <p class="tagline">你的 Mac Studio。現在是烹飪電器。</p>
-      <p class="price">售價 <strong>NT$ 2,990 起</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-zh-Hant" class="btn">了解更多</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/thumb-cluster.jpeg" alt="Cluster Edition">
-      <div class="product-eyebrow">Mac mini ×4 專用</div>
-      <h3>Cluster Edition</h3>
-      <p class="for">Mac mini (M1–M4)</p>
-      <p class="tagline">四台 Mac mini。一張板子。真正的烹飪火力。</p>
-      <p class="price">售價 <strong>NT$ 6,290 起</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-zh-Hant#cluster" class="btn">了解更多</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/thumb-brew-stand.jpeg" alt="Brew Stand">
-      <div class="product-eyebrow">Mac mini 專用</div>
-      <h3>Brew Stand</h3>
-      <p class="for">Mac mini (M1–M4)</p>
-      <p class="tagline">你的 Mac mini。現在是你的咖啡師。</p>
-      <p class="price">售價 <strong>NT$ 1,690 起</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-zh-Hant#brew-stand" class="btn">了解更多</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/smoker-photo.jpeg" alt="Mac Pro Smoker Edition">
-      <div class="product-eyebrow">Mac Pro 專用</div>
-      <h3>Smoker Edition</h3>
-      <p class="for">Mac Pro (2019, 2023 M2 Ultra)</p>
-      <p class="tagline">起司刨絲器，終於有意義了。</p>
-      <p class="price">售價 <strong>NT$ 12,990 起</strong></p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-zh-Hant#smoker" class="btn">了解更多</a></div>
-    </div>
-    <div class="card">
-      <img src="assets/tee-plate-photo.jpeg" alt="MacSlowCooker T 恤 — Cooking Plate">
-      <div class="product-eyebrow">服飾 · 自然色</div>
-      <h3>T 恤 — Cooking Plate</h3>
-      <p class="for">所有 Mac。所有人類。</p>
-      <p class="tagline">硬體,現在可穿。</p>
-      <p class="price"><strong>NT$ 1,090</strong> 起</p>
-      <div class="actions"><a href="/MacSlowCookerPlate-support/index-zh-Hant#tee-plate" class="btn">了解更多</a></div>
-    </div>
-  </div>
-  <div class="disclaimer">
-    <strong>關於本商店。</strong> 以上列出的所有配件皆為仿諷概念。它們並不作為實體產品存在，也不販售。Apple 與本系列無關。所示溫度與時間是 MacSlowCooker（真實應用程式）在實際 Mac 硬體上執行時的實測值 — 我們只是把它包裝成像烹飪電器產品線一樣。請真的不要在 Mac 上放廚具。
-  </div>
-  <div class="section-label" style="margin-top: 56px">即將推出（也都不是真的）</div>
-  <p style="color: #6e6e73; font-size: 14px;">MacBook Pro 加熱袖套 · Mac Pro 燻烤版 · iPad mini 鍋墊 · AirPort Time Capsule 真空慢煮浴</p>
-</div>
-<footer>© hakaru — MacSlowCooker 是真實的軟體（Apache 2.0）。其他全是玩笑。</footer>
-</body>
+  <footer>
+   © hakaru — MacSlowCooker 是真實的軟體（Apache 2.0）。其他全是玩笑。
+  </footer>
+ </body>
 </html>

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MacSlowCooker Cooking Plate (Conceito) | hakaru</title>
-    <meta name="description" content="Seu Mac Studio. Agora um eletrodoméstico de cozinha. (Conceito)">
-    <meta property="og:title" content="MacSlowCooker Cooking Plate">
-    <meta property="og:description" content="Seu Mac Studio. Agora um eletrodoméstico de cozinha.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hakaru.net/MacSlowCookerPlate-support/index-pt-BR.html">
-    <meta property="og:image" content="https://hakaru.net/MacSlowCookerPlate-support/assets/concept-pt-BR.jpeg">
-    <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   MacSlowCooker Cooking Plate (Conceito) | hakaru
+  </title>
+  <meta content="Uma cozinha imaginária para o Mac Studio com M5 Max ou M5 Ultra. Um LLM local planeja o jantar; nós imaginamos uma panela em cima. Inferência real, culinária fictícia." name="description"/>
+  <meta content="MacSlowCooker Cooking Plate" property="og:title"/>
+  <meta content="Uma cozinha imaginária para o Mac Studio com M5 Max ou M5 Ultra. Um LLM local planeja o jantar; nós imaginamos uma panela em cima. Inferência real, culinária fictícia." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://hakaru.net/MacSlowCookerPlate-support/index-pt-BR.html" property="og:url"/>
+  <meta content="https://hakaru.net/MacSlowCookerPlate-support/assets/cooking-plate-2026.png" property="og:image"/>
+  <style>
+   * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Apple SD Gothic Neo", "PingFang TC", Roboto, Helvetica, Arial, sans-serif;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -56,63 +58,238 @@ footer {
     color: #666; font-size: 0.9em;
 }
 footer a { color: #888; }
-</style>
-</head>
-<body>
-<div class="container">
-    <a href="/index-pt-BR.html" class="back-link">← hakaru Apps</a>
-
-    <span class="badge">CONCEITO / PARÓDIA</span>
-    <h1>MacSlowCooker Cooking Plate</h1>
-    <p class="tagline">Seu Mac Studio. Agora um eletrodoméstico de cozinha.</p>
-
-    <img src="assets/concept-pt-BR.jpeg" alt="MacSlowCooker Cooking Plate" class="product-img">
-
-    <h2 id="cluster" style="margin-top:36px">Edição Cluster</h2>
-    <img src="assets/cluster-page-pt-BR.jpeg" alt="MacSlowCooker Cooking Plate Cluster Edition" class="product-img">
-    <p><strong>Edição Cluster</strong> — para o rack de treinamento de LLM. Quatro Mac minis, uma placa. Mesma paródia, quatro vezes mais BTU.</p>
-
-    <h2 id="brew-stand" style="margin-top:36px">Brew Stand para Mac mini</h2>
-    <img src="assets/brew-stand-pt-BR.jpeg" alt="Mac mini Brew Stand" class="product-img">
-    <p><strong>Brew Stand</strong> — seu Mac mini, agora seu barista. O primo aquecedor de xícaras do Cooking Plate. Acabamento em anéis concêntricos, capacidade para 3 xícaras. Mesma paródia, edição bebidas quentes.</p>
-
-    <h2 id="smoker" style="margin-top:36px">Mac Pro Smoker Edition</h2>
-    <img src="assets/smoker-photo.jpeg" alt="Mac Pro Smoker Edition" class="product-img">
-    <p><strong>Smoker Edition</strong> — seu ralador, finalmente faz sentido. As perfurações do chassi Mac Pro tornam-se uma chaminé de defumação a frio; uma bandeja de lascas na base fornece a fumaça. Faixa de salmão defumado a frio, não churrasco. Não é um produto real.</p>
-
-    <h2 id="tee-plate" style="margin-top:36px">Camiseta MacSlowCooker — Cooking Plate</h2>
-    <img src="assets/tee-plate-photo.jpeg" alt="Camiseta MacSlowCooker — Cooking Plate" class="product-img">
-    <p><strong>Camiseta Cooking Plate</strong> — inferência vestível. Ilustração Mac Studio + panela de ferro serigrafada com tinta profunda numa camiseta mescla natural de 180 g/m². O hardware, num cabide.</p>
-
-    <div class="disclaimer">
-        <strong>Isto é uma piada.</strong> O MacSlowCooker Cooking Plate não é um produto real, acessório ou marca registrada. A página acima é uma paródia de um lançamento de produto no estilo Apple. A Apple não tem afiliação nem conhecimento deste conceito.
-    </div>
-
-    <h2>De onde vem a piada</h2>
-    <p>Durante o desenvolvimento do <a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker</a> — um app real do macOS que visualiza o uso da GPU no Dock como uma panela — rodar inferência LLM local em um Mac Studio M3 Ultra esquentava o chassi o suficiente para a piada "dá pra cozinhar em cima disso de verdade?" voltar várias vezes.</p>
-    <p>Por isso esta página de conceito existe. Ela enquadra o calor de um Mac trabalhando duro como se fosse uma característica de cozinha. Os números são reais, o produto não é.</p>
-
-    <h2>Os números reais</h2>
-    <ul>
-        <li>O Mac Studio M3 Ultra atinge cerca de <strong>65 °C / 149 °F</strong> na placa superior durante uso sustentado a 100% da GPU.</li>
-        <li>Tempo para alcançar essa temperatura durante inferência LLM local de classe 70B: ~8 min.</li>
-        <li>O design térmico da Apple mantém a placa superior bem abaixo das temperaturas normais de cocção. <strong>Faixa sous-vide, não refogado.</strong></li>
-        <li>Você pode monitorar tudo isso ao vivo com o app MacSlowCooker real (ícone do Dock, janela popup, visualizador de histórico de 4 painéis estilo MRTG).</li>
-    </ul>
-
-    <h2>Não faça isso de verdade</h2>
-    <p>Apoiar utensílios quentes, líquidos ou qualquer coisa sensível ao calor sobre um computador ligado é má ideia. A placa superior do Mac Studio é de alumínio, mas o fluxo de ar é crítico para manter o SoC sob os limites térmicos. Bloqueá-lo encurta a vida da máquina e pode invalidar a garantia.</p>
-
-    <h2>Leia mais</h2>
-    <ul>
-        <li><a href="https://github.com/hakaru/MacSlowCooker">MacSlowCooker (GitHub)</a></li>
-        <li><a href="https://zenn.dev/hakaru/articles/macslowcooker-app-store-impossible">「GPU で料理しよう。MacSlowCooker」 — Artigo completo (em japonês)</a></li>
-        <li><a href="/MacSlowCooker-support/">Página de suporte do MacSlowCooker</a></li>
-    </ul>
-
-    <footer>
-        © hakaru — <a href="/index-pt-BR.html">hakaru Apps</a>
-    </footer>
-</div>
-</body>
+  </style>
+  <link href="collection.css" rel="stylesheet"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-pt-BR" rel="canonical"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/" hreflang="en" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-ja" hreflang="ja" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-de" hreflang="de" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-es" hreflang="es" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-fr" hreflang="fr" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-it" hreflang="it" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-ko" hreflang="ko" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-nl" hreflang="nl" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-pt-BR" hreflang="pt-BR" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-sv" hreflang="sv" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/index-zh-Hant" hreflang="zh-Hant" rel="alternate"/>
+  <link href="https://hakaru.net/MacSlowCookerPlate-support/" hreflang="x-default" rel="alternate"/>
+ </head>
+ <body>
+  <div class="container">
+   <a class="back-link" href="/index-pt-BR.html">
+    ← hakaru Apps
+   </a>
+   <nav aria-label="Language" class="collection-nav">
+    <a href="./" lang="en">
+     English
+    </a>
+    <a href="index-ja.html" lang="ja">
+     日本語
+    </a>
+    <a href="index-de.html" lang="de">
+     Deutsch
+    </a>
+    <a href="index-es.html" lang="es">
+     Español
+    </a>
+    <a href="index-fr.html" lang="fr">
+     Français
+    </a>
+    <a href="index-it.html" lang="it">
+     Italiano
+    </a>
+    <a href="index-ko.html" lang="ko">
+     한국어
+    </a>
+    <a href="index-nl.html" lang="nl">
+     Nederlands
+    </a>
+    <a aria-current="page" href="index-pt-BR.html" lang="pt-BR">
+     Português
+    </a>
+    <a href="index-sv.html" lang="sv">
+     Svenska
+    </a>
+    <a href="index-zh-Hant.html" lang="zh-Hant">
+     繁體中文
+    </a>
+   </nav>
+   <span class="badge">
+    CONCEITO / PARÓDIA
+   </span>
+   <p class="collection-label">
+    Coleção 2026
+   </p>
+   <h1>
+    MacSlowCooker Cooking Plate
+   </h1>
+   <p class="tagline">
+    M5 Ultra. Cozido em modo local.
+   </p>
+   <p class="model-line">
+    Mac Studio · M5 Max / M5 Ultra
+   </p>
+   <p class="collection-intro">
+    Uma cozinha imaginária para o Mac Studio com M5 Max ou M5 Ultra. Um LLM local planeja o jantar; nós imaginamos uma panela em cima. Inferência real, culinária fictícia.
+   </p>
+   <img alt="MacSlowCooker Cooking Plate" class="product-img" height="1024" src="assets/cooking-plate-2026.png" width="1536"/>
+   <h2 id="cluster" style="margin-top:36px">
+    Edição Cluster
+   </h2>
+   <p class="model-line">
+    Mac mini × 4 · M6 / M5 Pro
+   </p>
+   <img alt="MacSlowCooker Cooking Plate Cluster Edition" class="product-img" height="1024" loading="lazy" src="assets/cluster-2026.png" width="1536"/>
+   <p>
+    Quatro Mac mini com M6 ou M5 Pro. Uma Cooking Plate. Um agente para o cardápio, outro para as compras, outro para o preparo e outro para provar. Quatro computadores, mas só uma panela.
+   </p>
+   <h2 id="brew-stand" style="margin-top:36px">
+    Brew Stand mini
+   </h2>
+   <p class="model-line">
+    Mac mini · M6 / M5 Pro
+   </p>
+   <img alt="Mac mini Brew Stand" class="product-img" height="1024" loading="lazy" src="assets/brew-stand-2026.png" width="1536"/>
+   <p>
+    Um Brew Stand para uma xícara, na escala do compacto Mac mini com M6 ou M5 Pro. Agentes de IA sempre ativos, um café. A função de manter aquecido continua imaginária.
+   </p>
+   <section aria-labelledby="duo-press" class="duo-press">
+    <h2 id="duo-press">
+     Duo Press
+    </h2>
+    <p class="model-line">
+     iPhone Duo · Conceito
+    </p>
+    <p class="duo-tagline">
+     Abriu: iPhone. Fechou: café da manhã.
+    </p>
+    <img alt="Conceito Duo Press: um iPhone entreaberto imaginado como sanduicheira" class="product-img" height="1024" loading="lazy" src="assets/duo-press-2026.png" width="1536"/>
+    <p>
+     Chapas imaginárias na parte interna do iPhone Duo. É só dobrar para começar o dia bem dourado. Um acessório conceitual que transforma um celular dobrável em sanduicheira.
+    </p>
+    <dl class="duo-features">
+     <div>
+      <dt>
+       True Toast
+      </dt>
+      <dd>
+       Dourado do seu jeito.
+      </dd>
+     </div>
+     <div>
+      <dt>
+       Pronto para o AirDrop
+      </dt>
+      <dd>
+       Envie a receita. O recheio, não.
+      </dd>
+     </div>
+    </dl>
+    <p class="duo-footnote">
+     Pão, queijo e iPhone vendidos separadamente.
+    </p>
+    <p class="duo-source">
+     Inspirado no:
+     <a href="https://www.apple.com/iphone-duo/" lang="en">
+      Apple — iPhone Duo
+     </a>
+    </p>
+   </section>
+   <h2 id="smoker" style="margin-top:36px">
+    Mac Pro Smoker Edition
+   </h2>
+   <img alt="Mac Pro Smoker Edition" class="product-img" loading="lazy" src="assets/smoker-photo.jpeg"/>
+   <p>
+    <strong>
+     Smoker Edition
+    </strong>
+    — seu ralador, finalmente faz sentido. As perfurações do chassi Mac Pro tornam-se uma chaminé de defumação a frio; uma bandeja de lascas na base fornece a fumaça. Faixa de salmão defumado a frio, não churrasco. Não é um produto real.
+   </p>
+   <h2 id="tee-plate" style="margin-top:36px">
+    Camiseta MacSlowCooker — Cooking Plate
+   </h2>
+   <img alt="Camiseta MacSlowCooker — Cooking Plate" class="product-img" loading="lazy" src="assets/tee-plate-photo.jpeg"/>
+   <p>
+    <strong>
+     Camiseta Cooking Plate
+    </strong>
+    — inferência vestível. Ilustração Mac Studio + panela de ferro serigrafada com tinta profunda numa camiseta mescla natural de 180 g/m². O hardware, num cabide.
+   </p>
+   <div class="disclaimer">
+    <strong>
+     Isto é uma piada.
+    </strong>
+    O MacSlowCooker Cooking Plate não é um produto real, acessório ou marca registrada. A página acima é uma paródia de um lançamento de produto no estilo Apple. A Apple não tem afiliação nem conhecimento deste conceito.
+   </div>
+   <h2>
+    De onde vem a piada
+   </h2>
+   <p>
+    Durante o desenvolvimento do
+    <a href="https://github.com/hakaru/MacSlowCooker">
+     MacSlowCooker
+    </a>
+    — um app real do macOS que visualiza o uso da GPU no Dock como uma panela — rodar inferência LLM local em um Mac Studio M3 Ultra esquentava o chassi o suficiente para a piada "dá pra cozinhar em cima disso de verdade?" voltar várias vezes.
+   </p>
+   <p>
+    A coleção 2026 leva a brincadeira aos novos Mac Studio e Mac mini. Os Macs e o app de monitoramento são reais. A linha de eletrodomésticos só existe neste conceito.
+   </p>
+   <h2 id="models">
+    Macs reais. Cozinha imaginária.
+   </h2>
+   <p>
+    As configurações seguem os anúncios da Apple de 25 de agosto de 2026, consultados em 19 de outubro de 2026.
+   </p>
+   <ul class="model-sources">
+    <li>
+     <a href="https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/">
+      Apple — Mac Studio: M5 Max / M5 Ultra
+     </a>
+    </li>
+    <li>
+     <a href="https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/">
+      Apple — Mac mini: M6 / M5 Pro
+     </a>
+    </li>
+   </ul>
+   <p class="measurement-note">
+    Esta página não contém medições de temperatura da superfície nem de tempo de aquecimento dos novos modelos. Os “65 °C / cerca de 8 minutos” do conceito anterior não são especificações dos Macs atuais. As fotos são imagens conceituais geradas.
+   </p>
+   <h2>
+    Não faça isso de verdade
+   </h2>
+   <p>
+    Apoiar utensílios quentes, líquidos ou qualquer coisa sensível ao calor sobre um computador ligado é má ideia. A placa superior do Mac Studio é de alumínio, mas o fluxo de ar é crítico para manter o SoC sob os limites térmicos. Bloqueá-lo encurta a vida da máquina e pode invalidar a garantia.
+   </p>
+   <h2>
+    Leia mais
+   </h2>
+   <ul>
+    <li>
+     <a href="https://github.com/hakaru/MacSlowCooker">
+      MacSlowCooker (GitHub)
+     </a>
+    </li>
+    <li>
+     <a href="https://zenn.dev/hakaru/articles/macslowcooker-app-store-impossible">
+      「GPU で料理しよう。MacSlowCooker」 — Artigo completo (em japonês)
+     </a>
+    </li>
+    <li>
+     <a href="/MacSlowCooker-support/">
+      Página de suporte do MacSlowCooker
+     </a>
+    </li>
+   </ul>
+   <a class="store-link" href="/iCookStore/index-pt-BR.html">
+    ← iCook Store
+   </a>
+   <footer>
+    © hakaru —
+    <a href="/index-pt-BR.html">
+     hakaru Apps
+    </a>
+   </footer>
+  </div>
+ </body>
 </html>
