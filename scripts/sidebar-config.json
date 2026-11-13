@@ -1198,6 +1198,34 @@
     }
   },
   {
+    "id": "Tonrad",
+    "name": "Tonrad",
+    "icon": "/assets/tonrad-icon.png",
+    "prefix": "/Tonrad-support",
+    "links": {
+      "en": [
+        {
+          "label": "Support",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Privacy",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "ja": [
+        {
+          "label": "サポート",
+          "href": "/Tonrad-support/index-ja"
+        },
+        {
+          "label": "プライバシー",
+          "href": "/Tonrad-support/privacy-ja"
+        }
+      ]
+    }
+  },
+  {
     "id": "ChatArchive",
     "name": "ChatArchive",
     "icon": "/assets/chatarchive-icon.png",

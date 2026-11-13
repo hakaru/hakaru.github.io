@@ -27,6 +27,7 @@ TARGET_DIRS = [
     "SonicDNAEngine-support",
     "simpleMIDIController-support",
     "MyEQ-support",
+    "Tonrad-support",
     "ChatArchive-support",
     "TineModeler-support",
     "M2DX-Core-support",

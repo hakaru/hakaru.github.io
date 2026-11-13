@@ -28,6 +28,7 @@ TARGET_DIRS = [
     "M2DX-Core-support",
     "PeerClockMetronome-support",
     "MacSlowCooker-support",
+    "Tonrad-support",
 ]
 
 LANG_LABELS = {

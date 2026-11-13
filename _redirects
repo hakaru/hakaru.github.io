@@ -33,3 +33,5 @@
 /peerclockmetronome-support   /PeerClockMetronome-support/       301
 /bopbot-support/*             /BopBot-support/:splat             301
 /bopbot-support               /BopBot-support/                   301
+/tonrad-support/*             /Tonrad-support/:splat             301
+/tonrad-support               /Tonrad-support/                   301
