@@ -256,7 +256,9 @@ def build_sidebar_html(config, current_app, rel_path, current_lang, active_secti
     # Language switcher
     lines.append('  <div class="sidebar-lang">')
 
-    available_langs = list(current_app["links"].keys())
+    available_langs = current_app.get("sectionLanguages", {}).get(
+        active_section, list(current_app["links"].keys())
+    )
 
     for lang in available_langs:
         label = LANG_LABELS.get(lang, lang.upper())

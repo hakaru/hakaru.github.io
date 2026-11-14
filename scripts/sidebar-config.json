@@ -1209,6 +1209,10 @@
           "href": "/Tonrad-support/"
         },
         {
+          "label": "Manual",
+          "href": "/Tonrad-support/manual/en/"
+        },
+        {
           "label": "Privacy",
           "href": "/Tonrad-support/privacy"
         }
@@ -1219,9 +1223,149 @@
           "href": "/Tonrad-support/index-ja"
         },
         {
+          "label": "マニュアル",
+          "href": "/Tonrad-support/manual/ja/"
+        },
+        {
           "label": "プライバシー",
           "href": "/Tonrad-support/privacy-ja"
         }
+      ],
+      "de": [
+        {
+          "label": "Support (Englisch)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Handbuch",
+          "href": "/Tonrad-support/manual/de/"
+        },
+        {
+          "label": "Datenschutz (Englisch)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte (inglés)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/Tonrad-support/manual/es/"
+        },
+        {
+          "label": "Privacidad (inglés)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Assistance (anglais)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Guide",
+          "href": "/Tonrad-support/manual/fr/"
+        },
+        {
+          "label": "Confidentialité (anglais)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto (inglese)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Manuale",
+          "href": "/Tonrad-support/manual/it/"
+        },
+        {
+          "label": "Privacy (inglese)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원 (영어)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "매뉴얼",
+          "href": "/Tonrad-support/manual/ko/"
+        },
+        {
+          "label": "개인정보 처리방침 (영어)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Ondersteuning (Engels)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/Tonrad-support/manual/nl/"
+        },
+        {
+          "label": "Privacy (Engels)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte (inglês)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/Tonrad-support/manual/pt-BR/"
+        },
+        {
+          "label": "Privacidade (inglês)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support (engelska)",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/Tonrad-support/manual/sv/"
+        },
+        {
+          "label": "Integritet (engelska)",
+          "href": "/Tonrad-support/privacy"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援（英文）",
+          "href": "/Tonrad-support/"
+        },
+        {
+          "label": "手冊",
+          "href": "/Tonrad-support/manual/zh-Hant/"
+        },
+        {
+          "label": "隱私權（英文）",
+          "href": "/Tonrad-support/privacy"
+        }
+      ]
+    },
+    "sectionLanguages": {
+      "support": [
+        "en",
+        "ja"
+      ],
+      "privacy": [
+        "en",
+        "ja"
       ]
     }
   },

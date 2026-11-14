@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tonrad 使用手冊 | hakaru</title>
+    <meta name="description" content="學習在 iPhone 和 iPad 上演奏 Tonrad：鍵盤、拉桿、打擊音、顫音、旋轉揚聲器、殘響及 USB MIDI。">
+    <meta property="og:title" content="Tonrad 使用手冊">
+    <meta property="og:description" content="學習在 iPhone 和 iPad 上演奏 Tonrad：鍵盤、拉桿、打擊音、顫音、旋轉揚聲器、殘響及 USB MIDI。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/Tonrad-support/manual/zh-Hant/">
+    <meta property="og:image" content="https://hakaru.net/assets/tonrad-icon.png">
+    <link rel="canonical" href="https://hakaru.net/Tonrad-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/Tonrad-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/Tonrad-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/Tonrad-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/Tonrad-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/Tonrad-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/Tonrad-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/Tonrad-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/Tonrad-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/Tonrad-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/Tonrad-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/Tonrad-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/Tonrad-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/Tonrad-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">目錄</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-zh-Hant">支援</a>
+      <a href="/M2MX12-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-zh-Hant">支援</a>
+      <a href="/EraVerb-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-zh-Hant">支援</a>
+      <a href="/P73-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-zh-Hant">支援</a>
+      <a href="/TwinFET-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-zh-Hant">支援</a>
+      <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
+      <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Support</a>
+      <a href="/MyEQ-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/Tonrad-support/">支援（英文）</a>
+      <a href="/Tonrad-support/manual/zh-Hant/" class="active">手冊</a>
+      <a href="/Tonrad-support/privacy">隱私權（英文）</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/zh-Hant/">Support</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-zh-Hant">支援</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-zh-Hant">支援</a>
+      <a href="/BopBot-support/manual/zh-Hant/">使用手冊</a>
+      <a href="/BopBot-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/Tonrad-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/Tonrad-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/Tonrad-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/Tonrad-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/Tonrad-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/Tonrad-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/Tonrad-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/Tonrad-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/Tonrad-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/Tonrad-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體</span>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/tonrad-icon.png" width="76" height="76" alt=""><div><h1>Tonrad 使用手冊</h1><p class="manual-subtitle">適用於 iPhone 和 iPad 的音輪風琴</p></div></div>
+    <p class="manual-updated">更新於 2026 年 11 月 15 日 · 版本 0.1.0 / 0.2.0</p>
+    <nav class="manual-languages" aria-label="手冊語言"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/Tonrad-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/Tonrad-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/Tonrad-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/Tonrad-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/Tonrad-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/Tonrad-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/Tonrad-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/Tonrad-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/Tonrad-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/Tonrad-support/manual/sv/">Svenska</a><span class="sidebar-lang-btn active" data-lang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</span></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">目錄</h2><ol><li><a href="#before-you-start">開始之前</a></li>
+<li><a href="#first-sound">演奏第一個音</a></li>
+<li><a href="#home">HOME：鍵盤與表情控制</a></li>
+<li><a href="#drawbars">DRAWBARS：塑造音色</a></li>
+<li><a href="#percussion">打擊音：為 UPPER 加入起音重音</a></li>
+<li><a href="#vibrato">顫音與合唱</a></li>
+<li><a href="#rotary-reverb">旋轉揚聲器與彈簧殘響</a></li>
+<li><a href="#settings">SET：輸出、PANIC 與音訊資訊</a></li>
+<li><a href="#midi">USB MIDI 鍵盤 — 0.2.0</a></li>
+<li><a href="#zones">一台鍵盤，三個分區 — 0.2.0</a></li>
+<li><a href="#midi-learn">踏板、旋鈕與 MIDI LEARN — 0.2.0</a></li>
+<li><a href="#saving">會儲存哪些設定</a></li>
+<li><a href="#troubleshooting">疑難排解</a></li></ol></nav>
+<section id="before-you-start" aria-labelledby="before-you-start-title">
+<h2 id="before-you-start-title">開始之前</h2>
+<p>Tonrad 是可獨立運作的音輪風琴，適用於執行 iOS/iPadOS 18 或以上版本的 iPhone 和 iPad。請將裝置橫放：此 App 僅支援橫向操作。三個畫面分別是 <strong>HOME</strong>、<strong>DRAWBARS</strong> 和 <strong>SET</strong>。App 介面提供日文及英文；本手冊提供 11 種語言。</p>
+<div class="note"><strong>請確認您的版本。</strong>截至 2026 年 11 月 15 日，App Store 上的版本為 0.1.0。本手冊也說明 0.2.0 更新內容。標示 <strong>0.2.0</strong> 的功能無法在 0.1.0 中使用。螢幕截圖顯示的是 0.1.0。</div>
+<div class="table-wrap"><table><thead><tr><th>功能</th><th>0.1.0</th><th>0.2.0</th></tr></thead><tbody><tr><td>螢幕鍵盤與音色控制</td><td>有</td><td>有</td></tr><tr><td>USB MIDI、鍵盤分區及 MIDI LEARN</td><td>無</td><td>有</td></tr><tr><td>其他 App 在前景時繼續發聲</td><td>無</td><td>有</td></tr><tr><td>保留揚聲器音色，只停止旋轉</td><td>無</td><td>HOME → ROTOR</td></tr><tr><td>旁通旋轉揚聲器</td><td>HOME → SPEAKER</td><td>SET → AUDIO → SPEAKER OFF</td></tr></tbody></table></div>
+<p>沒有預設音色、錄音、帳號、廣告或 App 內購買。Tonrad 無法作為 Audio Unit 外掛運作。App Store 版本沒有 PRESET 和 TUNE 畫面。</p>
+
+</section>
+<section id="first-sound" aria-labelledby="first-sound-title">
+<h2 id="first-sound-title">演奏第一個音</h2>
+<ol><li>將裝置橫放並開啟 Tonrad，先將裝置音量設為舒適的程度。</li><li>在 <strong>HOME</strong> 上演奏最上方標示 <strong>UPPER</strong> 的鍵盤。初始拉桿設定已可發聲，不需要外接鍵盤。</li><li>若音量太小，將右側的 <strong>EXP</strong> 滑桿往上移。若仍沒有聲音，請檢查 <strong>SET → AUDIO → OUTPUT</strong> 及畫面上顯示的輸出裝置。</li><li>點一下 <strong>DRAWBARS</strong>。若想試試簡單的音色，將 UPPER 的 <strong>8′</strong> 拉桿設為 <strong>8</strong>，其餘八支 UPPER 拉桿設為 0，並將 <strong>PERC</strong> 設為 OFF。回到 HOME 演奏。</li><li>加入 UPPER 的 <strong>16′</strong> 和 <strong>5⅓′</strong> 拉桿，再試試 <strong>ROTARY → SLOW / FAST</strong>。</li></ol><p>LOWER 和 PEDAL 各有自己的拉桿。提高 UPPER 拉桿的音量並不會讓其他鍵盤發聲。</p>
+
+</section>
+<section id="home" aria-labelledby="home-title">
+<h2 id="home-title">HOME：鍵盤與表情控制</h2>
+<p>三列鍵盤分別是 <strong>UPPER</strong>、<strong>LOWER</strong> 和 <strong>PEDAL</strong>。按下琴鍵即可發聲，放開便停止。在琴鍵上滑動手指會切換音符，也可以同時用多根手指演奏。</p>
+<p>螢幕較小時，每層手鍵盤上方的細條會顯示目前可見的音域。點一下或水平拖曳細條，即可顯示更低或更高的音。這只會移動可見的琴鍵範圍，不會改變調音。較寬的螢幕能顯示完整的手鍵盤，因此音域細條會消失。腳踏鍵盤仍以獨立的一列顯示。</p>
+<p><strong>EXP</strong> 是整部風琴的表情控制。往上拖曳會變大聲，往下則變小聲；單點一下並不會直接跳到該位置的音量。連點兩下 EXP 可恢復最大值。每次啟動 App 都會從最大值開始，位置不會儲存。演奏時可用它做出音量起伏；整體輸出音量則使用 SET → OUTPUT 調整。</p>
+<figure><a href="/Tonrad-support/manual/assets/home-0.1.0-en.png"><img src="/Tonrad-support/manual/assets/home-0.1.0-en.png" width="2622" height="1206" loading="lazy" alt="HOME 畫面，包含上層與下層鍵盤、腳踏鍵盤、旋轉控制及表情滑桿"></a><figcaption>Tonrad 0.1.0 · 英文介面</figcaption></figure>
+</section>
+<section id="drawbars" aria-labelledby="drawbars-title">
+<h2 id="drawbars-title">DRAWBARS：塑造音色</h2>
+<p>將拉桿往下拖曳可提高音量，往上則降低音量。每支拉桿有 <strong>0–8</strong> 的位置：0 為無聲，8 為最大。UPPER 和 LOWER 各有九支拉桿，PEDAL 有兩支。</p>
+<div class="table-wrap"><table><thead><tr><th>組別</th><th>拉桿，由左至右</th></tr></thead><tbody><tr><td>UPPER / LOWER</td><td>16′ · 5⅓′ · 8′ · 4′ · 2⅔′ · 2′ · 1⅗′ · 1⅓′ · 1′</td></tr><tr><td>PEDAL</td><td>16′ · 8′</td></tr></tbody></table></div>
+<p>8′ 拉桿提供所彈音符的音高，16′ 加入低一個八度的音，4′ 則加入高一個八度的音。標示較短或分數音栓長度的拉桿會加入較高的泛音。搭配各拉桿的音量即可塑造音色。</p>
+<p>可先將 UPPER 設為 <strong>8 8 8 0 0 0 0 0 0</strong>。這些數字表示由左至右的拉桿位置，是供您手動設定的範例，並非可以選取的預設音色。若加入更多成分後音量太大，請降低 OUTPUT。</p>
+<figure><a href="/Tonrad-support/manual/assets/drawbars-0.1.0-en.png"><img src="/Tonrad-support/manual/assets/drawbars-0.1.0-en.png" width="2622" height="1206" loading="lazy" alt="DRAWBARS 畫面，包含風琴拉桿、打擊音、顫音及殘響控制"></a><figcaption>Tonrad 0.1.0 · 英文介面</figcaption></figure>
+</section>
+<section id="percussion" aria-labelledby="percussion-title">
+<h2 id="percussion-title">打擊音：為 UPPER 加入起音重音</h2>
+<p>打擊音會在上層鍵盤加入逐漸衰減的起音重音。控制項位於拉桿上方：</p>
+<ul><li><strong>PERC — ON / OFF:</strong> 開啟或關閉打擊音。</li><li><strong>VOLUME — SOFT / NORMAL:</strong> 選擇打擊音的音量。</li><li><strong>DECAY — FAST / SLOW:</strong> 選擇打擊音衰減的速度。</li><li><strong>HARMONIC — 2ND / 3RD:</strong> 選擇第二或第三泛音。</li></ul>
+<p>放開所有 UPPER 琴鍵後再次演奏，才會重新觸發打擊音。按住琴鍵進行連奏時，不會每個音都重新觸發。PERC 為 ON 時，UPPER 的 <strong>1′</strong> 拉桿會變暗且不發聲；其位置會保留，關閉打擊音後即可恢復使用。</p>
+
+</section>
+<section id="vibrato" aria-labelledby="vibrato-title">
+<h2 id="vibrato-title">顫音與合唱</h2>
+<p><strong>VIB UPPER</strong> 和 <strong>VIB LOWER</strong> 分別為 UPPER 及 LOWER/PEDAL 開啟效果。請從 <strong>V1, V2, V3, C1, C2, C3</strong> 選擇一個共用模式。</p>
+<p><strong>V</strong> 模式加入顫音；<strong>C</strong> 模式將原音與顫音訊號混合，產生合唱效果。三個數字代表不同的深度。選擇模式不會自動開啟處於 OFF 的鍵盤效果開關。VIB LOWER 也會影響 PEDAL。打擊音不會經過此顫音效果。</p>
+
+</section>
+<section id="rotary-reverb" aria-labelledby="rotary-reverb-title">
+<h2 id="rotary-reverb-title">旋轉揚聲器與彈簧殘響</h2>
+<p>在 HOME 點一下大型 <strong>ROTARY</strong> 控制項，即可在 <strong>SLOW</strong> 和 <strong>FAST</strong> 之間切換。速度會逐漸加快或減慢，不會瞬間跳變。</p>
+<ul><li><strong>0.1.0:</strong> 獨立的 <strong>SPEAKER ON / OFF</strong> 按鈕設為 OFF 時，會旁通整個旋轉揚聲器。</li><li><strong>0.2.0:</strong> <strong>ROTOR ON / OFF</strong> 會停止或啟動旋轉，同時保留揚聲器的音色。若要旁通整個揚聲器，請開啟 <strong>SET → AUDIO → SPEAKER OFF</strong>。關閉該開關即可再次聽到揚聲器的效果。</li></ul>
+<p>在 DRAWBARS 中，PEDAL 右側的 <strong>REV</strong> 拉桿可控制彈簧殘響。範圍為 <strong>0–8</strong>，0 代表關閉。可先從 2 開始，再依喜好調整。殘響與旋轉揚聲器彼此獨立。</p>
+
+</section>
+<section id="settings" aria-labelledby="settings-title">
+<h2 id="settings-title">SET：輸出、PANIC 與音訊資訊</h2>
+<p><strong>AUDIO</strong> 顯示目前的輸出裝置與 <strong>OUTPUT</strong> 滑桿。請用此滑桿調整整體音量。連點兩下 OUTPUT 的名稱／數值區域可恢復預設值。滑桿本身不會回應這個重設手勢。</p>
+<p><strong>PANIC</strong> 會停止所有正在發聲的音符。若拔除鍵盤或更改音訊連接後，有音符持續發聲，可使用此按鈕。</p>
+<p><strong>NUMBERS</strong> 顯示取樣率、緩衝區大小、處理計數器等音訊資訊。這些是讀值，而非音訊設定控制項。<strong>RESET</strong> 會重設主機的診斷測量值，不會重設音色或已儲存的設定。ENGINE DROPS 和 REPAIRS 會保留到音訊引擎重新啟動為止。</p>
+<p>隱私權政策連結會在瀏覽器中開啟網站。0.2.0 的 SET 也包含下方說明的 MIDI 設定，可能需要捲動才能看到全部內容。</p>
+<figure><a href="/Tonrad-support/manual/assets/set-0.1.0-en.png"><img src="/Tonrad-support/manual/assets/set-0.1.0-en.png" width="2622" height="1206" loading="lazy" alt="SET 畫面，包含輸出音量、音訊資訊及 PANIC"></a><figcaption>Tonrad 0.1.0 · 英文介面</figcaption></figure>
+</section>
+<section id="midi" aria-labelledby="midi-title">
+<h2 id="midi-title">USB MIDI 鍵盤 — 0.2.0</h2>
+<ol><li>使用合適的資料傳輸線或轉接器，將 USB MIDI 鍵盤連接至 iPhone 或 iPad。耗電較高的裝置可能需要使用有獨立供電的集線器。</li><li>開啟 <strong>SET → MIDI</strong>，檢查已連接裝置清單。</li><li>預設情況下，UPPER 使用 <strong>CH 1</strong> 傳送，LOWER 使用 <strong>CH 2</strong>，PEDAL 使用 <strong>CH 3</strong>。</li><li>如有需要，可在 SET 設定各聲部的接收通道。各通道會保持不同：選擇已由另一聲部使用的通道時，兩者的通道配置會互換。</li><li>使用 <strong>OCT</strong>，可將下方說明的分區移調 <strong>−3 至 +3 個八度</strong>。此設定適用於從 UPPER 輸入通道分派的音符，不適用於螢幕鍵盤或直接從 LOWER/PEDAL 通道輸入的音符。</li></ol>
+<p>Tonrad 會接收 iOS 提供的 MIDI 輸入。App 內沒有 Bluetooth MIDI 配對畫面。0.2.0 可在您查看其他 App 時繼續處理音訊和 MIDI。0.1.0 不接收 MIDI 輸入，切換到背景時會停止音訊。</p>
+
+</section>
+<section id="zones" aria-labelledby="zones-title">
+<h2 id="zones-title">一台鍵盤，三個分區 — 0.2.0</h2>
+<p>使用一台鍵盤時，請從指派給 <strong>UPPER</strong> 的通道傳送。頂端的長條會將該輸入分成 <strong>BASS / LOWER / UPPER</strong>。兩個分界都在最左端時，全部音域都會送往 UPPER。</p><ol><li>從長條左端向右拖曳，建立 LOWER/UPPER 分界。</li><li>將仍在左端的分界向右拖曳，建立 BASS 分區。排列順序為 BASS、LOWER、UPPER。</li><li>在分區上垂直拖曳可調整其八度，也可以使用 SET 中對應的 OCT 控制項。這些八度移調適用於 UPPER 輸入通道的音符。</li></ol>
+<p>SET 中的 <strong>Fold notes into range</strong>（將音符折返至音域內）會將超出聲部可演奏音域的 MIDI 音符，以八度為單位移回範圍內，並保留相同音名。直接從 LOWER/PEDAL 通道輸入的音符也適用。變更會從下一次按鍵開始生效。</p>
+<p><strong>Add a pedal tap to left-hand bass</strong>（在左手低音疊加短促的腳踏音）會將 BASS 分區送往 LOWER，並加入同音名的短促腳踏音。BASS 分界以下的 LOWER 音符也適用。使用前請先將該分界移離最左端。可用 PEDAL 拉桿塑造疊加音的音色，並在 SET 的 <strong>Tap length</strong>（短促腳踏音長度）調整長度。變更會從下一次按鍵開始生效。</p>
+
+</section>
+<section id="midi-learn" aria-labelledby="midi-learn-title">
+<h2 id="midi-learn-title">踏板、旋鈕與 MIDI LEARN — 0.2.0</h2>
+<p>預設控制為：<strong>CC11</strong> 控制表情、<strong>CC1</strong> 控制旋轉速度（0–63 為 SLOW，64–127 為 FAST），<strong>CC64</strong> 切換 SLOW/FAST。這些預設控制會回應指派給三個聲部的通道。CC64 在這裡是速度開關，不是鋼琴延音踏板：踩下時切換速度，放開不會切回。</p>
+<ol><li>開啟 <strong>SET → MIDI LEARN</strong>，或按住拉桿、EXP、REV、ROTARY 或 ROTOR 約 <strong>0.6 秒</strong> 且不移動，以開啟該項目的指派畫面。打擊音和顫音請使用 SET 的清單。</li><li>若從 SET 開啟清單，請選擇要控制的項目列。若透過長按開啟，該項目已選取並開始學習；不要再次點選同一列，因為這會取消學習。接著操作 MIDI 裝置上的旋鈕、滑桿或按鈕。</li><li>確認該列顯示 <strong>CH … · CC …</strong>，再關閉清單並試用控制項。</li></ol>
+<p>可指派拉桿、EXP、REV、打擊音、顫音及旋轉控制。使用該列的 × 按鈕可移除一項指派；<strong>Clear All</strong>（全部清除）會移除所有已學習的指派。指派會儲存在本機。將相同通道／CC 學習至另一個目標時，指派會移至該目標。</p>
+<p><strong>CC1、CC64 和 CC120–127 無法學習。</strong>CC11 只能指派給 EXP。當數值由 63 以下跨至 64 以上時，SLOW/FAST 和 ROTOR 會切換；放開不會再切換。其他已學習的開關以 64–127 為 ON，0–63 為 OFF。</p>
+
+</section>
+<section id="saving" aria-labelledby="saving-title">
+<h2 id="saving-title">會儲存哪些設定</h2>
+<p>Tonrad 會在下次啟動時還原拉桿位置、打擊音、顫音、旋轉揚聲器設定、殘響、可見鍵盤範圍及 OUTPUT。0.2.0 還會儲存 MIDI 通道、分區、八度移調、音域折返／短促腳踏音設定，以及 MIDI LEARN 指派。</p>
+<p><strong>EXP 不會儲存</strong>，每次都從最大值開始。沒有可命名的預設音色，也沒有設定匯出或雲端同步功能。設定保留在您的裝置上，刪除 App 時也會一併刪除。</p>
+
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">疑難排解</h2>
+<dl><dt>沒有聲音</dt><dd>請檢查裝置音量、SET 顯示的輸出裝置、EXP 及 OUTPUT。將正在演奏的聲部至少一支拉桿提高。PERC 開啟時，只使用 UPPER 的 1′ 拉桿無法產生持續音。若音訊曾中斷，請回到 Tonrad 再試一次。</dd><dt>音符無法停止</dt><dd>點一下 SET → PANIC。若使用 MIDI，請先確認鍵盤連接，再繼續演奏。</dd><dt>MIDI 裝置未顯示或沒有聲音</dt><dd>先確認您使用的是 0.2.0。在 SET 尋找裝置，檢查電源／資料連接，並讓傳送與接收通道相符。也請檢查目標聲部的分區分界、OCT 和拉桿。</dd><dt>高音或低音 MIDI 音符沒有聲音</dt><dd>請檢查 OCT 和分割界線。在 0.2.0，可對超出風琴可演奏音域的音符試用音域折返功能。</dd><dt>聽不到旋轉的變化</dt><dd>0.1.0 請將 SPEAKER 設為 ON。0.2.0 請先關閉 SET 的 SPEAKER OFF，再將 HOME 的 ROTOR 設為 ON。SLOW 的變化比 FAST 更細微。</dd><dt>畫面無法轉為直向</dt><dd>僅支援橫向操作是預期設計。</dd><dt>找不到 PRESET、TUNE 或錄音功能</dt><dd>App Store 版本不提供這些功能。</dd></dl>
+<p>尋求協助時，請提供 Tonrad 版本、裝置、iOS/iPadOS 版本、相關畫面／控制項，以及問題發生前的操作步驟。若是 MIDI 問題，也請提供鍵盤型號和連接方式。</p>
+
+</section>
+<footer class="manual-footer"><nav><a href="/Tonrad-support/">支援（英文）</a><a href="/Tonrad-support/privacy">隱私權（英文）</a><a href="mailto:hakaruapps-contact@hakaru.net">聯絡支援</a><a href="#top">回到頁首</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>
