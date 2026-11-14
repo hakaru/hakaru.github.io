@@ -421,7 +421,7 @@ body {
         <div class="content">
             <p>Welcome to Tonrad support.</p>
             <p>Tonrad is a tonewheel organ for iPhone and iPad. It has two manuals and a pedalboard that you play on the screen, with drawbars, percussion, vibrato and chorus, a rotary speaker and a spring reverb.</p>
-            <p>This page describes version 0.1.0.</p>
+            <p>This page describes versions 0.1.0 and 0.2.0. Where they differ, the version is named.</p>
 
             <h2>Requirements</h2>
             <ul>
@@ -436,7 +436,7 @@ body {
             <ul>
                 <li><strong>Keyboards:</strong> three on-screen keyboards for the upper manual, the lower manual and the pedals</li>
                 <li><strong>Expression:</strong> a slider that changes the volume while you play (it stands in for an organ's volume pedal; its position is not saved and starts at maximum each time the app opens)</li>
-                <li><strong>Rotary speaker:</strong> switch between Slow, Fast and Off</li>
+                <li><strong>Rotary speaker:</strong> switch between Slow and Fast. In version 0.2.0, the ROTOR button stops only the rotation, and SPEAKER OFF on SET bypasses the whole speaker. In version 0.1.0, HOME switches between Slow, Fast and Off</li>
             </ul>
 
             <h3>DRAWBARS</h3>
@@ -453,10 +453,21 @@ body {
                 <li><strong>Output level:</strong> sets the app's overall output level</li>
                 <li><strong>Panic:</strong> stops all notes immediately</li>
                 <li><strong>Audio readouts:</strong> shows information about the current audio output</li>
+                <li><strong>MIDI (version 0.2.0):</strong> the MIDI channels and octaves, the connected MIDI devices, MIDI LEARN, and two switches: fold notes into range, and add a pedal tap to left-hand bass</li>
             </ul>
 
-            <h2>What This Version Does Not Include</h2>
-            <p>Tonrad 0.1.0 is played on the screen only. It has no MIDI input, no presets, no in-app purchases, no account and no ads.</p>
+            <h2>MIDI Keyboards (Version 0.2.0)</h2>
+            <ul>
+                <li>Connect a MIDI keyboard by USB. Its name appears in the MIDI section of SET. The app has no screen for pairing wireless MIDI devices.</li>
+                <li>By default, MIDI channel 1 plays the upper manual, channel 2 the lower manual and channel 3 the pedals. You can change the channels on SET.</li>
+                <li>To play all three from one keyboard, use the strip in the top row to split it into BASS, LOWER and UPPER.</li>
+                <li>MIDI CC11 moves the expression. CC1 and CC64 change the rotary speaker's speed.</li>
+                <li>MIDI LEARN on SET assigns the knobs, sliders and buttons of your device to the drawbars and switches.</li>
+                <li>The sound continues when another app is in front, so you can keep playing from a MIDI keyboard while reading a score in another app.</li>
+            </ul>
+
+            <h2>What Tonrad Does Not Include</h2>
+            <p>Tonrad has no presets, no recording, no in-app purchases, no account and no ads, and it cannot be used as an Audio Unit plug-in. Version 0.1.0 is played on the screen only and has no MIDI input.</p>
 
             <h2>FAQ</h2>
             <h3>I don't hear any sound.</h3>
@@ -478,7 +489,7 @@ body {
             <p>Yes. Drawbar positions, switches, the output level and the keyboard position are stored on your device and restored the next time you open the app. Deleting the app deletes them.</p>
 
             <h3>Can I connect a MIDI keyboard?</h3>
-            <p>Not in this version. Tonrad 0.1.0 is played on the screen.</p>
+            <p>Yes, in version 0.2.0, by USB (see "MIDI Keyboards" above). Version 0.1.0 is played on the screen only.</p>
 
             <h2>Links</h2>
             <ul>
