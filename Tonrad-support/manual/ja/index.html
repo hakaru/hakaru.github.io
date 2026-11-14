@@ -293,6 +293,7 @@
 <li><a href="#zones">1台の鍵盤を3つに分ける — 0.2.0</a></li>
 <li><a href="#midi-learn">ペダル・つまみと MIDI LEARN — 0.2.0</a></li>
 <li><a href="#saving">保存されるもの</a></li>
+<li><a href="#comparison">ほかの iOS オルガンアプリとの比較</a></li>
 <li><a href="#troubleshooting">困ったときは</a></li></ol></nav>
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">はじめに</h2>
@@ -377,6 +378,58 @@
 <h2 id="saving-title">保存されるもの</h2>
 <p>ドローバー、パーカッション、ビブラート、ロータリースピーカー、リバーブ、見える鍵盤の範囲、OUTPUT は、次に起動したときに復元されます。0.2.0 では、MIDI チャンネル、境界、オクターブ、音域の折り返し、足鍵盤を重ねる設定と長さ、MIDI LEARN の割り当ても保存されます。</p>
 <p><strong>EXP の位置は保存されず</strong>、起動時は最大です。名前付きプリセットや、設定の書き出し・クラウド同期はありません。設定は端末内にあり、アプリを削除すると消えます。</p>
+
+</section>
+<section id="comparison" aria-labelledby="comparison-title">
+<h2 id="comparison-title">ほかの iOS オルガンアプリとの比較</h2>
+<p>確認日：2026年11月15日。iOS / iPadOS で利用できるドローバー式オルガンから、Hammond B-3X、VB3m、Galileo Organ 2 の3本を選んで比較します。公式資料に基づく機能比較であり、試奏による音質・遅延・CPU負荷の順位付けではありません。</p>
+<div class="note">主な比較表は、App Store で公開中の Tonrad 0.1.0 を対象にしています。MIDI とバックグラウンド演奏は開発中の 0.2.0 に実装されていますが、0.1.0 では使えません。最後の表で両者を分けて記載します。4本とも単体で起動でき、AUv3 の利用には対応するホストアプリが必要です。</div>
+<p>価格は確認日の日本 App Store の表示です。地域やセールにより変わります。「未確認」は今回確認した公式資料で有無を確定できなかった項目で、非対応という意味ではありません。出典は表の下にまとめています。</p>
+<p class="comparison-scroll-hint">画面が狭い場合は、各表を左右にスクロールすると全項目を読めます。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
+<table class="comparison-table comparison-features">
+<caption id="comparison-features-caption">公開版の機能比較</caption>
+<thead><tr><th scope="col">項目</th><th scope="col"><a href="#comparison-source-tonrad">Tonrad</a><br><span class="comparison-version">0.1.0</span></th><th scope="col"><a href="#comparison-source-b3x">Hammond B-3X</a><br><span class="comparison-version">1.3.7</span></th><th scope="col"><a href="#comparison-source-vb3m">VB3m</a><br><span class="comparison-version">1.3.1</span></th><th scope="col"><a href="#comparison-source-galileo">Galileo Organ 2</a><br><span class="comparison-version">1.2.1</span></th></tr></thead>
+<tbody><tr><th scope="row">端末 / 最低OS</th><td>iPhone / iPad・iOS 18以降</td><td>iPadのみ・iOS 11以降</td><td>iPhone / iPad・iOS 12以降</td><td>iPhone / iPad・iOS 11以降</td></tr>
+<tr><th scope="row">日本での価格</th><td>無料・アプリ内購入なし</td><td>¥5,000</td><td>¥2,500・アプリ内購入なし</td><td>¥2,500・一部の追加FXは別売り</td></tr>
+<tr><th scope="row">音源の構成 / 種類</th><td>トーンホイール式。上鍵盤・下鍵盤・ペダル</td><td>Hammond B-3モデル。上鍵盤・下鍵盤・ペダル</td><td>トーンホイール式。上鍵盤・下鍵盤・ペダル</td><td>トーンホイール / トランジスタ式の17種類。上鍵盤・下鍵盤・ペダル</td></tr>
+<tr><th scope="row">外部MIDI / 操作の割当</th><td>0.1.0は非対応</td><td>MIDI入力・CC割当</td><td>MIDI入力・MIDI Learn</td><td>MIDI入力・音源とFXのMIDI Learn</td></tr>
+<tr><th scope="row">AUv3プラグイン</th><td>非対応</td><td>対応</td><td>対応</td><td>対応</td></tr>
+<tr><th scope="row">プリセット / Program Change</th><td>直前の設定を自動保存。名前付き保存・MIDIでの音色呼出は非対応</td><td>プリセット・読み込み / 書き出し・Program Change</td><td>32音色の保存枠・共有・Program Change</td><td>300以上の付属プリセット・保存 / 共有・Program Change</td></tr>
+<tr><th scope="row">ロータリー / エフェクト</th><td>ロータリースピーカー・スプリングリバーブ</td><td>Leslieモデル・5種のstomp・3種のpost FX</td><td>2種のロータリー・固定アンプ・オーバードライブ・EQ・リバーブ</td><td>6種のFXが付属。追加10種はアプリ内購入</td></tr>
+<tr><th scope="row">内蔵録音 / 音声共有</th><td>非対応</td><td>未確認</td><td>未確認</td><td>Tapedeckで録音・ループ・音声共有</td></tr></tbody>
+</table></div>
+<p>次の評価は上の機能から整理した使い分けの目安です。実測した性能差を示すものではありません。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-strengths-caption">
+<table class="comparison-table comparison-strengths">
+<caption id="comparison-strengths-caption">用途から見たメリットとデメリット</caption>
+<thead><tr><th scope="col">アプリ</th><th scope="col">メリット</th><th scope="col">デメリット / 利用上の制約</th></tr></thead>
+<tbody><tr><th scope="row">Tonrad</th><td>無料でドローバー演奏を始められます。上鍵盤・下鍵盤・ペダルを画面上で弾け、操作は主に3画面にまとまっています。</td><td>0.1.0はタッチ演奏に限定。AUv3、名前付きプリセット、内蔵録音はなく、iOS 18以降が必要です。</td></tr>
+<tr><th scope="row">Hammond B-3X</th><td>トーンホイール、リーケージ、キークリック、Leslieを細かく調整できます。プリセットとAUv3を制作・ライブに使えます。</td><td>有料でiPad専用です。AUv3ではメーカーが比較的新しいiPadを推奨しているため、機種別の案内を確認してください。</td></tr>
+<tr><th scope="row">VB3m</th><td>iPhone / iPadでMIDI、AUv3、32音色の保存を使えます。ロータリーのマイク位置やEQも調整できます。</td><td>有料です。音源は下鍵盤・ペダルにも対応しますが、画面上の鍵盤で弾けるのは上鍵盤だけです。</td></tr>
+<tr><th scope="row">Galileo Organ 2</th><td>トーンホイール式とトランジスタ式の音色、FXの順番変更、プリセット、AUv3、内蔵録音を備えます。</td><td>有料で、一部の追加FXは別料金です。音作りは音源・詳細設定・FXにまたがるため、把握する設定項目が多くなります。</td></tr></tbody>
+</table></div>
+<p>「開発版に実装」は公開済みという意味ではありません。「未対応」は確認した0.2.0を含むStandard版の状態です。残っている機能の実装予定を約束する表ではありません。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-gaps-caption">
+<table class="comparison-table comparison-gaps">
+<caption id="comparison-gaps-caption">Tonradの未対応項目と開発版の状況</caption>
+<thead><tr><th scope="col">やりたいこと</th><th scope="col">公開版 0.1.0</th><th scope="col">開発版 0.2.0</th><th scope="col">利用への影響 / 他アプリとの違い</th></tr></thead>
+<tbody><tr><th scope="row">外部MIDI・スプリット・MIDI Learn</th><td>未対応</td><td>開発版に実装</td><td>現在、外部鍵盤を使いたい場合は比較対象3本が対応しています。Tonrad 0.2.0にはチャンネル設定・3区画への分割・操作の割当が加わります。</td></tr>
+<tr><th scope="row">バックグラウンド演奏</th><td>未対応</td><td>開発版に実装</td><td>0.1.0はTonradから離れると音声が止まります。バックグラウンド対応とAUv3対応は別の機能です。</td></tr>
+<tr><th scope="row">AUv3でホストに組み込む</th><td>未対応</td><td>未対応</td><td>TonradをDAWやホスト内の音源プラグインとして読み込むことはできません。比較対象3本はAUv3に対応しています。</td></tr>
+<tr><th scope="row">名前付きプリセット・共有・Program Changeでの呼出</th><td>未対応</td><td>未対応</td><td>直前の設定の自動復元は、複数の音色を保存して曲ごとに切り替える機能とは異なります。比較対象3本はプリセットとMIDIでの呼出に対応しています。</td></tr>
+<tr><th scope="row">アプリ内録音・音声ファイル書き出し</th><td>未対応</td><td>未対応</td><td>Tonrad内で演奏を音声ファイルとして保存できません。Galileo 2は録音と共有を明記しています。他の2本の内蔵録音は今回未確認です。</td></tr>
+<tr><th scope="row">音源モデルの詳細調整・FXチェーンの選択</th><td>未対応</td><td>未対応</td><td>Tonradではドローバー、パーカッション、ビブラート、ロータリー、リバーブを操作できますが、リーケージ / キークリック調整やアンプ / FX構成の選択画面はありません。比較対象には、より多くの編集項目があります。</td></tr>
+<tr><th scope="row">サステインペダルで音を保持する</th><td>外部MIDIなし</td><td>非対応。CC64はロータリー速度切替</td><td>Tonrad 0.2.0ではサステインペダルを踏んでも音を保持しません。VB3mでは速度切替のほか、設定により音の保持にも使えます。</td></tr></tbody>
+</table></div>
+<h3>公式の出典</h3>
+<p>版・対応端末・価格は日本のApp Store、競合機能は以下のiOS版製品ページ・マニュアルで確認しました。Tonradの開発状況は0.2.0 build 2の実装に基づきます。</p>
+<ul class="comparison-sources">
+<li id="comparison-source-tonrad"><strong>Tonrad</strong>: <a href="https://apps.apple.com/jp/app/tonrad/id6834342972">日本のApp Store</a></li>
+<li id="comparison-source-b3x"><strong>Hammond B-3X for iPad</strong>: <a href="https://apps.apple.com/jp/app/hammond-b-3x/id1484367101">日本のApp Store</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/index.php?p=specs">iPad版の公式仕様</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/">公式製品ページ</a></li>
+<li id="comparison-source-vb3m"><strong>VB3m</strong>: <a href="https://apps.apple.com/jp/app/vb3m/id1560880479">日本のApp Store</a> · <a href="https://www.genuinesoundware.com/Products/VB3m/files/help.htm">公式マニュアル</a> · <a href="https://www.genuinesoundware.com/?a=showproduct&amp;b=50">公式製品ページ</a></li>
+<li id="comparison-source-galileo"><strong>Galileo Organ 2</strong>: <a href="https://apps.apple.com/jp/app/galileo-organ-2/id1376362836">日本のApp Store</a> · <a href="https://www.yonac.com/galileo2/specs.html">公式仕様</a> · <a href="https://www.yonac.com/galileo2/galileo2_manual.pdf">公式マニュアル</a></li>
+</ul>
 
 </section>
 <section id="troubleshooting" aria-labelledby="troubleshooting-title">

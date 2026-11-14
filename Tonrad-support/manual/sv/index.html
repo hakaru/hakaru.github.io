@@ -293,6 +293,7 @@
 <li><a href="#zones">En klaviatur, tre zoner — 0.2.0</a></li>
 <li><a href="#midi-learn">Pedaler, rattar och MIDI LEARN — 0.2.0</a></li>
 <li><a href="#saving">Vad som sparas</a></li>
+<li><a href="#comparison">Jämförelse med andra orgelappar för iOS</a></li>
 <li><a href="#troubleshooting">Felsökning</a></li></ol></nav>
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">Innan du börjar</h2>
@@ -375,6 +376,58 @@
 <h2 id="saving-title">Vad som sparas</h2>
 <p>Tonrad återställer dragreglarnas lägen, percussion, vibrato, inställningar för den roterande högtalaren, reverb, synliga klaviaturomfång och OUTPUT nästa gång du startar appen. I 0.2.0 sparas även MIDI-kanaler, zoner, oktavförskjutningar, inställningar för återföring till spelbart omfång och korta pedaltoner samt MIDI LEARN-tilldelningar.</p>
 <p><strong>EXP sparas inte</strong> och startar på maximum. Det finns inga namngivna förinställningar eller funktioner för att exportera inställningar eller synkronisera dem via molnet. Inställningarna finns kvar på din enhet; om du raderar appen raderas även inställningarna.</p>
+
+</section>
+<section id="comparison" aria-labelledby="comparison-title">
+<h2 id="comparison-title">Jämförelse med andra orgelappar för iOS</h2>
+<p>Kontrollerat den 15 november 2026. Här jämförs Tonrad med tre dragregelorglar för iOS/iPadOS: Hammond B-3X, VB3m och Galileo Organ 2. Det är en funktionsjämförelse utifrån officiell dokumentation, inte ett lyssningstest eller en rangordning av ljudkvalitet, latens eller CPU-användning.</p>
+<div class="note">Huvudtabellen beskriver Tonrad 0.1.0, versionen som finns i App Store. MIDI och bakgrundsljud finns i utvecklingsbygget 0.2.0 men är inte tillgängliga i 0.1.0. Den sista tabellen skiljer på dessa versioner. Alla fyra appar kan köras fristående; AUv3 kräver en kompatibel värdapp.</div>
+<p>Priserna kommer från japanska App Store på kontrolldagen och anges i japanska yen (JPY). Regionala priser och erbjudanden kan skilja sig åt. ”Inte bekräftat” betyder att de granskade officiella källorna inte styrkte funktionen, inte att appen saknar den. Källorna länkas nedan.</p>
+<p class="comparison-scroll-hint">På en smal skärm kan du rulla varje tabell i sidled för att se alla kolumner.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
+<table class="comparison-table comparison-features">
+<caption id="comparison-features-caption">Funktioner i de utgivna versionerna</caption>
+<thead><tr><th scope="col">Funktion</th><th scope="col"><a href="#comparison-source-tonrad">Tonrad</a><br><span class="comparison-version">0.1.0</span></th><th scope="col"><a href="#comparison-source-b3x">Hammond B-3X</a><br><span class="comparison-version">1.3.7</span></th><th scope="col"><a href="#comparison-source-vb3m">VB3m</a><br><span class="comparison-version">1.3.1</span></th><th scope="col"><a href="#comparison-source-galileo">Galileo Organ 2</a><br><span class="comparison-version">1.2.1</span></th></tr></thead>
+<tbody><tr><th scope="row">Enheter / lägsta OS-version</th><td>iPhone / iPad · iOS 18+</td><td>Endast iPad · iOS 11+</td><td>iPhone / iPad · iOS 12+</td><td>iPhone / iPad · iOS 11+</td></tr>
+<tr><th scope="row">Pris i Japan</th><td>Gratis; inga köp inuti appen</td><td>¥5,000</td><td>¥2,500; inga köp inuti appen</td><td>¥2,500; valfria FX-uppgraderingar mot betalning</td></tr>
+<tr><th scope="row">Orgelstämmor / modeller</th><td>Tonhjulsorgel; övre och undre manual samt pedal</td><td>Hammond B-3-modell; övre och undre manual samt pedal</td><td>Tonhjulsorgel; övre och undre manual samt pedal</td><td>17 tonhjuls- / transistortyper; övre och undre manual samt pedal</td></tr>
+<tr><th scope="row">Extern MIDI / tilldelning av kontroller</th><td>Stöds inte i 0.1.0</td><td>MIDI-ingång; tilldelningsbara CC-kontroller</td><td>MIDI-ingång; MIDI Learn</td><td>MIDI-ingång; MIDI Learn för orgel och FX</td></tr>
+<tr><th scope="row">AUv3-insticksprogram</th><td>Stöds inte</td><td>Stöds</td><td>Stöds</td><td>Stöds</td></tr>
+<tr><th scope="row">Förinställningar / Program Change</th><td>Aktuella inställningar sparas automatiskt; inga namngivna förinställningar eller val av förinställning via MIDI</td><td>Förinställningar, import / export och Program Change</td><td>32 programplatser, delning och Program Change</td><td>300+ fabriksförinställningar, spara / dela och Program Change</td></tr>
+<tr><th scope="row">Roterande högtalare / effekter</th><td>Roterande högtalare och fjäderreverb</td><td>Leslie-modeller, 5 pedaleffekter och 3 eftereffekter</td><td>2 modeller av roterande högtalare, stationär förstärkare, overdrive, EQ och reverb</td><td>6 FX ingår; ytterligare 10 FX finns som köp inuti appen</td></tr>
+<tr><th scope="row">Inbyggd inspelning / ljuddelning</th><td>Stöds inte</td><td>Inte bekräftat</td><td>Inte bekräftat</td><td>Tapedeck-inspelning, loopar och ljuddelning</td></tr></tbody>
+</table></div>
+<p>Följande bedömningar av användningsområden bygger på funktionerna ovan, inte på uppmätta prestandaskillnader.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-strengths-caption">
+<table class="comparison-table comparison-strengths">
+<caption id="comparison-strengths-caption">Styrkor och begränsningar i praktiken</caption>
+<thead><tr><th scope="col">App</th><th scope="col">Fördelar</th><th scope="col">Begränsningar / avvägningar</th></tr></thead>
+<tbody><tr><th scope="row">Tonrad</th><td>En gratis ingång till spel med dragreglar. Övre och undre manual samt pedal kan spelas på skärmen, med tre huvudvyer för kontrollerna.</td><td>0.1.0 är begränsad till spel via pekskärmen. Saknar AUv3, namngivna förinställningar och inbyggd inspelning; kräver iOS 18+.</td></tr>
+<tr><th scope="row">Hammond B-3X</th><td>Detaljerade inställningar för tonhjul, överhörning, tangentklick och Leslie; förinställningar och AUv3 passar studio- och scenuppsättningar.</td><td>Kostar pengar och finns bara för iPad. Tillverkaren rekommenderar nyare iPads för AUv3; kontrollera dess enhetsråd.</td></tr>
+<tr><th scope="row">VB3m</th><td>MIDI, AUv3 och 32 sparade program på iPhone eller iPad; mikrofonpositionen vid den roterande högtalaren och EQ kan justeras.</td><td>Kostar pengar. Skärmklaviaturen spelar bara den övre manualen, trots att ljudmotorn även stöder undre manual och pedal.</td></tr>
+<tr><th scope="row">Galileo Organ 2</th><td>Tonhjuls- och transistorljud, flexibel FX-ordning, förinställningar, AUv3 och inbyggd inspelning.</td><td>Kostar pengar; vissa extra FX kostar ytterligare. Ljudformningen omfattar orgel-, expert- och FX-kontroller, så det finns fler inställningar att hantera.</td></tr></tbody>
+</table></div>
+<p>”Finns i utvecklingsbygget” betyder inte att funktionen är offentligt utgiven. ”Inte tillgängligt” avser Standard-utgåvan, inklusive det kontrollerade bygget 0.2.0. Tabellen beskriver nuläget och är inget löfte om att införa de återstående funktionerna.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-gaps-caption">
+<table class="comparison-table comparison-gaps">
+<caption id="comparison-gaps-caption">Tonrad: funktioner som saknas och utvecklingsstatus</caption>
+<thead><tr><th scope="col">Behov</th><th scope="col">Utgiven: 0.1.0</th><th scope="col">Under utveckling: 0.2.0</th><th scope="col">Praktisk följd / jämförelse</th></tr></thead>
+<tbody><tr><th scope="row">Extern MIDI, delningar och MIDI Learn</th><td>Inte tillgängligt</td><td>Finns i utvecklingsbygget</td><td>För den som vill använda en extern klaviatur i dag erbjuder alla tre jämförelseappar MIDI. Tonrad 0.2.0 lägger till kanalroutning, tre zoner och tilldelning av kontroller.</td></tr>
+<tr><th scope="row">Spel i bakgrunden</th><td>Inte tillgängligt</td><td>Finns i utvecklingsbygget</td><td>I 0.1.0 stoppas ljudet när du lämnar Tonrad. Bakgrundsljud gör inte i sig appen till ett AUv3-insticksprogram.</td></tr>
+<tr><th scope="row">Integration med AUv3-värdar</th><td>Inte tillgängligt</td><td>Inte tillgängligt</td><td>Tonrad kan inte laddas som ett instrumentinsticksprogram i en DAW eller värdapp. Alla tre jämförelseappar erbjuder AUv3.</td></tr>
+<tr><th scope="row">Namngivna förinställningar, delning och hämtning via Program Change</th><td>Inte tillgängligt</td><td>Inte tillgängligt</td><td>Att automatiskt återställa de senaste inställningarna är inte en setlista med sparade ljud. Alla tre jämförelseappar erbjuder förinställningar och hämtning via MIDI.</td></tr>
+<tr><th scope="row">Inbyggd inspelning och export av ljudfiler</th><td>Inte tillgängligt</td><td>Inte tillgängligt</td><td>Tonrad kan inte spara ett framförande som en ljudfil inuti appen. Galileo 2 dokumenterar inspelning och delning; för de andra två är detta inte bekräftat här.</td></tr>
+<tr><th scope="row">Detaljerad modellredigering och valbar FX-kedja</th><td>Inte tillgängligt</td><td>Inte tillgängligt</td><td>Tonrad har kontroller för dragreglar, percussion, vibrato, roterande högtalare och reverb, men inga användarinställningar för överhörning / tangentklick eller valbar förstärkare / FX-kedja. Jämförelseapparna erbjuder fler redigeringsmöjligheter.</td></tr>
+<tr><th scope="row">Hålla toner med en sustainpedal</th><td>Ingen extern MIDI</td><td>Inte tillgängligt; CC64 växlar rotationshastighet</td><td>En sustainpedal håller inte toner i Tonrad 0.2.0. VB3m erbjuder inställbar tonhållning som alternativ till styrning av rotationshastigheten.</td></tr></tbody>
+</table></div>
+<h3>Officiella källor</h3>
+<p>Uppgifter om versioner, enheter och priser kommer från japanska App Store. Jämförelseapparnas funktioner kommer från de länkade iOS-produktsidorna och handböckerna. Tonrads utvecklingsstatus kontrollerades mot implementationen i 0.2.0 build 2.</p>
+<ul class="comparison-sources">
+<li id="comparison-source-tonrad"><strong>Tonrad</strong>: <a href="https://apps.apple.com/jp/app/tonrad/id6834342972">Japanska App Store</a></li>
+<li id="comparison-source-b3x"><strong>Hammond B-3X for iPad</strong>: <a href="https://apps.apple.com/jp/app/hammond-b-3x/id1484367101">Japanska App Store</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/index.php?p=specs">iPad-specifikationer</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/">Officiell produktsida</a></li>
+<li id="comparison-source-vb3m"><strong>VB3m</strong>: <a href="https://apps.apple.com/jp/app/vb3m/id1560880479">Japanska App Store</a> · <a href="https://www.genuinesoundware.com/Products/VB3m/files/help.htm">Officiell handbok</a> · <a href="https://www.genuinesoundware.com/?a=showproduct&amp;b=50">Officiell produktsida</a></li>
+<li id="comparison-source-galileo"><strong>Galileo Organ 2</strong>: <a href="https://apps.apple.com/jp/app/galileo-organ-2/id1376362836">Japanska App Store</a> · <a href="https://www.yonac.com/galileo2/specs.html">Officiella specifikationer</a> · <a href="https://www.yonac.com/galileo2/galileo2_manual.pdf">Officiell handbok</a></li>
+</ul>
 
 </section>
 <section id="troubleshooting" aria-labelledby="troubleshooting-title">

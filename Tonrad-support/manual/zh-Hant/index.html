@@ -293,6 +293,7 @@
 <li><a href="#zones">一台鍵盤，三個分區 — 0.2.0</a></li>
 <li><a href="#midi-learn">踏板、旋鈕與 MIDI LEARN — 0.2.0</a></li>
 <li><a href="#saving">會儲存哪些設定</a></li>
+<li><a href="#comparison">與其他 iOS 風琴 App 比較</a></li>
 <li><a href="#troubleshooting">疑難排解</a></li></ol></nav>
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">開始之前</h2>
@@ -375,6 +376,58 @@
 <h2 id="saving-title">會儲存哪些設定</h2>
 <p>Tonrad 會在下次啟動時還原拉桿位置、打擊音、顫音、旋轉揚聲器設定、殘響、可見鍵盤範圍及 OUTPUT。0.2.0 還會儲存 MIDI 通道、分區、八度移調、音域折返／短促腳踏音設定，以及 MIDI LEARN 指派。</p>
 <p><strong>EXP 不會儲存</strong>，每次都從最大值開始。沒有可命名的預設音色，也沒有設定匯出或雲端同步功能。設定保留在您的裝置上，刪除 App 時也會一併刪除。</p>
+
+</section>
+<section id="comparison" aria-labelledby="comparison-title">
+<h2 id="comparison-title">與其他 iOS 風琴 App 比較</h2>
+<p>查核日期為 2026 年 11 月 15 日。本節比較 Tonrad 與三款適用於 iOS/iPadOS 的拉桿風琴 App：Hammond B-3X、VB3m 和 Galileo Organ 2。這是依據官方文件整理的功能比較，不是聽感測試，也不是音質、延遲或 CPU 用量的排名。</p>
+<div class="note">主要表格以目前在 App Store 公開的 Tonrad 0.1.0 為準。MIDI 和背景音訊已在 0.2.0 開發版本實作，但 0.1.0 無法使用。最後一個表格會區分這兩個版本。四款 App 都可獨立運作；使用 AUv3 需要相容的主機 App。</div>
+<p>價格為查核當日日本 App Store 的價格，以日圓（JPY）表示；各地價格及優惠可能不同。「未確認」表示所查閱的官方資料未能證實該功能，不代表 App 沒有這項功能。來源連結列於下方。</p>
+<p class="comparison-scroll-hint">螢幕較窄時，可左右捲動各表格以查看所有欄位。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
+<table class="comparison-table comparison-features">
+<caption id="comparison-features-caption">公開版本的功能</caption>
+<thead><tr><th scope="col">功能</th><th scope="col"><a href="#comparison-source-tonrad">Tonrad</a><br><span class="comparison-version">0.1.0</span></th><th scope="col"><a href="#comparison-source-b3x">Hammond B-3X</a><br><span class="comparison-version">1.3.7</span></th><th scope="col"><a href="#comparison-source-vb3m">VB3m</a><br><span class="comparison-version">1.3.1</span></th><th scope="col"><a href="#comparison-source-galileo">Galileo Organ 2</a><br><span class="comparison-version">1.2.1</span></th></tr></thead>
+<tbody><tr><th scope="row">裝置 / 最低 OS</th><td>iPhone / iPad · iOS 18+</td><td>僅限 iPad · iOS 11+</td><td>iPhone / iPad · iOS 12+</td><td>iPhone / iPad · iOS 11+</td></tr>
+<tr><th scope="row">日本價格</th><td>免費；無 App 內購買</td><td>¥5,000</td><td>¥2,500；無 App 內購買</td><td>¥2,500；可選購付費 FX 升級</td></tr>
+<tr><th scope="row">風琴聲部 / 模型</th><td>音輪風琴；上層、下層及腳踏</td><td>Hammond B-3 模型；上層、下層及腳踏</td><td>音輪風琴；上層、下層及腳踏</td><td>17 種音輪 / 電晶體類型；上層、下層及腳踏</td></tr>
+<tr><th scope="row">外接 MIDI / 控制指派</th><td>0.1.0 不支援</td><td>MIDI 輸入；可指派 CC 控制</td><td>MIDI 輸入；MIDI Learn</td><td>MIDI 輸入；風琴及 FX 的 MIDI Learn</td></tr>
+<tr><th scope="row">AUv3 外掛</th><td>不支援</td><td>支援</td><td>支援</td><td>支援</td></tr>
+<tr><th scope="row">預設音色 / Program Change</th><td>自動儲存目前設定；無可命名的預設音色，也無法透過 MIDI 載入預設音色</td><td>預設音色、匯入 / 匯出及 Program Change</td><td>32 個音色記憶位置、分享及 Program Change</td><td>300 多個原廠預設音色、儲存 / 分享及 Program Change</td></tr>
+<tr><th scope="row">旋轉揚聲器 / 效果</th><td>旋轉揚聲器及彈簧殘響</td><td>Leslie 模型、5 種踏板效果及 3 種後級效果</td><td>2 種旋轉揚聲器模型、非旋轉擴大機、過載、EQ 及殘響</td><td>內含 6 種 FX；另有 10 種 FX 可透過 App 內購買取得</td></tr>
+<tr><th scope="row">內建錄音 / 音訊分享</th><td>不支援</td><td>未確認</td><td>未確認</td><td>Tapedeck 錄音、循環播放及音訊分享</td></tr></tbody>
+</table></div>
+<p>以下是根據上述功能對使用情境的評估，並非實測效能差異。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-strengths-caption">
+<table class="comparison-table comparison-strengths">
+<caption id="comparison-strengths-caption">實際使用的優點與限制</caption>
+<thead><tr><th scope="col">App</th><th scope="col">優點</th><th scope="col">限制 / 取捨</th></tr></thead>
+<tbody><tr><th scope="row">Tonrad</th><td>可免費開始拉桿風琴演奏。上層、下層及腳踏鍵盤皆可在螢幕上演奏，主要控制畫面有三個。</td><td>0.1.0 僅限觸控演奏。沒有 AUv3、可命名的預設音色或內建錄音；需要 iOS 18 以上。</td></tr>
+<tr><th scope="row">Hammond B-3X</th><td>可細調音輪、漏音、按鍵喀聲及 Leslie；預設音色和 AUv3 適合錄音室及舞台配置。</td><td>付費且僅支援 iPad。製造商建議使用較新的 iPad 執行 AUv3，請確認其裝置建議。</td></tr>
+<tr><th scope="row">VB3m</th><td>在 iPhone 或 iPad 上提供 MIDI、AUv3 及 32 個儲存音色；可調整旋轉揚聲器的麥克風位置與 EQ。</td><td>付費。雖然引擎支援下層及腳踏聲部，螢幕鍵盤只能演奏上層鍵盤。</td></tr>
+<tr><th scope="row">Galileo Organ 2</th><td>音輪及電晶體音色、彈性 FX 順序、預設音色、AUv3 及內建錄音機。</td><td>付費；部分額外 FX 需另付費。音色設計涵蓋風琴、專家及 FX 控制，因此需要管理的設定較多。</td></tr></tbody>
+</table></div>
+<p>「已在開發版本實作」不代表已公開發行。「未提供」是指 Standard 版，包括此次查核的 0.2.0 組建。本表記錄目前狀態，並非承諾實作其餘功能。</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-gaps-caption">
+<table class="comparison-table comparison-gaps">
+<caption id="comparison-gaps-caption">Tonrad：尚未提供的功能與開發狀態</caption>
+<thead><tr><th scope="col">需求</th><th scope="col">公開版 0.1.0</th><th scope="col">開發版 0.2.0</th><th scope="col">實際影響 / 比較</th></tr></thead>
+<tbody><tr><th scope="row">外接 MIDI、分割及 MIDI Learn</th><td>未提供</td><td>已在開發版本實作</td><td>若現在需要使用外接鍵盤，三款比較 App 都提供 MIDI。Tonrad 0.2.0 新增通道路由、三個分區及控制指派。</td></tr>
+<tr><th scope="row">背景演奏</th><td>未提供</td><td>已在開發版本實作</td><td>0.1.0 離開 Tonrad 後會停止音訊。支援背景音訊本身並不代表 App 就是 AUv3 外掛。</td></tr>
+<tr><th scope="row">AUv3 主機整合</th><td>未提供</td><td>未提供</td><td>Tonrad 無法作為樂器外掛載入 DAW 或主機。三款比較 App 都提供 AUv3。</td></tr>
+<tr><th scope="row">可命名的預設音色、分享及 Program Change 載入</th><td>未提供</td><td>未提供</td><td>自動還原上次設定並不是一份已儲存音色的演出清單。三款比較 App 都提供預設音色及 MIDI 載入功能。</td></tr>
+<tr><th scope="row">內建錄音及音訊檔案匯出</th><td>未提供</td><td>未提供</td><td>Tonrad 無法在 App 內將演奏儲存為音訊檔案。Galileo 2 的文件明載錄音及分享功能；另外兩款在此未確認。</td></tr>
+<tr><th scope="row">詳細模型編輯及可選擇的 FX 鏈</th><td>未提供</td><td>未提供</td><td>Tonrad 提供拉桿、打擊音、顫音、旋轉揚聲器及殘響控制，但沒有供使用者調整漏音 / 按鍵喀聲或選擇擴大機 / FX 鏈的功能。比較 App 提供更多編輯選項。</td></tr>
+<tr><th scope="row">以延音踏板維持音符</th><td>無外接 MIDI</td><td>未提供；CC64 切換旋轉速度</td><td>延音踏板不會在 Tonrad 0.2.0 中維持音符。VB3m 可設定為音符延音，以取代旋轉速度控制。</td></tr></tbody>
+</table></div>
+<h3>官方來源</h3>
+<p>版本、裝置及價格資訊來自日本 App Store。比較 App 的功能來自所連結的 iOS 產品頁面及手冊。Tonrad 開發狀態已對照 0.2.0 組建 2 的實作確認。</p>
+<ul class="comparison-sources">
+<li id="comparison-source-tonrad"><strong>Tonrad</strong>: <a href="https://apps.apple.com/jp/app/tonrad/id6834342972">日本 App Store</a></li>
+<li id="comparison-source-b3x"><strong>Hammond B-3X for iPad</strong>: <a href="https://apps.apple.com/jp/app/hammond-b-3x/id1484367101">日本 App Store</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/index.php?p=specs">iPad 規格</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/">官方產品頁面</a></li>
+<li id="comparison-source-vb3m"><strong>VB3m</strong>: <a href="https://apps.apple.com/jp/app/vb3m/id1560880479">日本 App Store</a> · <a href="https://www.genuinesoundware.com/Products/VB3m/files/help.htm">官方手冊</a> · <a href="https://www.genuinesoundware.com/?a=showproduct&amp;b=50">官方產品頁面</a></li>
+<li id="comparison-source-galileo"><strong>Galileo Organ 2</strong>: <a href="https://apps.apple.com/jp/app/galileo-organ-2/id1376362836">日本 App Store</a> · <a href="https://www.yonac.com/galileo2/specs.html">官方規格</a> · <a href="https://www.yonac.com/galileo2/galileo2_manual.pdf">官方手冊</a></li>
+</ul>
 
 </section>
 <section id="troubleshooting" aria-labelledby="troubleshooting-title">

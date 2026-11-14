@@ -293,6 +293,7 @@
 <li><a href="#zones">One keyboard, three zones — 0.2.0</a></li>
 <li><a href="#midi-learn">Pedals, knobs and MIDI LEARN — 0.2.0</a></li>
 <li><a href="#saving">What is saved</a></li>
+<li><a href="#comparison">Comparison with other iOS organ apps</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li></ol></nav>
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">Before you start</h2>
@@ -375,6 +376,58 @@
 <h2 id="saving-title">What is saved</h2>
 <p>Tonrad restores drawbar positions, percussion, vibrato, rotary-speaker settings, reverb, visible keyboard ranges and OUTPUT on your next launch. In 0.2.0, MIDI channels, zones, octave shifts, range-foldback/pedal-tap settings and MIDI LEARN assignments are saved too.</p>
 <p><strong>EXP is not saved</strong> and starts at maximum. There are no named presets or setting-export/cloud-sync features. Settings stay on your device; deleting the app deletes them.</p>
+
+</section>
+<section id="comparison" aria-labelledby="comparison-title">
+<h2 id="comparison-title">Comparison with other iOS organ apps</h2>
+<p>Checked on 15 November 2026. This selection compares Tonrad with three drawbar organ apps available for iOS/iPadOS: Hammond B-3X, VB3m and Galileo Organ 2. It is a feature comparison based on official documentation, not a listening test or a ranking of sound quality, latency or CPU use.</p>
+<div class="note">The main table describes Tonrad 0.1.0, the version currently on the App Store. MIDI and background audio exist in the 0.2.0 development build but are not available in 0.1.0. The final table separates these versions. All four apps can run standalone; AUv3 requires a compatible host app.</div>
+<p>Prices are from the Japanese App Store on the check date, in Japanese yen; regional prices and offers may differ. “Not confirmed” means the reviewed official sources did not establish that feature, not that the app lacks it. Source links are listed below.</p>
+<p class="comparison-scroll-hint">On a narrow screen, scroll each table horizontally to see every column.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
+<table class="comparison-table comparison-features">
+<caption id="comparison-features-caption">Features in the published versions</caption>
+<thead><tr><th scope="col">Feature</th><th scope="col"><a href="#comparison-source-tonrad">Tonrad</a><br><span class="comparison-version">0.1.0</span></th><th scope="col"><a href="#comparison-source-b3x">Hammond B-3X</a><br><span class="comparison-version">1.3.7</span></th><th scope="col"><a href="#comparison-source-vb3m">VB3m</a><br><span class="comparison-version">1.3.1</span></th><th scope="col"><a href="#comparison-source-galileo">Galileo Organ 2</a><br><span class="comparison-version">1.2.1</span></th></tr></thead>
+<tbody><tr><th scope="row">Devices / minimum OS</th><td>iPhone / iPad · iOS 18+</td><td>iPad only · iOS 11+</td><td>iPhone / iPad · iOS 12+</td><td>iPhone / iPad · iOS 11+</td></tr>
+<tr><th scope="row">Price in Japan</th><td>Free; no in-app purchases</td><td>¥5,000</td><td>¥2,500; no in-app purchases</td><td>¥2,500; optional paid FX upgrades</td></tr>
+<tr><th scope="row">Organ parts / models</th><td>Tonewheel organ; upper, lower and pedal</td><td>Hammond B-3 model; upper, lower and pedal</td><td>Tonewheel organ; upper, lower and pedal</td><td>17 tonewheel / transistor types; upper, lower and pedal</td></tr>
+<tr><th scope="row">External MIDI / control assignment</th><td>Not supported in 0.1.0</td><td>MIDI input; assignable CC controls</td><td>MIDI input; MIDI Learn</td><td>MIDI input; MIDI Learn for organ and FX</td></tr>
+<tr><th scope="row">AUv3 plug-in</th><td>Not supported</td><td>Supported</td><td>Supported</td><td>Supported</td></tr>
+<tr><th scope="row">Presets / Program Change</th><td>Current settings saved automatically; no named presets or preset recall by MIDI</td><td>Presets, import / export and Program Change</td><td>32 program slots, sharing and Program Change</td><td>300+ factory presets, save / share and Program Change</td></tr>
+<tr><th scope="row">Rotary / effects</th><td>Rotary speaker and spring reverb</td><td>Leslie models, 5 stomp effects and 3 post effects</td><td>2 rotary models, static amp, overdrive, EQ and reverb</td><td>6 included FX; 10 additional FX available as in-app purchases</td></tr>
+<tr><th scope="row">Built-in recording / audio sharing</th><td>Not supported</td><td>Not confirmed</td><td>Not confirmed</td><td>Tapedeck recording, looping and audio sharing</td></tr></tbody>
+</table></div>
+<p>The following are use-case assessments drawn from the features above, not measured performance differences.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-strengths-caption">
+<table class="comparison-table comparison-strengths">
+<caption id="comparison-strengths-caption">Practical strengths and limitations</caption>
+<thead><tr><th scope="col">App</th><th scope="col">Advantages</th><th scope="col">Limitations / trade-offs</th></tr></thead>
+<tbody><tr><th scope="row">Tonrad</th><td>Free entry into drawbar playing. Upper, lower and pedal keyboards are all playable on screen, with three main control screens.</td><td>0.1.0 is limited to touch playing. No AUv3, named presets or built-in recording; requires iOS 18+.</td></tr>
+<tr><th scope="row">Hammond B-3X</th><td>Detailed tonewheel, leakage, key-click and Leslie adjustment; presets and AUv3 support studio and stage setups.</td><td>Paid and iPad-only. The manufacturer recommends newer iPads for AUv3 use; check its device guidance.</td></tr>
+<tr><th scope="row">VB3m</th><td>MIDI, AUv3 and 32 saved programs on iPhone or iPad; rotary microphone position and EQ can be adjusted.</td><td>Paid. Its on-screen keyboard plays only the upper manual, despite the engine supporting lower and pedal parts.</td></tr>
+<tr><th scope="row">Galileo Organ 2</th><td>Tonewheel and transistor sounds, flexible FX order, presets, AUv3 and a built-in recorder.</td><td>Paid; some additional FX cost extra. Sound design spans organ, expert and FX controls, so there are more settings to manage.</td></tr></tbody>
+</table></div>
+<p>“Implemented in development” does not mean publicly released. “Not available” refers to the Standard edition, including the checked 0.2.0 build. This table records current status, not a commitment to implement the remaining features.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-gaps-caption">
+<table class="comparison-table comparison-gaps">
+<caption id="comparison-gaps-caption">Tonrad: unsupported features and development status</caption>
+<thead><tr><th scope="col">Need</th><th scope="col">Public 0.1.0</th><th scope="col">Development 0.2.0</th><th scope="col">Practical effect / comparison</th></tr></thead>
+<tbody><tr><th scope="row">External MIDI, splits and MIDI Learn</th><td>Not available</td><td>Implemented in development</td><td>For an external keyboard today, all three comparison apps provide MIDI. Tonrad 0.2.0 adds channel routing, three zones and control assignment.</td></tr>
+<tr><th scope="row">Playing in the background</th><td>Not available</td><td>Implemented in development</td><td>In 0.1.0, leaving Tonrad stops its audio. Background audio does not itself make the app an AUv3 plug-in.</td></tr>
+<tr><th scope="row">AUv3 host integration</th><td>Not available</td><td>Not available</td><td>Tonrad cannot be loaded as an instrument plug-in in a DAW or host. All three comparison apps provide AUv3.</td></tr>
+<tr><th scope="row">Named presets, sharing and Program Change recall</th><td>Not available</td><td>Not available</td><td>Automatic restoration of the last settings is not a set list of saved sounds. All three comparison apps offer presets and MIDI recall.</td></tr>
+<tr><th scope="row">Built-in recording and audio-file export</th><td>Not available</td><td>Not available</td><td>Tonrad cannot save a performance as an audio file within the app. Galileo 2 documents recording and sharing; the other two are unconfirmed here.</td></tr>
+<tr><th scope="row">Detailed model editing and a selectable FX chain</th><td>Not available</td><td>Not available</td><td>Tonrad exposes drawbars, percussion, vibrato, rotary and reverb controls, but no user-facing leakage / key-click tuning or selectable amp / FX chain. The comparison apps provide more editing options.</td></tr>
+<tr><th scope="row">Holding notes with a sustain pedal</th><td>No external MIDI</td><td>Not available; CC64 toggles rotary speed</td><td>A sustain pedal will not hold notes in Tonrad 0.2.0. VB3m offers configurable note sustain as an alternative to rotary-speed control.</td></tr></tbody>
+</table></div>
+<h3>Official sources</h3>
+<p>Version, device and price information comes from the Japanese App Store. Competitor features come from the linked iOS product pages and manuals. Tonrad development status was checked against the 0.2.0 build 2 implementation.</p>
+<ul class="comparison-sources">
+<li id="comparison-source-tonrad"><strong>Tonrad</strong>: <a href="https://apps.apple.com/jp/app/tonrad/id6834342972">Japanese App Store</a></li>
+<li id="comparison-source-b3x"><strong>Hammond B-3X for iPad</strong>: <a href="https://apps.apple.com/jp/app/hammond-b-3x/id1484367101">Japanese App Store</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/index.php?p=specs">iPad specifications</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/">official product page</a></li>
+<li id="comparison-source-vb3m"><strong>VB3m</strong>: <a href="https://apps.apple.com/jp/app/vb3m/id1560880479">Japanese App Store</a> · <a href="https://www.genuinesoundware.com/Products/VB3m/files/help.htm">official manual</a> · <a href="https://www.genuinesoundware.com/?a=showproduct&amp;b=50">official product page</a></li>
+<li id="comparison-source-galileo"><strong>Galileo Organ 2</strong>: <a href="https://apps.apple.com/jp/app/galileo-organ-2/id1376362836">Japanese App Store</a> · <a href="https://www.yonac.com/galileo2/specs.html">official specifications</a> · <a href="https://www.yonac.com/galileo2/galileo2_manual.pdf">official manual</a></li>
+</ul>
 
 </section>
 <section id="troubleshooting" aria-labelledby="troubleshooting-title">

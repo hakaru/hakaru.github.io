@@ -35,6 +35,19 @@ th, td { padding: 12px 14px; text-align: left; vertical-align: top; border-botto
 th { background: #1c2b40; }
 td { color: var(--manual-muted); }
 tbody tr:last-child td { border-bottom: 0; }
+.table-wrap:focus-visible { outline: 3px solid var(--manual-accent); outline-offset: 3px; }
+.comparison-table { table-layout: fixed; }
+.comparison-table caption { padding: 14px; text-align: left; font-weight: 700; color: var(--manual-text); border-bottom: 1px solid var(--manual-border); }
+.comparison-features { min-width: 900px; }
+.comparison-features th:first-child { width: 150px; }
+.comparison-strengths { min-width: 680px; }
+.comparison-strengths th:first-child { width: 130px; }
+.comparison-gaps { min-width: 800px; }
+.comparison-gaps th:first-child { width: 170px; }
+.comparison-gaps th:nth-child(2), .comparison-gaps th:nth-child(3) { width: 150px; }
+.comparison-table tbody tr:last-child th { border-bottom: 0; }
+.comparison-version { color: var(--manual-muted); font-weight: 400; }
+.manual section .comparison-scroll-hint { font-size: .9rem; }
 .manual figure { margin: 24px 0; }
 .manual figure img { display: block; width: 100%; height: auto; border: 1px solid var(--manual-border); border-radius: 8px; }
 .manual figcaption { font-size: .85rem; color: var(--manual-muted); margin-top: 8px; }
@@ -43,6 +56,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .manual-footer { margin-top: 48px; border-top: 1px solid var(--manual-border); padding-top: 24px; color: var(--manual-muted); font-size: .9rem; }
 .manual-footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
 @media (max-width: 768px) {
+  html { scroll-padding-top: 72px; }
   .manual { padding: 24px 20px 48px; }
   .manual-brand { align-items: flex-start; gap: 14px; }
   .manual-brand img { width: 56px; height: 56px; border-radius: 12px; }
@@ -60,4 +74,8 @@ tbody tr:last-child td { border-bottom: 0; }
   .manual-toc, .note, th { background: #f4f4f4; }
   .manual figure, tr { break-inside: avoid; }
   h2 { break-after: avoid; }
+  .table-wrap { overflow: visible; }
+  .comparison-table { min-width: 0; table-layout: auto; }
+  .comparison-table th:first-child, .comparison-gaps th:nth-child(2), .comparison-gaps th:nth-child(3) { width: auto; }
+  .comparison-table caption, .comparison-version { color: #111; }
 }

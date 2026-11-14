@@ -293,6 +293,7 @@
 <li><a href="#zones">Eine Tastatur, drei Zonen — 0.2.0</a></li>
 <li><a href="#midi-learn">Pedale, Regler und MIDI LEARN — 0.2.0</a></li>
 <li><a href="#saving">Was gespeichert wird</a></li>
+<li><a href="#comparison">Vergleich mit anderen Orgel-Apps für iOS</a></li>
 <li><a href="#troubleshooting">Probleme beheben</a></li></ol></nav>
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">Bevor Sie beginnen</h2>
@@ -375,6 +376,58 @@
 <h2 id="saving-title">Was gespeichert wird</h2>
 <p>Tonrad stellt beim nächsten Start die Zugriegelpositionen, Percussion, Vibrato, Einstellungen des Rotationslautsprechers, Hall, sichtbaren Tastaturbereiche und OUTPUT wieder her. In 0.2.0 werden auch MIDI-Kanäle, Zonen, Oktavverschiebungen, Einstellungen für die Rückführung in den Tonumfang und den kurzen Pedalton sowie Zuordnungen für MIDI LEARN gespeichert.</p>
 <p><strong>EXP wird nicht gespeichert</strong> und startet auf Maximum. Es gibt keine benannten Presets und keine Funktionen für den Export von Einstellungen oder die Cloud-Synchronisierung. Die Einstellungen bleiben auf Ihrem Gerät; beim Löschen der App werden auch sie gelöscht.</p>
+
+</section>
+<section id="comparison" aria-labelledby="comparison-title">
+<h2 id="comparison-title">Vergleich mit anderen Orgel-Apps für iOS</h2>
+<p>Geprüft am 15. November 2026. Dieser Vergleich stellt Tonrad drei Zugriegelorgel-Apps für iOS/iPadOS gegenüber: Hammond B-3X, VB3m und Galileo Organ 2. Verglichen werden Funktionen anhand offizieller Dokumentation. Es handelt sich weder um einen Hörtest noch um eine Rangfolge nach Klangqualität, Latenz oder CPU-Auslastung.</p>
+<div class="note">Die Haupttabelle beschreibt Tonrad 0.1.0, die derzeitige App-Store-Version. MIDI und Hintergrund-Audio sind im Entwicklungsbuild 0.2.0 vorhanden, aber nicht in 0.1.0 verfügbar. Die letzte Tabelle unterscheidet diese Versionen. Alle vier Apps lassen sich eigenständig nutzen; AUv3 erfordert eine kompatible Host-App.</div>
+<p>Die Preise stammen aus dem japanischen App Store am Prüftag und sind in japanischen Yen (JPY) angegeben. Regionale Preise und Angebote können abweichen. „Nicht bestätigt“ bedeutet, dass sich die Funktion anhand der geprüften offiziellen Quellen nicht belegen ließ, nicht dass sie der App fehlt. Die Quellen sind unten verlinkt.</p>
+<p class="comparison-scroll-hint">Auf schmalen Bildschirmen können Sie jede Tabelle horizontal scrollen, um alle Spalten zu sehen.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
+<table class="comparison-table comparison-features">
+<caption id="comparison-features-caption">Funktionen der veröffentlichten Versionen</caption>
+<thead><tr><th scope="col">Funktion</th><th scope="col"><a href="#comparison-source-tonrad">Tonrad</a><br><span class="comparison-version">0.1.0</span></th><th scope="col"><a href="#comparison-source-b3x">Hammond B-3X</a><br><span class="comparison-version">1.3.7</span></th><th scope="col"><a href="#comparison-source-vb3m">VB3m</a><br><span class="comparison-version">1.3.1</span></th><th scope="col"><a href="#comparison-source-galileo">Galileo Organ 2</a><br><span class="comparison-version">1.2.1</span></th></tr></thead>
+<tbody><tr><th scope="row">Geräte / Mindestversion des Betriebssystems</th><td>iPhone / iPad · iOS 18+</td><td>Nur iPad · iOS 11+</td><td>iPhone / iPad · iOS 12+</td><td>iPhone / iPad · iOS 11+</td></tr>
+<tr><th scope="row">Preis in Japan</th><td>Kostenlos; keine In-App-Käufe</td><td>¥5,000</td><td>¥2,500; keine In-App-Käufe</td><td>¥2,500; optionale kostenpflichtige FX-Erweiterungen</td></tr>
+<tr><th scope="row">Orgelparts / Modelle</th><td>Tonradorgel; oberes und unteres Manual sowie Pedal</td><td>Hammond B-3-Modell; oberes und unteres Manual sowie Pedal</td><td>Tonradorgel; oberes und unteres Manual sowie Pedal</td><td>17 Tonrad-/Transistortypen; oberes und unteres Manual sowie Pedal</td></tr>
+<tr><th scope="row">Externes MIDI / Reglerzuordnung</th><td>In 0.1.0 nicht unterstützt</td><td>MIDI-Eingang; zuweisbare CC-Steuerung</td><td>MIDI-Eingang; MIDI Learn</td><td>MIDI-Eingang; MIDI Learn für Orgel und FX</td></tr>
+<tr><th scope="row">AUv3-Plug-in</th><td>Nicht unterstützt</td><td>Unterstützt</td><td>Unterstützt</td><td>Unterstützt</td></tr>
+<tr><th scope="row">Presets / Program Change</th><td>Aktuelle Einstellungen werden automatisch gespeichert; keine benannten Presets oder Preset-Aufrufe per MIDI</td><td>Presets, Import / Export und Program Change</td><td>32 Programmspeicher, Teilen und Program Change</td><td>300+ Werks-Presets, Speichern / Teilen und Program Change</td></tr>
+<tr><th scope="row">Rotationslautsprecher / Effekte</th><td>Rotationslautsprecher und Federhall</td><td>Leslie-Modelle, 5 Bodeneffekte und 3 nachgeschaltete Effekte</td><td>2 Rotationslautsprechermodelle, statischer Verstärker, Overdrive, EQ und Hall</td><td>6 FX enthalten; 10 zusätzliche FX als In-App-Käufe erhältlich</td></tr>
+<tr><th scope="row">Integrierte Aufnahme / Audio teilen</th><td>Nicht unterstützt</td><td>Nicht bestätigt</td><td>Nicht bestätigt</td><td>Tapedeck-Aufnahme, Loops und Teilen von Audio</td></tr></tbody>
+</table></div>
+<p>Die folgenden Einschätzungen zu Einsatzzwecken leiten sich aus den genannten Funktionen ab, nicht aus gemessenen Leistungsunterschieden.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-strengths-caption">
+<table class="comparison-table comparison-strengths">
+<caption id="comparison-strengths-caption">Stärken und Grenzen im Einsatz</caption>
+<thead><tr><th scope="col">App</th><th scope="col">Vorteile</th><th scope="col">Grenzen / Abwägungen</th></tr></thead>
+<tbody><tr><th scope="row">Tonrad</th><td>Kostenloser Einstieg ins Zugriegelspiel. Oberes und unteres Manual sowie Pedal sind auf dem Bildschirm spielbar; die Bedienung verteilt sich auf drei Hauptansichten.</td><td>0.1.0 ist auf das Spielen per Touch beschränkt. Kein AUv3, keine benannten Presets und keine integrierte Aufnahme; erfordert iOS 18+.</td></tr>
+<tr><th scope="row">Hammond B-3X</th><td>Detaillierte Einstellungen für Tonräder, Übersprechen, Tastenklick und Leslie; Presets und AUv3 unterstützen Studio- und Bühnenaufbauten.</td><td>Kostenpflichtig und nur für iPad. Der Hersteller empfiehlt neuere iPads für AUv3; beachten Sie seine Gerätehinweise.</td></tr>
+<tr><th scope="row">VB3m</th><td>MIDI, AUv3 und 32 gespeicherte Programme auf iPhone oder iPad; Mikrofonposition am Rotationslautsprecher und EQ sind einstellbar.</td><td>Kostenpflichtig. Die Bildschirmtastatur spielt nur das obere Manual, obwohl die Klangerzeugung auch unteres Manual und Pedal unterstützt.</td></tr>
+<tr><th scope="row">Galileo Organ 2</th><td>Tonrad- und Transistorklänge, flexible FX-Reihenfolge, Presets, AUv3 und integrierte Aufnahme.</td><td>Kostenpflichtig; einige zusätzliche FX kosten extra. Die Klanggestaltung umfasst Orgel-, Experten- und FX-Regler, sodass mehr Einstellungen zu verwalten sind.</td></tr></tbody>
+</table></div>
+<p>„Im Entwicklungsbuild vorhanden“ bedeutet nicht öffentlich veröffentlicht. „Nicht verfügbar“ bezieht sich auf die Standard-Ausgabe einschließlich des geprüften Builds 0.2.0. Diese Tabelle hält den aktuellen Stand fest und ist keine Zusage, die übrigen Funktionen umzusetzen.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-gaps-caption">
+<table class="comparison-table comparison-gaps">
+<caption id="comparison-gaps-caption">Tonrad: fehlende Funktionen und Entwicklungsstand</caption>
+<thead><tr><th scope="col">Anforderung</th><th scope="col">Veröffentlicht: 0.1.0</th><th scope="col">In Entwicklung: 0.2.0</th><th scope="col">Praktische Auswirkung / Vergleich</th></tr></thead>
+<tbody><tr><th scope="row">Externes MIDI, Splits und MIDI Learn</th><td>Nicht verfügbar</td><td>Im Entwicklungsbuild vorhanden</td><td>Wer heute eine externe Tastatur nutzen möchte, findet MIDI in allen drei Vergleichs-Apps. Tonrad 0.2.0 ergänzt Kanalrouting, drei Zonen und Reglerzuordnung.</td></tr>
+<tr><th scope="row">Spielen im Hintergrund</th><td>Nicht verfügbar</td><td>Im Entwicklungsbuild vorhanden</td><td>In 0.1.0 endet die Audiowiedergabe, sobald Sie Tonrad verlassen. Hintergrund-Audio allein macht die App nicht zu einem AUv3-Plug-in.</td></tr>
+<tr><th scope="row">Einbindung in AUv3-Hosts</th><td>Nicht verfügbar</td><td>Nicht verfügbar</td><td>Tonrad lässt sich nicht als Instrument-Plug-in in einer DAW oder einem Host laden. Alle drei Vergleichs-Apps bieten AUv3.</td></tr>
+<tr><th scope="row">Benannte Presets, Teilen und Aufruf per Program Change</th><td>Nicht verfügbar</td><td>Nicht verfügbar</td><td>Das automatische Wiederherstellen der letzten Einstellungen ist keine Setlist gespeicherter Klänge. Alle drei Vergleichs-Apps bieten Presets und Aufruf per MIDI.</td></tr>
+<tr><th scope="row">Integrierte Aufnahme und Audiodatei-Export</th><td>Nicht verfügbar</td><td>Nicht verfügbar</td><td>Tonrad kann eine Darbietung nicht innerhalb der App als Audiodatei speichern. Galileo 2 dokumentiert Aufnahme und Teilen; bei den anderen beiden ist dies hier nicht bestätigt.</td></tr>
+<tr><th scope="row">Detaillierte Modellbearbeitung und wählbare FX-Kette</th><td>Nicht verfügbar</td><td>Nicht verfügbar</td><td>Tonrad bietet Regler für Zugriegel, Percussion, Vibrato, Rotationslautsprecher und Hall, aber keine Einstellungen für Übersprechen / Tastenklick oder eine wählbare Verstärker- / FX-Kette. Die Vergleichs-Apps bieten mehr Bearbeitungsmöglichkeiten.</td></tr>
+<tr><th scope="row">Töne mit einem Haltepedal halten</th><td>Kein externes MIDI</td><td>Nicht verfügbar; CC64 schaltet die Rotationsgeschwindigkeit um</td><td>Ein Haltepedal hält in Tonrad 0.2.0 keine Töne. VB3m bietet als Alternative zur Steuerung der Rotationsgeschwindigkeit ein konfigurierbares Halten von Tönen.</td></tr></tbody>
+</table></div>
+<h3>Offizielle Quellen</h3>
+<p>Versions-, Geräte- und Preisangaben stammen aus dem japanischen App Store. Die Funktionen der Vergleichs-Apps stammen aus den verlinkten iOS-Produktseiten und Handbüchern. Tonrads Entwicklungsstand wurde anhand der Implementierung von 0.2.0 Build 2 geprüft.</p>
+<ul class="comparison-sources">
+<li id="comparison-source-tonrad"><strong>Tonrad</strong>: <a href="https://apps.apple.com/jp/app/tonrad/id6834342972">Japanischer App Store</a></li>
+<li id="comparison-source-b3x"><strong>Hammond B-3X for iPad</strong>: <a href="https://apps.apple.com/jp/app/hammond-b-3x/id1484367101">Japanischer App Store</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/index.php?p=specs">iPad-Spezifikationen</a> · <a href="https://www.ikmultimedia.com/products/hammondb3xipad/">Offizielle Produktseite</a></li>
+<li id="comparison-source-vb3m"><strong>VB3m</strong>: <a href="https://apps.apple.com/jp/app/vb3m/id1560880479">Japanischer App Store</a> · <a href="https://www.genuinesoundware.com/Products/VB3m/files/help.htm">Offizielles Handbuch</a> · <a href="https://www.genuinesoundware.com/?a=showproduct&amp;b=50">Offizielle Produktseite</a></li>
+<li id="comparison-source-galileo"><strong>Galileo Organ 2</strong>: <a href="https://apps.apple.com/jp/app/galileo-organ-2/id1376362836">Japanischer App Store</a> · <a href="https://www.yonac.com/galileo2/specs.html">Offizielle Spezifikationen</a> · <a href="https://www.yonac.com/galileo2/galileo2_manual.pdf">Offizielles Handbuch</a></li>
+</ul>
 
 </section>
 <section id="troubleshooting" aria-labelledby="troubleshooting-title">
