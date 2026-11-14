@@ -45,4 +45,4 @@
 - [x] Check all section IDs, language links, local assets, active navigation, sitemap and translated section parity.
 - [x] Verify generated changes outside Tonrad only touch sidebar blocks.
 - [x] Review source facts and translations; inspect desktop/mobile display and language switching in the browser.
-- [ ] Commit/push to main, verify all 11 public manual URLs, and record the change in the worklog and memdream.
+- [x] Commit/push to main, verify all 11 public manual URLs, and record the change in the worklog and memdream.
