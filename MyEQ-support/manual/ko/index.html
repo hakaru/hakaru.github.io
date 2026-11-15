@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyEQ 사용 설명서 | hakaru</title>
+    <meta name="description" content="Mac용 MyEQ 설정, 출력별 프리셋 선택, 최대 16개 EQ 밴드 편집, EQ 곡선 읽기, 사용자 프리셋 저장 및 일반적인 문제 해결 방법을 알아보세요.">
+    <meta property="og:title" content="MyEQ 사용 설명서">
+    <meta property="og:description" content="Mac용 MyEQ 설정, 출력별 프리셋 선택, 최대 16개 EQ 밴드 편집, EQ 곡선 읽기, 사용자 프리셋 저장 및 일반적인 문제 해결 방법을 알아보세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/MyEQ-support/manual/ko/">
+    <meta property="og:image" content="https://hakaru.net/assets/myeq-icon.png">
+    <link rel="canonical" href="https://hakaru.net/MyEQ-support/manual/ko/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/MyEQ-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/MyEQ-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/MyEQ-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/MyEQ-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/MyEQ-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/MyEQ-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/MyEQ-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/MyEQ-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/MyEQ-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/MyEQ-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/MyEQ-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/MyEQ-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/MyEQ-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">목차</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-ko">지원</a>
+      <a href="/AnalogRhythmKing-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-ko">지원</a>
+      <a href="/M2MX12-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-ko">지원</a>
+      <a href="/EraVerb-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-ko">지원</a>
+      <a href="/P73-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-ko">지원</a>
+      <a href="/TwinFET-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-ko">지원</a>
+      <a href="/M2DX-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-ko">지원</a>
+      <a href="/PeerClockMetronome-support/blog/ko/">블로그</a>
+      <a href="/PeerClockMetronome-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/MyEQ-support/">지원 (영어)</a>
+      <a href="/MyEQ-support/manual/ko/" class="active">매뉴얼</a>
+      <a href="/MyEQ-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">지원 (영어)</a>
+      <a href="/Tonrad-support/manual/ko/">매뉴얼</a>
+      <a href="/Tonrad-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-ko">지원</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-ko">지원</a>
+      <a href="/BopBot-support/manual/ko/">매뉴얼</a>
+      <a href="/BopBot-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/MyEQ-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/MyEQ-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/MyEQ-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/MyEQ-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/MyEQ-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/MyEQ-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">KO</span>
+    <a href="/MyEQ-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/MyEQ-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/MyEQ-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/MyEQ-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/myeq-icon.png" width="76" height="76" alt=""><div><h1>MyEQ 사용 설명서</h1><p class="manual-subtitle">처음 들어 보는 소리부터 나만의 EQ 프리셋까지</p></div></div>
+    <p class="manual-updated">업데이트: 2026년 11월 15일 · MyEQ 0.3.0 (build 225)</p>
+    <nav class="manual-languages" aria-label="설명서 언어"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/MyEQ-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/MyEQ-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/MyEQ-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/MyEQ-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/MyEQ-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/MyEQ-support/manual/it/">Italiano</a><span class="sidebar-lang-btn active" data-lang="ko" lang="ko" aria-current="page">한국어</span><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/MyEQ-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/MyEQ-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/MyEQ-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/MyEQ-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">목차</h2><ol><li><a href="#before-you-start">버전, 시스템 요구 사항 및 설명 범위</a></li>
+<li><a href="#first-start">처음 실행하기 및 오디오 권한 허용</a></li>
+<li><a href="#main-panel">메뉴 막대 패널</a></li>
+<li><a href="#output-presets">출력별 프리셋 선택</a></li>
+<li><a href="#bundled-presets">기본 제공 프리셋과 기기 선택</a></li>
+<li><a href="#custom-eq">편집 시작 및 변경 사항 미리 듣기</a></li>
+<li><a href="#eq-curve">EQ 곡선 읽기 및 편집</a></li>
+<li><a href="#band-controls">밴드 유형, 값 및 비활성화</a></li>
+<li><a href="#save-presets">사용자 프리셋 저장, 복사 및 지정</a></li>
+<li><a href="#processing">EQ, 자동 프리앰프 및 Maximizer</a></li>
+<li><a href="#privacy">오디오 권한, 로컬 저장 및 개인정보 보호</a></li>
+<li><a href="#troubleshooting">문제 해결 및 지원</a></li></ol></nav>
+<section id="before-you-start" aria-labelledby="before-you-start-title">
+<h2 id="before-you-start-title">버전, 시스템 요구 사항 및 설명 범위</h2>
+<p>MyEQ는 Mac에서 재생하는 오디오에 적용되는 메뉴 막대 이퀄라이저입니다. 시스템의 기본 출력을 따라가므로 각 앱에서 EQ를 따로 설정하지 않아도 음악, 동영상, 브라우저, 게임에 사용할 수 있습니다.</p><ul><li><strong>macOS 14.2 이상이 필요합니다.</strong> <a href="https://apps.apple.com/app/id6802144383">Mac App Store</a>에서 MyEQ를 설치하세요.</li><li>이 설명서는 공개된 <strong>0.3.0 (build 225)</strong> 버전을 다룹니다. 사용자 EQ 편집과 사용자 프리셋 저장은 0.2.0에, 곡선 드래그는 0.3.0에 추가되었습니다. 해당 컨트롤이 보이지 않으면 앱을 업데이트하세요.</li><li>설명서는 11개 언어로 제공됩니다. 앱 인터페이스는 <strong>영어와 일본어</strong>로만 제공되며, 실제 버튼을 쉽게 찾을 수 있도록 이 설명서에서는 영어 버튼 이름을 그대로 사용합니다.</li></ul><p>MyEQ는 시스템 출력에 적용되는 앱이며, AU/VST 플러그인이나 오디오 녹음기가 아닙니다. 이 설명서는 App Store 빌드를 기준으로 하며, 이후 로컬 개발 과정에서 이루어진 변경 사항은 포함하지 않습니다.</p>
+
+</section>
+<section id="first-start" aria-labelledby="first-start-title">
+<h2 id="first-start-title">처음 실행하기 및 오디오 권한 허용</h2>
+<ol><li>헤드폰이나 스피커를 연결하고 macOS의 <strong>System Settings → Sound → Output</strong>에서 선택하세요. 익숙한 오디오를 편안한 음량으로 재생하세요.</li><li>응용 프로그램에서 MyEQ를 여세요. <strong>메뉴 막대의 파형 아이콘</strong>을 클릭하세요. MyEQ는 일반적으로 Dock 아이콘을 표시하지 않습니다.</li><li>macOS가 시스템 오디오 녹음 권한을 요청하면 허용하세요. MyEQ는 재생 중인 오디오를 처리하기 위해 접근 권한이 필요하며, 녹음 파일을 저장하지는 않습니다.</li><li>패널에 <strong>Waiting for permission</strong>이 표시되면 <strong>Open System Settings</strong>를 클릭하세요. <strong>Privacy &amp; Security → Screen &amp; System Audio Recording</strong>에서 MyEQ를 허용하세요. macOS 버전에 따라 항목 이름이 다를 수 있습니다. MyEQ로 돌아와 <strong>Retry</strong>를 클릭하세요. macOS가 다시 열도록 요청하면 MyEQ를 다시 여세요.</li><li><strong>Enable audio processing</strong>을 켜고 실행 상태인지 확인한 다음 <strong>Current output</strong>을 확인하세요. <strong>Choose Preset</strong>을 클릭하고 적합한 프리셋을 선택하세요.</li></ol><p>별도의 가상 오디오 드라이버나 로그인 계정은 필요하지 않습니다. 아이콘을 찾을 수 없다면 화면 오른쪽의 메뉴 막대를 확인하세요.</p>
+<figure><a href="/MyEQ-support/manual/assets/menu-bar.png"><img src="/MyEQ-support/manual/assets/menu-bar.png" width="840" height="80" loading="lazy" alt="macOS 메뉴 막대에 표시된 MyEQ 파형 아이콘"></a><figcaption>이 메뉴 막대 예시에서 왼쪽에 있는 파형 아이콘이 MyEQ입니다.</figcaption></figure>
+</section>
+<section id="main-panel" aria-labelledby="main-panel-title">
+<h2 id="main-panel-title">메뉴 막대 패널</h2>
+<div class="table-wrap" role="region" aria-labelledby="panel-table" tabindex="0"><table><caption id="panel-table">주요 컨트롤</caption><thead><tr><th scope="col">컨트롤</th><th scope="col">기능</th></tr></thead><tbody><tr><th scope="row">Enable audio processing</th><td>MyEQ 처리를 켜거나 우회합니다. 꺼도 앱이 종료되거나 오디오 권한이 취소되지는 않습니다.</td></tr><tr><th scope="row">Maximizer</th><td>음량 보정 및 리미팅 단계를 활성화합니다. 프리셋을 편집하는 동안에도 켜기/끄기 상태는 여기서 제어합니다.</td></tr><tr><th scope="row">Current output</th><td>MyEQ가 현재 사용하는 출력 기기를 표시합니다. 기기는 이 패널이 아니라 macOS에서 변경하세요.</td></tr><tr><th scope="row">Current preset</th><td>선택된 프리셋과 선택 이유를 표시합니다. 이유는 기기에 지정된 프리셋, 이 Mac에 대한 추천, 출력 유형별 기본값 중 하나입니다.</td></tr><tr><th scope="row">Choose Preset</th><td>기본 제공 프리셋과 저장한 사용자 프리셋을 검색하고, 선택한 프리셋을 현재 출력에 지정합니다.</td></tr><tr><th scope="row">Edit EQ / New Preset</th><td>현재 프리셋을 바탕으로 편집기를 열거나 새로운 플랫 EQ를 만듭니다.</td></tr><tr><th scope="row">Licenses / Quit</th><td>타사 자료의 저작자 표시를 보거나, MyEQ를 종료하고 메뉴 막대 아이콘을 없앱니다.</td></tr></tbody></table></div><p><strong>Running</strong>은 오디오 경로가 활성 상태라는 뜻입니다. <strong>Bypassed</strong>는 처리가 꺼져 있다는 뜻입니다. <strong>Stopped</strong>, <strong>Waiting for permission</strong> 또는 <strong>Safe bypass</strong>가 표시되면 패널의 설명을 확인해야 합니다. 스위치가 켜져 있다는 것만으로 EQ가 적용되고 있다고 판단할 수는 없습니다.</p><p>앱을 실행할 때마다 오디오 처리는 켜진 상태로, Maximizer는 꺼진 상태로 시작합니다. 이 두 스위치의 상태는 다음 실행 때 유지되지 않지만, 저장한 프리셋과 기기별 지정은 유지됩니다.</p>
+
+</section>
+<section id="output-presets" aria-labelledby="output-presets-title">
+<h2 id="output-presets-title">출력별 프리셋 선택</h2>
+<ol><li>프리셋을 지정하기 전에 <strong>Current output</strong>을 확인하세요.</li><li><strong>Choose Preset</strong>을 여세요. <strong>Search presets</strong>에 모델명이나 저장한 프리셋 이름을 입력하세요. 검색어를 지우면 사용 가능한 목록이 표시됩니다.</li><li>검색 결과를 클릭하세요. 해당 출력 기기에 즉시 지정됩니다. <strong>Close</strong>는 선택 창만 닫습니다.</li><li>나중에 같은 출력을 다시 연결하면 MyEQ가 지정된 프리셋을 복원합니다. 다른 출력은 각자 지정된 프리셋을 유지합니다.</li></ol><p><strong>Clear Assignment</strong>는 현재 기기에 대한 지정만 해제하며, 프리셋 자체를 삭제하지 않습니다. 해제 후 MyEQ는 자동 선택으로 돌아갑니다. 수동으로 지정한 프리셋은 자동 추천보다 우선합니다.</p><p>지정된 프리셋이 없으면 지원 대상인 Mac16,12의 내장 스피커에는 Clear가 사용되고, 다른 내장 스피커에는 임시 스피커 프리셋이 사용됩니다. 헤드폰, Bluetooth, 외장 인터페이스 및 알 수 없는 출력에는 Neutral이 사용됩니다. 헤드폰에 맞는 보정은 직접 선택하세요. MyEQ는 정확한 헤드폰 모델을 자동으로 식별하지 않습니다. 기기별 지정은 이 Mac에만 저장됩니다.</p>
+
+</section>
+<section id="bundled-presets" aria-labelledby="bundled-presets-title">
+<h2 id="bundled-presets-title">기본 제공 프리셋과 기기 선택</h2>
+<div class="table-wrap" role="region" aria-labelledby="presets-table" tabindex="0"><table><caption id="presets-table">프리셋 그룹</caption><thead><tr><th scope="col">그룹</th><th scope="col">용도</th></tr></thead><tbody><tr><th scope="row">Apple 헤드폰 보정</th><td>AirPods Pro(2세대), AirPods Max (USB-C), AirPods 4 (ANC), EarPods용 AutoEq 기반 프리셋입니다. 모델과 세부 사양을 맞춰 선택하세요. 모든 헤드폰을 검색할 수 있는 목록은 아닙니다.</td></tr><tr><th scope="row">M4 MacBook Air 스피커 음색</th><td>Clear, Bass Boost, Vocal, Night는 Mac 모델 <code>Mac16,12</code>의 내장 스피커에 맞게 조정되어 있습니다. 모든 MacBook Air나 외장 스피커에 공통으로 적용할 수 있는 보정은 아닙니다.</td></tr><tr><th scope="row">자동 기본값 / Neutral</th><td>명시적으로 지정한 프리셋이 없으면 MyEQ는 모델 또는 출력 유형에 따른 기본값을 선택하거나 Neutral을 사용합니다. Neutral에는 EQ 밴드가 없습니다. 음색을 바꾸지 않은 신호와 비교하려면 Maximizer도 끄세요.</td></tr></tbody></table></div><p>지원 대상인 M4 MacBook Air의 내장 스피커에서 지정을 해제하면 <strong>Clear</strong>로 돌아갑니다. 스피커 프로파일은 다른 Mac이나 출력에서도 검색 결과에 나타나며 수동으로 지정할 수 있습니다. 프로파일의 조정과 자동 추천은 Mac16,12의 내장 스피커를 대상으로 합니다. 수동으로 선택할 수 있다고 해서 다른 모든 스피커를 보정한다는 뜻은 아닙니다. 다른 장비에는 자신만의 EQ를 만들 수 있습니다.</p><p>Neutral은 자동으로 사용되는 대체값이며, 프리셋 검색 목록의 항목이 아닙니다. 선택 가능한 플랫 프리셋을 만들려면 New Preset을 사용하고 밴드가 없는 상태로 저장하세요.</p>
+
+</section>
+<section id="custom-eq" aria-labelledby="custom-eq-title">
+<h2 id="custom-eq-title">편집 시작 및 변경 사항 미리 듣기</h2>
+<p>선택된 프리셋을 바탕으로 시작하려면 <strong>Edit EQ</strong>를, 밴드가 없는 플랫 EQ로 시작하려면 <strong>New Preset</strong>을 선택하세요. 전용 편집기 창은 크기를 조절할 수 있습니다. 다시 열면 동일한 창이 앞으로 나타나며 저장하지 않은 초안도 유지됩니다.</p><ol><li><strong>Preset name</strong>에 알아보기 쉬운 이름을 입력하세요.</li><li><strong>Add Band</strong>를 클릭하세요. 새 밴드의 초기값은 Peak, 1000 Hz, 0 dB, Q 1입니다. 비활성화된 밴드를 포함하여 최대 <strong>16개 밴드</strong>를 사용할 수 있습니다.</li><li>곡선이나 숫자 필드를 조절하세요. 처리가 켜져 있고, 오디오 권한이 허용되어 있으며, 오디오 경로가 실행 중이고 현재 출력을 사용할 수 있으면 변경 사항이 즉시 들립니다.</li><li>결과를 유지하려면 저장하세요. <strong>Cancel</strong>을 누르거나 편집기를 닫으면 저장하지 않은 미리 듣기가 끝나고 선택된 프리셋으로 돌아갑니다.</li></ol><p>출력 기기를 바꾸거나 오디오 경로를 중지/재시작하면 미리 듣기가 끝납니다. 초안은 유지되지만, 편집기에 미리 듣기가 중지되었다고 표시되고 현재 출력에 지정하는 기능이 비활성화됩니다. 새로 지정하지 않고 저장한 다음 원하는 출력에서 해당 프리셋을 선택하고 편집기를 다시 열어 미리 듣기를 재개하세요.</p>
+
+</section>
+<section id="eq-curve" aria-labelledby="eq-curve-title">
+<h2 id="eq-curve-title">EQ 곡선 읽기 및 편집</h2>
+<ul><li>번호가 붙은 각 점은 하나의 밴드를 나타냅니다. 좌우로 드래그하면 <strong>주파수</strong>가, 위아래로 드래그하면 <strong>게인</strong>이 바뀝니다. Q와 필터 유형은 아래 컨트롤에서 변경합니다.</li><li>점을 선택하면 해당 밴드의 숫자 행이 보이도록 이동합니다. 점이 겹치면 원하는 행의 <strong>Band N</strong>을 클릭하세요.</li><li>비활성화된 밴드는 테두리만 있는 점으로 표시됩니다. 이 점을 드래그하면 값은 바뀌지만 밴드가 활성화되지는 않습니다.</li><li>굵은 선은 활성화된 EQ 밴드들의 합산 응답이고, 가는 점선은 선택된 밴드의 응답입니다.</li></ul><p><strong>이 그래프는 계산된 EQ 응답이며, 실시간 스펙트럼 분석기가 아닙니다.</strong> 자동 프리앰프, Maximizer, 멀티밴드 다이내믹스 또는 베이스 강화는 포함하지 않습니다. 곡선이 높다고 해서 최종 재생 음량을 바로 알 수 있는 것은 아닙니다.</p><p>계산에는 출력 샘플 레이트가 사용됩니다. <strong>Reference: 48 kHz</strong>는 실제 샘플 레이트를 알 수 없다는 뜻입니다. 출력에서 재현할 수 없는 주파수는 음영으로 표시되며, 밴드에 실효 주파수가 제한된다는 메시지가 나타날 수 있습니다. 편집기에서 입력할 수 있는 주파수 범위와 현재 출력에서 사용할 수 있는 범위는 서로 다릅니다.</p><p>그래프의 세로 표시 범위는 −24~+24 dB이지만, 여러 밴드가 합쳐지면 이 표시 범위를 넘어설 수 있습니다. 응답이 그래프 가장자리에 닿는다고 해서 전체 응답이나 출력이 ±24 dB로 제한된다는 뜻은 아닙니다.</p>
+
+</section>
+<section id="band-controls" aria-labelledby="band-controls-title">
+<h2 id="band-controls-title">밴드 유형, 값 및 비활성화</h2>
+<div class="table-wrap" role="region" aria-labelledby="bands-table" tabindex="0"><table><caption id="bands-table">편집 가능한 EQ 설정</caption><thead><tr><th scope="col">설정</th><th scope="col">범위 또는 선택지</th><th scope="col">의미</th></tr></thead><tbody><tr><th scope="row">Frequency</th><td>20–20000 Hz</td><td>Peak의 중심 주파수 또는 셸프 필터의 전환 영역입니다. 낮은 값은 저음에, 높은 값은 고음에 영향을 줍니다.</td></tr><tr><th scope="row">Gain</th><td>−24~+24 dB</td><td>양수는 증폭, 음수는 감쇠를 뜻합니다. 필드, 곡선 또는 게인 슬라이더로 조절하세요. 슬라이더는 0.1 dB 단위로 움직입니다.</td></tr><tr><th scope="row">Q</th><td>0.1–30</td><td>폭이나 공진을 조절합니다. Peak에서는 Q가 높을수록 더 좁은 영역에 영향을 줍니다. Q가 높은 셸프 필터는 전환 영역 부근에서 공진할 수 있습니다.</td></tr><tr><th scope="row">Filter type</th><td>Peak / Low Shelf / High Shelf</td><td>Peak는 특정 주파수 주변의 영역을 조절합니다. Low Shelf는 전환 주파수 아래를, High Shelf는 그 위를 조절합니다.</td></tr><tr><th scope="row">Enabled</th><td>켜기 / 끄기</td><td>값을 유지하면서 이 밴드만 우회합니다. 비활성화된 밴드도 16개 밴드 제한에 포함됩니다.</td></tr><tr><th scope="row">Remove Band</th><td>휴지통 버튼</td><td>초안에서 밴드를 제거합니다. 저장된 프리셋으로 돌아가려면 편집 전체를 취소하세요.</td></tr></tbody></table></div><p>잘못되었거나 범위를 벗어난 숫자 입력은 강조 표시되며, 이 상태에서는 저장할 수 없습니다. 표시된 각 필드에 유효한 값을 입력하세요. 작은 변화부터 시작하세요. 큰 폭의 증폭보다 좁은 영역의 감쇠가 판단하기 쉬운 경우가 많습니다.</p><p>소수 입력에는 마침표를 사용하세요. 예를 들어 <code>-3.5</code> dB 또는 Q <code>0.7</code>과 같이 입력합니다. 0.3.0에서는 이 필드에 쉼표를 소수 구분 기호로 사용할 수 없습니다.</p>
+
+</section>
+<section id="save-presets" aria-labelledby="save-presets-title">
+<h2 id="save-presets-title">사용자 프리셋 저장, 복사 및 지정</h2>
+<ul><li>프리셋 이름은 앞뒤 공백을 제거한 뒤 <strong>1–80자</strong>여야 합니다.</li><li>기본 제공 프리셋을 편집하거나 새로 시작한 경우, <strong>Save</strong>는 새 사용자 프리셋을 만듭니다. 기본 제공 프리셋은 덮어쓰지 않습니다.</li><li>저장해 둔 사용자 프리셋을 편집하는 경우, <strong>Save</strong>는 해당 프리셋을 업데이트합니다. <strong>Save a Copy</strong>는 원본을 유지하면서 별도의 프리셋을 만듭니다.</li><li><strong>Assign to current output</strong>은 저장 결과를 현재 기기에 적용합니다. 선택하지 않으면 새로 만든 프리셋은 현재 출력에 지정되지 않은 채 라이브러리에 저장됩니다.</li></ul><div class="note"><p><strong>기존 지정은 덮어쓴 프리셋을 계속 참조합니다.</strong> 이미 기기에 지정된 사용자 프리셋을 업데이트하면, “Assign to current output”을 선택하지 않아도 해당 기기에 업데이트된 설정이 반영됩니다. 원래 소리를 유지하려면 Save a Copy를 사용하세요.</p></div><p>저장한 프리셋과 출력별 지정은 MyEQ를 종료하고 다시 실행해도 유지됩니다. 저장하지 않은 초안은 저장에 성공하기 전까지 라이브러리 프리셋이 되지 않습니다. Choose Preset에서 저장한 이름을 검색하세요.</p><p>0.3.0 버전에는 프리셋 가져오기/내보내기, 클라우드 동기화 또는 저장된 프리셋을 삭제하는 인터페이스가 없습니다. 지정 해제는 삭제가 아닙니다.</p>
+
+</section>
+<section id="processing" aria-labelledby="processing-title">
+<h2 id="processing-title">EQ, 자동 프리앰프 및 Maximizer</h2>
+<p>EQ는 주파수 균형을 바꿉니다. 자동 프리앰프는 증폭이 있을 때 레벨을 낮춥니다. Maximizer는 메인 패널의 스위치로 제어하는 별도의 음량 보정 및 리미팅 단계이며, 밴드 값을 바꾸지 않습니다.</p><p>0.3.0 버전에는 별도의 멀티밴드 다이내믹스나 베이스 강화 컨트롤이 없으며, 기본 제공 프리셋도 이 처리 단계를 활성화하지 않습니다. 사용자 편집기는 EQ 밴드를 변경하며, 메인 Maximizer 스위치의 설정이 계속 우선합니다. New Preset은 Neutral에서 시작합니다.</p><div class="note"><p><strong>0.3.0에서는 큰 폭으로 증폭하면 여전히 왜곡이 발생할 수 있습니다.</strong> 자동 프리앰프는 서로 겹치는 증폭이나 Q가 높은 셸프 필터의 공진을 완전히 반영하지 못합니다. 소리가 거칠거나 클리핑이 발생하면 증폭량이나 Q를 낮추세요. 자동 프리앰프가 모든 과부하를 방지한다고 생각해서는 안 됩니다.</p></div><p>제대로 비교하려면 같은 음원과 출력을 유지하면서 Enable audio processing을 켜고 끄세요. “더 큰 소리”를 무조건 더 좋게 판단하지 않도록 체감 음량을 비슷하게 맞춰 들어보세요. MyEQ를 완전히 종료하려면 Quit을 선택하세요.</p>
+
+</section>
+<section id="privacy" aria-labelledby="privacy-title">
+<h2 id="privacy-title">오디오 권한, 로컬 저장 및 개인정보 보호</h2>
+<p>MyEQ는 macOS의 시스템 오디오 권한을 사용해 소리를 실시간으로 처리합니다. <strong>녹음을 저장하거나, 오디오 파일을 만들거나, 분석 데이터를 수집하거나, 오디오 또는 기타 데이터를 네트워크로 전송하지 않습니다.</strong> 이는 앱에 대한 설명이며, 지원 웹사이트의 동작은 별개입니다.</p><p>사용자 프리셋과 출력별 지정은 앱의 Application Support 영역에 로컬로 저장됩니다. App Store 버전에서는 앱 컨테이너 안에 저장됩니다. 오디오 처리 권한은 소리를 업로드할 수 있는 권한이 아닙니다.</p><p>macOS의 System Settings에서 시스템 오디오 접근 권한을 취소할 수 있습니다. 그러면 MyEQ는 더 이상 시스템 오디오를 처리할 수 없습니다. <strong>Licenses</strong> 버튼은 AutoEq 기반 프리셋을 포함하여 기본 제공되는 타사 자료의 저작자 표시를 보여줍니다. 자세한 내용은 <a href="/MyEQ-support/privacy">개인정보 처리방침 (영어)</a>을 참조하세요.</p>
+
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">문제 해결 및 지원</h2>
+<div class="table-wrap" role="region" aria-labelledby="troubleshooting-table" tabindex="0"><table><caption id="troubleshooting-table">자주 발생하는 증상</caption><thead><tr><th scope="col">증상</th><th scope="col">확인 또는 조치</th></tr></thead><tbody><tr><th scope="row">메뉴 막대 아이콘이 없음</th><td>응용 프로그램에서 MyEQ를 열고 메뉴 막대 오른쪽에서 파형 아이콘을 찾으세요. Dock 아이콘이 없는 것은 정상입니다.</td></tr><tr><th scope="row">권한 요청이 계속됨</th><td>Screen & System Audio Recording에서 MyEQ를 확인하고 패널로 돌아와 Retry를 클릭하세요. macOS가 앱을 다시 열도록 요청하면 그대로 따르세요.</td></tr><tr><th scope="row">소리가 바뀌지 않음</th><td>실행 상태, Enable audio processing, Current output 및 선택된 프리셋을 확인하세요. Maximizer가 꺼진 Neutral은 의도적으로 플랫 상태입니다. 재생에 시스템 기본 출력이 사용되고 있는지 확인하세요.</td></tr><tr><th scope="row">소리가 나지 않거나 Safe bypass가 표시됨</th><td>표시된 이유를 읽으세요. macOS에서 출력과 음량을 확인하세요. MyEQ를 종료하여 일반 재생이 되는지 확인한 뒤 다시 열고 권한을 다시 확인하세요.</td></tr><tr><th scope="row">편집 내용이 더 이상 소리에 반영되지 않음</th><td>출력이나 오디오 경로가 변경되었을 수 있습니다. 저장하여 초안을 보존한 뒤 원하는 출력에서 해당 프리셋을 선택하고 편집기를 다시 여세요. 미리 듣기 상태 메시지를 확인하세요.</td></tr><tr><th scope="row">Save가 비활성화되거나 저장에 실패함</th><td>1–80자의 이름과 유효한 밴드 값을 사용하세요. 오류 메시지를 읽으세요. 저장소 오류가 발생하면 초안이 저장되었다고 볼 수 없으므로 확인하는 동안 창을 열어 두세요.</td></tr><tr><th scope="row">프리셋이 보이지 않음</th><td>검색어를 지우세요. 기본 제공 목록에는 헤드폰 보정 네 가지와 M4 MacBook Air 음색 네 가지가 있으며, 모든 모델이 포함되어 있지는 않습니다. 사용자 프리셋이 보이지 않으면 저장에 성공했는지, 저장소 오류가 표시되는지 확인하세요.</td></tr><tr><th scope="row">소리가 거칠거나 왜곡됨</th><td>큰 폭의 증폭, 밴드 겹침 또는 높은 Q를 줄이세요. 처리 장의 0.3.0 자동 프리앰프 제한 사항을 참조하세요.</td></tr></tbody></table></div><p>지원 문의 시 MyEQ 버전, macOS 버전, 출력 기기, 프리셋 이름, 패널 상태 또는 오류, 문제를 재현하는 절차를 알려주세요. 패널이나 편집기의 스크린샷도 도움이 됩니다. 문의: <a href="mailto:hakaruapps-contact@hakaru.net">hakaruapps-contact@hakaru.net</a>.</p>
+
+</section>
+<footer class="manual-footer"><nav><a href="/MyEQ-support/">지원 (영어)</a><a href="/MyEQ-support/privacy">개인정보 처리방침 (영어)</a><a href="mailto:hakaruapps-contact@hakaru.net">지원 문의</a><a href="#top">맨 위로</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

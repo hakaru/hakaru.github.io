@@ -1181,6 +1181,10 @@
           "href": "/MyEQ-support/"
         },
         {
+          "label": "Manual",
+          "href": "/MyEQ-support/manual/en/"
+        },
+        {
           "label": "Privacy",
           "href": "/MyEQ-support/privacy"
         }
@@ -1191,9 +1195,149 @@
           "href": "/MyEQ-support/index-ja"
         },
         {
+          "label": "マニュアル",
+          "href": "/MyEQ-support/manual/ja/"
+        },
+        {
           "label": "プライバシー",
           "href": "/MyEQ-support/privacy-ja"
         }
+      ],
+      "de": [
+        {
+          "label": "Support (Englisch)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Handbuch",
+          "href": "/MyEQ-support/manual/de/"
+        },
+        {
+          "label": "Datenschutz (Englisch)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte (inglés)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/MyEQ-support/manual/es/"
+        },
+        {
+          "label": "Privacidad (inglés)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Assistance (anglais)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Guide",
+          "href": "/MyEQ-support/manual/fr/"
+        },
+        {
+          "label": "Confidentialité (anglais)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto (inglese)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Manuale",
+          "href": "/MyEQ-support/manual/it/"
+        },
+        {
+          "label": "Privacy (inglese)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원 (영어)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "매뉴얼",
+          "href": "/MyEQ-support/manual/ko/"
+        },
+        {
+          "label": "개인정보 처리방침 (영어)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Ondersteuning (Engels)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/MyEQ-support/manual/nl/"
+        },
+        {
+          "label": "Privacy (Engels)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte (inglês)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/MyEQ-support/manual/pt-BR/"
+        },
+        {
+          "label": "Privacidade (inglês)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support (engelska)",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "Manual",
+          "href": "/MyEQ-support/manual/sv/"
+        },
+        {
+          "label": "Integritet (engelska)",
+          "href": "/MyEQ-support/privacy"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援（英文）",
+          "href": "/MyEQ-support/"
+        },
+        {
+          "label": "手冊",
+          "href": "/MyEQ-support/manual/zh-Hant/"
+        },
+        {
+          "label": "隱私權（英文）",
+          "href": "/MyEQ-support/privacy"
+        }
+      ]
+    },
+    "sectionLanguages": {
+      "support": [
+        "en",
+        "ja"
+      ],
+      "privacy": [
+        "en",
+        "ja"
       ]
     }
   },

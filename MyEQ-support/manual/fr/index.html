@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manuel d’utilisation de MyEQ | hakaru</title>
+    <meta name="description" content="Apprenez à configurer MyEQ pour Mac, à choisir des préréglages pour chaque sortie, à modifier jusqu’à 16 bandes d’égalisation, à lire la courbe d’égalisation, à enregistrer vos préréglages et à résoudre les problèmes courants.">
+    <meta property="og:title" content="Manuel d’utilisation de MyEQ">
+    <meta property="og:description" content="Apprenez à configurer MyEQ pour Mac, à choisir des préréglages pour chaque sortie, à modifier jusqu’à 16 bandes d’égalisation, à lire la courbe d’égalisation, à enregistrer vos préréglages et à résoudre les problèmes courants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/MyEQ-support/manual/fr/">
+    <meta property="og:image" content="https://hakaru.net/assets/myeq-icon.png">
+    <link rel="canonical" href="https://hakaru.net/MyEQ-support/manual/fr/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/MyEQ-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/MyEQ-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/MyEQ-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/MyEQ-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/MyEQ-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/MyEQ-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/MyEQ-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/MyEQ-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/MyEQ-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/MyEQ-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/MyEQ-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/MyEQ-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/MyEQ-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">Sommaire</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-fr">Assistance</a>
+      <a href="/AnalogRhythmKing-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-fr">Support</a>
+      <a href="/M2MX12-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-fr">Support</a>
+      <a href="/EraVerb-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-fr">Support</a>
+      <a href="/P73-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-fr">Support</a>
+      <a href="/TwinFET-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-fr">Support</a>
+      <a href="/M2DX-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-fr">Support</a>
+      <a href="/PeerClockMetronome-support/blog/fr/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/MyEQ-support/">Assistance (anglais)</a>
+      <a href="/MyEQ-support/manual/fr/" class="active">Guide</a>
+      <a href="/MyEQ-support/privacy">Confidentialité (anglais)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Assistance (anglais)</a>
+      <a href="/Tonrad-support/manual/fr/">Guide</a>
+      <a href="/Tonrad-support/privacy">Confidentialité (anglais)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-fr">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-fr">Support</a>
+      <a href="/BopBot-support/manual/fr/">Manuel</a>
+      <a href="/BopBot-support/privacy-fr">Confidentialité</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/MyEQ-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/MyEQ-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/MyEQ-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/MyEQ-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <span class="sidebar-lang-btn active" data-lang="fr">FR</span>
+    <a href="/MyEQ-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/MyEQ-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/MyEQ-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/MyEQ-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/MyEQ-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/MyEQ-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/myeq-icon.png" width="76" height="76" alt=""><div><h1>Manuel d’utilisation de MyEQ</h1><p class="manual-subtitle">De la première écoute à vos propres préréglages d’égalisation</p></div></div>
+    <p class="manual-updated">Mis à jour le 15 novembre 2026 · MyEQ 0.3.0 (build 225)</p>
+    <nav class="manual-languages" aria-label="Langue du manuel"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/MyEQ-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/MyEQ-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/MyEQ-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/MyEQ-support/manual/es/">Español</a><span class="sidebar-lang-btn active" data-lang="fr" lang="fr" aria-current="page">Français</span><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/MyEQ-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/MyEQ-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/MyEQ-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/MyEQ-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/MyEQ-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/MyEQ-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Sommaire</h2><ol><li><a href="#before-you-start">Version, configuration requise et périmètre</a></li>
+<li><a href="#first-start">Premier lancement et autorisation audio</a></li>
+<li><a href="#main-panel">Le panneau de la barre des menus</a></li>
+<li><a href="#output-presets">Choisir un préréglage pour chaque sortie</a></li>
+<li><a href="#bundled-presets">Préréglages fournis et correspondance avec le matériel</a></li>
+<li><a href="#custom-eq">Commencer la modification et écouter les changements</a></li>
+<li><a href="#eq-curve">Lire et modifier la courbe d’égalisation</a></li>
+<li><a href="#band-controls">Types de bandes, valeurs et désactivation</a></li>
+<li><a href="#save-presets">Enregistrer, copier et affecter des préréglages personnalisés</a></li>
+<li><a href="#processing">Égalisation, préamplificateur automatique et Maximizer</a></li>
+<li><a href="#privacy">Autorisation audio, stockage local et confidentialité</a></li>
+<li><a href="#troubleshooting">Dépannage et assistance</a></li></ol></nav>
+<section id="before-you-start" aria-labelledby="before-you-start-title">
+<h2 id="before-you-start-title">Version, configuration requise et périmètre</h2>
+<p>MyEQ est un égaliseur installé dans la barre des menus qui traite le son diffusé par votre Mac. Il suit la sortie par défaut du système : vous pouvez donc l’utiliser pour la musique, les vidéos, les navigateurs et les jeux sans régler un égaliseur dans chaque application.</p><ul><li><strong>Nécessite macOS 14.2 ou une version ultérieure.</strong> Installez MyEQ depuis le <a href="https://apps.apple.com/app/id6802144383">Mac App Store</a>.</li><li>Ce manuel décrit la version publiée <strong>0.3.0 (build 225)</strong>. L’édition d’égalisation personnalisée et l’enregistrement des préréglages utilisateur ont été ajoutés dans la version 0.2.0 ; la modification de la courbe par glissement a été ajoutée dans la version 0.3.0. Mettez l’application à jour si ces commandes n’apparaissent pas.</li><li>Le manuel est disponible en 11 langues. L’interface de l’application n’est disponible qu’en <strong>anglais et en japonais</strong> ; les noms des boutons sont conservés en anglais ici pour vous aider à les repérer.</li></ul><p>MyEQ est une application qui agit sur la sortie audio du système, et non un plug-in AU/VST ni un enregistreur audio. Ce manuel décrit la version de l’App Store ; il n’inclut pas les modifications de développement local ultérieures.</p>
+
+</section>
+<section id="first-start" aria-labelledby="first-start-title">
+<h2 id="first-start-title">Premier lancement et autorisation audio</h2>
+<ol><li>Branchez votre casque ou vos enceintes et sélectionnez-les dans macOS, sous <strong>System Settings → Sound → Output</strong>. Lancez un contenu audio familier à un volume confortable.</li><li>Ouvrez MyEQ depuis Applications. Cliquez sur l’<strong>icône en forme d’onde dans la barre des menus</strong> ; MyEQ n’affiche normalement pas d’icône dans le Dock.</li><li>Acceptez la demande de macOS d’enregistrer l’audio du système. MyEQ a besoin d’accéder au son en cours de lecture pour le traiter ; il ne conserve aucun enregistrement.</li><li>Si le panneau affiche <strong>Waiting for permission</strong>, cliquez sur <strong>Open System Settings</strong>. Sous <strong>Privacy &amp; Security → Screen &amp; System Audio Recording</strong>, autorisez MyEQ. Le nom de cette catégorie peut varier selon macOS. Revenez dans MyEQ et cliquez sur <strong>Retry</strong> ; relancez MyEQ si macOS vous le demande.</li><li>Activez <strong>Enable audio processing</strong>, vérifiez que l’état indique que le traitement est en cours et contrôlez <strong>Current output</strong>. Cliquez sur <strong>Choose Preset</strong> et sélectionnez un préréglage adapté.</li></ol><p>Vous n’avez besoin ni d’un pilote audio virtuel supplémentaire, ni d’un compte de connexion. Si vous ne trouvez pas l’icône, regardez dans la barre des menus, à droite de l’écran.</p>
+<figure><a href="/MyEQ-support/manual/assets/menu-bar.png"><img src="/MyEQ-support/manual/assets/menu-bar.png" width="840" height="80" loading="lazy" alt="Icône en forme d’onde de MyEQ dans la barre des menus de macOS"></a><figcaption>Dans cet exemple de barre des menus, MyEQ correspond à l’icône en forme d’onde située à gauche.</figcaption></figure>
+</section>
+<section id="main-panel" aria-labelledby="main-panel-title">
+<h2 id="main-panel-title">Le panneau de la barre des menus</h2>
+<div class="table-wrap" role="region" aria-labelledby="panel-table" tabindex="0"><table><caption id="panel-table">Commandes principales</caption><thead><tr><th scope="col">Commande</th><th scope="col">Fonction</th></tr></thead><tbody><tr><th scope="row">Enable audio processing</th><td>Active le traitement de MyEQ ou le contourne. Le désactiver ne ferme pas l’application et ne révoque pas son autorisation audio.</td></tr><tr><th scope="row">Maximizer</th><td>Active l’étage de gestion du niveau sonore et de limitation. Son activation se règle ici, même pendant la modification d’un préréglage.</td></tr><tr><th scope="row">Current output</th><td>Affiche le périphérique de sortie suivi par MyEQ. Changez de périphérique dans macOS, pas dans ce panneau.</td></tr><tr><th scope="row">Current preset</th><td>Affiche le préréglage sélectionné et la raison de ce choix : une affectation, une recommandation pour ce Mac ou un réglage par défaut lié au type de sortie.</td></tr><tr><th scope="row">Choose Preset</th><td>Permet de rechercher les préréglages fournis et vos préréglages enregistrés, puis d’affecter votre choix à la sortie actuelle.</td></tr><tr><th scope="row">Edit EQ / New Preset</th><td>Ouvre l’éditeur à partir du préréglage actuel ou crée une nouvelle égalisation plate.</td></tr><tr><th scope="row">Licenses / Quit</th><td>Affiche les crédits des tiers ou arrête MyEQ et retire son icône de la barre des menus.</td></tr></tbody></table></div><p><strong>Running</strong> signifie que le chemin audio est actif. <strong>Bypassed</strong> signifie que le traitement est désactivé. Les états <strong>Stopped</strong>, <strong>Waiting for permission</strong> ou <strong>Safe bypass</strong> nécessitent de consulter l’explication affichée dans le panneau ; un interrupteur activé ne suffit pas à confirmer que l’égalisation est appliquée.</p><p>À chaque lancement, le traitement audio démarre activé et Maximizer désactivé. L’état de ces deux interrupteurs n’est pas mémorisé entre les lancements ; vos préréglages enregistrés et vos affectations aux périphériques sont conservés.</p>
+
+</section>
+<section id="output-presets" aria-labelledby="output-presets-title">
+<h2 id="output-presets-title">Choisir un préréglage pour chaque sortie</h2>
+<ol><li>Vérifiez <strong>Current output</strong> avant de créer une affectation.</li><li>Ouvrez <strong>Choose Preset</strong>. Saisissez un nom de modèle ou celui d’un préréglage enregistré dans <strong>Search presets</strong> ; effacez la recherche pour voir la liste disponible.</li><li>Cliquez sur un résultat. Il est immédiatement affecté à ce périphérique de sortie ; <strong>Close</strong> ferme uniquement le sélecteur.</li><li>Lorsque vous reconnectez cette même sortie, MyEQ rétablit son affectation. Les autres sorties conservent leurs propres affectations.</li></ol><p><strong>Clear Assignment</strong> supprime l’affectation du périphérique actuel, pas le préréglage lui-même. MyEQ revient alors à son choix automatique. Un préréglage affecté manuellement est prioritaire sur une recommandation automatique.</p><p>En l’absence d’affectation, les haut-parleurs intégrés du modèle pris en charge Mac16,12 utilisent Clear ; les autres haut-parleurs intégrés utilisent un préréglage temporaire pour haut-parleurs. Les casques, les sorties Bluetooth, les interfaces externes et les sorties inconnues utilisent Neutral par défaut. Choisissez vous-même la correction adaptée à votre casque ; MyEQ n’identifie pas automatiquement son modèle exact. Les affectations aux périphériques restent locales à ce Mac.</p>
+
+</section>
+<section id="bundled-presets" aria-labelledby="bundled-presets-title">
+<h2 id="bundled-presets-title">Préréglages fournis et correspondance avec le matériel</h2>
+<div class="table-wrap" role="region" aria-labelledby="presets-table" tabindex="0"><table><caption id="presets-table">Groupes de préréglages</caption><thead><tr><th scope="col">Groupe</th><th scope="col">Utilisation</th></tr></thead><tbody><tr><th scope="row">Corrections pour casques et écouteurs Apple</th><td>Préréglages issus d’AutoEq pour AirPods Pro (2e génération), AirPods Max (USB-C), AirPods 4 (ANC) et EarPods. Choisissez le modèle et la variante correspondants ; il ne s’agit pas d’un catalogue permettant de rechercher tous les casques.</td></tr><tr><th scope="row">Profils sonores des haut-parleurs du M4 MacBook Air</th><td>Clear, Bass Boost, Vocal et Night sont réglés pour les haut-parleurs intégrés du modèle de Mac <code>Mac16,12</code>. Ce ne sont pas des corrections universelles pour tous les MacBook Air ou toutes les enceintes externes.</td></tr><tr><th scope="row">Réglages automatiques par défaut / Neutral</th><td>Sans affectation explicite, MyEQ choisit un réglage par défaut selon le modèle ou le type de sortie, ou utilise Neutral. Neutral ne comporte aucune bande d’égalisation ; désactivez également Maximizer pour comparer avec un signal non modifié.</td></tr></tbody></table></div><p>Sur les haut-parleurs intégrés du M4 MacBook Air pris en charge, la suppression d’une affectation rétablit <strong>Clear</strong>. Les profils pour haut-parleurs peuvent aussi apparaître dans les recherches et être affectés manuellement sur d’autres Mac ou sorties. Leur réglage et leur recommandation automatique ciblent les haut-parleurs intégrés du Mac16,12 ; leur disponibilité manuelle ne signifie pas qu’ils corrigent tous les autres haut-parleurs. Vous pouvez créer votre propre égalisation pour d’autres équipements.</p><p>Neutral est un réglage de repli automatique, pas une entrée de la liste de recherche des préréglages. Pour créer un préréglage plat que vous pourrez sélectionner, utilisez New Preset et enregistrez-le sans bande.</p>
+
+</section>
+<section id="custom-eq" aria-labelledby="custom-eq-title">
+<h2 id="custom-eq-title">Commencer la modification et écouter les changements</h2>
+<p>Choisissez <strong>Edit EQ</strong> pour partir du préréglage sélectionné ou <strong>New Preset</strong> pour une égalisation plate sans bande. La fenêtre dédiée de l’éditeur est redimensionnable. Si vous l’ouvrez à nouveau, la même fenêtre revient au premier plan et conserve le brouillon non enregistré.</p><ol><li>Saisissez un nom descriptif dans <strong>Preset name</strong>.</li><li>Cliquez sur <strong>Add Band</strong>. Une nouvelle bande commence avec Peak, 1000 Hz, 0 dB et Q 1. Vous pouvez avoir jusqu’à <strong>16 bandes</strong>, y compris les bandes désactivées.</li><li>Ajustez la courbe ou les champs numériques. Les changements sont immédiatement audibles lorsque le traitement est activé, que l’autorisation audio est accordée, que le chemin audio fonctionne et que la sortie actuelle est disponible.</li><li>Enregistrez lorsque vous souhaitez conserver le résultat. <strong>Cancel</strong> ou la fermeture de l’éditeur met fin à la préécoute non enregistrée et rétablit le préréglage sélectionné.</li></ol><p>Changer de périphérique de sortie ou arrêter et redémarrer le chemin audio met fin à la préécoute. Votre brouillon reste disponible, mais l’éditeur signale que la préécoute s’est arrêtée et désactive son affectation à la sortie actuelle. Enregistrez-le sans nouvelle affectation, sélectionnez-le sur la sortie souhaitée, puis rouvrez l’éditeur pour reprendre la préécoute.</p>
+
+</section>
+<section id="eq-curve" aria-labelledby="eq-curve-title">
+<h2 id="eq-curve-title">Lire et modifier la courbe d’égalisation</h2>
+<ul><li>Chaque point numéroté représente une bande. Faites-le glisser à gauche ou à droite pour modifier la <strong>fréquence</strong>, et vers le haut ou le bas pour modifier le <strong>gain</strong>. Q et le type de filtre se règlent avec les commandes situées en dessous.</li><li>Sélectionner un point fait apparaître sa ligne de valeurs numériques. Si des points se superposent, cliquez sur <strong>Band N</strong> dans la ligne souhaitée.</li><li>Une bande désactivée est représentée par un point non rempli. Le déplacer modifie ses valeurs sans l’activer.</li><li>La ligne épaisse représente la réponse combinée des bandes d’égalisation activées ; la ligne fine en pointillés représente la réponse de la bande sélectionnée.</li></ul><p><strong>Il s’agit d’une réponse d’égalisation calculée, pas d’un analyseur de spectre en temps réel.</strong> Elle n’inclut pas le préamplificateur automatique, Maximizer, la dynamique multibande ou le renforcement des basses. Une courbe plus haute n’indique pas directement le niveau sonore final de la lecture.</p><p>Le calcul utilise la fréquence d’échantillonnage de la sortie. <strong>Reference: 48 kHz</strong> signifie que la fréquence réelle n’est pas disponible. Les fréquences que la sortie ne peut pas reproduire sont grisées ; une bande peut afficher un message indiquant que sa fréquence effective est limitée. La plage de fréquences autorisée par l’éditeur et celle utilisable par la sortie actuelle sont différentes.</p><p>Le graphique affiche de −24 à +24 dB sur l’axe vertical, mais plusieurs bandes peuvent se combiner et dépasser cette plage d’affichage. Une réponse qui atteint le bord ne prouve pas que la réponse totale ou la sortie est limitée à ±24 dB.</p>
+
+</section>
+<section id="band-controls" aria-labelledby="band-controls-title">
+<h2 id="band-controls-title">Types de bandes, valeurs et désactivation</h2>
+<div class="table-wrap" role="region" aria-labelledby="bands-table" tabindex="0"><table><caption id="bands-table">Réglages d’égalisation modifiables</caption><thead><tr><th scope="col">Réglage</th><th scope="col">Plage ou choix</th><th scope="col">Signification</th></tr></thead><tbody><tr><th scope="row">Frequency</th><td>20–20000 Hz</td><td>La fréquence centrale pour Peak ou la zone de transition d’un filtre en plateau. Les valeurs basses agissent sur les graves ; les valeurs hautes sur les aigus.</td></tr><tr><th scope="row">Gain</th><td>De −24 à +24 dB</td><td>Les valeurs positives amplifient et les valeurs négatives atténuent. Utilisez le champ, la courbe ou le curseur de gain ; le curseur avance par pas de 0.1 dB.</td></tr><tr><th scope="row">Q</th><td>0.1–30</td><td>Contrôle la largeur ou la résonance. Pour Peak, un Q plus élevé agit sur une zone plus étroite. Les filtres en plateau à Q élevé peuvent résonner autour de leur transition.</td></tr><tr><th scope="row">Filter type</th><td>Peak / Low Shelf / High Shelf</td><td>Peak agit sur une zone autour d’une fréquence. Low Shelf agit sur les fréquences sous sa transition ; High Shelf sur celles qui se trouvent au-dessus.</td></tr><tr><th scope="row">Enabled</th><td>On / Off</td><td>Contourne uniquement cette bande en conservant ses valeurs. Les bandes désactivées comptent toujours dans la limite de 16 bandes.</td></tr><tr><th scope="row">Remove Band</th><td>Bouton de corbeille</td><td>Supprime la bande du brouillon. Annulez toute la modification si vous souhaitez revenir au préréglage enregistré.</td></tr></tbody></table></div><p>Les valeurs numériques non valides ou hors plage sont mises en évidence et empêchent l’enregistrement. Saisissez une valeur valide dans chaque champ signalé. Commencez par de petits changements ; une atténuation étroite est souvent plus facile à évaluer qu’une forte amplification.</p><p>Utilisez un point pour saisir les décimales, par exemple <code>-3.5</code> dB ou Q <code>0.7</code>. La virgule comme séparateur décimal n’est pas acceptée dans ces champs en 0.3.0.</p>
+
+</section>
+<section id="save-presets" aria-labelledby="save-presets-title">
+<h2 id="save-presets-title">Enregistrer, copier et affecter des préréglages personnalisés</h2>
+<ul><li>Le nom d’un préréglage doit contenir <strong>1–80 caractères</strong> après suppression des espaces au début et à la fin.</li><li><strong>Save</strong> crée un nouveau préréglage utilisateur lorsque vous modifiez un préréglage fourni ou partez de zéro. Les préréglages fournis ne sont pas remplacés.</li><li>Lorsque vous modifiez votre propre préréglage enregistré, <strong>Save</strong> le met à jour. <strong>Save a Copy</strong> crée un préréglage distinct et conserve l’original.</li><li><strong>Assign to current output</strong> applique le résultat enregistré à ce périphérique. Si l’option n’est pas cochée, un nouveau préréglage est enregistré dans la bibliothèque sans créer cette affectation.</li></ul><div class="note"><p><strong>Les affectations existantes restent liées à un préréglage remplacé.</strong> Si vous mettez à jour un préréglage utilisateur déjà affecté à un périphérique, celui-ci reçoit les réglages mis à jour même si « Assign to current output » n’est pas coché. Utilisez Save a Copy pour conserver le son d’origine.</p></div><p>Les préréglages enregistrés et les affectations de sortie sont conservés après avoir quitté et relancé MyEQ. Un brouillon non enregistré ne devient un préréglage de la bibliothèque qu’une fois son enregistrement réussi. Recherchez le nom enregistré dans Choose Preset.</p><p>La version 0.3.0 ne propose ni importation ou exportation de préréglages, ni synchronisation dans le cloud, ni interface de suppression des préréglages enregistrés. Supprimer une affectation ne supprime pas le préréglage.</p>
+
+</section>
+<section id="processing" aria-labelledby="processing-title">
+<h2 id="processing-title">Égalisation, préamplificateur automatique et Maximizer</h2>
+<p>L’égalisation modifie l’équilibre des fréquences. Le préamplificateur automatique réduit le niveau lorsque des amplifications sont présentes. Maximizer est un étage distinct de gestion du niveau sonore et de limitation, commandé par l’interrupteur du panneau principal ; il ne modifie pas les valeurs des bandes.</p><p>La version 0.3.0 ne possède pas de commandes séparées pour la dynamique multibande ou le renforcement des basses, et les préréglages fournis n’activent pas ces étages. L’éditeur personnalisé modifie les bandes d’égalisation ; l’interrupteur principal de Maximizer garde la priorité. New Preset part de Neutral.</p><div class="note"><p><strong>De fortes amplifications peuvent encore provoquer de la distorsion en 0.3.0.</strong> Son préamplificateur automatique ne tient pas entièrement compte des amplifications qui se chevauchent ni des résonances des filtres en plateau à Q élevé. Réduisez les amplifications ou Q si le son devient agressif ou écrêté ; ne considérez pas le préamplificateur automatique comme une garantie contre toute surcharge.</p></div><p>Pour une comparaison utile, conservez la même source et la même sortie, puis activez et désactivez Enable audio processing. Écoutez à des niveaux perçus similaires pour que « plus fort » ne gagne pas systématiquement. Pour arrêter complètement MyEQ, choisissez Quit.</p>
+
+</section>
+<section id="privacy" aria-labelledby="privacy-title">
+<h2 id="privacy-title">Autorisation audio, stockage local et confidentialité</h2>
+<p>MyEQ utilise l’autorisation d’accès à l’audio du système de macOS pour traiter le son en temps réel. <strong>Il ne conserve pas d’enregistrements, ne crée pas de fichiers audio, ne collecte pas de données d’analyse et n’envoie ni audio ni autres données sur le réseau.</strong> Cette description concerne l’application ; le site d’assistance a son propre fonctionnement en tant que site web.</p><p>Vos préréglages personnalisés et vos affectations de sortie sont enregistrés localement dans l’espace Application Support de l’application, à l’intérieur de son conteneur pour la version de l’App Store. Autoriser le traitement audio ne revient pas à autoriser l’envoi de votre son.</p><p>Vous pouvez révoquer l’accès à l’audio du système dans System Settings de macOS. MyEQ ne pourra alors plus traiter l’audio du système. Le bouton <strong>Licenses</strong> affiche les crédits des éléments tiers fournis, notamment les préréglages issus d’AutoEq. Consultez la <a href="/MyEQ-support/privacy">Confidentialité (anglais)</a> pour en savoir plus.</p>
+
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">Dépannage et assistance</h2>
+<div class="table-wrap" role="region" aria-labelledby="troubleshooting-table" tabindex="0"><table><caption id="troubleshooting-table">Problèmes courants</caption><thead><tr><th scope="col">Symptôme</th><th scope="col">Vérification ou action</th></tr></thead><tbody><tr><th scope="row">Aucune icône dans la barre des menus</th><td>Ouvrez MyEQ depuis Applications et cherchez l’onde à droite de la barre des menus. L’absence d’icône dans le Dock est normale.</td></tr><tr><th scope="row">L’autorisation est toujours demandée</th><td>Vérifiez que MyEQ est autorisé dans Screen & System Audio Recording, revenez au panneau et cliquez sur Retry. Si macOS demande de relancer l’application, suivez cette indication.</td></tr><tr><th scope="row">Le son ne change pas</th><td>Vérifiez l’état de fonctionnement, Enable audio processing, Current output et le préréglage sélectionné. Neutral avec Maximizer désactivé est volontairement plat. Assurez-vous que la lecture utilise la sortie par défaut du système.</td></tr><tr><th scope="row">Aucun son ou état Safe bypass</th><td>Lisez la raison affichée. Vérifiez la sortie et le volume dans macOS. Quittez MyEQ pour vérifier si la lecture normale fonctionne, puis relancez-le et contrôlez à nouveau l’autorisation.</td></tr><tr><th scope="row">Les modifications ne sont plus audibles</th><td>La sortie ou le chemin audio a peut-être changé. Conservez le brouillon en l’enregistrant, sélectionnez-le sur la sortie souhaitée, puis rouvrez l’éditeur. Consultez le message d’état de la préécoute.</td></tr><tr><th scope="row">Save est désactivé ou échoue</th><td>Utilisez un nom de 1–80 caractères et des valeurs de bandes valides. Lisez le message d’erreur. En cas d’erreur de stockage, le brouillon n’a pas nécessairement été enregistré ; gardez la fenêtre ouverte pendant la vérification.</td></tr><tr><th scope="row">Un préréglage est introuvable</th><td>Effacez le texte de recherche. Le catalogue fourni contient quatre corrections pour casques et écouteurs et quatre profils sonores pour le M4 MacBook Air, pas tous les modèles. Si un préréglage personnalisé manque, vérifiez que son enregistrement a réussi et qu’aucune erreur de stockage n’est affichée.</td></tr><tr><th scope="row">Son agressif ou distorsion</th><td>Réduisez les fortes amplifications, les bandes qui se chevauchent ou les valeurs élevées de Q. Consultez la limite du préamplificateur automatique de la version 0.3.0 dans le chapitre sur le traitement.</td></tr></tbody></table></div><p>Pour contacter l’assistance, indiquez la version de MyEQ, celle de macOS, le périphérique de sortie, le nom du préréglage, l’état ou l’erreur du panneau et les étapes permettant de reproduire le problème. Une capture du panneau ou de l’éditeur est utile. Contactez <a href="mailto:hakaruapps-contact@hakaru.net">hakaruapps-contact@hakaru.net</a>.</p>
+
+</section>
+<footer class="manual-footer"><nav><a href="/MyEQ-support/">Assistance (anglais)</a><a href="/MyEQ-support/privacy">Confidentialité (anglais)</a><a href="mailto:hakaruapps-contact@hakaru.net">Contacter l’assistance</a><a href="#top">Retour en haut</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>
