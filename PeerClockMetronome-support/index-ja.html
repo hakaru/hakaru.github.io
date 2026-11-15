@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome サポート | hakaru</title>
-    <meta name="description" content="PeerClock Metronome サポートページ。Apple デバイス向け P2P 同期メトロノーム。">
+    <meta name="description" content="PeerClock Metronomeの操作ガイド。テンポ、拍子、自動加速、ローカルWi-Fi同期、音のタイミング、設定の保存、トラブルの対処を説明します。">
     <meta property="og:title" content="PeerClock Metronome サポート">
-    <meta property="og:description" content="Apple デバイス向け P2P 同期メトロノーム。複数デバイスを同じ Wi-Fi に接続するだけで、サーバー不要の ±2ms 精度クロック同期を実現。">
+    <meta property="og:description" content="PeerClock Metronomeの操作ガイド。テンポ、拍子、自動加速、ローカルWi-Fi同期、音のタイミング、設定の保存、トラブルの対処を説明します。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-ja">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
@@ -388,6 +388,7 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -402,6 +403,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-ja">サポート</a>
+      <a href="/AnalogRhythmKing-support/manual/ja/">マニュアル</a>
       <a href="/AnalogRhythmKing-support/privacy-ja">プライバシー</a>
     </div>
   </div>
@@ -560,6 +562,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-ja" class="active">サポート</a>
+      <a href="/PeerClockMetronome-support/manual/ja/">マニュアル</a>
       <a href="/PeerClockMetronome-support/blog/ja/">ブログ</a>
       <a href="/PeerClockMetronome-support/privacy-ja">プライバシー</a>
     </div>
@@ -596,6 +599,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/ChatArchive-support/">サポート</a>
+      <a href="/ChatArchive-support/manual/ja/">マニュアル</a>
       <a href="/ChatArchive-support/blog/">ブログ</a>
       <a href="/ChatArchive-support/privacy">プライバシー</a>
       <a href="/ChatArchive-support/terms">利用規約</a>
@@ -960,70 +964,14 @@ body {
         </div>
 
         <div class="content">
-            <p>PeerClock Metronome サポートページへようこそ。</p>
-            <p>PeerClock Metronome は、Apple デバイス向けのピアツーピア同期メトロノームです。複数の iPhone や iPad を同じ Wi-Fi ネットワークに接続するだけで、サーバー不要の ±2ms 精度クロック同期を実現します。</p>
+<p><a href="/PeerClockMetronome-support/manual/ja/"><strong>PeerClock Metronomeの詳しいマニュアルを読む</strong></a></p><section class="card"><h2>対象バージョン・端末・使い方の範囲</h2><p>PeerClock Metronomeは、規則的なクリック音と指揮の動きを表示するメトロノームです。1台で個人練習に使うほか、同じローカルWi-Fiにつないだ複数の端末でタイミングと再生操作を共有できます。</p><p>本書は、<strong>PeerClock 0.4.2</strong>を使う<strong>PeerClock Metronome 1.1.0（build 13）</strong>を対象にしています。公開版は2026年11月15日に確認しました。必要なOSは<strong>iPhoneではiOS 17以降、iPadではiPadOS 17以降</strong>です。<a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Storeの掲載情報</a>にはApple Silicon MacとApple Visionの互換性もありますが、本書のタッチ操作はiPhoneとiPadを対象とし、他の環境での動作試験を意味しません。</p><p><a href="/PeerClockMetronome-support/manual/ja/#overview">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><section class="card"><h2>最初の練習を始める</h2><ol><li>アプリを開き、端末の音量を聞きやすい大きさにします。他の端末と同期する場合は、ローカルネットワークへのアクセスを許可します。</li><li>一定テンポで練習する場合は、<strong>自動加速</strong>を開き、<strong>テンポを自動で上げる</strong>をオフにして<strong>完了</strong>を押します。</li><li>大きなBPMの数字を上へドラッグすると速く、下へドラッグすると遅くなります。その下の列から<strong>4/4</strong>を選びます。</li><li>丸い三角ボタンを押します。再生中は四角に変わります。クリック音と動く点を目安に演奏します。</li><li>四角ボタンを押すと停止します。接続中の端末がある場合は、その端末にも停止が送られます。</li></ol><p>初めて複数台で使うときは、全員が接続して同期表示を確認してから、操作する人を1人決めて開始してください。一定テンポの再生は共有の拍グリッドに沿って始まるため、最初に聞こえる音が必ずカウントインや第1拍になるわけではありません。強い小節頭の音を確認してから演奏に入ります。</p><p><a href="/PeerClockMetronome-support/manual/ja/#quickstart">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><section class="card"><h2>複数の端末を接続する</h2><ol><li>すべての端末に対応版を入れ、同じローカルWi-Fiにつなぎます。</li><li>各端末でPeerClock Metronomeを開き、ローカルネットワークを許可します。準備中は全員が停止しておきます。</li><li>端末数と<strong>Synced</strong>表示を待ちます。数字は見つかった他の端末の数で、名前付きの参加者一覧ではありません。</li><li>操作する端末でテンポ、拍子、自動加速を決め、再生を押します。</li><li>全端末が意図したパターンを再生していることを確認してから練習します。</li></ol><p>Bonjourを使って自動で検出します。Host、Join、参加コード、IP入力欄、部屋選択はありません。時計の基準となる端末は内部で自動選出されるため、演奏者がマスターを指定する必要はありません。</p><p>再生開始後に加わった端末には、その時点の再生状態と設定がすぐ届くとは限りません。確実に参加させるには、一度全員を停止し、同期を待って、使う設定を確認し、操作担当の端末から再開してください。再接続したときも全体の確認が必要です。</p><p><a href="/PeerClockMetronome-support/manual/ja/#connect">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><section class="card"><h2>自動加速で練習する</h2><p>自動加速は、指定した小節数を演奏するごとにテンポを上げ、目標に達した後はその速さを保ちます。再生を停止し、<strong>自動加速</strong>を開いて<strong>テンポを自動で上げる</strong>をオンにします。各項目の増減ボタンで次を設定します。</p><p><a href="/PeerClockMetronome-support/manual/ja/#auto-tempo">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><section class="card"><h2>同期表示の意味</h2><ul><li><strong>Standalone：</strong>現在カウントされている接続端末がありません。単体での練習はできます。</li><li><strong>Searching…：</strong>端末は見つかっていますが、現在は時計が同期済みの表示になっていません。</li><li><strong>Synced：</strong>時計ライブラリが同期済みの状態を返しています。</li></ul><p>横の<strong>±x.xms</strong>の数字には注意が必要です。この版では、<strong>報告されたネットワーク往復遅延の半分</strong>を表示しています。実際に聞こえるクリック同士の差、補正後の時計のずれを測った値、誤差の保証範囲ではありません。</p><p>自動選出された基準端末は、基準として往復遅延がゼロと扱われるため<strong>±0.0ms</strong>を表示することがあります。すべてのスピーカーが完全に一致している証拠にはなりません。表示と端末数で接続状態を確認した後、実際の出力を聞いてください。参加・退出・再接続時の移行中は、状態が落ち着くまで待って全員を再開する必要が生じる場合があります。</p><p><a href="/PeerClockMetronome-support/manual/ja/#sync-status">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><section class="card"><h2>広告・権限・プライバシー</h2><p>確認した公開版は広告付きの無料アプリです。購入画面、サブスクリプション、購入を復元する操作、有料の広告解除はありません。広告が準備できていれば、<strong>その端末で開始した停止操作3回</strong>ごとに全画面広告が表示される場合があります。他端末から受け取った停止は回数に加算されません。表示の有無は配信状況によります。</p><h3>データを扱う主体と目的</h3><p>開発者のHakaru Hiroseは、広告配信、利用状況の分析、安定性の診断にGoogleのサービスを利用しています。<strong>Google AdMob</strong>は、広告の配信と効果測定のため、端末識別子、広告への反応、IPアドレス、診断情報を扱う場合があります。<strong>Firebase Analytics</strong>は利用イベントやアプリ・端末の情報を扱い、アプリはトラッキング許可の状態、広告と同意処理のエラーも記録します。<strong>Firebase Crashlytics</strong>は不具合調査のため、クラッシュ報告と関連するインストール・端末情報を扱います。これらは外部サーバーに接続することがあります。時計同期がローカルで動くことは、アプリ全体がインターネットを使わないことを意味しません。</p><h3>権限と選択肢</h3><p><strong>ローカルネットワーク</strong>権限は近くの端末を検出して通信するためのものです。<strong>App Tracking Transparency（ATT）</strong>の要求は、トラッキングと広告識別子（IDFA）へのアクセスに関するものです。拒否してもメトロノームを使えます。設定 → プライバシーとセキュリティ → トラッキングで変更できますが、拒否はすべての広告や診断処理を無効にするスイッチではありません。詳しくは<a href="https://support.apple.com/en-la/102420">Appleのトラッキング設定の説明</a>を参照してください。</p><p>アプリは<strong>Google User Messaging Platform（UMP）</strong>で同意情報を要求し、必要な場合に同意フォームを表示するよう依頼します。表示される選択肢は、サービスの地域・アカウント設定に依存します。フォームが出た場合は、その選択肢に回答してください。<strong>1.1.0</strong>には、フォームを再表示する独立したプライバシー設定画面や、分析・クラッシュ報告を切り替えるスイッチはありません。操作できない選択肢についてはサポートへお問い合わせください。<a href="https://developers.google.com/admob/ios/privacy">UMPの資料</a>はサービスの仕組みを説明していますが、推奨される設定のすべてをこのアプリから操作できるわけではありません。</p><h3>位置情報・音声・保存設定</h3><p>アプリはGPS・位置情報の権限を要求せず、マイク音声も録音しません。ただし、広告サービスがIPアドレスからおおまかな地域を推定する場合はあります。自動加速設定は端末に保存し、同期ではローカル端末間で時計と操作情報を交換します。録音を交換する仕組みではありません。メールで問い合わせる場合、内容とメールアドレスは対応する受信者に伝わります。</p><p><a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Adsのデータ開示</a>、<a href="https://firebase.google.com/support/privacy">Firebaseのプライバシー情報</a>、<a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Storeの開示</a>も参照してください。本書では、このアプリ固有の保存期間を定めたり、アンインストールによるデータ削除を約束したりしていません。プライバシー、保存期間、削除に関する問い合わせ先は<a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>です。</p><p><a href="/PeerClockMetronome-support/manual/ja/#ads-privacy">PeerClock Metronomeの詳しいマニュアルを読む</a></p></section><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
 
-            <hr>
 
-            <h2>機能</h2>
 
-            <h3>ピアツーピア同期（マスター/スレーブなし）</h3>
-            <p>すべてのデバイスが対等なピアです。「マスター」デバイスは存在しません。どのデバイスでも自由に参加・離脱できます。</p>
 
-            <h3>±2ms クロック同期</h3>
-            <p>NTP 風の 4 タイムスタンプアルゴリズムとベストハーフフィルタリングにより、すべての接続デバイスでサブミリ秒精度を実現します。</p>
 
-            <h3>Wi-Fi のみ（サーバー不要）</h3>
-            <p>同期はローカル Wi-Fi ネットワーク内で完結します。外部サーバーへのデータ送信は一切ありません。完全オフラインで動作します。</p>
 
-            <h3>自動デバイス検出</h3>
-            <p>同じ Wi-Fi ネットワーク上のデバイスは Bonjour を使って自動的に見つかります。手動での IP 入力やペアリングは不要です。</p>
 
-            <h3>指揮者パスアニメーション</h3>
-            <p>画面上に拍子パターンを視覚的にトレースする指揮者パスアニメーションで、演奏者が一目でビートを確認できます。</p>
-
-            <h3>複数拍子対応</h3>
-            <p>4/4、3/4、4/8、3/8、6/8、9/8、12/8 の拍子に対応しています。</p>
-
-            <h3>ライブ BPM 変更</h3>
-            <p>テンポ変更はすべての接続デバイスに即座に同期されます。遅延もドリフトもありません。</p>
-
-            <hr>
-
-            <h2>よくある質問</h2>
-
-            <h3>複数デバイスを同期するには？</h3>
-            <ol>
-                <li>すべてのデバイスを同じ Wi-Fi ネットワークに接続します</li>
-                <li>各デバイスで PeerClock Metronome を開きます</li>
-                <li>数秒以内にデバイスが自動的に検出されます</li>
-                <li>いずれかのデバイスでメトロノームを開始すると、同期されたすべてのデバイスが追随します</li>
-            </ol>
-
-            <h3>指揮者パスとは何ですか？</h3>
-            <p>指揮者パスは、選択した拍子の伝統的な指揮パターン（例：2 拍子は上下運動、3 拍子は三角形、4 拍子は十字パターン）をアニメーションで表示するものです。ヘッドフォンなしでも演奏者が同期を保てるよう、視覚的な参照を提供します。</p>
-
-            <h3>同期精度はどのくらいですか？</h3>
-            <p>PeerClock Metronome は、通常の Wi-Fi 環境で ±2ms のクロック同期精度を実現します。これは、1 回の同期サイクルで 40 サンプルの往復時間を計測し、ノイズの多い半分を除外することで達成されます。人間のタイミング知覚は約 10〜20ms なので、この同期精度は知覚できる差異のしきい値を大きく下回ります。</p>
-
-            <h3>インターネット接続なしで使えますか？</h3>
-            <p>はい。PeerClock Metronome はローカル Wi-Fi ネットワークのみを使用します。同期にインターネット接続は不要です。</p>
-
-            <h3>対応デバイスは？</h3>
-            <p>PeerClock Metronome は iOS 17.0 以降が必要です。iOS 17 以降を搭載した iPhone または iPad であれば動作します。</p>
-
-            <hr>
-
-            <h2>お問い合わせ</h2>
-            <p>ご質問やフィードバックは以下までお気軽にどうぞ：<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
-
-            <hr>
-
-            <h2>リンク</h2>
-            <ul>
-                <li><a href="/PeerClockMetronome-support/privacy-ja">プライバシーポリシー</a></li>
-            </ul>
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

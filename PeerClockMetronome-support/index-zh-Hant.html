@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome 支援 | hakaru</title>
-    <meta name="description" content="PeerClock Metronome 支援頁面。適用於 Apple 裝置的 P2P 同步節拍器。">
+    <meta name="description" content="PeerClock Metronome 實用指南：速度、拍號、自動加速、區域 Wi-Fi 同步、聲音時序、設定儲存與疑難排解。">
     <meta property="og:title" content="PeerClock Metronome 支援">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
@@ -304,6 +304,7 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -318,6 +319,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/manual/zh-Hant/">手冊</a>
       <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
     </div>
   </div>
@@ -476,6 +478,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-zh-Hant" class="active">支援</a>
+      <a href="/PeerClockMetronome-support/manual/zh-Hant/">手冊</a>
       <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
       <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
     </div>
@@ -511,10 +514,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/zh-Hant/">Support</a>
-      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
-      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
-      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+      <a href="/ChatArchive-support/zh-Hant/">支援（英文）</a>
+      <a href="/ChatArchive-support/manual/zh-Hant/">手冊</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">部落格</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">隱私權（英文）</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">條款</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -875,48 +879,13 @@ body {
             <a class="app-store-link" href="https://apps.apple.com/tw/app/peerclock-metronome/id6762972307">在 App Store 下載 &rarr;</a>
         </div>
         <div class="content">
-            <p>歡迎來到 PeerClock Metronome 支援頁面。</p>
-            <p>PeerClock Metronome 是適用於 Apple 裝置的點對點同步節拍器。將多台 iPhone 或 iPad 連接至同一 Wi-Fi 網路，即可自動完成 ±2ms 精度的時鐘同步，無需伺服器。</p>
-            <hr>
-            <h2>功能</h2>
-            <h3>點對點同步（無主從之分）</h3>
-            <p>所有裝置皆為對等節點，沒有指定的「主」裝置。任何裝置皆可自由加入或離開，不影響其他裝置。</p>
-            <h3>±2ms 時鐘同步</h3>
-            <p>採用受 NTP 啟發的 4 時間戳記演算法搭配最佳半數過濾，在所有連接裝置上實現次毫秒精度。</p>
-            <h3>僅限 Wi-Fi（無伺服器）</h3>
-            <p>同步完全在本機 Wi-Fi 網路上進行，不會向任何外部伺服器傳送資料，完全離線運作。</p>
-            <h3>自動裝置探索</h3>
-            <p>同一 Wi-Fi 網路上的裝置透過 Bonjour 自動互相探索，無需手動輸入 IP 或配對。</p>
-            <h3>指揮路徑動畫</h3>
-            <p>視覺化的指揮路徑在螢幕上描繪拍子型態，讓演奏者一眼就能跟上節拍。</p>
-            <h3>多種拍號</h3>
-            <p>支援 4/4、3/4、4/8、3/8、6/8、9/8 及 12/8 拍號。</p>
-            <h3>即時 BPM 變更</h3>
-            <p>速度變更即時同步至所有已連接裝置，無延遲、無漂移。</p>
-            <hr>
-            <h2>常見問題</h2>
-            <h3>如何同步多台裝置？</h3>
-            <ol>
-                <li>將所有裝置連接至同一 Wi-Fi 網路</li>
-                <li>在每台裝置上開啟 PeerClock Metronome</li>
-                <li>裝置將在數秒內自動互相探索</li>
-                <li>在任一裝置上啟動節拍器，所有已同步的裝置都會跟隨</li>
-            </ol>
-            <h3>什麼是指揮路徑？</h3>
-            <p>指揮路徑是一條動畫線，描繪所選拍號的傳統指揮型態（例如：2 拍為上下動作、3 拍為三角形、4 拍為十字型）。即使不戴耳機，演奏者也能保持同步的視覺參考。</p>
-            <h3>同步精度有多高？</h3>
-            <p>PeerClock Metronome 在一般 Wi-Fi 條件下可達到 ±2ms 時鐘同步。人類的時間感知約為 10–20ms，因此同步精度遠低於可察覺差異的閾值。</p>
-            <h3>沒有網路也能使用嗎？</h3>
-            <p>可以。PeerClock Metronome 僅使用本機 Wi-Fi 網路，同步不需要網際網路連線。</p>
-            <h3>支援哪些裝置？</h3>
-            <p>PeerClock Metronome 需要 iOS 17.0 或更新版本，支援所有執行 iOS 17+ 的 iPhone 或 iPad。</p>
-            <hr>
-            <h2>聯絡我們</h2>
-            <p>如有任何問題或意見，請聯絡：<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
-            <hr>
-            <h2>連結</h2>
-            <ul><li><a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私權政策</a></li></ul>
+<p><a href="/PeerClockMetronome-support/manual/zh-Hant/"><strong>閱讀完整 PeerClock Metronome 手冊</strong></a></p><section class="card"><h2>版本、裝置與本手冊範圍</h2><p>PeerClock Metronome 會播放規律的節拍聲，並顯示指揮動作動畫。您可以用單一裝置獨自練習，也可以在同一區域 Wi-Fi 網路上的多部裝置開啟 App，共用時序與播放控制。</p><p>本手冊適用於 <strong>PeerClock Metronome 1.1.0（build 13）</strong>，使用 <strong>PeerClock 0.4.2</strong>。公開版本於2026年11月15日確認。iPhone 需要 <strong>iOS 17 以上版本，iPad 需要 iPadOS 17 以上版本</strong>。<a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 頁面</a>也列出 Apple Silicon Mac 與 Apple Vision 相容性；本手冊的觸控操作以 iPhone 和 iPad 為準，不代表已在其他平台完成測試。</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#overview">閱讀完整 PeerClock Metronome 手冊</a></p></section><section class="card"><h2>開始第一次練習</h2><ol><li>開啟 App，將裝置音量調到舒適程度。若要與其他裝置同步，請允許「區域網路」存取。</li><li>若要以固定速度練習，開啟 <strong>Auto Tempo</strong>，關閉 <strong>Increase tempo automatically</strong>，然後點選 <strong>Done</strong>。</li><li>向上拖曳大型 BPM 數字可加快速度，向下拖曳可減慢。從下方的列中選取 <strong>4/4</strong>。</li><li>點選圓形的三角形按鈕。播放時按鈕會變成方形，請跟著節拍聲和移動的光點練習。</li><li>點選方形停止。若已連接其他裝置，也會向它們傳送停止指令。</li></ol><p>第一次團體練習時，請先讓所有裝置連線，等待同步狀態出現，再由一人操作。固定速度的播放會沿著共用拍點開始：第一個可聽見的節拍聲不保證是預備拍或第1拍。請先聽出較強的重拍，再加入演奏。</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#quickstart">閱讀完整 PeerClock Metronome 手冊</a></p></section><section class="card"><h2>連接多部裝置</h2><ol><li>在每部裝置安裝相容版本，並連接到同一個區域 Wi-Fi 網路。</li><li>在各裝置開啟 PeerClock Metronome，允許「區域網路」存取。設定時請讓所有裝置保持停止。</li><li>等待連線裝置數和 <strong>Synced</strong> 狀態出現。數字代表找到的其他裝置數量，不是附有名稱的成員清單。</li><li>在負責操作的裝置上選擇速度、拍號和 Auto Tempo 設定，然後按 Play。</li><li>開始練習前，確認每部裝置都在播放預期的節拍。</li></ol><p>裝置會透過 Bonjour 自動尋找彼此。App 沒有 Host、Join、配對碼、IP 輸入欄或房間選擇器。內部時鐘基準會自動選出，演奏者不必指定主控裝置。</p><p>播放開始後才加入的裝置，不保證會立即收到目前的播放狀態與設定。為了可靠地納入新裝置，請停止全體播放，等待同步，檢查所需設定，再由操作裝置重新開始。重新加入後也應再次確認全體狀態。</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#connect">閱讀完整 PeerClock Metronome 手冊</a></p></section><section class="card"><h2>使用 Auto Tempo 練習</h2><p>Auto Tempo 會在完整小節結束後加速，達到目標後則保持該速度。請先停止播放，點選 <strong>Auto Tempo</strong>，並啟用 <strong>Increase tempo automatically</strong>。使用加減按鈕設定：</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#auto-tempo">閱讀完整 PeerClock Metronome 手冊</a></p></section><section class="card"><h2>閱讀同步狀態</h2><ul><li><strong>Standalone：</strong>目前未計入其他連線裝置，仍可在本機練習。</li><li><strong>Searching…：</strong>已找到其他裝置，但 App 目前未顯示時鐘已同步。</li><li><strong>Synced：</strong>時鐘函式庫回報為已同步。</li></ul><p>旁邊的 <strong>±x.xms</strong> 數值需要正確解讀。此版本將它計算為<strong>所回報網路往返延遲的一半</strong>。它不是實際節拍聲之間的量測差值，也不是量測後剩餘的時鐘偏移，更不是保證的誤差界線。</p><p>自動選出的基準裝置可能顯示 <strong>±0.0ms</strong>，因為其基準品質會回報零往返延遲。這不代表每個喇叭都完美對齊。請用狀態和數量診斷連線，再聆聽實際輸出。裝置加入、離開或重新連線時，可能需要等待狀態穩定，並重新開始團體播放。</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#sync-status">閱讀完整 PeerClock Metronome 手冊</a></p></section><section class="card"><h2>廣告、權限與隱私</h2><p>經檢視的發布版本免費並含有廣告，沒有購買畫面、訂閱、Restore Purchases 或付費移除廣告控制。若廣告已準備好，每 <strong>3 次由本機發起的停止</strong>可能出現一次插頁廣告。接收遠端停止指令不會增加此計數，廣告供應情況也會改變。</p><h3>誰處理資料，以及處理目的</h3><p>App 由 Hakaru Hirose 提供，使用 Google 服務投放廣告、分析使用情況及診斷穩定性。<strong>Google AdMob</strong> 可能處理裝置識別碼、廣告互動、IP 位址和診斷資訊，以投放及衡量廣告。<strong>Firebase Analytics</strong> 處理使用事件與 App／裝置資訊；App 也會記錄追蹤授權狀態及廣告／同意錯誤。<strong>Firebase Crashlytics</strong> 處理當機報告及相關安裝／裝置資訊，以調查故障。這些服務可能連接外部伺服器；區域時鐘同步不代表整個 App 完全不使用網際網路。</p><h3>權限與選擇</h3><p><strong>區域網路</strong>權限用於尋找附近裝置並與其通訊。<strong>App 追蹤透明度（ATT）</strong>要求則與追蹤及存取廣告識別碼（IDFA）有關。您可以拒絕它，仍繼續使用節拍器。可在「設定 → 隱私權與安全性 → 追蹤」變更選擇；拒絕追蹤並不等於關閉所有廣告與診斷。請參閱<a href="https://support.apple.com/en-la/102420">Apple 的追蹤控制說明</a>。</p><p>App 透過 <strong>Google User Messaging Platform（UMP）</strong>請求同意資訊，並在需要時要求顯示同意表單。實際選項取決於服務的地區與帳戶設定；若表單出現，請作出選擇。<strong>1.1.0</strong> 沒有可重新開啟該表單的獨立 App 內隱私選項畫面，也沒有分析或當機回報開關。若無法存取所需選項，請聯絡支援。<a href="https://developers.google.com/admob/ios/privacy">UMP 文件</a>介紹該服務；App 並未提供其中所有建議設定。</p><h3>位置、音訊與已儲存設定</h3><p>App 不會要求 GPS／位置權限，也不會錄製麥克風音訊。但廣告服務仍可能由 IP 位址推算概略位置。Auto Tempo 設定儲存在本機；同步在區域裝置之間交換時序與控制資料，而不是錄音。若您寄信給支援，收件者會收到您的訊息與電子郵件地址，以處理您的請求。</p><p>請參閱 <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads 資料揭露</a>、<a href="https://firebase.google.com/support/privacy">Firebase 隱私資訊</a>和 <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 隱私揭露</a>。本指南不設定 App 專屬的資料保存期間，也不保證解除安裝時會刪除資料。關於隱私、保存期間或刪除問題，請聯絡 <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>。</p><p><a href="/PeerClockMetronome-support/manual/zh-Hant/#ads-privacy">閱讀完整 PeerClock Metronome 手冊</a></p></section><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+
+
+
+
+
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

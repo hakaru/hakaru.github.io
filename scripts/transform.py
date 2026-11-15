@@ -72,6 +72,11 @@ def detect_language(rel_path, app):
     subpath = get_subpath(rel_path, app)
     available_langs = list(app["links"].keys())
 
+    if app["id"] == "ChatArchive" and (
+        subpath.startswith("en/") or subpath.startswith("manual/en/")
+    ):
+        return "en"
+
     for lang in sorted(available_langs, key=len, reverse=True):
         if lang == "en":
             continue
@@ -157,6 +162,13 @@ def compute_lang_switch_url(rel_path, app, current_lang, target_lang, active_sec
     prefix = app["prefix"]
     subpath = get_subpath(rel_path, app)
 
+    manual_match = re.match(r"manual/([^/]+)/(.*)", subpath)
+    if manual_match:
+        rest = manual_match.group(2)
+        if rest == "index.html":
+            rest = ""
+        return prefix + f"/manual/{target_lang}/{rest}"
+
     if app["id"] == "ChatArchive":
         path_without_lang = subpath
         for lang in sorted(app["links"].keys(), key=len, reverse=True):
@@ -164,6 +176,13 @@ def compute_lang_switch_url(rel_path, app, current_lang, target_lang, active_sec
             if path_without_lang.startswith(lang_prefix):
                 path_without_lang = path_without_lang[len(lang_prefix) :]
                 break
+
+        if path_without_lang.startswith("blog/"):
+            base = prefix + ("/" if target_lang == "ja" else f"/{target_lang}/")
+            candidate = base + path_without_lang
+            local = os.path.join(REPO_ROOT, candidate.lstrip("/"))
+            if not any(os.path.isfile(p) for p in (local, local + ".html", os.path.join(local, "index.html"))):
+                return base + "blog/"
 
         if target_lang == "ja":
             if path_without_lang in ("", "index.html"):

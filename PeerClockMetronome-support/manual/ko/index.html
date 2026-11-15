@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PeerClock Metronome 사용자 매뉴얼 | hakaru</title>
+    <meta name="description" content="PeerClock Metronome의 템포, 박자표, Auto Tempo, 로컬 Wi-Fi 동기화, 오디오 타이밍, 설정 저장과 문제 해결을 설명하는 실용 안내서입니다.">
+    <meta property="og:title" content="PeerClock Metronome 사용자 매뉴얼">
+    <meta property="og:description" content="PeerClock Metronome의 템포, 박자표, Auto Tempo, 로컬 Wi-Fi 동기화, 오디오 타이밍, 설정 저장과 문제 해결을 설명하는 실용 안내서입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/manual/ko/">
+    <meta property="og:image" content="https://hakaru.net/PeerClockMetronome-support/assets/app-icon.svg">
+    <link rel="canonical" href="https://hakaru.net/PeerClockMetronome-support/manual/ko/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/PeerClockMetronome-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/PeerClockMetronome-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/PeerClockMetronome-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/PeerClockMetronome-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/PeerClockMetronome-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/PeerClockMetronome-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/PeerClockMetronome-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/PeerClockMetronome-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/PeerClockMetronome-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/PeerClockMetronome-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">목차</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-ko">지원</a>
+      <a href="/AnalogRhythmKing-support/manual/ko/">매뉴얼</a>
+      <a href="/AnalogRhythmKing-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-ko">지원</a>
+      <a href="/M2MX12-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-ko">지원</a>
+      <a href="/EraVerb-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-ko">지원</a>
+      <a href="/P73-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-ko">지원</a>
+      <a href="/TwinFET-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-ko">지원</a>
+      <a href="/M2DX-Core-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-ko">지원</a>
+      <a href="/M2DX-support/manual/ko/">매뉴얼</a>
+      <a href="/M2DX-support/changelog-ko">변경 기록</a>
+      <a href="/M2DX-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/PeerClockMetronome-support/index-ko">지원</a>
+      <a href="/PeerClockMetronome-support/manual/ko/" class="active">매뉴얼</a>
+      <a href="/PeerClockMetronome-support/blog/ko/">블로그</a>
+      <a href="/PeerClockMetronome-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">지원 (영어)</a>
+      <a href="/MyEQ-support/manual/ko/">매뉴얼</a>
+      <a href="/MyEQ-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">지원 (영어)</a>
+      <a href="/Tonrad-support/manual/ko/">매뉴얼</a>
+      <a href="/Tonrad-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/ko/">지원 (영어)</a>
+      <a href="/ChatArchive-support/manual/ko/">매뉴얼</a>
+      <a href="/ChatArchive-support/ko/blog/">블로그</a>
+      <a href="/ChatArchive-support/ko/privacy">개인정보 처리방침 (영어)</a>
+      <a href="/ChatArchive-support/ko/terms">약관</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-ko">지원</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-ko">지원</a>
+      <a href="/BopBot-support/manual/ko/">매뉴얼</a>
+      <a href="/BopBot-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/PeerClockMetronome-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/PeerClockMetronome-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/PeerClockMetronome-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/PeerClockMetronome-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/PeerClockMetronome-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/PeerClockMetronome-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">KO</span>
+    <a href="/PeerClockMetronome-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/PeerClockMetronome-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/PeerClockMetronome-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/PeerClockMetronome-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/PeerClockMetronome-support/assets/app-icon.svg" width="76" height="76" alt=""><div><h1>PeerClock Metronome 사용자 매뉴얼</h1><p class="manual-subtitle">개인 및 합주 연습 · 템포와 박자표 · Auto Tempo · 로컬 Wi-Fi 동기화</p></div></div>
+    <p class="manual-updated">2026년 11월 15일 업데이트 · PeerClock Metronome 1.1.0 (13) · PeerClock 0.4.2</p>
+    <nav class="manual-languages" aria-label="매뉴얼 언어"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/PeerClockMetronome-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/PeerClockMetronome-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/PeerClockMetronome-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/PeerClockMetronome-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/PeerClockMetronome-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/PeerClockMetronome-support/manual/it/">Italiano</a><span class="sidebar-lang-btn active" data-lang="ko" lang="ko" aria-current="page">한국어</span><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/PeerClockMetronome-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/PeerClockMetronome-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/PeerClockMetronome-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/PeerClockMetronome-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">목차</h2><ol><li><a href="#overview">버전, 지원 기기 및 매뉴얼 범위</a></li>
+<li><a href="#quickstart">첫 연습 시작하기</a></li>
+<li><a href="#tempo">템포 설정하기</a></li>
+<li><a href="#meter">박자표와 세분박 선택하기</a></li>
+<li><a href="#sound">클릭음, 강세 및 음량</a></li>
+<li><a href="#conductor">지휘 화면 읽기</a></li>
+<li><a href="#auto-tempo">Auto Tempo로 연습하기</a></li>
+<li><a href="#saved-settings">앱이 기억하는 설정</a></li>
+<li><a href="#connect">여러 기기 연결하기</a></li>
+<li><a href="#shared-controls">공유 조작 이해하기</a></li>
+<li><a href="#sync-status">동기화 상태 읽기</a></li>
+<li><a href="#timing">동기화와 지연의 원리</a></li>
+<li><a href="#network">네트워크와 권한 확인</a></li>
+<li><a href="#background">백그라운드 재생과 중단</a></li>
+<li><a href="#ads-privacy">광고, 권한 및 개인정보</a></li>
+<li><a href="#troubleshooting">문제 해결, 문의 및 근거 자료</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">버전, 지원 기기 및 매뉴얼 범위 </h2>
+<p>PeerClock Metronome은 일정한 클릭음을 재생하고 지휘 동작을 애니메이션으로 보여 줍니다. 기기 한 대로 개인 연습을 하거나, 같은 로컬 Wi-Fi 네트워크에 있는 여러 기기에서 앱을 열어 타이밍과 재생 조작을 공유할 수 있습니다.</p><p>이 매뉴얼은 <strong>PeerClock 0.4.2</strong>를 사용하는 <strong>PeerClock Metronome 1.1.0(빌드 13)</strong>을 다룹니다. 공개 버전은 2026년 11월 15일에 확인했습니다. <strong>iPhone은 iOS 17 이상, iPad는 iPadOS 17 이상</strong>이 필요합니다. <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 페이지</a>에는 Apple Silicon Mac 및 Apple Vision 호환성도 표시되지만, 여기의 터치 조작 설명은 iPhone과 iPad를 기준으로 하며 다른 플랫폼에서 테스트했다는 뜻은 아닙니다.</p><p>계정이나 동기화 구독은 필요하지 않습니다. 앱은 무료이며 광고가 포함됩니다. 이 안내서는 출시된 인터페이스와 검토한 소스 코드의 동작을 설명합니다. 여러 기기의 타이밍, Bluetooth 성능 또는 백그라운드 안정성을 새로 측정한 보고서는 아닙니다.</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">첫 연습 시작하기 </h2>
+<ol><li>앱을 열고 기기 음량을 편안한 수준으로 맞춥니다. 다른 기기와 동기화하려면 로컬 네트워크 접근을 허용합니다.</li><li>일정한 템포로 연습하려면 <strong>Auto Tempo</strong>를 열고 <strong>Increase tempo automatically</strong>를 끈 다음 <strong>Done</strong>을 누릅니다.</li><li>큰 BPM 숫자를 위로 드래그하면 빨라지고 아래로 드래그하면 느려집니다. 아래쪽 줄에서 <strong>4/4</strong>를 선택합니다.</li><li>삼각형이 있는 원형 버튼을 누릅니다. 재생 중에는 사각형으로 바뀝니다. 클릭음과 움직이는 점을 따라갑니다.</li><li>사각형을 눌러 멈춥니다. 다른 기기와 연결되어 있다면 그 기기에도 정지 명령이 전송됩니다.</li></ol><p>첫 합주에서는 시작 전에 모든 기기를 연결하고 동기화 표시를 기다린 다음 한 사람이 조작하도록 합니다. 일정 템포 재생은 공유된 박자 격자를 따라 시작하므로, 처음 들리는 클릭이 예비박이나 첫 박이라는 보장은 없습니다. 더 강한 첫 박을 듣고 연주를 시작하세요.</p>
+</section>
+<section id="tempo" aria-labelledby="tempo-title">
+<h2 id="tempo-title">템포 설정하기 </h2>
+<p>큰 숫자는 분당 박 수인 BPM입니다. 범위는 <strong>30–300 BPM</strong>입니다. 숫자 위에서 세로로 드래그하며, 위로 움직이면 정수 단위로 증가합니다. <strong>숫자를 두 번 탭하면 120 BPM으로 돌아갑니다.</strong> 숫자 입력 칸이나 탭 템포 기능은 없습니다. 반복해서 탭해도 연주 리듬을 측정하지 않습니다.</p><p>Auto Tempo가 꺼져 있으면 재생 중에도 템포와 박자표를 바꿀 수 있으며, 변경 내용은 연결된 기기에 전송됩니다. 소리의 변경은 공유 시계를 기준으로 약 <strong>200 ms</strong>의 준비 시간을 두고 예약되므로 화면이 먼저 바뀔 수 있습니다. 즉시 적용되는 변경이 아니며 다음 마디까지 기다린다는 보장도 없습니다.</p><p>Auto Tempo 재생 중에는 주 화면의 템포 및 박자표 조작이 비활성화됩니다. 먼저 정지하세요. 정지 상태에서 Auto Tempo가 켜져 있으면 큰 BPM 숫자를 바꾸는 것이 시작 템포를 바꿉니다. 목표가 시작보다 낮아지지 않도록 필요하면 목표 템포도 올라갑니다.</p>
+</section>
+<section id="meter" aria-labelledby="meter-title">
+<h2 id="meter-title">박자표와 세분박 선택하기 </h2>
+<p>BPM 아래의 박자표 버튼을 누릅니다. 원하는 항목이 보이지 않으면 해당 줄을 가로로 스와이프합니다. 선택한 박자표가 강조됩니다. 다음 패턴을 사용할 수 있습니다.</p><div class="table-wrap" role="region" aria-labelledby="meter-table" tabindex="0"><table><caption id="meter-table">박자표와 BPM의 의미</caption><thead><tr><th scope="col">박자표</th><th scope="col">마디당 주요 박</th><th scope="col">주요 박당 클릭 수</th><th scope="col">BPM의 기준</th></tr></thead><tbody><tr><th scope="row">4/4</th><td>4</td><td>1</td><td>4분음표 박</td></tr><tr><th scope="row">3/4</th><td>3</td><td>1</td><td>4분음표 박</td></tr><tr><th scope="row">4/8</th><td>4</td><td>1</td><td>8분음표 박</td></tr><tr><th scope="row">3/8</th><td>3</td><td>1</td><td>8분음표 박</td></tr><tr><th scope="row">6/8</th><td>2</td><td>3</td><td>점4분음표 묶음</td></tr><tr><th scope="row">9/8</th><td>3</td><td>3</td><td>점4분음표 묶음</td></tr><tr><th scope="row">12/8</th><td>4</td><td>3</td><td>점4분음표 묶음</td></tr></tbody></table></div><p>겹박자는 각 주요 박 안의 클릭 세 개가 자동으로 재생됩니다. <strong>6/8에서 60 BPM</strong>이면 주요 박 하나는 <strong>1초</strong>이고 그 안에 같은 간격의 클릭 세 개가 있으며, 한 마디는 <strong>2초</strong>입니다. 이 BPM을 각 8분음표 클릭의 속도로 해석하지 마세요.</p><p>지휘 애니메이션과 Auto Tempo의 마디 계산에도 같은 묶음이 적용됩니다. 세분박과 강세 패턴은 선택한 박자표에 따라 고정되어 있습니다. 별도의 세분박 선택, 스윙 조절 또는 사용자 지정 박자표 편집 기능은 없습니다.</p>
+</section>
+<section id="sound" aria-labelledby="sound-title">
+<h2 id="sound-title">클릭음, 강세 및 음량 </h2>
+<p>마디의 첫 클릭이 가장 강하고 높습니다. 나머지 주요 박에는 중간 세기의 클릭을, 겹박자의 세분박에는 더 작고 낮은 클릭을 사용합니다. 강세 패턴을 직접 만들지 않아도 마디 경계와 내부 묶음을 들을 수 있습니다.</p><p>출시된 앱에는 고정된 합성 클릭음 한 세트가 사용됩니다. 음색 선택, 박별 음소거, 강세 편집 또는 앱 자체의 독립적인 음량 슬라이더는 없습니다. 기기 음량을 조절하고 운영체제에서 헤드폰이나 스피커를 선택하세요. 각 기기가 클릭을 직접 생성하므로 출력 경로와 음량은 기기별로 유지됩니다.</p><p>오디오 세션은 다른 오디오와의 믹싱을 허용합니다. 따라서 다른 앱 및 시스템 오디오 상태에 따라 반주와 메트로놈을 함께 재생할 수 있습니다. 이것이 반주를 메트로놈에 동기화해 주는 것은 아닙니다. 앱은 악기를 녹음하거나 마이크로 소리를 들어 템포를 감지하지 않습니다.</p>
+</section>
+<section id="conductor" aria-labelledby="conductor-title">
+<h2 id="conductor-title">지휘 화면 읽기 </h2>
+<p>화면 중앙에는 지휘 경로, 주요 박 번호 및 움직이는 빛이 표시됩니다. 경로의 주요 박 수는 박자표에 따라 <strong>2, 3 또는 4</strong>입니다. 6/8은 2박, 9/8은 3박, 12/8은 4박을 사용합니다. 더 강한 점멸은 마디 시작을, 약한 점멸은 나머지 클릭을 구분합니다.</p><p>이 화면은 현재 위치를 파악하거나 소리 없이 시각적으로 따라갈 때 사용합니다. 터치로 지휘하는 표면이 아니라 애니메이션입니다. 경로를 드래그해도 합주를 지휘하거나 박자를 만들 수 없습니다. 물음표 버튼은 내장 도움말을 열며, 그 안의 Done 버튼을 누르면 주 화면으로 돌아갑니다.</p><p>화면 갱신과 오디오 예약은 서로 다른 경로로 처리됩니다. 그림은 스피커 발음 시점의 정밀 측정치가 아니며, 움직이는 점 두 개를 비교하는 것으로 실제 클릭음을 확인하는 일을 대신할 수 없습니다. 사용할 수 있는 창의 모양이 달라져도 경로는 비율을 유지합니다.</p>
+</section>
+<section id="auto-tempo" aria-labelledby="auto-tempo-title">
+<h2 id="auto-tempo-title">Auto Tempo로 연습하기 </h2>
+<p>Auto Tempo는 완전한 마디가 지난 뒤 속도를 올리고, 목표에 도달하면 그 템포를 유지합니다. 재생을 멈추고 <strong>Auto Tempo</strong>를 누른 다음 <strong>Increase tempo automatically</strong>를 켭니다. 증감 버튼으로 다음을 설정합니다.</p><ul><li><strong>Starting tempo(시작 템포):</strong> 30–300 BPM.</li><li><strong>Target tempo(목표 템포):</strong> 시작 템포부터 300 BPM까지.</li><li><strong>BPM increase(증가량):</strong> 단계마다 1–270 BPM.</li><li><strong>Bars per increase(증가 간격):</strong> 완전한 1–64마디마다.</li></ul><p><strong>Done</strong>을 누르면 저장하고, <strong>Cancel</strong>을 누르면 설정 창에서 한 변경을 취소합니다. 초기 설정은 <strong>80 → 120 BPM, 4마디마다 +2 BPM</strong>입니다. 예를 들어 80으로 4마디, 82로 4마디를 재생하며 계속 올라갑니다. 마지막 단계는 목표를 넘지 않도록 제한되며 그 지점에서 재생이 멈추지는 않습니다. 시작과 목표를 같게 하면 일정한 템포가 됩니다.</p><p>Play를 누르면 시작 템포에서 새로운 진행이 시작됩니다. Stop 후 Play를 누르는 것은 다시 시작하는 것이며, 마디 수를 기억해 일시정지 위치부터 재개하는 기능이 아닙니다. 다른 기기가 연결되어 있으면 공유 시간표를 받을 수 있도록 최소 <strong>0.5초</strong>의 준비 시간을 둡니다. 모든 참여 기기에 Auto Tempo 호환 버전이 필요합니다. 전체가 정지한 상태에서 설정한 다음 한 기기에서 시작하세요.</p>
+</section>
+<section id="saved-settings" aria-labelledby="saved-settings-title">
+<h2 id="saved-settings-title">앱이 기억하는 설정 </h2>
+<p>Done을 누르면 Auto Tempo의 시작, 목표, 증가량, 마디 간격 및 활성화 상태가 기기에 저장됩니다. 앱을 다시 열면 복원됩니다. 활성화되어 있으면 시작 BPM도 주 화면에 복원됩니다. 다른 기기에서 받은 가속 설정도 로컬에 저장되므로, 합주 후 다음에 보이는 진행 설정이 달라질 수 있습니다.</p><p>일반 BPM과 선택한 박자표는 별도의 연습 프리셋으로 저장되지 않습니다. 새로 실행하면 보통 <strong>120 BPM, 4/4</strong>로 시작하지만, 저장된 Auto Tempo 시작 BPM이 복원되는 경우는 예외입니다. 재생 자체가 자동으로 재개되지는 않습니다.</p><p>저장되는 Auto Tempo 설정은 한 개이며, 이름을 붙인 프리셋 라이브러리, 세트 리스트, 곡 순서, 내보내기 또는 클라우드 백업 화면은 없습니다. 같은 연습을 재현하려면 박자표와 연습 내용을 따로 기록하세요. 정지한 기기에서 Auto Tempo를 저장하는 것만으로 다른 기기가 시작되지는 않습니다.</p>
+</section>
+<section id="connect" aria-labelledby="connect-title">
+<h2 id="connect-title">여러 기기 연결하기 </h2>
+<ol><li>모든 기기에 호환 버전을 설치하고 같은 로컬 Wi-Fi 네트워크에 연결합니다.</li><li>각 기기에서 PeerClock Metronome을 열고 로컬 네트워크 접근을 허용합니다. 설정하는 동안 모든 기기는 정지 상태로 둡니다.</li><li>연결 기기 수와 <strong>Synced</strong> 상태가 나타날 때까지 기다립니다. 숫자는 발견한 다른 기기 수이며 이름이 표시되는 참가자 명단이 아닙니다.</li><li>조작할 기기에서 템포, 박자표 및 Auto Tempo를 설정하고 Play를 누릅니다.</li><li>연습에 들어가기 전에 모든 기기가 의도한 패턴을 재생하는지 확인합니다.</li></ol><p>Bonjour를 통해 자동으로 기기를 찾습니다. 앱에는 Host, Join, 페어링 코드, IP 입력란 또는 방 선택 기능이 없습니다. 내부 시계 기준은 자동으로 선택되므로 연주자가 마스터 기기를 지정할 필요가 없습니다.</p><p>재생을 시작한 뒤 들어온 기기는 현재의 재생 상태와 설정을 즉시 받는다고 보장할 수 없습니다. 확실하게 참여시키려면 전체를 멈추고 동기화를 기다린 뒤 원하는 설정을 확인하고 조작 기기에서 다시 시작하세요. 재접속 후에도 전체 상태를 다시 확인하는 것이 좋습니다.</p>
+</section>
+<section id="shared-controls" aria-labelledby="shared-controls-title">
+<h2 id="shared-controls-title">공유 조작 이해하기 </h2>
+<div class="table-wrap" role="region" aria-labelledby="shared-table" tabindex="0"><table><caption id="shared-table">공유되는 조작과 기기별 선택</caption><thead><tr><th scope="col">항목</th><th scope="col">동작</th></tr></thead><tbody><tr><th scope="row">Play / Stop</th><td>연결된 기기에 전송됩니다. 어느 기기에서든 조작할 수 있으며 독점적인 지휘자 잠금은 없습니다.</td></tr><tr><th scope="row">일반 BPM / 박자표</th><td>편집 시 전송됩니다. Auto Tempo가 꺼져 있으면 정지한 기기에서 바꾼 내용도 전송됩니다.</td></tr><tr><th scope="row">Auto Tempo</th><td>Play가 공동 시작 시간표를 만들 때 활성화된 설정 초안을 공유합니다.</td></tr><tr><th scope="row">음량 / 오디오 경로</th><td>각 기기에만 적용되며 다른 기기의 음량이나 출력을 조절할 수 없습니다.</td></tr><tr><th scope="row">저장 설정 / 광고 / 권한</th><td>기기마다 관리하며 공유 사용자 계정이 아닙니다.</td></tr></tbody></table></div><p>앱 1.1.0의 Auto Tempo에는 중요한 제한이 있습니다. <strong>정지한 연결 기기에서 Auto Tempo를 끄면</strong> 일반 템포 설정이 전송되어 다른 기기의 가속 진행을 방해할 수 있습니다. 전체 가속 설정을 바꾸기 전에 모두 정지하세요. 다른 사람이 계속 연습하는 동안 대기 중인 기기를 편집하지 마세요.</p><p>동시에 편집하면 서로의 변경이 덮어써질 수 있습니다. 조작할 사람을 정하고 변경 후 표시된 템포와 박자표를 비교하세요. Synced는 시계 상태를 뜻하며 모든 재생 명령이 도착했다는 확인 표시는 아닙니다.</p>
+</section>
+<section id="sync-status" aria-labelledby="sync-status-title">
+<h2 id="sync-status-title">동기화 상태 읽기 </h2>
+<ul><li><strong>Standalone:</strong> 현재 집계된 다른 기기가 없으며 로컬 연습은 계속 가능합니다.</li><li><strong>Searching…:</strong> 다른 기기는 있지만 앱이 현재 동기화된 시계 상태를 표시하지 않습니다.</li><li><strong>Synced:</strong> 시계 라이브러리가 동기화 상태를 보고합니다.</li></ul><p>옆의 <strong>±x.xms</strong> 숫자는 주의해서 읽어야 합니다. 이 버전에서는 <strong>보고된 네트워크 왕복 지연의 절반</strong>으로 계산합니다. 실제로 들리는 클릭 사이의 차이를 측정한 값도, 남아 있는 시계 오프셋의 측정값도, 보장되는 오차 한계도 아닙니다.</p><p>자동 선택된 기준 기기는 기준 품질이 왕복 지연 0으로 보고되므로 <strong>±0.0ms</strong>를 표시할 수 있습니다. 모든 스피커가 완벽히 맞았다는 뜻은 아닙니다. 상태와 기기 수로 연결 상황을 진단한 다음 실제 출력을 들어 보세요. 기기가 참여하거나 나가거나 재접속할 때는 잠시 안정화를 기다린 뒤 전체 재생을 다시 시작해야 할 수 있습니다.</p>
+</section>
+<section id="timing" aria-labelledby="timing-title">
+<h2 id="timing-title">동기화와 지연의 원리 </h2>
+<p>PeerClock은 타임스탬프 네 개를 반복 교환하여 시계 차이를 추정합니다. 기본 동기화 주기에서는 <strong>40회 측정</strong>을 요청하고, 더 빠른 절반을 남겨 오프셋의 평균을 구합니다. 동기화를 반복하며 간격은 <strong>5–30초</strong> 사이에서 조정됩니다. 각 앱은 이 공통 시간을 기준으로 로컬 클릭을 예약합니다. 한 기기의 오디오를 다른 기기로 스트리밍하는 방식이 아닙니다.</p><p>광고된 <strong>±2 ms</strong> 시계 수치는 적절한 네트워크 조건에서 목표로 하는 타이밍 성능을 설명하며, 무조건적인 실제 소리의 정밀도 보장이 아닙니다. 네트워크 혼잡, 비대칭 지연, 기기 부하 및 오디오 하드웨어가 결과에 영향을 줄 수 있습니다. 이 매뉴얼을 위해 새로운 종단 간 타이밍 측정을 수행하지 않았습니다.</p><p>앱은 운영체제가 보고한 출력 지연만큼 클릭을 자동으로 앞당겨 예약합니다. <strong>수동 지연 슬라이더나 보정 절차는 없습니다.</strong> Bluetooth는 가변 버퍼링을 더할 수 있고 출력 경로 변경은 잠시 재생을 끊을 수 있습니다. 예측 가능한 구성을 위해 연습 전에 출력을 비교하고, Bluetooth가 늦게 들리면 내장 스피커나 유선 헤드폰을 시험해 보세요. 스피커와의 거리도 각 청취자에게 소리가 도착하는 시간에 영향을 줍니다.</p>
+</section>
+<section id="network" aria-labelledby="network-title">
+<h2 id="network-title">네트워크와 권한 확인 </h2>
+<p>동기화에는 로컬 기기 간 통신이 필요하며 인터넷 접속은 필요하지 않습니다. 게스트 Wi-Fi, 기기 간 통신이 차단된 학교나 공연장 네트워크, 서로 다른 서브넷 또는 필터링되는 VPN 연결에서는 Wi-Fi 이름이 비슷해 보여도 서로 찾거나 연결하지 못할 수 있습니다. 네트워크 관리자에게 로컬 탐색과 통신을 허용해 달라고 요청하거나 적절한 공용 로컬 네트워크를 사용하세요.</p><p>접근을 거부한 적이 있다면 <strong>설정 → 개인정보 보호 및 보안 → 로컬 네트워크</strong>에서 PeerClock Metronome을 켜고 앱을 다시 엽니다. Apple의 <a href="https://support.apple.com/en-us/102229">로컬 네트워크 권한 안내</a>에서 이 설정을 설명합니다.</p><p>출시된 앱에는 여러 그룹을 구분하기 위한 방 코드, 기기 승인 목록 또는 암호가 없습니다. 신뢰할 수 있는 연습 네트워크를 사용하고 연결 수를 확인하세요. 인터넷으로 떨어진 장소를 연결하는 것은 이 사용 방식에 포함되지 않습니다. 라이브러리에 다른 전송 방식이 있다고 해서 이 앱에 Bluetooth 전용, 셀룰러 또는 원격 세션 모드가 있는 것은 아닙니다.</p>
+</section>
+<section id="background" aria-labelledby="background-title">
+<h2 id="background-title">백그라운드 재생과 중단 </h2>
+<p>앱은 백그라운드 오디오 지원을 선언하고 오디오 재생 세션을 사용합니다. 운영체제의 오디오 및 수명주기 동작이 허용하면 화면을 잠그거나 다른 앱을 전면에 두어도 재생이 계속될 수 있습니다. 모든 백그라운드 상황에서 기기 탐색, 재연결 또는 동기화가 끊기지 않는다는 보장은 아닙니다.</p><p>엔진은 시스템이 재개를 허용한 중단, 오디오 출력 구성 변경 또는 오디오 서비스 재설정 뒤 복구를 시도합니다. Auto Tempo가 중단된 동안에도 공유 진행은 계속 움직일 수 있으므로, 소리가 돌아오면 마지막에 들은 지점보다 빠른 템포에 도달해 있을 수 있습니다.</p><p>합주 설정 중에는 모든 기기가 동기화될 때까지 앱을 화면에 띄워 두세요. 통화, 출력 전환 또는 긴 백그라운드 실행 후에는 표시 템포를 비교하고 다시 들어 보세요. 계속 소리가 나지 않거나 어긋나는 기기가 있으면 전체를 정지하고 다시 시작합니다. 앱에는 공통 연습 시간표를 멈추는 사용자용 일시정지 기능이 없습니다.</p>
+</section>
+<section id="ads-privacy" aria-labelledby="ads-privacy-title">
+<h2 id="ads-privacy-title">광고, 권한 및 개인정보 </h2>
+<p>검토한 출시 버전은 광고가 포함된 무료 앱입니다. 구매 화면, 구독, Restore Purchases 또는 유료 광고 제거 기능은 없습니다. 광고가 준비된 경우 <strong>로컬에서 시작한 정지 3회마다</strong> 전면 광고가 나올 수 있습니다. 원격으로 받은 정지는 해당 횟수에 포함되지 않습니다. 광고 제공 상황은 달라질 수 있습니다.</p><h3>데이터 처리 주체와 목적</h3><p>Hakaru Hirose는 앱을 제공하며 광고, 사용 분석 및 안정성 진단에 Google 서비스를 사용합니다. <strong>Google AdMob</strong>은 광고 제공과 측정을 위해 기기 식별자, 광고 상호작용, IP 주소 및 진단 정보를 처리할 수 있습니다. <strong>Firebase Analytics</strong>는 사용 이벤트와 앱·기기 정보를 처리하며, 앱은 추적 승인 상태와 광고·동의 오류도 기록합니다. <strong>Firebase Crashlytics</strong>는 문제 조사를 위해 충돌 보고서와 관련 설치·기기 정보를 처리합니다. 이 서비스들은 외부 서버와 통신할 수 있습니다. 시계 동기화가 로컬이라고 앱 전체가 인터넷을 쓰지 않는 것은 아닙니다.</p><h3>권한과 선택</h3><p><strong>로컬 네트워크</strong> 권한은 주변 기기 탐색과 통신을 위한 것입니다. <strong>앱 추적 투명성(ATT)</strong> 요청은 추적과 광고 식별자(IDFA) 접근에 관한 것입니다. 거절해도 메트로놈을 사용할 수 있습니다. 설정 → 개인정보 보호 및 보안 → 추적에서 변경할 수 있으며, 추적 거부는 모든 광고와 진단을 끄는 스위치가 아닙니다. <a href="https://support.apple.com/en-la/102420">Apple의 추적 제어 안내</a>를 참고하세요.</p><p>앱은 <strong>Google User Messaging Platform(UMP)</strong>을 통해 동의 정보를 요청하고 필요할 때 동의 양식을 표시하도록 요청합니다. 표시되는 선택지는 서비스의 지역 및 계정 설정에 따라 다릅니다. 양식이 나타나면 응답하세요. 버전 <strong>1.1.0</strong>에는 해당 양식을 다시 여는 별도의 앱 내 개인정보 옵션 화면이 없으며 분석이나 충돌 보고를 끄는 스위치도 없습니다. 필요한 선택지에 접근할 수 없으면 지원에 문의하세요. <a href="https://developers.google.com/admob/ios/privacy">UMP 문서</a>는 서비스를 설명하지만, 권장 설정이 모두 앱에 제공되는 것은 아닙니다.</p><h3>위치, 오디오 및 저장 설정</h3><p>앱은 GPS·위치 권한을 요청하거나 마이크 오디오를 녹음하지 않습니다. 다만 광고 서비스는 IP 주소에서 대략적인 위치를 추정할 수 있습니다. Auto Tempo 설정은 로컬에 저장되며, 동기화는 로컬 기기 사이에서 녹음이 아닌 타이밍과 조작 데이터를 교환합니다. 지원에 이메일을 보내면 요청 처리를 위해 수신자가 메시지와 이메일 주소를 볼 수 있습니다.</p><p><a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads 데이터 공개</a>, <a href="https://firebase.google.com/support/privacy">Firebase 개인정보 안내</a> 및 <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 개인정보 공개</a>를 확인하세요. 이 안내서는 앱별 보존 기간을 정하거나 앱 삭제 시 데이터 삭제를 보장하지 않습니다. 개인정보, 보존 또는 삭제 관련 질문은 <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>으로 문의하세요.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">문제 해결, 문의 및 근거 자료 </h2>
+<div class="table-wrap" role="region" aria-labelledby="troubleshooting-table" tabindex="0"><table><caption id="troubleshooting-table">증상과 점검 방법</caption><thead><tr><th scope="col">증상</th><th scope="col">조치</th></tr></thead><tbody><tr><th scope="row">다른 기기가 없음 / Standalone</th><td>같은 로컬 네트워크인지, 로컬 네트워크 권한과 클라이언트 격리 설정을 확인합니다. 접근을 수정한 뒤 앱을 다시 엽니다.</td></tr><tr><th scope="row">기기가 있지만 계속 Searching…</th><td>동기화할 시간을 줍니다. 혼잡을 줄이고 앱을 전면에 유지합니다. 안정되지 않으면 재연결합니다.</td></tr><tr><th scope="row">Synced인데 한 기기에서 소리가 안 남</th><td>음량, 오디오 경로 및 재생 상태를 확인합니다. 시계 동기화만으로 늦게 참여한 기기가 시작되지는 않습니다. 전체를 멈추고 다시 시작합니다.</td></tr><tr><th scope="row">템포나 패턴이 다름</th><td>모든 기기의 BPM, 박자표 및 Auto Tempo를 비교합니다. 한 사람이 조작하고 전체 연결 후 다시 시작합니다.</td></tr><tr><th scope="row">Auto Tempo가 갑자기 빨라지지 않음</th><td>1.1.0에서는 정지한 기기에서 Auto Tempo를 끄면 방해할 수 있습니다. 편집 전에 모두 멈추고 원하는 진행을 다시 시작합니다.</td></tr><tr><th scope="row">클릭이 늦거나 두 번 들림</th><td>내장 또는 유선 출력을 비교하고 스피커 거리와 네트워크 품질을 확인합니다. 경로 변경 후 정지·재시작합니다. ±ms는 실제 소리의 오차 수치가 아닙니다.</td></tr><tr><th scope="row">조작을 바꿀 수 없음</th><td>진행 중인 Auto Tempo 연습을 정지합니다. 재생 준비가 끝난 뒤 편집합니다.</td></tr><tr><th scope="row">다시 열었더니 설정이 바뀜</th><td>Auto Tempo 설정만 유지되며 수신한 가속 설정이 이를 대체할 수 있습니다. 일반 BPM과 박자표는 저장 프리셋이 아닙니다.</td></tr></tbody></table></div><p>문의할 때는 앱 버전, OS 버전, 기기 모델, 기기 수, 박자표, BPM 또는 가속 설정, 네트워크 종류, 오디오 출력 및 가장 짧은 재현 단계를 알려 주세요. 문제가 소리, 애니메이션 또는 연결 표시에 관한 것인지 설명하세요. 문의: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p><h3>이 안내서의 근거</h3><p>공개 버전 정보는 <a href="https://itunes.apple.com/lookup?id=6762972307&amp;country=us">Apple Lookup</a>으로 확인했습니다. 앱 동작은 1.1.0 빌드 13 제출에 해당하는 소스 코드로 검토했습니다. 앱 저장소는 비공개이며 공개 다운로드가 아닙니다. 타이밍 라이브러리는 <a href="https://github.com/hakaru/PeerClock/tree/v0.4.2">PeerClock 0.4.2</a>에 공개되어 있습니다. 이후 개발 중인 수정은 이미 출시된 기능으로 설명하지 않았습니다. 이 안내서를 위해 앱 실행, 오디오 테스트, 네트워크 동기화 시험 또는 새 스크린샷 촬영을 하지 않았습니다.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/PeerClockMetronome-support/index-ko">지원</a><a href="/PeerClockMetronome-support/privacy-ko">개인정보</a><a href="mailto:hirose@hakaru.net">지원 문의</a><a href="#top">맨 위로</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

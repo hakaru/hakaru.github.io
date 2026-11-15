@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AnalogRhythmKing User Manual | hakaru</title>
+    <meta name="description" content="How to play AnalogRhythmKing 1.0: combine 18 rhythms, set tempo and balance, use fills, retain settings, and understand audio, MIDI and recording limits.">
+    <meta property="og:title" content="AnalogRhythmKing User Manual">
+    <meta property="og:description" content="How to play AnalogRhythmKing 1.0: combine 18 rhythms, set tempo and balance, use fills, retain settings, and understand audio, MIDI and recording limits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/AnalogRhythmKing-support/manual/en/">
+    <meta property="og:image" content="https://hakaru.net/assets/analog-rhythm-king-icon.png">
+    <link rel="canonical" href="https://hakaru.net/AnalogRhythmKing-support/manual/en/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/AnalogRhythmKing-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/AnalogRhythmKing-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/AnalogRhythmKing-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/AnalogRhythmKing-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/AnalogRhythmKing-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/AnalogRhythmKing-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/AnalogRhythmKing-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/AnalogRhythmKing-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/AnalogRhythmKing-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/AnalogRhythmKing-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/AnalogRhythmKing-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/AnalogRhythmKing-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/AnalogRhythmKing-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">Contents</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/AnalogRhythmKing-support/">Support</a>
+      <a href="/AnalogRhythmKing-support/manual/en/" class="active">Manual</a>
+      <a href="/AnalogRhythmKing-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/">Support</a>
+      <a href="/M2MX12-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/">Support</a>
+      <a href="/EraVerb-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/">Support</a>
+      <a href="/P73-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/">Support</a>
+      <a href="/TwinFET-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/">Support</a>
+      <a href="/M2DX-support/manual/en/">Manual</a>
+      <a href="/M2DX-support/changelog">Changelog</a>
+      <a href="/M2DX-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/">Support</a>
+      <a href="/PeerClockMetronome-support/manual/en/">Manual</a>
+      <a href="/PeerClockMetronome-support/blog/en/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Support</a>
+      <a href="/MyEQ-support/manual/en/">Manual</a>
+      <a href="/MyEQ-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Support</a>
+      <a href="/Tonrad-support/manual/en/">Manual</a>
+      <a href="/Tonrad-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/manual/en/">Manual</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/">Support</a>
+      <a href="/BopBot-support/manual/en/">Manual</a>
+      <a href="/BopBot-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
+    <a href="/AnalogRhythmKing-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/AnalogRhythmKing-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/AnalogRhythmKing-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/AnalogRhythmKing-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/AnalogRhythmKing-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/AnalogRhythmKing-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/AnalogRhythmKing-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/AnalogRhythmKing-support/manual/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/AnalogRhythmKing-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/AnalogRhythmKing-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/analog-rhythm-king-icon.png" width="76" height="76" alt=""><div><h1>AnalogRhythmKing User Manual</h1><p class="manual-subtitle">Play rhythms · Shape the groove · Keep your settings</p></div></div>
+    <p class="manual-updated">Updated November 15, 2026 · Published version 1.0 · Submitted build 1</p>
+    <nav class="manual-languages" aria-label="Manual language"><span class="sidebar-lang-btn active" data-lang="en" lang="en" aria-current="page">English</span><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/AnalogRhythmKing-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/AnalogRhythmKing-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/AnalogRhythmKing-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/AnalogRhythmKing-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/AnalogRhythmKing-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/AnalogRhythmKing-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/AnalogRhythmKing-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/AnalogRhythmKing-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/AnalogRhythmKing-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/AnalogRhythmKing-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Contents</h2><ol><li><a href="#overview">Version, requirements and purchase</a></li>
+<li><a href="#quickstart">Play your first rhythm</a></li>
+<li><a href="#controls">Read and operate the panel</a></li>
+<li><a href="#rhythms">Choose and combine the 18 rhythms</a></li>
+<li><a href="#tempo">Tempo, meter and restarting</a></li>
+<li><a href="#fill">Use the momentary fill</a></li>
+<li><a href="#sound">The sounds and their character</a></li>
+<li><a href="#mix">Volume and low/high balance</a></li>
+<li><a href="#save">Keep and restore your settings</a></li>
+<li><a href="#connections">Audio connections, MIDI and recording</a></li>
+<li><a href="#background">Background playback and interruptions</a></li>
+<li><a href="#troubleshooting">Troubleshooting and support</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Version, requirements and purchase </h2>
+<p>AnalogRhythmKing is a self-contained percussion instrument for iPhone and iPad. Choose ready-made rhythms, combine them, and shape their balance while they play. Its sounds are generated in real time by original, circuit-inspired synthesis; it uses no prerecorded drum samples.</p><p>This guide covers the published <strong>version 1.0</strong>, released on July 22, 2026. The reviewed submission is <strong>build 1</strong>. It requires <strong>iOS or iPadOS 17.0 or later</strong> and uses a landscape, full-screen interface. No account, internet connection or external instrument is needed to play.</p><p>The app is a paid App Store download with no in-app purchases or subscriptions in this version. Check the current price in your region on the <a href="https://apps.apple.com/app/analogrhythmking/id6790973252">App Store</a>. The manual is available in 11 languages; labels such as TEMPO and FILL are kept as they appear in the app.</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">Play your first rhythm </h2>
+<ol><li>Open AnalogRhythmKing with the device held horizontally. Start with the device or connected audio system at a moderate volume.</li><li>Find <strong>SLOW ROCK</strong> in AMERICAN. On a fresh installation it is already selected. A selected switch has a lit indicator and a bright outline. Tap it only if it is off.</li><li>For this first test, tap any other lit rhythm switches to turn them off. Selecting a new rhythm does not automatically cancel the previous one.</li><li>Set <strong>BALANCE</strong> to <strong>CENTER</strong> and raise <strong>VOLUME</strong> if necessary. The initial settings are 104 BPM, 82% volume and CENTER balance.</li><li>Tap <strong>START</strong>. Its label changes to <strong>STOP</strong> while playback is running. Adjust TEMPO to suit your playing.</li><li>After listening, tap STOP. The selected rhythm and knob positions remain available for your next start.</li></ol><p>Once this works, add BOSSA NOVA without turning SLOW ROCK off. Listen to the combination, then tap BOSSA NOVA again to remove it. This is the central performance technique: build a groove with switches rather than entering individual notes.</p>
+</section>
+<section id="controls" aria-labelledby="controls-title">
+<h2 id="controls-title">Read and operate the panel </h2>
+<p>Everything needed for version 1.0 is on one panel. The upper area contains the rhythm switches in two rows, grouped under LATIN, AMERICAN and TRADITIONAL. Below them are three knobs, followed by the transport and fill buttons.</p><div class="table-wrap" role="region" aria-labelledby="controls-table" tabindex="0"><table><caption id="controls-table">Panel controls</caption><thead><tr><th scope="col">Label</th><th scope="col">What to do</th></tr></thead><tbody><tr><th scope="row">TEMPO</th><td>Drag to change the playback speed. The readout is in BPM.</td></tr><tr><th scope="row">VOLUME</th><td>Drag to change the overall instrument level, shown as a percentage.</td></tr><tr><th scope="row">BALANCE</th><td>Move between LOW, CENTER and HIGH to rebalance the two percussion groups.</td></tr><tr><th scope="row">START / STOP</th><td>Tap to start from the beginning or stop the sound.</td></tr><tr><th scope="row">FILL</th><td>Hold to enable the fill variation; release to return to the normal pattern.</td></tr></tbody></table></div><p>Drag a knob up or right to increase its value, down or left to decrease it. You can also tap its value field and edit the text. For a repeatable setting, enter <strong>100 BPM</strong>, <strong>50%</strong>, or <strong>CENTER</strong> in the corresponding field and confirm the edit. Watch the displayed value rather than estimating from the pointer angle.</p>
+</section>
+<section id="rhythms" aria-labelledby="rhythms-title">
+<h2 id="rhythms-title">Choose and combine the 18 rhythms </h2>
+<div class="table-wrap" role="region" aria-labelledby="rhythms-table" tabindex="0"><table><caption id="rhythms-table">Rhythm bank</caption><thead><tr><th scope="col">Category</th><th scope="col">Switches</th></tr></thead><tbody><tr><th scope="row">LATIN</th><td>BOSSA NOVA · SAMBA · BOLERO · RUMBA · CHA CHA · MAMBO · TANGO</td></tr><tr><th scope="row">AMERICAN</th><td>SLOW FOX · SLOW ROCK · SWING I · SWING II · DIXIE · SHUFFLE · GO GO · SWING WALTZ</td></tr><tr><th scope="row">TRADITIONAL</th><td>WALTZ · MARCH POLKA · WESTERN</td></tr></tbody></table></div><p>Each switch latches independently: tap once to select it, and again to deselect it. It is normal to see several lamps lit. To hear a rhythm alone, turn off all the others yourself. There is no separate solo or clear-all control.</p><p>These are fixed rhythm patterns, not saved projects or drum-kit choices. Selecting one changes the sequence of percussion hits; it does not replace TEMPO, VOLUME or BALANCE. There is no step editor or song arranger in this version.</p><p>Combined patterns share the same clock. If two selected rhythms request the same percussion voice at the same instant, that voice is triggered once. Adding another rhythm therefore does not simply double every hit or its loudness. Try adding one switch at a time, keeping combinations you like and removing ones that obscure the pulse.</p><p>You can change switches while playing. The new selection joins the running sequence; it is not queued until the next bar. Use STOP followed by START when you want the entire combination to begin together from its starting point.</p>
+</section>
+<section id="tempo" aria-labelledby="tempo-title">
+<h2 id="tempo-title">Tempo, meter and restarting </h2>
+<p>TEMPO covers <strong>40–240 BPM</strong>, in increments of <strong>0.1 BPM</strong>. BPM means quarter-note beats per minute: increasing it makes the rhythm faster. Change it during playback or enter a precise value in the readout. There is no TAP tempo button in version 1.0.</p><p>Most patterns repeat over four quarter-note beats. WALTZ and SWING WALTZ repeat over three. Their underlying sequences contain 16 and 12 sixteenth-note positions respectively. There is no separate time-signature setting: the selected rhythm determines its length.</p><p>When a three-beat pattern and a four-beat pattern play together, each keeps its own loop length. Their beginnings will move relative to one another. For a straightforward practice beat, start with a single pattern before trying this combination.</p><p>STOP silences playback; START restarts the sequence from the beginning. This is a restart rather than a pause that remembers a song position. Selecting no rhythms leaves the transport able to run silently. The names SWING and SHUFFLE identify particular patterns; they do not provide an adjustable swing amount.</p>
+</section>
+<section id="fill" aria-labelledby="fill-title">
+<h2 id="fill-title">Use the momentary fill </h2>
+<p>FILL changes the pattern only while you hold it. It does not stay on after a tap, and it does not queue a complete fill to play later.</p><ol><li>Play one four-beat rhythm and count its pulse.</li><li>Press and hold FILL before the final beat of the cycle.</li><li>Listen for the extra closed hi-hat hits and alternating snare and high conga during that final beat.</li><li>Release the button to stop adding the fill hits. Sounds already triggered can finish their short decay.</li></ol><p>The fill is tied to the last four sixteenth-note positions in each 16-position cycle. A very short press earlier in the cycle may produce no audible change. Holding the button across several cycles repeats the variation.</p><p>In version 1.0 this fill timing remains a four-beat cycle even with WALTZ or SWING WALTZ selected. Do not expect it to follow every three-beat bar. If the fill seems hard to place, practice with SLOW ROCK first and hold it through the end of a cycle.</p>
+</section>
+<section id="sound" aria-labelledby="sound-title">
+<h2 id="sound-title">The sounds and their character </h2>
+<p>The instrument generates seven percussion voices: bass drum, snare, closed hi-hat, cymbal, low conga, high conga and clave. Different rhythms use different combinations of these voices. There are no separate playable pads, sample-loading controls or individual pitch and decay knobs.</p><p>The synthesis includes small variations in individual hits and slow tonal movement. Its shared output stage also contributes soft saturation and level-dependent character. This is an original instrument inspired by analog circuitry, not a claim to reproduce a particular piece of vintage hardware exactly.</p><p>To hear the low percussion more clearly, move BALANCE toward LOW; to examine the snare, hats, cymbal and clave, move toward HIGH. Return to CENTER to hear both groups together. If you want a less crowded texture, removing a rhythm switch is often more useful than simply reducing the master volume.</p>
+</section>
+<section id="mix" aria-labelledby="mix-title">
+<h2 id="mix-title">Volume and low/high balance </h2>
+<p>VOLUME changes the overall instrument level from <strong>0–100%</strong>. It is separate from the device volume and any connected interface or speaker control. At 0% the instrument is silent even when STOP is displayed, indicating that playback is running.</p><div class="table-wrap" role="region" aria-labelledby="balance-table" tabindex="0"><table><caption id="balance-table">What BALANCE controls</caption><thead><tr><th scope="col">Position</th><th scope="col">Percussion group</th></tr></thead><tbody><tr><th scope="row">LOW 100%</th><td>Bass drum, low conga and high conga.</td></tr><tr><th scope="row">CENTER</th><td>Both low and high groups.</td></tr><tr><th scope="row">HIGH 100%</th><td>Snare, closed hi-hat, cymbal and clave.</td></tr></tbody></table></div><p>BALANCE crossfades between groups of instruments. It is not stereo pan or a bass/treble equalizer. Turning it fully toward one side can make some parts disappear; this does not mean their rhythm switches have turned off. A high conga belongs to the LOW group despite its name.</p><p>The two output channels carry the same mixed signal, so this version does not provide stereo placement of individual drums. There are no per-voice faders, mute/solo buttons or effect pages. Begin with CENTER and adjust the balance modestly while listening, then set the overall level with VOLUME.</p>
+</section>
+<section id="save" aria-labelledby="save-title">
+<h2 id="save-title">Keep and restore your settings </h2>
+<p>The app remembers its current state locally. Selected rhythms, TEMPO, VOLUME, BALANCE and the running/stopped state are included. FILL is deliberately restored as off.</p><ol><li>Set up the combination and knob values you want to keep.</li><li>Tap STOP if you want the next launch to be silent.</li><li>Return to the Home Screen normally. The app saves its state when it goes into the background.</li><li>Open it again. After a fresh launch, the stored selection and controls are restored. If the saved state was running, playback may start again.</li></ol><p>This is one remembered working state, not a library of named user presets. There is no SAVE/LOAD browser, preset file export, cloud sync or undo history in version 1.0. To keep several ideas, note the selected switches and the three displayed values, or take your own screenshot before changing them.</p><p>Returning from the background can leave the same performance running; a fresh launch starts the restored pattern from its beginning. Settings belong to this installation. Deleting the app removes its local settings, so reinstalling is not a way to recover a lost setup. Avoid force-closing immediately after an edit when you want the latest values retained.</p>
+</section>
+<section id="connections" aria-labelledby="connections-title">
+<h2 id="connections-title">Audio connections, MIDI and recording </h2>
+<p>You can play through the device speaker or a compatible audio output selected by iOS/iPadOS. A connected USB audio interface handles audio routing; it does not add a MIDI-control feature to the app. Check the output destination and hardware volume if sound seems to have gone missing after connecting equipment.</p><p>Version 1.0 does not receive or send MIDI notes, controller messages or MIDI clock. There is no Bluetooth MIDI connection screen, external transport synchronization or MIDI-file export. A keyboard or drum pad cannot trigger the seven voices through MIDI.</p><p>The App Store build is standalone only and contains no AUv3 extension. It will therefore not appear as an AUv3 instrument inside a host. There is also no in-app recorder, WAV export, stem export or share-audio command. Background playback by itself does not route audio into a recording app.</p><p>If you need to capture a performance, arrange an external audio-recording path appropriate to your equipment and verify it before the take. This manual does not promise capture by another app on the same device. The instrument also cannot import your own samples or load audio to process through effects.</p>
+</section>
+<section id="background" aria-labelledby="background-title">
+<h2 id="background-title">Background playback and interruptions </h2>
+<p>Background audio is supported: a rhythm can continue when you return to the Home Screen or lock the device. Press STOP before leaving if you want silence. Simply hiding the app is not the stop command.</p><p>Background playback and simultaneous audio mixing are different things. This version uses an exclusive playback audio session, so another app starting audio may interrupt it. Do not depend on it mixing continuously with music or a recorder on the same device.</p><p>After a call, Siri, or an output-device change, return to AnalogRhythmKing and give the audio route a moment to recover. Check the START/STOP label and the output volume. If it still shows STOP but you hear nothing, tap STOP and then START. This restarts the rhythm, so allow for the new starting point when playing with others.</p><p>If recovery fails, stop the app normally, disconnect the external output if practical, and test again on the built-in speaker. Bluetooth audio and individual accessories can behave differently; this guide is not a compatibility certification for every audio route.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">Troubleshooting and support </h2>
+<div class="table-wrap" role="region" aria-labelledby="troubleshooting-table" tabindex="0"><table><caption id="troubleshooting-table">Checks before contacting support</caption><thead><tr><th scope="col">Symptom</th><th scope="col">What to check</th></tr></thead><tbody><tr><th scope="row">No sound</th><td>Select SLOW ROCK, set BALANCE to CENTER, raise VOLUME, and tap START. Check the device volume and actual audio output.</td></tr><tr><th scope="row">Some drums are missing</th><td>Move BALANCE to CENTER. LOW and HIGH suppress different groups; not every rhythm uses all seven voices.</td></tr><tr><th scope="row">The pattern is unexpectedly busy</th><td>Check for extra lit rhythm switches. Selection is cumulative. Turn unwanted switches off.</td></tr><tr><th scope="row">FILL seems inactive</th><td>Hold it through the final beat of a four-beat cycle. A brief press can miss its active positions.</td></tr><tr><th scope="row">Playback returns after reopening</th><td>The running state is remembered. Press STOP before returning to the Home Screen.</td></tr><tr><th scope="row">No MIDI, FX or preset browser</th><td>Those controls are not part of the published 1.0 interface. Check the version before following development demonstrations.</td></tr></tbody></table></div><p>If the issue remains, contact <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>. Include the app version, device, OS version, selected rhythms, TEMPO/VOLUME/BALANCE values, audio equipment, and the shortest steps that reproduce it. Say whether it happened after a call, backgrounding or disconnecting an interface.</p><h3>About this guide</h3><p>Version and availability were checked against the <a href="https://itunes.apple.com/lookup?id=6790973252&amp;country=us">Apple app lookup</a> and App Store listing on November 15, 2026. Controls were checked against the submitted build 1 archive, its matching source snapshot and submission screenshots. The source repository is private, so it is not offered as a public download link. This review did not include a new device playback test.</p><p>For the app’s data practices, see the <a href="/AnalogRhythmKing-support/privacy">privacy policy</a>. The app stores settings locally and has no account, advertising or analytics SDK.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/AnalogRhythmKing-support/">Support</a><a href="/AnalogRhythmKing-support/privacy">Privacy</a><a href="mailto:hirose@hakaru.net">Contact support</a><a href="#top">Back to top</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>プライバシーポリシー - ChatArchive</title>
-    <meta name="description" content="ChatArchiveのプライバシーポリシー。データ収集なし、完全ローカル処理。">
+    <meta name="description" content="ローカル保存とネットワーク通信">
     <meta property="og:type" content="website">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
     <script>
@@ -414,6 +414,9 @@ body {
 
     </style>
     <link rel="canonical" href="https://hakaru.net/ChatArchive-support/privacy">
+<style data-manual-tables>.content{min-width:0;overflow-wrap:anywhere}.content .table-wrap{overflow-x:auto;margin:24px 0}.content table{border-collapse:collapse;min-width:560px;width:100%}.content th,.content td{padding:12px;border:1px solid #49516c;text-align:left;vertical-align:top}.content caption{padding:12px;font-weight:bold;text-align:left}.content .table-wrap:focus-visible{outline:3px solid #e94560}</style>
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
+<style data-manual-content>.content h2{font-size:1.4em;margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid #49516c}.content h3{margin:24px 0 12px}.content p{margin:0 0 16px}.content ul,.content ol{padding-left:24px;margin:0 0 16px}.content li{margin:8px 0}.content a{color:#ff8a9e}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -428,6 +431,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-ja">サポート</a>
+      <a href="/AnalogRhythmKing-support/manual/ja/">マニュアル</a>
       <a href="/AnalogRhythmKing-support/privacy-ja">プライバシー</a>
     </div>
   </div>
@@ -586,6 +590,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/PeerClockMetronome-support/index-ja">サポート</a>
+      <a href="/PeerClockMetronome-support/manual/ja/">マニュアル</a>
       <a href="/PeerClockMetronome-support/blog/ja/">ブログ</a>
       <a href="/PeerClockMetronome-support/privacy-ja">プライバシー</a>
     </div>
@@ -622,6 +627,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/ChatArchive-support/">サポート</a>
+      <a href="/ChatArchive-support/manual/ja/">マニュアル</a>
       <a href="/ChatArchive-support/blog/">ブログ</a>
       <a href="/ChatArchive-support/privacy" class="active">プライバシー</a>
       <a href="/ChatArchive-support/terms">利用規約</a>
@@ -655,6 +661,14 @@ body {
     <a href="/ChatArchive-support/en/privacy" class="sidebar-lang-btn" data-lang="en">EN</a>
     <a href="/ChatArchive-support/th/privacy" class="sidebar-lang-btn" data-lang="th">TH</a>
     <a href="/ChatArchive-support/zh-Hant/privacy" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+    <a href="/ChatArchive-support/de/privacy" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/es/privacy" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/fr/privacy" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/it/privacy" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/ko/privacy" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/ChatArchive-support/nl/privacy" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/ChatArchive-support/pt-BR/privacy" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/ChatArchive-support/sv/privacy" class="sidebar-lang-btn" data-lang="sv">SV</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -965,53 +979,14 @@ body {
         </div>
         
         <div class="content">
-            <h2>プライバシーポリシー</h2>
-            <p class="last-updated">最終更新日: 2025年2月</p>
+<h2>プライバシー</h2><p>2026年11月15日確認 · 配布確認版 1.0.0 (1) · 2.0 の画面の機能は個別に明記</p><p><strong>チャットをローカル処理することは、アプリが一切通信しないことを意味しません。</strong>確認した実装には次の動作があります。</p><div class="table-wrap" role="region" aria-labelledby="privacy-network" tabindex="0"><table><caption id="privacy-network">通信が発生する場面</caption><thead><tr><th scope="col">操作</th><th scope="col">動作</th></tr></thead><tbody><tr><th scope="row">履歴の閲覧と検索</th><td>保存された会話を Mac 内で処理します。確認した処理経路にチャットをアップロードする送信先はありません。</td></tr><tr><th scope="row">iCloud からの読み込み</th><td>macOS が LINE のバックアップを iCloud からダウンロードする場合があります。Apple Account と iCloud の動作は Apple のサービスが担います。</td></tr><tr><th scope="row">ライセンスサービス</th><td>認証ではキーと Mac のコンピュータ名を Lemon Squeezy へ送ります。検証・解除ではキーと認証インスタンスの識別子を送ります。</td></tr><tr><th scope="row">2.0 のスタンプ取得</th><td>LINE の CDN への要求にスタンプの識別子が含まれます。サーバーは IP アドレスなど通常の接続情報も受け取ります。</td></tr><tr><th scope="row">リンクと保存ファイル</th><td>Web サイトを開く、購入する、同期フォルダへ保存する操作は外部サービスを使う場合があります。</td></tr></tbody></table></div><p>認証済みのインストールでは、認証または最後の検証成功から <strong>7</strong> 日経過後、起動時にライセンスを検証する場合があります。確認した実装では、通信失敗時は以前の認証状態を維持し、無効なライセンスという応答では有料の書き出しが使えなくなる場合があります。これは永続的なオフライン認証の保証ではありません。</p><p>ライセンスの認証情報は macOS のキーチェーンに保管します。会話のデータベースは別のローカルファイルです。取り込み済みの本文は取得元を再取得せず読めますが、最初の iCloud ダウンロード、認証、未取得の 2.0 スタンプには接続が必要な場合があります。</p><h2>保存される形式と場所</h2><p>読み込んだ履歴は <code>~/Library/Application Support/ChatArchive/chatarchive.sqlite</code> へ自動保存します。通常の読み込みでデータベースの保存先を選ぶ画面はありません。データベースには <code>-wal</code> と <code>-shm</code> の付属ファイルが存在する場合があります。バックアップではフォルダをまとめて保存してください。</p><p>2.0 では取得したスタンプの PNG を <code>~/Library/Application Support/ChatArchive/StickerCache/</code> に保存します。書き出したファイルは保存ダイアログで選んだ場所に置きます。独立したコピーなので、その後の読み込みで更新されません。</p><p>ローカルデータベースと閲覧用の書き出しファイルには、ChatArchive 独自の暗号化やアプリ用パスワードはありません。Mac のアカウント、デバイスの暗号化、適切なバックアップ先で保護してください。クラウド同期フォルダへ保存したファイルは、そのサービスによってアップロードされる場合があります。</p><p>アプリのデータベースは閲覧用のライブラリであり、LINE へ戻せる復元パッケージではありません。古い資料にある <code>.chatarchive</code> や <code>.linearchive</code> の記述だけで、確認した Mac の画面に読み込み・復元コマンドがあるとは判断できません。</p><h2>バックアップとデータの削除</h2><h3>再読み込みや Mac の移行前に</h3><ol><li>ChatArchive を完全に終了します。</li><li>Finder の「移動」→「フォルダへ移動」で <code>~/Library/Application Support/ChatArchive/</code> を開きます。</li><li>フォルダ全体を、日付を付けた保護された保存先へコピーします。データベースの付属ファイルとスタンプキャッシュも含めます。</li><li>重要な閲覧用ファイルと元のバックアップも別に保管し、コピーが存在することを確認してから次へ進みます。</li></ol><p>これはローカルファイルを保全する手順です。確認した画面に、対応を保証するデータベース復元ウィザードやライブラリ統合機能はありません。移行・復旧では元のコピーを変更せず、版の互換性をサポートへ確認してください。別の Mac ではライセンス認証も別途必要になる場合があります。</p><h3>ローカル履歴を削除する</h3><p>確認した画面にチャット単位の削除コマンドはありません。終了して必要なバックアップを取った後、Finder で Application Support 内の ChatArchive フォルダをゴミ箱へ移動できます。ファイルを実際に削除するとローカルの作業用履歴がなくなり、次回起動時には空のライブラリを作成します。書き出しファイルとバックアップコピーは、必要に応じて別に削除します。</p><p>アプリ本体の削除だけでは、Application Support のファイルやキーチェーンのライセンスが残る場合があります。ChatArchive のファイルを削除しても、元の LINE の会話や iCloud バックアップは削除しません。ゴミ箱、システムのバックアップ、クラウド上のコピーにはそれぞれ保持の仕組みがあり、この手順は完全消去機能ではありません。</p><p><a href="/ChatArchive-support/manual/ja/"><strong>ChatArchive の詳しいマニュアルを読む</strong></a></p><h2>サポートへ問い合わせ</h2><p><a href="mailto:hakaruapps-contact@hakaru.net">hakaruapps-contact@hakaru.net</a></p>
 
-            <p>ChatArchive（以下「本アプリ」）は、ユーザーのプライバシーを最優先に考えて設計されています。本プライバシーポリシーは、本アプリにおけるデータの取り扱いについて説明します。</p>
 
-            <h3>1. データ収集について</h3>
-            <p>本アプリは、ユーザーの個人情報やチャットデータを一切収集しません。</p>
-            <ul>
-                <li>分析データ（アナリティクス）の収集は行いません</li>
-                <li>クラッシュレポートの自動送信は行いません</li>
-                <li>広告識別子の取得は行いません</li>
-                <li>ユーザーの行動追跡（トラッキング）は行いません</li>
-            </ul>
 
-            <h3>2. ネットワーク通信</h3>
-            <p>本アプリはネットワーク通信を一切行いません。すべてのデータ処理はお使いのデバイス上でローカルに完結します。インターネット接続がない環境でも、すべての機能を利用できます。</p>
 
-            <h3>3. データ処理</h3>
-            <p>本アプリは以下のデータにアクセスする場合があります。これらのデータはすべてデバイス上でのみ処理され、外部に送信されることはありません。</p>
-            <ul>
-                <li><strong>チャットデータベースファイル</strong>: メッセージングアプリのローカルデータベースを読み取り専用でアクセスします</li>
-                <li><strong>メディアファイル</strong>: ローカルにキャッシュされた画像・スタンプ等にアクセスします</li>
-                <li><strong>.chatarchiveファイル</strong>: ユーザーがエクスポート・インポートするアーカイブファイルを処理します</li>
-            </ul>
 
-            <h3>4. 暗号化キーの取り扱い</h3>
-            <p>チャットデータベースの復号に使用する暗号化キーは、以下のように安全に取り扱われます。</p>
-            <ul>
-                <li>暗号化キーは処理中にメモリ上でのみ使用されます</li>
-                <li>ディスクやその他の永続的なストレージに保存されることはありません</li>
-                <li>アプリの終了とともにメモリから解放されます</li>
-            </ul>
 
-            <h3>5. データの保存</h3>
-            <p>本アプリが処理したチャットデータは、お使いのデバイスのローカルストレージにのみ保存されます。iCloudやその他のクラウドサービスへの自動同期は行いません。</p>
 
-            <h3>6. 第三者提供</h3>
-            <p>ユーザーのデータを第三者に提供、共有、または販売することはありません。</p>
-
-            <h3>7. 子どものプライバシー</h3>
-            <p>本アプリは13歳未満の子どもから意図的にデータを収集することはありません。</p>
-
-            <h3>8. プライバシーポリシーの変更</h3>
-            <p>本プライバシーポリシーは、必要に応じて更新される場合があります。変更がある場合は、本ページにて最新版を公開します。</p>
-
-            <h3>9. お問い合わせ</h3>
-            <p>プライバシーに関するご質問がございましたら、<a href="https://forms.gle/PLACEHOLDER" target="_blank" rel="noopener">お問い合わせフォーム</a>よりご連絡ください。</p>
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

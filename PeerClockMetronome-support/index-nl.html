@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome Ondersteuning | hakaru</title>
-    <meta name="description" content="PeerClock Metronome ondersteuningspagina. P2P gesynchroniseerde metronoom voor Apple-apparaten.">
+    <meta name="description" content="Praktische handleiding voor tempo, maatsoorten, Auto Tempo, lokale wifi-synchronisatie, audiotiming, opgeslagen instellingen en probleemoplossing.">
     <meta property="og:title" content="PeerClock Metronome Ondersteuning">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-nl">
@@ -304,6 +304,7 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -318,6 +319,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-nl">Support</a>
+      <a href="/AnalogRhythmKing-support/manual/nl/">Handleiding</a>
       <a href="/AnalogRhythmKing-support/privacy-nl">Privacy</a>
     </div>
   </div>
@@ -476,6 +478,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-nl" class="active">Support</a>
+      <a href="/PeerClockMetronome-support/manual/nl/">Handleiding</a>
       <a href="/PeerClockMetronome-support/blog/nl/">Blog</a>
       <a href="/PeerClockMetronome-support/privacy-nl">Privacy</a>
     </div>
@@ -511,10 +514,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/en/">Support</a>
-      <a href="/ChatArchive-support/en/blog/">Blog</a>
-      <a href="/ChatArchive-support/en/privacy">Privacy</a>
-      <a href="/ChatArchive-support/en/terms">Terms</a>
+      <a href="/ChatArchive-support/nl/">Ondersteuning (Engels)</a>
+      <a href="/ChatArchive-support/manual/nl/">Handleiding</a>
+      <a href="/ChatArchive-support/nl/blog/">Blog</a>
+      <a href="/ChatArchive-support/nl/privacy">Privacy (Engels)</a>
+      <a href="/ChatArchive-support/nl/terms">Voorwaarden</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -875,48 +879,12 @@ body {
             <a class="app-store-link" href="https://apps.apple.com/nl/app/peerclock-metronome/id6762972307">Download in de App Store &rarr;</a>
         </div>
         <div class="content">
-            <p>Welkom op de ondersteuningspagina van PeerClock Metronome.</p>
-            <p>PeerClock Metronome is een peer-to-peer gesynchroniseerde metronoom voor Apple-apparaten. Verbind meerdere iPhones of iPads met hetzelfde Wi-Fi-netwerk voor automatische kloксynchronisatie met een nauwkeurigheid van ±2ms — zonder server.</p>
-            <hr>
-            <h2>Functies</h2>
-            <h3>Peer-to-peer synchronisatie (geen master/slave)</h3>
-            <p>Alle apparaten zijn gelijke peers. Er is geen aangewezen "master"-apparaat — elk apparaat kan deelnemen of vertrekken zonder de anderen te verstoren.</p>
-            <h3>±2ms kloksynchronisatie</h3>
-            <p>Gebruikt een NTP-geïnspireerd 4-tijdstempel algoritme met beste-helft filtering voor sub-milliseconde nauwkeurigheid op alle verbonden apparaten.</p>
-            <h3>Alleen Wi-Fi (geen server)</h3>
-            <p>Synchronisatie vindt volledig plaats op uw lokale Wi-Fi-netwerk. Er worden geen gegevens naar externe servers verzonden. Werkt volledig offline.</p>
-            <h3>Automatische detectie</h3>
-            <p>Apparaten op hetzelfde Wi-Fi-netwerk vinden elkaar automatisch via Bonjour. Geen handmatige IP-invoer of koppeling vereist.</p>
-            <h3>Dirigent-pad animatie</h3>
-            <p>Een visueel dirigentpad tekent het maatpatroon op het scherm, zodat uitvoerders in één oogopslag het ritme kunnen volgen.</p>
-            <h3>Meerdere maatsoorten</h3>
-            <p>Ondersteunt 4/4, 3/4, 4/8, 3/8, 6/8, 9/8 en 12/8 maatsoorten.</p>
-            <h3>Live BPM-wijzigingen</h3>
-            <p>Tempowijzigingen synchroniseren onmiddellijk op alle verbonden apparaten — geen vertraging, geen drift.</p>
-            <hr>
-            <h2>Veelgestelde vragen</h2>
-            <h3>Hoe synchroniseer ik meerdere apparaten?</h3>
-            <ol>
-                <li>Verbind alle apparaten met hetzelfde Wi-Fi-netwerk</li>
-                <li>Open PeerClock Metronome op elk apparaat</li>
-                <li>Apparaten ontdekken elkaar automatisch binnen enkele seconden</li>
-                <li>Start de metronoom op een willekeurig apparaat — alle gesynchroniseerde apparaten volgen</li>
-            </ol>
-            <h3>Wat is het dirigent-pad?</h3>
-            <p>Het dirigent-pad is een geanimeerde lijn die het traditionele dirigeerpatroon voor de geselecteerde maatsoort nategekent. Het biedt een visuele referentie zodat uitvoerders gesynchroniseerd blijven, ook zonder oortelefoons.</p>
-            <h3>Hoe nauwkeurig is de synchronisatie?</h3>
-            <p>PeerClock Metronome bereikt een kloксynchronisatie van ±2ms onder typische Wi-Fi-omstandigheden. De menselijke tijdwaarneming is ongeveer 10–20ms, dus de synchronisatie is ruim onder de drempel van waarneembaar verschil.</p>
-            <h3>Werkt het zonder internet?</h3>
-            <p>Ja. PeerClock Metronome gebruikt alleen uw lokale Wi-Fi-netwerk. Er is geen internetverbinding nodig voor synchronisatie.</p>
-            <h3>Welke apparaten worden ondersteund?</h3>
-            <p>PeerClock Metronome vereist iOS 17.0 of later. Elk iPhone of iPad met iOS 17+ wordt ondersteund.</p>
-            <hr>
-            <h2>Contact</h2>
-            <p>Als u vragen of feedback heeft, neem dan contact met ons op via:<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
-            <hr>
-            <h2>Links</h2>
-            <ul><li><a href="/PeerClockMetronome-support/privacy-nl">Privacybeleid</a></li></ul>
+<p><a href="/PeerClockMetronome-support/manual/nl/"><strong>Lees de volledige PeerClock Metronome-handleiding</strong></a></p><section class="card"><h2>Versie, apparaten en reikwijdte</h2><p>PeerClock Metronome speelt een regelmatige klik en toont een geanimeerd dirigeerpatroon. Gebruik één apparaat om alleen te oefenen, of open de app op meerdere apparaten in hetzelfde lokale wifinetwerk om timing en afspeelbediening te delen.</p><p>Deze handleiding behandelt <strong>PeerClock Metronome 1.1.0 (build 13)</strong> met <strong>PeerClock 0.4.2</strong>. De openbare versie is gecontroleerd op 15 november 2026. Vereist zijn <strong>iOS 17 of nieuwer op iPhone, of iPadOS 17 of nieuwer op iPad</strong>. De <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store-vermelding</a> noemt ook compatibiliteit met Apple Silicon-Macs en Apple Vision; de aanraakbediening hier beschrijft iPhone en iPad en bewijst geen tests op die andere platforms.</p><p><a href="/PeerClockMetronome-support/manual/nl/#overview">Lees de volledige PeerClock Metronome-handleiding</a></p></section><section class="card"><h2>Uw eerste oefensessie</h2><ol><li>Open de app en stel een prettig apparaatvolume in. Sta Lokaal netwerk toe als u met andere apparaten wilt synchroniseren.</li><li>Voor een oefening met vast tempo opent u <strong>Auto Tempo</strong>, zet u <strong>Increase tempo automatically</strong> uit en tikt u op <strong>Done</strong>.</li><li>Sleep het grote BPM-getal omhoog voor een hoger tempo of omlaag voor een lager tempo. Kies <strong>4/4</strong> in de rij eronder.</li><li>Tik op de ronde knop met de driehoek. Tijdens afspelen wordt dit een vierkant. Volg de klikken en de bewegende stip.</li><li>Tik op het vierkant om te stoppen. Verbonden apparaten ontvangen ook een stopopdracht.</li></ol><p>Verbind bij de eerste groepssessie iedereen vóór de start, wacht op de synchronisatieweergave en laat één persoon bedienen. Een start met vast tempo volgt het gedeelde telraster: de eerste hoorbare klik is niet gegarandeerd een aftelling of tel 1. Luister vóór uw inzet naar de sterkere eerste tel van de maat.</p><p><a href="/PeerClockMetronome-support/manual/nl/#quickstart">Lees de volledige PeerClock Metronome-handleiding</a></p></section><section class="card"><h2>Meerdere apparaten verbinden</h2><ol><li>Installeer op elk apparaat een compatibele versie en verbind ze met hetzelfde lokale wifinetwerk.</li><li>Open PeerClock Metronome op elk apparaat en sta Lokaal netwerk toe. Houd alle apparaten gestopt tijdens de voorbereiding.</li><li>Wacht op het aantal apparaten en <strong>Synced</strong>. Het aantal betreft andere gevonden apparaten, geen namenlijst.</li><li>Kies op het bedienende apparaat tempo, maatsoort en Auto Tempo en druk op Play.</li><li>Controleer vóór de oefening of iedereen het bedoelde patroon speelt.</li></ol><p>Ontdekking gaat automatisch via Bonjour. Er zijn geen Host, Join, koppelcode, IP-invoer of kamerkeuze. Een interne klokreferentie wordt automatisch gekozen; musici hoeven geen master aan te wijzen.</p><p>Een apparaat dat tijdens het afspelen verschijnt, krijgt niet gegarandeerd meteen de huidige afspeelstatus en instellingen. Stop de groep om het betrouwbaar toe te voegen, wacht op synchronisatie, controleer de instellingen en herstart vanaf het bedienende apparaat. Controleer de groep ook na opnieuw verbinden.</p><p><a href="/PeerClockMetronome-support/manual/nl/#connect">Lees de volledige PeerClock Metronome-handleiding</a></p></section><section class="card"><h2>Oefenen met Auto Tempo</h2><p>Auto Tempo verhoogt de snelheid na volledige maten en speelt daarna verder op het doeltempo. Stop, tik op <strong>Auto Tempo</strong> en zet <strong>Increase tempo automatically</strong> aan. Stel met de stapknoppen in:</p><p><a href="/PeerClockMetronome-support/manual/nl/#auto-tempo">Lees de volledige PeerClock Metronome-handleiding</a></p></section><section class="card"><h2>Synchronisatiestatus lezen</h2><ul><li><strong>Standalone:</strong> er worden momenteel geen andere apparaten geteld; lokaal oefenen blijft mogelijk.</li><li><strong>Searching…:</strong> er zijn apparaten, maar de app toont nu geen gesynchroniseerde klokstatus.</li><li><strong>Synced:</strong> de klokbibliotheek meldt een gesynchroniseerde toestand.</li></ul><p>Het getal <strong>±x.xms</strong> ernaast vraagt zorgvuldige interpretatie. In deze versie is dit <strong>de helft van de gemelde retourvertraging van het netwerk</strong>. Het is geen gemeten verschil tussen hoorbare klikken, geen gemeten resterende klokafwijking en geen gegarandeerde foutgrens.</p><p>Het automatisch gekozen referentieapparaat kan <strong>±0.0ms</strong> tonen omdat zijn referentiekwaliteit als nul retourvertraging wordt gemeld. Dat bewijst geen perfecte uitlijning van alle luidsprekers. Gebruik status en aantal om de verbinding te beoordelen en luister daarna naar de echte uitgangen. Bij toevoegen, vertrekken of opnieuw verbinden kan stabiliseren en herstarten nodig zijn.</p><p><a href="/PeerClockMetronome-support/manual/nl/#sync-status">Lees de volledige PeerClock Metronome-handleiding</a></p></section><section class="card"><h2>Advertenties, rechten en privacy</h2><p>De gecontroleerde versie is gratis met advertenties. Er is geen koopscherm, abonnement, Restore Purchases of betaalde advertentieverwijdering. Een schermvullende advertentie kan na elke <strong>3 lokaal gestarte stops</strong> verschijnen als er een klaarstaat. Een op afstand ontvangen stop verhoogt de teller niet. Beschikbaarheid varieert.</p><h3>Wie gegevens verwerkt en waarom</h3><p>Hakaru Hirose levert de app en gebruikt Google-diensten voor reclame, gebruiksanalyse en stabiliteitsdiagnose. <strong>Google AdMob</strong> kan apparaat-ID’s, advertentie-interacties, IP-adressen en diagnostiek verwerken om advertenties te leveren en te meten. <strong>Firebase Analytics</strong> verwerkt gebruiksgebeurtenissen en app-/apparaatgegevens; de app logt ook trackingtoestemming en advertentie-/toestemmingsfouten. <strong>Firebase Crashlytics</strong> verwerkt crashrapporten en bijbehorende installatie-/apparaatgegevens voor foutonderzoek. Deze diensten kunnen externe servers benaderen; lokale kloksynchronisatie maakt niet de hele app internetvrij.</p><h3>Rechten en keuzes</h3><p><strong>Lokaal netwerk</strong> laat apparaten elkaar vinden en communiceren. <strong>App Tracking Transparency (ATT)</strong> betreft tracking en toegang tot advertentie-ID IDFA. U kunt weigeren en de metronoom blijven gebruiken. Wijzig dit via Instellingen → Privacy en beveiliging → Tracking; weigeren zet niet alle advertenties en diagnostiek uit. Zie <a href="https://support.apple.com/en-la/102420">Apples trackinginstellingen</a>.</p><p>De app vraagt toestemmingsinformatie op via <strong>Google User Messaging Platform (UMP)</strong> en laat zo nodig een formulier aanvragen. De getoonde keuzes hangen af van regio- en accountinstellingen van de dienst. Beantwoord het formulier als het verschijnt. Versie <strong>1.1.0</strong> heeft geen apart privacyscherm om het opnieuw te openen, en geen schakelaar voor analyse of crashrapportage. Neem voor ontoegankelijke keuzes contact op met ondersteuning. De <a href="https://developers.google.com/admob/ios/privacy">UMP-documentatie</a> beschrijft de dienst; niet alle aanbevolen instellingen zijn in deze app toegankelijk.</p><h3>Locatie, audio en opgeslagen instellingen</h3><p>De app vraagt geen GPS-/locatietoestemming en neemt geen microfoonaudio op. Advertentiediensten kunnen wel een algemene locatie afleiden uit het IP-adres. Auto Tempo wordt lokaal opgeslagen; synchronisatie wisselt timing en bediening uit tussen lokale apparaten, geen opnamen. Bij een ondersteuningsmail krijgt de ontvanger uw bericht en e-mailadres om uw verzoek te behandelen.</p><p>Raadpleeg de <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">gegevensverklaring van Google Mobile Ads</a>, <a href="https://firebase.google.com/support/privacy">privacy-informatie van Firebase</a> en <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">privacyverklaring in de App Store</a>. Deze gids bepaalt geen specifieke bewaartermijn en belooft geen verwijdering na deïnstallatie. Vragen over privacy, bewaring of verwijdering: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p><p><a href="/PeerClockMetronome-support/manual/nl/#ads-privacy">Lees de volledige PeerClock Metronome-handleiding</a></p></section><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+
+
+
+
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

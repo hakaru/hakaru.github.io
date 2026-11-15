@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChatArchive - 聊天記錄備份與瀏覽應用程式</title>
-    <meta name="description" content="ChatArchive 是一款 macOS 應用程式，可安全備份及瀏覽您的聊天記錄。所有處理均在本機完成，保護您的隱私。">
+    <meta name="description" content="Mac 版 ChatArchive 實用指南：LINE 與 iCloud 匯入、紀錄取代、瀏覽、搜尋、文字匯出、本機備份、隱私及 2.0 專屬功能。">
     <meta property="og:type" content="website">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0830V28FD"></script>
     <script>
@@ -489,6 +489,9 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/ChatArchive-support/sv/">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/ChatArchive-support/zh-Hant/">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/ChatArchive-support/en/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
+<style data-manual-tables>.content{min-width:0;overflow-wrap:anywhere}.content .table-wrap{overflow-x:auto;margin:24px 0}.content table{border-collapse:collapse;min-width:560px;width:100%}.content th,.content td{padding:12px;border:1px solid #49516c;text-align:left;vertical-align:top}.content caption{padding:12px;font-weight:bold;text-align:left}.content .table-wrap:focus-visible{outline:3px solid #e94560}</style>
+<style data-manual-content>.content h2{font-size:1.4em;margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid #49516c}.content h3{margin:24px 0 12px}.content p{margin:0 0 16px}.content ul,.content ol{padding-left:24px;margin:0 0 16px}.content li{margin:8px 0}.content a{color:#ff8a9e}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -503,6 +506,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/manual/zh-Hant/">手冊</a>
       <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
     </div>
   </div>
@@ -661,6 +665,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/PeerClockMetronome-support/index-zh-Hant">支援</a>
+      <a href="/PeerClockMetronome-support/manual/zh-Hant/">手冊</a>
       <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
       <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
     </div>
@@ -696,10 +701,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links show">
-      <a href="/ChatArchive-support/zh-Hant/" class="active">Support</a>
-      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
-      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
-      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+      <a href="/ChatArchive-support/zh-Hant/">支援（英文）</a>
+      <a href="/ChatArchive-support/manual/zh-Hant/">手冊</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">部落格</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">隱私權（英文）</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">條款</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -730,6 +736,14 @@ body {
     <a href="/ChatArchive-support/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
     <a href="/ChatArchive-support/th/" class="sidebar-lang-btn" data-lang="th">TH</a>
     <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體</span>
+    <a href="/ChatArchive-support/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/ChatArchive-support/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/ChatArchive-support/pt-BR/" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/ChatArchive-support/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -1045,147 +1059,17 @@ body {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     下載
                 </a>
-                <a href="https://hakaru.lemonsqueezy.com/checkout/buy/0faa7a8a-2f47-44e5-a56a-ae86200714d8" class="btn-license" target="_blank" rel="noopener">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    購買授權
-                </a>
+                <a href="/ChatArchive-support/manual/zh-Hant/#license" class="btn-license">購買與啟用匯出授權</a>
             </div>
         </div>
 
         
 
-        <section class="section" id="features">
-            <h2 class="section-title">主要功能</h2>
-            <p class="section-subtitle">簡單且安全的聊天記錄管理</p>
-            <p class="section-note">適用於 iPhone 版 LINE 及 Mac。不支援 Android 版 LINE。</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F513;</div>
-                    <h3>加密資料庫解密</h3>
-                    <p>自動解密訊息應用程式的加密資料庫，讀取您的聊天記錄。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F5B1;</div>
-                    <h3>一鍵自動匯入</h3>
-                    <p>無需複雜設定。只需一鍵即可自動偵測並匯入聊天資料。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F4AC;</div>
-                    <h3>聊天介面</h3>
-                    <p>以簡潔的聊天介面瀏覽記錄，操作體驗令人熟悉。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F50D;</div>
-                    <h3>全文搜尋</h3>
-                    <p>跨所有聊天記錄進行全文搜尋，快速找到過去的訊息。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#x1F512;</div>
-                    <h3>完全本機處理</h3>
-                    <p>所有資料處理皆在您的裝置上完成，不進行任何網路通訊。</p>
-                </div>
-            </div>
-        </section>
+        <div class="content">
+<p><a href="/ChatArchive-support/manual/zh-Hant/"><strong>閱讀完整 ChatArchive 手冊</strong></a></p><section class="card"><h2>開始前請先確認：版本與用途</h2><p>ChatArchive 是將 LINE 對話保存為可閱讀副本的 Mac App。它把來源中仍可取得的紀錄匯入自己的本機資料庫，顯示對話並搜尋訊息文字。它不能將對話還原至 LINE、轉移 LINE 帳號、傳送訊息，或復原來源中不存在的內容。</p><p>本指南於 2026 年 11 月 15 日確認。已驗證的發行下載為 <strong>1.0.0（build 1），需要 macOS 14.0 以上版本</strong>。本次檢視了磁碟映像檔內的版本資訊及對應原始碼。目前的 <a href="https://hakaru.gumroad.com/l/chatarchive">Gumroad 商品頁</a>未標明交付的執行檔版本，因此尚未確認其下載內容與此發行版本相同。</p><p>另一份 <strong>2.0.0（build 2）</strong> 原始碼新增的功能，僅在下文標示<strong>「若您的 App 有 2.0 介面」</strong>時說明。開發版本號不代表購買時一定取得那些功能。請在 Finder 的「取得資訊」確認已安裝版本，並依實際可見的控制項操作。</p><p>App 介面提供英文、日文、繁體中文與泰文，與本手冊的提供語言不同。本指南對原始碼的說明來自開發者對私人儲存庫的檢視，並非公開程式碼下載連結。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#overview">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>安裝與選擇來源</h2><ol><li>從官方購買或下載管道取得 ChatArchive。若以 DMG 提供，請開啟並將 ChatArchive 複製到「應用程式」後再執行。</li><li>為匯入的資料庫、暫存解壓縮檔及匯出檔預留足夠的 Mac 空間。不同紀錄需要的容量不同，沒有適用所有情況的固定值。</li><li>選擇 Mac 版 LINE 本機資料庫，或相容的 iPhone 版 LINE iCloud 備份。兩者可能包含不同期間與不同數量的訊息。</li><li>取代現有 ChatArchive 資料庫前，請先依<a href="/ChatArchive-support/manual/zh-Hant/#backup-delete">備份與移除資料</a>的步驟處理。</li></ol><p>從 Mac 匯入時，請安裝 Mac 版 LINE、在 LINE 登入並保持執行。從 iCloud 匯入時，必須能透過 Mac 的 iCloud Drive 帳號存取該備份。ChatArchive 本身不提供 LINE 或 Apple 帳號登入表單。</p><p>本次檢視的 App 僅適用 macOS，不讀取 Android／Google Drive 備份、一般 Finder iPhone 裝置備份或任意 ZIP 檔。無法保證支援日後每一種 LINE 資料庫或備份格式。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#setup">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>在 1.0.0 從 Mac 版 LINE 匯入</h2><ol><li>開啟 Mac 版 LINE 並完成登入。確認使用的是目標帳號，然後保持 LINE 開啟。</li><li>若要求權限，請在 macOS「系統設定」→「隱私權與安全性」→「開發者工具」允許 ChatArchive。此權限用於存取執行中的 LINE 程序。</li><li>在 ChatArchive 選擇 <strong>Import from LINE</strong>，再選擇 <strong>Import from LINE for Mac</strong>。</li><li>等待偵測、取得金鑰、讀取資料庫及匯入完成。期間請勿切換帳號或結束 LINE。</li><li>檢查完成筆數、關閉操作視窗，再查看數個對話與日期。</li></ol><p>App 使用從執行中程序取得的金鑰，讀取 LINE 的本機加密資料庫。來源資料庫以唯讀方式開啟，不會向 LINE 伺服器要求所有歷史對話。若有多個候選資料庫，自動偵測會優先選較大的資料庫；此處沒有一般帳號選擇器。</p><p>「完整磁碟存取」不能取代「開發者工具」權限。依說明允許後仍無法存取或解密時，請聯絡支援，不要停用系統保護。<strong>2.0 介面的 Mac 匯入是隱藏的開發者功能。</strong>該版本請使用一般 iCloud 路徑。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#mac-import">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>匯入 iPhone LINE 的 iCloud 備份</h2><p>本次檢視的 1.0.0 介面提供此路徑，2.0 介面則以此為一般匯入方式。它讀取 LINE 專用的 <code>archive.zip</code>，不是整部裝置的 iCloud 備份。</p><ol><li>確認 iPhone 上的 LINE 已完成適合用途的標準備份。手機端目前的操作請參閱 <a href="https://help.line.me/line/ios/?contentId=20023473&amp;lang=en">LINE 官方備份說明</a>。</li><li>Mac 使用可存取該備份的 Apple 帳號，並啟用 iCloud Drive。保持網路連線，等待檔案可供使用。</li><li>選擇 <strong>Import from LINE → Import from iCloud Backup</strong>。</li><li>等待下載、解壓縮與匯入完成，檢查筆數、名稱及日期。較新的介面也會顯示 <strong>Imported from</strong>。</li></ol><p>偵測位置為 <code>~/Library/Mobile Documents/iCloud~com~linecorp~line/Data-*/Backup/archive.zip</code>。程式採用第一個符合的備份，沒有日期或帳號選擇畫面，也不保證選到最新一份。此路徑不需要執行 Mac 版 LINE，iCloud 讀取也不使用開發者工具權限。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#icloud-import">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>更新紀錄：取代而非累加</h2><p><strong>每次從 Mac／iCloud 匯入，都會取代 ChatArchive 內全部聯絡人、聊天與訊息資料。</strong>本次檢視的兩個版本皆如此。匯入較新、較舊或不同來源前，請先保存獨立副本。沒有合併模式、增量下載或自動排程同步。</p><p>匯入在單一資料庫交易中執行；交易內若發生資料庫錯誤，會回復該次變更。這是有用的保護，但不能取代自行備份。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#refresh">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>購買與啟用匯出授權</h2><p>檢視的程式碼允許在未啟用匯出授權時閱讀、搜尋，以及將單一聊天儲存為文字。批次文字匯出需要啟用。2.0 新增格式的規則見前表。購買與成功啟用是不同步驟。</p><ol><li>在<a href="https://hakaru.gumroad.com/l/chatarchive">目前的商品頁</a>確認購買與交付內容。</li><li>開啟 ChatArchive 的 <strong>Activate License</strong>，輸入該產品提供的相容授權金鑰。</li><li>連線啟用並檢查結果狀態。購買收據請私下保管。</li></ol><p>本次檢視的兩個版本都使用 Lemon Squeezy 授權服務，即使較新購買連結指向 Gumroad 也一樣。僅有 Gumroad 收據不能確認金鑰相容。若沒有收到金鑰或被拒絕，請附訂單參考資料聯絡支援，不要只為排除問題而再次購買。</p><p>License Management 可解除這次安裝的啟用狀態，不會刪除對話或辦理退款。停用需要服務回傳成功回應。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#license">閱讀完整 ChatArchive 手冊</a></p></section><section class="card"><h2>本機儲存與網路活動</h2><p><strong>在本機處理聊天，不表示 App 完全不會通訊。</strong>檢視的實作有以下行為。</p><div class="table-wrap" role="region" aria-labelledby="privacy-network" tabindex="0"><table><caption id="privacy-network">可能發生通訊的情況</caption><thead><tr><th scope="col">操作</th><th scope="col">行為</th></tr></thead><tbody><tr><th scope="row">閱讀與搜尋聊天</th><td>已儲存對話在 Mac 上處理；檢視的路徑中未發現上傳聊天的端點。</td></tr><tr><th scope="row">iCloud 匯入</th><td>macOS 可能從 iCloud 下載 LINE 備份。Apple 帳號與 iCloud 活動由 Apple 服務處理。</td></tr><tr><th scope="row">授權服務</th><td>啟用時將金鑰與 Mac 電腦名稱傳給 Lemon Squeezy；驗證及停用時傳送金鑰與啟用執行個體識別碼。</td></tr><tr><th scope="row">2.0 貼圖載入</th><td>對 LINE CDN 的請求會識別貼圖；伺服器也會收到 IP 位址等一般連線資訊。</td></tr><tr><th scope="row">連結與儲存檔案</th><td>開啟網站、購買 App 或存入同步資料夾可能涉及其他服務。</td></tr></tbody></table></div><p>已啟用的安裝在啟用或上次驗證成功後經過 <strong>7</strong> 天，可能於啟動時再次驗證。檢視的實作在網路失敗時保留先前狀態，但無效授權回應可能停用付費匯出。這不代表永久離線啟用的承諾。</p><p>授權憑證保存在 macOS 鑰匙圈，對話資料庫則是另一個本機檔案。已匯入文字不必再次取得來源即可閱讀，但首次 iCloud 下載、啟用，以及未快取的 2.0 貼圖可能需要連線。</p><p><a href="/ChatArchive-support/manual/zh-Hant/#privacy">閱讀完整 ChatArchive 手冊</a></p></section><p><a href="mailto:hakaruapps-contact@hakaru.net">hakaruapps-contact@hakaru.net</a></p>
 
-        <section class="section" id="howto">
-            <h2 class="section-title">使用方式</h2>
-            <p class="section-subtitle">簡單 3 步驟瀏覽聊天記錄</p>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>啟動應用程式</h3>
-                        <p>啟動 ChatArchive。請確認已安裝訊息應用程式。</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>點擊「匯入」</h3>
-                        <p>點擊主畫面上的匯入按鈕。應用程式將自動偵測、解密並匯入聊天資料庫。</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>瀏覽聊天記錄</h3>
-                        <p>匯入完成後，即可在聊天介面中瀏覽和搜尋聊天記錄。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+</div>
 
-        <section class="section" id="faq">
-            <h2 class="section-title">常見問題</h2>
-            <p class="section-subtitle">遇到問題時請先查閱此處</p>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>顯示「找不到資料」訊息</summary>
-                    <div class="faq-answer">
-                        <p>請確認已安裝訊息應用程式，且已至少登入一次。聊天資料庫會在首次登入後建立。</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>顯示「需要存取權限」訊息</summary>
-                    <div class="faq-answer">
-                        <p>您可能需要在 macOS 安全性設定中授予「完整磁碟存取權」。請前往系統設定 &gt; 隱私權與安全性 &gt; 完整磁碟存取權，然後新增 ChatArchive。</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>我的資料安全嗎？</summary>
-                    <div class="faq-answer">
-                        <p>是的。ChatArchive 在您的裝置上本機處理所有資料，不進行任何網路通訊，絕不會將資料傳送至外部伺服器。加密金鑰僅在記憶體中使用，不會儲存至磁碟。</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>支援哪些訊息格式？</summary>
-                    <div class="faq-answer">
-                        <p>支援文字訊息、圖片、貼圖、影片、語音訊息、檔案、位置資訊、聯絡人等主要訊息格式。部分特殊訊息類型的顯示方式可能有所不同。</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>圖片和貼圖會顯示嗎？</summary>
-                    <div class="faq-answer">
-                        <p>訊息應用程式已快取的圖片和貼圖可以顯示。若快取已被清除，將顯示縮圖或預設圖片。由於應用程式的規格限制，較舊的圖片資料可能無法取得。</p>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>需要網路連線嗎？</summary>
-                    <div class="faq-answer">
-                        <p>不需要，此應用程式完全離線運作。ChatArchive 不進行任何網路通訊。即使沒有網路連線，也可以使用所有功能。</p>
-                    </div>
-                </details>
-            </div>
-        </section>
-
-        <section class="section" id="privacy">
-            <h2 class="section-title">隱私權政策</h2>
-            <p class="section-subtitle">我們重視您的資料隱私</p>
-            <div class="privacy-summary">
-                <h3>資料收集</h3>
-                <p>ChatArchive 不收集任何個人資訊或聊天資料。所有資料處理皆在您的裝置上本機完成。</p>
-
-                <h3>網路通訊</h3>
-                <p>本應用程式不進行任何網路通訊。無需網路連線即可完全運作。</p>
-
-                <h3>加密金鑰處理</h3>
-                <p>用於聊天資料庫解密的加密金鑰僅在處理期間於記憶體中使用，不會儲存至磁碟。</p>
-
-                <h3>第三方分享</h3>
-                <p>我們不會向任何第三方提供、分享或出售使用者資料。</p>
-
-                <p style="margin-top: 1.5rem;"><a href="/ChatArchive-support/zh-Hant/privacy.html">閱讀完整隱私權政策 &rarr;</a></p>
-            </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-            <h2 class="section-title">聯絡我們</h2>
-            <p class="section-subtitle">如有任何問題或建議，歡迎與我們聯繫</p>
-            <a href="https://forms.gle/PLACEHOLDER" class="btn-contact" target="_blank" rel="noopener">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                聯絡表單
-            </a>
-        </section>
 
         <footer>
             <p>&copy; 2025 ChatArchive. All rights reserved.</p>

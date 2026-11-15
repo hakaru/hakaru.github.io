@@ -11,6 +11,10 @@
           "href": "/AnalogRhythmKing-support/"
         },
         {
+          "label": "Manual",
+          "href": "/AnalogRhythmKing-support/manual/en/"
+        },
+        {
           "label": "Privacy",
           "href": "/AnalogRhythmKing-support/privacy"
         }
@@ -19,6 +23,10 @@
         {
           "label": "サポート",
           "href": "/AnalogRhythmKing-support/index-ja"
+        },
+        {
+          "label": "マニュアル",
+          "href": "/AnalogRhythmKing-support/manual/ja/"
         },
         {
           "label": "プライバシー",
@@ -31,6 +39,10 @@
           "href": "/AnalogRhythmKing-support/index-de"
         },
         {
+          "label": "Handbuch",
+          "href": "/AnalogRhythmKing-support/manual/de/"
+        },
+        {
           "label": "Datenschutz",
           "href": "/AnalogRhythmKing-support/privacy-de"
         }
@@ -39,6 +51,10 @@
         {
           "label": "Soporte",
           "href": "/AnalogRhythmKing-support/index-es"
+        },
+        {
+          "label": "Manual",
+          "href": "/AnalogRhythmKing-support/manual/es/"
         },
         {
           "label": "Privacidad",
@@ -51,6 +67,10 @@
           "href": "/AnalogRhythmKing-support/index-fr"
         },
         {
+          "label": "Guide",
+          "href": "/AnalogRhythmKing-support/manual/fr/"
+        },
+        {
           "label": "Confidentialité",
           "href": "/AnalogRhythmKing-support/privacy-fr"
         }
@@ -59,6 +79,10 @@
         {
           "label": "Supporto",
           "href": "/AnalogRhythmKing-support/index-it"
+        },
+        {
+          "label": "Manuale",
+          "href": "/AnalogRhythmKing-support/manual/it/"
         },
         {
           "label": "Privacy",
@@ -71,6 +95,10 @@
           "href": "/AnalogRhythmKing-support/index-ko"
         },
         {
+          "label": "매뉴얼",
+          "href": "/AnalogRhythmKing-support/manual/ko/"
+        },
+        {
           "label": "개인정보",
           "href": "/AnalogRhythmKing-support/privacy-ko"
         }
@@ -79,6 +107,10 @@
         {
           "label": "Support",
           "href": "/AnalogRhythmKing-support/index-nl"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/AnalogRhythmKing-support/manual/nl/"
         },
         {
           "label": "Privacy",
@@ -91,6 +123,10 @@
           "href": "/AnalogRhythmKing-support/index-pt-BR"
         },
         {
+          "label": "Manual",
+          "href": "/AnalogRhythmKing-support/manual/pt-BR/"
+        },
+        {
           "label": "Privacidade",
           "href": "/AnalogRhythmKing-support/privacy-pt-BR"
         }
@@ -99,6 +135,10 @@
         {
           "label": "Support",
           "href": "/AnalogRhythmKing-support/index-sv"
+        },
+        {
+          "label": "Manual",
+          "href": "/AnalogRhythmKing-support/manual/sv/"
         },
         {
           "label": "Integritet",
@@ -111,9 +151,28 @@
           "href": "/AnalogRhythmKing-support/index-zh-Hant"
         },
         {
+          "label": "手冊",
+          "href": "/AnalogRhythmKing-support/manual/zh-Hant/"
+        },
+        {
           "label": "隱私",
           "href": "/AnalogRhythmKing-support/privacy-zh-Hant"
         }
+      ]
+    },
+    "sectionLanguages": {
+      "manual": [
+        "en",
+        "ja",
+        "de",
+        "es",
+        "fr",
+        "it",
+        "ko",
+        "nl",
+        "pt-BR",
+        "sv",
+        "zh-Hant"
       ]
     }
   },
@@ -1197,6 +1256,10 @@
           "href": "/PeerClockMetronome-support/"
         },
         {
+          "label": "Manual",
+          "href": "/PeerClockMetronome-support/manual/en/"
+        },
+        {
           "label": "Blog",
           "href": "/PeerClockMetronome-support/blog/en/"
         },
@@ -1209,6 +1272,10 @@
         {
           "label": "サポート",
           "href": "/PeerClockMetronome-support/index-ja"
+        },
+        {
+          "label": "マニュアル",
+          "href": "/PeerClockMetronome-support/manual/ja/"
         },
         {
           "label": "ブログ",
@@ -1225,6 +1292,10 @@
           "href": "/PeerClockMetronome-support/index-de"
         },
         {
+          "label": "Handbuch",
+          "href": "/PeerClockMetronome-support/manual/de/"
+        },
+        {
           "label": "Blog",
           "href": "/PeerClockMetronome-support/blog/de/"
         },
@@ -1237,6 +1308,10 @@
         {
           "label": "Soporte",
           "href": "/PeerClockMetronome-support/index-es"
+        },
+        {
+          "label": "Manual",
+          "href": "/PeerClockMetronome-support/manual/es/"
         },
         {
           "label": "Blog",
@@ -1253,6 +1328,10 @@
           "href": "/PeerClockMetronome-support/index-fr"
         },
         {
+          "label": "Guide",
+          "href": "/PeerClockMetronome-support/manual/fr/"
+        },
+        {
           "label": "Blog",
           "href": "/PeerClockMetronome-support/blog/fr/"
         },
@@ -1265,6 +1344,10 @@
         {
           "label": "Supporto",
           "href": "/PeerClockMetronome-support/index-it"
+        },
+        {
+          "label": "Manuale",
+          "href": "/PeerClockMetronome-support/manual/it/"
         },
         {
           "label": "Blog",
@@ -1281,6 +1364,10 @@
           "href": "/PeerClockMetronome-support/index-ko"
         },
         {
+          "label": "매뉴얼",
+          "href": "/PeerClockMetronome-support/manual/ko/"
+        },
+        {
           "label": "블로그",
           "href": "/PeerClockMetronome-support/blog/ko/"
         },
@@ -1293,6 +1380,10 @@
         {
           "label": "Support",
           "href": "/PeerClockMetronome-support/index-nl"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/PeerClockMetronome-support/manual/nl/"
         },
         {
           "label": "Blog",
@@ -1309,6 +1400,10 @@
           "href": "/PeerClockMetronome-support/index-pt-BR"
         },
         {
+          "label": "Manual",
+          "href": "/PeerClockMetronome-support/manual/pt-BR/"
+        },
+        {
           "label": "Blog",
           "href": "/PeerClockMetronome-support/blog/pt-BR/"
         },
@@ -1321,6 +1416,10 @@
         {
           "label": "Support",
           "href": "/PeerClockMetronome-support/index-sv"
+        },
+        {
+          "label": "Manual",
+          "href": "/PeerClockMetronome-support/manual/sv/"
         },
         {
           "label": "Blogg",
@@ -1337,6 +1436,10 @@
           "href": "/PeerClockMetronome-support/index-zh-Hant"
         },
         {
+          "label": "手冊",
+          "href": "/PeerClockMetronome-support/manual/zh-Hant/"
+        },
+        {
           "label": "部落格",
           "href": "/PeerClockMetronome-support/blog/zh-Hant/"
         },
@@ -1344,6 +1447,21 @@
           "label": "隱私",
           "href": "/PeerClockMetronome-support/privacy-zh-Hant"
         }
+      ]
+    },
+    "sectionLanguages": {
+      "manual": [
+        "en",
+        "ja",
+        "de",
+        "es",
+        "fr",
+        "it",
+        "ko",
+        "nl",
+        "pt-BR",
+        "sv",
+        "zh-Hant"
       ]
     }
   },
@@ -1703,6 +1821,10 @@
           "href": "/ChatArchive-support/"
         },
         {
+          "label": "マニュアル",
+          "href": "/ChatArchive-support/manual/ja/"
+        },
+        {
           "label": "ブログ",
           "href": "/ChatArchive-support/blog/"
         },
@@ -1719,6 +1841,10 @@
         {
           "label": "Support",
           "href": "/ChatArchive-support/en/"
+        },
+        {
+          "label": "Manual",
+          "href": "/ChatArchive-support/manual/en/"
         },
         {
           "label": "Blog",
@@ -1753,21 +1879,216 @@
       ],
       "zh-Hant": [
         {
-          "label": "Support",
+          "label": "支援（英文）",
           "href": "/ChatArchive-support/zh-Hant/"
         },
         {
-          "label": "Blog",
+          "label": "手冊",
+          "href": "/ChatArchive-support/manual/zh-Hant/"
+        },
+        {
+          "label": "部落格",
           "href": "/ChatArchive-support/zh-Hant/blog/"
         },
         {
-          "label": "Privacy",
+          "label": "隱私權（英文）",
           "href": "/ChatArchive-support/zh-Hant/privacy"
         },
         {
-          "label": "Terms",
+          "label": "條款",
           "href": "/ChatArchive-support/zh-Hant/terms"
         }
+      ],
+      "de": [
+        {
+          "label": "Support (Englisch)",
+          "href": "/ChatArchive-support/de/"
+        },
+        {
+          "label": "Handbuch",
+          "href": "/ChatArchive-support/manual/de/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/de/blog/"
+        },
+        {
+          "label": "Datenschutz (Englisch)",
+          "href": "/ChatArchive-support/de/privacy"
+        },
+        {
+          "label": "Bedingungen",
+          "href": "/ChatArchive-support/de/terms"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte (inglés)",
+          "href": "/ChatArchive-support/es/"
+        },
+        {
+          "label": "Manual",
+          "href": "/ChatArchive-support/manual/es/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/es/blog/"
+        },
+        {
+          "label": "Privacidad (inglés)",
+          "href": "/ChatArchive-support/es/privacy"
+        },
+        {
+          "label": "Términos",
+          "href": "/ChatArchive-support/es/terms"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Assistance (anglais)",
+          "href": "/ChatArchive-support/fr/"
+        },
+        {
+          "label": "Guide",
+          "href": "/ChatArchive-support/manual/fr/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/fr/blog/"
+        },
+        {
+          "label": "Confidentialité (anglais)",
+          "href": "/ChatArchive-support/fr/privacy"
+        },
+        {
+          "label": "Conditions",
+          "href": "/ChatArchive-support/fr/terms"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto (inglese)",
+          "href": "/ChatArchive-support/it/"
+        },
+        {
+          "label": "Manuale",
+          "href": "/ChatArchive-support/manual/it/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/it/blog/"
+        },
+        {
+          "label": "Privacy (inglese)",
+          "href": "/ChatArchive-support/it/privacy"
+        },
+        {
+          "label": "Termini",
+          "href": "/ChatArchive-support/it/terms"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원 (영어)",
+          "href": "/ChatArchive-support/ko/"
+        },
+        {
+          "label": "매뉴얼",
+          "href": "/ChatArchive-support/manual/ko/"
+        },
+        {
+          "label": "블로그",
+          "href": "/ChatArchive-support/ko/blog/"
+        },
+        {
+          "label": "개인정보 처리방침 (영어)",
+          "href": "/ChatArchive-support/ko/privacy"
+        },
+        {
+          "label": "약관",
+          "href": "/ChatArchive-support/ko/terms"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Ondersteuning (Engels)",
+          "href": "/ChatArchive-support/nl/"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/ChatArchive-support/manual/nl/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/nl/blog/"
+        },
+        {
+          "label": "Privacy (Engels)",
+          "href": "/ChatArchive-support/nl/privacy"
+        },
+        {
+          "label": "Voorwaarden",
+          "href": "/ChatArchive-support/nl/terms"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte (inglês)",
+          "href": "/ChatArchive-support/pt-BR/"
+        },
+        {
+          "label": "Manual",
+          "href": "/ChatArchive-support/manual/pt-BR/"
+        },
+        {
+          "label": "Blog",
+          "href": "/ChatArchive-support/pt-BR/blog/"
+        },
+        {
+          "label": "Privacidade (inglês)",
+          "href": "/ChatArchive-support/pt-BR/privacy"
+        },
+        {
+          "label": "Termos",
+          "href": "/ChatArchive-support/pt-BR/terms"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support (engelska)",
+          "href": "/ChatArchive-support/sv/"
+        },
+        {
+          "label": "Manual",
+          "href": "/ChatArchive-support/manual/sv/"
+        },
+        {
+          "label": "Blogg",
+          "href": "/ChatArchive-support/sv/blog/"
+        },
+        {
+          "label": "Integritet (engelska)",
+          "href": "/ChatArchive-support/sv/privacy"
+        },
+        {
+          "label": "Villkor",
+          "href": "/ChatArchive-support/sv/terms"
+        }
+      ]
+    },
+    "sectionLanguages": {
+      "manual": [
+        "en",
+        "ja",
+        "de",
+        "es",
+        "fr",
+        "it",
+        "ko",
+        "nl",
+        "pt-BR",
+        "sv",
+        "zh-Hant"
       ]
     }
   },

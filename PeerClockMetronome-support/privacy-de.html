@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome Datenschutzerklärung | hakaru</title>
-    <meta name="description" content="Datenschutzerklärung für PeerClock Metronome.">
+    <meta name="description" content="Praxisanleitung zu Tempo, Taktarten, Auto Tempo, lokaler WLAN-Synchronisierung, Audiotiming, gespeicherten Einstellungen und Fehlerbehebung.">
     <meta property="og:title" content="PeerClock Metronome Datenschutzerklärung">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/privacy-de">
@@ -290,6 +290,7 @@ body {
     <link rel="alternate" hreflang="en" href="https://hakaru.net/PeerClockMetronome-support/privacy">
     <link rel="alternate" hreflang="ja" href="https://hakaru.net/PeerClockMetronome-support/privacy-ja">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/privacy">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -304,6 +305,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-de">Support</a>
+      <a href="/AnalogRhythmKing-support/manual/de/">Handbuch</a>
       <a href="/AnalogRhythmKing-support/privacy-de">Datenschutz</a>
     </div>
   </div>
@@ -462,6 +464,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-de">Support</a>
+      <a href="/PeerClockMetronome-support/manual/de/">Handbuch</a>
       <a href="/PeerClockMetronome-support/blog/de/">Blog</a>
       <a href="/PeerClockMetronome-support/privacy-de" class="active">Datenschutz</a>
     </div>
@@ -497,10 +500,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/en/">Support</a>
-      <a href="/ChatArchive-support/en/blog/">Blog</a>
-      <a href="/ChatArchive-support/en/privacy">Privacy</a>
-      <a href="/ChatArchive-support/en/terms">Terms</a>
+      <a href="/ChatArchive-support/de/">Support (Englisch)</a>
+      <a href="/ChatArchive-support/manual/de/">Handbuch</a>
+      <a href="/ChatArchive-support/de/blog/">Blog</a>
+      <a href="/ChatArchive-support/de/privacy">Datenschutz (Englisch)</a>
+      <a href="/ChatArchive-support/de/terms">Bedingungen</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -860,68 +864,14 @@ body {
             <p>P2P-synchronisiertes Metronom für Apple-Geräte</p>
         </div>
         <div class="content">
-            <h2>Datenschutzerklärung</h2>
-            <p><strong>Zuletzt aktualisiert: 22. April 2026</strong></p>
-            <h2>Einleitung</h2>
-            <p>PeerClock Metronome („wir" oder „die App") ist dem Schutz deiner Privatsphäre verpflichtet. Diese Datenschutzerklärung erklärt, wie wir mit Informationen umgehen, wenn du unsere iOS-Anwendung verwendest.</p>
-            <h2>Zusammenfassung</h2>
-            <p>PeerClock Metronome sammelt anonyme Diagnosedaten zur Verbesserung der App-Stabilität. Das lokale Netzwerk wird ausschließlich für die P2P-Synchronisierung zwischen deinen eigenen Geräten verwendet — keine Synchronisierungsdaten werden an externe Server gesendet.</p>
-            <h2>Nutzung des lokalen Netzwerks</h2>
-            <p>PeerClock Metronome verwendet dein lokales Wi-Fi-Netzwerk zur Synchronisierung von Uhren zwischen Geräten:</p>
-            <ul>
-                <li>Synchronisierungspakete werden nur zwischen Geräten im selben lokalen Netzwerk gesendet</li>
-                <li><strong>Keine Synchronisierungsdaten werden an externe Server gesendet</strong></li>
-                <li>Für die Synchronisierung ist keine Internetverbindung erforderlich</li>
-            </ul>
-            <h2>Daten, die wir erfassen</h2>
-            <p>PeerClock Metronome verwendet Firebase (Google) zur Erfassung anonymer Diagnosedaten.</p>
-            <h3>Nutzungsanalyse (Firebase Analytics)</h3>
-            <ul>
-                <li>App-Öffnungen und Sitzungsdauer</li>
-                <li>Funktionsnutzungsmuster</li>
-                <li>Gerätetyp und iOS-Version</li>
-                <li>Anonyme Gerätekennung (nicht mit deiner Identität verknüpft)</li>
-            </ul>
-            <h3>Absturzdaten (Firebase Crashlytics)</h3>
-            <ul>
-                <li>Gerätetyp und iOS-Version</li>
-                <li>App-Version und Build-Nummer</li>
-                <li>Absturzprotokolle und Stack-Traces</li>
-            </ul>
-            <h3>Datenerfassungsübersicht</h3>
-            <table>
-                <thead><tr><th>Datentyp</th><th>Zweck</th><th>Mit dir verknüpft</th></tr></thead>
-                <tbody>
-                    <tr><td>Absturzdaten</td><td>App-Funktionalität</td><td>Nein</td></tr>
-                    <tr><td>Leistungsdaten</td><td>App-Funktionalität</td><td>Nein</td></tr>
-                    <tr><td>Nutzungsdaten</td><td>Analyse</td><td>Nein</td></tr>
-                    <tr><td>Geräte-ID</td><td>Analyse</td><td>Nein</td></tr>
-                </tbody>
-            </table>
-            <h2>Was wir NICHT erfassen</h2>
-            <ul>
-                <li>Persönliche Informationen (Name, E-Mail, Standort, Kontakte, Fotos)</li>
-                <li>Audio- oder musikalische Inhalte</li>
-                <li>Werbekennungen (IDFA)</li>
-                <li>Daten für Werbezwecke</li>
-                <li>Daten, die an Dritte verkauft werden</li>
-            </ul>
-            <h2>Tracking und Werbung</h2>
-            <p><strong>Wir tracken dich nicht für Werbezwecke.</strong> PeerClock Metronome verwendet keine Werbekennungen, teilt keine Daten mit Werbetreibenden und benötigt keine App Tracking Transparency-Berechtigung.</p>
-            <h2>Drittanbieter-Dienste</h2>
-            <p>PeerClock Metronome verwendet folgende Drittanbieter-Dienste:</p>
-            <ul>
-                <li><strong>Firebase Analytics</strong> — Anonyme Nutzungsanalyse (Google)</li>
-                <li><strong>Firebase Crashlytics</strong> — Absturzberichte und Diagnose (Google)</li>
-            </ul>
-            <p>Weitere Informationen: <a href="https://firebase.google.com/support/privacy">Firebase Datenschutzrichtlinie</a></p>
-            <h2>Kinderdatenschutz</h2>
-            <p>Die App sammelt wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren.</p>
-            <h2>Änderungen dieser Richtlinie</h2>
-            <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite veröffentlicht.</p>
-            <h2>Kontakt</h2>
-            <p>Bei Fragen zu dieser Datenschutzerklärung kontaktiere uns unter:<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
+<h2>Datenschutz</h2><p>Aktualisiert am 15. November 2026 · PeerClock Metronome 1.1.0 (13) · PeerClock 0.4.2</p><p>Die geprüfte Version ist kostenlos mit Werbung. Es gibt weder Kaufansicht, Abonnement, Restore Purchases noch bezahlte Werbeentfernung. Eine Vollbildanzeige kann nach jeweils <strong>3 lokal ausgelösten Stopps</strong> erscheinen, wenn Werbung bereitsteht. Ein empfangener Fernstopp erhöht den Zähler nicht. Die Verfügbarkeit variiert.</p><h3>Wer Daten verarbeitet und warum</h3><p>Hakaru Hirose stellt die App bereit und nutzt Google-Dienste für Werbung, Nutzungsanalyse und Stabilitätsdiagnose. <strong>Google AdMob</strong> kann Gerätekennungen, Werbeinteraktionen, IP-Adressen und Diagnosedaten zur Auslieferung und Messung von Werbung verarbeiten. <strong>Firebase Analytics</strong> verarbeitet Nutzungsereignisse und App-/Geräteinformationen; außerdem protokolliert die App Tracking-Berechtigungsstatus sowie Werbe- und Einwilligungsfehler. <strong>Firebase Crashlytics</strong> verarbeitet Absturzberichte und zugehörige Installations-/Geräteinformationen zur Fehlersuche. Diese Dienste können externe Server kontaktieren; lokale Uhrensynchronisierung macht nicht die gesamte App internetfrei.</p><h3>Berechtigungen und Auswahlmöglichkeiten</h3><p><strong>Lokales Netzwerk</strong> erlaubt die Erkennung und Kommunikation benachbarter Geräte. <strong>App Tracking Transparency (ATT)</strong> betrifft Tracking und Zugriff auf die Werbekennung IDFA. Sie können ablehnen und das Metronom trotzdem nutzen. Ändern Sie die Wahl unter Einstellungen → Datenschutz &amp; Sicherheit → Tracking. Die Ablehnung deaktiviert nicht sämtliche Werbung oder Diagnose. Siehe <a href="https://support.apple.com/en-la/102420">Apples Tracking-Einstellungen</a>.</p><p>Die App fordert Einwilligungsinformationen über <strong>Google User Messaging Platform (UMP)</strong> an und bittet bei Bedarf um ein Formular. Die angezeigten Optionen hängen von Region und Kontokonfiguration des Dienstes ab. Beantworten Sie das Formular, falls es erscheint. Version <strong>1.1.0</strong> bietet keine eigene Datenschutzansicht zum erneuten Öffnen und keinen Schalter für Analyse oder Absturzberichte. Wenden Sie sich bei nicht erreichbaren Optionen an den Support. Die <a href="https://developers.google.com/admob/ios/privacy">UMP-Dokumentation</a> beschreibt den Dienst; nicht alle empfohlenen Einstellungen sind in dieser App zugänglich.</p><h3>Standort, Audio und gespeicherte Einstellungen</h3><p>Die App fordert keine GPS-/Standortberechtigung an und zeichnet kein Mikrofon auf. Werbedienste können dennoch aus der IP-Adresse eine ungefähre Region ableiten. Auto-Tempo-Einstellungen werden lokal gespeichert; die Synchronisierung tauscht Zeit- und Steuerdaten zwischen lokalen Geräten aus, keine Aufnahmen. Bei einer Support-E-Mail erhält der Empfänger Nachricht und E-Mail-Adresse zur Bearbeitung.</p><p>Beachten Sie die <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Datenauskunft von Google Mobile Ads</a>, die <a href="https://firebase.google.com/support/privacy">Firebase-Datenschutzinformationen</a> und die <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">Datenschutzangaben im App Store</a>. Dieses Handbuch legt keine app-spezifische Aufbewahrungsfrist fest und verspricht keine Löschung durch Deinstallation. Fragen zu Datenschutz, Aufbewahrung oder Löschung: <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p><h2>Netzwerk und Berechtigungen</h2><p>Synchronisierung benötigt lokale Kommunikation zwischen Geräten, keinen Internetzugang. In Gäste-WLANs, isolierten Schul- oder Veranstaltungsnetzen, getrennten Subnetzen oder gefilterten VPN-Verbindungen können Geräte einander trotz ähnlich benannter WLANs nicht erkennen oder erreichen. Bitten Sie die Netzwerkverwaltung um lokale Erkennung und Kommunikation oder nutzen Sie ein geeignetes gemeinsames Netz.</p><p><a href="/PeerClockMetronome-support/manual/de/"><strong>Vollständiges PeerClock Metronome Handbuch lesen</strong></a></p><h2>Support kontaktieren</h2><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+
+
+
+
+
+
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome Soporte | hakaru</title>
-    <meta name="description" content="Página de soporte de PeerClock Metronome. Metrónomo sincronizado P2P para dispositivos Apple.">
+    <meta name="description" content="Guía práctica del tempo, los compases, Auto Tempo, la sincronización por Wi-Fi local, el audio, los ajustes guardados y la solución de problemas.">
     <meta property="og:title" content="PeerClock Metronome Soporte">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-es">
@@ -305,6 +305,7 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -319,6 +320,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-es">Soporte</a>
+      <a href="/AnalogRhythmKing-support/manual/es/">Manual</a>
       <a href="/AnalogRhythmKing-support/privacy-es">Privacidad</a>
     </div>
   </div>
@@ -477,6 +479,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-es" class="active">Soporte</a>
+      <a href="/PeerClockMetronome-support/manual/es/">Manual</a>
       <a href="/PeerClockMetronome-support/blog/es/">Blog</a>
       <a href="/PeerClockMetronome-support/privacy-es">Privacidad</a>
     </div>
@@ -512,10 +515,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/en/">Support</a>
-      <a href="/ChatArchive-support/en/blog/">Blog</a>
-      <a href="/ChatArchive-support/en/privacy">Privacy</a>
-      <a href="/ChatArchive-support/en/terms">Terms</a>
+      <a href="/ChatArchive-support/es/">Soporte (inglés)</a>
+      <a href="/ChatArchive-support/manual/es/">Manual</a>
+      <a href="/ChatArchive-support/es/blog/">Blog</a>
+      <a href="/ChatArchive-support/es/privacy">Privacidad (inglés)</a>
+      <a href="/ChatArchive-support/es/terms">Términos</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -876,48 +880,13 @@ body {
             <a class="app-store-link" href="https://apps.apple.com/es/app/peerclock-metronome/id6762972307">Descargar en la App Store &rarr;</a>
         </div>
         <div class="content">
-            <p>Bienvenido a la página de soporte de PeerClock Metronome.</p>
-            <p>PeerClock Metronome es un metrónomo sincronizado entre pares para dispositivos Apple. Conecta varios iPhones o iPads a la misma red Wi-Fi para sincronización automática del reloj con precisión de ±2ms, sin necesidad de servidor.</p>
-            <hr>
-            <h2>Características</h2>
-            <h3>Sincronización entre pares (sin maestro/esclavo)</h3>
-            <p>Todos los dispositivos son pares iguales. No hay un dispositivo "maestro" designado: cualquier dispositivo puede unirse o salir sin interrumpir a los demás.</p>
-            <h3>Sincronización de reloj ±2ms</h3>
-            <p>Utiliza un algoritmo de 4 marcas de tiempo inspirado en NTP con filtrado de mejor mitad para lograr precisión de submilisegundos en todos los dispositivos conectados.</p>
-            <h3>Solo Wi-Fi (sin servidor)</h3>
-            <p>La sincronización ocurre completamente en tu red Wi-Fi local. No se envían datos a ningún servidor externo. Funciona completamente sin conexión.</p>
-            <h3>Descubrimiento automático</h3>
-            <p>Los dispositivos en la misma red Wi-Fi se descubren automáticamente mediante Bonjour. No se requiere entrada manual de IP ni emparejamiento.</p>
-            <h3>Animación del camino del director</h3>
-            <p>Un camino visual del director traza el patrón de compás en pantalla, ayudando a los intérpretes a seguir el ritmo de un vistazo.</p>
-            <h3>Múltiples compases</h3>
-            <p>Compatible con compases de 4/4, 3/4, 4/8, 3/8, 6/8, 9/8 y 12/8.</p>
-            <h3>Cambios de BPM en vivo</h3>
-            <p>Los cambios de tempo se sincronizan instantáneamente en todos los dispositivos conectados, sin retraso ni deriva.</p>
-            <hr>
-            <h2>Preguntas frecuentes</h2>
-            <h3>¿Cómo sincronizo varios dispositivos?</h3>
-            <ol>
-                <li>Conecta todos los dispositivos a la misma red Wi-Fi</li>
-                <li>Abre PeerClock Metronome en cada dispositivo</li>
-                <li>Los dispositivos se descubren automáticamente en pocos segundos</li>
-                <li>Inicia el metrónomo en cualquier dispositivo: todos los dispositivos sincronizados seguirán</li>
-            </ol>
-            <h3>¿Qué es el camino del director?</h3>
-            <p>El camino del director es una línea animada que traza el patrón de dirección tradicional para el compás seleccionado. Proporciona una referencia visual para que los intérpretes permanezcan sincronizados incluso sin auriculares.</p>
-            <h3>¿Qué tan precisa es la sincronización?</h3>
-            <p>PeerClock Metronome logra una sincronización de reloj de ±2ms en condiciones típicas de Wi-Fi. La percepción humana del tiempo es de aproximadamente 10–20ms, por lo que la sincronización está muy por debajo del umbral de diferencia perceptible.</p>
-            <h3>¿Funciona sin internet?</h3>
-            <p>Sí. PeerClock Metronome solo usa tu red Wi-Fi local. No se requiere conexión a internet para la sincronización.</p>
-            <h3>¿Qué dispositivos son compatibles?</h3>
-            <p>PeerClock Metronome requiere iOS 17.0 o posterior. Compatible con cualquier iPhone o iPad con iOS 17+.</p>
-            <hr>
-            <h2>Contacto</h2>
-            <p>Si tienes preguntas o comentarios, contáctanos en:<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
-            <hr>
-            <h2>Enlaces</h2>
-            <ul><li><a href="/PeerClockMetronome-support/privacy-es">Política de privacidad</a></li></ul>
+<p><a href="/PeerClockMetronome-support/manual/es/"><strong>Leer el manual completo de PeerClock Metronome</strong></a></p><section class="card"><h2>Versión, dispositivos y alcance</h2><p>PeerClock Metronome reproduce un clic regular y muestra un patrón de dirección animado. Utilice un dispositivo para practicar individualmente o abra la app en varios dispositivos de la misma red Wi-Fi local para compartir el tiempo y los controles de reproducción.</p><p>Este manual corresponde a <strong>PeerClock Metronome 1.1.0 (compilación 13)</strong>, con <strong>PeerClock 0.4.2</strong>. La versión pública se comprobó el 15 de noviembre de 2026. Requiere <strong>iOS 17 o posterior en iPhone, o iPadOS 17 o posterior en iPad</strong>. La <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">ficha del App Store</a> también indica compatibilidad con Mac con Apple Silicon y Apple Vision; estas instrucciones táctiles describen iPhone y iPad y no acreditan pruebas en esas otras plataformas.</p><p><a href="/PeerClockMetronome-support/manual/es/#overview">Leer el manual completo de PeerClock Metronome</a></p></section><section class="card"><h2>Su primera sesión de práctica</h2><ol><li>Abra la app y ajuste un volumen cómodo. Permita Red local si desea sincronizar otros dispositivos.</li><li>Para practicar a tempo constante, abra <strong>Auto Tempo</strong>, desactive <strong>Increase tempo automatically</strong> y pulse <strong>Done</strong>.</li><li>Arrastre el número grande de BPM hacia arriba para acelerar o hacia abajo para reducir el tempo. Seleccione <strong>4/4</strong> en la fila inferior.</li><li>Pulse el botón circular con el triángulo. Durante la reproducción se convierte en un cuadrado. Siga los clics y el punto móvil.</li><li>Pulse el cuadrado para detener. Si hay dispositivos conectados, también reciben una orden de parada.</li></ol><p>En la primera sesión en grupo, conecte a todos antes de empezar, espere al indicador de sincronización y deje los controles a una persona. El inicio a tempo constante sigue la cuadrícula de pulsos compartida: el primer clic audible no es necesariamente una cuenta de entrada ni el pulso 1. Escuche el inicio de compás más fuerte antes de entrar.</p><p><a href="/PeerClockMetronome-support/manual/es/#quickstart">Leer el manual completo de PeerClock Metronome</a></p></section><section class="card"><h2>Conectar varios dispositivos</h2><ol><li>Instale una versión compatible en todos y conéctelos a la misma red Wi-Fi local.</li><li>Abra PeerClock Metronome en cada dispositivo y permita Red local. Mantenga todos detenidos durante la preparación.</li><li>Espere al número de dispositivos y al estado <strong>Synced</strong>. El número cuenta otros dispositivos descubiertos; no es una lista de nombres.</li><li>En el dispositivo que manejará, elija tempo, compás y Auto Tempo, y pulse Play.</li><li>Compruebe el patrón de todos antes de empezar el ejercicio.</li></ol><p>El descubrimiento es automático mediante Bonjour. No hay Host, Join, código de emparejamiento, entrada de IP ni selector de sala. La referencia de reloj se elige internamente: los músicos no deben seleccionar un maestro.</p><p>Un dispositivo incorporado durante la reproducción no recibe necesariamente de inmediato el estado y los ajustes actuales. Para incluirlo de forma fiable, detenga al grupo, espere la sincronización, compruebe la configuración y reinicie desde el dispositivo de control. También conviene revisar al grupo completo tras una reconexión.</p><p><a href="/PeerClockMetronome-support/manual/es/#connect">Leer el manual completo de PeerClock Metronome</a></p></section><section class="card"><h2>Practicar con Auto Tempo</h2><p>Auto Tempo acelera tras compases completos y continúa al tempo objetivo. Detenga la reproducción, pulse <strong>Auto Tempo</strong> y active <strong>Increase tempo automatically</strong>. Ajuste con los botones de incremento:</p><p><a href="/PeerClockMetronome-support/manual/es/#auto-tempo">Leer el manual completo de PeerClock Metronome</a></p></section><section class="card"><h2>Interpretar el estado de sincronización</h2><ul><li><strong>Standalone:</strong> no se cuentan dispositivos conectados; sigue disponible la práctica local.</li><li><strong>Searching…:</strong> hay dispositivos, pero no se muestra un reloj sincronizado en este momento.</li><li><strong>Synced:</strong> la biblioteca del reloj comunica un estado sincronizado.</li></ul><p>El valor <strong>±x.xms</strong> requiere cautela. En esta versión se calcula como <strong>la mitad del retardo de ida y vuelta comunicado por la red</strong>. No mide la diferencia entre clics audibles, el desfase residual de reloj ni un límite garantizado de error.</p><p>El dispositivo de referencia elegido automáticamente puede mostrar <strong>±0.0ms</strong> porque su calidad de referencia se comunica con un retardo de ida y vuelta nulo. No demuestra alineación perfecta de todos los altavoces. Use estado y número para diagnosticar la conexión y luego escuche las salidas. Al entrar, salir o reconectar un dispositivo, puede ser necesario esperar a estabilizar y reiniciar el grupo.</p><p><a href="/PeerClockMetronome-support/manual/es/#sync-status">Leer el manual completo de PeerClock Metronome</a></p></section><section class="card"><h2>Publicidad, permisos y privacidad</h2><p>La versión revisada es gratuita con publicidad. No tiene pantalla de compra, suscripción, Restore Purchases ni eliminación de anuncios de pago. Puede aparecer un anuncio intersticial cada <strong>3 paradas iniciadas localmente</strong> si hay uno preparado. Una parada recibida remotamente no incrementa el contador. La disponibilidad varía.</p><h3>Quién procesa datos y para qué</h3><p>Hakaru Hirose ofrece la app y utiliza servicios de Google para publicidad, análisis de uso y diagnóstico de estabilidad. <strong>Google AdMob</strong> puede procesar identificadores del dispositivo, interacciones publicitarias, IP e información diagnóstica para entregar y medir anuncios. <strong>Firebase Analytics</strong> gestiona eventos de uso e información de app/dispositivo; la app registra también el estado de autorización de seguimiento y errores publicitarios o de consentimiento. <strong>Firebase Crashlytics</strong> gestiona informes de fallos e información asociada de instalación/dispositivo para investigar problemas. Estos servicios pueden contactar servidores externos; sincronizar localmente no elimina las conexiones a internet de toda la app.</p><h3>Permisos y opciones</h3><p><strong>Red local</strong> permite descubrir y comunicar dispositivos cercanos. La solicitud <strong>App Tracking Transparency (ATT)</strong> se refiere al seguimiento y al identificador publicitario IDFA. Puede rechazarla y seguir usando el metrónomo. Cámbiela en Ajustes → Privacidad y seguridad → Rastreo; rechazar el seguimiento no desactiva toda publicidad ni diagnóstico. Consulte los <a href="https://support.apple.com/en-la/102420">controles de seguimiento de Apple</a>.</p><p>La app solicita información de consentimiento mediante <strong>Google User Messaging Platform (UMP)</strong> y pide mostrar un formulario cuando corresponda. Las opciones dependen de la región y la configuración de cuenta del servicio. Responda al formulario si aparece. La versión <strong>1.1.0</strong> no tiene pantalla independiente para reabrirlo ni interruptor de análisis o informes de fallos. Contacte con soporte sobre opciones inaccesibles. La <a href="https://developers.google.com/admob/ios/privacy">documentación de UMP</a> describe el servicio; la app no expone todos sus ajustes recomendados.</p><h3>Ubicación, audio y configuración guardada</h3><p>La app no solicita permiso GPS/ubicación ni graba el micrófono. No obstante, los servicios publicitarios pueden deducir una ubicación general mediante la IP. Auto Tempo se guarda localmente y la sincronización intercambia datos de tiempo y control entre dispositivos locales, no grabaciones. Si escribe a soporte, el destinatario recibe su mensaje y dirección de correo para atender la solicitud.</p><p>Consulte la <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">declaración de datos de Google Mobile Ads</a>, la <a href="https://firebase.google.com/support/privacy">información de privacidad de Firebase</a> y la <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">declaración del App Store</a>. Esta guía no establece un plazo de conservación específico ni promete borrar datos al desinstalar. Para preguntas sobre privacidad, conservación o eliminación, contacte con <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>.</p><p><a href="/PeerClockMetronome-support/manual/es/#ads-privacy">Leer el manual completo de PeerClock Metronome</a></p></section><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+
+
+
+
+
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

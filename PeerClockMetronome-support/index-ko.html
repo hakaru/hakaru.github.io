@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PeerClock Metronome 지원 | hakaru</title>
-    <meta name="description" content="PeerClock Metronome 지원 페이지. Apple 기기용 P2P 동기화 메트로놈.">
+    <meta name="description" content="PeerClock Metronome의 템포, 박자표, Auto Tempo, 로컬 Wi-Fi 동기화, 오디오 타이밍, 설정 저장과 문제 해결을 설명하는 실용 안내서입니다.">
     <meta property="og:title" content="PeerClock Metronome 지원">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hakaru.net/PeerClockMetronome-support/index-ko">
@@ -304,6 +304,7 @@ body {
     <link rel="alternate" hreflang="sv" href="https://hakaru.net/PeerClockMetronome-support/index-sv">
     <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/PeerClockMetronome-support/index-zh-Hant">
     <link rel="alternate" hreflang="x-default" href="https://hakaru.net/PeerClockMetronome-support/">
+<style data-manual-layout>.content-pane{min-width:0}.container{min-width:0;overflow-wrap:anywhere}.hero>div{min-width:0}@media(max-width:480px){header.hero{display:block}header.hero img{margin-bottom:14px}}</style>
 </head>
 <body>
 <button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
@@ -318,6 +319,7 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/AnalogRhythmKing-support/index-ko">지원</a>
+      <a href="/AnalogRhythmKing-support/manual/ko/">매뉴얼</a>
       <a href="/AnalogRhythmKing-support/privacy-ko">개인정보</a>
     </div>
   </div>
@@ -476,6 +478,7 @@ body {
     </button>
     <div class="sidebar-app-links show">
       <a href="/PeerClockMetronome-support/index-ko" class="active">지원</a>
+      <a href="/PeerClockMetronome-support/manual/ko/">매뉴얼</a>
       <a href="/PeerClockMetronome-support/blog/ko/">블로그</a>
       <a href="/PeerClockMetronome-support/privacy-ko">개인정보</a>
     </div>
@@ -511,10 +514,11 @@ body {
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/ChatArchive-support/en/">Support</a>
-      <a href="/ChatArchive-support/en/blog/">Blog</a>
-      <a href="/ChatArchive-support/en/privacy">Privacy</a>
-      <a href="/ChatArchive-support/en/terms">Terms</a>
+      <a href="/ChatArchive-support/ko/">지원 (영어)</a>
+      <a href="/ChatArchive-support/manual/ko/">매뉴얼</a>
+      <a href="/ChatArchive-support/ko/blog/">블로그</a>
+      <a href="/ChatArchive-support/ko/privacy">개인정보 처리방침 (영어)</a>
+      <a href="/ChatArchive-support/ko/terms">약관</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -875,48 +879,13 @@ body {
             <a class="app-store-link" href="https://apps.apple.com/kr/app/peerclock-metronome/id6762972307">App Store에서 다운로드 &rarr;</a>
         </div>
         <div class="content">
-            <p>PeerClock Metronome 지원 페이지에 오신 것을 환영합니다.</p>
-            <p>PeerClock Metronome은 Apple 기기를 위한 피어투피어 동기화 메트로놈입니다. 여러 iPhone 또는 iPad를 동일한 Wi-Fi 네트워크에 연결하면 서버 없이 ±2ms 정밀도의 자동 클록 동기화가 이루어집니다.</p>
-            <hr>
-            <h2>기능</h2>
-            <h3>피어투피어 동기화 (마스터/슬레이브 없음)</h3>
-            <p>모든 기기는 동등한 피어입니다. 지정된 "마스터" 기기가 없으며, 어느 기기든 다른 기기에 영향을 주지 않고 자유롭게 참여하거나 나갈 수 있습니다.</p>
-            <h3>±2ms 클록 동기화</h3>
-            <p>NTP 기반의 4-타임스탬프 알고리즘과 최적 절반 필터링을 사용하여 연결된 모든 기기에서 서브밀리초 정밀도를 달성합니다.</p>
-            <h3>Wi-Fi 전용 (서버 불필요)</h3>
-            <p>동기화는 로컬 Wi-Fi 네트워크에서만 이루어집니다. 외부 서버로 데이터가 전송되지 않으며, 완전히 오프라인으로 작동합니다.</p>
-            <h3>자동 기기 검색</h3>
-            <p>동일한 Wi-Fi 네트워크의 기기는 Bonjour를 통해 자동으로 검색됩니다. IP 수동 입력이나 페어링이 필요 없습니다.</p>
-            <h3>지휘자 경로 애니메이션</h3>
-            <p>화면에 박자 패턴을 시각적으로 추적하는 지휘자 경로 애니메이션으로 연주자가 한눈에 박자를 따라갈 수 있습니다.</p>
-            <h3>다양한 박자 지원</h3>
-            <p>4/4, 3/4, 4/8, 3/8, 6/8, 9/8, 12/8 박자를 지원합니다.</p>
-            <h3>실시간 BPM 변경</h3>
-            <p>템포 변경은 연결된 모든 기기에 즉시 동기화됩니다. 지연이나 드리프트가 없습니다.</p>
-            <hr>
-            <h2>자주 묻는 질문</h2>
-            <h3>여러 기기를 동기화하는 방법은?</h3>
-            <ol>
-                <li>모든 기기를 동일한 Wi-Fi 네트워크에 연결합니다</li>
-                <li>각 기기에서 PeerClock Metronome을 엽니다</li>
-                <li>몇 초 내에 기기가 자동으로 검색됩니다</li>
-                <li>아무 기기에서나 메트로놈을 시작하면 동기화된 모든 기기가 따라갑니다</li>
-            </ol>
-            <h3>지휘자 경로란 무엇인가요?</h3>
-            <p>지휘자 경로는 선택한 박자의 전통적인 지휘 패턴을 애니메이션으로 표시하는 기능입니다. 헤드폰 없이도 연주자가 동기화를 유지할 수 있도록 시각적 참조를 제공합니다.</p>
-            <h3>동기화 정밀도는 어느 정도인가요?</h3>
-            <p>PeerClock Metronome은 일반적인 Wi-Fi 환경에서 ±2ms의 클록 동기화를 달성합니다. 인간의 타이밍 지각은 약 10–20ms이므로, 이 동기화 정밀도는 지각 가능한 차이의 임계값보다 훨씬 낮습니다.</p>
-            <h3>인터넷 없이도 작동하나요?</h3>
-            <p>네. PeerClock Metronome은 로컬 Wi-Fi 네트워크만 사용합니다. 동기화에 인터넷 연결이 필요하지 않습니다.</p>
-            <h3>지원 기기는 무엇인가요?</h3>
-            <p>PeerClock Metronome은 iOS 17.0 이상이 필요합니다. iOS 17 이상을 실행하는 모든 iPhone 또는 iPad를 지원합니다.</p>
-            <hr>
-            <h2>문의</h2>
-            <p>질문이나 피드백이 있으시면 아래로 연락해 주세요:<br>
-            <a href="mailto:hirose@hakaru.net"><strong>hirose@hakaru.net</strong></a></p>
-            <hr>
-            <h2>링크</h2>
-            <ul><li><a href="/PeerClockMetronome-support/privacy-ko">개인정보 처리방침</a></li></ul>
+<p><a href="/PeerClockMetronome-support/manual/ko/"><strong>PeerClock Metronome 전체 매뉴얼 읽기</strong></a></p><section class="card"><h2>버전, 지원 기기 및 매뉴얼 범위</h2><p>PeerClock Metronome은 일정한 클릭음을 재생하고 지휘 동작을 애니메이션으로 보여 줍니다. 기기 한 대로 개인 연습을 하거나, 같은 로컬 Wi-Fi 네트워크에 있는 여러 기기에서 앱을 열어 타이밍과 재생 조작을 공유할 수 있습니다.</p><p>이 매뉴얼은 <strong>PeerClock 0.4.2</strong>를 사용하는 <strong>PeerClock Metronome 1.1.0(빌드 13)</strong>을 다룹니다. 공개 버전은 2026년 11월 15일에 확인했습니다. <strong>iPhone은 iOS 17 이상, iPad는 iPadOS 17 이상</strong>이 필요합니다. <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 페이지</a>에는 Apple Silicon Mac 및 Apple Vision 호환성도 표시되지만, 여기의 터치 조작 설명은 iPhone과 iPad를 기준으로 하며 다른 플랫폼에서 테스트했다는 뜻은 아닙니다.</p><p><a href="/PeerClockMetronome-support/manual/ko/#overview">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><section class="card"><h2>첫 연습 시작하기</h2><ol><li>앱을 열고 기기 음량을 편안한 수준으로 맞춥니다. 다른 기기와 동기화하려면 로컬 네트워크 접근을 허용합니다.</li><li>일정한 템포로 연습하려면 <strong>Auto Tempo</strong>를 열고 <strong>Increase tempo automatically</strong>를 끈 다음 <strong>Done</strong>을 누릅니다.</li><li>큰 BPM 숫자를 위로 드래그하면 빨라지고 아래로 드래그하면 느려집니다. 아래쪽 줄에서 <strong>4/4</strong>를 선택합니다.</li><li>삼각형이 있는 원형 버튼을 누릅니다. 재생 중에는 사각형으로 바뀝니다. 클릭음과 움직이는 점을 따라갑니다.</li><li>사각형을 눌러 멈춥니다. 다른 기기와 연결되어 있다면 그 기기에도 정지 명령이 전송됩니다.</li></ol><p>첫 합주에서는 시작 전에 모든 기기를 연결하고 동기화 표시를 기다린 다음 한 사람이 조작하도록 합니다. 일정 템포 재생은 공유된 박자 격자를 따라 시작하므로, 처음 들리는 클릭이 예비박이나 첫 박이라는 보장은 없습니다. 더 강한 첫 박을 듣고 연주를 시작하세요.</p><p><a href="/PeerClockMetronome-support/manual/ko/#quickstart">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><section class="card"><h2>여러 기기 연결하기</h2><ol><li>모든 기기에 호환 버전을 설치하고 같은 로컬 Wi-Fi 네트워크에 연결합니다.</li><li>각 기기에서 PeerClock Metronome을 열고 로컬 네트워크 접근을 허용합니다. 설정하는 동안 모든 기기는 정지 상태로 둡니다.</li><li>연결 기기 수와 <strong>Synced</strong> 상태가 나타날 때까지 기다립니다. 숫자는 발견한 다른 기기 수이며 이름이 표시되는 참가자 명단이 아닙니다.</li><li>조작할 기기에서 템포, 박자표 및 Auto Tempo를 설정하고 Play를 누릅니다.</li><li>연습에 들어가기 전에 모든 기기가 의도한 패턴을 재생하는지 확인합니다.</li></ol><p>Bonjour를 통해 자동으로 기기를 찾습니다. 앱에는 Host, Join, 페어링 코드, IP 입력란 또는 방 선택 기능이 없습니다. 내부 시계 기준은 자동으로 선택되므로 연주자가 마스터 기기를 지정할 필요가 없습니다.</p><p>재생을 시작한 뒤 들어온 기기는 현재의 재생 상태와 설정을 즉시 받는다고 보장할 수 없습니다. 확실하게 참여시키려면 전체를 멈추고 동기화를 기다린 뒤 원하는 설정을 확인하고 조작 기기에서 다시 시작하세요. 재접속 후에도 전체 상태를 다시 확인하는 것이 좋습니다.</p><p><a href="/PeerClockMetronome-support/manual/ko/#connect">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><section class="card"><h2>Auto Tempo로 연습하기</h2><p>Auto Tempo는 완전한 마디가 지난 뒤 속도를 올리고, 목표에 도달하면 그 템포를 유지합니다. 재생을 멈추고 <strong>Auto Tempo</strong>를 누른 다음 <strong>Increase tempo automatically</strong>를 켭니다. 증감 버튼으로 다음을 설정합니다.</p><p><a href="/PeerClockMetronome-support/manual/ko/#auto-tempo">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><section class="card"><h2>동기화 상태 읽기</h2><ul><li><strong>Standalone:</strong> 현재 집계된 다른 기기가 없으며 로컬 연습은 계속 가능합니다.</li><li><strong>Searching…:</strong> 다른 기기는 있지만 앱이 현재 동기화된 시계 상태를 표시하지 않습니다.</li><li><strong>Synced:</strong> 시계 라이브러리가 동기화 상태를 보고합니다.</li></ul><p>옆의 <strong>±x.xms</strong> 숫자는 주의해서 읽어야 합니다. 이 버전에서는 <strong>보고된 네트워크 왕복 지연의 절반</strong>으로 계산합니다. 실제로 들리는 클릭 사이의 차이를 측정한 값도, 남아 있는 시계 오프셋의 측정값도, 보장되는 오차 한계도 아닙니다.</p><p>자동 선택된 기준 기기는 기준 품질이 왕복 지연 0으로 보고되므로 <strong>±0.0ms</strong>를 표시할 수 있습니다. 모든 스피커가 완벽히 맞았다는 뜻은 아닙니다. 상태와 기기 수로 연결 상황을 진단한 다음 실제 출력을 들어 보세요. 기기가 참여하거나 나가거나 재접속할 때는 잠시 안정화를 기다린 뒤 전체 재생을 다시 시작해야 할 수 있습니다.</p><p><a href="/PeerClockMetronome-support/manual/ko/#sync-status">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><section class="card"><h2>광고, 권한 및 개인정보</h2><p>검토한 출시 버전은 광고가 포함된 무료 앱입니다. 구매 화면, 구독, Restore Purchases 또는 유료 광고 제거 기능은 없습니다. 광고가 준비된 경우 <strong>로컬에서 시작한 정지 3회마다</strong> 전면 광고가 나올 수 있습니다. 원격으로 받은 정지는 해당 횟수에 포함되지 않습니다. 광고 제공 상황은 달라질 수 있습니다.</p><h3>데이터 처리 주체와 목적</h3><p>Hakaru Hirose는 앱을 제공하며 광고, 사용 분석 및 안정성 진단에 Google 서비스를 사용합니다. <strong>Google AdMob</strong>은 광고 제공과 측정을 위해 기기 식별자, 광고 상호작용, IP 주소 및 진단 정보를 처리할 수 있습니다. <strong>Firebase Analytics</strong>는 사용 이벤트와 앱·기기 정보를 처리하며, 앱은 추적 승인 상태와 광고·동의 오류도 기록합니다. <strong>Firebase Crashlytics</strong>는 문제 조사를 위해 충돌 보고서와 관련 설치·기기 정보를 처리합니다. 이 서비스들은 외부 서버와 통신할 수 있습니다. 시계 동기화가 로컬이라고 앱 전체가 인터넷을 쓰지 않는 것은 아닙니다.</p><h3>권한과 선택</h3><p><strong>로컬 네트워크</strong> 권한은 주변 기기 탐색과 통신을 위한 것입니다. <strong>앱 추적 투명성(ATT)</strong> 요청은 추적과 광고 식별자(IDFA) 접근에 관한 것입니다. 거절해도 메트로놈을 사용할 수 있습니다. 설정 → 개인정보 보호 및 보안 → 추적에서 변경할 수 있으며, 추적 거부는 모든 광고와 진단을 끄는 스위치가 아닙니다. <a href="https://support.apple.com/en-la/102420">Apple의 추적 제어 안내</a>를 참고하세요.</p><p>앱은 <strong>Google User Messaging Platform(UMP)</strong>을 통해 동의 정보를 요청하고 필요할 때 동의 양식을 표시하도록 요청합니다. 표시되는 선택지는 서비스의 지역 및 계정 설정에 따라 다릅니다. 양식이 나타나면 응답하세요. 버전 <strong>1.1.0</strong>에는 해당 양식을 다시 여는 별도의 앱 내 개인정보 옵션 화면이 없으며 분석이나 충돌 보고를 끄는 스위치도 없습니다. 필요한 선택지에 접근할 수 없으면 지원에 문의하세요. <a href="https://developers.google.com/admob/ios/privacy">UMP 문서</a>는 서비스를 설명하지만, 권장 설정이 모두 앱에 제공되는 것은 아닙니다.</p><h3>위치, 오디오 및 저장 설정</h3><p>앱은 GPS·위치 권한을 요청하거나 마이크 오디오를 녹음하지 않습니다. 다만 광고 서비스는 IP 주소에서 대략적인 위치를 추정할 수 있습니다. Auto Tempo 설정은 로컬에 저장되며, 동기화는 로컬 기기 사이에서 녹음이 아닌 타이밍과 조작 데이터를 교환합니다. 지원에 이메일을 보내면 요청 처리를 위해 수신자가 메시지와 이메일 주소를 볼 수 있습니다.</p><p><a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads 데이터 공개</a>, <a href="https://firebase.google.com/support/privacy">Firebase 개인정보 안내</a> 및 <a href="https://apps.apple.com/us/app/peerclock-metronome/id6762972307">App Store 개인정보 공개</a>를 확인하세요. 이 안내서는 앱별 보존 기간을 정하거나 앱 삭제 시 데이터 삭제를 보장하지 않습니다. 개인정보, 보존 또는 삭제 관련 질문은 <a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a>으로 문의하세요.</p><p><a href="/PeerClockMetronome-support/manual/ko/#ads-privacy">PeerClock Metronome 전체 매뉴얼 읽기</a></p></section><p><a href="mailto:hirose@hakaru.net">hirose@hakaru.net</a></p>
+
+
+
+
+
+
         </div>
         <footer>
             <p>&copy; 2026 hakaru. All rights reserved.</p>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual do usuário do ChatArchive | hakaru</title>
+    <meta name="description" content="Guia prático do ChatArchive para Mac: importação do LINE e iCloud, substituição de histórico, leitura, pesquisa, exportação de texto, backups locais, privacidade e funções específicas da versão 2.0.">
+    <meta property="og:title" content="Manual do usuário do ChatArchive">
+    <meta property="og:description" content="Guia prático do ChatArchive para Mac: importação do LINE e iCloud, substituição de histórico, leitura, pesquisa, exportação de texto, backups locais, privacidade e funções específicas da versão 2.0.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/ChatArchive-support/manual/pt-BR/">
+    <meta property="og:image" content="https://hakaru.net/assets/chatarchive-icon.png">
+    <link rel="canonical" href="https://hakaru.net/ChatArchive-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/ChatArchive-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/ChatArchive-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/ChatArchive-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/ChatArchive-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/ChatArchive-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/ChatArchive-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/ChatArchive-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/ChatArchive-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/ChatArchive-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/ChatArchive-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/ChatArchive-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/ChatArchive-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/ChatArchive-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">Conteúdo</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-pt-BR">Suporte</a>
+      <a href="/AnalogRhythmKing-support/manual/pt-BR/">Manual</a>
+      <a href="/AnalogRhythmKing-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-pt-BR">Suporte</a>
+      <a href="/M2MX12-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-pt-BR">Suporte</a>
+      <a href="/EraVerb-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-pt-BR">Suporte</a>
+      <a href="/P73-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-pt-BR">Suporte</a>
+      <a href="/TwinFET-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-pt-BR">Suporte</a>
+      <a href="/M2DX-Core-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-support/index-pt-BR">Suporte</a>
+      <a href="/M2DX-support/manual/pt-BR/">Manual</a>
+      <a href="/M2DX-support/changelog-pt-BR">Histórico de alterações</a>
+      <a href="/M2DX-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-pt-BR">Suporte</a>
+      <a href="/PeerClockMetronome-support/manual/pt-BR/">Manual</a>
+      <a href="/PeerClockMetronome-support/blog/pt-BR/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Suporte (inglês)</a>
+      <a href="/MyEQ-support/manual/pt-BR/">Manual</a>
+      <a href="/MyEQ-support/privacy">Privacidade (inglês)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Suporte (inglês)</a>
+      <a href="/Tonrad-support/manual/pt-BR/">Manual</a>
+      <a href="/Tonrad-support/privacy">Privacidade (inglês)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/ChatArchive-support/pt-BR/">Suporte (inglês)</a>
+      <a href="/ChatArchive-support/manual/pt-BR/" class="active">Manual</a>
+      <a href="/ChatArchive-support/pt-BR/blog/">Blog</a>
+      <a href="/ChatArchive-support/pt-BR/privacy">Privacidade (inglês)</a>
+      <a href="/ChatArchive-support/pt-BR/terms">Termos</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-pt-BR">Suporte</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-pt-BR">Suporte</a>
+      <a href="/BopBot-support/manual/pt-BR/">Manual</a>
+      <a href="/BopBot-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/ChatArchive-support/manual/en/" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/ChatArchive-support/manual/ja/" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/ChatArchive-support/manual/de/" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/ChatArchive-support/manual/es/" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/ChatArchive-support/manual/fr/" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/ChatArchive-support/manual/it/" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/ChatArchive-support/manual/ko/" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/ChatArchive-support/manual/nl/" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <span class="sidebar-lang-btn active" data-lang="pt-BR">PT-BR</span>
+    <a href="/ChatArchive-support/manual/sv/" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/ChatArchive-support/manual/zh-Hant/" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/chatarchive-icon.png" width="76" height="76" alt=""><div><h1>Manual do usuário do ChatArchive</h1><p class="manual-subtitle">Importar e ler históricos do LINE · Pesquisar e exportar · Backups e privacidade</p></div></div>
+    <p class="manual-updated">Verificado em 15 de novembro de 2026 · Lançamento confirmado 1.0.0 (1) · Funções da interface 2.0 identificadas separadamente</p>
+    <nav class="manual-languages" aria-label="Idioma do manual"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/ChatArchive-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/ChatArchive-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/ChatArchive-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/ChatArchive-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/ChatArchive-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/ChatArchive-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/ChatArchive-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/ChatArchive-support/manual/nl/">Nederlands</a><span class="sidebar-lang-btn active" data-lang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</span><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/ChatArchive-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/ChatArchive-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Conteúdo</h2><ol><li><a href="#overview">Leia primeiro: versão e finalidade</a></li>
+<li><a href="#setup">Instalar e escolher a origem</a></li>
+<li><a href="#mac-import">Importar do LINE para Mac na versão 1.0.0</a></li>
+<li><a href="#icloud-import">Importar um backup do LINE para iPhone no iCloud</a></li>
+<li><a href="#scope">O que o histórico importado contém</a></li>
+<li><a href="#refresh">Atualizar o histórico: substituir, sem acumular</a></li>
+<li><a href="#browse">Ler conversas e mensagens antigas</a></li>
+<li><a href="#search">Pesquisar no texto de todas as mensagens</a></li>
+<li><a href="#media">Imagens, anexos, stickers e reações</a></li>
+<li><a href="#storage">Onde o arquivo é armazenado</a></li>
+<li><a href="#text-export">Salvar cópias em texto na versão 1.0.0</a></li>
+<li><a href="#extended-export">HTML e Markdown: somente na interface da versão 2.0</a></li>
+<li><a href="#license">Comprar e ativar uma licença de exportação</a></li>
+<li><a href="#privacy">Armazenamento local e atividade de rede</a></li>
+<li><a href="#backup-delete">Fazer backup e remover dados</a></li>
+<li><a href="#troubleshooting">Solução de problemas e informações para o suporte</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Leia primeiro: versão e finalidade </h2>
+<p>O ChatArchive é um aplicativo para Mac que permite guardar uma cópia legível das conversas do LINE. Ele importa o histórico disponível para seu próprio banco de dados local, exibe conversas e pesquisa textos de mensagens. Ele não restaura conversas no LINE, não transfere contas do LINE, não envia mensagens e não recupera conteúdo ausente na origem.</p><p>Este manual foi verificado em 15 de novembro de 2026. O download de lançamento verificado é a versão <strong>1.0.0 (build 1), que requer macOS 14.0 ou posterior</strong>. Foram analisados os metadados da imagem de disco e o código-fonte correspondente. A <a href="https://hakaru.gumroad.com/l/chatarchive">página atual na Gumroad</a> não identifica a versão do aplicativo entregue; portanto, não foi confirmado que seu download seja idêntico a esse lançamento.</p><p>O código separado da versão <strong>2.0.0 (build 2)</strong> acrescenta funções descritas abaixo apenas onde estiver marcado <strong>“Se o aplicativo tiver a interface da versão 2.0”.</strong> Um número de versão em desenvolvimento não comprova que essas funções acompanhem uma compra. Confira a versão instalada em Obter Informações no Finder e siga os controles disponíveis no seu aplicativo.</p><p>A interface do aplicativo inclui inglês, japonês, chinês tradicional e tailandês. Os idiomas deste manual são independentes. As referências ao código descrevem a análise feita pelo desenvolvedor em um repositório privado; não são links públicos para baixar o código.</p>
+</section>
+<section id="setup" aria-labelledby="setup-title">
+<h2 id="setup-title">Instalar e escolher a origem </h2>
+<ol><li>Obtenha o ChatArchive pelo canal oficial de compra ou download. Se ele vier em um DMG, abra o arquivo e copie o ChatArchive para Aplicativos antes de iniciá-lo.</li><li>Reserve espaço livre no Mac para o banco importado, a extração temporária e eventuais exportações. Uma quantidade fixa de armazenamento não atende a todos os históricos.</li><li>Escolha entre o banco local do LINE para Mac e um backup compatível do LINE para iPhone no iCloud. Eles podem conter períodos e quantidades de mensagens diferentes.</li><li>Antes de substituir uma biblioteca existente do ChatArchive, siga <a href="#backup-delete">Fazer backup e remover dados</a>.</li></ol><p>Para importar do Mac, instale o LINE para Mac, entre na conta pelo próprio LINE e mantenha-o aberto. Para importar do iCloud, o backup correspondente deve estar acessível pela conta do iCloud Drive do Mac. O ChatArchive não oferece uma tela própria de login do LINE ou da Conta Apple.</p><p>O aplicativo analisado é exclusivo para macOS. Ele não lê backups do Android/Google Drive, backups comuns do iPhone feitos pelo Finder nem arquivos ZIP arbitrários. A compatibilidade com todos os formatos futuros de banco de dados ou backup do LINE não é garantida.</p>
+</section>
+<section id="mac-import" aria-labelledby="mac-import-title">
+<h2 id="mac-import-title">Importar do LINE para Mac na versão 1.0.0 </h2>
+<ol><li>Abra o LINE para Mac e conclua o login. Confirme que a conta desejada está ativa e deixe o LINE aberto.</li><li>Se solicitado, permita o ChatArchive em Ajustes do Sistema do macOS → Privacidade e Segurança → Ferramentas de Desenvolvedor. Essa permissão se refere ao acesso ao processo do LINE em execução.</li><li>No ChatArchive, escolha <strong>Import from LINE</strong> e depois <strong>Import from LINE for Mac</strong>.</li><li>Aguarde a detecção, a obtenção da chave, a leitura do banco e a importação. Evite trocar de conta ou fechar o LINE durante a operação.</li><li>Confira as contagens ao concluir, feche a janela e examine algumas conversas e datas.</li></ol><p>O aplicativo lê o banco local criptografado do LINE com uma chave obtida do processo em execução. O banco de origem é aberto apenas para leitura. Ele não solicita aos servidores do LINE todas as conversas antigas. Quando há vários bancos candidatos, a detecção automática prioriza um banco maior; não há um seletor comum de contas nessa tela.</p><p>Acesso Total ao Disco não substitui a permissão de Ferramentas de Desenvolvedor. Se o acesso ou a descriptografia falhar após conceder a permissão indicada, procure o suporte em vez de desativar proteções do sistema. <strong>Na interface da versão 2.0, a importação do Mac fica oculta como função para desenvolvedores.</strong> Use o caminho normal pelo iCloud nessa versão.</p>
+</section>
+<section id="icloud-import" aria-labelledby="icloud-import-title">
+<h2 id="icloud-import-title">Importar um backup do LINE para iPhone no iCloud </h2>
+<p>Este caminho está disponível na interface analisada da versão 1.0.0 e é o caminho normal na versão 2.0. Ele lê o <code>archive.zip</code> específico do LINE, não um backup completo do dispositivo no iCloud.</p><ol><li>Confirme que o LINE no iPhone tem um Backup Padrão concluído e adequado. Siga as <a href="https://help.line.me/line/ios/?contentId=20023473&amp;lang=en">instruções oficiais de backup do LINE</a> para a interface atual do telefone.</li><li>No Mac, use a Conta Apple que pode acessar esse backup e ative o iCloud Drive. Disponibilize tempo e uma conexão com a internet para o arquivo ficar acessível.</li><li>Escolha <strong>Import from LINE → Import from iCloud Backup</strong>.</li><li>Aguarde o download, a extração e a importação. Confira contagens, nomes e datas. Interfaces posteriores também mostram <strong>Imported from</strong>.</li></ol><p>A detecção procura em <code>~/Library/Mobile Documents/iCloud~com~linecorp~line/Data-*/Backup/archive.zip</code>. Ela usa o primeiro backup correspondente encontrado, sem uma tela para escolher data ou conta; não promete selecionar o mais recente. O LINE para Mac não precisa estar aberto nesse caminho, e o leitor do iCloud não usa a permissão de Ferramentas de Desenvolvedor.</p>
+</section>
+<section id="scope" aria-labelledby="scope-title">
+<h2 id="scope-title">O que o histórico importado contém </h2>
+<p>O arquivo reflete os registros presentes na origem selecionada no momento da importação. Uma importação bem-sucedida não comprova que todas as conversas já trocadas pela conta estejam incluídas. Mensagens apagadas anteriormente, históricos antigos indisponíveis e mídias ausentes na origem não podem ser reconstruídos.</p><p>O leitor do iCloud processa conversas individuais, conversas com várias pessoas, grupos, contas oficiais e registros do Keep Memo quando as tabelas esperadas estão presentes. Na falta de informações de contato, nomes podem ser substituídos por identificadores ou rótulos genéricos. Tipos de mensagem desconhecidos podem aparecer como um número de tipo.</p><p>As cópias do Mac e do iCloud são origens independentes. O telefone pode mostrar um histórico que nunca foi armazenado no Mac. Importar a outra origem substitui a biblioteca atual do ChatArchive; não combina a cobertura das duas.</p><p>Guarde o backup de origem separadamente quando a integridade do conjunto for importante. O aplicativo lê campos selecionados, não todas as tabelas ou todos os metadados do LINE. Em particular, a extração de reações na versão 2.0 não incorpora arquivos de diário do SQLite presentes no backup; por isso, não há garantia de que todas as reações sejam incluídas.</p>
+</section>
+<section id="refresh" aria-labelledby="refresh-title">
+<h2 id="refresh-title">Atualizar o histórico: substituir, sem acumular </h2>
+<p><strong>Cada importação do Mac/iCloud substitui toda a biblioteca de contatos, conversas e mensagens do ChatArchive.</strong> Isso vale para as duas versões analisadas. Guarde uma cópia separada antes de importar uma origem mais recente, mais antiga ou diferente. Não há modo de mesclagem, download incremental nem sincronização automática agendada.</p><ol><li>Faça backup da biblioteca local atual e salve as cópias de leitura necessárias.</li><li>Confirme a origem desejada e o período do backup.</li><li>Execute novamente o mesmo procedimento de importação.</li><li>Compare as datas mais antiga e mais recente, as conversas importantes e as contagens finais com o esperado.</li></ol><p>A importação ocorre em uma única transação de banco de dados: um erro de banco durante essa transação reverte suas alterações. Essa proteção é útil, mas não substitui seu backup.</p><p>Reimportar uma origem não acrescenta intencionalmente uma segunda cópia de cada mensagem existente. A biblioteca é reconstruída a partir da origem; registros já duplicados nela ainda podem aparecer. Uma origem menor pode produzir uma biblioteca menor e remover históricos que antes estavam visíveis.</p>
+</section>
+<section id="browse" aria-labelledby="browse-title">
+<h2 id="browse-title">Ler conversas e mensagens antigas </h2>
+<p>A barra lateral esquerda contém controles de importação, exportação e licença. A coluna central lista as conversas pela data da última mensagem. Selecione uma conversa para lê-la na coluna direita. O campo de busca da lista filtra <strong>nomes de conversas</strong>; ele não pesquisa o corpo das mensagens.</p><p>Uma conversa carrega inicialmente as <strong>200</strong> mensagens mais recentes. Use <strong>Load older messages</strong> no alto para carregar páginas anteriores, com até <strong>200</strong> mensagens por vez. Ver apenas um período recente na tela não significa, portanto, que mensagens antigas já importadas estejam ausentes.</p><p>As mensagens são agrupadas por data e distinguem suas mensagens das de outras pessoas. É possível selecionar e copiar texto. Na interface da versão 2.0, links detectados podem abrir o navegador padrão ou o aplicativo associado. Abrir um link é uma ação separada da leitura do arquivo local.</p><p>Se uma data parecer incorreta, preserve a origem e informe a versão e o caminho de importação. O código posterior à versão 1.0.0 altera a conversão de datas do iCloud; por isso, confira as datas do lançamento original antes de confiar em uma exportação.</p>
+</section>
+<section id="search" aria-labelledby="search-title">
+<h2 id="search-title">Pesquisar no texto de todas as mensagens </h2>
+<ol><li>Clique na lupa da barra de ferramentas para abrir <strong>Full-Text Search</strong>.</li><li>Digite uma ou mais palavras e pressione Return. Na implementação analisada, a busca é executada quando o campo é confirmado.</li><li>Leia o remetente, a data e a prévia da mensagem. Escolha um resultado para abrir a conversa correspondente.</li></ol><p>A pesquisa abrange o texto armazenado e os nomes dos remetentes, usando um índice de palavras e prefixos. Ela retorna no máximo os <strong>100</strong> resultados mais recentes. Não é uma busca irrestrita por trechos em qualquer posição: frases parciais, pontuação e idiomas sem espaços entre palavras podem se comportar de modo inesperado. Tente uma expressão mais longa e característica ou outro termo.</p><p>Escolher um resultado seleciona a conversa, não a mensagem exata encontrada. Em resultados antigos, use a data como referência e carregue páginas anteriores. A busca não examina fotos, gravações de voz, conteúdo de anexos nem texto desenhado em stickers. Um resultado vazio não comprova que o backup de origem não contenha a conversa.</p>
+</section>
+<section id="media" aria-labelledby="media-title">
+<h2 id="media-title">Imagens, anexos, stickers e reações </h2>
+<p>Reconhecer um tipo de mensagem é diferente de preservar seu anexo. Na versão 1.0.0, fotos, vídeos, áudios, arquivos, locais, contatos e stickers são representados por texto ou rótulos de tipo. A interface analisada não tem download geral de anexos, visualizador de fotos nem reprodutor de áudio/vídeo.</p><h3>Se o aplicativo tiver a interface da versão 2.0</h3><p>Para registros de stickers compatíveis do iCloud, o aplicativo lê seus identificadores e solicita um PNG à CDN de stickers do LINE. Imagens carregadas com sucesso ficam em cache local. Essa é uma representação estática; animação, som, stickers indisponíveis e todos os formatos mais novos não são garantidos.</p><p>Imagens já armazenadas em cache podem ser reutilizadas offline; imagens ainda não armazenadas exigem uma solicitação de rede bem-sucedida. Um marcador pode indicar metadados ausentes, falta de conexão ou imagem indisponível na CDN. Importar o histórico não baixa antecipadamente todos os stickers.</p><p>Tipos de reação compatíveis podem aparecer como emojis e contagens a partir do banco suplementar do iCloud. Esses indicadores não são um registro completo de quem reagiu ou quando. Nem stickers nem reações tornam o ChatArchive um backup completo de mídia.</p>
+</section>
+<section id="storage" aria-labelledby="storage-title">
+<h2 id="storage-title">Onde o arquivo é armazenado </h2>
+<p>O histórico importado é salvo automaticamente em <code>~/Library/Application Support/ChatArchive/chatarchive.sqlite</code>. A importação normal não pede que você escolha o local do banco. O banco pode ter arquivos auxiliares <code>-wal</code> e <code>-shm</code>. Mantenha a pasta inteira ao fazer backup.</p><p>Na versão 2.0, os PNGs de stickers baixados ficam em <code>~/Library/Application Support/ChatArchive/StickerCache/</code>. As exportações vão para o local escolhido na janela de salvamento; são cópias separadas e não são atualizadas em uma nova importação.</p><p>O banco local e as exportações para leitura não têm criptografia própria do ChatArchive nem senha do aplicativo. Proteja-os com a conta do Mac, a criptografia do dispositivo e um destino adequado para backup. Um arquivo salvo em uma pasta sincronizada com a nuvem pode ser enviado por esse serviço.</p><p>O banco do aplicativo é uma biblioteca de trabalho, não um pacote de restauração compatível com o LINE. Referências antigas a <code>.chatarchive</code> ou <code>.linearchive</code> não comprovam a existência de um comando de importação/restauração nas interfaces de Mac analisadas.</p>
+</section>
+<section id="text-export" aria-labelledby="text-export-title">
+<h2 id="text-export-title">Salvar cópias em texto na versão 1.0.0 </h2>
+<h3>Uma conversa</h3><p>Selecione uma conversa e escolha <strong>Save as Text</strong> acima das mensagens. Defina o nome e o destino. Essa operação não exige uma licença de exportação ativada e lê todas as mensagens importadas daquela conversa, incluindo páginas antigas ainda não exibidas.</p><h3>Todas as conversas</h3><p>Escolha <strong>Export All</strong> na barra lateral. É necessária uma licença ativada. A interface analisada da versão 1.0.0 pede uma pasta de destino e grava um arquivo de texto para cada conversa não vazia. Na interface da versão 2.0, a mesma operação salva <code>chatarchive-export.tar.gz</code>, contendo arquivos de texto por conversa.</p><p>A saída em texto contém datas, horários, nomes de remetentes e o texto armazenado. Ela não incorpora anexos binários, imagens de stickers ou indicadores de reações. Uma mensagem não textual sem texto armazenado pode, assim, deixar pouco conteúdo útil.</p><p>Examine as conversas importantes exportadas antes de confiar nelas. Os nomes das conversas viram nomes de arquivos: nomes iguais, ou que fiquem iguais após substituir caracteres proibidos ou encurtar nomes longos, podem colidir. Salve essas conversas separadamente, usando nomes de arquivos distintos.</p>
+</section>
+<section id="extended-export" aria-labelledby="extended-export-title">
+<h2 id="extended-export-title">HTML e Markdown: somente na interface da versão 2.0 </h2>
+<p><strong>Atenção ao HTML:</strong> Na implementação analisada da versão 2.0, fragmentos de HTML no texto das conversas podem afetar o comportamento da página exportada. Use texto ou Markdown até que uma versão corrigida seja confirmada. Os passos abaixo descrevem a interface, não recomendam abrir uma exportação HTML dessa implementação.</p><p>Esses formatos estão presentes no código analisado da versão 2.0, não na interface do lançamento verificado 1.0.0. Se o aplicativo tiver o botão <strong>Export Chat</strong> na barra de ferramentas, selecione uma conversa primeiro, abra o botão e escolha formato e abrangência.</p><div class="table-wrap" role="region" aria-labelledby="export-formats" tabindex="0"><table><caption id="export-formats">Opções de exportação da versão 2.0</caption><thead><tr><th scope="col">Opção</th><th scope="col">Licença</th><th scope="col">Saída</th></tr></thead><tbody><tr><th scope="row">Conversa selecionada → HTML</th><td>Não exige licença ativada</td><td>Um arquivo HTML legível no navegador</td></tr><tr><th scope="row">Todas as conversas → HTML</th><td>Exige licença ativada</td><td>Um arquivo HTML com lista de conversas</td></tr><tr><th scope="row">Markdown (ZIP)</th><td>Exige licença ativada</td><td>Todas as conversas em Markdown e arquivos de stickers em cache</td></tr></tbody></table></div><p>O padrão do HTML é All Chats. Para exportar apenas uma conversa, escolha explicitamente <strong>Selected Chat</strong>. Salve o arquivo e aguarde a conclusão; o aplicativo abre o resultado com o programa associado.</p><p>O HTML incorpora somente imagens de stickers já presentes no cache. Se precisar delas, visualize os stickers relevantes com sucesso antes de exportar. Seu campo de busca filtra nomes de conversas, não o texto de todas as mensagens, e JavaScript é necessário para exibir as conversas.</p><p>O Markdown ZIP inclui a pasta <code>attachments/stickers/</code> e referências de imagem no estilo do Obsidian. Leitores genéricos de Markdown podem exigir ajustes de caminho ou sintaxe. Confira imagens ausentes e arquivos de conversas com o mesmo nome. Nenhum formato é uma cópia completa de preservação ou um arquivo de importação para o LINE. Guarde também o backup do banco.</p>
+</section>
+<section id="license" aria-labelledby="license-title">
+<h2 id="license-title">Comprar e ativar uma licença de exportação </h2>
+<p>No código analisado, ler, pesquisar e salvar uma conversa em texto não exige ativação de exportação. A exportação de texto em lote exige ativação. As regras adicionais dos formatos da versão 2.0 estão listadas acima. Comprar e ativar com sucesso são etapas diferentes.</p><ol><li>Consulte os detalhes de compra e entrega na <a href="https://hakaru.gumroad.com/l/chatarchive">página atual do produto</a>.</li><li>Abra <strong>Activate License</strong> no ChatArchive e insira a chave compatível fornecida para o produto.</li><li>Ative com conexão à internet e confira o estado resultante. Guarde o recibo de compra de forma privada.</li></ol><p>As duas versões analisadas usam o serviço de licenças da Lemon Squeezy, embora o link de compra posterior aponte para a Gumroad. Um recibo da Gumroad, por si só, não comprova a compatibilidade da chave. Se a chave estiver ausente ou for rejeitada, contate o suporte com a referência do pedido; não compre novamente apenas para tentar resolver o problema.</p><p>License Management permite desativar a licença desta instalação. Isso não exclui conversas nem emite reembolso. A desativação depende de uma resposta bem-sucedida do serviço.</p>
+</section>
+<section id="privacy" aria-labelledby="privacy-title">
+<h2 id="privacy-title">Armazenamento local e atividade de rede </h2>
+<p><strong>Processar conversas localmente não significa que o aplicativo nunca se comunique.</strong> Os comportamentos a seguir estão presentes na implementação analisada.</p><div class="table-wrap" role="region" aria-labelledby="privacy-network" tabindex="0"><table><caption id="privacy-network">Quando pode haver comunicação</caption><thead><tr><th scope="col">Operação</th><th scope="col">Comportamento</th></tr></thead><tbody><tr><th scope="row">Leitura e pesquisa de conversas</th><td>As conversas armazenadas são processadas no Mac; nenhum destino de upload de conversas foi encontrado nos caminhos analisados.</td></tr><tr><th scope="row">Importação do iCloud</th><td>O macOS pode baixar o backup do LINE do iCloud. A Conta Apple e a atividade do iCloud são gerenciadas pelos serviços da Apple.</td></tr><tr><th scope="row">Serviço de licenças</th><td>A ativação envia a chave e o nome do computador Mac à Lemon Squeezy. A validação/desativação envia a chave e o identificador da instância de ativação.</td></tr><tr><th scope="row">Carregamento de stickers na versão 2.0</th><td>As solicitações à CDN do LINE identificam o sticker; o servidor também recebe dados comuns de conexão, como o endereço IP.</td></tr><tr><th scope="row">Links e arquivos salvos</th><td>Abrir sites, comprar o aplicativo ou salvar em pastas sincronizadas pode envolver outros serviços.</td></tr></tbody></table></div><p>Uma instalação ativada pode validar a licença ao iniciar após <strong>7</strong> dias desde a ativação ou a última validação bem-sucedida. Na implementação analisada, falhas de rede mantêm o estado anterior de ativação; uma resposta de licença inválida pode desabilitar exportações pagas. Isso não é uma promessa de ativação offline permanente.</p><p>As credenciais de licença ficam nas Chaves do macOS. O banco de conversas é um arquivo local separado. Textos já importados podem ser lidos sem obter a origem novamente, mas o primeiro download do iCloud, a ativação e stickers da versão 2.0 ainda não armazenados podem precisar de conexão.</p>
+</section>
+<section id="backup-delete" aria-labelledby="backup-delete-title">
+<h2 id="backup-delete-title">Fazer backup e remover dados </h2>
+<h3>Antes de importar novamente ou mudar de Mac</h3><ol><li>Encerre completamente o ChatArchive.</li><li>No Finder, use Ir → Ir para a Pasta e digite <code>~/Library/Application Support/ChatArchive/</code>.</li><li>Copie toda a pasta para um destino protegido, identificado pela data. Inclua arquivos auxiliares do banco e o cache de stickers.</li><li>Guarde separadamente exportações importantes para leitura e o backup original. Confirme que a cópia de backup existe antes de continuar.</li></ol><p>Isso preserva os arquivos locais; a interface analisada não tem assistente oficial de restauração de banco nem mesclagem de bibliotecas. Para migração ou recuperação, mantenha a cópia original intacta e consulte o suporte sobre compatibilidade de versões. A licença também pode precisar ser ativada separadamente em outro Mac.</p><h3>Remover o histórico local</h3><p>A interface analisada não tem comando para excluir conversas individualmente. Após encerrar o aplicativo e fazer o backup necessário, você pode mover a pasta ChatArchive em Application Support para o Lixo pelo Finder. Quando os arquivos forem efetivamente apagados, a biblioteca de trabalho local será removida; uma inicialização posterior criará uma biblioteca vazia. Remova exportações e cópias de backup separadamente, se desejar.</p><p>Apagar apenas o aplicativo não necessariamente remove os arquivos de Application Support ou a licença nas Chaves. Remover arquivos do ChatArchive não apaga as conversas originais do LINE nem o backup do iCloud. Lixo, backups do sistema e cópias na nuvem têm suas próprias regras de retenção; isso não é uma função de apagamento seguro.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">Solução de problemas e informações para o suporte </h2>
+<div class="table-wrap" role="region" aria-labelledby="troubleshooting-table" tabindex="0"><table><caption id="troubleshooting-table">Sintomas e verificações</caption><thead><tr><th scope="col">Sintoma</th><th scope="col">O que verificar</th></tr></thead><tbody><tr><th scope="row">Dados do Mac não encontrados</th><td>Confirme que o LINE para Mac foi instalado e usado com a conta desejada. O formato atual de armazenamento do LINE pode ser diferente do compatível.</td></tr><tr><th scope="row">Erro de permissão/chave/descriptografia</th><td>Mantenha o LINE aberto e conectado à conta. Verifique a permissão de Ferramentas de Desenvolvedor. Se a falha continuar, informe o erro exato e as versões.</td></tr><tr><th scope="row">Backup do iCloud não encontrado</th><td>Verifique um backup concluído do LINE para iPhone, a Conta Apple do Mac e a disponibilidade do iCloud Drive. Um backup genérico do dispositivo não basta.</td></tr><tr><th scope="row">Falha ao extrair o arquivo</th><td>Espere o arquivo do iCloud baixar por completo e verifique o espaço livre. Diferenças de formato, inclusive arquivos suplementares ausentes na versão 2.0, também podem causar falhas.</td></tr><tr><th scope="row">Mensagens antigas parecem ausentes</th><td>Carregue páginas anteriores; examine a cobertura da origem e o backup selecionado. Importar repetidamente não recupera histórico inexistente.</td></tr><tr><th scope="row">Datas parecem incorretas</th><td>Preserve a origem e contate o suporte. O código da versão 1.0.0 usa uma conversão antiga de datas do iCloud.</td></tr><tr><th scope="row">A pesquisa não encontra nada</th><td>Pressione Return, altere os termos e lembre-se do limite de 100 resultados e da correspondência por palavra/prefixo. O filtro de nomes de conversas é outro campo.</td></tr><tr><th scope="row">A exportação continua bloqueada</th><td>Verifique a ativação e a entrega de uma chave compatível. Para HTML gratuito na versão 2.0, selecione uma conversa e escolha explicitamente Selected Chat.</td></tr><tr><th scope="row">Importação de texto ou HTML não aparece</th><td>O material de divulgação pode descrever outra versão. A interface principal analisada de 1.0.0/2.0 não tem comando de importação de texto; HTML/Markdown são exclusivos da versão 2.0.</td></tr></tbody></table></div><p>Contate <a href="mailto:hakaruapps-contact@hakaru.net">hakaruapps-contact@hakaru.net</a> informando versão/build do ChatArchive, versão do macOS, versão do LINE quando relevante, caminho de importação, erro exato e passos breves para reproduzir. Diga se o problema ocorre antes ou depois da conclusão da importação.</p><p>Comece com uma descrição, sem enviar banco de conversas, ZIP de backup, chave de licença ou capturas privadas. Se exemplos forem necessários, remova nomes, textos de conversas, caminhos com dados pessoais e credenciais. Este manual foi produzido a partir de metadados de distribuição e código-fonte; não é um teste de compatibilidade de importação real com todas as versões atuais do LINE.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/ChatArchive-support/pt-BR/">Suporte (inglês)</a><a href="/ChatArchive-support/pt-BR/privacy">Privacidade (inglês)</a><a href="mailto:hakaruapps-contact@hakaru.net">Contatar o suporte</a><a href="#top">Voltar ao topo</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>
