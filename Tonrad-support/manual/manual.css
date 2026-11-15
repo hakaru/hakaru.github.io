@@ -48,6 +48,30 @@ tbody tr:last-child td { border-bottom: 0; }
 .comparison-table tbody tr:last-child th { border-bottom: 0; }
 .comparison-version { color: var(--manual-muted); font-weight: 400; }
 .manual section .comparison-scroll-hint { font-size: .9rem; }
+.manual .signal-flow { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; }
+.manual .signal-flow li { display: flex; align-items: center; gap: 10px; margin: 0; padding: 0; }
+.signal-flow li > span:first-child { padding: 8px 12px; border: 1px solid var(--manual-border); border-radius: 6px; background: #192536; }
+.contact-formula { padding: 16px; background: #192536; border-radius: 8px; overflow-x: auto; }
+.contact-parameters { min-width: 740px; table-layout: fixed; }
+.contact-parameters th:first-child { width: 185px; }
+.contact-parameters th:nth-child(2) { width: 95px; }
+.contact-parameters th:nth-child(3) { width: 115px; }
+.contact-parameters code { display: block; font-size: .8rem; font-weight: 400; }
+.manual table caption { padding: 14px; text-align: left; font-weight: 700; color: var(--manual-text); border-bottom: 1px solid var(--manual-border); }
+.contact-demo { border: 1px solid var(--manual-border); background: #192536; border-radius: 12px; padding: 20px; margin: 24px 0; }
+.contact-demo[hidden] { display: none; }
+.contact-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.contact-controls label { display: block; font-size: .9rem; }
+.contact-controls input { display: block; width: 100%; min-height: 32px; accent-color: var(--manual-accent); }
+.contact-controls output { font-variant-numeric: tabular-nums; }
+.contact-demo button { background: #214970; color: #fff; border: 1px solid var(--manual-accent); padding: 10px 14px; border-radius: 6px; font: inherit; cursor: pointer; margin-top: 14px; }
+.contact-controls input:focus-visible { outline: 3px solid var(--manual-accent); outline-offset: 3px; }
+.contact-timeline { margin-top: 16px; }
+.contact-time-row { display: grid; grid-template-columns: 56px minmax(0, 1fr) 85px; gap: 12px; align-items: center; min-height: 34px; }
+.contact-time-row > span { font-size: .85rem; font-variant-numeric: tabular-nums; }
+.contact-track { height: 2px; background: #5c6d84; position: relative; margin: 0 5px; }
+.contact-marker { position: absolute; top: -5px; width: 12px; height: 12px; border-radius: 50%; background: var(--manual-accent); transform: translateX(-50%); }
+.contact-axis { display: flex; justify-content: space-between; margin: 10px 97px 0 73px; font-size: .8rem; color: var(--manual-muted); }
 .manual figure { margin: 24px 0; }
 .manual figure img { display: block; width: 100%; height: auto; border: 1px solid var(--manual-border); border-radius: 8px; }
 .manual figcaption { font-size: .85rem; color: var(--manual-muted); margin-top: 8px; }
@@ -57,6 +81,10 @@ tbody tr:last-child td { border-bottom: 0; }
 .manual-footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
 @media (max-width: 768px) {
   html { scroll-padding-top: 72px; }
+  .contact-controls { grid-template-columns: 1fr; }
+  .contact-demo { padding: 12px; }
+  .contact-time-row { grid-template-columns: 42px minmax(0, 1fr) 70px; gap: 7px; }
+  .contact-axis { margin-left: 54px; margin-right: 82px; }
   .manual { padding: 24px 20px 48px; }
   .manual-brand { align-items: flex-start; gap: 14px; }
   .manual-brand img { width: 56px; height: 56px; border-radius: 12px; }
@@ -78,4 +106,9 @@ tbody tr:last-child td { border-bottom: 0; }
   .comparison-table { min-width: 0; table-layout: auto; }
   .comparison-table th:first-child, .comparison-gaps th:nth-child(2), .comparison-gaps th:nth-child(3) { width: auto; }
   .comparison-table caption, .comparison-version { color: #111; }
+  .contact-demo { display: none; }
+  .contact-parameters { min-width: 0; table-layout: auto; }
+  .contact-parameters th:first-child, .contact-parameters th:nth-child(2), .contact-parameters th:nth-child(3) { width: auto; }
+  .manual table caption { color: #111; }
+  .contact-formula, .signal-flow li > span:first-child { background: #f4f4f4; }
 }
