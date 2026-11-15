@@ -284,7 +284,7 @@
 <main class="manual" id="top">
 <header class="manual-header">
     <div class="manual-brand"><img src="/assets/tonrad-icon.png" width="76" height="76" alt=""><div><h1>Tonrad ユーザーマニュアル</h1><p class="manual-subtitle">iPhone・iPadで弾くトーンホイールオルガン</p></div></div>
-    <p class="manual-updated">2026年11月15日更新 · バージョン 0.1.0 / 0.2.0</p>
+    <p class="manual-updated">2026年11月16日更新 · バージョン 0.1.0 / 0.2.0</p>
     <nav class="manual-languages" aria-label="マニュアルの言語"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/Tonrad-support/manual/en/">English</a><span class="sidebar-lang-btn active" data-lang="ja" lang="ja" aria-current="page">日本語</span><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/Tonrad-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/Tonrad-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/Tonrad-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/Tonrad-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/Tonrad-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/Tonrad-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/Tonrad-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/Tonrad-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/Tonrad-support/manual/zh-Hant/">繁體中文</a></nav>
 </header>
 <nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">目次</h2><ol><li><a href="#before-you-start">はじめに</a></li>
@@ -307,7 +307,7 @@
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">はじめに</h2>
 <p>Tonrad は、iOS／iPadOS 18 以降の iPhone・iPad で使える単体のトーンホイールオルガンです。端末を横向きにして使います。画面は <strong>HOME</strong>、<strong>DRAWBARS</strong>、<strong>SET</strong> の3つ。アプリの表示言語は日本語と英語、このマニュアルは11言語に対応しています。</p>
-<div class="note"><strong>お使いのバージョンを確認してください。</strong>2026年11月15日時点で、App Store の公開版は 0.1.0 です。このマニュアルでは 0.2.0 の更新内容も説明しています。<strong>0.2.0</strong> と書かれた機能は 0.1.0 では使えません。掲載している画面写真は 0.1.0 です。</div>
+<div class="note"><strong>お使いのバージョンを確認してください。</strong>2026年11月16日時点で、App Store の公開版は 0.2.0 です。<strong>0.2.0</strong> と書かれた機能は 0.1.0 では使えないので、アプリをアップデートしてください。足鍵盤を重ねる音の長さを変えた 0.3.0 は、まだ公開されていません。HOME・DRAWBARS・SET の画面写真は 0.1.0 のものです。</div>
 <div class="table-wrap"><table><thead><tr><th>機能</th><th>0.1.0</th><th>0.2.0</th></tr></thead><tbody><tr><td>画面鍵盤と音色の調整</td><td>対応</td><td>対応</td></tr><tr><td>USB MIDI・鍵盤の分割・MIDI LEARN</td><td>非対応</td><td>対応</td></tr><tr><td>ほかのアプリを前に出している間の演奏</td><td>非対応</td><td>対応</td></tr><tr><td>スピーカーの音色を保って回転だけ止める</td><td>非対応</td><td>HOME → ROTOR</td></tr><tr><td>ロータリースピーカー全体を通さない</td><td>HOME → SPEAKER</td><td>SET → AUDIO → SPEAKER OFF</td></tr></tbody></table></div>
 <p>プリセット、録音、アカウント、広告、アプリ内課金はありません。Audio Unit プラグインとしては使えません。App Store 版に PRESET と TUNE の画面はありません。</p>
 
@@ -372,15 +372,37 @@
 <p>1台の鍵盤を使うときは、<strong>UPPER</strong> に割り当てたチャンネルで送信します。画面の上の帯で、その入力を <strong>BASS / LOWER / UPPER</strong> に分けられます。2つの境界が左端にある間は、すべて UPPER です。</p>
 <ol><li>帯の左端から右へドラッグし、LOWER と UPPER の境界を作ります。</li><li>左端に残っている境界を右へ動かすと、BASS ができます。左から BASS、LOWER、UPPER の順です。</li><li>区画を上下にドラッグするか、SET の OCT でオクターブを調整します。この移調は UPPER の入力チャンネルから振り分けた音に働きます。</li></ol>
 <p>SET の<strong>「音域外を折り返す」</strong>は、各段の演奏範囲から外れた MIDI ノートを、同じ音名のままオクターブ単位で戻す機能です。LOWER／PEDAL の専用チャンネルにも働きます。変更は次の押鍵から有効です。</p>
-<p><strong>「左手ベースに足鍵盤を重ねる」</strong>をオンにすると、BASS の音を LOWER へ送り、同じ音名の足鍵盤の音を短く重ねます。LOWER の BASS 境界より低い鍵にも働きます。BASS 境界が左端のままでは働かないので、右へ動かしてください。重ねる音は PEDAL のドローバーで調整し、SET の<strong>「一撃の長さ」</strong>で長さを変えます。変更は次の押鍵から有効です。</p>
+<p><strong>「左手ベースに足鍵盤を重ねる」</strong>をオンにすると、BASS の音を LOWER へ送り、同じ音名の足鍵盤の音を短く重ねます。LOWER の BASS 境界より低い鍵にも働きます。BASS 境界が左端のままでは働かないので、右へ動かしてください。重ねる音は PEDAL のドローバーで調整し、SET の<strong>「一撃の長さ」</strong>で長さを変えます。変更は次の押鍵から有効です。選べる長さは、0.2.0 では 20〜200 ms（最初は 60 ms）、0.3.0 では 10〜200 ms です（新しく入れた場合は 20 ms。設定を保存済みの端末では、それまでの長さのままです）。重ねる音は弾いたベロシティで鳴るので、長さを短くすると、弱い打鍵では足鍵盤の音がほとんど、またはまったく加わらないことがあります。</p>
 
 </section>
 <section id="midi-learn" aria-labelledby="midi-learn-title">
 <h2 id="midi-learn-title">ペダル・つまみと MIDI LEARN — 0.2.0</h2>
+<p>MIDI LEARN は、MIDI 機器のつまみ・スライダー・ボタン・ペダルを Tonrad の操作子に結び付ける機能です。機器が送るコントロールチェンジ（CC）を Tonrad が覚えるので、CC 番号を調べる必要はありません。</p>
+<h3>覚えさせなくても使える操作</h3>
 <p>標準では <strong>CC11</strong> が EXP、<strong>CC1</strong> が回転速度（0〜63 は SLOW、64〜127 は FAST）、<strong>CC64</strong> が SLOW／FAST の切り替えです。これらは3段に割り当てたチャンネルで受け付けます。CC64 はピアノのように音を保持するペダルではありません。踏むと回転速度が切り替わり、離しても元に戻りません。</p>
-<ol><li><strong>SET → MIDI LEARN</strong> を開きます。ドローバー、EXP、REV、ROTARY、ROTOR は、その場所を動かさずに約 <strong>0.6秒</strong> 長押しして開くこともできます。パーカッションとビブラートは SET の一覧から選びます。</li><li>SET から開いた場合は操作したい行を選びます。長押しで開いた場合は、すでにその項目の学習待ちになっています。行を押し直すと待機が解除されるため、そのまま外部機器のつまみ・スライダー・ボタンを動かします。</li><li>行に <strong>CH … · CC …</strong> が表示されたら「完了」で一覧を閉じ、操作してみます。</li></ol>
+<h3>始める前に</h3>
+<ul><li>MIDI 機器をつなぎ、<strong>SET → MIDI</strong> の<strong>「つながっている機器」</strong>に名前が出ていることを確かめます。</li><li>つまみ・スライダー・ボタン・ペダルは、コントロールチェンジ（CC）を送るものを使います。多くのコントローラーは、買ったままの設定で CC を送ります。ピッチベンドのホイール、アフタータッチ、プログラムチェンジのボタンは覚えられません。</li></ul>
+<h3>一覧から割り当てる</h3>
+<ol><li><strong>SET</strong> を開き、MIDI の枠にある <strong>MIDI LEARN</strong> を押します。32 個の操作子の一覧が開きます。ドローバーは <strong>UPPER</strong>・<strong>LOWER</strong>・<strong>PEDAL</strong>、そのほかは <strong>OTHER</strong> に並んでいます。</li><li>動かしたい操作子の行を押します（例：<strong>UPPER 8′</strong>）。行の色が変わり、<strong>「つまみを動かしてください」</strong>と出ます。</li><li>MIDI 機器のつまみ・スライダー・ボタン・ペダルを動かします。Tonrad は最初に届いたコントロールチェンジを覚えます。</li><li>行に <strong>CH 1 · CC 74</strong> のような表示が出て、待機が終わります。これ以降、そのつまみやボタンでこの行の操作子が動きます。</li><li>ほかの行も 2〜4 を繰り返し、最後に<strong>「完了」</strong>を押します。</li></ol>
+<p>何も割り当てずに待機をやめるときは、同じ行をもう一度押します。</p>
+<figure><a href="/Tonrad-support/manual/assets/midi-learn-ja.png"><img src="/Tonrad-support/manual/assets/midi-learn-ja.png" width="2622" height="1206" loading="lazy" alt="UPPER 8′ の行の色が変わり、つまみを待っている MIDI LEARN の一覧"></a><figcaption>MIDI LEARN · 日本語表示</figcaption></figure>
+<h3>操作子を長押しして割り当てる</h3>
+<ol><li><strong>DRAWBARS</strong> のドローバーか <strong>REV</strong>、または <strong>HOME</strong> の <strong>EXP</strong>・<strong>ROTARY</strong>・<strong>ROTOR</strong> を、指を動かさずに約 <strong>0.6秒</strong> 押し続けます。長押しでは操作子の値は変わりません。</li><li>その行がすでに待機になった状態で一覧が開きます。行は押さないでください。もう一度押すと待機が解除されます。</li><li>MIDI 機器の操作子を動かし、行に <strong>CH … · CC …</strong> が出たら<strong>「完了」</strong>を押します。</li></ol>
+<p>パーカッション、ビブラート、<strong>SPEAKER (ON / OFF)</strong> は長押しでは開きません。一覧から割り当てます。</p>
+<h3>使い方の例</h3>
+<dl><dt>9本のスライダーを UPPER のドローバーにする</dt><dd>一覧で <strong>UPPER 16′</strong> を押して1本目のスライダーを動かします。次に <strong>UPPER 5⅓′</strong> を押して2本目を動かし、<strong>UPPER 1′</strong> まで続けます。行ごとに別のスライダーを覚えます。</dd><dt>エクスプレッションペダル</dt><dd>3段のどれかのチャンネルで CC11 を送るペダルは、覚えさせなくても EXP を動かします。CC7 など別の番号を送るペダルや、別のチャンネルを使うペダルは、<strong>EXP</strong> の行に覚えさせます。</dd><dt>フットスイッチやボタンで SLOW / FAST を切り替える</dt><dd>サステイン用のフットスイッチ（CC64）は、そのままで速さを切り替えます。ほかのボタンは <strong>ROTARY (SLOW / FAST · TOGGLE)</strong> の行に覚えさせます。押すたびに速さが切り替わり、離しても変わりません。</dd><dt>ボタンでパーカッションを入／切する</dt><dd><strong>PERC (ON / OFF)</strong> の行に覚えさせます。押したあとも入のまま残るボタン（コントローラー側でトグルやラッチと呼ばれる設定）を使ってください。下の表を参照。</dd></dl>
+<h3>値と動き方</h3>
+<div class="table-wrap"><table><thead><tr><th>一覧の行</th><th>CC の値と動き</th></tr></thead><tbody><tr><td>UPPER 16′ – 1′, LOWER 16′ – 1′, PEDAL 16′ / 8′, REV</td><td>0〜127 が位置 0〜8 になります（0 で位置 0、127 で位置 8）。</td></tr><tr><td>EXP</td><td>0〜127 で EXP が最小から最大まで滑らかに動きます。</td></tr><tr><td>VIB V1 – C3</td><td>6等分です。0〜21 が V1、22〜42 が V2、43〜63 が V3、64〜85 が C1、86〜106 が C2、107〜127 が C3。</td></tr><tr><td>PERC (ON / OFF), VIB UPPER (ON / OFF), VIB LOWER (ON / OFF), SPEAKER (ON / OFF)</td><td>64〜127 で ON、0〜63 で OFF。</td></tr><tr><td>VOLUME (SOFT / NORMAL), DECAY (FAST / SLOW), HARMONIC (3RD / 2ND)</td><td>64〜127 で前の名前（SOFT・FAST・3RD）、0〜63 で後ろの名前（NORMAL・SLOW・2ND）になります。</td></tr><tr><td>ROTARY (SLOW / FAST · TOGGLE), ROTOR (ON / OFF · TOGGLE)</td><td>値が 63 以下から 64 以上に上がるたびに切り替わります。離しても戻りません。</td></tr></tbody></table></div>
+<p>押している間だけ 127 を送るボタンでは、ON／OFF のスイッチは押している間だけ入になります。コントローラーにトグル（ラッチ）の設定があれば、そのボタンで有効にしてください。ROTARY と ROTOR は、どちらの種類のボタンでも使えます。</p>
+<p>画面の操作子は機器の動きに合わせて動き、画面でも引き続き動かせます。値はそのまま反映されるため、つまみやスライダーを最初に動かしたとき、操作子はそのつまみの位置へ飛びます。</p>
+<h3>割り当てを変える・消す</h3>
 <p>ドローバー、EXP、REV、パーカッション、ビブラート、ロータリーの操作を割り当てられます。行の × でその割り当てを削除し、<strong>「全部消す」</strong>ですべての学習済み割り当てを削除できます。割り当ては端末に保存されます。同じチャンネルと CC 番号を別の項目に覚えさせると、割り当てがそちらへ移ります。</p>
+<ul><li>別のつまみに替えるときは、行を押して新しいつまみを動かします。前の割り当ては新しいものに置き換わります。</li><li>割り当ては MIDI チャンネルと CC 番号の組で保存されます。コントローラーの送信チャンネルを変えたときや、番号の違う別のコントローラーに替えたときは、覚えさせ直してください。</li></ul>
+<h3>覚えられないもの</h3>
 <p><strong>CC1・CC64・CC120〜127 は学習できません。</strong>CC11 を割り当てられるのは EXP だけです。SLOW／FAST と ROTOR は、値が63以下から64以上に変わったときに切り替わり、離しても戻りません。ほかの学習したスイッチは、64〜127 で ON、0〜63 で OFF になります。</p>
+<ul><li>CC1・CC64・CC120〜127 を送る操作子（EXP 以外の行では CC11 も）を動かすと、一覧のいちばん上に、その CC は役目が決まっていて覚えられないという赤い行が出ます。行は待機のままなので、別の操作子を動かすか、行を押して待機をやめます。</li><li>ノート、ピッチベンド、アフタータッチ、プログラムチェンジ、NRPN、14ビットのコントロールチェンジは覚えません。</li><li>OUTPUT、PANIC、鍵盤の上の範囲の帯、上の列の区画の帯、MIDI チャンネルとオクターブの設定は、一覧に行がありません。</li><li>ドローバーの向きを Tonrad の側で逆にすることはできません。127 がいつも位置 8 です。</li></ul>
+<h3>うまく覚えないとき</h3>
+<dl><dt>行が「つまみを動かしてください」のまま変わらない</dt><dd>コントロールチェンジが届いていません。「つながっている機器」に機器の名前があるか確かめ、別のつまみやボタンを試してください。動かした操作子が、CC ではなくピッチベンド、アフタータッチ、プログラムチェンジを送っている場合があります。</dd><dt>違う操作子を覚えてしまった</dt><dd>Tonrad は最初に届いたコントロールチェンジを覚えます。行の × で割り当てを消し、ほかのつまみやペダルに触れないようにして、やり直してください。</dd><dt>ボタンを離すとスイッチが切れる</dt><dd>そのボタンは離したときに 0 を送っています。コントローラー側でトグル（ラッチ）に設定するか、別のボタンを使ってください。</dd><dt>ドローバーが逆向きに動く</dt><dd>127 がいつも位置 8 です。スライダーの出力を反転できるコントローラーなら、コントローラー側で設定してください。</dd><dt>覚えさせた操作子が動かなくなった</dt><dd>「つながっている機器」の表示と、機器の送信チャンネルを確かめてください。あるチャンネルで覚えた割り当ては、別のチャンネルでは働きません。その行を覚えさせ直します。</dd></dl>
 
 </section>
 <section id="saving" aria-labelledby="saving-title">
@@ -416,6 +438,7 @@ S = slow × (fast / slow) ^ (v ^ curve)</code></pre><p>slowはspread_slow_ms、f
 <h2 id="comparison-title">ほかの iOS オルガンアプリとの比較</h2>
 <p>確認日：2026年11月15日。iOS / iPadOS で利用できるドローバー式オルガンから、Hammond B-3X、VB3m、Galileo Organ 2 の3本を選んで比較します。公式資料に基づく機能比較であり、試奏による音質・遅延・CPU負荷の順位付けではありません。</p>
 <div class="note">主な比較表は、App Store で公開中の Tonrad 0.1.0 を対象にしています。MIDI とバックグラウンド演奏は開発中の 0.2.0 に実装されていますが、0.1.0 では使えません。最後の表で両者を分けて記載します。4本とも単体で起動でき、AUv3 の利用には対応するホストアプリが必要です。</div>
+<div class="note"><strong>追記（2026年11月16日）：</strong>0.2.0 が App Store の公開版になりました。この節で「開発版」としている 0.2.0 の機能は公開済みで、0.1.0 の列は前のバージョンの内容です。ほかの3本のアプリは確認し直していません。</div>
 <p>価格は確認日の日本 App Store の表示です。地域やセールにより変わります。「未確認」は今回確認した公式資料で有無を確定できなかった項目で、非対応という意味ではありません。出典は表の下にまとめています。</p>
 <p class="comparison-scroll-hint">画面が狭い場合は、各表を左右にスクロールすると全項目を読めます。</p>
 <div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">

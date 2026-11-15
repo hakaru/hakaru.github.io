@@ -284,7 +284,7 @@
 <main class="manual" id="top">
 <header class="manual-header">
     <div class="manual-brand"><img src="/assets/tonrad-icon.png" width="76" height="76" alt=""><div><h1>Tonrad 사용 설명서</h1><p class="manual-subtitle">iPhone과 iPad를 위한 톤휠 오르간</p></div></div>
-    <p class="manual-updated">2026년 11월 15일 업데이트 · 버전 0.1.0 / 0.2.0</p>
+    <p class="manual-updated">2026년 11월 16일 업데이트 · 버전 0.1.0 / 0.2.0</p>
     <nav class="manual-languages" aria-label="설명서 언어"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/Tonrad-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/Tonrad-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/Tonrad-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/Tonrad-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/Tonrad-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/Tonrad-support/manual/it/">Italiano</a><span class="sidebar-lang-btn active" data-lang="ko" lang="ko" aria-current="page">한국어</span><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/Tonrad-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/Tonrad-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/Tonrad-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/Tonrad-support/manual/zh-Hant/">繁體中文</a></nav>
 </header>
 <nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">목차</h2><ol><li><a href="#before-you-start">시작하기 전에</a></li>
@@ -307,7 +307,7 @@
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">시작하기 전에</h2>
 <p>Tonrad는 iOS/iPadOS 18 이상을 사용하는 iPhone과 iPad에서 단독으로 실행되는 톤휠 오르간입니다. 기기를 가로로 돌려 주세요. 앱은 가로 방향으로만 작동합니다. 화면은 <strong>HOME</strong>, <strong>DRAWBARS</strong>, <strong>SET</strong>의 세 가지입니다. 앱 화면은 일본어와 영어를 지원하며, 이 설명서는 11개 언어로 제공됩니다.</p>
-<div class="note"><strong>버전을 확인하세요.</strong> 2026년 11월 15일 기준 App Store 버전은 0.1.0입니다. 이 설명서에는 0.2.0 업데이트도 설명되어 있습니다. <strong>0.2.0</strong>으로 표시된 기능은 0.1.0에서 사용할 수 없습니다. 스크린샷은 0.1.0 화면입니다.</div>
+<div class="note"><strong>버전을 확인하세요.</strong> 2026년 11월 16일 기준 App Store 버전은 0.2.0입니다. <strong>0.2.0</strong>으로 표시된 기능은 0.1.0에서 사용할 수 없으니 앱을 업데이트하세요. 짧은 페달 음의 길이를 변경한 0.3.0은 아직 제공되지 않습니다. HOME, DRAWBARS, SET 스크린샷은 0.1.0 화면입니다.</div>
 <div class="table-wrap"><table><thead><tr><th>기능</th><th>0.1.0</th><th>0.2.0</th></tr></thead><tbody><tr><td>화면 건반과 음색 조절</td><td>지원</td><td>지원</td></tr><tr><td>USB MIDI, 건반 영역, MIDI LEARN</td><td>미지원</td><td>지원</td></tr><tr><td>다른 앱이 앞에 있을 때 오디오 재생</td><td>미지원</td><td>지원</td></tr><tr><td>스피커 음색을 유지하면서 회전만 정지</td><td>미지원</td><td>HOME → ROTOR</td></tr><tr><td>로터리 스피커 우회</td><td>HOME → SPEAKER</td><td>SET → AUDIO → SPEAKER OFF</td></tr></tbody></table></div>
 <p>프리셋, 녹음, 계정, 광고, 앱 내 구입은 없습니다. Tonrad는 Audio Unit 플러그인으로 작동하지 않습니다. App Store 버전에는 PRESET과 TUNE 화면이 없습니다.</p>
 
@@ -370,15 +370,37 @@
 <h2 id="zones-title">하나의 건반을 세 영역으로 나누기 — 0.2.0</h2>
 <p>건반 하나를 사용할 때는 <strong>UPPER</strong>에 할당된 채널로 전송합니다. 맨 위의 띠가 이 입력을 <strong>BASS / LOWER / UPPER</strong>로 나눕니다. 두 경계가 모두 맨 왼쪽에 있으면 전체 음역이 UPPER로 갑니다.</p><ol><li>띠의 왼쪽 끝에서 오른쪽으로 드래그해 LOWER/UPPER 경계를 만듭니다.</li><li>아직 왼쪽 끝에 남아 있는 경계를 오른쪽으로 드래그해 BASS 영역을 만듭니다. 순서는 BASS, LOWER, UPPER입니다.</li><li>영역을 위아래로 드래그하거나 SET의 해당 OCT 조절기를 사용해 옥타브를 조절합니다. 이 옥타브 이동은 UPPER 입력 채널에서 들어오는 음에 적용됩니다.</li></ol>
 <p>SET의 <strong>Fold notes into range</strong>(음역 안으로 되돌리기)는 파트의 연주 가능 음역을 벗어난 MIDI 음을 같은 음 이름을 유지하면서 옥타브 단위로 되돌립니다. LOWER/PEDAL 채널로 직접 들어오는 입력에도 적용됩니다. 변경 사항은 다음에 누르는 음부터 적용됩니다.</p>
-<p><strong>Add a pedal tap to left-hand bass</strong>(왼손 베이스에 짧은 페달 음 더하기)는 BASS 영역을 LOWER로 보내고 같은 음 이름의 짧은 페달 음을 더합니다. BASS 경계보다 낮은 LOWER 음에도 적용됩니다. 사용하려면 이 경계를 맨 왼쪽에서 오른쪽으로 옮기세요. PEDAL 드로바로 더해지는 음의 음색을 만들고, SET의 <strong>Tap length</strong>(짧은 페달 음의 길이)로 길이를 조절합니다. 변경 사항은 다음에 누르는 음부터 적용됩니다.</p>
+<p><strong>Add a pedal tap to left-hand bass</strong>(왼손 베이스에 짧은 페달 음 더하기)는 BASS 영역을 LOWER로 보내고 같은 음 이름의 짧은 페달 음을 더합니다. BASS 경계보다 낮은 LOWER 음에도 적용됩니다. 사용하려면 이 경계를 맨 왼쪽에서 오른쪽으로 옮기세요. PEDAL 드로바로 더해지는 음의 음색을 만들고, SET의 <strong>Tap length</strong>(짧은 페달 음의 길이)로 길이를 조절합니다. 변경 사항은 다음에 누르는 음부터 적용됩니다. 길이는 0.2.0에서 20~200 ms(처음에는 60 ms), 0.3.0에서 10~200 ms로 설정할 수 있습니다(새로 설치하면 20 ms, 설정이 이미 저장된 기기는 기존 길이를 유지). 더해지는 음은 연주한 벨로시티를 사용하므로, 길이가 짧으면 약하게 누른 음에는 페달 음이 거의 또는 전혀 더해지지 않을 수 있습니다.</p>
 
 </section>
 <section id="midi-learn" aria-labelledby="midi-learn-title">
 <h2 id="midi-learn-title">페달, 노브, MIDI LEARN — 0.2.0</h2>
+<p>MIDI LEARN은 MIDI 기기의 노브, 슬라이더, 버튼, 페달을 Tonrad의 조절기에 연결하는 기능입니다. 기기가 보내는 컨트롤 체인지(CC)를 Tonrad가 학습하므로 CC 번호를 알 필요가 없습니다.</p>
+<h3>학습 없이 작동하는 조작</h3>
 <p>기본 조작은 익스프레션용 <strong>CC11</strong>, 로터리 속도용 <strong>CC1</strong>(0–63은 SLOW, 64–127은 FAST), SLOW/FAST 전환용 <strong>CC64</strong>입니다. 이 기본 조작은 세 파트에 할당된 채널에서 반응합니다. 여기서 CC64는 피아노의 서스테인 페달이 아니라 속도 스위치입니다. 누르면 속도가 전환되고 놓아도 원래 속도로 돌아가지 않습니다.</p>
-<ol><li><strong>SET → MIDI LEARN</strong>을 열거나, 드로바, EXP, REV, ROTARY 또는 ROTOR를 움직이지 않고 약 <strong>0.6초</strong> 동안 길게 눌러 해당 항목의 할당 화면을 엽니다. 퍼커션과 비브라토는 SET의 목록을 사용하세요.</li><li>SET에서 목록을 열었다면 조작할 항목의 행을 선택합니다. 길게 눌러 열었다면 이미 선택되어 학습이 시작된 상태입니다. 그 행을 다시 탭하면 학습이 취소되므로 다시 누르지 마세요. MIDI 기기의 노브, 슬라이더 또는 버튼을 조작합니다.</li><li>행에 <strong>CH … · CC …</strong>가 표시되는지 확인한 다음 목록을 닫고 조작해 봅니다.</li></ol>
+<h3>시작하기 전에</h3>
+<ul><li>MIDI 기기를 연결하고 <strong>SET → MIDI</strong>의 <strong>Connected devices</strong>(연결된 기기)에 이름이 표시되는지 확인합니다.</li><li>노브, 슬라이더, 버튼, 페달은 컨트롤 체인지(CC) 메시지를 보내야 합니다. 대부분의 컨트롤러는 출고 상태에서 CC를 보냅니다. 피치 벤드 휠, 애프터터치, 프로그램 체인지 버튼은 학습할 수 없습니다.</li></ul>
+<h3>목록에서 할당하기</h3>
+<ol><li><strong>SET</strong>을 열고 MIDI 상자의 <strong>MIDI LEARN</strong>을 탭합니다. 조절기 32개의 목록이 열립니다. 드로바는 <strong>UPPER</strong>, <strong>LOWER</strong>, <strong>PEDAL</strong> 아래에, 나머지는 <strong>OTHER</strong> 아래에 있습니다.</li><li>조작할 항목의 행을 탭합니다(예: <strong>UPPER 8′</strong>). 행이 강조되고 <strong>Move a control on your device</strong>(기기의 조절기를 움직이세요)가 표시됩니다.</li><li>MIDI 기기의 노브, 슬라이더, 버튼 또는 페달을 움직입니다. Tonrad는 처음 받은 컨트롤 체인지를 학습합니다.</li><li>행에 <strong>CH 1 · CC 74</strong>와 같이 메시지의 출처가 표시되고 대기가 끝납니다. 이제부터 그 노브나 버튼으로 이 행의 조절기가 움직입니다.</li><li>다른 행에도 2~4단계를 반복한 다음 <strong>Done</strong>(완료)을 탭합니다.</li></ol>
+<p>아무것도 할당하지 않고 대기를 끝내려면 같은 행을 다시 탭합니다.</p>
+<figure><a href="/Tonrad-support/manual/assets/midi-learn-en.png"><img src="/Tonrad-support/manual/assets/midi-learn-en.png" width="2622" height="1206" loading="lazy" alt="UPPER 8′ 행이 강조되어 조절기를 기다리는 MIDI LEARN 목록"></a><figcaption>MIDI LEARN · 영어 화면</figcaption></figure>
+<h3>조절기를 길게 눌러 할당하기</h3>
+<ol><li><strong>DRAWBARS</strong>에서 드로바나 <strong>REV</strong>를, <strong>HOME</strong>에서 <strong>EXP</strong>, <strong>ROTARY</strong> 또는 <strong>ROTOR</strong>를 길게 누릅니다. 손가락을 움직이지 않고 약 <strong>0.6초</strong> 동안 유지합니다. 길게 눌러도 조절기의 값은 바뀌지 않습니다.</li><li>해당 행이 이미 대기 중인 상태로 목록이 열립니다. 행을 탭하지 마세요. 다시 탭하면 대기가 취소됩니다.</li><li>MIDI 기기의 조절기를 움직이고 행에 <strong>CH … · CC …</strong>가 표시되는지 확인한 다음 <strong>Done</strong>을 탭합니다.</li></ol>
+<p>퍼커션, 비브라토, <strong>SPEAKER (ON / OFF)</strong>는 길게 눌러 열 수 없습니다. 목록에서 할당하세요.</p>
+<h3>사용 예</h3>
+<dl><dt>슬라이더 9개를 UPPER 드로바로 사용</dt><dd>목록에서 <strong>UPPER 16′</strong>를 탭하고 첫 번째 슬라이더를 움직입니다. <strong>UPPER 5⅓′</strong>를 탭하고 두 번째 슬라이더를 움직이며, <strong>UPPER 1′</strong>까지 계속합니다. 행마다 각자의 슬라이더를 기억합니다.</dd><dt>익스프레션 페달</dt><dd>세 파트의 채널 중 하나로 CC11을 보내는 페달은 학습 없이 EXP를 움직입니다. 페달이 CC7 같은 다른 번호를 보내거나 다른 채널을 사용한다면 <strong>EXP</strong> 행에 학습시킵니다.</dd><dt>풋스위치나 버튼으로 SLOW / FAST 전환</dt><dd>서스테인용 풋스위치(CC64)는 그대로 속도를 전환합니다. 그 밖의 버튼은 <strong>ROTARY (SLOW / FAST · TOGGLE)</strong> 행에 학습시킵니다. 누를 때마다 속도가 전환되고, 놓아도 바뀌지 않습니다.</dd><dt>버튼으로 퍼커션 켜고 끄기</dt><dd><strong>PERC (ON / OFF)</strong> 행에 학습시킵니다. 누른 뒤에도 켜진 상태로 남는 버튼(컨트롤러에서 흔히 토글 또는 래치 모드라고 부름)을 사용하세요. 아래 표를 참고하세요.</dd></dl>
+<h3>값에 따른 동작</h3>
+<div class="table-wrap"><table><thead><tr><th>목록의 행</th><th>CC 값의 효과</th></tr></thead><tbody><tr><td>UPPER 16′ – 1′, LOWER 16′ – 1′, PEDAL 16′ / 8′, REV</td><td>0–127이 위치 0–8이 됩니다(0은 위치 0, 127은 위치 8).</td></tr><tr><td>EXP</td><td>0–127로 EXP가 최소에서 최대까지 단계 없이 움직입니다.</td></tr><tr><td>VIB V1 – C3</td><td>여섯 개의 같은 구간입니다. 0–21 V1, 22–42 V2, 43–63 V3, 64–85 C1, 86–106 C2, 107–127 C3.</td></tr><tr><td>PERC (ON / OFF), VIB UPPER (ON / OFF), VIB LOWER (ON / OFF), SPEAKER (ON / OFF)</td><td>64–127은 ON, 0–63은 OFF입니다.</td></tr><tr><td>VOLUME (SOFT / NORMAL), DECAY (FAST / SLOW), HARMONIC (3RD / 2ND)</td><td>64–127은 앞의 이름(SOFT, FAST, 3RD)을, 0–63은 뒤의 이름(NORMAL, SLOW, 2ND)을 선택합니다.</td></tr><tr><td>ROTARY (SLOW / FAST · TOGGLE), ROTOR (ON / OFF · TOGGLE)</td><td>값이 63 이하에서 64 이상으로 올라갈 때마다 전환됩니다. 놓아도 되돌아가지 않습니다.</td></tr></tbody></table></div>
+<p>누르고 있는 동안에만 127을 보내는 버튼은 ON/OFF 스위치를 누르고 있는 동안에만 켭니다. 컨트롤러에 그 버튼의 토글(래치) 모드가 있다면 켜세요. ROTARY와 ROTOR는 어느 종류의 버튼으로도 작동합니다.</p>
+<p>화면의 조절기는 기기를 따라 움직이며, 화면에서도 계속 움직일 수 있습니다. 값은 절대값이므로 노브나 슬라이더를 처음 움직일 때 조절기가 그 노브의 위치로 건너뜁니다.</p>
+<h3>할당 변경 및 삭제</h3>
 <p>드로바, EXP, REV, 퍼커션, 비브라토, 로터리 조절기를 할당할 수 있습니다. 행의 × 버튼은 해당 할당을 삭제하고, <strong>Clear All</strong>(모두 지우기)은 학습된 모든 할당을 삭제합니다. 할당은 기기에 저장됩니다. 같은 채널/CC를 다른 대상에 학습시키면 할당이 그 대상으로 이동합니다.</p>
+<ul><li>행에 다른 노브를 쓰려면 행을 탭하고 새 노브를 움직입니다. 새 할당이 이전 할당을 대체합니다.</li><li>할당은 MIDI 채널과 CC 번호의 조합으로 저장됩니다. 컨트롤러의 송신 채널을 바꾸거나 다른 번호를 쓰는 컨트롤러로 바꾸면 행을 다시 학습시키세요.</li></ul>
+<h3>학습할 수 없는 것</h3>
 <p><strong>CC1, CC64, CC120–127은 학습할 수 없습니다.</strong> CC11은 EXP에만 할당할 수 있습니다. SLOW/FAST와 ROTOR는 값이 63 이하에서 64 이상으로 바뀔 때 전환되며, 놓아도 다시 전환되지 않습니다. 그 밖의 학습된 스위치는 64–127에서 ON, 0–63에서 OFF가 됩니다.</p>
+<ul><li>CC1, CC64 또는 CC120–127을 보내는 조절기(EXP가 아닌 행에서는 CC11도 포함)를 움직이면, 목록 맨 위에 그 CC는 역할이 정해져 있어 학습할 수 없다는 빨간 줄이 표시됩니다. 행은 계속 대기하므로 다른 조절기를 움직이거나 행을 탭해 대기를 끝내세요.</li><li>노트, 피치 벤드, 애프터터치, 프로그램 체인지, NRPN, 14비트 컨트롤 체인지는 학습하지 않습니다.</li><li>OUTPUT, PANIC, 건반 위의 범위 띠, 영역 띠, MIDI 채널과 옥타브 설정은 목록에 행이 없습니다.</li><li>드로바의 방향은 Tonrad에서 반대로 바꿀 수 없습니다. 127은 항상 위치 8입니다.</li></ul>
+<h3>학습이 되지 않을 때</h3>
+<dl><dt>행에 계속 ‘Move a control on your device’가 표시됨</dt><dd>컨트롤 체인지가 도착하지 않고 있습니다. 기기가 Connected devices에 표시되는지 확인한 다음 다른 노브나 버튼을 사용해 보세요. 움직인 조절기가 CC 대신 피치 벤드, 애프터터치 또는 프로그램 체인지를 보내고 있을 수 있습니다.</dd><dt>다른 조절기가 학습됨</dt><dd>Tonrad는 처음 받은 컨트롤 체인지를 학습합니다. ×로 할당을 삭제하고, 다른 노브와 페달은 건드리지 않은 채 다시 시도하세요.</dd><dt>버튼을 놓으면 스위치가 꺼짐</dt><dd>그 버튼은 놓을 때 0을 보냅니다. 컨트롤러에서 토글(래치) 모드로 설정하거나 다른 버튼을 사용하세요.</dd><dt>드로바가 반대 방향으로 움직임</dt><dd>127은 항상 위치 8입니다. 컨트롤러에서 슬라이더의 출력을 반전할 수 있다면 컨트롤러에서 설정하세요.</dd><dt>학습한 조절기가 작동하지 않게 됨</dt><dd>Connected devices의 기기와 기기의 송신 채널을 확인하세요. 한 채널에서 학습한 할당은 다른 채널에서는 반응하지 않습니다. 행을 다시 학습시키세요.</dd></dl>
 
 </section>
 <section id="saving" aria-labelledby="saving-title">
@@ -414,6 +436,7 @@ S = slow × (fast / slow) ^ (v ^ curve)</code></pre><p>slow = spread_slow_ms, fa
 <h2 id="comparison-title">다른 iOS 오르간 앱과 비교</h2>
 <p>2026년 11월 15일에 확인했습니다. iOS/iPadOS용 드로바 오르간 앱 세 가지인 Hammond B-3X, VB3m, Galileo Organ 2를 Tonrad와 비교합니다. 공식 문서에 근거한 기능 비교이며, 청음 테스트나 음질·지연 시간·CPU 사용량의 순위가 아닙니다.</p>
 <div class="note">주요 비교표는 현재 App Store에 공개된 Tonrad 0.1.0을 기준으로 합니다. MIDI와 백그라운드 오디오는 개발 버전 0.2.0에 구현되어 있지만 0.1.0에서는 사용할 수 없습니다. 마지막 표에서 두 버전을 구분합니다. 네 앱 모두 단독으로 실행할 수 있으며, AUv3를 사용하려면 호환되는 호스트 앱이 필요합니다.</div>
+<div class="note"><strong>추가(2026년 11월 16일):</strong> 0.2.0이 App Store 버전이 되었습니다. 이 절에서 개발 중이라고 설명한 0.2.0 기능은 출시되었으며, 0.1.0 열은 이전 버전의 내용입니다. 다른 세 앱은 다시 확인하지 않았습니다.</div>
 <p>가격은 확인일의 일본 App Store 기준이며 일본 엔(JPY)으로 표시합니다. 지역별 가격과 할인은 다를 수 있습니다. ‘확인되지 않음’은 검토한 공식 자료에서 해당 기능을 확인하지 못했다는 뜻이며, 앱에 그 기능이 없다는 뜻은 아닙니다. 출처 링크는 아래에 있습니다.</p>
 <p class="comparison-scroll-hint">좁은 화면에서는 각 표를 좌우로 스크롤하면 모든 열을 볼 수 있습니다.</p>
 <div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">

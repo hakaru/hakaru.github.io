@@ -284,7 +284,7 @@
 <main class="manual" id="top">
 <header class="manual-header">
     <div class="manual-brand"><img src="/assets/tonrad-icon.png" width="76" height="76" alt=""><div><h1>Tonrad 使用手冊</h1><p class="manual-subtitle">適用於 iPhone 和 iPad 的音輪風琴</p></div></div>
-    <p class="manual-updated">更新於 2026 年 11 月 15 日 · 版本 0.1.0 / 0.2.0</p>
+    <p class="manual-updated">更新於 2026 年 11 月 16 日 · 版本 0.1.0 / 0.2.0</p>
     <nav class="manual-languages" aria-label="手冊語言"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/Tonrad-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/Tonrad-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/Tonrad-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/Tonrad-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/Tonrad-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/Tonrad-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/Tonrad-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/Tonrad-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/Tonrad-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/Tonrad-support/manual/sv/">Svenska</a><span class="sidebar-lang-btn active" data-lang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</span></nav>
 </header>
 <nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">目錄</h2><ol><li><a href="#before-you-start">開始之前</a></li>
@@ -307,7 +307,7 @@
 <section id="before-you-start" aria-labelledby="before-you-start-title">
 <h2 id="before-you-start-title">開始之前</h2>
 <p>Tonrad 是可獨立運作的音輪風琴，適用於執行 iOS/iPadOS 18 或以上版本的 iPhone 和 iPad。請將裝置橫放：此 App 僅支援橫向操作。三個畫面分別是 <strong>HOME</strong>、<strong>DRAWBARS</strong> 和 <strong>SET</strong>。App 介面提供日文及英文；本手冊提供 11 種語言。</p>
-<div class="note"><strong>請確認您的版本。</strong>截至 2026 年 11 月 15 日，App Store 上的版本為 0.1.0。本手冊也說明 0.2.0 更新內容。標示 <strong>0.2.0</strong> 的功能無法在 0.1.0 中使用。螢幕截圖顯示的是 0.1.0。</div>
+<div class="note"><strong>請確認您的版本。</strong>截至 2026 年 11 月 16 日，App Store 上的版本為 0.2.0。標示 <strong>0.2.0</strong> 的功能無法在 0.1.0 中使用，請更新 App。變更短促腳踏音長度的 0.3.0 尚未推出。HOME、DRAWBARS 和 SET 的螢幕截圖顯示的是 0.1.0。</div>
 <div class="table-wrap"><table><thead><tr><th>功能</th><th>0.1.0</th><th>0.2.0</th></tr></thead><tbody><tr><td>螢幕鍵盤與音色控制</td><td>有</td><td>有</td></tr><tr><td>USB MIDI、鍵盤分區及 MIDI LEARN</td><td>無</td><td>有</td></tr><tr><td>其他 App 在前景時繼續發聲</td><td>無</td><td>有</td></tr><tr><td>保留揚聲器音色，只停止旋轉</td><td>無</td><td>HOME → ROTOR</td></tr><tr><td>旁通旋轉揚聲器</td><td>HOME → SPEAKER</td><td>SET → AUDIO → SPEAKER OFF</td></tr></tbody></table></div>
 <p>沒有預設音色、錄音、帳號、廣告或 App 內購買。Tonrad 無法作為 Audio Unit 外掛運作。App Store 版本沒有 PRESET 和 TUNE 畫面。</p>
 
@@ -370,15 +370,37 @@
 <h2 id="zones-title">一台鍵盤，三個分區 — 0.2.0</h2>
 <p>使用一台鍵盤時，請從指派給 <strong>UPPER</strong> 的通道傳送。頂端的長條會將該輸入分成 <strong>BASS / LOWER / UPPER</strong>。兩個分界都在最左端時，全部音域都會送往 UPPER。</p><ol><li>從長條左端向右拖曳，建立 LOWER/UPPER 分界。</li><li>將仍在左端的分界向右拖曳，建立 BASS 分區。排列順序為 BASS、LOWER、UPPER。</li><li>在分區上垂直拖曳可調整其八度，也可以使用 SET 中對應的 OCT 控制項。這些八度移調適用於 UPPER 輸入通道的音符。</li></ol>
 <p>SET 中的 <strong>Fold notes into range</strong>（將音符折返至音域內）會將超出聲部可演奏音域的 MIDI 音符，以八度為單位移回範圍內，並保留相同音名。直接從 LOWER/PEDAL 通道輸入的音符也適用。變更會從下一次按鍵開始生效。</p>
-<p><strong>Add a pedal tap to left-hand bass</strong>（在左手低音疊加短促的腳踏音）會將 BASS 分區送往 LOWER，並加入同音名的短促腳踏音。BASS 分界以下的 LOWER 音符也適用。使用前請先將該分界移離最左端。可用 PEDAL 拉桿塑造疊加音的音色，並在 SET 的 <strong>Tap length</strong>（短促腳踏音長度）調整長度。變更會從下一次按鍵開始生效。</p>
+<p><strong>Add a pedal tap to left-hand bass</strong>（在左手低音疊加短促的腳踏音）會將 BASS 分區送往 LOWER，並加入同音名的短促腳踏音。BASS 分界以下的 LOWER 音符也適用。使用前請先將該分界移離最左端。可用 PEDAL 拉桿塑造疊加音的音色，並在 SET 的 <strong>Tap length</strong>（短促腳踏音長度）調整長度。變更會從下一次按鍵開始生效。長度在 0.2.0 可設為 20 至 200 ms（一開始為 60 ms），在 0.3.0 可設為 10 至 200 ms（全新安裝時為 20 ms；已儲存設定的裝置會保留原本的長度）。疊加音會使用您彈奏的力度，因此長度較短時，輕彈可能只加入很少的腳踏音，甚至完全沒有。</p>
 
 </section>
 <section id="midi-learn" aria-labelledby="midi-learn-title">
 <h2 id="midi-learn-title">踏板、旋鈕與 MIDI LEARN — 0.2.0</h2>
+<p>MIDI LEARN 可將 MIDI 裝置上的旋鈕、滑桿、按鈕和踏板連結到 Tonrad 的控制項。Tonrad 會學習裝置送出的控制變更（CC）訊息，因此您不需要知道任何 CC 編號。</p>
+<h3>不必學習即可使用的控制</h3>
 <p>預設控制為：<strong>CC11</strong> 控制表情、<strong>CC1</strong> 控制旋轉速度（0–63 為 SLOW，64–127 為 FAST），<strong>CC64</strong> 切換 SLOW/FAST。這些預設控制會回應指派給三個聲部的通道。CC64 在這裡是速度開關，不是鋼琴延音踏板：踩下時切換速度，放開不會切回。</p>
-<ol><li>開啟 <strong>SET → MIDI LEARN</strong>，或按住拉桿、EXP、REV、ROTARY 或 ROTOR 約 <strong>0.6 秒</strong> 且不移動，以開啟該項目的指派畫面。打擊音和顫音請使用 SET 的清單。</li><li>若從 SET 開啟清單，請選擇要控制的項目列。若透過長按開啟，該項目已選取並開始學習；不要再次點選同一列，因為這會取消學習。接著操作 MIDI 裝置上的旋鈕、滑桿或按鈕。</li><li>確認該列顯示 <strong>CH … · CC …</strong>，再關閉清單並試用控制項。</li></ol>
+<h3>開始之前</h3>
+<ul><li>連接 MIDI 裝置，並確認其名稱出現在 <strong>SET → MIDI</strong> 的 <strong>Connected devices</strong>（已連接的裝置）下方。</li><li>旋鈕、滑桿、按鈕或踏板必須送出控制變更（CC）訊息。大多數控制器在出廠設定下即會送出 CC。彎音輪、觸後和音色切換按鈕無法學習。</li></ul>
+<h3>從清單指派控制</h3>
+<ol><li>開啟 <strong>SET</strong>，點一下 MIDI 區塊中的 <strong>MIDI LEARN</strong>。會開啟含 32 個控制項的清單：拉桿位於 <strong>UPPER</strong>、<strong>LOWER</strong> 和 <strong>PEDAL</strong> 下方，其餘位於 <strong>OTHER</strong> 下方。</li><li>點一下要控制的項目列，例如 <strong>UPPER 8′</strong>。該列會反白並顯示 <strong>Move a control on your device</strong>（請操作裝置上的控制項）。</li><li>操作 MIDI 裝置上的旋鈕、滑桿、按鈕或踏板。Tonrad 會學習最先收到的控制變更。</li><li>該列會顯示訊息的來源，例如 <strong>CH 1 · CC 74</strong>，並結束等待。此後，該旋鈕或按鈕就會控制這一列的控制項。</li><li>對其他列重複步驟 2 至 4，然後點一下 <strong>Done</strong>（完成）。</li></ol>
+<p>若要結束等待而不指派，請再點一下同一列。</p>
+<figure><a href="/Tonrad-support/manual/assets/midi-learn-en.png"><img src="/Tonrad-support/manual/assets/midi-learn-en.png" width="2622" height="1206" loading="lazy" alt="MIDI LEARN 清單，其中 UPPER 8′ 列已反白並等待控制項"></a><figcaption>MIDI LEARN · 英文介面</figcaption></figure>
+<h3>按住控制項來指派</h3>
+<ol><li>在 <strong>DRAWBARS</strong> 按住拉桿或 <strong>REV</strong>，或在 <strong>HOME</strong> 按住 <strong>EXP</strong>、<strong>ROTARY</strong> 或 <strong>ROTOR</strong>。手指保持不動約 <strong>0.6 秒</strong>。按住不會改變控制項的數值。</li><li>清單開啟時，該列已在等待。請勿點選該列：再點一下會取消等待。</li><li>操作 MIDI 裝置上的控制項，確認該列顯示 <strong>CH … · CC …</strong>，然後點一下 <strong>Done</strong>。</li></ol>
+<p>打擊音、顫音和 <strong>SPEAKER (ON / OFF)</strong> 無法以長按開啟，請從清單指派。</p>
+<h3>範例</h3>
+<dl><dt>以九支滑桿控制 UPPER 拉桿</dt><dd>在清單中點一下 <strong>UPPER 16′</strong>，移動第一支滑桿。再點一下 <strong>UPPER 5⅓′</strong>，移動第二支，依此類推至 <strong>UPPER 1′</strong>。每一列各自記住自己的滑桿。</dd><dt>表情踏板</dt><dd>在三個聲部任一通道送出 CC11 的踏板，不必學習即可控制 EXP。若您的踏板送出其他編號（例如 CC7）或使用其他通道，請在 <strong>EXP</strong> 列學習。</dd><dt>以腳踏開關或按鈕切換 SLOW / FAST</dt><dd>延音型腳踏開關（CC64）原本就能切換速度。其他按鈕請在 <strong>ROTARY (SLOW / FAST · TOGGLE)</strong> 列學習：每按一次切換速度，放開不會有任何變化。</dd><dt>以按鈕開關打擊音</dt><dd>請在 <strong>PERC (ON / OFF)</strong> 列學習。請使用按下後會保持開啟的按鈕（控制器上通常稱為 toggle 或 latch 模式）；請參閱下表。</dd></dl>
+<h3>數值的作用</h3>
+<div class="table-wrap"><table><thead><tr><th>清單中的列</th><th>CC 數值的作用</th></tr></thead><tbody><tr><td>UPPER 16′ – 1′, LOWER 16′ – 1′, PEDAL 16′ / 8′, REV</td><td>0–127 對應位置 0–8（0 為位置 0，127 為位置 8）。</td></tr><tr><td>EXP</td><td>0–127 讓 EXP 從最小到最大連續移動。</td></tr><tr><td>VIB V1 – C3</td><td>分為六個相等的範圍：0–21 為 V1、22–42 為 V2、43–63 為 V3、64–85 為 C1、86–106 為 C2、107–127 為 C3。</td></tr><tr><td>PERC (ON / OFF), VIB UPPER (ON / OFF), VIB LOWER (ON / OFF), SPEAKER (ON / OFF)</td><td>64–127 為 ON，0–63 為 OFF。</td></tr><tr><td>VOLUME (SOFT / NORMAL), DECAY (FAST / SLOW), HARMONIC (3RD / 2ND)</td><td>64–127 選擇前一個名稱（SOFT、FAST、3RD）；0–63 選擇後一個名稱（NORMAL、SLOW、2ND）。</td></tr><tr><td>ROTARY (SLOW / FAST · TOGGLE), ROTOR (ON / OFF · TOGGLE)</td><td>每當數值由 63 以下升至 64 以上時切換。放開不會切回。</td></tr></tbody></table></div>
+<p>只在按住時送出 127 的按鈕，只會在按住期間讓 ON/OFF 開關保持開啟。若您的控制器可為該按鈕設定 toggle（latch）模式，請將其開啟。ROTARY 和 ROTOR 兩種按鈕都能使用。</p>
+<p>畫面上的控制項會跟隨您的裝置，您仍可在畫面上移動它。數值為絕對值：第一次移動旋鈕或滑桿時，控制項會跳到該旋鈕的位置。</p>
+<h3>變更或移除指派</h3>
 <p>可指派拉桿、EXP、REV、打擊音、顫音及旋轉控制。使用該列的 × 按鈕可移除一項指派；<strong>Clear All</strong>（全部清除）會移除所有已學習的指派。指派會儲存在本機。將相同通道／CC 學習至另一個目標時，指派會移至該目標。</p>
+<ul><li>若要讓某一列改用其他旋鈕，請點一下該列並移動新的旋鈕。新的指派會取代舊的。</li><li>指派是以 MIDI 通道加上 CC 編號儲存。若您變更控制器的傳送通道，或改用編號不同的控制器，請重新學習各列。</li></ul>
+<h3>無法學習的項目</h3>
 <p><strong>CC1、CC64 和 CC120–127 無法學習。</strong>CC11 只能指派給 EXP。當數值由 63 以下跨至 64 以上時，SLOW/FAST 和 ROTOR 會切換；放開不會再切換。其他已學習的開關以 64–127 為 ON，0–63 為 OFF。</p>
+<ul><li>若您操作送出 CC1、CC64 或 CC120–127 的控制項（在 EXP 以外的列，也包括 CC11），清單頂端會出現紅色文字，說明該 CC 有固定用途，無法學習。該列會繼續等待：請操作其他控制項，或點一下該列以結束等待。</li><li>音符、彎音、觸後、音色切換、NRPN 和 14 位元控制變更不會被學習。</li><li>OUTPUT、PANIC、鍵盤上方的範圍條、分區條，以及 MIDI 通道與八度設定在清單中沒有對應的列。</li><li>拉桿的方向無法在 Tonrad 中反轉：127 一律是位置 8。</li></ul>
+<h3>學習不成功時</h3>
+<dl><dt>該列一直顯示「Move a control on your device」</dt><dd>沒有收到控制變更。請確認裝置列在 Connected devices 下方，再試試其他旋鈕或按鈕：您操作的控制項送出的可能是彎音、觸後或音色切換，而不是 CC。</dd><dt>學到了錯誤的控制項</dt><dd>Tonrad 會學習最先收到的控制變更。請用 × 移除指派，不要碰其他旋鈕和踏板，然後再試一次。</dd><dt>放開按鈕後開關就關閉</dt><dd>該按鈕在放開時送出 0。請在控制器上將它設為 toggle（latch）模式，或改用其他按鈕。</dd><dt>拉桿朝相反方向移動</dt><dd>127 一律代表位置 8。若您的控制器可以反轉滑桿的輸出，請在控制器上設定。</dd><dt>已學習的控制不再有作用</dt><dd>請確認 Connected devices 下方的裝置，以及裝置的傳送通道。在某一通道學習的指派不會回應其他通道；請重新學習該列。</dd></dl>
 
 </section>
 <section id="saving" aria-labelledby="saving-title">
@@ -414,6 +436,7 @@ S = slow × (fast / slow) ^ (v ^ curve)</code></pre><p>slow = spread_slow_ms, fa
 <h2 id="comparison-title">與其他 iOS 風琴 App 比較</h2>
 <p>查核日期為 2026 年 11 月 15 日。本節比較 Tonrad 與三款適用於 iOS/iPadOS 的拉桿風琴 App：Hammond B-3X、VB3m 和 Galileo Organ 2。這是依據官方文件整理的功能比較，不是聽感測試，也不是音質、延遲或 CPU 用量的排名。</p>
 <div class="note">主要表格以目前在 App Store 公開的 Tonrad 0.1.0 為準。MIDI 和背景音訊已在 0.2.0 開發版本實作，但 0.1.0 無法使用。最後一個表格會區分這兩個版本。四款 App 都可獨立運作；使用 AUv3 需要相容的主機 App。</div>
+<div class="note"><strong>補充（2026 年 11 月 16 日）：</strong>0.2.0 現已成為 App Store 上的版本。本節描述為開發中的 0.2.0 功能已經推出，0.1.0 的欄位說明的是前一個版本。其他三款 App 未重新確認。</div>
 <p>價格為查核當日日本 App Store 的價格，以日圓（JPY）表示；各地價格及優惠可能不同。「未確認」表示所查閱的官方資料未能證實該功能，不代表 App 沒有這項功能。來源連結列於下方。</p>
 <p class="comparison-scroll-hint">螢幕較窄時，可左右捲動各表格以查看所有欄位。</p>
 <div class="table-wrap" role="region" tabindex="0" aria-labelledby="comparison-features-caption">
