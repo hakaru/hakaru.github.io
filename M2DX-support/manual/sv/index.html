@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M2DX användarhandbok | hakaru</title>
+    <meta name="description" content="En utförlig guide till M2DX: FM-ljuddesign, förinställningar, effekter, Pro och AUv3, hur M2DX-Core fungerar, möjligheter och begränsningar i MIDI 2.0 samt en jämförelse med Dexed.">
+    <meta property="og:title" content="M2DX användarhandbok">
+    <meta property="og:description" content="En utförlig guide till M2DX: FM-ljuddesign, förinställningar, effekter, Pro och AUv3, hur M2DX-Core fungerar, möjligheter och begränsningar i MIDI 2.0 samt en jämförelse med Dexed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2DX-support/manual/sv/">
+    <meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+    <link rel="canonical" href="https://hakaru.net/M2DX-support/manual/sv/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/M2DX-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">Innehåll</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-sv">Support</a>
+      <a href="/AnalogRhythmKing-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-sv">Support</a>
+      <a href="/M2MX12-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-sv">Support</a>
+      <a href="/EraVerb-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-sv">Support</a>
+      <a href="/P73-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-sv">Support</a>
+      <a href="/TwinFET-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-sv">Support</a>
+      <a href="/M2DX-Core-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/index-sv">Support</a>
+      <a href="/M2DX-support/manual/sv/" class="active">Manual</a>
+      <a href="/M2DX-support/changelog-sv">Ändringshistorik</a>
+      <a href="/M2DX-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-sv">Support</a>
+      <a href="/PeerClockMetronome-support/blog/sv/">Blogg</a>
+      <a href="/PeerClockMetronome-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Support (engelska)</a>
+      <a href="/MyEQ-support/manual/sv/">Manual</a>
+      <a href="/MyEQ-support/privacy">Integritet (engelska)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Support (engelska)</a>
+      <a href="/Tonrad-support/manual/sv/">Manual</a>
+      <a href="/Tonrad-support/privacy">Integritet (engelska)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-sv">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-sv">Support</a>
+      <a href="/BopBot-support/manual/sv/">Manual</a>
+      <a href="/BopBot-support/privacy-sv">Integritet</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2DX-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2DX-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <span class="sidebar-lang-btn active" data-lang="sv">SV</span>
+    <a href="/M2DX-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>M2DX användarhandbok</h1><p class="manual-subtitle">Spela och redigera FM-ljud · M2DX-Core · MIDI 2.0 · Jämförelse med Dexed</p></div></div>
+    <p class="manual-updated">Uppdaterad 15 november 2026 · M2DX 1.7.14 (40) · M2DX-Core 1.25.0 · Dexed 1.1.0</p>
+    <nav class="manual-languages" aria-label="Handbokens språk"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/M2DX-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/M2DX-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/M2DX-support/manual/pt-BR/">Português (Brasil)</a><span class="sidebar-lang-btn active" data-lang="sv" lang="sv" aria-current="page">Svenska</span><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/M2DX-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Innehåll</h2><ol><li><a href="#overview">Version, krav och omfattning</a></li>
+<li><a href="#quickstart">Spela ditt första ljud</a></li>
+<li><a href="#screens">Hitta i gränssnittet</a></li>
+<li><a href="#presets">Banker, egna ljud och sparande</a></li>
+<li><a href="#sysex">Importera DX7-SysEx-ljud</a></li>
+<li><a href="#fm-basics">Så skapar FM med sex operatorer ljud</a></li>
+<li><a href="#operators">Operatorfrekvens, nivå och klaviaturskalning</a></li>
+<li><a href="#envelopes">Operatorenveloper, tonhöjdsenvelop och LFO</a></li>
+<li><a href="#performance">Anslagsstyrka, kontroller, mono och portamento</a></li>
+<li><a href="#effects">Forma ljudet med effekter</a></li>
+<li><a href="#layers-pro">TX816-lager, Voice Stack och Pro</a></li>
+<li><a href="#external-au">Använd externa AU-effekter i appen</a></li>
+<li><a href="#auv3">Använd M2DX i ett AUv3-värdprogram</a></li>
+<li><a href="#core">M2DX-Core: från ton till ljud</a></li>
+<li><a href="#core-engines">Modern, Mark I, Depth och Vintage DAC</a></li>
+<li><a href="#midi2">MIDI 2.0 förklarat: meddelanden och upplösning</a></li>
+<li><a href="#midi-support">Vad de släppta MIDI-vägarna faktiskt stöder</a></li>
+<li><a href="#midi-ci">MIDI-CI, profiler och Property Exchange</a></li>
+<li><a href="#midi-learn">Anslut kontroller och använd MIDI Learn</a></li>
+<li><a href="#program-change">Välj ljud med Bank Select och Program Change</a></li>
+<li><a href="#dexed-comparison">M2DX och Dexed: styrkor och begränsningar</a></li>
+<li><a href="#sound-matching">Flytta ljud och jämför dem rättvist</a></li>
+<li><a href="#troubleshooting">Felsökning och aktuella begränsningar</a></li>
+<li><a href="#sources">Källor, versioner och tolkning</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Version, krav och omfattning </h2>
+<p>M2DX är en FM-synthesizer med sex operatorer och 32 algoritmer. Spela på skärmklaviaturen, anslut en MIDI-klaviatur eller ladda dess AUv3-instrument i ett kompatibelt värdprogram. M2DX-Core är Swift-biblioteket som skapar FM-ljudet; appen tillför gränssnitt, förinställningar, MIDI-anslutningar och effekter.</p><ul><li>Handboken beskriver den publicerade <strong>M2DX 1.7.14 (bygge 40)</strong>, som använder <strong>M2DX-Core 1.25.0</strong> och <strong>MIDI2Kit 1.0.19</strong>. Senare utvecklingsändringar ingår inte i guiden.</li><li>Den aktuella <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store-sidan</a> anger <strong>iPhone, iOS 18 eller senare</strong>. Den listar även kompatibilitet med Apple Silicon-Macar med macOS 15 eller senare, men uppger att iPhone-appen inte har verifierats på macOS. Utgå därför inte från att kompatibilitetsuppgiften innebär en inbyggd Mac-version eller en iPad-optimerad version.</li><li>Handboken finns på 11 språk. Den publicerade appen anger <strong>engelska</strong> som gränssnittsspråk. Kontrollnamn som LIVE och SAVE behålls därför på engelska här.</li><li>Appen och AUv3-instrumentet är gratis att hämta. <strong>M2DX Pro</strong> är ett valfritt engångsköp; se aktuellt pris i appen. Tillgängliga Pro-funktioner skiljer sig mellan den fristående appen och AUv3.</li></ul><p>Beskrivningarna nedan skiljer mellan en möjlighet i MIDI-standarden, en funktion i biblioteket och en funktion som faktiskt går att nå via den släppta appen. Det är olika nivåer av stöd.</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">Spela ditt första ljud </h2>
+<ol><li>Öppna M2DX och välj <strong>LIVE</strong>. Håll enhetens eller ljudkortets volym på en måttlig nivå.</li><li>Visa skärmklaviaturen med dess växlingsknapp om den är dold och tryck sedan på en tangent. Extern MIDI-maskinvara är valfri.</li><li>Tryck på en förinställning i LIVE. Tryck på <strong>det aktuella banknamnet</strong> för att välja en annan bank och sedan på ett ljud i banken.</li><li>Ändra klaviaturens oktav för att nå ett annat register. Skärmklaviaturen börjar med anslagsstyrka 100; använd Settings → Velocity för kurvan eller en extern klaviatur för att variera anslagsstyrkan medan du spelar.</li><li>Öppna <strong>FX</strong> för att forma ljudet eller <strong>EDIT</strong> för att ändra syntesparametrar. Spara ett redigerat ljud innan du väljer ett annat.</li></ol><p>För en USB-klaviatur ansluter du ett kompatibelt gränssnitt eller en adapter och kontrollerar MIDI-mottagningen. För en Bluetooth-MIDI-klaviatur öppnar du <strong>Settings → MIDI → Bluetooth MIDI</strong> och ansluter där. Bluetooth MIDI överför speldata; det är skilt från Bluetooth-ljud, som kan ge märkbar fördröjning vid medhörning.</p><p>Om inget hörs, prova först ett fabriksljud på skärmklaviaturen. Då skiljer du ett problem med ljudutgången från ett anslutningsproblem med kontrollern. Se <a href="#troubleshooting">Felsökning</a>.</p>
+</section>
+<section id="screens" aria-labelledby="screens-title">
+<h2 id="screens-title">Hitta i gränssnittet </h2>
+<div aria-labelledby="screens-table" class="table-wrap" role="region" tabindex="0"><table><caption id="screens-table">Huvudvyer</caption><thead><tr><th scope="col">Vy eller kontroll</th><th scope="col">Syfte</th></tr></thead><tbody><tr><th scope="row">LIVE</th><td>Välj bank och ljud och spela på skärmklaviaturen. Om du återvänder hit från LAYER återställs läget med ett enda ljud.</td></tr><tr><th scope="row">EDIT</th><td>Redigera de sex operatorerna, algoritmen, enveloperna och gemensamma ljudparametrar; skapa ett eget ljud med SAVE.</td></tr><tr><th scope="row">LAYER</th><td>Sidan TX816 LAYER kombinerar ljud till en stack. Den saknar inbyggd klaviatur; använd extern MIDI eller AU-värdprogrammets MIDI-ingång för att provspela en stack.</td></tr><tr><th scope="row">FX</th><td>Justera interna effekter. När du öppnar FX behålls det föregående läget med ett enda ljud eller lager.</td></tr><tr><th scope="row">AU</th><td>Sidan AU FX laddar externa ljudeffekter i den fristående appen med Pro. Det är något annat än att ladda själva M2DX som ett AUv3-instrument.</td></tr><tr><th scope="row">Förinställningsnamn i sidhuvudet / ALG</th><td>Väljaren vid förinställningsnamnet listar fabriksljud. Använd LIVE → aktuellt banknamn för importerade banker och CUSTOM. ALG öppnar algoritmvalet.</td></tr><tr><th scope="row">Settings</th><td>Anslutningar, ljudmotoralternativ, köp och andra appinställningar. Felsöknings- och MIDI-CI-diagnosvyer i utvecklingsmaterial är inte kontroller i den offentliga versionen.</td></tr></tbody></table></div><p>EDIT saknar skärmklaviatur. Provspela ändringar med extern/värd-MIDI eller återvänd till LIVE utan att välja ett annat ljud; växling mellan LIVE och EDIT behåller aktuella ändringar.</p>
+</section>
+<section id="presets" aria-labelledby="presets-title">
+<h2 id="presets-title">Banker, egna ljud och sparande </h2>
+<p>En bank samlar ljud; när du väljer ett ljud ersätter det det aktuella enskilda FM-ljudet. Fabriksljud, importerade SysEx-banker och dina sparade <strong>CUSTOM</strong>-ljud är separata samlingar. Du når dem alla via bankväljaren i LIVE.</p><h3>Spara ett redigerat ljud</h3><ol><li>Välj ett utgångsljud och öppna EDIT.</li><li>Gör ändringarna och tryck på <strong>SAVE</strong>.</li><li>Ange ett namn och slutför sparandet. Varje gång skapas ett <strong>nytt eget ljud</strong>, även om ett annat ljud har samma namn. SAVE är inte ett överskrivningskommando.</li><li>För att hämta ljudet återvänder du till LIVE, trycker på det aktuella banknamnet, väljer <strong>CUSTOM</strong> längst ned i banklistan och trycker på det sparade ljudet.</li></ol><p>När du sparar släcks indikatorn för osparade ändringar, men den aktuella bank- eller förinställningsmarkeringen flyttas inte automatiskt till CUSTOM. CUSTOM är dolt tills minst ett ljud har sparats. CUSTOM lagrar ljudet, kontrollerroutning/EG-läge, Mono/Poly och portamento på/av/tid samt interna FX. Det lagrar inte ett helt värdprojekt, en extern AU-kedja, motor-/divisor-/DAC-alternativ, MIDI-Learn-tilldelningar eller en TX816-stack. REVERT återgår till redigeringens utgångsläge; INIT initierar ljudet efter bekräftelse. INIT återställer inte alla appinställningar.</p><h3>Radera ett eget ljud</h3><p>Tryck länge på ljudet i CUSTOM-banken, välj <strong>Delete</strong>och bekräfta. Den sparade posten tas bort; det för tillfället laddade ljudet kan fortfarande höras. Behåll en separat kopia av SysEx-källfiler som du behöver importera igen.</p>
+</section>
+<section id="sysex" aria-labelledby="sysex-title">
+<h2 id="sysex-title">Importera DX7-SysEx-ljud </h2>
+<p>En <code>.syx</code>-fil är en datafil för MIDI System Exclusive. DX7-ljuddata beskriver operatorer, enveloper och gemensamma ljudinställningar; den innehåller inte inspelat ljud. Den släppta importfunktionen accepterar en <strong>4104 byte stor DX7-bulkbank med 32 ljud</strong>. Den kontrollerar header, 7-bitarsdata och kontrollsumma; en dump av ett enda ljud accepteras inte.</p><ol><li>Spara <code>.syx</code>-källfilen på en plats som är tillgänglig via filväljaren.</li><li>Öppna <strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>, välj filen och tryck sedan på Done.</li><li>Återvänd till LIVE → aktuellt banknamn, välj den importerade banken och därefter ett ljud.</li><li>Redigera ljudet vid behov och använd SAVE för att skapa en separat CUSTOM-kopia.</li></ol><p>Använd en bank med 32 ljud när du utbyter filer med M2DX. En dump av ett enda ljud måste först placeras i en kompatibel bank med en ljudhanterare som Dexed. Filändelsen .syx bevisar inte kompatibilitet: andra synthesizers SysEx-format och utökade data i DX-familjen kan skilja sig. En felaktig fil eller ett meddelande utan stöd blir inte kompatibelt genom att byta namn. Packa upp ett arkiv innan du väljer dess bankfil. Import med samma filnamn lägger till en numrerad kopia i stället för att skriva över banken. Svep på en importerad banks rad i Settings för att radera appens kopia; originaldokumentet i Filer tas inte bort. Det offentliga gränssnittet saknar Export-kommando för ljud och banker.</p><p>DX7 SysEx innehåller inte M2DX-effekter, Pro-lager, motorinställningar eller Dexed-insticksprogrammets tillstånd. Börja en kontrollerad ljudjämförelse med samma DX7-ljuddata och stäng av extra bearbetning. Se <a href="#sound-matching">Matcha ljud med Dexed</a>.</p>
+</section>
+<section id="fm-basics" aria-labelledby="fm-basics-title">
+<h2 id="fm-basics-title">Så skapar FM med sex operatorer ljud </h2>
+<p>En <strong>operator</strong> är en oscillator med egen nivå och envelop. En <strong>bärvåg</strong> når ljudutgången; en <strong>modulator</strong> ändrar en annan operators fas och skapar därmed ytterligare frekvenskomponenter. FM av DX-typ är implementerad som fasmodulering: signaler multipliceras inte bara med varandra.</p><div aria-label="En modulator förändrar en bärvåg; bärvågen når utgången" class="signal-flow" role="img"><span>OP 2<br/>Modulator</span><span aria-hidden="true">→</span><span>OP 1<br/>Bärvåg</span><span aria-hidden="true">→</span><span>Ljudutgång</span></div><p>Den valda <strong>algoritmen</strong> bestämmer hur de sex operatorerna kopplas samman. Vissa bildar långa modulationskedjor, andra har flera parallella bärvågor. Att byta algoritm kan ändra ljudet drastiskt även om alla operatorvärden är oförändrade.</p><ul><li>Höj <strong>utgångsnivån för en bärvåg</strong> för att ändra den grenens hörbara nivå.</li><li>Höj <strong>utgångsnivån för en modulator</strong> för att öka modulationsdjupet, vilket oftast ger mer ljushet eller ett mer komplext spektrum.</li><li>Använd ett heltalsförhållande som 1:1 eller 2:1 som harmoniskt besläktad utgångspunkt. Förhållanden som inte är heltal ger ofta klockliknande eller metalliska klanger.</li><li><strong>Återkoppling</strong> för tillbaka en operatorsignal till dess återkopplingsväg. Mer återkoppling kan tillföra övertoner eller en strävare karaktär.</li></ul><p>En bra första övning är att välja en algoritm med en enkel gren med två operatorer, sänka de andra bärvågorna, ställa båda operatorerna på 1:1 och långsamt höja modulatornivån. Förkorta sedan bara modulatorns envelop: ljudet blir ljust i början och mjukare efter hand.</p>
+</section>
+<section id="operators" aria-labelledby="operators-title">
+<h2 id="operators-title">Operatorfrekvens, nivå och klaviaturskalning </h2>
+<p>Välj en operator i EDIT och ändra en parameter i taget medan du upprepar samma ton. Operatornumren identifierar positionerna i algoritmen; en operator är inte alltid bärvåg bara på grund av sitt nummer.</p><div aria-labelledby="operators-table" class="table-wrap" role="region" tabindex="0"><table><caption id="operators-table">Viktiga operatorparametrar</caption><thead><tr><th scope="col">Parameter</th><th scope="col">Vad du kan lyssna efter</th></tr></thead><tbody><tr><th scope="row">Ratio / Fixed, Coarse / Fine</th><td>Ratio följer den spelade tonhöjden. Fixed ställer in en absolut operatorfrekvens, användbart för särskilda klanger vars modulering inte följer klaviaturen på vanligt sätt. Coarse gör större ändringar; Fine finjusterar dem.</td></tr><tr><th scope="row">Output Level</th><td>Ändrar en bärvågs nivå eller en modulators djup. DX-parameterskalan är inte en enkel linjär volymprocent.</td></tr><tr><th scope="row">Detune</th><td>Förskjuter operatorns stämning en aning. Prova små skillnader mellan parallella bärvågor för rörelse innan du lägger till chorus.</td></tr><tr><th scope="row">Anslagskänslighet</th><td>Bestämmer hur starkt anslagsstyrkan ändrar denna operators nivå. Känslighet på en modulator ändrar främst ljusheten; på en bärvåg även ljudstyrkan.</td></tr><tr><th scope="row">Nivåskalning över klaviaturen</th><td>Brytpunkt, djup till vänster/höger och kurvor ändrar nivån över klaviaturen. Använd detta för att dämpa ljusa höga toner eller förstärka ett lågt register.</td></tr><tr><th scope="row">Hastighetsskalning</th><td>Gör envelopens hastighet beroende av tangentens läge. Den är skild från nivåskalningen.</td></tr><tr><th scope="row">Känslighet för amplitudmodulering</th><td>Styr hur mycket en operator reagerar på den gemensamma amplitudmodulationssignalen. Även LFO och kontrollerroutning måste ha ett värde över noll.</td></tr></tbody></table></div><div class="note"><p><strong>WAVE-begränsning i 1.7.14:</strong> redigeraren erbjuder vågformsval, men den levererade Core-funktionen för vågformsinställning ändrar inte oscillatorn. De släppta motorerna använder sinusoperatorer. Räkna inte med att WAVE gör denna version till en motor med åtta vågformer eller en DX7II-motor.</p></div><p>Den aktuella redigeraren erbjuder Level 0–99, VEL 0–7, AMS 0–3, KRS 0–7 och Feedback 0–7. Feedback är bara aktiverat för återkopplingsoperatorn i den valda algoritmen. Huvudreglaget Ratio sträcker sig över 0.50–16.00, men CRS (0–31) och FIN (0–99) kan representera förhållanden utanför reglagets område; CRS 0 betyder ×0.5. Detune sträcker sig från −50 till +50 cent. OP1–OP6 väljer vilken operator som ska redigeras; de är inte solo-/tystnadsknappar.</p>
+</section>
+<section id="envelopes" aria-labelledby="envelopes-title">
+<h2 id="envelopes-title">Operatorenveloper, tonhöjdsenvelop och LFO </h2>
+<p>Varje operator har fyra envelophastigheter <strong>R1–R4</strong> och fyra nivåer <strong>L1–L4</strong>. Vid Note On går envelopen igenom sina tre första målnivåer; den uthållna fasen använder L3. Note Off startar den sista övergången mot L4. Hastigheterna styr övergångstakten; de är inte tider i millisekunder, och även avståndet mellan nivåerna påverkar tiden.</p><p>För en kort elpianoattack kan modulatorn börja starkt och snabbt falla till en lägre L3 medan bärvågen klingar av långsammare. För ett padljud gör du bärvågens första stigning långsammare och undviker en alltför skarp modulatorstart. Om ett ljud fortsätter klinga efter att tangenten släppts, kontrollera R4/L4, sustain och reverb separat.</p><p>En <strong>tonhöjdsenvelop</strong> ändrar ljudets tonhöjd över tid. Den har egna hastigheter och nivåer och är inte ytterligare en amplitudenvelop. Börja med små tonhöjdsändringar, eftersom starka inställningar kan dominera ljudet.</p><p>Den gemensamma <strong>LFO</strong> ger periodisk rörelse i tonhöjd eller amplitud. Vågform, hastighet, fördröjning och djup formar rörelsen. Tonhöjdsmodulering ger vibrato; amplitudmodulering ger tremolo, där operatorns känslighet avgör hur starkt den reagerar. <strong>Key sync</strong> styr om en oscillator eller LFO startar om med en ton; det kan påverka upprepade toners attack och jämförelser.</p><p>Behåll FM Engine, Mark I Depth och kontrollerns EG MODE oförändrade under redigeringen. Samma sparade DX7-värden kan reagera olika om motorns modulationsskalning eller kontrollerns EG-biasbeteende ändras; se <a href="#core-engines">Motorinställningar</a>.</p><p>Dra de fyra punkterna i envelopgrafen för att justera motsvarande nivåer och hastigheter; högre R-värden är snabbare. Tonhöjdsenvelopens mittnivå är 50. Siffervisningarna under grafen visar värdena och öppnar inga textfält. LFO Speed, Delay, PMD och AMD har området 0–99, PMS 0–7, med vågformerna TRI, SAW▼, SAW▲, SQR, SIN och S&amp;H.</p>
+</section>
+<section id="performance" aria-labelledby="performance-title">
+<h2 id="performance-title">Anslagsstyrka, kontroller, mono och portamento </h2>
+<p>LIVE-klaviaturen skickar en fast inledande anslagsstyrka på <strong>100</strong>; det aktuella gränssnittet har inget VEL-reglage. <strong>Settings → Velocity → Velocity Curve</strong> erbjuder Linear, Soft, Hard och DX7 Keyboard 1-100. Soft höjer mellanvärden, Hard sänker dem och DX7-alternativet begränsar värden över 100. Testa även anslagskänsliga ljud med en extern klaviatur.</p><p>I LIVE förskjuter <strong>TRANSPOSE</strong> hela framförandet med ±24 halvtoner; tryck på värdet för att återställa till noll. Det är skilt från ljudets transponering i EDIT och förskjutningarna adderas. EDIT erbjuder också <strong>PB Range</strong> (1–12 halvtoner) och <strong>Tuning</strong> (±100 cent). PB Range återgår till 2 när ett ljud laddas; huvudstämningen behålls.</p><h3>Routa uttrycksfulla kontroller</h3><p>EDIT → CONTROLLERS har WHEEL (CC1), FOOT (CC4), BREATH (CC2) och A.TOUCH (kanaltryck). Var och en har Pitch-, Amp- och EG-värden från 0–99. Pitch styr vibrato, Amp styr amplitudmodulering och EG ger envelopbias. Denna routning skiljer sig från att tilldela en fysisk ratt med MIDI Learn.</p><ul><li><strong>EG MODE DX7:</strong> gäller operatorer med AMS aktiverat. En vilande kontroller kan dämpa dessa operatorer, och när den höjs öppnas de mot sin normala nivå. EG noll stänger av denna bias. Kontrollera läget om ett andningsstyrt ljud är tyst innan du blåser.</li><li><strong>EG MODE BOOST:</strong> höjer operatornivåer med kontrollerdata, även modulatorernas, så både ljushet och ljudstyrka kan ändras. Det bevarar M2DX:s tidigare beteende.</li></ul><h3>Spela en ton i taget</h3><p>Välj Poly eller Mono i <strong>Settings → Performance</strong>. Portamento och dess tid finns också i EDIT. I Mono glider <strong>Fingered</strong> mellan överlappande toner; <strong>Full-time</strong> glider även mellan separerade toner. <strong>Glissando</strong> rör sig i halvtonssteg. Mono använder en röst från den första aktiverade parten; det spelar inte ett lager med åtta parter eller Voice Stack som en polyfon stack.</p><p>Spara ett aktuellt CUSTOM-ljud för att behålla Mono/Poly, portamento på/av/tid och kontrollerroutning/EG-läge. Global anslagskurva, stämning, PB Range och de separata inställningarna Mono Portamento/Glissando lagras inte i ljudet. Spara även värdprojektet för en AUv3-session.</p><p>När fabriksljud eller importerade ljud laddas behåller den fristående appen aktuell kontrollerroutning, medan AUv3 återställer den till DX7-standardvärden. Ett CUSTOM-ljud i aktuellt format återställer sin sparade routning. Spara en CUSTOM-kopia när du behöver repeterbara inställningar för andningskontroller eller andra kontroller.</p>
+</section>
+<section id="effects" aria-labelledby="effects-title">
+<h2 id="effects-title">Forma ljudet med effekter </h2>
+<p>Den normala interna signalvägen är:</p><div aria-label="Standardordning för den interna effektkedjan" class="signal-flow" role="img"><span>FM</span><span>→ EQ</span><span>→ Drive</span><span>→ Chorus</span><span>→ Reverb</span><span>→ Stereo</span><span>→ Maximizer</span></div><div aria-labelledby="effects-table" class="table-wrap" role="region" tabindex="0"><table><caption id="effects-table">Kontroller på FX-sidan</caption><thead><tr><th scope="col">Del</th><th scope="col">Reglage och praktisk användning</th></tr></thead><tbody><tr><th scope="row">MIX</th><td>VOLUME, EXPRESSION och MOD WHEEL. Ett lågt expression-värde kan tysta ett i övrigt fungerande ljud. MOD WHEEL följer kontrollerroutningen.</td></tr><tr><th scope="row">EQ / DRIVE</th><td>LOW/HIGH ändrar klangbalansen; OVERDRIVE ger mättnad. Jämför vid liknande utgångsnivåer.</td></tr><tr><th scope="row">CHORUS</th><td>SPEED och DEPTH ger rörelse och bredd. Minska djupet om tonhöjden blir för diffus.</td></tr><tr><th scope="row">REVERB</th><td>TIME och LEVEL styr rummet och dess mängd. En lång efterklang kan höras även efter att den torra tonen har klingat av.</td></tr><tr><th scope="row">STEREO</th><td>WIDTH ändrar stereobredden. Kontrollera monouppspelning när bredden är viktig för ljudet.</td></tr><tr><th scope="row">MAXIMIZER</th><td>INPUT och CEILING anger nivån in i det sista dynamiksteget och dess utgångstak. Det ersätter inte balansering av tidigare förstärkningssteg.</td></tr></tbody></table></div><p>FX-delarnas visuella ordning är inte ett schema över bearbetningsordningen. CUSTOM sparar interna FX-inställningar, inklusive Pro-FX-inställningar där de finns; den externa AU-effektkedjan sparas separat.</p><p>I den <strong>fristående Pro-appen</strong>är signalvägen P73 → EQ → Drive → Chorus → 1176 → DigitalReverb → Stereo → Maximizer. <strong>PREAMP</strong> ger P73-reglage för förstärkning, utgång, högpass och klang. <strong>COMP</strong> ger 1176-ingång/utgång, attack/release, förhållande och mix samt en mätare för förstärkningsreduktion. <strong>REVERB PRO</strong> väljer HALL'78, HALL'86, PLATE, NONLIN, LO-FI'86 eller HALL'99 och lägger till fördröjning före efterklangen, storlek, dämpning, basavskärning, modulering och bredd. Vanliga reverb-TIME/LEVEL styr fortfarande tiden och mängden.</p><p>Ändra några få parametrar åt gången. Mer drive, kompressoringång eller maximiseringång kan både höja upplevd ljudstyrka och ändra klangen. AUv3 använder standardkedjan för FX även efter köp av Pro.</p>
+</section>
+<section id="layers-pro" aria-labelledby="layers-pro-title">
+<h2 id="layers-pro-title">TX816-lager, Voice Stack och Pro </h2>
+<p><strong>TX816 LAYER</strong> kombinerar olika ljud och/eller unisonkopior. Detta är skilt från den experimentella multiplikatorn <strong>Voice Stack</strong> i den fristående appens Settings.</p><ol><li>Öppna LAYER och välj en <strong>PARTS × UNISON</strong>-fördelning: 8×1, 4×2, 2×4 eller 1×8. OFF återgår till ett enda ljud. Pro krävs för att aktivera lager.</li><li>Tryck på varje parts ljudnamn i LAYER MIXER och välj ett ljud. Justera LVL (−24 till +6 dB), PAN och vid behov RND för en ny slumpmässig panorering per ton.</li><li>Ställ in DETUNE (0–12 cent) och fördelningen Even eller Random. Spela från en extern MIDI-källa eller AU-värd; sidan saknar skärmklaviatur.</li><li>Öppna FX för att fortsätta spela stacken medan du justerar de gemensamma effekterna. Återgång till LIVE eller EDIT växlar till det enskilda ljudet.</li><li>Använd sparikonen, <strong>SAVE STACK</strong> och ett namn för att skapa en ny stack. Menyn … öppnar MANAGE STACKS med FACTORY DEMOS och MY STACKS. Sparade egna stackar kan raderas där.</li></ol><p>En stack innehåller delarnas DX7-ljuddata, fördelning, förstämning, partnivåer/panorering och gemensamma interna FX. Om ett CUSTOM-ljud väljs för en part används dess DX7-ljud, inte alla egna spel- och FX-inställningar som en oberoende partkonfiguration. Effekterna bearbetar den samlade signalen; varje lager har ingen egen FX-kedja. Synkronisering av sparade MY STACKS mellan den fristående appen och AUv3 garanteras inte.</p><div aria-labelledby="pro-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pro-table">Gratis- och Pro-tillgång per miljö</caption><thead><tr><th scope="col">Funktion</th><th scope="col">Fristående app</th><th scope="col">AUv3-instrument</th></tr></thead><tbody><tr><th scope="row">Grundläggande FM, redigering, standard-FX</th><td>Gratis</td><td>Gratis</td></tr><tr><th scope="row">Mark I Depth</th><td>Gratis, ÷1–÷16</td><td>Värdparameter, ÷1–÷16</td></tr><tr><th scope="row">Val av FM-motor</th><td>Val av Modern/Mark I kräver Pro</td><td>Tillgängligt via värdparametrar utan den fristående appens Pro-spärr</td></tr><tr><th scope="row">TX816 LAYER</th><td>Pro</td><td>Pro, med appens köprättighet</td></tr><tr><th scope="row">P73 / 1176 / DigitalReverb</th><td>Pro</td><td>Inte tillgängligt; endast standard-FX</td></tr><tr><th scope="row">Externa AU-effekter</th><td>Pro, upp till fyra platser i AU</td><td>Lägg i stället in effekter i värdprogrammet</td></tr><tr><th scope="row">Vintage DAC / Voice Stack</th><td>Pro-alternativ i den fristående appen</td><td>Exponeras inte som dessa fristående alternativ</td></tr></tbody></table></div><p><strong>Settings → Experimental → Voice Stack</strong> erbjuder 1× (Off), 2×, 4×, 8× och 16×, förstämning upp till 25 cent och slumpmässig anslagsstyrka. Högre multiplikatorer ökar beräkningsarbetet; sänk dem vid överbelastning eller avbrott. Mono går förbi detta stackbeteende.</p><p>Köp eller återställ via huvudappens <strong>Settings → M2DX Pro</strong>. Använd Restore Purchases med det Apple-konto som användes vid köpet och öppna insticksprogrammet igen vid behov. AU-gränssnittet hänvisar köp/återställning till huvudappen.</p>
+</section>
+<section id="external-au" aria-labelledby="external-au-title">
+<h2 id="external-au-title">Använd externa AU-effekter i appen </h2>
+<p>Med Pro i den fristående appen öppnar du <strong>AU → ADD EFFECT</strong> på en av de fyra platserna. Välj en installerad ljudeffekt från listan Audio Units. Kedjan kommer efter M2DX:s interna effekter.</p><ul><li><strong>BYP</strong> kopplar förbi en plats; reglageikonen öppnar effektens gränssnitt om det finns; × tar bort effekten.</li><li><strong>NOT INSTALLED</strong> betyder att det sparade insticksprogrammet inte hittas. <strong>LOAD FAILED</strong> anger ett laddningsfel; kontrollera installationen och använd sedan kontrollen för nytt försök.</li><li>Appen återställer denna kedja separat från CUSTOM-ljud och sparade TX816-stackar. Förvänta dig inte att ett ljudbyte ersätter den externa kedjan.</li></ul><p>Denna sida laddar effekter, inte ytterligare instrumentinsticksprogram. Synligheten kan bero på appens funktionskonfiguration. När M2DX självt laddas som AUv3 lägger du till andra effekter i värdprogrammet i stället för att leta efter denna AU-sida.</p>
+</section>
+<section id="auv3" aria-labelledby="auv3-title">
+<h2 id="auv3-title">Använd M2DX i ett AUv3-värdprogram </h2>
+<ol><li>Installera och öppna huvudappen en gång. Lägg till <strong>M2DX FM Synthesizer</strong> som instrument i ett kompatibelt värdprogram.</li><li>Routa värdprogrammets klaviatur, MIDI-spår eller externa MIDI-ingång till instrumentet och aktivera medhörning enligt värdprogrammets krav.</li><li>Välj ett ljud och redigera med LIVE, EDIT, LAYER eller FX. Insticksprogrammet har fyra flikar; kugghjulet längst ned öppnar Performance, inte den fristående appens allmänna Settings.</li><li>Importera .syx-banker i huvudappen. Öppna AU-gränssnittet igen eller ta fram det i förgrunden för att uppdatera det gemensamma biblioteket. CUSTOM och importerade banker delar lagring inom samma installation.</li><li>Spara värdprojektet för att behålla instansens inställningar. Använd även EDIT → SAVE när du vill ha ett återanvändbart CUSTOM-ljud.</li></ol><p>Värdprogrammet hanterar samplingsfrekvens, buffertstorlek, MIDI-routning och automation. Huvudappens inställningar för MIDI Input, Channel och Bluetooth konfigurerar inte AU-instansen. Använd värdprogrammets parameterautomation eller MIDI-tilldelning; de synliga MIDI-Learn-kontrollerna i appen är inte anslutna till AU:s MIDI-mottagning i denna version.</p><p>Värdprogrammet kan exponera parametrarna <strong>FM Engine</strong> och <strong>Mark I Depth</strong> . AU-motorn initieras med <strong>÷5</strong>, medan parametern deklarerar <strong>÷1</strong> och standardvärdet för den fristående appen är <strong>÷1</strong>. Värdprogrammet kan återställa sitt tillstånd; matcha värdet uttryckligen vid jämförelser. Standard-FX och valfria Pro-TX816-lager fungerar i AUv3. Pro-förförstärkare/kompressor/reverb, extern AU-hosting i den fristående appen, Vintage DAC och Voice Stack har inga likvärdiga AU-funktioner.</p><p>Version 1.7.14 skalar gränssnittet i större värdfönster. Värdprogrammet kan förbruka Program Change för sitt eget ljudval, så kontrollera att meddelandena verkligen når M2DX-instansen. AU:s MIDI-stöd beror också på vilket händelseformat värdprogrammet skickar; se implementationstabellen nedan.</p>
+</section>
+<section id="core" aria-labelledby="core-title">
+<h2 id="core-title">M2DX-Core: från ton till ljud </h2>
+<p><strong>M2DX-Core</strong> är syntesbiblioteket i Swift 6, skilt från appen och dess insticksskal. Det implementerar operatorer, de 32 algoritmerna, enveloper, tonhöjd och skalning, röstfördelning, ljudstrukturer och kontrollerhantering på syntessidan. Appen tillför anslutningar, MIDI-CI/PE, gränssnitt, köp, lagring och effekter.</p><div aria-label="MIDI- och parameterändringar går in i M2DX-Core, som beräknar röster före appeffekter och ljudutgång" class="signal-flow" role="img"><span>MIDI / parametrar</span><span>→ Händelsekö / ögonblicksbild</span><span>→ M2DX-Core-röster</span><span>→ Mix</span><span>→ App-FX</span><span>→ Ljudutgång</span></div><h3>Fixpunktsoperatorer och uppslagstabeller</h3><p>De viktigaste operatorberäkningarna använder fas- och signalvärden av typen <strong>Int32 Q24</strong>. En fascykel motsvarar 2<sup>24</sup> enheter, och bredare Int64-mellanprodukter kan skiftas tillbaka till önskad skala. Q24 är en intern talrepresentation, inte ett ljudfilformat eller bevis för att hela appen enbart använder heltal.</p><p>Modern använder en sinustabell med 1024 intervall och linjär interpolering; en exponentialtabell omvandlar logaritmiska nivåer till amplitud. Tabelluppslag och interpolering undviker en fullständig sinus- eller exponentialberäkning för varje operatorsampel. Tabellerna förbereds vid initiering i stället för att genereras av kompilatorn. Frekvensomvandling, kontrollernormalisering, LFO, mixning och appens effekter använder även flyttalsoperationer.</p><h3>Enveloper och stabil ljudberäkning</h3><p>Operatorenveloper använder en intern Q16-representation och uppdateras i block, medan synteskärnan interpolerar förstärkning eller dämpning. Motorn arbetar i interna delar om upp till 64 sampel. Parameterögonblicksbilder och en händelsekö för in ändringar i ljudberäkningen; förallokerat minne och atomisk kommunikation är avsedda att undvika väntan och allokering i ljudåteranropet.</p><p>Den interna blockstorleken gör inte inkommande MIDI-händelser sampelkorrekta. I den släppta fristående signalvägen används inte källtidsstämplar för att schemalägga tonhändelser vid enskilda sampelpositioner. AU-vägen behandlar sin händelselista före ljudberäkningen i stället för att dela bufferten vid varje händelsetid. Hörbar timing beror också på värdprogram, operativsystem, buffert och anslutning.</p><h3>Röster och lager</h3><p>Den normala konfigurationen med ett enda ljud har en budget på 16 röster med översampling av, unison 1 och Voice Stack 1. Lager-/unison-/stackkopior förbrukar var och en beräkningsröster; översampling ändrar budgeten. Bibliotekets större interna buffertgränser garanterar inte att tusentals oberoende klaviaturtoner fungerar tillförlitligt på en telefon. Minska multiplikatorer och effekter när enheten inte hinner med.</p><p>Källa: <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift">SynthEngine</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Voice.swift">DX7Voice</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/SinTable.swift">sinustabell</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Envelope.swift">envelop</a>.</p>
+</section>
+<section id="core-engines" aria-labelledby="core-engines-title">
+<h2 id="core-engines-title">Modern, Mark I, Depth och Vintage DAC </h2>
+<p><strong>Modern</strong> använder heltalskärnan för sinus och förstärkning som hör till referensmodellen av MSFA-typ. Det är inte en separat ”Clean Float32”-motor. <strong>Mark I</strong> använder en logaritmisk sinus-/exponentialmodell baserad på offentliga beskrivningar av ursprungliga OPS: fasen viks in i en kvadrant, logaritmisk dämpning kombineras och omvandlas sedan tillbaka till amplitud. Det är inte en cykelkorrekt simulering av varje operation i originalkretsen.</p><h3>Vad Mark I Depth faktiskt ändrar</h3><p><strong>Mark I Depth är en divisor för framåtriktad modulering, inte för utgångsvolym, bitdjup eller envelophastighet.</strong> ÷1 behåller stark modulering; en större divisor försvagar signalen som matas in i nästa operators fas och gör oftast ljudet mindre ljust. Bärvågsutgången och återkopplingssignalen delas inte direkt av denna kontroll.</p><p>Använd <strong>Settings → Audio → Mark I Depth</strong>i den fristående appen: ÷1–÷16 i steg om 0.1, gratis att justera. Aktuell standard är Mark I med ÷1.0 och DAC av; en tidigare sparad inställning kan ersätta standarden. Pro tillför valet Modern/Mark I och alternativet Vintage DAC. Motorbyte stoppar toner som klingar, så byt mellan fraser.</p><p><strong>Observera AU:s startvärde:</strong> värdparametern deklarerar standardvärdet Depth 1, men AU-motorns initiering sätter 5. Värdprogrammet kan återapplicera sitt parametertillstånd. Slutvärdet vid första öppningen har inte testats i alla värdprogram; ange det uttryckligen när du matchar ljud. Sättarfunktioner finns för Engine/Depth, men automation via renderhändelser behandlar inte dessa kontroller som vanliga ljudparametrar. Kontrollera därför värdprogrammets beteende i stället för att anta att varje automationsväg fungerar.</p><h3>Vintage DAC och översampling</h3><p>Den valfria Vintage 12-bit DAC tillämpar amplitudberoende kompandering och kvantisering på den råa Mark-I-röstutgången. Det är ett separat klangformande steg, inte bara en bitcrusher på slututgången och inte en inställning för MIDI-upplösning. Audio i den fristående appen erbjuder också Oversampling OFF/HQ/Low. Jämför med öronen och övervaka CPU-belastningen; översampling förbättrar inte automatiskt varje ljud och ändrar tillgängliga röstresurser.</p><h3>Vad referenstesterna fastställer</h3><p>Core innehåller sampeljämförelser mellan Moderns heltalsberäkningar och en Apache-licensierad MSFA/Dexed-referens. Vissa tester matar in fasinkrement från referensen för att isolera kärnan; den normala tonhöjdsberäkningen är en separat väg. Mark-I-tester jämför med en oberoende skriven C-tvilling, bland annat under villkoret ÷8 som skiljer sig från appens standard ÷1. Testerna bevisar inte att varje slutlig apputgång, Dexed-inställning eller inspelning från en fysisk DX7 är bitidentisk.</p><p><strong>Licenser:</strong> M2DX-Core har Apache-2.0, MIDI2Kit har MIT och M2DX-appen har en egen proprietär licens. C-referensen som bara används för tester är inte Swift-biblioteket i produktion. Se <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core-LICENSE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark-I-kärnan</a> och <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">villkor för jämförelsetesterna</a>.</p>
+</section>
+<section id="midi2" aria-labelledby="midi2-title">
+<h2 id="midi2-title">MIDI 2.0 förklarat: meddelanden och upplösning </h2>
+<p>MIDI överför spelinstruktioner, som vilken ton som ska spelas, hur starkt den ska slås an och hur en pedal rör sig. Mottagande synthesizer skapar ljudet. <strong>MIDI 2.0 ändrar inte ljudets samplingsfrekvens eller ljudfilens bitdjup.</strong></p><p><strong>UMP (Universal MIDI Packet)</strong> är ett paketformat som kan bära både MIDI-1.0- och MIDI-2.0-meddelanden. UMP på en anslutning bevisar inte i sig att högupplösta MIDI 2.0 Channel Voice-data används. CoreMIDI kan översätta mellan protokoll beroende på mottagarens API och valt protokoll. <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apples förklaring av CoreMIDI</a>.</p><div aria-labelledby="resolution-table" class="table-wrap" role="region" tabindex="0"><table><caption id="resolution-table">Protokollets värdebredder, inte garanterad syntesprecision</caption><thead><tr><th scope="col">Meddelande</th><th scope="col">Vanligt MIDI-1.0-meddelande</th><th scope="col">MIDI 2.0 Channel Voice</th></tr></thead><tbody><tr><th scope="row">Anslagsstyrka</th><td>7 bitar: 0–127</td><td>16 bitar: 0–65,535</td></tr><tr><th scope="row">Control Change</th><td>Vanligen 7 bitar; parade kontroller kan ge 14 bitar</td><td>32 bitar: 0–4,294,967,295</td></tr><tr><th scope="row">Kanaltryck / polyfont tryck</th><td>7 bitar</td><td>32 bitar</td></tr><tr><th scope="row">Pitch Bend</th><td>14 bitar: 0–16,383</td><td>32 bitar</td></tr></tbody></table></div><p>MIDI 1.0 Note On med anslagsstyrka noll fungerar som Note Off, och MIDI 1.0 har även valfria högupplösta utökningar. Tabellen jämför de vanliga meddelandena, inte varje utökning. Se <a href="https://midi.org/summary-of-midi-1-0-messages">översikten över MIDI-1.0-meddelanden</a> och <a href="https://midi.org/the-state-of-midi-2-0-high-resolution-performance-and-the-rise-of-profiles-update-feb-2026">MIDI Associations upplösningsöversikt</a>.</p><h3>Vad högre upplösning kan och inte kan göra</h3><p>Finare kontrollvärden kan minska steg när sändare, anslutning och ljudmotor bevarar och använder dem. Att omvandla ett 7-bitars klaviaturvärde till ett 16-bitarsfält skapar inte detaljer som klaviaturen aldrig mätte. En DX7-parameter med området 0–99 behåller det diskreta området även efter att en högupplöst kontroller tagits emot. <a href="https://midi.org/midi-2-0-bit-scaling-and-resolution">MIDI-bitskalning och upplösning</a>.</p><h3>Grupper, kanaler och uttryck per ton</h3><p>Tillämpliga UMP-meddelanden har upp till 16 grupper med 16 kanaler per grupp. Dessa adresser garanterar inte 256 instrumentparter eller 256 röster i en app. MIDI 2.0 definierar även tonhöjd och kontroller per ton, användbart för att böja en hållen ton utan att ändra resten av ackordet. M2DX:s faktiska routningsgränser beskrivs i nästa kapitel.</p><p>MIDI 1.0 har redan polyfont tangenttryck. Traditionell <strong>MPE</strong> med MIDI 1.0 ger ytterligare kontroll per ton genom att tilldela toner separata kanaler; inbyggda MIDI-2.0-meddelanden per ton använder en annan representation. Moderna MPE-profiler omfattar även MIDI 2.0, så ”MPE” och ”MIDI 2.0” utesluter inte varandra. <a href="https://midi.org/mpe-midi-polyphonic-expression">MPE-specifikationen</a>; <a href="https://midi.org/midi-ci-profile-for-midi-polyphonic-expression">MIDI-CI-MPE-profilen</a>.</p>
+</section>
+<section id="midi-support" aria-labelledby="midi-support-title">
+<h2 id="midi-support-title">Vad de släppta MIDI-vägarna faktiskt stöder </h2>
+<p>Tabellen beskriver källkodsvägarna i 1.7.14, inte hårdvarutester av varje kombination av kontroller, operativsystem och värdprogram. Den fristående appen tar emot CoreMIDI via MIDI2Kit 1.0.19. AUv3 har separata ingångar för äldre MIDI-händelser och MIDI-2.0-UMP-händelser.</p><div aria-labelledby="midi-support-table" class="table-wrap" role="region" tabindex="0"><table><caption id="midi-support-table">Mottagning jämfört med hörbar funktion</caption><thead><tr><th scope="col">Meddelande / funktion</th><th scope="col">Fristående app</th><th scope="col">AUv3</th></tr></thead><tbody><tr><th scope="row">Note On / Off</th><td>MIDI-1.0- och MIDI-2.0-ingång. MIDI-2.0-anslagsstyrka når Core som 16 bitar.</td><td>Äldre MIDI- och MIDI-2.0-UMP-ingång. Tonattribut och släpphastighet formar inte ljudet.</td></tr><tr><th scope="row">CC / kanal-Pitch-Bend / Program Change</th><td>Implementerat för stödda kontroller och bankregler.</td><td>Implementerat via äldre och MIDI-2.0-händelser; värdroutningen spelar fortfarande roll.</td></tr><tr><th scope="row">Kanaltryck</th><td>Anslutet till A.TOUCH-routningen.</td><td>MIDI-2.0-UMP-vägen är ansluten; äldre MIDI-tryck är inte kopplat.</td></tr><tr><th scope="row">Polyfont tangenttryck</th><td>Tas emot och lagras men är inte anslutet till hörbara syntesändringar.</td><td>MIDI-2.0-värden lagras utan hörbar effekt; äldre tryck är inte kopplat.</td></tr><tr><th scope="row">Inbyggd tonhöjd / kontroller / hantering per ton</th><td>Transportlagret kastar dessa meddelandetyper innan de når appens efterföljande hanterare. Kan inte användas via denna standardingång.</td><td>Inte anslutet till mottagaren för värdhändelser.</td></tr><tr><th scope="row">Extern RPN-/NRPN-styrning</th><td>MIDI 2.0 Registered/Assignable Controllers kastas av transportlagret; MIDI-1.0-RPN/NRPN-CC-sekvenser sätts inte samman.</td><td>Inte anslutet som externa MIDI-meddelanden. AU-parameterautomation använder en annan intern väg.</td></tr><tr><th scope="row">MIDI 1.0 Channel Voice i UMP</th><td>Accepteras.</td><td>Hoppas över av UMP-händelsehanteraren; vägen för äldre MIDI-händelser är separat.</td></tr><tr><th scope="row">MPE / oberoende kanaluttryck</th><td>Ingen uttrycksroutning för medlemskanaler. Omni innebär inte MPE-stöd.</td><td>Ingen oberoende röstroutning per kanal/grupp.</td></tr><tr><th scope="row">MIDI-CI / Property Exchange</th><td>Tillgängligt med resursgränserna nedan.</td><td>Hanteras inte via AU:s MIDI-händelseingång.</td></tr><tr><th scope="row">MIDI-CI-profilkonfiguration</th><td>Appen annonserar ingen implementerad profilkonfiguration.</td><td>Tillhandahålls inte av AU-händelseingången.</td></tr></tbody></table></div><h3>Varför 16-bitars anslagsstyrka inte ger 65,536 olika DX7-reaktioner</h3><p>Protokollvärdet når Core i 16-bitarsform, men DX7-beräkningen av anslagskänslighet skiftar ned det till 7 bitar och indexerar en tabell med 64 poster. Operatorns känslighetsinställning påverkar resultatet ytterligare. FX-kontroller minskar värden till 0–127; operatorutgångsnivåer använder DX-området 0–99. Kanalstyrning passerar också normalisering. Att ta emot ett stort heltal innebär inte att varje heltal ger ett eget hörbart tillstånd.</p><h3>Gränser för kanaler, grupper och timing</h3><p>Fristående Settings erbjuder Omni eller kanaler 1–16 som ingångsfilter. Efter filtrering bevaras inte grupp-/kanalidentiteten som oberoende instrumentparter. Kanal-pitchbend påverkar hela synthen, inte en separat MPE-medlemsröst. Core har ytterligare API:er per ton, men deras existens överbryggar inte luckorna i den släppta transporten och routningen.</p><p>MIDI 2.0 gör inte denna version sampelkorrekt och tar inte bort latens. Källtidsstämplar och värdprogrammets sampelförskjutningar används inte fullt ut för schemaläggning per händelse. Dra inga slutsatser om timinggarantier från de interna bearbetningsdelarna om 64 sampel.</p><p>Källa: <span class="source-review">transportfördelning</span>, <span class="source-review">AU-händelsehanterare</span>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/ScalingTable.swift">anslagsskalning</a> och <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift#L2257">uttryckshantering i Core</a>.</p>
+</section>
+<section id="midi-ci" aria-labelledby="midi-ci-title">
+<h2 id="midi-ci-title">MIDI-CI, profiler och Property Exchange </h2>
+<p><strong>MIDI-CI</strong> låter enheter utbyta information om sina möjligheter. <strong>Profiler</strong> definierar gemensamt beteende för ett visst musikaliskt användningsområde; de är inte ljudförinställningar. <strong>Property Exchange (PE)</strong> låter en utvecklare exponera namngivna resurser som enhetsinformation, programlistor eller kontrollbeskrivningar. En PE-kompatibel anslutning garanterar inte att varje DAW automatiskt kan redigera varje instrumentparameter. <a href="https://midi.org/midi-2-0">MIDI Associations översikt</a>; <a href="https://midi.org/profiles">Profiler</a>.</p><p>Den gamla MIDI-CI-proceduren Protocol Negotiation fasades ut i 2023 års revidering. Aktuella allmänna förklaringar bör skilja utbyte av funktionsinformation från val av UMP-protokoll. M2DX:s levererade kompatibilitetsbeteende innebär inget anspråk på att implementera varje aktuell profil eller specifikationsoption. <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">Officiella revisionsanteckningar från 2023</a>.</p><div aria-labelledby="pe-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pe-table">Resurser i fristående M2DX</caption><thead><tr><th scope="col">Resurs</th><th scope="col">Vad den exponerar</th><th scope="col">Extern åtkomst</th></tr></thead><tbody><tr><th scope="row">ResourceList / DeviceInfo</th><td>Beskrivningar av tillgängliga resurser och enhetsinformation. Kompatibilitetsfält är inte auktoritativa uppgifter om appversion eller tillverkare.</td><td>GET; ingen SET</td></tr><tr><th scope="row">ChannelList</th><td>Aktuellt ljudnamn för en representerad kanal, inte 256 oberoende parter.</td><td>GET och prenumeration</td></tr><tr><th scope="row">ProgramList</th><td>Fabriksljudslista med sidindelning. Ingen gemensam bläddrare för CUSTOM, importerade banker och TX816-stackar.</td><td>GET; registrerad för prenumeration; ingen SET</td></tr><tr><th scope="row">X-ParameterList</th><td>CC-namn, kontrollnummer och standardvärden för kontrollerintegration som KeyStage. Inte hela Core-parametermodellen.</td><td>GET; registrerad för prenumeration; ingen SET</td></tr><tr><th scope="row">X-ProgramEdit</th><td>Aktuellt programnamn/-adress och CC-värden i formen 0–127.</td><td>GET och prenumeration; ingen SET</td></tr><tr><th scope="row">JSONSchema</th><td>Scheman för parameterlistans och programredigeringens resurser; direkt registrerade trots att de inte finns i den handskrivna ResourceList.</td><td>GET; ingen SET</td></tr></tbody></table></div><p>Programbyten skickar meddelanden till relevanta resurser för namn/aktuellt program. CC-ändringar i gränssnittet kan meddela X-ProgramEdit; synkronisering av mottagna CC undviker att varje ändring skickas tillbaka. Att en resurs accepterar prenumeration innebär inte att varje tänkbar ändring genererar ett meddelande.</p><p><strong>Dessa registrerade resurser implementerar inte PE SET över anslutningen.</strong> Det finns lokala parameter-get/set-API:er i koden, men deras sättarfunktioner är inte registrerade som externa PE-sättare. Redigera ljud med stödda CC-kontroller, appens gränssnitt eller värdautomation. Denna version tillhandahåller inte heller standardprofilkonfiguration.</p><p>För en kompatibel kontroller upprättar du en MIDI-anslutning med returväg, väljer avsedd ingång/kanal och låter kontrollern begära stödda resurser. Om etiketter inte visas kan vanliga toner/CC ändå fungera. Versionen saknar en offentlig felsökningsvy ”Discover MIDI-CI Devices”, och samverkan beror på enheten. Källa: <span class="source-review">registrerade PE-resurser och meddelanden</span>.</p>
+</section>
+<section id="midi-learn" aria-labelledby="midi-learn-title">
+<h2 id="midi-learn-title">Anslut kontroller och använd MIDI Learn </h2>
+<p>Välj i den fristående appens <strong>Settings → MIDI</strong>All Sources eller en viss MIDI Input och Omni (All) eller en kanal från 1–16. Connected MIDI Devices och Refresh Devices hjälper dig att bekräfta anslutningen. Använd Bluetooth MIDI för en BLE-MIDI-kontroller. Kontrollera aktivitetspunkten i sidhuvudet medan du spelar.</p><ol><li>Tryck länge på ett FX-reglage som stöds, utan att flytta det, i ungefär en halv sekund.</li><li>Välj <strong>Learn CC</strong> i MIDI-Learn-menyn.</li><li>Vrid på maskinvarans ratt eller skjutreglage medan LEARN blinkar. Första mottagna CC tilldelas och inlärningen avslutas.</li><li>Tryck länge på samma reglage igen för att avbryta en pågående inlärning. Använd <strong>Settings → MIDI Learn → Reset All Mappings</strong> för att återställa tilldelningar.</li></ol><p>Mål som stöds omfattar MIX-/grundläggande FX-reglage, utvalda kontinuerliga Pro-kontroller, LAYER DETUNE och part-LVL. LAYER PAN, alla FM-redigerarkontroller och alla effektomkopplare/-val är inte automatiskt lärbara. Ett CC har ett inlärt mål; en ny tilldelning ersätter det tidigare målet. Ursprungliga standardfunktioner som sustain kan fortfarande reagera, så undvik att oavsiktligt återanvända sådana CC.</p><div aria-labelledby="cc-table" class="table-wrap" role="region" tabindex="0"><table><caption id="cc-table">Användbara standardtilldelningar för CC</caption><thead><tr><th scope="col">CC</th><th scope="col">Funktion</th></tr></thead><tbody><tr><th scope="row">1 / 2 / 4</th><td>Modulationshjul / andnings- / fotkontroller; ställ in Pitch/Amp/EG-respons i EDIT</td></tr><tr><th scope="row">7 / 11 / 64</th><td>Volym / expression / sustain</td></tr><tr><th scope="row">5 / 65</th><td>Portamentotid / portamento på-av</td></tr><tr><th scope="row">102 / 103 / 104 / 105</th><td>EQ låg / EQ hög / overdrive / stereobredd</td></tr><tr><th scope="row">106 / 107 / 108 / 109</th><td>Chorushastighet / chorusdjup / reverbtid / reverbnivå</td></tr><tr><th scope="row">110 / 111</th><td>Maximizer-ingång / utgångstak</td></tr><tr><th scope="row">112–117</th><td>Utgångsnivå OP1–OP6</td></tr><tr><th scope="row">0 / 32</th><td>Bank Select MSB / LSB; använd med Program Change enligt nästa avsnitt</td></tr></tbody></table></div><p>Inlärda tilldelningar sparas separat från CUSTOM-ljud. Om en parameter som enbart kan läras visar <strong>CC255</strong> eller Reset to CC255 är det en intern markering för ”inget fabriks-CC”, inte ett giltigt MIDI-CC att skicka. I AUv3 använder du värdprogrammets tilldelning och automation i stället för den fristående inlärningsproceduren.</p><p>AU-parameterautomation använder en intern representation för parameterroutning; det innebär inte att externa MIDI-1.0-NRPN-sekvenser eller MIDI 2.0 Assignable Controllers accepteras. Källa: <span class="source-review">Learn-tilldelningar</span> och <span class="source-review">AU-parameterroutning</span>.</p>
+</section>
+<section id="program-change" aria-labelledby="program-change-title">
+<h2 id="program-change-title">Välj ljud med Bank Select och Program Change </h2>
+<p>MIDI-värden börjar på noll. En kontroller som visar program 1–128 kan skicka värden 0–127. CUSTOM-kortets <strong>B16 PC0</strong> betyder bank-MSB 16 och skickat Program Change 0, inte nödvändigtvis det programnummer kontrollern visar.</p><div aria-labelledby="program-table" class="table-wrap" role="region" tabindex="0"><table><caption id="program-table">Programadressering</caption><thead><tr><th scope="col">Mål</th><th scope="col">Meddelanden / regel</th></tr></thead><tbody><tr><th scope="row">Fabriksljud</th><td>Med bank är det globala fabriksindexet Bank MSB × 32 + Program. LSB ignoreras. Utan bank behandlas PC som ett globalt fabriksindex. LIVE:s kategoribanker följer inte denna MIDI-banknumrering.</td></tr><tr><th scope="row">Första CUSTOM-ljudet, stabilt nummer 0</th><td>CC0 = 16, CC32 = 0, PC = 0.</td></tr><tr><th scope="row">Stabilt CUSTOM-nummer 130</th><td>CC0 = 16, CC32 = 1, PC = 2. Generellt: LSB = floor(number / 128), PC = number mod 128.</td></tr><tr><th scope="row">Importerat .syx-ljud</th><td>Använd appens/värdprogrammets förinställningsväljare. Importerade ljud får inte samma stabila CUSTOM-Program-Change-nummer enbart genom import. Spara en CUSTOM-kopia om du behöver den adressen.</td></tr><tr><th scope="row">Aktiv TX816-stack i fristående app</th><td>Vanligt PC prioriterar stacklistan när aktiverade Pro-lager används; CUSTOM-bank 16 har separat prioritet. Återvänd till LIVE/EDIT för vanligt val av ett enda ljud.</td></tr></tbody></table></div><p>CUSTOM-nummer förblir stabila när andra ljud raderas; de numreras inte om efter listposition. Ett otilldelat CUSTOM-nummer lämnar det aktuella ljudet oförändrat. Skicka bankmeddelanden varje gång vid bankval i den fristående appen: banken förbrukas av nästa PC på matchande kanal och antas inte förbli vald obegränsat.</p><p>AUv3 följer sin valväg för fabriksljud/CUSTOM och parkerar det aktiva lagret. Värdprogrammet kan förbruka PC innan det når M2DX. AU-programladdning skjuts också upp till gränssnitts-/kontrollsidan, så Note On samtidigt som PC kan fortfarande använda föregående ljud. Skicka programval före första musikaliska tonen och verifiera det i det avsedda värdprogrammet.</p><p>Källa: <span class="source-review">CUSTOM-programnummer</span>, <span class="source-review">fabriksbankernas adressering</span> och <span class="source-review">AU-laddning och -tillstånd</span>.</p>
+</section>
+<section id="dexed-comparison" aria-labelledby="dexed-comparison-title">
+<h2 id="dexed-comparison-title">M2DX och Dexed: styrkor och begränsningar </h2>
+<p>Jämförelsen använder <strong>M2DX 1.7.14 / Core 1.25.0</strong> och den officiella stabila versionen <strong>Dexed 1.1.0</strong>, kontrollerade 15 november 2026. ”Inte bekräftat” innebär att den granskade versionen inte fastställer förmågan; det utesluter inte en värdomvandling, en förgrening eller en senare version.</p><div aria-labelledby="dexed-table" class="table-wrap" role="region" tabindex="0"><table><caption id="dexed-table">Funktionsjämförelse för dessa versioner</caption><thead><tr><th scope="col">Egenskap</th><th scope="col">M2DX 1.7.14</th><th scope="col">Dexed 1.1.0</th></tr></thead><tbody><tr><th scope="row">Huvudmiljö</th><td>iPhone-app med medföljande AUv3-instrument. Kompatibilitet med Apple Silicon-Mac listas med förbehåll om verifiering.</td><td>Datorer med Windows, macOS och Linux; ingen officiell iOS-app i den granskade versionen.</td></tr><tr><th scope="row">Insticksformat</th><td>AUv3. Ingen VST3- eller CLAP-version i denna utgåva.</td><td>Officiella paket: VST3, CLAP, fristående; macOS även AU. LV2 ingår inte i ZIP-filerna för version 1.1.0.</td></tr><tr><th scope="row">FM-struktur / polyfoni</th><td>Sex operatorer, 32 algoritmer; 16 röster i normal enkel konfiguration med översampling av och inga extra stackar. Lager och unison förbrukar resurser.</td><td>Sex operatorer, 32 algoritmer; högst 16 aktiva toner.</td></tr><tr><th scope="row">Motorval</th><td>Mark I och Modern; motorinställningar och åtkomst skiljer sig mellan app och AUv3. Ingen OPL-motor.</td><td>Modern, Mark I och experimentella OPL Series.</td></tr><tr><th scope="row">Utbyte av DX7-ljud</th><td>Importerar kompatibla .syx-data; sparar egna ljud lokalt. Ingen fullständig dubbelriktad ljudhanterare för maskinvara.</td><td>Läser/skriver DX7/TX7-ljud och kassetter med 32 ljud, organiserar kassetter och skickar SysEx till maskinvara.</td></tr><tr><th scope="row">Effekter</th><td>Intern EQ, drive, chorus, reverb, stereobearbetning och maximizer. Extra Pro-bearbetning och externa AU-FX är fristående funktioner.</td><td>Inbyggt lågpassfilter, resonans och förstärkning. Lägg till chorus, reverb och annan bearbetning i värdprogrammet.</td></tr><tr><th scope="row">Lager</th><td>Valfri Pro-TX816-stack med upp till åtta ljud; fristående Voice Stack är en separat funktion.</td><td>Använd fler insticksinstanser och värdroutning för motsvarande lager.</td></tr><tr><th scope="row">Mikrostämning</th><td>Arbetsflöden för Scala .scl/.kbm och MTS-ESP tillhandahålls inte i den granskade appen.</td><td>Scala-.scl-skalor, .kbm-klaviaturmappningar och MTS-ESP-klientstöd.</td></tr><tr><th scope="row">Automation / MIDI Learn</th><td>Parameterautomation i AU-värd; fristående Learn för stödda FX-/mix-/lagerkontroller. Detta är skilt från externt NRPN-stöd.</td><td>144 DX7-parametrar avsedda för DAW-automation samt MIDI-CC-tilldelning via parametrarnas snabbmenyer.</td></tr><tr><th scope="row">MIDI 2.0 / upptäckt</th><td>UMP-ingång och MIDI-CI/PE-implementation med versionsbegränsningarna i handboken. Inte alla Core-hanterare kan nås från offentlig indata.</td><td>Inbyggt UMP, högupplöst MIDI 2.0, MIDI-CI och PE är inte bekräftade i den granskade versionen. MIDI-1.0-händelsehantering är implementerad.</td></tr><tr><th scope="row">MPE / styrning per ton</th><td>Utgå inte från fullständigt MPE eller användbar inbyggd styrning per ton via den släppta ingångsvägen.</td><td>MPE-pitchbend per ton är implementerad. MPE-tryck och -klangfärg är inte aktiva i den granskade rutinen.</td></tr><tr><th scope="row">Pris och källkodslicenser</th><td>Gratis app med valfritt Pro-köp. M2DX-Core har en egen Apache-2.0-licens; den licensierar inte alla appkomponenter.</td><td>Gratis och öppen källkod. Dexed som helhet är GPL v3; msfa-komponenten är Apache-2.0.</td></tr></tbody></table></div><p>Källor: <a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">utgivningspaket för Dexed 1.1.0</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/README.md">README och licenser</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginProcessor.h">röstgräns och motorer</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/window/CartManager.cpp">kassettfunktioner</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/Tuning.cpp">stämning</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/midi/PluginMidi.cpp">MIDI- och MPE-hantering</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginFx.cpp">utgångseffekter</a>.</p><h3>Välj efter uppgiften</h3><ul><li><strong>M2DX:s fördel:</strong> ett direkt spelbart mobilt instrument, skärmklaviatur, inbyggda kreativa effekter och valfria lager. Begränsningar är färre plattformar/insticksformat, skillnader mellan fristående app och AUv3 samt ofullständiga MIDI-uttrycksvägar.</li><li><strong>Dexeds fördel:</strong> integration med datorbaserade DAW-program, kassetthantering, maskinvaruredigering och alternativa stämningar. Det kräver en datormiljö, och den granskade interna bearbetningen är en mindre komplett effektkedja.</li><li>Detta är slutsatser om arbetsflöden utifrån dokumenterade funktioner, inte en rangordning av ljudkvalitet. Inget kontrollerat lyssningstest eller test av identisk rendering mellan dessa två versioner gjordes för handboken.</li></ul><p>För Dexeds redigeringsflöde, se den <a href="https://asb2m10.github.io/dexed/">officiella översikten</a> och <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/util/ContextMenuAdapter.h">implementationen av MIDI-CC-snabbmenyn</a>.</p>
+</section>
+<section id="sound-matching" aria-labelledby="sound-matching-title">
+<h2 id="sound-matching-title">Flytta ljud och jämför dem rättvist </h2>
+<ol><li>Exportera en kompatibel DX7-kassett med 32 ljud från Dexed som <code>.syx</code>. Importera filen i M2DX och välj samma ljud.</li><li>Använd läget för ett enda ljud. Stäng av M2DX-lager, Voice Stack och extra effekter; ta bort värdeffekter och neutralisera Dexeds utgångsfiltrering och förstärkningsformning.</li><li>Matcha samplingsfrekvens, stämning, transponering, motorläge, återkoppling, operatorvärden, enveloper, Key Sync och anslagsindata så nära som möjligt.</li><li>Kontrollera M2DX:s Mark-I-divisor, EG-läge och DAC-inställning separat. Standardvärden och skalning behöver inte motsvara Dexeds motor med samma namn.</li><li>Skicka samma tonföljd, tonlängder, anslagsstyrkor samt sustain- och kontrollervärden. Jämför enskilda toner före täta ackord som kan utlösa röststöld.</li><li>Matcha upplevd utgångsnivå och jämför sedan attack, uthållet spektrum och avklingning. Om de skiljer sig, isolera en parameter eller ett bearbetningssteg i taget.</li></ol><p>Ett gemensamt ljudformat och besläktade fixpunktstekniker garanterar inte identiska utgångssampel. Skillnader kan bero på motorbeteende, kontrolleromvandling, envelopläge, förstärkning, effekter eller routning. Cores referenstester gäller angivna förhållanden; de intygar inte att varje ljud, enhet, samplingsfrekvens eller inställning är identisk med Dexed eller en fysisk DX7.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">Felsökning och aktuella begränsningar </h2>
+<div aria-labelledby="troubleshooting-table" class="table-wrap" role="region" tabindex="0"><table><caption id="troubleshooting-table">Symtom och kontroller</caption><thead><tr><th scope="col">Symtom</th><th scope="col">Vad du bör kontrollera</th></tr></thead><tbody><tr><th scope="row">Inget ljud från skärmklaviaturen</th><td>Prova ett fabriksljud i LIVE. Kontrollera enhetsvolymen, Settings → Audio → Output / Master Volume och FX → MIX → VOLUME / EXPRESSION. Granska bärvågsnivåer och andnings-/EG-routning om bara ett ljud är tyst.</td></tr><tr><th scope="row">Extern klaviatur spelar inte</th><td>Kontrollera MIDI-aktivitetspunkten i sidhuvudet samt Settings → MIDI → MIDI Input och MIDI Channel. Använd Refresh Devices eller återanslutningsikonen när ett gränssnitt har anslutits. MIDI-anslutning bevisar inte att ljudet routas till avsedd utgång.</td></tr><tr><th scope="row">Fördröjd medhörning eller avbrott</th><td>Prova en kabelansluten ljudutgång. Minska Voice Stack/unison, lager och krävande externa effekter. Justera värdprogrammets buffert och CPU-belastning i AUv3; mindre buffert ger lägre latens men mindre beräkningsmarginal.</td></tr><tr><th scope="row">En stack låter som ett enda ljud</th><td>Återgång till LIVE/EDIT lämnar lagerläget. Stanna i LAYER eller FX och använd extern/värd-MIDI. Kontrollera fördelning och Pro-rättighet; Mono spelar inte hela stacken.</td></tr><tr><th scope="row">Det sparade ljudet verkar saknas</th><td>Använd LIVE → aktuellt banknamn → CUSTOM; PRESETS-väljaren i sidhuvudet listar bara fabriksljud. Sparandet väljer inte automatiskt den nya CUSTOM-posten.</td></tr><tr><th scope="row">SysEx-import misslyckas</th><td>Använd en uppackad DX7-bank på 4104 byte med 32 ljud, giltig header, 7-bitars nyttodata och kontrollsumma. Enskilda ljuddumpar och godtyckliga .syx-filer accepteras inte av denna importfunktion.</td></tr><tr><th scope="row">En kontroller är ansluten men påverkar inget</th><td>Kontrollera meddelandetyp, kanal och tilldelning. Hanterare per ton, polyfont tryck och vissa MIDI-2.0-meddelanden är inte kopplade till hörbart beteende via den släppta vägen. Läs stödtabellen i stället för att anta att alla MIDI-2.0-meddelanden fungerar.</td></tr><tr><th scope="row">Fristående app och AUv3 låter olika</th><td>Matcha motor, Mark-I-divisor, anslagskurva, FX, expression, stämning och värdprogrammets samplingsfrekvens. AU:s standarddivisor skiljer sig, och Pro-FX finns endast fristående.</td></tr><tr><th scope="row">Toner fortsätter efter att tangenter släppts</th><td>Kontrollera sustain CC64, hållna externa tangenter och efterklang. Skärmklaviaturens stoppikon släpper dess beröringshållna toner; det är inte en allmän panikfunktion för all extern indata. Stoppa/återställ värdprogrammets uppspelning eller återanslut ingången vid behov.</td></tr><tr><th scope="row">En Pro-funktion saknas</th><td>Återställ köp i huvudappen och öppna sedan AU igen. Kontrollera funktionstabellen för fristående/AUv3: Pro-köp lägger inte till varje fristående funktion i insticksprogrammet.</td></tr></tbody></table></div><p>Andra aktuella begränsningar är ingen ljud-/stackexport i användargränssnittet, ingen molnsynkronisering av bibliotek, inget Scala-/MTS-ESP-flöde, ingen effektkedja per lager och ett inaktivt WAVE-val. App Group-delning av CUSTOM/importerade banker är lokal inom installationen och innebär inget löfte om synkronisering mellan enheter. Handboken garanterar inte långvarig bakgrundsuppspelning.</p><p>För en användbar rapport anger du app-/bygg- och OS-version, enhet, fristående användning eller värdnamn/-version, inmatningshårdvara, meddelandetyp/kanal, förinställnings-/banknamn och kortast möjliga steg som återskapar felet. Skicka till <a href="mailto:support@hakaru.net">support@hakaru.net</a>. M2DX använder Firebase-kraschrapportering och andra tjänster som beskrivs i dess <a href="/M2DX-support/privacy">integritetspolicy</a>; integritetsbeteendet skiljer sig från andra hakaru-appar.</p>
+</section>
+<section id="sources" aria-labelledby="sources-title">
+<h2 id="sources-title">Källor, versioner och tolkning </h2>
+<p>Guiden kombinerar det släppta gränssnittet och dess aktiva källkodsvägar med officiella standarder och Dexeds utgivningsmaterial. Kommentarer i kodförråd, äldre hjälptexter och utvecklingsvyer betraktades inte som bevis för offentliga funktioner.</p><ul><li><a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX:s App Store-sida</a> — offentlig version och enhetskrav.</li><li><span class="source-review">M2DX-v1.7.14-40-källkod</span> — LIVE/EDIT/Settings, egen lagring, lager, effekter och AU-beteende.</li><li><span class="source-review">Fastställda beroenden för den släppta appen</span> — Core 1.25.0 och MIDI2Kit 1.0.19.</li><li><a href="https://github.com/hakaru/M2DX-Core/tree/v1.25.0">M2DX-Core 1.25.0</a> — syntes, skalning, kontrollerhantering och licens.</li><li><span class="source-review">MIDI2Kit 1.0.19</span> — transportlagret som används i denna version.</li><li><a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed-1.1.0-utgåvan</a> och <a href="https://github.com/asb2m10/dexed/tree/v1.1.0">taggad källkod</a> — jämförelsegrund.</li><li><a href="https://midi.org/midi-2-0-core-specification-collection">Samlingen av MIDI-2.0-kärnspecifikationer</a>, <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">specifikationsändringar från 2023</a> och <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apples CoreMIDI-dokumentation</a> — terminologi, transport och kompatibilitet.</li></ul><p>”Implementerat i biblioteket”, ”åtkomligt från appen” och ”verifierat med en viss kontroller eller värd” är separata påståenden. Guiden omfattar en källkodsgranskning, inte ett uttömmande test av maskinvarusamverkan. Produktnamn identifierar kompatibilitets- och jämförelsemål; de innebär inte något godkännande från respektive tillverkare.</p><p class="source-access-note">Källkodshänvisningarna för M2DX och MIDI2Kit avser utvecklarens granskning av den levererade koden. Deras kodarkiv är privata, så hänvisningarna är inte offentliga nedladdningslänkar. M2DX-Core och de angivna Dexed-källorna är offentliga.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/M2DX-support/changelog-sv">Ändringshistorik</a><a href="/M2DX-support/index-sv">Support</a><a href="/M2DX-support/privacy-sv">Integritet</a><a href="mailto:support@hakaru.net">Kontakta support</a><a href="#top">Till toppen</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

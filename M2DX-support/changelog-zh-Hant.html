@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M2DX 更新紀錄 | hakaru</title><meta name="description" content="M2DX 從 1.5.0 到 1.7.14 的公開更新：AUv3、自訂音色、控制器路由、Pro 效果器及 MIDI 修正。">
+<meta property="og:title" content="M2DX 更新紀錄"><meta property="og:description" content="M2DX 從 1.5.0 到 1.7.14 的公開更新：AUv3、自訂音色、控制器路由、Pro 效果器及 MIDI 修正。"><meta property="og:type" content="website"><meta property="og:url" content="https://hakaru.net/M2DX-support/changelog-zh-Hant"><meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+<link rel="canonical" href="https://hakaru.net/M2DX-support/changelog-zh-Hant"><link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/changelog">
+<link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/changelog-ja">
+<link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/changelog-de">
+<link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/changelog-es">
+<link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/changelog-fr">
+<link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/changelog-it">
+<link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/changelog-ko">
+<link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/changelog-nl">
+<link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/changelog-pt-BR">
+<link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/changelog-sv">
+<link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/changelog-zh-Hant"><link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/changelog">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/scripts/sidebar-styles.css"><link rel="stylesheet" href="/M2DX-support/manual/manual.css"></head>
+<body><a class="manual-skip" href="#contents">版本紀錄</a><button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-zh-Hant">支援</a>
+      <a href="/M2MX12-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-zh-Hant">支援</a>
+      <a href="/EraVerb-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-zh-Hant">支援</a>
+      <a href="/P73-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-zh-Hant">支援</a>
+      <a href="/TwinFET-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-Core-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-support/manual/zh-Hant/">手冊</a>
+      <a href="/M2DX-support/changelog-zh-Hant" class="active">更新紀錄</a>
+      <a href="/M2DX-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-zh-Hant">支援</a>
+      <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
+      <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">支援（英文）</a>
+      <a href="/MyEQ-support/manual/zh-Hant/">手冊</a>
+      <a href="/MyEQ-support/privacy">隱私權（英文）</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">支援（英文）</a>
+      <a href="/Tonrad-support/manual/zh-Hant/">手冊</a>
+      <a href="/Tonrad-support/privacy">隱私權（英文）</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/zh-Hant/">Support</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-zh-Hant">支援</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-zh-Hant">支援</a>
+      <a href="/BopBot-support/manual/zh-Hant/">使用手冊</a>
+      <a href="/BopBot-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2DX-support/changelog" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2DX-support/changelog-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/changelog-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/changelog-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/changelog-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/changelog-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-support/changelog-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-support/changelog-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-support/changelog-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-support/changelog-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體</span>
+  </div>
+</nav><div class="content-pane"><main class="manual changelog" id="top">
+<header class="manual-header"><div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>M2DX 更新紀錄</h1><p class="manual-subtitle">公開版本 · 影響演奏與編輯的變更</p></div></div><p class="manual-updated">更新於 2026 年 11 月 15 日 · 最新公開版本：1.7.14</p><nav class="manual-languages" aria-label="更新紀錄語言"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/M2DX-support/changelog">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/changelog-ja">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/changelog-de">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/changelog-es">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/changelog-fr">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/changelog-it">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/M2DX-support/changelog-ko">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/changelog-nl">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/M2DX-support/changelog-pt-BR">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/M2DX-support/changelog-sv">Svenska</a><span class="sidebar-lang-btn active" data-lang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</span></nav></header>
+<p>本頁整理公開版本中與使用者相關的變更。日期依日本 App Store 的版本紀錄，可能與組建或原始碼標籤的準備日期不同。開發版與僅供 TestFlight 使用的版本，包括 1.6.1 與 1.6.2，均不列為公開發布版本。</p><div class="note"><p>版本說明記錄的是當時的變更。目前的行為與限制請參閱使用手冊。尤其獨立 App 的 Mark I Depth 預設值在 1.7.12 改為 ÷1，但目前 AU 的初始化值與參數預設值不同。接收到 MIDI 訊息，不代表它會實際影響聲音。</p><p><a href="/M2DX-support/manual/zh-Hant/">閱讀 M2DX 使用手冊</a></p></div>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">版本紀錄</h2><ol><li><a href="#v-1-7-14">1.7.14</a></li><li><a href="#v-1-7-13">1.7.13</a></li><li><a href="#v-1-7-12">1.7.12</a></li><li><a href="#v-1-7-11">1.7.11</a></li><li><a href="#v-1-7-10">1.7.10</a></li><li><a href="#v-1-7-9">1.7.9</a></li><li><a href="#v-1-7-8">1.7.8</a></li><li><a href="#v-1-7-7">1.7.7</a></li><li><a href="#v-1-7-6">1.7.6</a></li><li><a href="#v-1-7-5">1.7.5</a></li><li><a href="#v-1-7-4">1.7.4</a></li><li><a href="#v-1-7-3">1.7.3</a></li><li><a href="#v-1-7-2">1.7.2</a></li><li><a href="#v-1-7-1">1.7.1</a></li><li><a href="#v-1-7-0">1.7.0</a></li><li><a href="#v-1-5-5">1.5.5</a></li><li><a href="#v-1-5-4">1.5.4</a></li><li><a href="#v-1-5-3">1.5.3</a></li><li><a href="#v-1-5-2">1.5.2</a></li><li><a href="#v-1-5-1">1.5.1</a></li><li><a href="#v-1-5-0">1.5.0</a></li></ol></nav>
+<section id="v-1-7-14" aria-labelledby="v-1-7-14-title"><h2 id="v-1-7-14-title">1.7.14</h2><p class="manual-updated"><time datetime="2026-10-08">2026-10-08</time> · build 40</p><ul><li>AUv3 編輯器會隨較大的宿主視窗放大。文字、按鈕與鍵盤一同縮放；較小視窗保留原有配置。</li></ul></section>
+<section id="v-1-7-13" aria-labelledby="v-1-7-13-title"><h2 id="v-1-7-13-title">1.7.13</h2><p class="manual-updated"><time datetime="2026-10-07">2026-10-07</time> · build 39</p><ul><li>CUSTOM 音色現在可在獨立 App 與 AUv3 中儲存並還原調變輪、腳踏、吹管與觸後路由，以及 EG MODE。請重新儲存舊 CUSTOM 音色，以納入這些設定。</li></ul></section>
+<section id="v-1-7-12" aria-labelledby="v-1-7-12-title"><h2 id="v-1-7-12-title">1.7.12</h2><p class="manual-updated"><time datetime="2026-10-05">2026-10-05</time> · build 38</p><ul><li>獨立 App 的 Mark I Depth 預設值從 ÷5 改為 ÷1。先前選擇的數值會保留。More from hakaru 加入更多 App。目前 AU 初始值的注意事項請參閱使用手冊。</li></ul></section>
+<section id="v-1-7-11" aria-labelledby="v-1-7-11-title"><h2 id="v-1-7-11-title">1.7.11</h2><p class="manual-updated"><time datetime="2026-10-04">2026-10-04</time> · build 37</p><ul><li>新增 EDIT → CONTROLLERS → EG MODE。DX7 保留 1.7.10 的偏置行為；BOOST 則恢復較早版本提高所有運算子電平的行為，包含調變器。</li></ul></section>
+<section id="v-1-7-10" aria-labelledby="v-1-7-10-title"><h2 id="v-1-7-10-title">1.7.10</h2><p class="manual-updated"><time datetime="2026-10-03">2026-10-03</time> · build 36</p><ul><li>變更控制器 EG Bias：靜止時衰減已啟用 AMS 的運算子，隨控制器數值升高，逐漸開啟至音色設定的電平。使用 EG Bias 的音色可能聽起來不同；EG 範圍為零時不受影響。</li></ul></section>
+<section id="v-1-7-9" aria-labelledby="v-1-7-9-title"><h2 id="v-1-7-9-title">1.7.9</h2><p class="manual-updated"><time datetime="2026-10-02">2026-10-02</time> · build 35</p><ul><li>在 Bank MSB 16 新增固定的 CUSTOM Program Change 位址，並讓 AU 宿主可選取共用 CUSTOM／匯入音色。改善共用音色庫更新與 AU 專案還原，包括內嵌音色、疊層、調音與編輯內容。</li><li>啟用 AUv3 Program Change 與 Bank Select。Mark I Depth 改為免費，範圍擴大至 ÷1–÷16；此版本的預設值仍為 ÷5。</li><li>修正 Logic Pro 狀態還原、全範圍 MIDI 2.0 控制值轉換、即時運算子電平處理，以及切換 Pro 壓縮器時的雜音。</li></ul></section>
+<section id="v-1-7-8" aria-labelledby="v-1-7-8-title"><h2 id="v-1-7-8-title">1.7.8</h2><p class="manual-updated"><time datetime="2026-10-02">2026-10-02</time> · build 34</p><ul><li>獨立 App 會為每個原廠／匯入音色記住 Mono/Poly。新增在 LIVE 經確認後刪除 CUSTOM 音色的功能。取消 Restore Purchases 不再出現錯誤提示。</li></ul></section>
+<section id="v-1-7-7" aria-labelledby="v-1-7-7-title"><h2 id="v-1-7-7-title">1.7.7</h2><p class="manual-updated"><time datetime="2026-09-28">2026-09-28</time> · build 33</p><ul><li>修正在 Apple Silicon Mac 執行 iPhone App 時，開啟 Apple Audio Unit 效果器控制項會當機的問題。即使無法使用自訂介面，效果器仍持續處理。</li></ul></section>
+<section id="v-1-7-6" aria-labelledby="v-1-7-6-title"><h2 id="v-1-7-6-title">1.7.6</h2><p class="manual-updated"><time datetime="2026-09-18">2026-09-18</time> · build 32</p><ul><li>修正在 Apple Silicon Mac 執行 iPhone App 時，EDIT 畫面會當機的問題。Mac 的 EDIT 使用 −/+ 控制項；iPhone 保留原有步進控制項。</li></ul></section>
+<section id="v-1-7-5" aria-labelledby="v-1-7-5-title"><h2 id="v-1-7-5-title">1.7.5</h2><p class="manual-updated"><time datetime="2026-09-17">2026-09-17</time> · build 31</p><ul><li>運算子 Level 編輯現在依照顯示的 DX7 0–99 數值運作，不會改變其他運算子，且無須重新觸發即可影響正在發聲的音符。AUv3 現在將 CC112–117 路由至 OP1–OP6 電平。</li></ul></section>
+<section id="v-1-7-4" aria-labelledby="v-1-7-4-title"><h2 id="v-1-7-4-title">1.7.4</h2><p class="manual-updated"><time datetime="2026-09-12">2026-09-12</time> · build 30</p><ul><li>新增 Mono 演奏、連奏、Fingered/Full-time 滑音與半音階滑奏。CUSTOM 音色會儲存 Mono/Poly。</li><li>獨立 App Pro 新增 P73 前級、TwinFET 1176 壓縮器與六種機型的 DigitalReverb。獨立 App 的控制器路由會在切換音色及重新啟動後保留。</li><li>改善 MIDI Learn、延音、TX816 疊層保留、AU 狀態還原及購買／回復提示。</li></ul></section>
+<section id="v-1-7-3" aria-labelledby="v-1-7-3-title"><h2 id="v-1-7-3-title">1.7.3</h2><p class="manual-updated"><time datetime="2026-07-13">2026-07-13</time></p><ul><li>改善 MIDI 輸入篩選與 running status 處理、外部 AU 效果器載入、Pro 購買狀態、音訊啟動重試及預設音色保留。降低大量 MIDI／自動化活動時的額外負擔。</li></ul></section>
+<section id="v-1-7-2" aria-labelledby="v-1-7-2-title"><h2 id="v-1-7-2-title">1.7.2</h2><p class="manual-updated"><time datetime="2026-07-11">2026-07-11</time></p><ul><li>新增獨立 App Pro 外部 AU 效果器載入功能，可在內部鏈之後加入最多四個效果器，並還原效果器鏈／狀態。修正啟動時 Analytics 與 Crashlytics 的啟用處理。</li></ul></section>
+<section id="v-1-7-1" aria-labelledby="v-1-7-1-title"><h2 id="v-1-7-1-title">1.7.1</h2><p class="manual-updated"><time datetime="2026-07-04">2026-07-04</time></p><ul><li>推出復古 FM 面板風格的 App 圖示，包含 iOS 18 的深色與色調版本。</li></ul></section>
+<section id="v-1-7-0" aria-labelledby="v-1-7-0-title"><h2 id="v-1-7-0-title">1.7.0</h2><p class="manual-updated"><time datetime="2026-07-03">2026-07-03</time></p><ul><li>推出選購的一次性 M2DX Pro 購買：TX816 疊層、引擎選項、Vintage DAC 與 Voice Stack。新增回復購買項目與專用 FX 畫面；既有免費功能維持免費。</li><li>改善 AU 編輯／宿主自動化與共用音色庫。Maximizer 預設改為關閉。引擎使用條件與 Depth 範圍在後續版本再次變更，請參閱目前的使用手冊。</li></ul></section>
+<section id="v-1-5-5" aria-labelledby="v-1-5-5-title"><h2 id="v-1-5-5-title">1.5.5</h2><p class="manual-updated"><time datetime="2026-06-24">2026-06-24</time></p><ul><li>修正切換運算子頁面或載入 AUv3 預設音色時不必要的音色變化。改善常用頻率比吸附、螢幕鍵盤音符釋放與穩定性。</li></ul></section>
+<section id="v-1-5-4" aria-labelledby="v-1-5-4-title"><h2 id="v-1-5-4-title">1.5.4</h2><p class="manual-updated"><time datetime="2026-06-23">2026-06-23</time></p><ul><li>改善 AUv3 預設音色載入、多點觸控鍵盤複音與外掛命名。統一 App 與擴充套件的部署需求。</li></ul></section>
+<section id="v-1-5-3" aria-labelledby="v-1-5-3-title"><h2 id="v-1-5-3-title">1.5.3</h2><p class="manual-updated"><time datetime="2026-06-22">2026-06-22</time></p><ul><li>修正 AUv3 初始化，並加入七種語言的 App 內說明，包括尋找與匯入 DX7 音色庫的指引。</li></ul></section>
+<section id="v-1-5-2" aria-labelledby="v-1-5-2-title"><h2 id="v-1-5-2-title">1.5.2</h2><p class="manual-updated"><time datetime="2026-06-18">2026-06-18</time></p><ul><li>改善 AU 宿主自動化、Maximizer 旁路切換、MIDI 解析、調音顯示，以及安全的 SysEx 音色庫匯入／刪除。能接收壓力訊息，並不表示目前引擎已支援可聽見的複音壓力效果。</li></ul></section>
+<section id="v-1-5-1" aria-labelledby="v-1-5-1-title"><h2 id="v-1-5-1-title">1.5.1</h2><p class="manual-updated"><time datetime="2026-06-16">2026-06-16</time></p><ul><li>更新 App Store 螢幕截圖與發布封裝；未記錄新增的演奏功能。</li></ul></section>
+<section id="v-1-5-0" aria-labelledby="v-1-5-0-title"><h2 id="v-1-5-0-title">1.5.0</h2><p class="manual-updated"><time datetime="2026-06-16">2026-06-16</time> · build 9</p><ul><li>首個 App Store 版本，適用於 iOS 18 或以上版本的 iPhone。包含六運算子 FM、螢幕鍵盤演奏、編輯／自訂儲存、AUv3，以及使用者提供的 4104 位元組 DX7 32 音色庫匯入。</li></ul></section>
+<p>來源：App Store 版本紀錄、開發者的發布紀錄，以及已出貨原始碼檢視。 <a href="https://apps.apple.com/jp/app/m2dx/id6763840208?platform=mac">App Store 版本紀錄</a></p>
+<footer class="manual-footer"><nav><a href="/M2DX-support/manual/zh-Hant/">閱讀 M2DX 使用手冊</a><a href="/M2DX-support/index-zh-Hant">支援</a><a href="/M2DX-support/privacy-zh-Hant">隱私</a><a href="mailto:support@hakaru.net">聯絡支援</a><a href="#top">回到頂端</a></nav><p>© 2026 hakaru</p></footer></main></div><script src="/scripts/sidebar-script.js"></script></body></html>

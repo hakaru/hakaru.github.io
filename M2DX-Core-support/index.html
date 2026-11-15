@@ -582,6 +582,8 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/M2DX-support/">Support</a>
+      <a href="/M2DX-support/manual/en/">Manual</a>
+      <a href="/M2DX-support/changelog">Changelog</a>
       <a href="/M2DX-support/privacy">Privacy</a>
     </div>
   </div>
@@ -660,6 +662,15 @@ body {
   <div class="sidebar-lang">
     <span class="sidebar-lang-btn active" data-lang="en">EN</span>
     <a href="/M2DX-Core-support/index-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-Core-support/index-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-Core-support/index-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-Core-support/index-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-Core-support/index-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-Core-support/index-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-Core-support/index-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-Core-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-Core-support/index-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2DX-Core-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -965,46 +976,12 @@ body {
         </div>
 
         <div class="content">
-            <p>Welcome to the M2DX-Core support page.</p>
-            <p>M2DX-Core is a DX7-compatible FM synthesis engine written entirely in pure Swift. Its Int32 fixed-point kernel is cross-validated sample-for-sample against the open-source Dexed/msfa reference — a faithful DX7-style FM engine, not a cycle-accurate emulation of the original Yamaha OPS chip. No C or C++ in the shipping code.</p>
+<p><a href="/M2DX-support/changelog">M2DX — Changelog</a></p>
+<p><a href="/M2DX-support/manual/en/"><strong>Read the full M2DX manual</strong></a></p><h2>M2DX-Core: from a note to audio</h2><p><strong>M2DX-Core</strong> is the Swift 6 synthesis library, separate from the app and its plug-in wrapper. It implements operators, the 32 algorithms, envelopes, pitch and scaling, voice allocation, patch structures and synthesis-side controller handling. The app provides connections, MIDI-CI/PE, interface, purchases, storage and effects.</p><h2>Modern, Mark I, Depth and Vintage DAC</h2><p><strong>Modern</strong> uses the integer sine-and-gain kernel associated with the MSFA-style reference model. It is not a separate “Clean Float32” engine. <strong>Mark I</strong> uses a logarithmic sine/exponential model informed by public descriptions of the original OPS behavior: it folds phase into a quadrant, combines logarithmic attenuation, then converts back to amplitude. It is not a cycle-accurate simulation of every original chip operation.</p><p>Core contains sample comparisons of the Modern integer calculations against an Apache-licensed MSFA/Dexed reference. Some tests inject reference phase increments to isolate the kernel; production pitch calculation is a separate path. Mark I tests compare against an independently written C twin, including a ÷8 test condition that differs from the app’s ÷1 default. These tests do not prove that every final app output, Dexed setting or physical DX7 recording is bit-identical.</p><p><strong>Licenses:</strong> M2DX-Core is Apache-2.0, MIDI2Kit is MIT, and the M2DX app has its own proprietary license. The test-only C reference is not the production Swift library. See <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core LICENSE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark I kernel</a> and <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">comparison-test conditions</a>.</p><p><a href="/M2DX-support/manual/en/#core">M2DX-Core: from a note to audio</a> · <a href="/M2DX-support/manual/en/#midi-support">What the released MIDI paths actually support</a></p><pre><code>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.25.0")</code></pre>
 
-            <hr>
 
-            <h2>Features</h2>
 
-            <h3>DEXED-Validated Precision</h3>
-            <p>M2DX-Core uses Int32 fixed-point arithmetic throughout, cross-validated sample-for-sample against the Dexed/msfa reference across the operator, envelope, and scaling tests. It models DX7-style FM faithfully rather than cycle-accurately emulating the original hardware.</p>
 
-            <h3>MIDI 2.0 Native</h3>
-            <p>Built with native MIDI 2.0 support, M2DX-Core takes full advantage of per-note pitch bend, per-note expression, and high-resolution control data — enabling expressive playing not possible with MIDI 1.0.</p>
-
-            <h3>Real-Time Safe</h3>
-            <p>The audio processing path uses a lock-free architecture with no memory allocations on the audio thread, making M2DX-Core suitable for use in professional audio applications and AUv3 plugins.</p>
-
-            <h3>Pure Swift</h3>
-            <p>No C, no C++, no Objective-C bridging headers. M2DX-Core is written entirely in Swift, making it easy to integrate into any Swift or SwiftUI project as a Swift Package.</p>
-
-            <hr>
-
-            <h2>Integration</h2>
-
-            <h3>Swift Package Manager</h3>
-            <p>Add M2DX-Core to your project using Swift Package Manager. In Xcode, go to <strong>File &gt; Add Package Dependencies</strong> and enter the GitHub URL:</p>
-            <pre>https://github.com/hakaru/M2DX-Core</pre>
-            <p>Or add it directly to your <code>Package.swift</code>:</p>
-            <pre>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.0.0")</pre>
-
-            <hr>
-
-            <h2>Open Source</h2>
-            <p>M2DX-Core is open source software released under the MIT License. Contributions, issues, and pull requests are welcome on GitHub:</p>
-            <p><a href="https://github.com/hakaru/M2DX-Core"><strong>github.com/hakaru/M2DX-Core</strong></a></p>
-
-            <hr>
-
-            <h2>Contact</h2>
-            <p>If you have questions or feedback, please contact us at:<br>
-            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
 
         <footer>

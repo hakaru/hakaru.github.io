@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M2DX User Manual | hakaru</title>
+    <meta name="description" content="A detailed guide to M2DX: FM sound design, presets, effects, Pro and AUv3, M2DX-Core internals, MIDI 2.0 capabilities and limitations, and comparison with Dexed.">
+    <meta property="og:title" content="M2DX User Manual">
+    <meta property="og:description" content="A detailed guide to M2DX: FM sound design, presets, effects, Pro and AUv3, M2DX-Core internals, MIDI 2.0 capabilities and limitations, and comparison with Dexed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2DX-support/manual/en/">
+    <meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+    <link rel="canonical" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/M2DX-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">Contents</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/">Support</a>
+      <a href="/AnalogRhythmKing-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/">Support</a>
+      <a href="/M2MX12-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/">Support</a>
+      <a href="/EraVerb-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/">Support</a>
+      <a href="/P73-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/">Support</a>
+      <a href="/TwinFET-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/">Support</a>
+      <a href="/M2DX-Core-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/">Support</a>
+      <a href="/M2DX-support/manual/en/" class="active">Manual</a>
+      <a href="/M2DX-support/changelog">Changelog</a>
+      <a href="/M2DX-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/">Support</a>
+      <a href="/PeerClockMetronome-support/blog/en/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Support</a>
+      <a href="/MyEQ-support/manual/en/">Manual</a>
+      <a href="/MyEQ-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Support</a>
+      <a href="/Tonrad-support/manual/en/">Manual</a>
+      <a href="/Tonrad-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/">Support</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/">Support</a>
+      <a href="/BopBot-support/manual/en/">Manual</a>
+      <a href="/BopBot-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <span class="sidebar-lang-btn active" data-lang="en">EN</span>
+    <a href="/M2DX-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2DX-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>M2DX User Manual</h1><p class="manual-subtitle">Playing and editing FM sounds · M2DX-Core · MIDI 2.0 · Dexed comparison</p></div></div>
+    <p class="manual-updated">Updated November 15, 2026 · M2DX 1.7.14 (40) · M2DX-Core 1.25.0 · Dexed 1.1.0</p>
+    <nav class="manual-languages" aria-label="Manual language"><span class="sidebar-lang-btn active" data-lang="en" lang="en" aria-current="page">English</span><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/M2DX-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/M2DX-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/M2DX-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/M2DX-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Contents</h2><ol><li><a href="#overview">Version, requirements and scope</a></li>
+<li><a href="#quickstart">Play your first sound</a></li>
+<li><a href="#screens">Find your way around</a></li>
+<li><a href="#presets">Banks, custom voices and saving</a></li>
+<li><a href="#sysex">Import DX7 SysEx voices</a></li>
+<li><a href="#fm-basics">How six-operator FM makes a sound</a></li>
+<li><a href="#operators">Operator frequency, level and scaling</a></li>
+<li><a href="#envelopes">Operator envelopes, pitch envelope and LFO</a></li>
+<li><a href="#performance">Velocity, controllers, mono and portamento</a></li>
+<li><a href="#effects">Shape the sound with effects</a></li>
+<li><a href="#layers-pro">TX816 layers, Voice Stack and Pro</a></li>
+<li><a href="#external-au">Use external AU effects in the app</a></li>
+<li><a href="#auv3">Use M2DX inside an AUv3 host</a></li>
+<li><a href="#core">M2DX-Core: from a note to audio</a></li>
+<li><a href="#core-engines">Modern, Mark I, Depth and Vintage DAC</a></li>
+<li><a href="#midi2">MIDI 2.0 explained: messages and resolution</a></li>
+<li><a href="#midi-support">What the released MIDI paths actually support</a></li>
+<li><a href="#midi-ci">MIDI-CI, Profiles and Property Exchange</a></li>
+<li><a href="#midi-learn">Connect controllers and use MIDI Learn</a></li>
+<li><a href="#program-change">Select voices with Bank Select and Program Change</a></li>
+<li><a href="#dexed-comparison">M2DX and Dexed: strengths and limitations</a></li>
+<li><a href="#sound-matching">Move sounds and compare them fairly</a></li>
+<li><a href="#troubleshooting">Troubleshooting and current limitations</a></li>
+<li><a href="#sources">Sources, versions and interpretation</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Version, requirements and scope </h2>
+<p>M2DX is a six-operator, 32-algorithm FM synthesizer. Play it on its screen keyboard, connect a MIDI keyboard, or load its AUv3 instrument in a compatible host. M2DX-Core is the Swift library that generates the FM sound; the app adds its interface, presets, MIDI connections and effects.</p><ul><li>This manual covers the published <strong>M2DX 1.7.14 (build 40)</strong>, using <strong>M2DX-Core 1.25.0</strong> and <strong>MIDI2Kit 1.0.19</strong>. Later development changes are outside this guide.</li><li>The current <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store listing</a> specifies <strong>iPhone, iOS 18 or later</strong>. It also lists compatibility with Apple Silicon Macs running macOS 15 or later, while stating that the iPhone app has not been verified on macOS. Do not assume a native Mac edition or an iPad-optimized edition from that compatibility listing.</li><li>The manual has 11 languages. The published app lists <strong>English</strong> as its interface language. Control names such as LIVE and SAVE remain in English here.</li><li>The app and AUv3 instrument are free to download. <strong>M2DX Pro</strong> is an optional one-time purchase; check its current price in the app. The available Pro functions differ between standalone and AUv3.</li></ul><p>The descriptions below distinguish a capability of the MIDI standard, a function inside the library, and a feature that can actually be reached through the released app. These are different levels of support.</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">Play your first sound </h2>
+<ol><li>Open M2DX and select <strong>LIVE</strong>. Keep the device or audio-interface volume moderate.</li><li>Show the on-screen keyboard with its keyboard toggle if it is hidden, then tap a key. External MIDI hardware is optional.</li><li>Tap a preset in LIVE. Use <strong>current bank name</strong> to choose another bank, then tap a sound in that bank.</li><li>Change the keyboard octave to reach a different register. The screen keyboard starts with velocity 100; use Settings → Velocity for its curve or an external keyboard to vary playing strength.</li><li>Open <strong>FX</strong> to shape the sound, or <strong>EDIT</strong> to change the synthesis parameters. Save an edited voice before choosing another one.</li></ol><p>For a USB keyboard, connect a compatible interface or adapter and check MIDI reception. For a Bluetooth MIDI keyboard, open <strong>Settings → MIDI → Bluetooth MIDI</strong> and connect there. Bluetooth MIDI transmits performance data; it is separate from Bluetooth audio, which can add noticeable monitoring delay.</p><p>If no sound is heard, test a factory patch on the screen keyboard first. This separates an audio-output problem from a controller-connection problem. See <a href="#troubleshooting">Troubleshooting</a>.</p>
+</section>
+<section id="screens" aria-labelledby="screens-title">
+<h2 id="screens-title">Find your way around </h2>
+<div aria-labelledby="screens-table" class="table-wrap" role="region" tabindex="0"><table><caption id="screens-table">Main screens</caption><thead><tr><th scope="col">Screen or control</th><th scope="col">Purpose</th></tr></thead><tbody><tr><th scope="row">LIVE</th><td>Choose a bank and sound, and play the on-screen keyboard. Returning here from LAYER restores single-patch mode.</td></tr><tr><th scope="row">EDIT</th><td>Edit the six operators, algorithm, envelopes and common voice parameters; use SAVE to create a custom voice.</td></tr><tr><th scope="row">LAYER</th><td>The TX816 LAYER page combines patches into a stack. It has no built-in keyboard; use external MIDI or the AU host’s MIDI input to audition a stack.</td></tr><tr><th scope="row">FX</th><td>Adjust the internal effects. Opening FX preserves the preceding single-patch or layer mode.</td></tr><tr><th scope="row">AU</th><td>The AU FX page hosts external audio effects in the standalone app with Pro. This is different from loading M2DX itself as an AUv3 instrument.</td></tr><tr><th scope="row">Header preset name / ALG</th><td>The preset-name picker lists factory sounds. Use LIVE → current bank name for imported banks and CUSTOM. ALG opens the algorithm selection.</td></tr><tr><th scope="row">Settings</th><td>Connections, sound-engine options, purchases and other app settings. Debug and MIDI-CI diagnostic screens found in development material are not public-release controls.</td></tr></tbody></table></div><p>EDIT has no screen keyboard. Audition edits using external/host MIDI, or return to LIVE without selecting a different voice; switching between LIVE and EDIT keeps the current edits.</p>
+</section>
+<section id="presets" aria-labelledby="presets-title">
+<h2 id="presets-title">Banks, custom voices and saving </h2>
+<p>A bank groups voices; selecting a voice replaces the current single FM patch. Factory sounds, imported SysEx banks and your saved <strong>CUSTOM</strong> voices are separate collections. Use the LIVE bank picker to reach all of them.</p><h3>Save a voice you edited</h3><ol><li>Select a starting voice and open EDIT.</li><li>Make your changes and tap <strong>SAVE</strong>.</li><li>Enter a name and finish saving. Each save creates a <strong>new custom voice</strong>, even if another voice has the same name. SAVE is not an overwrite command.</li><li>To recall it, return to LIVE, tap the current bank name, choose <strong>CUSTOM</strong> at the end of the bank list, and tap the saved voice.</li></ol><p>Saving clears the unsaved-edit indicator, but does not automatically move the current bank or preset selection to CUSTOM. CUSTOM is hidden until it contains at least one saved voice. CUSTOM stores the voice, controller routing/EG mode, Mono/Poly and portamento on/off/time, plus internal FX. It does not store an entire host project, an external AU chain, engine/divisor/DAC options, MIDI Learn mappings or a TX816 stack. Use REVERT to return to the edit baseline, or INIT to initialize the voice after confirmation; INIT does not reset every app setting.</p><h3>Delete a custom voice</h3><p>In the CUSTOM bank, long-press the voice, choose <strong>Delete</strong>, and confirm. This removes the stored entry; the currently loaded sound can remain audible. Keep a separate copy of any source SysEx files you need to reimport.</p>
+</section>
+<section id="sysex" aria-labelledby="sysex-title">
+<h2 id="sysex-title">Import DX7 SysEx voices </h2>
+<p>A <code>.syx</code> file is a MIDI System Exclusive data file. DX7 voice data describes operators, envelopes and common patch settings; it does not contain recorded audio. The released importer accepts a <strong>4104-byte DX7 32-voice bulk bank</strong>. It checks the header, 7-bit data and checksum; it does not accept a single-voice dump.</p><ol><li>Save the source <code>.syx</code> file in a location available through the Files picker.</li><li>Open <strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>, select the file, then tap Done.</li><li>Return to LIVE → current bank name and select the imported bank, then choose a voice.</li><li>If needed, edit that voice and use SAVE to create a separate CUSTOM copy.</li></ol><p>Use a 32-voice bank when exchanging files with M2DX. A single-voice dump must first be placed in a compatible bank using a librarian such as Dexed. A filename ending in .syx does not establish compatibility: other synthesizers’ SysEx formats and extended DX-family data may differ. A malformed file or unsupported message cannot be made compatible just by renaming it. Unzip an archive before selecting its bank file. Importing the same filename adds a numbered copy instead of overwriting the existing bank. Swipe an imported bank’s row in Settings to delete the app’s copy; the original Files document is not removed. The public interface has no voice or bank Export command.</p><p>DX7 SysEx does not carry M2DX effects, Pro layering, engine settings or Dexed plug-in state. For a controlled sound comparison, start with the same DX7 patch data and disable added processing. See <a href="#sound-matching">Matching sounds with Dexed</a>.</p>
+</section>
+<section id="fm-basics" aria-labelledby="fm-basics-title">
+<h2 id="fm-basics-title">How six-operator FM makes a sound </h2>
+<p>An <strong>operator</strong> is an oscillator with its own level and envelope. A <strong>carrier</strong> reaches the audio output; a <strong>modulator</strong> changes another operator’s phase, creating additional frequency components. DX-style FM is implemented as phase modulation: signals are not simply multiplied together.</p><div aria-label="A modulator changes a carrier; the carrier reaches the output" class="signal-flow" role="img"><span>OP 2<br/>Modulator</span><span aria-hidden="true">→</span><span>OP 1<br/>Carrier</span><span aria-hidden="true">→</span><span>Audio output</span></div><p>The <strong>algorithm</strong> chooses how the six operators connect. Some are long modulation chains; others have several carriers in parallel. Changing the algorithm can change the sound drastically even when every operator value stays the same.</p><ul><li>Raise a <strong>carrier’s output level</strong> to change that branch’s audible level.</li><li>Raise a <strong>modulator’s output level</strong> to increase modulation depth, usually adding brightness or a more complex spectrum.</li><li>Use an integer frequency ratio such as 1:1 or 2:1 for a harmonically related starting point. Non-integer relationships often produce bell-like or metallic tones.</li><li><strong>Feedback</strong> returns an operator signal into its feedback path. More feedback can add harmonics or a rougher texture.</li></ul><p>A useful first exercise is to choose an algorithm with a simple two-operator branch, lower the other carriers, set both operators to a 1:1 ratio, and slowly raise the modulator level. Then shorten only the modulator’s envelope: the sound becomes bright at the beginning and mellower as it continues.</p>
+</section>
+<section id="operators" aria-labelledby="operators-title">
+<h2 id="operators-title">Operator frequency, level and scaling </h2>
+<p>In EDIT, select an operator and change one parameter at a time while repeating the same note. Operator numbers identify their positions in the algorithm; an operator is not always a carrier just because of its number.</p><div aria-labelledby="operators-table" class="table-wrap" role="region" tabindex="0"><table><caption id="operators-table">Important operator parameters</caption><thead><tr><th scope="col">Parameter</th><th scope="col">What to listen for</th></tr></thead><tbody><tr><th scope="row">Ratio / Fixed, Coarse / Fine</th><td>Ratio mode follows the played pitch. Fixed mode sets an absolute operator frequency, useful for special textures whose modulation does not track the keyboard in the usual way. Coarse makes larger changes; Fine refines them.</td></tr><tr><th scope="row">Output Level</th><td>Changes a carrier’s level or a modulator’s depth. The DX parameter scale is not a simple linear volume percentage.</td></tr><tr><th scope="row">Detune</th><td>Offsets operator tuning slightly. Try small differences between parallel carriers for movement before adding chorus.</td></tr><tr><th scope="row">Velocity sensitivity</th><td>Determines how strongly note velocity changes this operator’s level. Sensitivity on a modulator mainly changes brightness; on a carrier it also changes loudness.</td></tr><tr><th scope="row">Keyboard level scaling</th><td>Breakpoint, left/right depths and curves change level across the keyboard. Use it to tame bright high notes or strengthen a low register.</td></tr><tr><th scope="row">Rate scaling</th><td>Makes the envelope speed depend on key position. It is separate from level scaling.</td></tr><tr><th scope="row">Amplitude modulation sensitivity</th><td>Controls how much an operator responds to the shared amplitude-modulation signal. The LFO and controller routing also need a nonzero amount.</td></tr></tbody></table></div><div class="note"><p><strong>WAVE limitation in 1.7.14:</strong> the editor offers waveform choices, but the shipped Core waveform setter does not change the oscillator. The released engines use sine operators. Do not rely on WAVE to turn this version into an eight-waveform or DX7II engine.</p></div><p>The current editor exposes Level 0–99, VEL 0–7, AMS 0–3, KRS 0–7 and Feedback 0–7. Feedback is enabled only for the feedback operator in the selected algorithm. The main Ratio slider spans 0.50–16.00, but CRS (0–31) and FIN (0–99) can represent ratios beyond that slider range; CRS 0 means ×0.5. Detune spans −50 to +50 cents. OP1–OP6 selectors choose the operator to edit; they are not solo/mute switches.</p>
+</section>
+<section id="envelopes" aria-labelledby="envelopes-title">
+<h2 id="envelopes-title">Operator envelopes, pitch envelope and LFO </h2>
+<p>Each operator has four envelope rates <strong>R1–R4</strong> and four levels <strong>L1–L4</strong>. At note-on the envelope progresses through its first three target levels; the sustained stage uses L3. Note-off starts the final transition toward L4. Rates control transition speed; they are not durations in milliseconds, and the distance between levels also affects the time.</p><p>For a short electric-piano attack, let the modulator start strongly and fall quickly to a lower L3, while the carrier decays more slowly. For a pad, slow the carrier’s initial rise and avoid an overly sharp modulator onset. If a sound keeps ringing after release, inspect R4/L4, sustain, and reverb separately.</p><p>The <strong>pitch envelope</strong> changes the voice’s pitch over time. It uses its own rates and levels; it is not another amplitude envelope. Start with small pitch changes because strong settings can dominate the patch.</p><p>The shared <strong>LFO</strong> supplies periodic pitch or amplitude movement. Waveform, speed, delay and depth shape that movement. Pitch modulation produces vibrato; amplitude modulation produces tremolo, with the operator’s sensitivity determining how strongly it responds. <strong>Key sync</strong> controls whether an oscillator or LFO restarts with a note; it can affect repeated-note attacks and comparisons.</p><p>Keep FM Engine, Mark I Depth and the controller EG MODE fixed while editing. The same saved DX7 numbers can respond differently when the engine’s modulation scaling or controller EG bias behavior changes; see <a href="#core-engines">Engine settings</a>.</p><p>Drag the four points in the envelope graph to adjust the corresponding levels and rates; higher R values are faster. The pitch-envelope center level is 50. The numeric readouts below the graph display the values rather than opening text-entry fields. LFO Speed, Delay, PMD and AMD span 0–99, with PMS 0–7 and TRI, SAW▼, SAW▲, SQR, SIN or S&amp;H waveforms.</p>
+</section>
+<section id="performance" aria-labelledby="performance-title">
+<h2 id="performance-title">Velocity, controllers, mono and portamento </h2>
+<p>The LIVE keyboard sends a fixed starting velocity of <strong>100</strong>; the current interface has no VEL slider. <strong>Settings → Velocity → Velocity Curve</strong> offers Linear, Soft, Hard and DX7 Keyboard 1-100. Soft raises intermediate values, Hard lowers them, and the DX7 option limits values above 100. Test velocity-sensitive patches with an external keyboard as well.</p><p>LIVE <strong>TRANSPOSE</strong> shifts the entire performance by ±24 semitones; tap its value to reset to zero. It is separate from EDIT’s patch transpose, and the two offsets add together. EDIT also offers <strong>PB Range</strong> (1–12 semitones) and <strong>Tuning</strong> (±100 cents). PB Range returns to 2 when loading a voice; master tuning is retained.</p><h3>Route expressive controllers</h3><p>EDIT → CONTROLLERS has WHEEL (CC1), FOOT (CC4), BREATH (CC2) and A.TOUCH (channel pressure). Each has Pitch, Amp and EG amounts from 0–99. Pitch drives vibrato, Amp drives amplitude modulation, and EG applies envelope bias. This routing is different from assigning a physical knob with MIDI Learn.</p><ul><li><strong>EG MODE DX7:</strong> applies to operators with AMS enabled. A resting controller can attenuate those operators, and raising it opens them toward their normal level. EG amount zero disables this bias. Check this mode if a breath-controlled patch is silent before you blow.</li><li><strong>EG MODE BOOST:</strong> increases operator levels with controller input, including modulators, so brightness as well as loudness can change. It preserves the earlier M2DX behavior.</li></ul><h3>Play one note at a time</h3><p>In <strong>Settings → Performance</strong>, choose Poly or Mono. Portamento and its time are also available in EDIT. In Mono, <strong>Fingered</strong> glides between overlapping notes; <strong>Full-time</strong> also glides between separated notes. <strong>Glissando</strong> moves in semitone steps. Mono uses one voice from the first enabled part; it does not play an eight-part layer or Voice Stack as a polyphonic stack.</p><p>Save a current CUSTOM voice to retain its Mono/Poly, portamento on/off/time and controller routing/EG mode. Global velocity curve, tuning, PB range and the separate Mono Portamento/Glissando settings are not stored in that voice save. For an AUv3 session, save the host project as well.</p><p>When loading factory or imported voices, standalone retains the current controller routing, while AUv3 resets it to the DX7 defaults. A current-format CUSTOM voice restores its saved routing. Save a CUSTOM copy when you need repeatable breath or other controller settings.</p>
+</section>
+<section id="effects" aria-labelledby="effects-title">
+<h2 id="effects-title">Shape the sound with effects </h2>
+<p>The normal internal signal path is:</p><div aria-label="Standard internal effect signal order" class="signal-flow" role="img"><span>FM</span><span>→ EQ</span><span>→ Drive</span><span>→ Chorus</span><span>→ Reverb</span><span>→ Stereo</span><span>→ Maximizer</span></div><div aria-labelledby="effects-table" class="table-wrap" role="region" tabindex="0"><table><caption id="effects-table">FX page controls</caption><thead><tr><th scope="col">Section</th><th scope="col">Controls and practical use</th></tr></thead><tbody><tr><th scope="row">MIX</th><td>VOLUME, EXPRESSION and MOD WHEEL. A low expression value can silence an otherwise valid patch. MOD WHEEL follows the controller routing.</td></tr><tr><th scope="row">EQ / DRIVE</th><td>LOW/HIGH change tonal balance; OVERDRIVE adds saturation. Compare at similar output levels.</td></tr><tr><th scope="row">CHORUS</th><td>SPEED and DEPTH add movement and width. Reduce depth if the pitch becomes too diffuse.</td></tr><tr><th scope="row">REVERB</th><td>TIME and LEVEL control the space and its amount. A long tail can remain after the dry note releases.</td></tr><tr><th scope="row">STEREO</th><td>WIDTH changes stereo spread. Check mono playback when width is important to the sound.</td></tr><tr><th scope="row">MAXIMIZER</th><td>INPUT and CEILING set drive into the final dynamics stage and its output ceiling. It is not a substitute for balancing every earlier gain stage.</td></tr></tbody></table></div><p>The visual order of FX sections is not a diagram of processing order. CUSTOM saves the internal FX settings, including Pro FX settings where present; the external AU effect chain is stored separately.</p><p>In the <strong>Pro standalone app</strong>, the path is P73 → EQ → Drive → Chorus → 1176 → DigitalReverb → Stereo → Maximizer. <strong>PREAMP</strong> provides P73 gain, output, high-pass and tone controls. <strong>COMP</strong> provides 1176 input/output, attack/release, ratio and mix, plus a gain-reduction meter. <strong>REVERB PRO</strong> selects HALL'78, HALL'86, PLATE, NONLIN, LO-FI'86 or HALL'99 and adds predelay, size, damping, low-cut, modulation and width. The normal reverb TIME/LEVEL still set its time and amount.</p><p>Change a few parameters at a time. More drive, compressor input or maximizer input can increase apparent loudness as well as change tone. AUv3 uses the standard FX chain even after buying Pro.</p>
+</section>
+<section id="layers-pro" aria-labelledby="layers-pro-title">
+<h2 id="layers-pro-title">TX816 layers, Voice Stack and Pro </h2>
+<p><strong>TX816 LAYER</strong> combines different patches and/or unison copies. It is distinct from the experimental <strong>Voice Stack</strong> multiplier in standalone Settings.</p><ol><li>Open LAYER and choose a <strong>PARTS × UNISON</strong> partition: 8×1, 4×2, 2×4 or 1×8. OFF returns to single-patch operation. Pro is required to enable layering.</li><li>Tap each part’s patch name in LAYER MIXER and choose a patch. Adjust LVL (−24 to +6 dB), PAN, and optionally RND for a new random pan per note.</li><li>Set DETUNE (0–12 cents) and Even or Random distribution. Play from an external MIDI source or AU host; this page has no screen keyboard.</li><li>Open FX to keep playing the stack while adjusting the shared effects. Returning to LIVE or EDIT switches to the single patch.</li><li>Use the save icon, <strong>SAVE STACK</strong> and a name to create a new stack. The … menu opens MANAGE STACKS, with FACTORY DEMOS and MY STACKS. Saved user stacks can be deleted there.</li></ol><p>A stack embeds its component DX7 patch data, partition, detune, part levels/pan and shared internal FX. Choosing a CUSTOM voice for a part uses its DX7 patch, not every custom performance and FX setting as an independent part configuration. Effects process the combined signal; there is no separate FX chain per layer. Saved MY STACKS are not guaranteed to synchronize between standalone and AUv3.</p><div aria-labelledby="pro-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pro-table">Free and Pro access by environment</caption><thead><tr><th scope="col">Function</th><th scope="col">Standalone app</th><th scope="col">AUv3 instrument</th></tr></thead><tbody><tr><th scope="row">Basic FM, editing, standard FX</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Mark I Depth</th><td>Free, ÷1–÷16</td><td>Host parameter, ÷1–÷16</td></tr><tr><th scope="row">FM engine selection</th><td>Modern/Mark I choice requires Pro</td><td>Available through host parameters without the standalone Pro gate</td></tr><tr><th scope="row">TX816 LAYER</th><td>Pro</td><td>Pro, using the app’s purchase entitlement</td></tr><tr><th scope="row">P73 / 1176 / DigitalReverb</th><td>Pro</td><td>Not available; standard FX only</td></tr><tr><th scope="row">External AU effects</th><td>Pro, up to four slots in AU</td><td>Insert effects in the host instead</td></tr><tr><th scope="row">Vintage DAC / Voice Stack</th><td>Pro standalone options</td><td>Not exposed as these standalone options</td></tr></tbody></table></div><p><strong>Settings → Experimental → Voice Stack</strong> offers 1× (Off), 2×, 4×, 8× and 16×, detune up to 25 cents and random velocity. Higher multipliers increase rendering work; lower them if overloads or dropouts occur. Mono bypasses this stack behavior.</p><p>Buy or restore through the main app’s <strong>Settings → M2DX Pro</strong>. Use Restore Purchases with the purchasing Apple Account, then reopen the plug-in if necessary. The AU interface directs purchase/restore to the main app.</p>
+</section>
+<section id="external-au" aria-labelledby="external-au-title">
+<h2 id="external-au-title">Use external AU effects in the app </h2>
+<p>With Pro in standalone, open <strong>AU → ADD EFFECT</strong> in one of the four slots. Choose an installed audio effect from the Audio Units list. The chain runs after M2DX’s internal effects.</p><ul><li><strong>BYP</strong> bypasses a slot; the controls icon opens the effect’s interface when one is available; × removes it.</li><li><strong>NOT INSTALLED</strong> means the saved plug-in cannot be found. <strong>LOAD FAILED</strong> indicates a load failure; use its retry control after checking installation.</li><li>The app restores this chain separately from CUSTOM voices and saved TX816 stacks. Do not expect changing a voice to replace the external chain.</li></ul><p>This page hosts effects, not additional instrument plug-ins. Its visibility can depend on the app’s feature configuration. When M2DX itself is loaded as AUv3, add other effects in the host rather than looking for this AU page.</p>
+</section>
+<section id="auv3" aria-labelledby="auv3-title">
+<h2 id="auv3-title">Use M2DX inside an AUv3 host </h2>
+<ol><li>Install and open the main app once. In a compatible host, add <strong>M2DX FM Synthesizer</strong> as an instrument.</li><li>Route the host’s keyboard, MIDI track or external MIDI input to it, and enable monitoring as required by that host.</li><li>Select a voice and edit using LIVE, EDIT, LAYER or FX. The plug-in has four tabs; its bottom gear opens Performance, not the standalone app’s general Settings.</li><li>Import .syx banks in the main app. Reopen the AU interface or bring it forward to refresh the shared library. CUSTOM and imported banks share storage within the same installation.</li><li>Save the host project to retain instance settings. Use EDIT → SAVE separately when you want a reusable CUSTOM voice.</li></ol><p>The host manages audio rate, buffer size, MIDI routing and automation. The main app’s MIDI Input, Channel and Bluetooth settings do not configure the AU instance. Use the host’s parameter automation or MIDI mapping; the visible in-app MIDI Learn controls are not wired to AU MIDI reception in this release.</p><p>The host can expose <strong>FM Engine</strong> and <strong>Mark I Depth</strong> parameters. The AU engine initializes at <strong>÷5</strong>, while its parameter declares <strong>÷1</strong> and the standalone default is <strong>÷1</strong>. The host can reapply its state; explicitly match the value when comparing them. Standard FX and optional Pro TX816 layers work in AUv3. Pro preamp/compressor/reverb, standalone external-AU hosting, Vintage DAC and Voice Stack are not equivalent AU features.</p><p>Version 1.7.14 scales the interface in larger host windows. Program Changes can be consumed by a host for its own patch selection, so confirm that they actually reach the M2DX instance. AU MIDI support also depends on which event format the host supplies; see the implementation table below.</p>
+</section>
+<section id="core" aria-labelledby="core-title">
+<h2 id="core-title">M2DX-Core: from a note to audio </h2>
+<p><strong>M2DX-Core</strong> is the Swift 6 synthesis library, separate from the app and its plug-in wrapper. It implements operators, the 32 algorithms, envelopes, pitch and scaling, voice allocation, patch structures and synthesis-side controller handling. The app provides connections, MIDI-CI/PE, interface, purchases, storage and effects.</p><div aria-label="MIDI and parameter changes enter M2DX-Core, which renders voices before app effects and audio output" class="signal-flow" role="img"><span>MIDI / parameters</span><span>→ Event queue / snapshot</span><span>→ M2DX-Core voices</span><span>→ Mix</span><span>→ App FX</span><span>→ Audio output</span></div><h3>Fixed-point operators and lookup tables</h3><p>The main operator calculations use <strong>Int32 Q24</strong>-style phase and signal values. One phase cycle corresponds to 2<sup>24</sup> units, and wider Int64 intermediate products can be shifted back to the desired scale. Q24 is an internal numerical representation, not an audio-file format or proof that the entire app is integer-only.</p><p>Modern uses a sine table with 1024 intervals and linear interpolation; an exponential table converts logarithmic levels to amplitude. Table lookup and interpolation avoid calculating a full sine or exponential expression for every operator sample. Tables are prepared during initialization rather than generated by the compiler. Frequency conversion, controller normalization, LFO, mixing and the app’s effects also use floating-point operations.</p><h3>Envelopes and stable rendering</h3><p>Operator envelopes use an internal Q16 representation, updated in blocks, with gain or attenuation interpolated by the synthesis kernel. The engine works in internal chunks of up to 64 samples. Parameter snapshots and an event queue move changes into rendering; preallocated storage and atomic communication are designed to avoid waiting and allocation in the audio callback.</p><p>This internal block size does not make incoming MIDI events sample-accurate. In the released standalone path, source timestamps are not used to schedule note events at individual sample offsets. The AU path processes its event list before rendering rather than splitting the buffer at each event time. Audible timing depends on the host, operating system, buffer and connection as well.</p><h3>Voices and layers</h3><p>The normal single-patch configuration has a 16-voice budget with oversampling off, unison 1 and Voice Stack 1. Layer/unison/stack copies each consume processing voices; oversampling changes the budget. The library’s larger internal buffer limits are not a guarantee that thousands of independent keyboard notes will play reliably on a phone. Reduce multipliers and effects when the device cannot keep up.</p><p>Source: <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift">SynthEngine</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Voice.swift">DX7Voice</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/SinTable.swift">sine table</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Envelope.swift">envelope</a>.</p>
+</section>
+<section id="core-engines" aria-labelledby="core-engines-title">
+<h2 id="core-engines-title">Modern, Mark I, Depth and Vintage DAC </h2>
+<p><strong>Modern</strong> uses the integer sine-and-gain kernel associated with the MSFA-style reference model. It is not a separate “Clean Float32” engine. <strong>Mark I</strong> uses a logarithmic sine/exponential model informed by public descriptions of the original OPS behavior: it folds phase into a quadrant, combines logarithmic attenuation, then converts back to amplitude. It is not a cycle-accurate simulation of every original chip operation.</p><h3>What Mark I Depth actually changes</h3><p><strong>Mark I Depth is a divisor for forward modulation, not the output volume, bit depth or envelope speed.</strong> ÷1 keeps the modulation strong; a larger divisor weakens the signal fed into the next operator’s phase and usually makes the sound less bright. Carrier output and the feedback signal are not directly divided by this control.</p><p>In standalone, use <strong>Settings → Audio → Mark I Depth</strong>: ÷1–÷16 in 0.1 steps, free to adjust. The current default is Mark I at ÷1.0 with DAC off; a previously saved preference can override the default. Pro adds the Modern/Mark I choice and Vintage DAC option. Switching engines stops currently sounding notes, so change it between phrases.</p><p><strong>AU initial-value caveat:</strong> the host parameter declares a Depth default of 1, but the AU engine initialization sets 5. The host may reapply its parameter state. The final value on first opening was not tested for every host; set it explicitly when matching sounds. Engine/Depth control setters exist, but render-event automation does not handle these controls in the same way as ordinary voice parameters, so verify the host’s behavior rather than assuming every automation path works.</p><h3>Vintage DAC and oversampling</h3><p>The optional Vintage 12-bit DAC applies amplitude-dependent companding and quantization to raw Mark I voice output. It is a separate tone-shaping stage, not just a final-output bit crusher and not a MIDI-resolution setting. Standalone Audio also provides Oversampling OFF/HQ/Low. Compare by ear and monitor CPU load; oversampling is not an automatic improvement for every patch and changes available voice resources.</p><h3>What the reference tests establish</h3><p>Core contains sample comparisons of the Modern integer calculations against an Apache-licensed MSFA/Dexed reference. Some tests inject reference phase increments to isolate the kernel; production pitch calculation is a separate path. Mark I tests compare against an independently written C twin, including a ÷8 test condition that differs from the app’s ÷1 default. These tests do not prove that every final app output, Dexed setting or physical DX7 recording is bit-identical.</p><p><strong>Licenses:</strong> M2DX-Core is Apache-2.0, MIDI2Kit is MIT, and the M2DX app has its own proprietary license. The test-only C reference is not the production Swift library. See <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core LICENSE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark I kernel</a> and <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">comparison-test conditions</a>.</p>
+</section>
+<section id="midi2" aria-labelledby="midi2-title">
+<h2 id="midi2-title">MIDI 2.0 explained: messages and resolution </h2>
+<p>MIDI carries performance instructions, such as which note to play, how strongly to play it, and how a pedal moves. The receiving synthesizer creates the audio. <strong>MIDI 2.0 does not change the audio sample rate or audio-file bit depth.</strong></p><p><strong>UMP (Universal MIDI Packet)</strong> is a packet format that can carry both MIDI 1.0 and MIDI 2.0 messages. Seeing UMP on a connection is not, by itself, proof of high-resolution MIDI 2.0 Channel Voice data. CoreMIDI can translate between protocols according to the receiver’s API and selected protocol. <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple’s CoreMIDI explanation</a>.</p><div aria-labelledby="resolution-table" class="table-wrap" role="region" tabindex="0"><table><caption id="resolution-table">Protocol value widths, not guaranteed synthesis precision</caption><thead><tr><th scope="col">Message</th><th scope="col">Usual MIDI 1.0 message</th><th scope="col">MIDI 2.0 Channel Voice</th></tr></thead><tbody><tr><th scope="row">Note velocity</th><td>7 bit: 0–127</td><td>16 bit: 0–65,535</td></tr><tr><th scope="row">Control Change</th><td>Usually 7 bit; paired controllers can provide 14 bit</td><td>32 bit: 0–4,294,967,295</td></tr><tr><th scope="row">Channel / polyphonic pressure</th><td>7 bit</td><td>32 bit</td></tr><tr><th scope="row">Pitch Bend</th><td>14 bit: 0–16,383</td><td>32 bit</td></tr></tbody></table></div><p>MIDI 1.0 Note On with velocity zero acts as Note Off, and MIDI 1.0 also has optional high-resolution extensions. The table compares the usual messages, not every extension. See the <a href="https://midi.org/summary-of-midi-1-0-messages">MIDI 1.0 message summary</a> and <a href="https://midi.org/the-state-of-midi-2-0-high-resolution-performance-and-the-rise-of-profiles-update-feb-2026">MIDI Association resolution overview</a>.</p><h3>What higher resolution can and cannot do</h3><p>Finer control values can reduce stepping when the sender, connection and sound engine preserve and use them. Converting a 7-bit keyboard value into a 16-bit field does not create extra detail that the keyboard never measured. A DX7 parameter whose range is 0–99 still has that discrete range after receiving a high-resolution controller. <a href="https://midi.org/midi-2-0-bit-scaling-and-resolution">MIDI bit scaling and resolution</a>.</p><h3>Groups, channels and expression per note</h3><p>Applicable UMP messages have up to 16 groups with 16 channels per group. These addresses do not guarantee 256 instrument parts or 256 voices in an app. MIDI 2.0 also defines per-note pitch and controllers, useful for bending one held note without bending the rest of a chord. M2DX’s actual routing limits appear in the next chapter.</p><p>MIDI 1.0 already has polyphonic key pressure. Traditional MIDI 1.0 <strong>MPE</strong> obtains further per-note control by assigning notes to separate channels; native MIDI 2.0 per-note messages use a different representation. Modern MPE Profiles also cover MIDI 2.0, so “MPE” and “MIDI 2.0” are not mutually exclusive labels. <a href="https://midi.org/mpe-midi-polyphonic-expression">MPE specification</a>; <a href="https://midi.org/midi-ci-profile-for-midi-polyphonic-expression">MIDI-CI MPE Profile</a>.</p>
+</section>
+<section id="midi-support" aria-labelledby="midi-support-title">
+<h2 id="midi-support-title">What the released MIDI paths actually support </h2>
+<p>This table describes the source paths in 1.7.14, not every controller/OS/host combination tested on hardware. Standalone receives CoreMIDI through MIDI2Kit 1.0.19. AUv3 has separate legacy MIDI-event and MIDI 2.0 UMP-event inputs.</p><div aria-labelledby="midi-support-table" class="table-wrap" role="region" tabindex="0"><table><caption id="midi-support-table">Reception versus audible behavior</caption><thead><tr><th scope="col">Message / feature</th><th scope="col">Standalone</th><th scope="col">AUv3</th></tr></thead><tbody><tr><th scope="row">Note On / Off</th><td>MIDI 1.0 and MIDI 2.0 input. MIDI 2.0 velocity reaches Core as 16 bit.</td><td>Legacy MIDI and MIDI 2.0 UMP input. Note attributes and release velocity do not shape the sound.</td></tr><tr><th scope="row">CC / channel Pitch Bend / Program Change</th><td>Implemented for the supported controls and bank rules.</td><td>Implemented through legacy and MIDI 2.0 events; host routing still matters.</td></tr><tr><th scope="row">Channel Pressure</th><td>Connected to the A.TOUCH routing.</td><td>MIDI 2.0 UMP path is connected; legacy MIDI pressure is not wired.</td></tr><tr><th scope="row">Polyphonic Key Pressure</th><td>Received and stored, but not connected to audible synthesis changes.</td><td>MIDI 2.0 values are stored without audible effect; legacy pressure is not wired.</td></tr><tr><th scope="row">Native per-note pitch / controllers / management</th><td>The transport discards these message types before the app’s downstream handlers. Not usable through this standard input path.</td><td>Not wired to the host-event receiver.</td></tr><tr><th scope="row">External RPN / NRPN control</th><td>MIDI 2.0 Registered/Assignable Controllers are discarded by the transport; MIDI 1.0 RPN/NRPN CC sequences are not assembled.</td><td>Not wired as external MIDI messages. AU parameter automation uses a different internal path.</td></tr><tr><th scope="row">MIDI 1.0 Channel Voice inside UMP</th><td>Accepted.</td><td>Skipped by the UMP event handler; the legacy MIDI event path is different.</td></tr><tr><th scope="row">MPE / independent channel expression</th><td>No member-channel expression routing. Omni does not establish MPE support.</td><td>No independent channel/group voice routing.</td></tr><tr><th scope="row">MIDI-CI / Property Exchange</th><td>Available with the resource limits described below.</td><td>Not handled through the AU MIDI event input.</td></tr><tr><th scope="row">MIDI-CI Profile configuration</th><td>No implemented profile configuration advertised by this app.</td><td>Not provided by the AU event input.</td></tr></tbody></table></div><h3>Why a 16-bit velocity is not 65,536 different DX7 responses</h3><p>The protocol value reaches Core in 16-bit form, but the DX7 velocity-sensitivity calculation shifts it down to 7 bits and indexes a 64-entry table. The operator’s sensitivity setting further determines the result. FX controls reduce values to 0–127; operator output levels use the DX range 0–99. Channel controls also pass through normalization. Receiving a large integer does not mean every integer produces a distinct audible state.</p><h3>Channel, group and timing limits</h3><p>Standalone Settings offers Omni or channels 1–16 as an input filter. After filtering, group/channel identity is not maintained as independent instrument parts. Channel pitch bend acts on the synth as a whole, not on a separate MPE member voice. Core has additional per-note APIs, but their existence does not overcome the released transport and routing gaps.</p><p>MIDI 2.0 does not make this release sample-accurate or eliminate latency. Source timestamps and host sample offsets are not fully used for per-event scheduling. Do not infer timing guarantees from the 64-sample internal processing chunks.</p><p>Source: <span class="source-review">transport dispatch</span>, <span class="source-review">AU event handler</span>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/ScalingTable.swift">velocity scaling</a> and <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift#L2257">Core expression handling</a>.</p>
+</section>
+<section id="midi-ci" aria-labelledby="midi-ci-title">
+<h2 id="midi-ci-title">MIDI-CI, Profiles and Property Exchange </h2>
+<p><strong>MIDI-CI</strong> lets devices exchange capability information. <strong>Profiles</strong> define common behavior for a particular musical use; they are not sound presets. <strong>Property Exchange (PE)</strong> lets an implementer expose named resources such as device information, program lists or control descriptions. A PE-capable connection does not guarantee that every DAW can automatically edit every instrument parameter. <a href="https://midi.org/midi-2-0">MIDI Association overview</a>; <a href="https://midi.org/profiles">Profiles</a>.</p><p>The old MIDI-CI Protocol Negotiation procedure was deprecated in the 2023 revision. Current general explanations should distinguish capability exchange from UMP protocol selection. M2DX’s shipped compatibility behavior is not a claim to implement every current Profile or specification option. <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">Official 2023 revision notes</a>.</p><div aria-labelledby="pe-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pe-table">M2DX standalone resources</caption><thead><tr><th scope="col">Resource</th><th scope="col">What it exposes</th><th scope="col">External access</th></tr></thead><tbody><tr><th scope="row">ResourceList / DeviceInfo</th><td>Available resource descriptions and device information. Compatibility fields are not the authoritative app version or manufacturer listing.</td><td>GET; no SET</td></tr><tr><th scope="row">ChannelList</th><td>The current sound name for one represented channel, not 256 independent parts.</td><td>GET and subscription</td></tr><tr><th scope="row">ProgramList</th><td>Factory sound list with pagination. It is not a combined browser for CUSTOM, imported banks and TX816 stacks.</td><td>GET; registered for subscription; no SET</td></tr><tr><th scope="row">X-ParameterList</th><td>CC names, control numbers and defaults used for controller integration such as KeyStage. Not the full Core parameter model.</td><td>GET; registered for subscription; no SET</td></tr><tr><th scope="row">X-ProgramEdit</th><td>Current program name/address and CC values in 0–127 form.</td><td>GET and subscription; no SET</td></tr><tr><th scope="row">JSONSchema</th><td>Schemas for the parameter-list and program-edit resources; directly registered although not listed in the hand-written ResourceList.</td><td>GET; no SET</td></tr></tbody></table></div><p>Program changes notify relevant name/current-program resources. UI CC changes can notify X-ProgramEdit; received CC synchronization avoids echoing every change back. A resource accepting a subscription does not mean every possible change generates a notification.</p><p><strong>Network PE SET is not implemented by these registered resources.</strong> There are local parameter get/set APIs in the code, but their setters are not registered as external PE setters. Use the supported CC controls, app UI or host automation to edit sound. Standard Profile configuration is also not provided by this release.</p><p>For a compatible controller, establish a MIDI connection with a return path, select the intended input/channel, and let the controller request supported resources. If labels do not appear, normal note/CC performance may still work. The release has no public “Discover MIDI-CI Devices” debug screen, and interoperability remains device-dependent. Source: <span class="source-review">registered PE resources and notifications</span>.</p>
+</section>
+<section id="midi-learn" aria-labelledby="midi-learn-title">
+<h2 id="midi-learn-title">Connect controllers and use MIDI Learn </h2>
+<p>In standalone <strong>Settings → MIDI</strong>, choose All Sources or a specific MIDI Input, and Omni (All) or a channel from 1–16. Connected MIDI Devices and Refresh Devices help confirm the connection. Use Bluetooth MIDI for a BLE MIDI controller. Check the header’s activity dot while playing.</p><ol><li>Long-press a supported FX slider without moving it for about half a second.</li><li>Choose <strong>Learn CC</strong> in its MIDI Learn menu.</li><li>While LEARN flashes, move the hardware knob or fader. The first received CC is assigned and learning stops.</li><li>Long-press the same slider again to cancel a pending learn. Use <strong>Settings → MIDI Learn → Reset All Mappings</strong> to restore mappings.</li></ol><p>Supported targets include MIX/basic FX sliders, selected Pro continuous controls, LAYER DETUNE and part LVL. LAYER PAN, every FM editor control, and all effect switches/choices are not automatically learnable. One CC has one learned target; a new assignment replaces its earlier learned target. Original standard functions such as sustain may still respond, so avoid repurposing those CCs accidentally.</p><div aria-labelledby="cc-table" class="table-wrap" role="region" tabindex="0"><table><caption id="cc-table">Useful default CC assignments</caption><thead><tr><th scope="col">CC</th><th scope="col">Function</th></tr></thead><tbody><tr><th scope="row">1 / 2 / 4</th><td>Mod wheel / breath / foot controller; set Pitch/Amp/EG response in EDIT</td></tr><tr><th scope="row">7 / 11 / 64</th><td>Volume / expression / sustain</td></tr><tr><th scope="row">5 / 65</th><td>Portamento time / portamento on-off</td></tr><tr><th scope="row">102 / 103 / 104 / 105</th><td>EQ low / EQ high / overdrive / stereo width</td></tr><tr><th scope="row">106 / 107 / 108 / 109</th><td>Chorus speed / chorus depth / reverb time / reverb level</td></tr><tr><th scope="row">110 / 111</th><td>Maximizer input / ceiling</td></tr><tr><th scope="row">112–117</th><td>OP1–OP6 output level</td></tr><tr><th scope="row">0 / 32</th><td>Bank Select MSB / LSB; use with Program Change as described next</td></tr></tbody></table></div><p>Learned mappings are saved separately from CUSTOM voices. If a learn-only parameter shows <strong>CC255</strong> or Reset to CC255, that is an internal “no factory CC” marker, not a valid MIDI CC to send. In AUv3, use the host’s mapping and automation instead of the standalone Learn procedure.</p><p>AU parameter automation uses an internal parameter-routing representation; it does not imply that external MIDI 1.0 NRPN sequences or MIDI 2.0 Assignable Controllers are accepted. Source: <span class="source-review">Learn mappings</span> and <span class="source-review">AU parameter routing</span>.</p>
+</section>
+<section id="program-change" aria-labelledby="program-change-title">
+<h2 id="program-change-title">Select voices with Bank Select and Program Change </h2>
+<p>MIDI values are zero-based. A controller displaying programs 1–128 may send wire values 0–127. The CUSTOM card’s <strong>B16 PC0</strong> means bank MSB 16 and transmitted Program Change 0, not necessarily the controller’s displayed program number.</p><div aria-labelledby="program-table" class="table-wrap" role="region" tabindex="0"><table><caption id="program-table">Program addressing</caption><thead><tr><th scope="col">Target</th><th scope="col">Messages / rule</th></tr></thead><tbody><tr><th scope="row">Factory voice</th><td>With a bank, the global factory index is Bank MSB × 32 + Program. LSB is ignored. Without a bank, PC is treated as a global factory index. LIVE’s category banks are not this MIDI bank numbering.</td></tr><tr><th scope="row">First CUSTOM voice, stable number 0</th><td>CC0 = 16, CC32 = 0, PC = 0.</td></tr><tr><th scope="row">CUSTOM stable number 130</th><td>CC0 = 16, CC32 = 1, PC = 2. In general: LSB = floor(number / 128), PC = number mod 128.</td></tr><tr><th scope="row">Imported .syx voice</th><td>Use the app/host preset browser. Imported voices do not receive the same stable CUSTOM Program Change numbers merely by importing. Save a CUSTOM copy if you need that address.</td></tr><tr><th scope="row">Active standalone TX816 stack</th><td>Normal PC prefers the stack list while enabled Pro layering is active; CUSTOM bank 16 has separate priority. Return to LIVE/EDIT for ordinary single-patch selection.</td></tr></tbody></table></div><p>CUSTOM numbers remain stable when other voices are deleted; they are not renumbered to match list positions. An unassigned CUSTOM number leaves the current sound unchanged. For standalone bank selection, send the bank messages each time: the bank is consumed by the next matching-channel PC rather than assumed to remain selected indefinitely.</p><p>AUv3 follows its factory/CUSTOM selection path and parks the active layer. A host may consume PC before it reaches M2DX. AU program loading is also deferred to the UI/control side, so a Note On at the same instant as PC can still use the previous sound. Send program selection ahead of the first musical note and verify it in the target host.</p><p>Source: <span class="source-review">CUSTOM program numbers</span>, <span class="source-review">factory bank addressing</span> and <span class="source-review">AU loading and state</span>.</p>
+</section>
+<section id="dexed-comparison" aria-labelledby="dexed-comparison-title">
+<h2 id="dexed-comparison-title">M2DX and Dexed: strengths and limitations </h2>
+<p>This comparison uses <strong>M2DX 1.7.14 / Core 1.25.0</strong> and the official stable <strong>Dexed 1.1.0</strong>, checked November 15, 2026. “Not confirmed” means the reviewed release does not establish that capability; it does not rule out a host conversion, a fork or a later release.</p><div aria-labelledby="dexed-table" class="table-wrap" role="region" tabindex="0"><table><caption id="dexed-table">Release-specific feature comparison</caption><thead><tr><th scope="col">Item</th><th scope="col">M2DX 1.7.14</th><th scope="col">Dexed 1.1.0</th></tr></thead><tbody><tr><th scope="row">Main environment</th><td>iPhone app and bundled AUv3 instrument. Apple Silicon Mac compatibility is listed with a verification caveat.</td><td>Desktop Windows, macOS and Linux; no official iOS app in the reviewed release.</td></tr><tr><th scope="row">Plug-in formats</th><td>AUv3. No VST3 or CLAP edition in this release.</td><td>Official packages: VST3, CLAP, standalone; macOS also AU. LV2 is not included in the 1.1.0 release ZIPs.</td></tr><tr><th scope="row">FM structure / polyphony</th><td>Six operators, 32 algorithms; 16 voices in the normal single configuration with oversampling off and no additional stacks. Layering and unison consume resources.</td><td>Six operators, 32 algorithms; maximum 16 active notes.</td></tr><tr><th scope="row">Engine choices</th><td>Mark I and Modern; engine settings and access differ between app and AUv3. No OPL engine.</td><td>Modern, Mark I and experimental OPL Series.</td></tr><tr><th scope="row">DX7 patch exchange</th><td>Imports compatible .syx data; saves custom voices locally. A complete two-way hardware librarian is not provided.</td><td>Reads/writes DX7/TX7 voices and 32-voice cartridges, organizes cartridges and sends SysEx to hardware.</td></tr><tr><th scope="row">Effects</th><td>Internal EQ, drive, chorus, reverb, stereo processing and maximizer. Additional Pro processing and external AU FX are standalone features.</td><td>Built-in low-pass filter, resonance and gain. Add chorus, reverb and other processing in the host.</td></tr><tr><th scope="row">Layering</th><td>Optional Pro TX816 stack of up to eight patches; standalone Voice Stack is a separate function.</td><td>Use additional plug-in instances and host routing for comparable layers.</td></tr><tr><th scope="row">Microtuning</th><td>Scala .scl/.kbm and MTS-ESP workflows are not provided in the reviewed app.</td><td>Scala .scl scales, .kbm keyboard maps and MTS-ESP client support.</td></tr><tr><th scope="row">Automation / MIDI Learn</th><td>AU host parameter automation; standalone Learn for the supported FX/mix/layer controls. These are separate from external NRPN support.</td><td>144 DX7 parameters designed for DAW automation, plus MIDI CC assignment from parameter context menus.</td></tr><tr><th scope="row">MIDI 2.0 / discovery</th><td>UMP input and MIDI-CI/PE implementation, with the release-specific limitations in this manual. Not every Core handler is reachable from public input.</td><td>Native UMP, high-resolution MIDI 2.0, MIDI-CI and PE support not confirmed in the reviewed release. MIDI 1.0 event handling is implemented.</td></tr><tr><th scope="row">MPE / per-note control</th><td>Do not assume full MPE or usable native per-note control in the released input path.</td><td>MPE per-note pitch bend is implemented. MPE pressure and timbre handling are not active in the reviewed routine.</td></tr><tr><th scope="row">Price and source licensing</th><td>Free app with optional Pro purchase. M2DX-Core has its own Apache-2.0 license; that does not license every app component.</td><td>Free open source. Dexed as a whole is GPL v3; its msfa component is Apache-2.0.</td></tr></tbody></table></div><p>Sources: <a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 release packages</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/README.md">README and licensing</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginProcessor.h">voice limit and engines</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/window/CartManager.cpp">cartridge operations</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/Tuning.cpp">tuning</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/midi/PluginMidi.cpp">MIDI and MPE handling</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginFx.cpp">output effects</a>.</p><h3>Choose by the job</h3><ul><li><strong>M2DX advantage:</strong> an immediate mobile instrument, screen keyboard, built-in creative effects and optional layering. Its limitations include the smaller platform/plug-in range, differences between standalone and AUv3, and incomplete MIDI expression paths.</li><li><strong>Dexed advantage:</strong> desktop DAW integration, cartridge organization, hardware editing and alternate tuning. It needs a desktop environment, and its reviewed internal processing is less of a complete effects chain.</li><li>These are workflow conclusions from the documented features, not an audio-quality ranking. No controlled listening test or identical-render test between these two releases was performed for this manual.</li></ul><p>For Dexed’s editing workflow, see the <a href="https://asb2m10.github.io/dexed/">official overview</a> and <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/util/ContextMenuAdapter.h">MIDI CC context-menu implementation</a>.</p>
+</section>
+<section id="sound-matching" aria-labelledby="sound-matching-title">
+<h2 id="sound-matching-title">Move sounds and compare them fairly </h2>
+<ol><li>In Dexed, export a compatible 32-voice DX7 cartridge as <code>.syx</code>. Import that file in M2DX and select the same voice.</li><li>Use single-patch mode. Disable M2DX layers, Voice Stack and added effects; remove host effects and neutralize Dexed’s output filtering and gain shaping.</li><li>Match the sample rate, tuning, transpose, engine mode, feedback, operator values, envelopes, key sync and velocity input as closely as possible.</li><li>Check M2DX’s Mark I divisor, EG mode and DAC setting separately. Their defaults and scaling need not match Dexed’s engine of the same name.</li><li>Send the same note sequence, note lengths, velocities, sustain and controller values. Compare single notes before dense chords that might trigger voice stealing.</li><li>Match perceived output level, then compare the attack, sustained spectrum and release. If they differ, isolate one parameter or processing stage at a time.</li></ol><p>A shared patch format and related fixed-point synthesis techniques do not guarantee identical output samples. Differences may come from engine behavior, controller conversion, envelope mode, gain, effects or routing. Core’s reference tests cover specified conditions; they do not certify every patch, device, sample rate or setting as identical to Dexed or a physical DX7.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">Troubleshooting and current limitations </h2>
+<div aria-labelledby="troubleshooting-table" class="table-wrap" role="region" tabindex="0"><table><caption id="troubleshooting-table">Symptoms and checks</caption><thead><tr><th scope="col">Symptom</th><th scope="col">What to check</th></tr></thead><tbody><tr><th scope="row">No sound from the screen keyboard</th><td>Try a factory patch in LIVE. Check device volume, Settings → Audio → Output / Master Volume, and FX → MIX → VOLUME / EXPRESSION. Inspect carrier levels and breath/EG routing if only one patch is silent.</td></tr><tr><th scope="row">External keyboard does not play</th><td>Check the header’s MIDI activity dot, Settings → MIDI → MIDI Input and MIDI Channel. Use Refresh Devices or the reconnect icon after connecting an interface. MIDI connection does not establish that audio is routed to the intended output.</td></tr><tr><th scope="row">Delayed monitoring or dropouts</th><td>Try a wired audio output. Reduce Voice Stack/unison, layers and expensive external effects. In AUv3, adjust the host’s buffer setting and CPU load; a smaller buffer trades processing margin for lower latency.</td></tr><tr><th scope="row">A stack sounds like one patch</th><td>Returning to LIVE/EDIT switches out of layer mode. Stay in LAYER or FX and use external/host MIDI. Check partition and Pro entitlement; Mono does not play the full stack.</td></tr><tr><th scope="row">The saved voice seems missing</th><td>Use LIVE → current bank name → CUSTOM; the header PRESETS picker only lists factory sounds. Saving does not automatically select the new CUSTOM entry.</td></tr><tr><th scope="row">SysEx import fails</th><td>Use an unpacked 4104-byte DX7 32-voice bank with a valid header, 7-bit payload and checksum. Single-voice dumps and arbitrary .syx files are not accepted by this importer.</td></tr><tr><th scope="row">A controller is connected but has no effect</th><td>Check its message type, channel and mapping. Per-note handlers, poly pressure and some MIDI 2.0 messages are not connected to audible behavior through the released path. See the support table rather than assuming all MIDI 2.0 messages work.</td></tr><tr><th scope="row">Standalone and AUv3 sound different</th><td>Match engine, Mark I divisor, velocity curve, FX, expression, tuning and host sample rate. The AU default divisor differs, and Pro FX are standalone-only.</td></tr><tr><th scope="row">Notes continue after release</th><td>Check sustain CC64, held external keys and reverb tails. The screen keyboard’s stop icon releases its touch-held notes; it is not a universal panic for all external input. Stop/reset playback in the host or reconnect the input if necessary.</td></tr><tr><th scope="row">A Pro feature is absent</th><td>Restore purchases in the main app, then reopen the AU. Check the standalone/AUv3 feature table: purchasing Pro does not add every standalone function to the plug-in.</td></tr></tbody></table></div><p>Other current limits include no user-facing voice/stack export, no cloud library synchronization, no Scala/MTS-ESP workflow, no per-layer effects chain, and the inactive WAVE selector. App Group sharing of CUSTOM/imported banks is local to the installation, not a promise of cross-device sync. Long-term background playback is not guaranteed by this manual.</p><p>For a useful report, include app/build and OS version, device, standalone or host name/version, input hardware, message type/channel, preset or bank name, and the shortest steps that reproduce the issue. Send it to <a href="mailto:support@hakaru.net">support@hakaru.net</a>. M2DX uses Firebase crash reporting and other services described in its <a href="/M2DX-support/privacy">privacy policy</a>; its privacy behavior differs from other hakaru apps.</p>
+</section>
+<section id="sources" aria-labelledby="sources-title">
+<h2 id="sources-title">Sources, versions and interpretation </h2>
+<p>This guide combines the released interface and its active source paths with official standards and Dexed release materials. Repository comments, old help text and development-only screens were not treated as proof of a public feature.</p><ul><li><a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX App Store listing</a> — public version and device requirements.</li><li><span class="source-review">M2DX v1.7.14-40 source</span> — LIVE/EDIT/Settings, custom storage, layers, effects and AU behavior.</li><li><span class="source-review">Resolved dependencies of the released app</span> — Core 1.25.0 and MIDI2Kit 1.0.19.</li><li><a href="https://github.com/hakaru/M2DX-Core/tree/v1.25.0">M2DX-Core 1.25.0</a> — synthesis, scaling, controller handling and license.</li><li><span class="source-review">MIDI2Kit 1.0.19</span> — the transport used by this release.</li><li><a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 release</a> and <a href="https://github.com/asb2m10/dexed/tree/v1.1.0">tagged source</a> — comparison baseline.</li><li><a href="https://midi.org/midi-2-0-core-specification-collection">MIDI 2.0 Core Specification Collection</a>, <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">2023 specification changes</a> and <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple CoreMIDI documentation</a> — terminology, transport and compatibility.</li></ul><p>“Implemented in the library,” “reachable from the app,” and “verified with a particular controller or host” are separate claims. This guide includes a source review, not an exhaustive hardware interoperability test. Product names identify compatibility and comparison targets; they do not imply endorsement.</p><p class="source-access-note">M2DX and MIDI2Kit source references refer to the developer’s review of the shipped code. Their repositories are private, so those references are not public download links. M2DX-Core and the cited Dexed sources are public.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/M2DX-support/changelog">Changelog</a><a href="/M2DX-support/">Support</a><a href="/M2DX-support/privacy">Privacy</a><a href="mailto:support@hakaru.net">Contact support</a><a href="#top">Back to top</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

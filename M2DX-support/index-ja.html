@@ -284,6 +284,8 @@ body { display: flex; min-height: 100vh; }
     </button>
     <div class="sidebar-app-links show">
       <a href="/M2DX-support/index-ja" class="active">サポート</a>
+      <a href="/M2DX-support/manual/ja/">マニュアル</a>
+      <a href="/M2DX-support/changelog-ja">更新履歴</a>
       <a href="/M2DX-support/privacy-ja">プライバシー</a>
     </div>
   </div>
@@ -383,130 +385,11 @@ body { display: flex; min-height: 100vh; }
         </div>
 
         <div class="content">
-            <p>M2DX サポートページへようこそ。</p>
-            <p>M2DX は、MIDI 2.0 に対応した iOS 向けの DX7 互換 FM シンセサイザーアプリです。6 オペレータ × 32 アルゴリズムによるクラシックな FM サウンドを、Pure Swift 6 で完全再実装しています。シンセシスエンジンには <a href="/M2DX-Core-support/index-ja">M2DX-Core</a> ライブラリを使用しています。</p>
-            <p><em>1.7.1 の新着:</em> アプリアイコンを一新しました。ドットマトリクス表示のヴィンテージ FM ハードパネル調デザインで、iOS&nbsp;18 のダーク/ティンテッド表示にも対応しています。</p>
+<p><a href="/M2DX-support/changelog-ja">更新履歴</a></p>
+<p><a href="/M2DX-support/manual/ja/"><strong>M2DXの詳しいマニュアルを読む</strong></a></p><h2>対象バージョン・動作環境・このマニュアルの範囲</h2><p>M2DXは、6オペレーター・32アルゴリズムのFMシンセサイザーです。画面鍵盤やMIDIキーボードで演奏でき、対応ホストではAUv3音源として使えます。FM音を生成するSwiftライブラリーがM2DX-Coreで、アプリが画面、プリセット、MIDI接続、エフェクトを提供します。</p><ul><li>対象は公開版<strong>M2DX 1.7.14（build 40）</strong>、組み込まれている<strong>M2DX-Core 1.25.0</strong>と<strong>MIDI2Kit 1.0.19</strong>です。その後の開発中の変更は含みません。</li><li>現在の<a href="https://apps.apple.com/app/m2dx/id6763840208">App Store掲載情報</a>は<strong>iPhone、iOS 18以降</strong>を対象としています。macOS 15以降のApple Silicon Macとの互換性も掲載されていますが、iPhoneアプリでありmacOSでは未検証と明記されています。この互換性表示から、ネイティブMac版やiPad向け最適化版があるとは判断できません。</li><li>マニュアルは11言語対応です。公開アプリのUI言語は<strong>英語</strong>と掲載されています。本書でもLIVEやSAVEなど、実際の操作名は英語のまま示します。</li><li>アプリとAUv3音源は無料でダウンロードできます。<strong>M2DX Pro</strong>は任意の買い切り購入です。現在の価格はアプリ内で確認してください。単体アプリとAUv3では利用できるPro機能が異なります。</li></ul><p>本書では、MIDI規格に存在する機能、ライブラリー内部の機能、公開アプリから実際に利用できる機能を区別します。それぞれの「対応」は同じ意味ではありません。</p><h2>バンク・CUSTOM・音色の保存</h2><p>バンクは音色のまとまりです。音色を選ぶと現在の単体FMパッチが置き換わります。工場音色、取り込んだSysExバンク、自分で保存した<strong>CUSTOM</strong>は別の一覧です。LIVEのバンク選択からそれぞれに移動できます。</p><h2>DX7 SysEx音色を取り込む</h2><p><code>.syx</code>はMIDI System Exclusiveデータのファイルです。DX7音色データにはオペレーターやエンベロープなどの設定が入り、録音された音声は入りません。公開版のインポーターが受け付けるのは<strong>4104バイトのDX7 32音色バルクバンク</strong>です。ヘッダー、7bitデータ、チェックサムを検証し、単音色ダンプは受け付けません。</p><ol><li>元の<code>.syx</code>ファイルを、Filesの書類選択から開ける場所に保存します。</li><li><strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>からファイルを選び、Doneをタップします。</li><li>LIVEの現在のバンク名をタップして取込バンクを選び、その中の音色を選択します。</li><li>必要なら編集し、SAVEで別のCUSTOM音色として保存します。</li></ol><h2>TX816レイヤー・Voice Stack・Pro</h2><p><strong>TX816 LAYER</strong>は異なる音色やユニゾンコピーを重ねます。単体Settingsの実験機能<strong>Voice Stack</strong>の倍率とは別の機能です。</p><p><a href="/M2DX-support/manual/ja/#layers-pro">TX816レイヤー・Voice Stack・Pro</a></p><h2>公開版で実際に使えるMIDI機能</h2><p>この表は1.7.14のソース経路を確認した結果で、すべての機器・OS・ホストの実機試験ではありません。単体アプリはMIDI2Kit 1.0.19経由でCoreMIDIを受け、AUv3は従来のMIDIイベントとMIDI 2.0 UMPイベントで別の入口を使います。</p><p><a href="/M2DX-support/manual/ja/#midi-support">公開版で実際に使えるMIDI機能</a></p><h2>トラブルシューティングと現行版の制限</h2><p>報告にはアプリ／ビルドとOS版、端末、単体かホスト名／版、入力機器、メッセージ形式とチャンネル、音色／バンク名、最短の再現手順を添えて<a href="mailto:support@hakaru.net">support@hakaru.net</a>へ送ってください。M2DXは<a href="/M2DX-support/privacy-ja">プライバシーポリシー</a>記載のFirebaseクラッシュ報告などを利用し、ほかのhakaruアプリとプライバシー動作が同じとは限りません。</p>
 
-            <hr>
 
-            <h2>ダウンロード</h2>
-            <p><strong>iOS / iPadOS 18 以上</strong> — M2DX を App Store から入手できます：</p>
-            <ol>
-                <li>iPhone / iPad で <a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX の App Store ページ</a>を開く</li>
-                <li><strong>入手</strong>をタップしてダウンロード・インストール</li>
-                <li>M2DX を起動すれば、画面上のキーボードですぐに演奏できます。MIDI コントローラーは任意です</li>
-            </ol>
 
-            <hr>
-
-            <h2>現在のステータス &amp; ロードマップ</h2>
-            <p>M2DX はすでに配信中で、問題なく演奏できます。透明性を大切にする観点から、現在も<strong>継続的に改良を進めている</strong>領域を以下にまとめます。皆さまのフィードバックが、優先順位を決めるうえで役立ちます。</p>
-
-            <h3>MIDI 2.0 の検証範囲は限定的</h3>
-            <ul>
-                <li>MIDI 2.0 対応ハードウェアを十分に調達できておらず、UMP の動作確認は限られた機材の組み合わせでしか行えていません</li>
-                <li>macOS のバージョンごとの MIDI 2.0 サポート差異（CoreMIDI の挙動違い等）は完全には把握できていません</li>
-                <li>各メーカーが MIDI 2.0 仕様の上に載せている独自拡張・独自プロファイルの解析は一部のみ（具体的には KORG の一部）対応しており、他社の独自実装は未着手です</li>
-            </ul>
-
-            <h3>DX7 プリセットの互換性検証</h3>
-            <ul>
-                <li>32 種類の初期プリセットを内蔵していますが、ビンテージ FM 音源と比較したときの音作り検証は途上です</li>
-                <li>バンク全体や SysEx パッチの読み込み互換性は今後のアップデートで段階的に整備します</li>
-            </ul>
-
-            <h3>エフェクトチェーン</h3>
-            <ul>
-                <li>6 段の FX チェーン（EQ → Drive → Chorus → Reverb → Stereo → Maximizer）は<strong>ひとまず動く形で実装した段階</strong>です。パラメータの可聴範囲・エンドポイント値の音楽的調整、CPU 効率、相互作用の最適化は今後行います</li>
-            </ul>
-
-            <h3>不具合・違和感を見つけた方へ</h3>
-            <p>クラッシュは Firebase Crashlytics で自動収集されます（詳細は<a href="/M2DX-support/privacy-ja">プライバシーポリシー</a>）。再現条件のある不具合は特定が早まりますので、可能であれば <a href="mailto:support@hakaru.net">support@hakaru.net</a> までご報告いただけると助かります。</p>
-
-            <hr>
-
-            <h2>主な特徴</h2>
-
-            <h3>MIDI 2.0 UMP 完全対応</h3>
-            <p>Universal MIDI Packet (UMP) をネイティブにサポート。16 ビットベロシティ（65,536 段階）、32 ビット CC、32 ビットピッチベンドによる滑らかで表現力豊かな演奏が可能です。MIDI 1.0 にも自動フォールバックします。</p>
-
-            <h3>DX7 互換 FM エンジン</h3>
-            <p>6 オペレータ × 32 アルゴリズムの DX7 系 FM 合成エンジンを Pure Swift で実装。Int32 Q24 固定小数点演算により、ビンテージ FM 音源らしいキャラクターを目指しています。32 種類の初期プリセットを内蔵しています。</p>
-
-            <h3>16 ボイス ポリフォニー</h3>
-            <p>16 ボイスの同時発音、サスティンペダル（CC64）、ピッチベンド（±2 半音）に対応。Padé 近似 tanh によるソフトクリッピングでデジタル歪みを防止します。</p>
-
-            <h3>6 段エフェクトチェーン</h3>
-            <p>EQ → Drive → Chorus → Reverb → Stereo → Maximizer の信号順で構成された高品質エフェクト。すべてのパラメータを MIDI Learn で任意の CC にマッピングできます。</p>
-
-            <h3>MIDI-CI Property Exchange</h3>
-            <p>155 以上のパラメータを階層構造で公開。対応する DAW やコントローラーがパラメータを自動発見でき、JSON ベースのプリセット管理（SysEx 不要）が可能な、自己記述型インストゥルメントです。</p>
-
-            <h3>低レイテンシ</h3>
-            <p>AVAudioSourceNode による直接レンダリングで、CoreAudio レンダーコールバック上で FM エンジンを駆動。バッファキューイングのオーバーヘッドを排除し、iOS の IOBufferDuration（約 5ms）が実質的なレイテンシとなります。</p>
-
-            <h3>AUv3 プラグイン</h3>
-            <p>AUv3 インストゥルメントプラグイン「M2DX FM Synthesizer」を同梱。GarageBand / AUM / Logic Pro などの AUv3 ホスト内で読み込め、ホストオートメーションは NRPN 経由でルーティングされます。スタンドアロンアプリも同梱しています。</p>
-
-            <hr>
-
-            <h2>M2DX Pro</h2>
-            <p>ここまでに挙げた機能はすべて<strong>無料</strong>です。<strong>M2DX Pro</strong> は任意の買い切りアンロック（サブスクリプションではありません）で、より深いレイヤリングとビンテージなサウンドエンジンのオプションを追加します。</p>
-            <ul>
-                <li><strong>TX816 LAYER</strong> — 1 音あたり最大 8 パッチをスタックし、レイヤースタックの保存・呼び出しに対応</li>
-                <li><strong>FM エンジン選択</strong> — Modern エンジンと Mark I を切り替え。Mark I 深度調整（÷2〜÷16）に対応</li>
-                <li><strong>Vintage 12-bit DAC</strong> エミュレーション — ザラつきのあるハードウェア寄りの出力段</li>
-                <li><strong>Voice Stack</strong> — 1 音あたり最大 16× ユニゾン</li>
-            </ul>
-            <p>Pro 機能はスタンドアロンアプリと AUv3 プラグインの両方で利用できます。M2DX Pro のアンロックと<strong>購入の復元</strong>は、設定内の <strong>M2DX Pro</strong> セクションから行えます。買い切りで、ファミリー共有にも対応しています。</p>
-
-            <hr>
-
-            <h2>動作環境</h2>
-            <ul>
-                <li><strong>iOS / iPadOS 18 以上</strong>（App Store で配信中）</li>
-                <li>macOS 版は将来対応予定</li>
-            </ul>
-
-            <hr>
-
-            <h2>よくある質問</h2>
-
-            <h3>App Store で M2DX がまだ見つかりません</h3>
-            <p>新しいリリースが各地域の App Store に反映されるまで、数時間かかることがあります。上のリンクからページがすぐに開かない場合は、しばらくしてから再度お試しください。</p>
-
-            <h3>クラッシュした場合は？</h3>
-            <p>v1.3.1 (build 5) から Firebase Crashlytics による自動クラッシュレポートが有効になっています。クラッシュを再現していただくと、ログから原因を特定して迅速に修正できます。収集データの詳細は<a href="/M2DX-support/privacy-ja">プライバシーポリシー</a>をご覧ください。</p>
-
-            <h3>DX7 の SysEx プリセットは読み込めますか？</h3>
-            <p>32 種類の初期プリセットを内蔵しています。ユーザーが手元のバンクを読み込む SysEx 取り込みについては、今後のアップデートでご案内します。</p>
-
-            <h3>MIDI 2.0 対応の DAW が必要ですか？</h3>
-            <p>いいえ。MIDI 1.0 にもフォールバック対応しているため、従来の MIDI コントローラーや DAW でもお使いいただけます。MIDI 2.0 対応環境ではより高解像度の表現が可能になります。</p>
-
-            <h3>AUv3 プラグインとして使えますか？</h3>
-            <p>はい。M2DX は AUv3 インストゥルメントプラグイン「M2DX FM Synthesizer」を同梱しており、GarageBand / AUM / Logic Pro などの AUv3 ホスト内で演奏できます。スタンドアロンの iOS / iPadOS アプリも同梱しています。</p>
-
-            <h3>M2DX は無料ですか？ M2DX Pro とは？</h3>
-            <p>アプリ本体は無料で、AUv3 プラグインや MIDI 2.0 / FM エンジンもすべて含まれます。<strong>M2DX Pro</strong> は任意の買い切りアンロックで、TX816 LAYER、Mark I エンジンと Vintage 12-bit DAC、最大 16× の Voice Stack ユニゾンを追加します。サブスクリプションはありません。</p>
-
-            <h3>M2DX Pro を購入したのに機能が表示されません</h3>
-            <p>設定の <strong>M2DX Pro</strong> セクションを開き、<strong>購入の復元</strong>をタップしてください。購入時と同じ Apple アカウントでサインインしているかもご確認ください。Pro のアンロックは買い切りで、ファミリー共有に対応しています。</p>
-
-            <hr>
-
-            <h2>リンク</h2>
-            <ul>
-                <li>GitHub: <a href="https://github.com/hakaru/M2DX">github.com/hakaru/M2DX</a></li>
-                <li>シンセシスエンジン: <a href="/M2DX-Core-support/index-ja">M2DX-Core</a>（Pure Swift DX7 FM ライブラリ）</li>
-                <li><a href="/M2DX-support/privacy-ja">プライバシーポリシー</a></li>
-            </ul>
-
-            <hr>
-
-            <h2>お問い合わせ</h2>
-            <p>ご質問・不具合報告・機能リクエストは、以下のメールアドレスまでお気軽にどうぞ：<br>
-            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
 
         <footer>

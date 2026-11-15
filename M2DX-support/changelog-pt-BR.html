@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Histórico de alterações do M2DX | hakaru</title><meta name="description" content="Atualizações publicadas do M2DX de 1.5.0 a 1.7.14: AUv3, timbres personalizados, roteamento de controladores, efeitos Pro e correções MIDI.">
+<meta property="og:title" content="Histórico de alterações do M2DX"><meta property="og:description" content="Atualizações publicadas do M2DX de 1.5.0 a 1.7.14: AUv3, timbres personalizados, roteamento de controladores, efeitos Pro e correções MIDI."><meta property="og:type" content="website"><meta property="og:url" content="https://hakaru.net/M2DX-support/changelog-pt-BR"><meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+<link rel="canonical" href="https://hakaru.net/M2DX-support/changelog-pt-BR"><link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/changelog">
+<link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/changelog-ja">
+<link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/changelog-de">
+<link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/changelog-es">
+<link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/changelog-fr">
+<link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/changelog-it">
+<link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/changelog-ko">
+<link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/changelog-nl">
+<link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/changelog-pt-BR">
+<link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/changelog-sv">
+<link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/changelog-zh-Hant"><link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/changelog">
+<link rel="icon" href="/assets/favicon.ico"><link rel="stylesheet" href="/scripts/sidebar-styles.css"><link rel="stylesheet" href="/M2DX-support/manual/manual.css"></head>
+<body><a class="manual-skip" href="#contents">Histórico de versões</a><button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-pt-BR">Suporte</a>
+      <a href="/AnalogRhythmKing-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-pt-BR">Suporte</a>
+      <a href="/M2MX12-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-pt-BR">Suporte</a>
+      <a href="/EraVerb-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-pt-BR">Suporte</a>
+      <a href="/P73-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-pt-BR">Suporte</a>
+      <a href="/TwinFET-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-pt-BR">Suporte</a>
+      <a href="/M2DX-Core-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/index-pt-BR">Suporte</a>
+      <a href="/M2DX-support/manual/pt-BR/">Manual</a>
+      <a href="/M2DX-support/changelog-pt-BR" class="active">Histórico de alterações</a>
+      <a href="/M2DX-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-pt-BR">Suporte</a>
+      <a href="/PeerClockMetronome-support/blog/pt-BR/">Blog</a>
+      <a href="/PeerClockMetronome-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">Suporte (inglês)</a>
+      <a href="/MyEQ-support/manual/pt-BR/">Manual</a>
+      <a href="/MyEQ-support/privacy">Privacidade (inglês)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">Suporte (inglês)</a>
+      <a href="/Tonrad-support/manual/pt-BR/">Manual</a>
+      <a href="/Tonrad-support/privacy">Privacidade (inglês)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-pt-BR">Suporte</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-pt-BR">Suporte</a>
+      <a href="/BopBot-support/manual/pt-BR/">Manual</a>
+      <a href="/BopBot-support/privacy-pt-BR">Privacidade</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2DX-support/changelog" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2DX-support/changelog-ja" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/changelog-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/changelog-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/changelog-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/changelog-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-support/changelog-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-support/changelog-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <span class="sidebar-lang-btn active" data-lang="pt-BR">PT-BR</span>
+    <a href="/M2DX-support/changelog-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2DX-support/changelog-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav><div class="content-pane"><main class="manual changelog" id="top">
+<header class="manual-header"><div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>Histórico de alterações do M2DX</h1><p class="manual-subtitle">Versões publicadas · Mudanças que afetam a execução e a edição</p></div></div><p class="manual-updated">Atualizado em 15 de novembro de 2026 · Versão pública mais recente: 1.7.14</p><nav class="manual-languages" aria-label="Idioma do histórico"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/M2DX-support/changelog">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/changelog-ja">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/changelog-de">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/changelog-es">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/changelog-fr">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/changelog-it">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/M2DX-support/changelog-ko">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/changelog-nl">Nederlands</a><span class="sidebar-lang-btn active" data-lang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</span><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/M2DX-support/changelog-sv">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/M2DX-support/changelog-zh-Hant">繁體中文</a></nav></header>
+<p>Esta página resume as mudanças que afetam o usuário nas versões publicadas. As datas seguem o histórico da App Store japonesa e podem diferir da data de preparação de um build ou de uma tag do código-fonte. Versões de desenvolvimento e exclusivas do TestFlight, incluindo 1.6.1 e 1.6.2, não são listadas como lançamentos públicos.</p><div class="note"><p>As notas descrevem a mudança na época de cada lançamento. Para o comportamento e as limitações atuais, consulte o manual. Em particular, o padrão de Mark I Depth no aplicativo independente passou a ÷1 em 1.7.12, mas a inicialização atual do AU e o padrão do parâmetro diferem. Receber uma mensagem MIDI não comprova que ela tenha efeito audível.</p><p><a href="/M2DX-support/manual/pt-BR/">Leia o manual do M2DX</a></p></div>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">Histórico de versões</h2><ol><li><a href="#v-1-7-14">1.7.14</a></li><li><a href="#v-1-7-13">1.7.13</a></li><li><a href="#v-1-7-12">1.7.12</a></li><li><a href="#v-1-7-11">1.7.11</a></li><li><a href="#v-1-7-10">1.7.10</a></li><li><a href="#v-1-7-9">1.7.9</a></li><li><a href="#v-1-7-8">1.7.8</a></li><li><a href="#v-1-7-7">1.7.7</a></li><li><a href="#v-1-7-6">1.7.6</a></li><li><a href="#v-1-7-5">1.7.5</a></li><li><a href="#v-1-7-4">1.7.4</a></li><li><a href="#v-1-7-3">1.7.3</a></li><li><a href="#v-1-7-2">1.7.2</a></li><li><a href="#v-1-7-1">1.7.1</a></li><li><a href="#v-1-7-0">1.7.0</a></li><li><a href="#v-1-5-5">1.5.5</a></li><li><a href="#v-1-5-4">1.5.4</a></li><li><a href="#v-1-5-3">1.5.3</a></li><li><a href="#v-1-5-2">1.5.2</a></li><li><a href="#v-1-5-1">1.5.1</a></li><li><a href="#v-1-5-0">1.5.0</a></li></ol></nav>
+<section id="v-1-7-14" aria-labelledby="v-1-7-14-title"><h2 id="v-1-7-14-title">1.7.14</h2><p class="manual-updated"><time datetime="2026-10-08">2026-10-08</time> · build 40</p><ul><li>O editor AUv3 cresce com uma janela maior do host. Texto, botões e teclado são redimensionados juntos; janelas menores mantêm o layout anterior.</li></ul></section>
+<section id="v-1-7-13" aria-labelledby="v-1-7-13-title"><h2 id="v-1-7-13-title">1.7.13</h2><p class="manual-updated"><time datetime="2026-10-07">2026-10-07</time> · build 39</p><ul><li>Os timbres CUSTOM agora salvam e recuperam o roteamento de roda de modulação, pedal, sopro e aftertouch, além de EG MODE, tanto no aplicativo independente quanto no AUv3. Salve novamente timbres CUSTOM antigos para armazenar essas configurações.</li></ul></section>
+<section id="v-1-7-12" aria-labelledby="v-1-7-12-title"><h2 id="v-1-7-12-title">1.7.12</h2><p class="manual-updated"><time datetime="2026-10-05">2026-10-05</time> · build 38</p><ul><li>O padrão de Mark I Depth no aplicativo independente mudou de ÷5 para ÷1. Valores escolhidos anteriormente são mantidos. Mais aplicativos foram adicionados a More from hakaru. Consulte no manual a ressalva atual sobre o valor inicial do AU.</li></ul></section>
+<section id="v-1-7-11" aria-labelledby="v-1-7-11-title"><h2 id="v-1-7-11-title">1.7.11</h2><p class="manual-updated"><time datetime="2026-10-04">2026-10-04</time> · build 37</p><ul><li>Adicionado EDIT → CONTROLLERS → EG MODE. DX7 mantém o comportamento de bias da versão 1.7.10; BOOST restaura o comportamento anterior que eleva todos os operadores, incluindo moduladores.</li></ul></section>
+<section id="v-1-7-10" aria-labelledby="v-1-7-10-title"><h2 id="v-1-7-10-title">1.7.10</h2><p class="manual-updated"><time datetime="2026-10-03">2026-10-03</time> · build 36</p><ul><li>O EG Bias dos controladores foi alterado para atenuar operadores com AMS habilitado em repouso e abri-los em direção ao nível programado conforme o controlador aumenta. Timbres que usam EG Bias podem soar diferentes; uma faixa EG igual a zero não é afetada.</li></ul></section>
+<section id="v-1-7-9" aria-labelledby="v-1-7-9-title"><h2 id="v-1-7-9-title">1.7.9</h2><p class="manual-updated"><time datetime="2026-10-02">2026-10-02</time> · build 35</p><ul><li>Adicionados endereços estáveis de Program Change CUSTOM no Bank MSB 16 e seleção compartilhada de sons CUSTOM/importados para hosts AU. Melhoradas a atualização da biblioteca compartilhada e a restauração de projetos AU, incluindo timbres incorporados, camadas, afinação e edições.</li><li>Habilitados Program Change e Bank Select no AUv3. Mark I Depth tornou-se gratuito e foi ampliado para ÷1–÷16; seu padrão ainda era ÷5 nesta versão.</li><li>Corrigidos a restauração de estado no Logic Pro, a conversão de controles MIDI 2.0 em escala completa, o tratamento de níveis dos operadores em tempo real e os artefatos ao alternar o compressor Pro.</li></ul></section>
+<section id="v-1-7-8" aria-labelledby="v-1-7-8-title"><h2 id="v-1-7-8-title">1.7.8</h2><p class="manual-updated"><time datetime="2026-10-02">2026-10-02</time> · build 34</p><ul><li>O aplicativo independente memoriza Mono/Poly por som de fábrica/importado. Adicionada exclusão de timbres CUSTOM em LIVE com confirmação. Cancelar Restore Purchases não gera mais um alerta de erro.</li></ul></section>
+<section id="v-1-7-7" aria-labelledby="v-1-7-7-title"><h2 id="v-1-7-7-title">1.7.7</h2><p class="manual-updated"><time datetime="2026-09-28">2026-09-28</time> · build 33</p><ul><li>Corrigida uma falha ao abrir os controles de um efeito Apple Audio Unit executando o aplicativo de iPhone em um Mac Apple Silicon. O efeito continua processando mesmo quando sua interface personalizada não está disponível.</li></ul></section>
+<section id="v-1-7-6" aria-labelledby="v-1-7-6-title"><h2 id="v-1-7-6-title">1.7.6</h2><p class="manual-updated"><time datetime="2026-09-18">2026-09-18</time> · build 32</p><ul><li>Corrigida uma falha na tela EDIT ao executar o aplicativo de iPhone em um Mac Apple Silicon. EDIT usa controles −/+ no Mac; o iPhone mantém os controles de incremento existentes.</li></ul></section>
+<section id="v-1-7-5" aria-labelledby="v-1-7-5-title"><h2 id="v-1-7-5-title">1.7.5</h2><p class="manual-updated"><time datetime="2026-09-17">2026-09-17</time> · build 31</p><ul><li>Edições de Level dos operadores agora seguem o valor DX7 0–99 exibido sem alterar os demais operadores e afetam notas em execução sem precisar dispará-las novamente. AUv3 agora roteia CC112–117 para os níveis OP1–OP6.</li></ul></section>
+<section id="v-1-7-4" aria-labelledby="v-1-7-4-title"><h2 id="v-1-7-4-title">1.7.4</h2><p class="manual-updated"><time datetime="2026-09-12">2026-09-12</time> · build 30</p><ul><li>Adicionados execução Mono, legato, portamento Fingered/Full-time e glissando em semitons. Timbres CUSTOM salvam Mono/Poly.</li><li>Adicionados ao Pro independente o pré-amplificador P73, o compressor TwinFET 1176 e o DigitalReverb com seis modelos. O roteamento de controladores do aplicativo independente persiste entre trocas de timbre e inicializações.</li><li>Melhorados MIDI Learn, sustain, preservação de camadas TX816, restauração de estado AU e retorno visual de compra/restauração.</li></ul></section>
+<section id="v-1-7-3" aria-labelledby="v-1-7-3-title"><h2 id="v-1-7-3-title">1.7.3</h2><p class="manual-updated"><time datetime="2026-07-13">2026-07-13</time></p><ul><li>Melhorados a filtragem de entrada MIDI e o tratamento de running status, o carregamento de efeitos AU externos, o estado de compra Pro, as novas tentativas de inicialização de áudio e a persistência de presets. Reduzida a sobrecarga durante atividade intensa de MIDI/automação.</li></ul></section>
+<section id="v-1-7-2" aria-labelledby="v-1-7-2-title"><h2 id="v-1-7-2-title">1.7.2</h2><p class="manual-updated"><time datetime="2026-07-11">2026-07-11</time></p><ul><li>Adicionada ao Pro independente a hospedagem de até quatro efeitos AU externos após a cadeia interna, com restauração da cadeia/estado. Corrigida a ativação de Analytics e Crashlytics na inicialização.</li></ul></section>
+<section id="v-1-7-1" aria-labelledby="v-1-7-1-title"><h2 id="v-1-7-1-title">1.7.1</h2><p class="manual-updated"><time datetime="2026-07-04">2026-07-04</time></p><ul><li>Introduzido o ícone do aplicativo com painel FM vintage, incluindo variantes escura e tonalizada para iOS 18.</li></ul></section>
+<section id="v-1-7-0" aria-labelledby="v-1-7-0-title"><h2 id="v-1-7-0-title">1.7.0</h2><p class="manual-updated"><time datetime="2026-07-03">2026-07-03</time></p><ul><li>Introduzida a compra única opcional do M2DX Pro: camadas TX816, opções de mecanismo, Vintage DAC e Voice Stack. Adicionadas restauração de compras e uma tela FX dedicada; os recursos gratuitos existentes continuaram gratuitos.</li><li>Melhorados a edição AU/automação do host e os bancos compartilhados. Maximizer passou a ficar desligado por padrão. O acesso aos mecanismos e o intervalo de Depth mudaram novamente em versões posteriores; consulte o manual atual.</li></ul></section>
+<section id="v-1-5-5" aria-labelledby="v-1-5-5-title"><h2 id="v-1-5-5-title">1.5.5</h2><p class="manual-updated"><time datetime="2026-06-24">2026-06-24</time></p><ul><li>Corrigidas alterações indesejadas de timbre ao navegar entre páginas de operadores ou recuperar presets AUv3. Melhorados o encaixe em razões comuns, a liberação de notas no teclado da tela e a estabilidade.</li></ul></section>
+<section id="v-1-5-4" aria-labelledby="v-1-5-4-title"><h2 id="v-1-5-4-title">1.5.4</h2><p class="manual-updated"><time datetime="2026-06-23">2026-06-23</time></p><ul><li>Melhorados a recuperação de presets AUv3, a polifonia do teclado multitoque e a nomenclatura do plug-in. Alinhados os requisitos de implantação do aplicativo e da extensão.</li></ul></section>
+<section id="v-1-5-3" aria-labelledby="v-1-5-3-title"><h2 id="v-1-5-3-title">1.5.3</h2><p class="manual-updated"><time datetime="2026-06-22">2026-06-22</time></p><ul><li>Corrigida a inicialização AUv3 e adicionada ajuda no aplicativo em sete idiomas, incluindo orientações para encontrar e importar bancos DX7.</li></ul></section>
+<section id="v-1-5-2" aria-labelledby="v-1-5-2-title"><h2 id="v-1-5-2-title">1.5.2</h2><p class="manual-updated"><time datetime="2026-06-18">2026-06-18</time></p><ul><li>Melhorados a automação pelo host AU, as transições de bypass do Maximizer, a análise MIDI, a exibição da afinação e a importação/exclusão segura de bancos SysEx. Receber mensagens de pressão não comprovava suporte audível à pressão polifônica no mecanismo atual.</li></ul></section>
+<section id="v-1-5-1" aria-labelledby="v-1-5-1-title"><h2 id="v-1-5-1-title">1.5.1</h2><p class="manual-updated"><time datetime="2026-06-16">2026-06-16</time></p><ul><li>Atualizadas as capturas de tela da App Store e a preparação do pacote de lançamento; nenhum novo recurso de execução foi registrado.</li></ul></section>
+<section id="v-1-5-0" aria-labelledby="v-1-5-0-title"><h2 id="v-1-5-0-title">1.5.0</h2><p class="manual-updated"><time datetime="2026-06-16">2026-06-16</time> · build 9</p><ul><li>Primeiro lançamento na App Store para iPhone com iOS 18 ou posterior. Incluía FM de seis operadores, execução no teclado da tela, edição/salvamento personalizado, AUv3 e importação de bancos DX7 de 32 timbres e 4104 bytes fornecidos pelo usuário.</li></ul></section>
+<p>Fontes: histórico de versões da App Store, registros de lançamento do desenvolvedor e análise do código distribuído. <a href="https://apps.apple.com/jp/app/m2dx/id6763840208?platform=mac">Histórico de versões na App Store</a></p>
+<footer class="manual-footer"><nav><a href="/M2DX-support/manual/pt-BR/">Leia o manual do M2DX</a><a href="/M2DX-support/index-pt-BR">Suporte</a><a href="/M2DX-support/privacy-pt-BR">Privacidade</a><a href="mailto:support@hakaru.net">Fale com o suporte</a><a href="#top">Voltar ao início</a></nav><p>© 2026 hakaru</p></footer></main></div><script src="/scripts/sidebar-script.js"></script></body></html>

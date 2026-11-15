@@ -119,6 +119,9 @@ def label_matches_section(label, section):
             "changelog", "更新履歴", "versionsverlauf", "registro de cambios",
             "journal des modifications", "registro modifiche", "wijzigingslog",
             "registro de alterações", "andringslogg", "變更記錄", "변경 기록",
+            "änderungsverlauf", "historial de cambios", "historique des modifications",
+            "cronologia delle modifiche", "wijzigingsgeschiedenis", "histórico de alterações",
+            "ändringshistorik", "更新紀錄",
         ],
         "privacy": [
             "privacy", "プライバシー", "datenschutz", "privacidad", "confidentialité",

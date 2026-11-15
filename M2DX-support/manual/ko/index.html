@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M2DX 사용자 매뉴얼 | hakaru</title>
+    <meta name="description" content="M2DX 상세 가이드: FM 사운드 디자인, 프리셋, 이펙트, Pro와 AUv3, M2DX-Core 내부 작동, MIDI 2.0 기능과 제한 사항, Dexed 비교.">
+    <meta property="og:title" content="M2DX 사용자 매뉴얼">
+    <meta property="og:description" content="M2DX 상세 가이드: FM 사운드 디자인, 프리셋, 이펙트, Pro와 AUv3, M2DX-Core 내부 작동, MIDI 2.0 기능과 제한 사항, Dexed 비교.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2DX-support/manual/ko/">
+    <meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+    <link rel="canonical" href="https://hakaru.net/M2DX-support/manual/ko/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/M2DX-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">목차</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-ko">지원</a>
+      <a href="/AnalogRhythmKing-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-ko">지원</a>
+      <a href="/M2MX12-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-ko">지원</a>
+      <a href="/EraVerb-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-ko">지원</a>
+      <a href="/P73-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-ko">지원</a>
+      <a href="/TwinFET-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-ko">지원</a>
+      <a href="/M2DX-Core-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/index-ko">지원</a>
+      <a href="/M2DX-support/manual/ko/" class="active">매뉴얼</a>
+      <a href="/M2DX-support/changelog-ko">변경 기록</a>
+      <a href="/M2DX-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-ko">지원</a>
+      <a href="/PeerClockMetronome-support/blog/ko/">블로그</a>
+      <a href="/PeerClockMetronome-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">지원 (영어)</a>
+      <a href="/MyEQ-support/manual/ko/">매뉴얼</a>
+      <a href="/MyEQ-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">지원 (영어)</a>
+      <a href="/Tonrad-support/manual/ko/">매뉴얼</a>
+      <a href="/Tonrad-support/privacy">개인정보 처리방침 (영어)</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/en/">Support</a>
+      <a href="/ChatArchive-support/en/blog/">Blog</a>
+      <a href="/ChatArchive-support/en/privacy">Privacy</a>
+      <a href="/ChatArchive-support/en/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-ko">지원</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-ko">지원</a>
+      <a href="/BopBot-support/manual/ko/">매뉴얼</a>
+      <a href="/BopBot-support/privacy-ko">개인정보</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2DX-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2DX-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <span class="sidebar-lang-btn active" data-lang="ko">KO</span>
+    <a href="/M2DX-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2DX-support/manual/zh-Hant/index.html" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>M2DX 사용자 매뉴얼</h1><p class="manual-subtitle">FM 사운드 연주와 편집 · M2DX-Core · MIDI 2.0 · Dexed 비교</p></div></div>
+    <p class="manual-updated">2026년 11월 15일 업데이트 · M2DX 1.7.14 (40) · M2DX-Core 1.25.0 · Dexed 1.1.0</p>
+    <nav class="manual-languages" aria-label="매뉴얼 언어"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/M2DX-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/manual/it/">Italiano</a><span class="sidebar-lang-btn active" data-lang="ko" lang="ko" aria-current="page">한국어</span><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/M2DX-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/M2DX-support/manual/sv/">Svenska</a><a class="sidebar-lang-btn" data-lang="zh-Hant" lang="zh-Hant" hreflang="zh-Hant" href="/M2DX-support/manual/zh-Hant/">繁體中文</a></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">목차</h2><ol><li><a href="#overview">버전, 시스템 요구 사항 및 범위</a></li>
+<li><a href="#quickstart">첫 번째 사운드 연주하기</a></li>
+<li><a href="#screens">인터페이스 알아보기</a></li>
+<li><a href="#presets">뱅크, 사용자 음색 및 저장</a></li>
+<li><a href="#sysex">DX7 SysEx 음색 가져오기</a></li>
+<li><a href="#fm-basics">6오퍼레이터 FM이 소리를 만드는 방식</a></li>
+<li><a href="#operators">오퍼레이터 주파수, 레벨 및 스케일링</a></li>
+<li><a href="#envelopes">오퍼레이터 엔벌로프, 피치 엔벌로프 및 LFO</a></li>
+<li><a href="#performance">벨로시티, 컨트롤러, 모노 및 포르타멘토</a></li>
+<li><a href="#effects">이펙트로 사운드 다듬기</a></li>
+<li><a href="#layers-pro">TX816 레이어, Voice Stack 및 Pro</a></li>
+<li><a href="#external-au">앱에서 외부 AU 이펙트 사용하기</a></li>
+<li><a href="#auv3">AUv3 호스트에서 M2DX 사용하기</a></li>
+<li><a href="#core">M2DX-Core: 음표에서 오디오까지</a></li>
+<li><a href="#core-engines">Modern, Mark I, Depth 및 Vintage DAC</a></li>
+<li><a href="#midi2">MIDI 2.0 이해하기: 메시지와 해상도</a></li>
+<li><a href="#midi-support">공개 MIDI 경로가 실제로 지원하는 기능</a></li>
+<li><a href="#midi-ci">MIDI-CI, Profile 및 Property Exchange</a></li>
+<li><a href="#midi-learn">컨트롤러 연결 및 MIDI Learn 사용</a></li>
+<li><a href="#program-change">Bank Select와 Program Change로 음색 선택하기</a></li>
+<li><a href="#dexed-comparison">M2DX와 Dexed: 장점과 제한 사항</a></li>
+<li><a href="#sound-matching">음색을 옮기고 공정하게 비교하기</a></li>
+<li><a href="#troubleshooting">문제 해결 및 현재 제한 사항</a></li>
+<li><a href="#sources">출처, 버전 및 해석</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">버전, 시스템 요구 사항 및 범위 </h2>
+<p>M2DX는 오퍼레이터 여섯 개와 알고리즘 32개를 사용하는 FM 신시사이저입니다. 화면 건반으로 연주하거나 MIDI 키보드를 연결하거나, 호환 호스트에 AUv3 악기를 불러올 수 있습니다. M2DX-Core는 FM 사운드를 생성하는 Swift 라이브러리이며, 앱은 인터페이스, 프리셋, MIDI 연결 및 이펙트를 제공합니다.</p><ul><li>이 매뉴얼은 공개 버전 <strong>M2DX 1.7.14(빌드 40)</strong>을 다루며, 이 버전은 <strong>M2DX-Core 1.25.0</strong>과 <strong>MIDI2Kit 1.0.19</strong>를 사용합니다. 이후 개발 중인 변경 사항은 이 가이드의 범위에 포함되지 않습니다.</li><li>현재 <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store 페이지</a>에는 <strong>iPhone, iOS 18 이상</strong>이 명시되어 있습니다. macOS 15 이상을 실행하는 Apple Silicon Mac과의 호환성도 표시되지만, iPhone 앱의 macOS 작동은 검증되지 않았다고 안내합니다. 이 호환성 표시를 네이티브 Mac 버전이나 iPad에 최적화된 버전이 있다는 의미로 해석하지 마세요.</li><li>매뉴얼은 11개 언어로 제공됩니다. 공개 앱의 인터페이스 언어는 <strong>영어</strong>로 표시되어 있습니다. 따라서 여기서도 LIVE, SAVE 같은 컨트롤 이름은 영어로 유지합니다.</li><li>앱과 AUv3 악기는 무료로 다운로드할 수 있습니다. <strong>M2DX Pro</strong>는 선택 사항인 일회성 구매이며, 현재 가격은 앱에서 확인하세요. 독립 실행 앱과 AUv3에서 사용할 수 있는 Pro 기능은 다릅니다.</li></ul><p>아래 설명에서는 MIDI 표준의 기능, 라이브러리 내부의 기능, 공개 앱을 통해 실제로 사용할 수 있는 기능을 구분합니다. 이들은 서로 다른 지원 수준입니다.</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">첫 번째 사운드 연주하기 </h2>
+<ol><li>M2DX를 열고 <strong>LIVE</strong>를 선택합니다. 기기 또는 오디오 인터페이스의 음량을 적당하게 유지하세요.</li><li>화면 건반이 숨겨져 있으면 건반 표시 전환 버튼으로 표시한 다음 건반을 탭합니다. 외부 MIDI 하드웨어는 필수가 아닙니다.</li><li>LIVE에서 프리셋을 탭합니다. <strong>현재 뱅크 이름</strong>을 탭하여 다른 뱅크를 선택한 다음 그 뱅크의 사운드를 탭합니다.</li><li>건반의 옥타브를 바꾸면 다른 음역을 연주할 수 있습니다. 화면 건반의 시작 벨로시티는 100입니다. Settings → Velocity에서 곡선을 조정하거나 외부 키보드로 연주 강도를 바꾸세요.</li><li><strong>FX</strong>를 열어 사운드를 다듬거나 <strong>EDIT</strong>를 열어 합성 파라미터를 변경합니다. 다른 음색을 선택하기 전에 편집한 음색을 저장하세요.</li></ol><p>USB 키보드는 호환 인터페이스나 어댑터로 연결한 후 MIDI 수신을 확인하세요. Bluetooth MIDI 키보드는 <strong>Settings → MIDI → Bluetooth MIDI</strong>를 열어 연결합니다. Bluetooth MIDI는 연주 데이터를 전송하며, 모니터링에 눈에 띄는 지연을 추가할 수 있는 Bluetooth 오디오와는 별개입니다.</p><p>소리가 나지 않으면 먼저 화면 건반으로 기본 제공 음색을 테스트하세요. 오디오 출력 문제와 컨트롤러 연결 문제를 구분할 수 있습니다. <a href="#troubleshooting">문제 해결</a>을 참조하세요.</p>
+</section>
+<section id="screens" aria-labelledby="screens-title">
+<h2 id="screens-title">인터페이스 알아보기 </h2>
+<div aria-labelledby="screens-table" class="table-wrap" role="region" tabindex="0"><table><caption id="screens-table">주요 화면</caption><thead><tr><th scope="col">화면 또는 컨트롤</th><th scope="col">용도</th></tr></thead><tbody><tr><th scope="row">LIVE</th><td>뱅크와 사운드를 선택하고 화면 건반을 연주합니다. LAYER에서 이 화면으로 돌아오면 단일 패치 모드로 복귀합니다.</td></tr><tr><th scope="row">EDIT</th><td>오퍼레이터 여섯 개, 알고리즘, 엔벌로프 및 공통 음색 파라미터를 편집합니다. SAVE로 사용자 음색을 만듭니다.</td></tr><tr><th scope="row">LAYER</th><td>TX816 LAYER 페이지는 여러 패치를 스택으로 결합합니다. 내장 건반이 없으므로 외부 MIDI 또는 AU 호스트의 MIDI 입력으로 스택을 들어보세요.</td></tr><tr><th scope="row">FX</th><td>내부 이펙트를 조정합니다. FX를 열어도 이전의 단일 패치 또는 레이어 모드가 유지됩니다.</td></tr><tr><th scope="row">AU</th><td>AU FX 페이지는 Pro가 있는 독립 실행 앱에서 외부 오디오 이펙트를 호스팅합니다. M2DX 자체를 AUv3 악기로 불러오는 것과는 다릅니다.</td></tr><tr><th scope="row">헤더의 프리셋 이름 / ALG</th><td>프리셋 이름 선택기에는 기본 제공 사운드가 표시됩니다. 가져온 뱅크와 CUSTOM은 LIVE → 현재 뱅크 이름에서 찾으세요. ALG는 알고리즘 선택기를 엽니다.</td></tr><tr><th scope="row">Settings</th><td>연결, 사운드 엔진 옵션, 구매 및 기타 앱 설정입니다. 개발 자료에 있는 디버그 및 MIDI-CI 진단 화면은 공개 버전의 컨트롤이 아닙니다.</td></tr></tbody></table></div><p>EDIT에는 화면 건반이 없습니다. 외부/호스트 MIDI로 편집 결과를 들어보거나 다른 음색을 선택하지 않고 LIVE로 돌아가세요. LIVE와 EDIT 사이를 전환해도 현재 편집 내용은 유지됩니다.</p>
+</section>
+<section id="presets" aria-labelledby="presets-title">
+<h2 id="presets-title">뱅크, 사용자 음색 및 저장 </h2>
+<p>뱅크는 음색을 묶어 놓은 것입니다. 음색을 선택하면 현재의 단일 FM 패치가 교체됩니다. 기본 제공 사운드, 가져온 SysEx 뱅크, 저장한 <strong>CUSTOM</strong> 음색은 별개의 모음입니다. LIVE의 뱅크 선택기에서 모두 접근할 수 있습니다.</p><h3>편집한 음색 저장하기</h3><ol><li>시작할 음색을 선택하고 EDIT를 엽니다.</li><li>변경한 다음 <strong>SAVE</strong>를 탭합니다.</li><li>이름을 입력하고 저장을 마칩니다. 같은 이름의 음색이 있더라도 저장할 때마다 <strong>새 사용자 음색</strong>이 생성됩니다. SAVE는 덮어쓰기 명령이 아닙니다.</li><li>다시 불러오려면 LIVE로 돌아가 현재 뱅크 이름을 탭하고, 뱅크 목록 끝의 <strong>CUSTOM</strong>을 선택한 다음 저장된 음색을 탭합니다.</li></ol><p>저장하면 저장되지 않은 편집 내용 표시가 사라지지만, 현재 뱅크나 프리셋 선택이 자동으로 CUSTOM으로 이동하지는 않습니다. CUSTOM은 저장된 음색이 하나 이상 있을 때만 표시됩니다. CUSTOM은 음색, 컨트롤러 라우팅/EG 모드, Mono/Poly와 포르타멘토 켜기/끄기/시간, 내부 FX를 저장합니다. 호스트 프로젝트 전체, 외부 AU 체인, 엔진/제수/DAC 옵션, MIDI Learn 매핑 또는 TX816 스택은 저장하지 않습니다. REVERT로 편집 기준 상태로 돌아가거나 INIT를 누르고 확인하여 음색을 초기화할 수 있습니다. INIT가 모든 앱 설정을 초기화하는 것은 아닙니다.</p><h3>사용자 음색 삭제하기</h3><p>CUSTOM 뱅크에서 음색을 길게 누르고 <strong>Delete</strong>를 선택한 후 확인합니다. 저장된 항목이 제거되지만 현재 불러온 사운드는 계속 들릴 수 있습니다. 다시 가져와야 할 원본 SysEx 파일은 별도로 보관하세요.</p>
+</section>
+<section id="sysex" aria-labelledby="sysex-title">
+<h2 id="sysex-title">DX7 SysEx 음색 가져오기 </h2>
+<p><code>.syx</code> 파일은 MIDI System Exclusive 데이터 파일입니다. DX7 음색 데이터는 오퍼레이터, 엔벌로프 및 공통 패치 설정을 담고 있으며 녹음된 오디오는 포함하지 않습니다. 공개 버전의 가져오기 기능은 <strong>4104바이트 DX7 32음색 벌크 뱅크</strong>를 허용합니다. 헤더, 7비트 데이터와 체크섬을 검사하며 단일 음색 덤프는 허용하지 않습니다.</p><ol><li>파일 선택기에서 접근할 수 있는 위치에 원본 <code>.syx</code> 파일을 저장합니다.</li><li><strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>를 열고 파일을 선택한 다음 Done을 탭합니다.</li><li>LIVE → 현재 뱅크 이름으로 돌아가 가져온 뱅크를 선택한 다음 음색을 선택합니다.</li><li>필요하면 해당 음색을 편집하고 SAVE로 별도의 CUSTOM 사본을 만듭니다.</li></ol><p>M2DX와 파일을 교환할 때는 32음색 뱅크를 사용하세요. 단일 음색 덤프는 먼저 Dexed 같은 라이브러리 관리 도구로 호환 뱅크에 넣어야 합니다. 파일 이름이 .syx로 끝난다고 호환성이 보장되지는 않습니다. 다른 신시사이저의 SysEx 형식이나 DX 계열의 확장 데이터는 다를 수 있습니다. 형식이 잘못된 파일이나 지원하지 않는 메시지는 이름을 바꾸는 것만으로 호환되지 않습니다. 압축 파일은 먼저 압축을 푼 다음 뱅크 파일을 선택하세요. 같은 파일 이름을 가져오면 기존 뱅크를 덮어쓰는 대신 번호가 붙은 사본이 추가됩니다. Settings에서 가져온 뱅크의 행을 쓸어넘기면 앱의 사본을 삭제할 수 있으며, 파일 앱의 원본 문서는 제거되지 않습니다. 공개 인터페이스에는 음색이나 뱅크 Export 명령이 없습니다.</p><p>DX7 SysEx에는 M2DX 이펙트, Pro 레이어, 엔진 설정 또는 Dexed 플러그인 상태가 포함되지 않습니다. 조건을 통제하여 사운드를 비교하려면 같은 DX7 패치 데이터로 시작하고 추가 처리를 끄세요. <a href="#sound-matching">Dexed와 사운드 맞추기</a>를 참조하세요.</p>
+</section>
+<section id="fm-basics" aria-labelledby="fm-basics-title">
+<h2 id="fm-basics-title">6오퍼레이터 FM이 소리를 만드는 방식 </h2>
+<p><strong>오퍼레이터</strong>는 자체 레벨과 엔벌로프가 있는 오실레이터입니다. <strong>캐리어</strong>는 오디오 출력에 도달하고, <strong>모듈레이터</strong>는 다른 오퍼레이터의 위상을 바꾸어 추가 주파수 성분을 만듭니다. DX 방식의 FM은 위상 변조로 구현됩니다. 신호를 단순히 서로 곱하는 방식이 아닙니다.</p><div aria-label="모듈레이터가 캐리어를 변화시키고 캐리어가 출력에 도달합니다" class="signal-flow" role="img"><span>OP 2<br/>모듈레이터</span><span aria-hidden="true">→</span><span>OP 1<br/>캐리어</span><span aria-hidden="true">→</span><span>오디오 출력</span></div><p><strong>알고리즘</strong>은 여섯 오퍼레이터의 연결 방식을 결정합니다. 긴 변조 체인을 이루는 것도 있고, 여러 캐리어가 병렬로 연결되는 것도 있습니다. 모든 오퍼레이터 값이 같아도 알고리즘을 바꾸면 사운드가 크게 달라질 수 있습니다.</p><ul><li><strong>캐리어의 출력 레벨</strong>을 높이면 해당 가지에서 들리는 레벨이 바뀝니다.</li><li><strong>모듈레이터의 출력 레벨</strong>을 높이면 변조 깊이가 증가하며, 보통 밝기나 스펙트럼의 복잡성이 더해집니다.</li><li>배음 관계를 갖는 출발점으로는 1:1이나 2:1 같은 정수 주파수 비율을 사용하세요. 정수가 아닌 관계는 종소리나 금속성 음색을 만드는 경우가 많습니다.</li><li><strong>피드백</strong>은 오퍼레이터 신호를 피드백 경로로 되돌립니다. 피드백이 많아지면 배음이나 거친 질감이 더해질 수 있습니다.</li></ul><p>처음에는 단순한 두 오퍼레이터 가지가 있는 알고리즘을 선택하고, 다른 캐리어의 레벨을 낮춘 다음 두 오퍼레이터를 모두 1:1 비율로 설정해 보세요. 모듈레이터 레벨을 천천히 높인 뒤 모듈레이터의 엔벌로프만 짧게 만들면, 소리가 처음에는 밝고 시간이 지나면서 부드러워집니다.</p>
+</section>
+<section id="operators" aria-labelledby="operators-title">
+<h2 id="operators-title">오퍼레이터 주파수, 레벨 및 스케일링 </h2>
+<p>EDIT에서 오퍼레이터를 선택하고 같은 음을 반복하면서 한 번에 파라미터 하나씩 바꾸세요. 오퍼레이터 번호는 알고리즘 내 위치를 나타냅니다. 번호만으로 해당 오퍼레이터가 항상 캐리어라고 판단할 수는 없습니다.</p><div aria-labelledby="operators-table" class="table-wrap" role="region" tabindex="0"><table><caption id="operators-table">주요 오퍼레이터 파라미터</caption><thead><tr><th scope="col">파라미터</th><th scope="col">들어볼 변화</th></tr></thead><tbody><tr><th scope="row">Ratio / Fixed, Coarse / Fine</th><td>Ratio 모드는 연주 음높이를 따릅니다. Fixed 모드는 오퍼레이터의 절대 주파수를 설정하며, 변조가 일반적인 방식으로 건반을 따라가지 않는 특수 질감에 유용합니다. Coarse는 크게 조정하고 Fine은 세밀하게 조정합니다.</td></tr><tr><th scope="row">Output Level</th><td>캐리어의 레벨 또는 모듈레이터의 깊이를 바꿉니다. DX 파라미터 눈금은 단순한 선형 음량 백분율이 아닙니다.</td></tr><tr><th scope="row">Detune</th><td>오퍼레이터의 튜닝을 조금 어긋나게 합니다. 코러스를 추가하기 전에 병렬 캐리어 사이에 작은 차이를 주어 움직임을 만들어 보세요.</td></tr><tr><th scope="row">벨로시티 감도</th><td>음표 벨로시티가 이 오퍼레이터의 레벨을 얼마나 바꿀지 결정합니다. 모듈레이터의 감도는 주로 밝기를 바꾸고 캐리어의 감도는 음량도 바꿉니다.</td></tr><tr><th scope="row">건반 레벨 스케일링</th><td>분기점, 왼쪽/오른쪽 깊이 및 곡선이 건반 위치에 따른 레벨을 바꿉니다. 밝은 고음을 억제하거나 저음역을 강화하는 데 사용할 수 있습니다.</td></tr><tr><th scope="row">레이트 스케일링</th><td>건반 위치에 따라 엔벌로프 속도가 달라지게 합니다. 레벨 스케일링과는 별개입니다.</td></tr><tr><th scope="row">진폭 변조 감도</th><td>공유 진폭 변조 신호에 오퍼레이터가 얼마나 반응하는지 제어합니다. LFO와 컨트롤러 라우팅에도 영이 아닌 양이 설정되어 있어야 합니다.</td></tr></tbody></table></div><div class="note"><p><strong>1.7.14의 WAVE 제한:</strong> 편집기는 파형 선택 기능을 제공하지만, 배포된 Core의 파형 설정 함수는 오실레이터를 바꾸지 않습니다. 공개 엔진은 사인파 오퍼레이터를 사용합니다. WAVE를 통해 이 버전이 여덟 파형 또는 DX7II 엔진으로 작동한다고 기대하지 마세요.</p></div><p>현재 편집기는 Level 0–99, VEL 0–7, AMS 0–3, KRS 0–7, Feedback 0–7을 제공합니다. Feedback은 선택한 알고리즘의 피드백 오퍼레이터에서만 활성화됩니다. 주 Ratio 슬라이더 범위는 0.50–16.00이지만 CRS(0–31)와 FIN(0–99)은 그 범위를 넘어서는 비율도 표현할 수 있습니다. CRS 0은 ×0.5를 뜻합니다. Detune 범위는 −50에서 +50센트입니다. OP1–OP6 선택기는 편집할 오퍼레이터를 선택하며 솔로/뮤트 스위치가 아닙니다.</p>
+</section>
+<section id="envelopes" aria-labelledby="envelopes-title">
+<h2 id="envelopes-title">오퍼레이터 엔벌로프, 피치 엔벌로프 및 LFO </h2>
+<p>각 오퍼레이터에는 네 개의 엔벌로프 레이트 <strong>R1–R4</strong>와 네 개의 레벨 <strong>L1–L4</strong>이 있습니다. 노트 온 시 엔벌로프가 처음 세 목표 레벨을 차례로 향하며, 지속 단계에서는 L3를 사용합니다. 노트 오프 시 L4로 향하는 마지막 전환이 시작됩니다. 레이트는 전환 속도를 제어하며 밀리초 단위의 지속 시간이 아닙니다. 레벨 사이의 거리도 시간에 영향을 줍니다.</p><p>짧은 일렉트릭 피아노 어택을 만들려면 모듈레이터가 강하게 시작하여 낮은 L3로 빠르게 떨어지게 하고, 캐리어는 더 천천히 감쇠하게 하세요. 패드는 캐리어의 처음 상승을 느리게 하고 모듈레이터가 지나치게 날카롭게 시작하지 않도록 합니다. 건반을 놓은 뒤에도 소리가 계속되면 R4/L4, 서스테인, 리버브를 각각 확인하세요.</p><p><strong>피치 엔벌로프</strong>는 시간에 따라 음색의 음높이를 바꿉니다. 자체 레이트와 레벨을 사용하며 또 다른 진폭 엔벌로프가 아닙니다. 강한 설정은 패치 전체를 지배할 수 있으므로 작은 피치 변화부터 시작하세요.</p><p>공유 <strong>LFO</strong>는 주기적인 음높이 또는 진폭 변화를 제공합니다. 파형, 속도, 지연 및 깊이가 그 움직임을 결정합니다. 피치 변조는 비브라토를, 진폭 변조는 트레몰로를 만들며, 오퍼레이터 감도에 따라 반응 정도가 달라집니다. <strong>Key sync</strong>는 음표가 시작될 때 오실레이터나 LFO를 다시 시작할지 제어하며, 반복 음표의 어택이나 비교 결과에 영향을 줄 수 있습니다.</p><p>편집하는 동안 FM Engine, Mark I Depth 및 컨트롤러 EG MODE는 고정하세요. 엔진의 변조 스케일링이나 컨트롤러 EG 바이어스 동작이 바뀌면 같은 DX7 저장 값도 다르게 반응할 수 있습니다. <a href="#core-engines">엔진 설정</a>을 참조하세요.</p><p>엔벌로프 그래프의 네 점을 드래그하여 해당 레벨과 레이트를 조정합니다. R 값이 높을수록 빠릅니다. 피치 엔벌로프의 중심 레벨은 50입니다. 그래프 아래 숫자는 값 표시용이며 텍스트 입력 필드를 열지 않습니다. LFO Speed, Delay, PMD, AMD는 0–99, PMS는 0–7이며, 파형은 TRI, SAW▼, SAW▲, SQR, SIN 또는 S&amp;H입니다.</p>
+</section>
+<section id="performance" aria-labelledby="performance-title">
+<h2 id="performance-title">벨로시티, 컨트롤러, 모노 및 포르타멘토 </h2>
+<p>LIVE 건반은 고정된 시작 벨로시티 <strong>100</strong>을 전송하며, 현재 인터페이스에는 VEL 슬라이더가 없습니다. <strong>Settings → Velocity → Velocity Curve</strong>에는 Linear, Soft, Hard, DX7 Keyboard 1-100이 있습니다. Soft는 중간 값을 높이고 Hard는 낮추며, DX7 옵션은 100을 넘는 값을 제한합니다. 벨로시티에 민감한 패치는 외부 키보드로도 테스트하세요.</p><p>LIVE의 <strong>TRANSPOSE</strong>는 전체 연주를 ±24반음 이동합니다. 값을 탭하면 영으로 초기화됩니다. EDIT의 패치 조옮김과는 별개이며 두 이동량이 합산됩니다. EDIT에는 <strong>PB Range</strong>(1–12반음)와 <strong>Tuning</strong>(±100센트)도 있습니다. 음색을 불러오면 PB Range는 2로 돌아가지만 마스터 튜닝은 유지됩니다.</p><h3>표현 컨트롤러 라우팅하기</h3><p>EDIT → CONTROLLERS에는 WHEEL(CC1), FOOT(CC4), BREATH(CC2), A.TOUCH(채널 프레셔)가 있습니다. 각각 Pitch, Amp, EG 양을 0–99로 설정할 수 있습니다. Pitch는 비브라토, Amp는 진폭 변조를 제어하며, EG는 엔벌로프 바이어스를 적용합니다. 이 라우팅은 MIDI Learn으로 물리 노브를 할당하는 것과 다릅니다.</p><ul><li><strong>EG MODE DX7:</strong> AMS가 활성화된 오퍼레이터에 적용됩니다. 컨트롤러가 정지 상태일 때 해당 오퍼레이터를 감쇠할 수 있고, 값을 높이면 정상 레벨을 향해 열립니다. EG 양이 영이면 이 바이어스를 사용하지 않습니다. 브레스 제어 패치가 불기 전에는 무음이라면 이 모드를 확인하세요.</li><li><strong>EG MODE BOOST:</strong> 컨트롤러 입력에 따라 모듈레이터를 포함한 오퍼레이터 레벨을 높이므로 음량뿐 아니라 밝기도 바뀔 수 있습니다. 이전 M2DX 동작을 유지하는 모드입니다.</li></ul><h3>한 번에 한 음표 연주하기</h3><p><strong>Settings → Performance</strong>에서 Poly 또는 Mono를 선택합니다. EDIT에서도 포르타멘토와 시간을 설정할 수 있습니다. Mono에서 <strong>Fingered</strong>는 겹치는 음표 사이를 미끄러지듯 연결하고, <strong>Full-time</strong>은 떨어진 음표 사이에도 적용됩니다. <strong>Glissando</strong>는 반음 단위로 이동합니다. Mono는 첫 번째로 활성화된 파트에서 한 보이스만 사용하며, 여덟 파트 레이어나 Voice Stack을 다성 스택으로 연주하지 않습니다.</p><p>현재 CUSTOM 음색을 저장하면 Mono/Poly, 포르타멘토 켜기/끄기/시간 및 컨트롤러 라우팅/EG 모드가 유지됩니다. 전역 벨로시티 곡선, 튜닝, PB 범위 및 별도의 Mono Portamento/Glissando 설정은 해당 음색 저장에 포함되지 않습니다. AUv3 세션에서는 호스트 프로젝트도 저장하세요.</p><p>기본 제공 음색이나 가져온 음색을 불러올 때 독립 실행 앱은 현재 컨트롤러 라우팅을 유지하지만 AUv3는 DX7 기본값으로 초기화합니다. 현재 형식의 CUSTOM 음색은 저장된 라우팅을 복원합니다. 브레스나 다른 컨트롤러 설정을 동일하게 재현해야 한다면 CUSTOM 사본을 저장하세요.</p>
+</section>
+<section id="effects" aria-labelledby="effects-title">
+<h2 id="effects-title">이펙트로 사운드 다듬기 </h2>
+<p>일반적인 내부 신호 경로는 다음과 같습니다.</p><div aria-label="표준 내부 이펙트 신호 순서" class="signal-flow" role="img"><span>FM</span><span>→ EQ</span><span>→ Drive</span><span>→ Chorus</span><span>→ Reverb</span><span>→ Stereo</span><span>→ Maximizer</span></div><div aria-labelledby="effects-table" class="table-wrap" role="region" tabindex="0"><table><caption id="effects-table">FX 페이지 컨트롤</caption><thead><tr><th scope="col">영역</th><th scope="col">컨트롤과 활용 방법</th></tr></thead><tbody><tr><th scope="row">MIX</th><td>VOLUME, EXPRESSION, MOD WHEEL입니다. 익스프레션 값이 낮으면 정상적인 패치도 무음이 될 수 있습니다. MOD WHEEL은 컨트롤러 라우팅을 따릅니다.</td></tr><tr><th scope="row">EQ / DRIVE</th><td>LOW/HIGH는 음색 균형을 바꾸고 OVERDRIVE는 포화감을 더합니다. 비슷한 출력 레벨로 비교하세요.</td></tr><tr><th scope="row">CHORUS</th><td>SPEED와 DEPTH는 움직임과 폭을 더합니다. 음높이가 지나치게 흐려지면 깊이를 낮추세요.</td></tr><tr><th scope="row">REVERB</th><td>TIME과 LEVEL은 공간과 그 양을 제어합니다. 드라이 음표가 끝난 뒤에도 긴 잔향이 남을 수 있습니다.</td></tr><tr><th scope="row">STEREO</th><td>WIDTH는 스테레오 확산 정도를 바꿉니다. 폭이 사운드에 중요하다면 모노 재생도 확인하세요.</td></tr><tr><th scope="row">MAXIMIZER</th><td>INPUT과 CEILING은 마지막 다이내믹스 단계로 들어가는 구동량과 출력 상한을 설정합니다. 이전의 각 게인 단계에서 균형을 맞추는 작업을 대신하지는 않습니다.</td></tr></tbody></table></div><p>FX 영역의 화면 배치는 처리 순서를 나타내는 도식이 아닙니다. CUSTOM은 사용 가능한 Pro FX 설정을 포함하여 내부 FX 설정을 저장하며, 외부 AU 이펙트 체인은 별도로 저장됩니다.</p><p><strong>Pro 독립 실행 앱</strong>의 경로는 P73 → EQ → Drive → Chorus → 1176 → DigitalReverb → Stereo → Maximizer입니다. <strong>PREAMP</strong>는 P73 게인, 출력, 하이패스 및 톤 컨트롤을 제공합니다. <strong>COMP</strong>는 1176 입력/출력, 어택/릴리스, 비율, 믹스와 게인 감소 미터를 제공합니다. <strong>REVERB PRO</strong>는 HALL'78, HALL'86, PLATE, NONLIN, LO-FI'86 또는 HALL'99를 선택하고 프리딜레이, 크기, 댐핑, 로우컷, 변조 및 폭을 추가합니다. 일반 리버브의 TIME/LEVEL은 여전히 시간과 양을 설정합니다.</p><p>한 번에 몇 개의 파라미터만 바꾸세요. 드라이브, 컴프레서 입력 또는 맥시마이저 입력을 높이면 음색뿐 아니라 체감 음량도 증가할 수 있습니다. Pro를 구매한 뒤에도 AUv3는 표준 FX 체인을 사용합니다.</p>
+</section>
+<section id="layers-pro" aria-labelledby="layers-pro-title">
+<h2 id="layers-pro-title">TX816 레이어, Voice Stack 및 Pro </h2>
+<p><strong>TX816 LAYER</strong>는 서로 다른 패치 및/또는 유니즌 사본을 결합합니다. 독립 실행 Settings에 있는 실험적 <strong>Voice Stack</strong> 배율 기능과는 다릅니다.</p><ol><li>LAYER를 열고 <strong>PARTS × UNISON</strong> 구성을 선택합니다. 8×1, 4×2, 2×4 또는 1×8을 사용할 수 있습니다. OFF는 단일 패치 작동으로 돌아갑니다. 레이어를 활성화하려면 Pro가 필요합니다.</li><li>LAYER MIXER에서 각 파트의 패치 이름을 탭하고 패치를 선택합니다. LVL(−24에서 +6 dB), PAN을 조정하고, 원하면 RND로 음표마다 새로운 임의 팬 위치를 사용합니다.</li><li>DETUNE(0–12센트)과 Even 또는 Random 분포를 설정합니다. 외부 MIDI 소스나 AU 호스트로 연주하세요. 이 페이지에는 화면 건반이 없습니다.</li><li>FX를 열면 공유 이펙트를 조정하면서 스택을 계속 연주할 수 있습니다. LIVE나 EDIT로 돌아가면 단일 패치로 전환됩니다.</li><li>저장 아이콘, <strong>SAVE STACK</strong> 및 이름을 사용해 새 스택을 만듭니다. … 메뉴는 FACTORY DEMOS와 MY STACKS가 있는 MANAGE STACKS를 엽니다. 저장된 사용자 스택은 여기서 삭제할 수 있습니다.</li></ol><p>스택에는 구성 DX7 패치 데이터, 파트 구성, 디튠, 파트 레벨/팬 및 공유 내부 FX가 포함됩니다. 파트에 CUSTOM 음색을 선택하면 그 DX7 패치를 사용하며, 모든 사용자 연주/FX 설정을 독립적인 파트 구성으로 사용하는 것은 아닙니다. 이펙트는 결합된 신호를 처리하며 레이어별 별도 FX 체인은 없습니다. 저장한 MY STACKS가 독립 실행 앱과 AUv3 사이에서 동기화된다고 보장하지 않습니다.</p><div aria-labelledby="pro-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pro-table">환경별 무료 및 Pro 기능</caption><thead><tr><th scope="col">기능</th><th scope="col">독립 실행 앱</th><th scope="col">AUv3 악기</th></tr></thead><tbody><tr><th scope="row">기본 FM, 편집, 표준 FX</th><td>무료</td><td>무료</td></tr><tr><th scope="row">Mark I Depth</th><td>무료, ÷1–÷16</td><td>호스트 파라미터, ÷1–÷16</td></tr><tr><th scope="row">FM 엔진 선택</th><td>Modern/Mark I 선택에는 Pro 필요</td><td>독립 실행 앱의 Pro 제한 없이 호스트 파라미터로 사용 가능</td></tr><tr><th scope="row">TX816 LAYER</th><td>Pro</td><td>Pro, 앱 구매 권한 사용</td></tr><tr><th scope="row">P73 / 1176 / DigitalReverb</th><td>Pro</td><td>사용 불가, 표준 FX만 제공</td></tr><tr><th scope="row">외부 AU 이펙트</th><td>Pro, AU에 최대 네 슬롯</td><td>대신 호스트에 이펙트 삽입</td></tr><tr><th scope="row">Vintage DAC / Voice Stack</th><td>Pro 독립 실행 옵션</td><td>이러한 독립 실행 옵션으로는 노출되지 않음</td></tr></tbody></table></div><p><strong>Settings → Experimental → Voice Stack</strong>에는 1×(Off), 2×, 4×, 8×, 16×, 최대 25센트 디튠 및 임의 벨로시티가 있습니다. 배율이 높을수록 렌더링 작업이 늘어나므로 과부하나 오디오 끊김이 발생하면 낮추세요. Mono는 이 스택 동작을 우회합니다.</p><p>메인 앱의 <strong>Settings → M2DX Pro</strong>에서 구매하거나 복원하세요. 구매에 사용한 Apple 계정으로 Restore Purchases를 실행한 다음 필요하면 플러그인을 다시 여세요. AU 인터페이스는 구매/복원을 메인 앱으로 안내합니다.</p>
+</section>
+<section id="external-au" aria-labelledby="external-au-title">
+<h2 id="external-au-title">앱에서 외부 AU 이펙트 사용하기 </h2>
+<p>Pro를 사용하는 독립 실행 앱에서 네 슬롯 중 하나의 <strong>AU → ADD EFFECT</strong>를 엽니다. Audio Units 목록에서 설치된 오디오 이펙트를 선택합니다. 이 체인은 M2DX 내부 이펙트 뒤에서 실행됩니다.</p><ul><li><strong>BYP</strong>는 슬롯을 바이패스합니다. 컨트롤 아이콘은 제공되는 경우 이펙트 인터페이스를 열고, ×는 이펙트를 제거합니다.</li><li><strong>NOT INSTALLED</strong>는 저장된 플러그인을 찾을 수 없다는 뜻입니다. <strong>LOAD FAILED</strong>는 불러오기 실패를 나타내며, 설치 상태를 확인한 후 다시 시도 컨트롤을 사용하세요.</li><li>앱은 이 체인을 CUSTOM 음색 및 저장된 TX816 스택과 별도로 복원합니다. 음색을 바꿔도 외부 체인이 교체된다고 기대하지 마세요.</li></ul><p>이 페이지는 이펙트를 호스팅하며 추가 악기 플러그인을 호스팅하지 않습니다. 표시 여부는 앱의 기능 구성에 따라 달라질 수 있습니다. M2DX 자체를 AUv3로 불러온 경우에는 이 AU 페이지를 찾는 대신 호스트에서 다른 이펙트를 추가하세요.</p>
+</section>
+<section id="auv3" aria-labelledby="auv3-title">
+<h2 id="auv3-title">AUv3 호스트에서 M2DX 사용하기 </h2>
+<ol><li>메인 앱을 설치하고 한 번 엽니다. 호환 호스트에서 <strong>M2DX FM Synthesizer</strong>를 악기로 추가합니다.</li><li>호스트의 건반, MIDI 트랙 또는 외부 MIDI 입력을 이 악기로 라우팅하고 호스트에 필요한 모니터링을 활성화합니다.</li><li>음색을 선택하고 LIVE, EDIT, LAYER 또는 FX로 편집합니다. 플러그인에는 탭 네 개가 있으며, 아래쪽 톱니바퀴는 독립 실행 앱의 일반 Settings가 아닌 Performance를 엽니다.</li><li>메인 앱에서 .syx 뱅크를 가져옵니다. AU 인터페이스를 다시 열거나 앞으로 가져오면 공유 라이브러리를 새로 고칩니다. CUSTOM과 가져온 뱅크는 동일한 설치 환경에서 저장 공간을 공유합니다.</li><li>인스턴스 설정을 유지하려면 호스트 프로젝트를 저장하세요. 재사용할 CUSTOM 음색이 필요하면 별도로 EDIT → SAVE를 사용합니다.</li></ol><p>오디오 샘플레이트, 버퍼 크기, MIDI 라우팅 및 오토메이션은 호스트가 관리합니다. 메인 앱의 MIDI Input, Channel, Bluetooth 설정은 AU 인스턴스를 설정하지 않습니다. 호스트의 파라미터 오토메이션이나 MIDI 매핑을 사용하세요. 이 버전에서 앱 내부에 보이는 MIDI Learn 컨트롤은 AU MIDI 수신에 연결되어 있지 않습니다.</p><p>호스트는 <strong>FM Engine</strong>과 <strong>Mark I Depth</strong> 파라미터를 노출할 수 있습니다. AU 엔진은 <strong>÷5</strong>로 초기화되지만 파라미터에 선언된 값은 <strong>÷1</strong>이고 독립 실행 기본값도 <strong>÷1</strong>입니다. 호스트가 자신의 상태를 다시 적용할 수 있으므로 비교할 때는 값을 명시적으로 맞추세요. 표준 FX와 선택 사항인 Pro TX816 레이어는 AUv3에서 작동합니다. Pro 프리앰프/컴프레서/리버브, 독립 실행 외부 AU 호스팅, Vintage DAC, Voice Stack은 동등한 AU 기능으로 제공되지 않습니다.</p><p>1.7.14 버전은 큰 호스트 창에서 인터페이스를 확대합니다. 호스트가 자체 패치 선택에 Program Change를 사용할 수 있으므로 실제로 M2DX 인스턴스에 도달하는지 확인하세요. AU MIDI 지원은 호스트가 제공하는 이벤트 형식에도 좌우됩니다. 아래 구현 표를 참조하세요.</p>
+</section>
+<section id="core" aria-labelledby="core-title">
+<h2 id="core-title">M2DX-Core: 음표에서 오디오까지 </h2>
+<p><strong>M2DX-Core</strong>는 앱 및 플러그인 래퍼와 분리된 Swift 6 합성 라이브러리입니다. 오퍼레이터, 알고리즘 32개, 엔벌로프, 피치와 스케일링, 보이스 할당, 패치 구조 및 합성 측 컨트롤러 처리를 구현합니다. 앱은 연결, MIDI-CI/PE, 인터페이스, 구매, 저장 및 이펙트를 제공합니다.</p><div aria-label="MIDI와 파라미터 변경이 M2DX-Core로 들어오면 보이스를 렌더링한 후 앱 이펙트와 오디오 출력으로 보냅니다" class="signal-flow" role="img"><span>MIDI / 파라미터</span><span>→ 이벤트 큐 / 스냅샷</span><span>→ M2DX-Core 보이스</span><span>→ 믹스</span><span>→ 앱 FX</span><span>→ 오디오 출력</span></div><h3>고정 소수점 오퍼레이터와 조회 테이블</h3><p>주요 오퍼레이터 계산은 <strong>Int32 Q24</strong> 방식의 위상 및 신호 값을 사용합니다. 위상 한 주기는 2<sup>24</sup>단위에 해당하며, 더 넓은 Int64 중간 곱을 시프트하여 필요한 스케일로 되돌릴 수 있습니다. Q24는 내부 숫자 표현 방식으로, 오디오 파일 형식도 아니고 앱 전체가 정수만 사용한다는 증거도 아닙니다.</p><p>Modern은 1024개 구간의 사인 테이블과 선형 보간을 사용하며, 지수 테이블은 로그 레벨을 진폭으로 변환합니다. 테이블 조회와 보간을 통해 오퍼레이터의 매 샘플마다 완전한 사인 또는 지수 식을 계산하지 않아도 됩니다. 테이블은 컴파일러가 생성하는 것이 아니라 초기화 중에 준비됩니다. 주파수 변환, 컨트롤러 정규화, LFO, 믹싱 및 앱 이펙트에는 부동 소수점 연산도 사용됩니다.</p><h3>엔벌로프와 안정적인 렌더링</h3><p>오퍼레이터 엔벌로프는 내부 Q16 표현을 사용하고 블록 단위로 갱신되며, 합성 커널이 게인 또는 감쇠를 보간합니다. 엔진은 최대 64샘플의 내부 청크로 작동합니다. 파라미터 스냅샷과 이벤트 큐가 변경 사항을 렌더링으로 전달하며, 사전 할당 저장 공간과 원자적 통신은 오디오 콜백 안에서 대기나 메모리 할당을 피하도록 설계되었습니다.</p><p>이 내부 블록 크기가 수신 MIDI 이벤트의 샘플 단위 정확성을 뜻하지는 않습니다. 공개된 독립 실행 경로는 소스 타임스탬프를 사용해 음표 이벤트를 개별 샘플 오프셋에 예약하지 않습니다. AU 경로도 각 이벤트 시점에서 버퍼를 나누지 않고 렌더링 전에 이벤트 목록을 처리합니다. 실제로 들리는 타이밍은 호스트, 운영체제, 버퍼 및 연결에도 좌우됩니다.</p><h3>보이스와 레이어</h3><p>일반적인 단일 패치 구성은 오버샘플링 꺼짐, 유니즌 1, Voice Stack 1에서 보이스 16개를 사용할 수 있습니다. 레이어/유니즌/스택 사본은 각각 처리 보이스를 소비하며, 오버샘플링은 사용 가능한 보이스 수를 바꿉니다. 라이브러리의 큰 내부 버퍼 한도가 휴대전화에서 수천 개의 독립적인 건반 음표를 안정적으로 연주할 수 있다는 보장은 아닙니다. 기기가 처리하지 못하면 배율과 이펙트를 줄이세요.</p><p>출처: <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift">SynthEngine</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Voice.swift">DX7Voice</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/SinTable.swift">사인 테이블</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Envelope.swift">엔벌로프</a>.</p>
+</section>
+<section id="core-engines" aria-labelledby="core-engines-title">
+<h2 id="core-engines-title">Modern, Mark I, Depth 및 Vintage DAC </h2>
+<p><strong>Modern</strong>은 MSFA 방식 참조 모델과 연관된 정수 사인/게인 커널을 사용합니다. 별도의 “Clean Float32” 엔진이 아닙니다. <strong>Mark I</strong>은 원래 OPS 동작에 관한 공개 설명을 참고한 로그 사인/지수 모델을 사용합니다. 위상을 한 사분면으로 접고 로그 감쇠를 결합한 후 다시 진폭으로 변환합니다. 원래 칩의 모든 동작을 사이클 단위로 정확하게 시뮬레이션하는 것은 아닙니다.</p><h3>Mark I Depth가 실제로 바꾸는 것</h3><p><strong>Mark I Depth는 순방향 변조의 제수이며, 출력 음량이나 비트 심도 또는 엔벌로프 속도가 아닙니다.</strong> ÷1은 강한 변조를 유지합니다. 제수가 커지면 다음 오퍼레이터의 위상으로 들어가는 신호가 약해져 보통 사운드의 밝기가 줄어듭니다. 이 컨트롤이 캐리어 출력이나 피드백 신호를 직접 나누지는 않습니다.</p><p>독립 실행 앱에서는 <strong>Settings → Audio → Mark I Depth</strong>를 사용합니다. ÷1–÷16 범위를 0.1 단위로 무료 조정할 수 있습니다. 현재 기본값은 Mark I, ÷1.0, DAC 꺼짐이며, 이전에 저장한 환경설정이 기본값보다 우선할 수 있습니다. Pro는 Modern/Mark I 선택과 Vintage DAC 옵션을 추가합니다. 엔진을 전환하면 현재 울리는 음표가 멈추므로 프레이즈 사이에서 바꾸세요.</p><p><strong>AU 초기값 주의 사항:</strong> 호스트 파라미터는 Depth 기본값을 1로 선언하지만 AU 엔진 초기화는 5로 설정합니다. 호스트가 파라미터 상태를 다시 적용할 수 있습니다. 모든 호스트에서 첫 실행 시 최종 값을 테스트한 것은 아니므로 사운드를 맞출 때는 직접 설정하세요. Engine/Depth 설정 함수는 있지만 렌더 이벤트 오토메이션은 이 컨트롤을 일반 음색 파라미터와 같은 방식으로 처리하지 않습니다. 모든 오토메이션 경로가 작동한다고 가정하지 말고 호스트 동작을 확인하세요.</p><h3>Vintage DAC 및 오버샘플링</h3><p>선택 사항인 Vintage 12-bit DAC는 원시 Mark I 보이스 출력에 진폭 의존형 컴팬딩과 양자화를 적용합니다. 별도의 음색 처리 단계이며, 단순한 최종 출력 비트크러셔나 MIDI 해상도 설정이 아닙니다. 독립 실행 Audio에는 Oversampling OFF/HQ/Low도 있습니다. 귀로 비교하면서 CPU 부하를 확인하세요. 오버샘플링이 모든 패치를 자동으로 개선하는 것은 아니며 사용 가능한 보이스 자원도 바꿉니다.</p><h3>참조 테스트가 확인하는 범위</h3><p>Core에는 Modern 정수 계산을 Apache 라이선스의 MSFA/Dexed 참조 구현과 샘플 단위로 비교하는 테스트가 있습니다. 일부 테스트는 커널만 분리하기 위해 참조 위상 증가량을 주입하며, 실제 제품의 피치 계산은 별도 경로입니다. Mark I 테스트는 독립적으로 작성한 C 대응 구현과 비교하며 앱 기본값 ÷1과 다른 ÷8 테스트 조건도 포함합니다. 이 테스트가 모든 최종 앱 출력, Dexed 설정 또는 실제 DX7 녹음이 비트 단위로 동일함을 증명하지는 않습니다.</p><p><strong>라이선스:</strong> M2DX-Core는 Apache-2.0, MIDI2Kit은 MIT이며 M2DX 앱은 별도의 독점 라이선스를 사용합니다. 테스트 전용 C 참조 구현은 제품의 Swift 라이브러리가 아닙니다. <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core LICENSE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark I 커널</a> 및 <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">비교 테스트 조건</a>을 참조하세요.</p>
+</section>
+<section id="midi2" aria-labelledby="midi2-title">
+<h2 id="midi2-title">MIDI 2.0 이해하기: 메시지와 해상도 </h2>
+<p>MIDI는 어떤 음을 얼마나 세게 연주할지, 페달이 어떻게 움직이는지 같은 연주 명령을 전달합니다. 오디오는 수신 신시사이저가 만듭니다. <strong>MIDI 2.0은 오디오 샘플레이트나 오디오 파일의 비트 심도를 바꾸지 않습니다.</strong></p><p><strong>UMP(Universal MIDI Packet)</strong>는 MIDI 1.0과 MIDI 2.0 메시지를 모두 담을 수 있는 패킷 형식입니다. 연결에서 UMP가 보인다는 사실만으로 고해상도 MIDI 2.0 Channel Voice 데이터라고 입증되지는 않습니다. CoreMIDI는 수신 측 API와 선택한 프로토콜에 따라 프로토콜을 변환할 수 있습니다. <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple의 CoreMIDI 설명</a>을 참조하세요.</p><div aria-labelledby="resolution-table" class="table-wrap" role="region" tabindex="0"><table><caption id="resolution-table">프로토콜 값의 비트 폭이며 보장된 합성 정밀도가 아님</caption><thead><tr><th scope="col">메시지</th><th scope="col">일반적인 MIDI 1.0 메시지</th><th scope="col">MIDI 2.0 Channel Voice</th></tr></thead><tbody><tr><th scope="row">음표 벨로시티</th><td>7비트: 0–127</td><td>16비트: 0–65,535</td></tr><tr><th scope="row">Control Change</th><td>일반적으로 7비트, 컨트롤러 쌍으로 14비트 제공 가능</td><td>32비트: 0–4,294,967,295</td></tr><tr><th scope="row">채널 / 폴리포닉 프레셔</th><td>7비트</td><td>32비트</td></tr><tr><th scope="row">Pitch Bend</th><td>14비트: 0–16,383</td><td>32비트</td></tr></tbody></table></div><p>MIDI 1.0에서 벨로시티가 영인 Note On은 Note Off로 작동하며, MIDI 1.0에도 선택적인 고해상도 확장이 있습니다. 이 표는 모든 확장이 아닌 일반적인 메시지를 비교합니다. <a href="https://midi.org/summary-of-midi-1-0-messages">MIDI 1.0 메시지 요약</a>과 <a href="https://midi.org/the-state-of-midi-2-0-high-resolution-performance-and-the-rise-of-profiles-update-feb-2026">MIDI Association 해상도 개요</a>를 참조하세요.</p><h3>높은 해상도로 가능한 것과 불가능한 것</h3><p>송신기, 연결 및 사운드 엔진이 더 세밀한 제어 값을 보존하고 사용하면 계단 현상을 줄일 수 있습니다. 7비트 키보드 값을 16비트 필드로 바꾼다고 키보드가 측정하지 않은 세부 정보가 생기지는 않습니다. 범위가 0–99인 DX7 파라미터는 고해상도 컨트롤러를 수신해도 여전히 그 불연속 범위를 갖습니다. <a href="https://midi.org/midi-2-0-bit-scaling-and-resolution">MIDI 비트 스케일링과 해상도</a>를 참조하세요.</p><h3>그룹, 채널 및 음표별 표현</h3><p>해당 UMP 메시지는 그룹 최대 16개와 그룹당 채널 16개를 가집니다. 이 주소 체계가 앱에 악기 파트 256개나 보이스 256개를 보장하지는 않습니다. MIDI 2.0은 음표별 피치와 컨트롤러도 정의하므로, 코드 전체를 바꾸지 않고 누르고 있는 한 음만 벤딩할 때 유용합니다. M2DX의 실제 라우팅 제한은 다음 장에서 설명합니다.</p><p>MIDI 1.0에도 이미 폴리포닉 키 프레셔가 있습니다. 기존 MIDI 1.0 <strong>MPE</strong>는 음표를 별도 채널에 할당하여 추가적인 음표별 제어를 얻으며, 네이티브 MIDI 2.0 음표별 메시지는 다른 표현 방식을 사용합니다. 최신 MPE Profile은 MIDI 2.0도 포함하므로 “MPE”와 “MIDI 2.0”은 서로 배타적인 명칭이 아닙니다. <a href="https://midi.org/mpe-midi-polyphonic-expression">MPE 규격</a> 및 <a href="https://midi.org/midi-ci-profile-for-midi-polyphonic-expression">MIDI-CI MPE Profile</a>을 참조하세요.</p>
+</section>
+<section id="midi-support" aria-labelledby="midi-support-title">
+<h2 id="midi-support-title">공개 MIDI 경로가 실제로 지원하는 기능 </h2>
+<p>이 표는 1.7.14의 소스 경로를 설명하며, 모든 컨트롤러/운영체제/호스트 조합을 하드웨어로 테스트했다는 의미는 아닙니다. 독립 실행 앱은 MIDI2Kit 1.0.19를 통해 CoreMIDI를 수신합니다. AUv3에는 레거시 MIDI 이벤트 입력과 MIDI 2.0 UMP 이벤트 입력이 따로 있습니다.</p><div aria-labelledby="midi-support-table" class="table-wrap" role="region" tabindex="0"><table><caption id="midi-support-table">수신 여부와 실제 사운드 동작</caption><thead><tr><th scope="col">메시지 / 기능</th><th scope="col">독립 실행 앱</th><th scope="col">AUv3</th></tr></thead><tbody><tr><th scope="row">Note On / Off</th><td>MIDI 1.0 및 MIDI 2.0 입력. MIDI 2.0 벨로시티는 16비트로 Core에 도달합니다.</td><td>레거시 MIDI 및 MIDI 2.0 UMP 입력. 음표 속성과 릴리스 벨로시티는 사운드에 영향을 주지 않습니다.</td></tr><tr><th scope="row">CC / 채널 Pitch Bend / Program Change</th><td>지원하는 컨트롤 및 뱅크 규칙에 대해 구현되어 있습니다.</td><td>레거시 및 MIDI 2.0 이벤트로 구현되어 있으며 호스트 라우팅도 중요합니다.</td></tr><tr><th scope="row">채널 프레셔</th><td>A.TOUCH 라우팅에 연결됩니다.</td><td>MIDI 2.0 UMP 경로는 연결되어 있지만 레거시 MIDI 프레셔는 연결되어 있지 않습니다.</td></tr><tr><th scope="row">폴리포닉 키 프레셔</th><td>수신하고 저장하지만 들리는 합성 변화에는 연결되어 있지 않습니다.</td><td>MIDI 2.0 값은 저장되지만 들리는 효과는 없으며, 레거시 프레셔는 연결되어 있지 않습니다.</td></tr><tr><th scope="row">네이티브 음표별 피치 / 컨트롤러 / 관리</th><td>전송 계층이 앱의 후속 핸들러에 도달하기 전에 이러한 메시지 유형을 버립니다. 이 표준 입력 경로로는 사용할 수 없습니다.</td><td>호스트 이벤트 수신기에 연결되어 있지 않습니다.</td></tr><tr><th scope="row">외부 RPN / NRPN 제어</th><td>MIDI 2.0 Registered/Assignable Controller는 전송 계층에서 버리며, MIDI 1.0 RPN/NRPN CC 시퀀스는 조합하지 않습니다.</td><td>외부 MIDI 메시지로 연결되어 있지 않습니다. AU 파라미터 오토메이션은 다른 내부 경로를 사용합니다.</td></tr><tr><th scope="row">UMP 안의 MIDI 1.0 Channel Voice</th><td>허용됩니다.</td><td>UMP 이벤트 핸들러는 건너뜁니다. 레거시 MIDI 이벤트 경로는 별개입니다.</td></tr><tr><th scope="row">MPE / 독립 채널 표현</th><td>멤버 채널 표현 라우팅이 없습니다. Omni가 MPE 지원을 뜻하지는 않습니다.</td><td>독립적인 채널/그룹 보이스 라우팅이 없습니다.</td></tr><tr><th scope="row">MIDI-CI / Property Exchange</th><td>아래에 설명된 리소스 제한 내에서 사용할 수 있습니다.</td><td>AU MIDI 이벤트 입력으로 처리하지 않습니다.</td></tr><tr><th scope="row">MIDI-CI Profile 구성</th><td>이 앱은 구현된 Profile 구성을 광고하지 않습니다.</td><td>AU 이벤트 입력에서 제공하지 않습니다.</td></tr></tbody></table></div><h3>16비트 벨로시티가 65,536가지 DX7 반응을 뜻하지 않는 이유</h3><p>프로토콜 값은 16비트로 Core에 도달하지만, DX7 벨로시티 감도 계산은 이를 7비트로 시프트한 후 항목 64개인 테이블을 참조합니다. 오퍼레이터의 감도 설정도 결과를 결정합니다. FX 컨트롤은 값을 0–127로 줄이고, 오퍼레이터 출력 레벨은 DX 범위인 0–99를 사용합니다. 채널 컨트롤도 정규화를 거칩니다. 큰 정수를 수신한다고 모든 정수가 서로 다른 가청 상태를 만드는 것은 아닙니다.</p><h3>채널, 그룹 및 타이밍 제한</h3><p>독립 실행 Settings는 입력 필터로 Omni 또는 채널 1–16을 제공합니다. 필터링 후 그룹/채널 식별 정보는 독립 악기 파트로 유지되지 않습니다. 채널 피치 벤드는 개별 MPE 멤버 보이스가 아닌 신시사이저 전체에 작용합니다. Core에는 추가 음표별 API가 있지만, 존재 자체가 공개 전송 및 라우팅의 공백을 해결하지는 않습니다.</p><p>MIDI 2.0이 이 버전을 샘플 단위로 정확하게 만들거나 지연을 없애지는 않습니다. 소스 타임스탬프와 호스트 샘플 오프셋은 이벤트별 스케줄링에 완전히 활용되지 않습니다. 내부 64샘플 처리 청크만으로 타이밍을 보장한다고 해석하지 마세요.</p><p>출처: <span class="source-review">전송 디스패치</span>, <span class="source-review">AU 이벤트 핸들러</span>, <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/ScalingTable.swift">벨로시티 스케일링</a> 및 <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift#L2257">Core 표현 처리</a>.</p>
+</section>
+<section id="midi-ci" aria-labelledby="midi-ci-title">
+<h2 id="midi-ci-title">MIDI-CI, Profile 및 Property Exchange </h2>
+<p><strong>MIDI-CI</strong>는 기기끼리 기능 정보를 교환하게 합니다. <strong>Profile</strong>은 특정 음악적 용도에 대한 공통 동작을 정의하며 사운드 프리셋이 아닙니다. <strong>Property Exchange(PE)</strong>는 구현자가 기기 정보, 프로그램 목록 또는 컨트롤 설명 같은 이름 있는 리소스를 제공하게 합니다. PE 지원 연결이 모든 DAW에서 모든 악기 파라미터를 자동 편집할 수 있음을 보장하지는 않습니다. <a href="https://midi.org/midi-2-0">MIDI Association 개요</a> 및 <a href="https://midi.org/profiles">Profile 설명</a>을 참조하세요.</p><p>기존 MIDI-CI Protocol Negotiation 절차는 2023년 개정에서 사용 중단되었습니다. 현재의 일반 설명은 기능 교환과 UMP 프로토콜 선택을 구분해야 합니다. 배포된 M2DX의 호환성 동작이 현재의 모든 Profile이나 규격 옵션을 구현한다는 주장은 아닙니다. <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">공식 2023년 개정 설명</a>을 참조하세요.</p><div aria-labelledby="pe-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pe-table">M2DX 독립 실행 리소스</caption><thead><tr><th scope="col">리소스</th><th scope="col">제공하는 내용</th><th scope="col">외부 접근</th></tr></thead><tbody><tr><th scope="row">ResourceList / DeviceInfo</th><td>사용 가능한 리소스 설명과 기기 정보. 호환성 필드는 앱 버전이나 제조사 정보의 공식 기준이 아닙니다.</td><td>GET, SET 없음</td></tr><tr><th scope="row">ChannelList</th><td>표현된 한 채널의 현재 사운드 이름이며 독립 파트 256개가 아닙니다.</td><td>GET 및 구독</td></tr><tr><th scope="row">ProgramList</th><td>페이지 구분이 있는 기본 제공 사운드 목록. CUSTOM, 가져온 뱅크, TX816 스택을 합친 브라우저가 아닙니다.</td><td>GET, 구독 등록됨, SET 없음</td></tr><tr><th scope="row">X-ParameterList</th><td>KeyStage 같은 컨트롤러 통합에 사용하는 CC 이름, 컨트롤 번호 및 기본값. 전체 Core 파라미터 모델이 아닙니다.</td><td>GET, 구독 등록됨, SET 없음</td></tr><tr><th scope="row">X-ProgramEdit</th><td>현재 프로그램 이름/주소와 0–127 형식의 CC 값.</td><td>GET 및 구독, SET 없음</td></tr><tr><th scope="row">JSONSchema</th><td>파라미터 목록 및 프로그램 편집 리소스의 스키마. 수동 작성 ResourceList에는 없지만 직접 등록되어 있습니다.</td><td>GET, SET 없음</td></tr></tbody></table></div><p>프로그램이 바뀌면 관련 이름/현재 프로그램 리소스에 알림을 보냅니다. UI의 CC 변경은 X-ProgramEdit에 알릴 수 있으며, 수신 CC 동기화는 모든 변경을 다시 되돌려 보내지 않도록 합니다. 리소스가 구독을 허용한다고 가능한 모든 변경마다 알림을 생성하는 것은 아닙니다.</p><p><strong>이 등록된 리소스는 네트워크 PE SET을 구현하지 않습니다.</strong> 코드에는 로컬 파라미터 get/set API가 있지만 해당 setter는 외부 PE setter로 등록되어 있지 않습니다. 사운드 편집에는 지원하는 CC 컨트롤, 앱 UI 또는 호스트 오토메이션을 사용하세요. 이 버전은 표준 Profile 구성도 제공하지 않습니다.</p><p>호환 컨트롤러를 사용하려면 반환 경로가 있는 MIDI 연결을 만들고 원하는 입력/채널을 선택한 다음 컨트롤러가 지원 리소스를 요청하게 하세요. 라벨이 표시되지 않더라도 일반 음표/CC 연주는 작동할 수 있습니다. 이 버전에는 공개된 “Discover MIDI-CI Devices” 디버그 화면이 없으며 상호 운용성은 여전히 기기에 따라 다릅니다. 출처: <span class="source-review">등록된 PE 리소스와 알림</span>.</p>
+</section>
+<section id="midi-learn" aria-labelledby="midi-learn-title">
+<h2 id="midi-learn-title">컨트롤러 연결 및 MIDI Learn 사용 </h2>
+<p>독립 실행 <strong>Settings → MIDI</strong>에서 All Sources 또는 특정 MIDI Input을 선택하고 Omni (All) 또는 1–16 중 한 채널을 선택합니다. Connected MIDI Devices와 Refresh Devices로 연결을 확인할 수 있습니다. BLE MIDI 컨트롤러는 Bluetooth MIDI를 사용하세요. 연주할 때 헤더의 활동 표시점을 확인하세요.</p><ol><li>지원하는 FX 슬라이더를 움직이지 않고 약 반 초 동안 길게 누릅니다.</li><li>MIDI Learn 메뉴에서 <strong>Learn CC</strong>를 선택합니다.</li><li>LEARN이 깜박이는 동안 하드웨어 노브나 페이더를 움직입니다. 처음 수신한 CC가 할당되고 학습이 끝납니다.</li><li>같은 슬라이더를 다시 길게 누르면 대기 중인 학습을 취소합니다. <strong>Settings → MIDI Learn → Reset All Mappings</strong>로 매핑을 복원하세요.</li></ol><p>지원 대상에는 MIX/기본 FX 슬라이더, 일부 Pro 연속 컨트롤, LAYER DETUNE 및 파트 LVL이 포함됩니다. LAYER PAN, 모든 FM 편집기 컨트롤, 모든 이펙트 스위치/선택 항목이 자동으로 학습 가능한 것은 아닙니다. 한 CC에는 학습된 대상 하나만 있으며 새 할당은 이전 학습 대상을 교체합니다. 서스테인 같은 원래 표준 기능은 계속 반응할 수 있으므로 해당 CC를 실수로 다른 용도에 사용하지 않도록 하세요.</p><div aria-labelledby="cc-table" class="table-wrap" role="region" tabindex="0"><table><caption id="cc-table">유용한 기본 CC 할당</caption><thead><tr><th scope="col">CC</th><th scope="col">기능</th></tr></thead><tbody><tr><th scope="row">1 / 2 / 4</th><td>모듈레이션 휠 / 브레스 / 풋 컨트롤러, EDIT에서 Pitch/Amp/EG 반응 설정</td></tr><tr><th scope="row">7 / 11 / 64</th><td>볼륨 / 익스프레션 / 서스테인</td></tr><tr><th scope="row">5 / 65</th><td>포르타멘토 시간 / 포르타멘토 켜기·끄기</td></tr><tr><th scope="row">102 / 103 / 104 / 105</th><td>EQ 저역 / EQ 고역 / 오버드라이브 / 스테레오 폭</td></tr><tr><th scope="row">106 / 107 / 108 / 109</th><td>코러스 속도 / 코러스 깊이 / 리버브 시간 / 리버브 레벨</td></tr><tr><th scope="row">110 / 111</th><td>맥시마이저 입력 / 상한</td></tr><tr><th scope="row">112–117</th><td>OP1–OP6 출력 레벨</td></tr><tr><th scope="row">0 / 32</th><td>Bank Select MSB / LSB, 다음 설명에 따라 Program Change와 함께 사용</td></tr></tbody></table></div><p>학습된 매핑은 CUSTOM 음색과 별도로 저장됩니다. 학습으로만 할당하는 파라미터에 <strong>CC255</strong> 또는 Reset to CC255가 표시된다면 내부의 “기본 CC 없음” 표식이며, 전송할 수 있는 유효한 MIDI CC가 아닙니다. AUv3에서는 독립 실행 Learn 절차 대신 호스트의 매핑과 오토메이션을 사용하세요.</p><p>AU 파라미터 오토메이션은 내부 파라미터 라우팅 표현을 사용하며, 외부 MIDI 1.0 NRPN 시퀀스나 MIDI 2.0 Assignable Controller를 허용한다는 의미가 아닙니다. 출처: <span class="source-review">Learn 매핑</span> 및 <span class="source-review">AU 파라미터 라우팅</span>.</p>
+</section>
+<section id="program-change" aria-labelledby="program-change-title">
+<h2 id="program-change-title">Bank Select와 Program Change로 음색 선택하기 </h2>
+<p>MIDI 값은 영부터 시작합니다. 프로그램을 1–128로 표시하는 컨트롤러도 실제 전송 값은 0–127일 수 있습니다. CUSTOM 카드의 <strong>B16 PC0</strong>는 뱅크 MSB 16과 전송되는 Program Change 0을 뜻하며 컨트롤러에 표시되는 프로그램 번호와 반드시 같지는 않습니다.</p><div aria-labelledby="program-table" class="table-wrap" role="region" tabindex="0"><table><caption id="program-table">프로그램 주소 지정</caption><thead><tr><th scope="col">대상</th><th scope="col">메시지 / 규칙</th></tr></thead><tbody><tr><th scope="row">기본 제공 음색</th><td>뱅크를 지정하면 전역 기본 음색 인덱스는 Bank MSB × 32 + Program입니다. LSB는 무시됩니다. 뱅크가 없으면 PC를 전역 기본 음색 인덱스로 취급합니다. LIVE의 카테고리 뱅크는 이 MIDI 뱅크 번호 체계와 다릅니다.</td></tr><tr><th scope="row">첫 CUSTOM 음색, 고정 번호 0</th><td>CC0 = 16, CC32 = 0, PC = 0.</td></tr><tr><th scope="row">CUSTOM 고정 번호 130</th><td>CC0 = 16, CC32 = 1, PC = 2. 일반식: LSB = floor(number / 128), PC = number mod 128.</td></tr><tr><th scope="row">가져온 .syx 음색</th><td>앱/호스트 프리셋 브라우저를 사용하세요. 가져오기만으로 CUSTOM과 같은 고정 Program Change 번호가 부여되지는 않습니다. 해당 주소가 필요하면 CUSTOM 사본을 저장하세요.</td></tr><tr><th scope="row">활성 독립 실행 TX816 스택</th><td>활성화된 Pro 레이어가 작동하는 동안 일반 PC는 스택 목록을 우선합니다. CUSTOM 뱅크 16에는 별도 우선순위가 있습니다. 일반 단일 패치 선택은 LIVE/EDIT로 돌아가세요.</td></tr></tbody></table></div><p>다른 음색을 삭제해도 CUSTOM 번호는 유지되며 목록 위치에 맞춰 다시 매겨지지 않습니다. 할당되지 않은 CUSTOM 번호는 현재 사운드를 바꾸지 않습니다. 독립 실행 뱅크 선택에서는 매번 뱅크 메시지를 보내세요. 뱅크 선택은 다음에 같은 채널로 들어오는 PC에서 사용되고 끝나며, 무기한 선택 상태를 유지하는 것으로 가정하면 안 됩니다.</p><p>AUv3는 자체 기본 음색/CUSTOM 선택 경로를 따르고 활성 레이어를 잠시 중단합니다. 호스트가 PC를 M2DX에 도달하기 전에 소비할 수 있습니다. AU 프로그램 불러오기도 UI/제어 측으로 지연되므로 PC와 동시에 들어온 Note On은 이전 사운드를 사용할 수 있습니다. 첫 연주 음표보다 먼저 프로그램 선택을 보내고 대상 호스트에서 확인하세요.</p><p>출처: <span class="source-review">CUSTOM 프로그램 번호</span>, <span class="source-review">기본 뱅크 주소 지정</span> 및 <span class="source-review">AU 불러오기와 상태</span>.</p>
+</section>
+<section id="dexed-comparison" aria-labelledby="dexed-comparison-title">
+<h2 id="dexed-comparison-title">M2DX와 Dexed: 장점과 제한 사항 </h2>
+<p>이 비교는 <strong>M2DX 1.7.14 / Core 1.25.0</strong>과 공식 안정 버전 <strong>Dexed 1.1.0</strong>을 기준으로 하며 2026년 11월 15일 확인했습니다. “확인되지 않음”은 검토한 버전에서 해당 기능을 입증하지 못했다는 뜻이며, 호스트 변환, 포크 또는 후속 버전의 가능성까지 배제하지는 않습니다.</p><div aria-labelledby="dexed-table" class="table-wrap" role="region" tabindex="0"><table><caption id="dexed-table">해당 공개 버전의 기능 비교</caption><thead><tr><th scope="col">항목</th><th scope="col">M2DX 1.7.14</th><th scope="col">Dexed 1.1.0</th></tr></thead><tbody><tr><th scope="row">주요 환경</th><td>iPhone 앱 및 포함된 AUv3 악기. Apple Silicon Mac 호환성은 검증 관련 주의 사항과 함께 표시됩니다.</td><td>데스크톱 Windows, macOS, Linux. 검토한 버전에는 공식 iOS 앱이 없습니다.</td></tr><tr><th scope="row">플러그인 형식</th><td>AUv3. 이 버전에는 VST3나 CLAP 에디션이 없습니다.</td><td>공식 패키지: VST3, CLAP, 독립 실행. macOS에는 AU도 있습니다. 1.1.0 릴리스 ZIP에는 LV2가 포함되지 않습니다.</td></tr><tr><th scope="row">FM 구조 / 동시 발음 수</th><td>오퍼레이터 여섯 개, 알고리즘 32개. 오버샘플링을 끄고 추가 스택이 없는 일반 단일 구성에서는 16보이스입니다. 레이어와 유니즌은 자원을 소비합니다.</td><td>오퍼레이터 여섯 개, 알고리즘 32개. 최대 활성 음표 16개.</td></tr><tr><th scope="row">엔진 선택</th><td>Mark I 및 Modern. 엔진 설정과 접근 조건은 앱과 AUv3에서 다릅니다. OPL 엔진은 없습니다.</td><td>Modern, Mark I 및 실험적 OPL Series.</td></tr><tr><th scope="row">DX7 패치 교환</th><td>호환 .syx 데이터를 가져오고 사용자 음색을 로컬에 저장합니다. 완전한 양방향 하드웨어 라이브러리 관리 기능은 제공하지 않습니다.</td><td>DX7/TX7 음색과 32음색 카트리지를 읽고 쓰며, 카트리지를 정리하고 하드웨어로 SysEx를 전송합니다.</td></tr><tr><th scope="row">이펙트</th><td>내부 EQ, 드라이브, 코러스, 리버브, 스테레오 처리 및 맥시마이저. 추가 Pro 처리와 외부 AU FX는 독립 실행 기능입니다.</td><td>내장 로우패스 필터, 레조넌스 및 게인. 코러스, 리버브와 기타 처리는 호스트에서 추가합니다.</td></tr><tr><th scope="row">레이어</th><td>선택 사항인 Pro TX816 스택으로 패치 최대 여덟 개를 결합합니다. 독립 실행 Voice Stack은 별개 기능입니다.</td><td>추가 플러그인 인스턴스와 호스트 라우팅으로 비슷한 레이어를 구성합니다.</td></tr><tr><th scope="row">마이크로튜닝</th><td>검토한 앱에는 Scala .scl/.kbm 및 MTS-ESP 작업 흐름이 없습니다.</td><td>Scala .scl 음계, .kbm 건반 매핑 및 MTS-ESP 클라이언트를 지원합니다.</td></tr><tr><th scope="row">오토메이션 / MIDI Learn</th><td>AU 호스트 파라미터 오토메이션과, 지원되는 FX/믹스/레이어 컨트롤을 위한 독립 실행 Learn. 외부 NRPN 지원과는 별개입니다.</td><td>DAW 오토메이션용 DX7 파라미터 144개와 파라미터 컨텍스트 메뉴의 MIDI CC 할당 기능.</td></tr><tr><th scope="row">MIDI 2.0 / 탐색</th><td>UMP 입력과 MIDI-CI/PE를 구현하지만 이 매뉴얼에 설명한 버전별 제한이 있습니다. 모든 Core 핸들러에 공개 입력으로 접근할 수 있는 것은 아닙니다.</td><td>검토한 버전에서는 네이티브 UMP, 고해상도 MIDI 2.0, MIDI-CI 및 PE 지원이 확인되지 않았습니다. MIDI 1.0 이벤트 처리는 구현되어 있습니다.</td></tr><tr><th scope="row">MPE / 음표별 제어</th><td>공개 입력 경로에 완전한 MPE나 사용 가능한 네이티브 음표별 제어가 있다고 가정하지 마세요.</td><td>MPE 음표별 피치 벤드는 구현되어 있습니다. 검토한 루틴에서는 MPE 프레셔와 팀브레 처리가 활성화되어 있지 않습니다.</td></tr><tr><th scope="row">가격 및 소스 라이선스</th><td>무료 앱이며 Pro는 선택 구매입니다. M2DX-Core에는 자체 Apache-2.0 라이선스가 있으며, 이것이 모든 앱 구성요소에 대한 라이선스는 아닙니다.</td><td>무료 오픈 소스. Dexed 전체는 GPL v3이며 msfa 구성요소는 Apache-2.0입니다.</td></tr></tbody></table></div><p>출처: <a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 릴리스 패키지</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/README.md">README 및 라이선스</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginProcessor.h">보이스 한도 및 엔진</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/window/CartManager.cpp">카트리지 작업</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/Tuning.cpp">튜닝</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/midi/PluginMidi.cpp">MIDI 및 MPE 처리</a>, <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginFx.cpp">출력 이펙트</a>.</p><h3>용도에 따라 선택하기</h3><ul><li><strong>M2DX의 장점:</strong> 바로 연주할 수 있는 모바일 악기, 화면 건반, 내장 창작용 이펙트 및 선택 가능한 레이어. 제한 사항은 비교적 적은 플랫폼/플러그인 형식, 독립 실행과 AUv3의 차이, 불완전한 MIDI 표현 경로입니다.</li><li><strong>Dexed의 장점:</strong> 데스크톱 DAW 통합, 카트리지 정리, 하드웨어 편집 및 대체 튜닝. 데스크톱 환경이 필요하며, 검토한 내부 처리는 완전한 이펙트 체인으로 보기에는 제한적입니다.</li><li>이것은 문서화된 기능에서 도출한 작업 흐름에 대한 결론이지 음질 순위가 아닙니다. 이 매뉴얼을 위해 두 버전 간 통제된 청취 테스트나 동일 렌더링 테스트를 수행하지는 않았습니다.</li></ul><p>Dexed의 편집 흐름은 <a href="https://asb2m10.github.io/dexed/">공식 개요</a> 및 <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/util/ContextMenuAdapter.h">MIDI CC 컨텍스트 메뉴 구현</a>을 참조하세요.</p>
+</section>
+<section id="sound-matching" aria-labelledby="sound-matching-title">
+<h2 id="sound-matching-title">음색을 옮기고 공정하게 비교하기 </h2>
+<ol><li>Dexed에서 호환되는 32음색 DX7 카트리지를 <code>.syx</code>로 내보냅니다. M2DX로 가져온 뒤 같은 음색을 선택합니다.</li><li>단일 패치 모드를 사용합니다. M2DX 레이어, Voice Stack 및 추가 이펙트를 끄고, 호스트 이펙트를 제거하며 Dexed의 출력 필터링과 게인 처리를 중립으로 맞춥니다.</li><li>샘플레이트, 튜닝, 조옮김, 엔진 모드, 피드백, 오퍼레이터 값, 엔벌로프, 키 싱크 및 입력 벨로시티를 최대한 맞춥니다.</li><li>M2DX의 Mark I 제수, EG 모드 및 DAC 설정을 별도로 확인합니다. 기본값과 스케일링은 Dexed의 같은 이름 엔진과 반드시 일치하지는 않습니다.</li><li>같은 음표 시퀀스, 음표 길이, 벨로시티, 서스테인 및 컨트롤러 값을 보냅니다. 보이스 스틸링이 발생할 수 있는 밀집 코드보다 먼저 단음을 비교합니다.</li><li>체감 출력 레벨을 맞춘 뒤 어택, 지속 구간 스펙트럼 및 릴리스를 비교합니다. 다르다면 한 번에 파라미터 하나 또는 처리 단계 하나씩 분리해 확인합니다.</li></ol><p>공통 패치 형식과 관련된 고정 소수점 합성 기법이 동일한 출력 샘플을 보장하지는 않습니다. 엔진 동작, 컨트롤러 변환, 엔벌로프 모드, 게인, 이펙트 또는 라우팅에서 차이가 생길 수 있습니다. Core 참조 테스트는 지정된 조건을 다루며, 모든 패치, 기기, 샘플레이트 또는 설정이 Dexed나 실제 DX7과 동일하다고 인증하는 것은 아닙니다.</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">문제 해결 및 현재 제한 사항 </h2>
+<div aria-labelledby="troubleshooting-table" class="table-wrap" role="region" tabindex="0"><table><caption id="troubleshooting-table">증상 및 확인 사항</caption><thead><tr><th scope="col">증상</th><th scope="col">확인할 사항</th></tr></thead><tbody><tr><th scope="row">화면 건반에서 소리가 나지 않음</th><td>LIVE에서 기본 제공 패치를 시도하세요. 기기 음량, Settings → Audio → Output / Master Volume, FX → MIX → VOLUME / EXPRESSION을 확인합니다. 한 패치만 무음이면 캐리어 레벨과 브레스/EG 라우팅을 확인하세요.</td></tr><tr><th scope="row">외부 키보드로 연주되지 않음</th><td>헤더의 MIDI 활동 표시점과 Settings → MIDI → MIDI Input 및 MIDI Channel을 확인하세요. 인터페이스 연결 후 Refresh Devices나 다시 연결 아이콘을 사용합니다. MIDI 연결만으로 오디오가 원하는 출력에 라우팅되었다고 볼 수는 없습니다.</td></tr><tr><th scope="row">모니터링 지연 또는 오디오 끊김</th><td>유선 오디오 출력을 시도하세요. Voice Stack/유니즌, 레이어 및 부하가 큰 외부 이펙트를 줄입니다. AUv3에서는 호스트 버퍼 설정과 CPU 부하를 조정하세요. 버퍼를 줄이면 지연은 줄지만 처리 여유도 줄어듭니다.</td></tr><tr><th scope="row">스택이 패치 하나처럼 들림</th><td>LIVE/EDIT로 돌아가면 레이어 모드를 벗어납니다. LAYER나 FX에 머물면서 외부/호스트 MIDI를 사용하세요. 파트 구성과 Pro 권한을 확인합니다. Mono는 전체 스택을 연주하지 않습니다.</td></tr><tr><th scope="row">저장한 음색이 보이지 않음</th><td>LIVE → 현재 뱅크 이름 → CUSTOM을 사용하세요. 헤더 PRESETS 선택기는 기본 제공 사운드만 표시합니다. 저장 후 새 CUSTOM 항목이 자동 선택되지는 않습니다.</td></tr><tr><th scope="row">SysEx 가져오기 실패</th><td>올바른 헤더, 7비트 페이로드 및 체크섬을 가진 압축 해제된 4104바이트 DX7 32음색 뱅크를 사용하세요. 이 가져오기 기능은 단일 음색 덤프나 임의의 .syx 파일을 허용하지 않습니다.</td></tr><tr><th scope="row">컨트롤러가 연결되었지만 효과가 없음</th><td>메시지 유형, 채널 및 매핑을 확인하세요. 음표별 핸들러, 폴리포닉 프레셔 및 일부 MIDI 2.0 메시지는 공개 경로에서 들리는 동작에 연결되어 있지 않습니다. 모든 MIDI 2.0 메시지가 작동한다고 가정하지 말고 지원 표를 참조하세요.</td></tr><tr><th scope="row">독립 실행과 AUv3의 사운드가 다름</th><td>엔진, Mark I 제수, 벨로시티 곡선, FX, 익스프레션, 튜닝 및 호스트 샘플레이트를 맞추세요. AU 기본 제수는 다르며 Pro FX는 독립 실행 전용입니다.</td></tr><tr><th scope="row">건반을 놓은 뒤에도 음표가 계속됨</th><td>서스테인 CC64, 누른 채인 외부 건반 및 리버브 꼬리를 확인하세요. 화면 건반의 정지 아이콘은 터치로 누르고 있던 음표를 놓는 기능이며 모든 외부 입력을 위한 범용 패닉이 아닙니다. 필요하면 호스트에서 재생을 중지/초기화하거나 입력을 다시 연결하세요.</td></tr><tr><th scope="row">Pro 기능이 보이지 않음</th><td>메인 앱에서 구매를 복원한 뒤 AU를 다시 여세요. 독립 실행/AUv3 기능 표를 확인하세요. Pro 구매로 독립 실행의 모든 기능이 플러그인에 추가되는 것은 아닙니다.</td></tr></tbody></table></div><p>현재의 다른 제한에는 사용자가 실행할 수 있는 음색/스택 내보내기, 클라우드 라이브러리 동기화, Scala/MTS-ESP 작업 흐름 및 레이어별 이펙트 체인이 없다는 점과 비활성 WAVE 선택기가 있습니다. CUSTOM/가져온 뱅크의 App Group 공유는 같은 설치 환경 안에서만 이루어지며 기기 간 동기화를 약속하지 않습니다. 이 매뉴얼은 장시간 백그라운드 재생을 보장하지 않습니다.</p><p>도움이 되는 보고를 위해 앱/빌드와 운영체제 버전, 기기, 독립 실행 여부 또는 호스트 이름/버전, 입력 하드웨어, 메시지 유형/채널, 프리셋 또는 뱅크 이름, 문제를 재현하는 가장 짧은 절차를 포함하세요. <a href="mailto:support@hakaru.net">support@hakaru.net</a>으로 보내주세요. M2DX는 Firebase 오류 보고 및 <a href="/M2DX-support/privacy">개인정보 처리방침</a>에 설명된 다른 서비스를 사용하며 개인정보 처리 방식은 다른 hakaru 앱과 다릅니다.</p>
+</section>
+<section id="sources" aria-labelledby="sources-title">
+<h2 id="sources-title">출처, 버전 및 해석 </h2>
+<p>이 가이드는 공개 인터페이스와 실제 동작하는 소스 경로를 공식 표준 및 Dexed 릴리스 자료와 함께 검토했습니다. 저장소 주석, 오래된 도움말 및 개발 전용 화면은 공개 기능의 증거로 취급하지 않았습니다.</p><ul><li><a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX App Store 페이지</a> — 공개 버전 및 기기 요구 사항.</li><li><span class="source-review">M2DX v1.7.14-40 소스</span> — LIVE/EDIT/Settings, 사용자 저장, 레이어, 이펙트 및 AU 동작.</li><li><span class="source-review">공개 앱의 확정된 의존성</span> — Core 1.25.0 및 MIDI2Kit 1.0.19.</li><li><a href="https://github.com/hakaru/M2DX-Core/tree/v1.25.0">M2DX-Core 1.25.0</a> — 합성, 스케일링, 컨트롤러 처리 및 라이선스.</li><li><span class="source-review">MIDI2Kit 1.0.19</span> — 이 버전에서 사용하는 전송 계층.</li><li><a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 릴리스</a> 및 <a href="https://github.com/asb2m10/dexed/tree/v1.1.0">태그된 소스</a> — 비교 기준.</li><li><a href="https://midi.org/midi-2-0-core-specification-collection">MIDI 2.0 핵심 규격 모음</a>, <a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">2023년 규격 변경</a> 및 <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple CoreMIDI 문서</a> — 용어, 전송 및 호환성.</li></ul><p>“라이브러리에 구현됨”, “앱에서 접근 가능함”, “특정 컨트롤러나 호스트로 검증됨”은 서로 다른 주장입니다. 이 가이드는 소스 검토를 포함하며 철저한 하드웨어 상호 운용성 테스트는 아닙니다. 제품 이름은 호환 및 비교 대상을 나타내며 해당 제품의 보증이나 지지를 뜻하지 않습니다.</p><p class="source-access-note">M2DX와 MIDI2Kit 소스 참조는 개발자가 배포 코드를 검토한 내용을 가리킵니다. 두 저장소는 비공개이므로 공개 다운로드 링크가 아닙니다. M2DX-Core와 인용한 Dexed 소스는 공개되어 있습니다.</p>
+</section>
+<footer class="manual-footer"><nav><a href="/M2DX-support/changelog-ko">변경 기록</a><a href="/M2DX-support/index-ko">지원</a><a href="/M2DX-support/privacy-ko">개인정보</a><a href="mailto:support@hakaru.net">지원 문의</a><a href="#top">맨 위로</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>

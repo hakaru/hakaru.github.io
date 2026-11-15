@@ -886,6 +886,96 @@
           "label": "プライバシー",
           "href": "/M2DX-Core-support/privacy-ja"
         }
+      ],
+      "de": [
+        {
+          "label": "Support",
+          "href": "/M2DX-Core-support/index-de"
+        },
+        {
+          "label": "Datenschutz",
+          "href": "/M2DX-Core-support/privacy-de"
+        }
+      ],
+      "es": [
+        {
+          "label": "Soporte",
+          "href": "/M2DX-Core-support/index-es"
+        },
+        {
+          "label": "Privacidad",
+          "href": "/M2DX-Core-support/privacy-es"
+        }
+      ],
+      "fr": [
+        {
+          "label": "Support",
+          "href": "/M2DX-Core-support/index-fr"
+        },
+        {
+          "label": "Confidentialité",
+          "href": "/M2DX-Core-support/privacy-fr"
+        }
+      ],
+      "it": [
+        {
+          "label": "Supporto",
+          "href": "/M2DX-Core-support/index-it"
+        },
+        {
+          "label": "Privacy",
+          "href": "/M2DX-Core-support/privacy-it"
+        }
+      ],
+      "ko": [
+        {
+          "label": "지원",
+          "href": "/M2DX-Core-support/index-ko"
+        },
+        {
+          "label": "개인정보",
+          "href": "/M2DX-Core-support/privacy-ko"
+        }
+      ],
+      "nl": [
+        {
+          "label": "Support",
+          "href": "/M2DX-Core-support/index-nl"
+        },
+        {
+          "label": "Privacy",
+          "href": "/M2DX-Core-support/privacy-nl"
+        }
+      ],
+      "pt-BR": [
+        {
+          "label": "Suporte",
+          "href": "/M2DX-Core-support/index-pt-BR"
+        },
+        {
+          "label": "Privacidade",
+          "href": "/M2DX-Core-support/privacy-pt-BR"
+        }
+      ],
+      "sv": [
+        {
+          "label": "Support",
+          "href": "/M2DX-Core-support/index-sv"
+        },
+        {
+          "label": "Integritet",
+          "href": "/M2DX-Core-support/privacy-sv"
+        }
+      ],
+      "zh-Hant": [
+        {
+          "label": "支援",
+          "href": "/M2DX-Core-support/index-zh-Hant"
+        },
+        {
+          "label": "隱私",
+          "href": "/M2DX-Core-support/privacy-zh-Hant"
+        }
       ]
     }
   },
@@ -901,6 +991,14 @@
           "href": "/M2DX-support/"
         },
         {
+          "label": "Manual",
+          "href": "/M2DX-support/manual/en/"
+        },
+        {
+          "label": "Changelog",
+          "href": "/M2DX-support/changelog"
+        },
+        {
           "label": "Privacy",
           "href": "/M2DX-support/privacy"
         }
@@ -909,6 +1007,14 @@
         {
           "label": "サポート",
           "href": "/M2DX-support/index-ja"
+        },
+        {
+          "label": "マニュアル",
+          "href": "/M2DX-support/manual/ja/"
+        },
+        {
+          "label": "更新履歴",
+          "href": "/M2DX-support/changelog-ja"
         },
         {
           "label": "プライバシー",
@@ -921,6 +1027,14 @@
           "href": "/M2DX-support/index-de"
         },
         {
+          "label": "Handbuch",
+          "href": "/M2DX-support/manual/de/"
+        },
+        {
+          "label": "Änderungsverlauf",
+          "href": "/M2DX-support/changelog-de"
+        },
+        {
           "label": "Datenschutz",
           "href": "/M2DX-support/privacy-de"
         }
@@ -929,6 +1043,14 @@
         {
           "label": "Soporte",
           "href": "/M2DX-support/index-es"
+        },
+        {
+          "label": "Manual",
+          "href": "/M2DX-support/manual/es/"
+        },
+        {
+          "label": "Historial de cambios",
+          "href": "/M2DX-support/changelog-es"
         },
         {
           "label": "Privacidad",
@@ -941,6 +1063,14 @@
           "href": "/M2DX-support/index-fr"
         },
         {
+          "label": "Guide",
+          "href": "/M2DX-support/manual/fr/"
+        },
+        {
+          "label": "Historique des modifications",
+          "href": "/M2DX-support/changelog-fr"
+        },
+        {
           "label": "Confidentialité",
           "href": "/M2DX-support/privacy-fr"
         }
@@ -949,6 +1079,14 @@
         {
           "label": "Supporto",
           "href": "/M2DX-support/index-it"
+        },
+        {
+          "label": "Manuale",
+          "href": "/M2DX-support/manual/it/"
+        },
+        {
+          "label": "Cronologia delle modifiche",
+          "href": "/M2DX-support/changelog-it"
         },
         {
           "label": "Privacy",
@@ -961,6 +1099,14 @@
           "href": "/M2DX-support/index-ko"
         },
         {
+          "label": "매뉴얼",
+          "href": "/M2DX-support/manual/ko/"
+        },
+        {
+          "label": "변경 기록",
+          "href": "/M2DX-support/changelog-ko"
+        },
+        {
           "label": "개인정보",
           "href": "/M2DX-support/privacy-ko"
         }
@@ -969,6 +1115,14 @@
         {
           "label": "Support",
           "href": "/M2DX-support/index-nl"
+        },
+        {
+          "label": "Handleiding",
+          "href": "/M2DX-support/manual/nl/"
+        },
+        {
+          "label": "Wijzigingsgeschiedenis",
+          "href": "/M2DX-support/changelog-nl"
         },
         {
           "label": "Privacy",
@@ -981,6 +1135,14 @@
           "href": "/M2DX-support/index-pt-BR"
         },
         {
+          "label": "Manual",
+          "href": "/M2DX-support/manual/pt-BR/"
+        },
+        {
+          "label": "Histórico de alterações",
+          "href": "/M2DX-support/changelog-pt-BR"
+        },
+        {
           "label": "Privacidade",
           "href": "/M2DX-support/privacy-pt-BR"
         }
@@ -991,6 +1153,14 @@
           "href": "/M2DX-support/index-sv"
         },
         {
+          "label": "Manual",
+          "href": "/M2DX-support/manual/sv/"
+        },
+        {
+          "label": "Ändringshistorik",
+          "href": "/M2DX-support/changelog-sv"
+        },
+        {
           "label": "Integritet",
           "href": "/M2DX-support/privacy-sv"
         }
@@ -999,6 +1169,14 @@
         {
           "label": "支援",
           "href": "/M2DX-support/index-zh-Hant"
+        },
+        {
+          "label": "手冊",
+          "href": "/M2DX-support/manual/zh-Hant/"
+        },
+        {
+          "label": "更新紀錄",
+          "href": "/M2DX-support/changelog-zh-Hant"
         },
         {
           "label": "隱私",

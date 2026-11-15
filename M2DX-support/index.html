@@ -281,6 +281,8 @@ body { display: flex; min-height: 100vh; }
     </button>
     <div class="sidebar-app-links show">
       <a href="/M2DX-support/" class="active">Support</a>
+      <a href="/M2DX-support/manual/en/">Manual</a>
+      <a href="/M2DX-support/changelog">Changelog</a>
       <a href="/M2DX-support/privacy">Privacy</a>
     </div>
   </div>
@@ -380,130 +382,12 @@ body { display: flex; min-height: 100vh; }
         </div>
 
         <div class="content">
-            <p>Welcome to M2DX support.</p>
-            <p>M2DX is a MIDI 2.0-compatible DX7 FM synthesizer for iOS, delivering classic 6-operator / 32-algorithm FM tones reimplemented entirely in Swift 6. The synthesis engine is provided by the <a href="/M2DX-Core-support/">M2DX-Core</a> library.</p>
-            <p><em>New in 1.7.1:</em> a redesigned app icon — a vintage FM hardware panel with a dot-matrix display, including dark and tinted variants for iOS&nbsp;18.</p>
+<p><a href="/M2DX-support/changelog">Changelog</a></p>
+<p><a href="/M2DX-support/manual/en/"><strong>Read the full M2DX manual</strong></a></p><h2>Version, requirements and scope</h2><p>M2DX is a six-operator, 32-algorithm FM synthesizer. Play it on its screen keyboard, connect a MIDI keyboard, or load its AUv3 instrument in a compatible host. M2DX-Core is the Swift library that generates the FM sound; the app adds its interface, presets, MIDI connections and effects.</p><ul><li>This manual covers the published <strong>M2DX 1.7.14 (build 40)</strong>, using <strong>M2DX-Core 1.25.0</strong> and <strong>MIDI2Kit 1.0.19</strong>. Later development changes are outside this guide.</li><li>The current <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store listing</a> specifies <strong>iPhone, iOS 18 or later</strong>. It also lists compatibility with Apple Silicon Macs running macOS 15 or later, while stating that the iPhone app has not been verified on macOS. Do not assume a native Mac edition or an iPad-optimized edition from that compatibility listing.</li><li>The manual has 11 languages. The published app lists <strong>English</strong> as its interface language. Control names such as LIVE and SAVE remain in English here.</li><li>The app and AUv3 instrument are free to download. <strong>M2DX Pro</strong> is an optional one-time purchase; check its current price in the app. The available Pro functions differ between standalone and AUv3.</li></ul><p>The descriptions below distinguish a capability of the MIDI standard, a function inside the library, and a feature that can actually be reached through the released app. These are different levels of support.</p><h2>Banks, custom voices and saving</h2><p>A bank groups voices; selecting a voice replaces the current single FM patch. Factory sounds, imported SysEx banks and your saved <strong>CUSTOM</strong> voices are separate collections. Use the LIVE bank picker to reach all of them.</p><h2>Import DX7 SysEx voices</h2><p>A <code>.syx</code> file is a MIDI System Exclusive data file. DX7 voice data describes operators, envelopes and common patch settings; it does not contain recorded audio. The released importer accepts a <strong>4104-byte DX7 32-voice bulk bank</strong>. It checks the header, 7-bit data and checksum; it does not accept a single-voice dump.</p><ol><li>Save the source <code>.syx</code> file in a location available through the Files picker.</li><li>Open <strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>, select the file, then tap Done.</li><li>Return to LIVE → current bank name and select the imported bank, then choose a voice.</li><li>If needed, edit that voice and use SAVE to create a separate CUSTOM copy.</li></ol><h2>TX816 layers, Voice Stack and Pro</h2><p><strong>TX816 LAYER</strong> combines different patches and/or unison copies. It is distinct from the experimental <strong>Voice Stack</strong> multiplier in standalone Settings.</p><p><a href="/M2DX-support/manual/en/#layers-pro">TX816 layers, Voice Stack and Pro</a></p><h2>What the released MIDI paths actually support</h2><p>This table describes the source paths in 1.7.14, not every controller/OS/host combination tested on hardware. Standalone receives CoreMIDI through MIDI2Kit 1.0.19. AUv3 has separate legacy MIDI-event and MIDI 2.0 UMP-event inputs.</p><p><a href="/M2DX-support/manual/en/#midi-support">What the released MIDI paths actually support</a></p><h2>Troubleshooting and current limitations</h2><p>For a useful report, include app/build and OS version, device, standalone or host name/version, input hardware, message type/channel, preset or bank name, and the shortest steps that reproduce the issue. Send it to <a href="mailto:support@hakaru.net">support@hakaru.net</a>. M2DX uses Firebase crash reporting and other services described in its <a href="/M2DX-support/privacy">privacy policy</a>; its privacy behavior differs from other hakaru apps.</p>
 
-            <hr>
 
-            <h2>Download</h2>
-            <p><strong>iOS / iPadOS 18+</strong> — get M2DX from the App Store:</p>
-            <ol>
-                <li>On your iPhone / iPad, open <a href="https://apps.apple.com/app/m2dx/id6763840208">the M2DX App Store page</a></li>
-                <li>Tap <strong>Get</strong> to download and install</li>
-                <li>Launch M2DX and play right away with the on-screen keyboard — a MIDI controller is optional</li>
-            </ol>
 
-            <hr>
 
-            <h2>Current Status &amp; Roadmap</h2>
-            <p>M2DX is available now and fully playable. In the spirit of transparency, here are the areas we are <strong>still actively refining</strong> — your feedback helps us prioritize.</p>
-
-            <h3>MIDI 2.0 coverage is limited</h3>
-            <ul>
-                <li>We have not been able to procure enough MIDI 2.0-capable hardware, so UMP behavior has only been verified across a limited set of device combinations</li>
-                <li>Differences in MIDI 2.0 support across macOS versions (CoreMIDI behavior, etc.) are not fully characterized</li>
-                <li>Vendor-specific extensions and proprietary profiles built on top of MIDI 2.0 have only been partially analyzed (specifically, parts of KORG's implementation); other vendors' proprietary implementations remain untouched</li>
-            </ul>
-
-            <h3>DX7 preset compatibility</h3>
-            <ul>
-                <li>32 initial presets are bundled, but the tonal character compared to vintage FM has not been fully verified across all presets</li>
-                <li>Bank loading and SysEx patch import compatibility will be improved progressively across upcoming updates</li>
-            </ul>
-
-            <h3>FX chain</h3>
-            <ul>
-                <li>The 6-stage FX chain (EQ → Drive → Chorus → Reverb → Stereo → Maximizer) is <strong>at the "working implementation" stage</strong>. Musical tuning of parameter ranges and endpoints, CPU efficiency, and interaction optimization are still ahead</li>
-            </ul>
-
-            <h3>If you spot bugs or oddities</h3>
-            <p>Crashes are auto-reported via Firebase Crashlytics (see the <a href="/M2DX-support/privacy">Privacy Policy</a> for details). Reproducible issues are easier to fix — if you can, please send a report to <a href="mailto:support@hakaru.net">support@hakaru.net</a>.</p>
-
-            <hr>
-
-            <h2>Features</h2>
-
-            <h3>Full MIDI 2.0 UMP Support</h3>
-            <p>Native Universal MIDI Packet (UMP) decoding with 16-bit velocity (65,536 levels), 32-bit CC values, and 32-bit pitch bend for smooth, expressive control. MIDI 1.0 fallback is automatic.</p>
-
-            <h3>DX7-Compatible FM Engine</h3>
-            <p>A 6-operator / 32-algorithm DX7-style FM synthesis engine implemented in pure Swift. Int32 Q24 fixed-point arithmetic targets the character of vintage FM. 32 initial presets are bundled.</p>
-
-            <h3>16-Voice Polyphony</h3>
-            <p>16 simultaneous voices with sustain pedal (CC64) and pitch bend (±2 semitones) support. Padé-approximation tanh soft-clipping prevents digital distortion.</p>
-
-            <h3>6-Stage FX Chain</h3>
-            <p>EQ → Drive → Chorus → Reverb → Stereo → Maximizer signal chain. Every parameter can be MIDI Learn-mapped to any CC.</p>
-
-            <h3>MIDI-CI Property Exchange</h3>
-            <p>Exposes 155+ parameters in a hierarchical namespace. Compatible DAWs and controllers auto-discover parameters, with JSON-based preset management (no SysEx required) — a self-describing instrument.</p>
-
-            <h3>Low Latency</h3>
-            <p>AVAudioSourceNode direct rendering drives the FM engine inside the CoreAudio render callback, eliminating buffer-queueing overhead. The iOS IOBufferDuration (~5 ms) is the effective latency floor.</p>
-
-            <h3>AUv3 Plug-in</h3>
-            <p>M2DX ships an AUv3 instrument plug-in ("M2DX FM Synthesizer") that loads inside GarageBand, AUM, Logic Pro and other AUv3 hosts, with host automation routed over NRPN. The standalone app is included too.</p>
-
-            <hr>
-
-            <h2>M2DX Pro</h2>
-            <p>Everything described above is <strong>free</strong>. <strong>M2DX Pro</strong> is an optional one-time unlock — no subscription — that adds deeper layering and vintage sound-engine options:</p>
-            <ul>
-                <li><strong>TX816 LAYER</strong> — stack up to 8 patches per note, with save &amp; recall of your layered stacks</li>
-                <li><strong>FM engine choice</strong> — switch between the Modern engine and Mark I, with Mark I depth control (÷2–÷16)</li>
-                <li><strong>Vintage 12-bit DAC</strong> emulation for a grittier, hardware-flavored output stage</li>
-                <li><strong>Voice Stack</strong> — up to 16× unison per note</li>
-            </ul>
-            <p>Pro features work in both the standalone app and the AUv3 plug-in. Unlock M2DX Pro — and use <strong>Restore Purchases</strong> — from the <strong>M2DX Pro</strong> section in Settings. The unlock is one-time and supports Family Sharing.</p>
-
-            <hr>
-
-            <h2>System Requirements</h2>
-            <ul>
-                <li><strong>iOS / iPadOS 18+</strong> (available on the App Store)</li>
-                <li>macOS support is planned for the future</li>
-            </ul>
-
-            <hr>
-
-            <h2>FAQ</h2>
-
-            <h3>I can't find M2DX in the App Store yet</h3>
-            <p>A new release can take a few hours to propagate across all regional storefronts. If the link above doesn't open the page right away, please try again shortly.</p>
-
-            <h3>What happens if the app crashes?</h3>
-            <p>Starting with v1.3.1 (build 5), Firebase Crashlytics auto-reports crashes. Reproducing a crash helps us identify and fix it quickly. See the <a href="/M2DX-support/privacy">Privacy Policy</a> for details on the data we collect.</p>
-
-            <h3>Can I load DX7 SysEx presets?</h3>
-            <p>32 initial presets are built in. SysEx import for user-supplied banks will be announced in upcoming updates.</p>
-
-            <h3>Do I need a MIDI 2.0-compatible DAW?</h3>
-            <p>No. MIDI 1.0 fallback is automatic, so any traditional MIDI controller or DAW works. A MIDI 2.0 environment unlocks higher-resolution expression.</p>
-
-            <h3>Is M2DX available as an AUv3 plug-in?</h3>
-            <p>Yes. M2DX includes an AUv3 instrument plug-in ("M2DX FM Synthesizer"), so you can play it inside GarageBand, AUM, Logic Pro and other AUv3 hosts. The standalone iOS / iPadOS app is included as well.</p>
-
-            <h3>Is M2DX free? What is M2DX Pro?</h3>
-            <p>The app is free, including the AUv3 plug-in and the full MIDI 2.0 / FM engine. <strong>M2DX Pro</strong> is an optional one-time unlock that adds TX816 LAYER, the Mark I engine and Vintage 12-bit DAC, and up to 16× Voice Stack unison. There is no subscription.</p>
-
-            <h3>I unlocked M2DX Pro but the features aren't showing</h3>
-            <p>Open <strong>Settings → M2DX Pro</strong> and tap <strong>Restore Purchases</strong>, and make sure you're signed in with the same Apple Account you used to buy it. The Pro unlock is one-time and supports Family Sharing.</p>
-
-            <hr>
-
-            <h2>Links</h2>
-            <ul>
-                <li>GitHub: <a href="https://github.com/hakaru/M2DX">github.com/hakaru/M2DX</a></li>
-                <li>Synthesis engine: <a href="/M2DX-Core-support/">M2DX-Core</a> (Pure Swift DX7 FM library)</li>
-                <li><a href="/M2DX-support/privacy">Privacy Policy</a></li>
-            </ul>
-
-            <hr>
-
-            <h2>Contact</h2>
-            <p>For questions, bug reports, and feature requests, please reach out at:<br>
-            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
 
         <footer>

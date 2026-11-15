@@ -272,8 +272,8 @@ body { display: flex; min-height: 100vh; }
       <span class="arrow">&#9654;</span>
     </button>
     <div class="sidebar-app-links">
-      <a href="/M2DX-Core-support/">Support</a>
-      <a href="/M2DX-Core-support/privacy">Privacy</a>
+      <a href="/M2DX-Core-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-Core-support/privacy-zh-Hant">隱私</a>
     </div>
   </div>
   <div class="sidebar-app">
@@ -284,6 +284,8 @@ body { display: flex; min-height: 100vh; }
     </button>
     <div class="sidebar-app-links show">
       <a href="/M2DX-support/index-zh-Hant" class="active">支援</a>
+      <a href="/M2DX-support/manual/zh-Hant/">手冊</a>
+      <a href="/M2DX-support/changelog-zh-Hant">更新紀錄</a>
       <a href="/M2DX-support/privacy-zh-Hant">隱私</a>
     </div>
   </div>
@@ -383,130 +385,12 @@ body { display: flex; min-height: 100vh; }
         </div>
 
         <div class="content">
-            <p>歡迎來到 M2DX 支援頁面。</p>
-            <p>M2DX 是一款支援 MIDI 2.0 的 iOS 平台 DX7 相容 FM 合成器應用程式。透過 6 組運算器搭配 32 種演算法，重現經典的 FM 音色，並以 Pure Swift 6 完整重新實作。合成引擎採用 <a href="/M2DX-Core-support/index-zh-Hant">M2DX-Core</a> 函式庫。</p>
-            <p><em>1.7.1 新功能：</em>全新設計的應用程式圖示 — 一個帶有點矩陣顯示器的復古 FM 硬體面板，並提供適用於 iOS&nbsp;18 的深色與著色變體。</p>
+<p><a href="/M2DX-support/changelog-zh-Hant">更新紀錄</a></p>
+<p><a href="/M2DX-support/manual/zh-Hant/"><strong>閱讀完整 M2DX 使用手冊</strong></a></p><h2>版本、系統需求與適用範圍</h2><p>M2DX 是一款具有六個運算子、32 種演算法的 FM 合成器。您可以使用螢幕鍵盤演奏、連接 MIDI 鍵盤，或在相容的宿主軟體中載入它的 AUv3 樂器。M2DX-Core 是產生 FM 聲音的 Swift 函式庫；App 則提供操作介面、預設音色、MIDI 連線與效果器。</p><ul><li>本手冊適用於已發布的 <strong>M2DX 1.7.14（組建 40）</strong>，使用 <strong>M2DX-Core 1.25.0</strong> 與 <strong>MIDI2Kit 1.0.19</strong>。後續開發中的變更不在本指南範圍內。</li><li>目前的 <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store 頁面</a>標示系統需求為 <strong>iPhone、iOS 18 或以上版本</strong>。頁面也列出與搭載 Apple Silicon、執行 macOS 15 或以上版本的 Mac 相容，同時註明此 iPhone App 尚未在 macOS 上驗證。這項相容性資訊不代表提供原生 Mac 版本或針對 iPad 最佳化的版本。</li><li>本手冊提供 11 種語言。已發布 App 列出的介面語言為<strong>英語</strong>。因此，LIVE 與 SAVE 等控制項名稱在此仍保留英文。</li><li>App 與 AUv3 樂器可免費下載。<strong>M2DX Pro</strong> 為選購的一次性購買項目；請在 App 內確認目前價格。獨立 App 與 AUv3 可使用的 Pro 功能有所不同。</li></ul><p>以下說明會區分 MIDI 標準所具備的能力、函式庫內部的功能，以及實際可透過已發布 App 使用的功能。這些是不同層次的支援。</p><h2>音色庫、自訂音色與儲存</h2><p>音色庫用來整理音色；選取音色會取代目前的單一 FM 音色。原廠音色、匯入的 SysEx 音色庫，以及您儲存的 <strong>CUSTOM</strong> 音色是不同的集合。可透過 LIVE 的音色庫選單存取全部集合。</p><h2>匯入 DX7 SysEx 音色</h2><p><code>.syx</code> 檔案是 MIDI System Exclusive（系統專屬）資料檔。DX7 音色資料記錄運算子、包絡及音色共用設定，不包含錄製的音訊。已發布版本的匯入功能接受 <strong>4104 位元組的 DX7 32 音色整批音色庫</strong>。它會檢查標頭、7 位元資料與檢查碼，不接受單一音色傾印。</p><ol><li>將原始 <code>.syx</code> 檔案儲存到「檔案」選擇器可存取的位置。</li><li>開啟 <strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>，選取檔案，再輕點 Done。</li><li>返回 LIVE → 目前的音色庫名稱，選取匯入的音色庫，再選取音色。</li><li>需要時可編輯該音色，並使用 SAVE 建立獨立的 CUSTOM 副本。</li></ol><h2>TX816 疊層、Voice Stack 與 Pro</h2><p><strong>TX816 LAYER</strong> 可結合不同音色及／或齊奏副本。它與獨立 App Settings 中實驗性的 <strong>Voice Stack</strong> 倍增器不同。</p><p><a href="/M2DX-support/manual/zh-Hant/#layers-pro">TX816 疊層、Voice Stack 與 Pro</a></p><h2>已發布版本的 MIDI 路徑實際支援哪些功能</h2><p>此表描述 1.7.14 的原始碼路徑，並非已對所有控制器／作業系統／宿主組合完成硬體測試。獨立 App 透過 MIDI2Kit 1.0.19 接收 CoreMIDI。AUv3 則有分開的傳統 MIDI 事件與 MIDI 2.0 UMP 事件輸入。</p><p><a href="/M2DX-support/manual/zh-Hant/#midi-support">已發布版本的 MIDI 路徑實際支援哪些功能</a></p><h2>疑難排解與目前限制</h2><p>回報問題時，請提供 App／組建與作業系統版本、裝置、使用獨立 App 或宿主名稱／版本、輸入硬體、訊息類型／通道、預設音色或音色庫名稱，以及能重現問題的最短步驟。請寄至 <a href="mailto:support@hakaru.net">support@hakaru.net</a>。M2DX 使用 Firebase 當機回報及其<a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a>所述的其他服務；其隱私行為與其他 hakaru App 不同。</p>
 
-            <hr>
 
-            <h2>下載</h2>
-            <p><strong>iOS / iPadOS 18 以上</strong> — 從 App Store 取得 M2DX：</p>
-            <ol>
-                <li>在 iPhone / iPad 上開啟 <a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX 的 App Store 頁面</a></li>
-                <li>點選<strong>取得</strong>以下載並安裝</li>
-                <li>啟動 M2DX，立即以螢幕鍵盤開始演奏 — MIDI 控制器並非必要</li>
-            </ol>
 
-            <hr>
 
-            <h2>目前的狀態 &amp; 開發藍圖</h2>
-            <p>M2DX 現已推出，且可完整演奏。基於資訊透明的原則，以下是我們<strong>仍在積極改進</strong>的部分 — 您的回饋能協助我們決定優先順序。</p>
-
-            <h3>MIDI 2.0 的驗證範圍有限</h3>
-            <ul>
-                <li>由於尚未充分取得支援 MIDI 2.0 的硬體裝置，UMP 的實機驗證僅能在有限的器材組合上進行</li>
-                <li>各個 macOS 版本之間的 MIDI 2.0 支援差異（例如 CoreMIDI 的行為差異等）尚未完整掌握</li>
-                <li>各家廠商在 MIDI 2.0 規範之上加入的獨家擴充與專屬 Profile，目前僅部分（具體而言為 KORG 的部分內容）有解析支援，其他廠商的獨家實作尚未著手</li>
-            </ul>
-
-            <h3>DX7 音色相容性驗證</h3>
-            <ul>
-                <li>雖然內建了 32 種初始音色，但與經典 FM 合成的音色比較目前尚未針對所有音色完成驗證</li>
-                <li>整個音色庫（Bank）以及 SysEx Patch 的載入相容性，將於後續更新中分階段陸續完善</li>
-            </ul>
-
-            <h3>效果鏈</h3>
-            <ul>
-                <li>6 段 FX 鏈（EQ → Drive → Chorus → Reverb → Stereo → Maximizer）<strong>目前僅停留在「能運作」的實作階段</strong>。參數的可聽範圍、端點數值的音樂性調整、CPU 效率以及彼此之間的交互作用最佳化，都將於後續陸續處理</li>
-            </ul>
-
-            <h3>若您發現任何 Bug 或不對勁之處</h3>
-            <p>當機資訊會由 Firebase Crashlytics 自動收集（詳情請參閱<a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a>）。具有可重現條件的問題能更快被定位，因此若可行的話，懇請您透過 <a href="mailto:support@hakaru.net">support@hakaru.net</a> 回報，我們將不勝感激。</p>
-
-            <hr>
-
-            <h2>主要特色</h2>
-
-            <h3>完整支援 MIDI 2.0 UMP</h3>
-            <p>原生支援 Universal MIDI Packet (UMP)。透過 16 位元力度（65,536 階）、32 位元 CC 與 32 位元 Pitch Bend，呈現流暢且富表現力的演奏。同時自動向下相容 MIDI 1.0。</p>
-
-            <h3>DX7 相容 FM 引擎</h3>
-            <p>具備 6 組運算器 × 32 種演算法的 DX7 風格 FM 合成引擎，以 Pure Swift 實作。透過 Int32 Q24 定點運算，追求經典 FM 音色的特性。內建 32 種初始音色。</p>
-
-            <h3>16 複音</h3>
-            <p>支援 16 複音同時發聲、延音踏板（CC64）以及 Pitch Bend（±2 半音）。採用 Padé 近似 tanh 軟切削，避免數位破音。</p>
-
-            <h3>6 段效果鏈</h3>
-            <p>依 EQ → Drive → Chorus → Reverb → Stereo → Maximizer 的順序串接的高品質效果。所有參數皆可透過 MIDI Learn 對應到任意 CC。</p>
-
-            <h3>MIDI-CI Property Exchange</h3>
-            <p>以階層式結構公開 155 個以上的參數，是一款自我描述型樂器。相容的 DAW 或控制器可自動探索參數，並支援以 JSON 為基礎的音色管理（無需 SysEx）。</p>
-
-            <h3>低延遲</h3>
-            <p>採用 AVAudioSourceNode 直接渲染，FM 引擎在 CoreAudio 渲染回呼上運作，省去緩衝佇列的額外開銷，實際延遲取決於 iOS 的 IOBufferDuration（約 5ms）。</p>
-
-            <h3>AUv3 外掛</h3>
-            <p>M2DX 隨附一個 AUv3 樂器外掛（「M2DX FM Synthesizer」），可於 GarageBand、AUM、Logic Pro 及其他 AUv3 宿主中載入，宿主自動化透過 NRPN 傳遞。獨立應用程式亦一併包含在內。</p>
-
-            <hr>
-
-            <h2>M2DX Pro</h2>
-            <p>以上所述的一切皆為<strong>免費</strong>。<strong>M2DX Pro</strong> 是選購的一次性解鎖項目 — 無訂閱制 — 可加入更深入的疊層與復古音源引擎選項：</p>
-            <ul>
-                <li><strong>TX816 LAYER</strong> — 每個音符最多可堆疊 8 個音色，並支援儲存與叫回您的疊層堆疊</li>
-                <li><strong>FM 引擎選擇</strong> — 可在 Modern 引擎與 Mark I 之間切換，並提供 Mark I 深度控制（÷2–÷16）</li>
-                <li><strong>Vintage 12-bit DAC</strong> 模擬，帶來更具顆粒感、富硬體風味的輸出級</li>
-                <li><strong>Voice Stack</strong> — 每個音符最多 16× 齊奏</li>
-            </ul>
-            <p>Pro 功能在獨立應用程式與 AUv3 外掛中皆可使用。您可在設定的 <strong>M2DX Pro</strong> 區塊解鎖 M2DX Pro，並使用<strong>回復購買項目</strong>。此解鎖為一次性，並支援家人共享。</p>
-
-            <hr>
-
-            <h2>系統需求</h2>
-            <ul>
-                <li><strong>iOS / iPadOS 18 以上</strong>（已於 App Store 上架）</li>
-                <li>macOS 版本將於日後支援</li>
-            </ul>
-
-            <hr>
-
-            <h2>常見問題</h2>
-
-            <h3>我在 App Store 還找不到 M2DX</h3>
-            <p>新版本可能需要數小時才會在各地區的商店全面上架。若上方連結無法立即開啟頁面，請稍後再試一次。</p>
-
-            <h3>應用程式發生當機時該怎麼辦？</h3>
-            <p>自 v1.3.1 (build 5) 起，已啟用 Firebase Crashlytics 自動回報當機。若您能重現該當機，我們便能從紀錄中找出原因並迅速修正。關於收集資料的詳細內容，請參閱<a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a>。</p>
-
-            <h3>是否可以匯入 DX7 的 SysEx 音色？</h3>
-            <p>內建 32 種初始音色。使用者自備 SysEx 音色檔的匯入功能將於後續更新中提供更多資訊。</p>
-
-            <h3>是否需要支援 MIDI 2.0 的 DAW？</h3>
-            <p>不需要。由於可向下相容 MIDI 1.0，您仍可搭配傳統的 MIDI 控制器或 DAW 使用。在支援 MIDI 2.0 的環境下，則能享有更高解析度的演奏表現。</p>
-
-            <h3>可以作為 AUv3 外掛使用嗎？</h3>
-            <p>可以。M2DX 內建一個 AUv3 樂器外掛（「M2DX FM Synthesizer」），因此您可以在 GarageBand、AUM、Logic Pro 及其他 AUv3 宿主中演奏它。獨立的 iOS / iPadOS 應用程式亦一併包含在內。</p>
-
-            <h3>M2DX 是免費的嗎？M2DX Pro 是什麼？</h3>
-            <p>本應用程式為免費，包含 AUv3 外掛以及完整的 MIDI 2.0 / FM 引擎。<strong>M2DX Pro</strong> 是選購的一次性解鎖項目，可加入 TX816 LAYER、Mark I 引擎與 Vintage 12-bit DAC，以及最多 16× 的 Voice Stack 齊奏。並無訂閱制。</p>
-
-            <h3>我已解鎖 M2DX Pro，但功能沒有出現</h3>
-            <p>請開啟<strong>設定 → M2DX Pro</strong> 並點選<strong>回復購買項目</strong>，並確認您登入的是購買時所使用的同一個 Apple 帳號。Pro 解鎖為一次性，並支援家人共享。</p>
-
-            <hr>
-
-            <h2>相關連結</h2>
-            <ul>
-                <li>GitHub：<a href="https://github.com/hakaru/M2DX">github.com/hakaru/M2DX</a></li>
-                <li>合成引擎：<a href="/M2DX-Core-support/index-zh-Hant">M2DX-Core</a>（Pure Swift DX7 FM 函式庫）</li>
-                <li><a href="/M2DX-support/privacy-zh-Hant">隱私權政策</a></li>
-            </ul>
-
-            <hr>
-
-            <h2>聯絡我們</h2>
-            <p>若有任何疑問、Bug 回報或功能需求，歡迎透過下列電子郵件與我們聯絡：<br>
-            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
 
         <footer>

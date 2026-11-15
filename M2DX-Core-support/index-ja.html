@@ -582,6 +582,8 @@ body {
     </button>
     <div class="sidebar-app-links">
       <a href="/M2DX-support/index-ja">サポート</a>
+      <a href="/M2DX-support/manual/ja/">マニュアル</a>
+      <a href="/M2DX-support/changelog-ja">更新履歴</a>
       <a href="/M2DX-support/privacy-ja">プライバシー</a>
     </div>
   </div>
@@ -660,6 +662,15 @@ body {
   <div class="sidebar-lang">
     <a href="/M2DX-Core-support/" class="sidebar-lang-btn" data-lang="en">EN</a>
     <span class="sidebar-lang-btn active" data-lang="ja">JA</span>
+    <a href="/M2DX-Core-support/index-de" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-Core-support/index-es" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-Core-support/index-fr" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-Core-support/index-it" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-Core-support/index-ko" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-Core-support/index-nl" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-Core-support/index-pt-BR" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-Core-support/index-sv" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <a href="/M2DX-Core-support/index-zh-Hant" class="sidebar-lang-btn" data-lang="zh-Hant">繁體</a>
   </div>
 </nav>
 <div class="content-pane">
@@ -965,46 +976,11 @@ body {
         </div>
 
         <div class="content">
-            <p>M2DX-Coreサポートページへようこそ。</p>
-            <p>M2DX-Coreは、Pure Swiftで完全に実装したDX7互換のFMシンセシスエンジンです。Int32固定小数点カーネルをオープンソースのDexed/msfaリファレンスとサンプル単位で照合検証しています。実機Yamaha OPSチップのサイクル精度エミュレーションではなく、DX7系FMを忠実に再現するエンジンです。出荷コードにC/C++は含みません。</p>
+<p><a href="/M2DX-support/changelog-ja">M2DX — 更新履歴</a></p>
+<p><a href="/M2DX-support/manual/ja/"><strong>M2DXの詳しいマニュアルを読む</strong></a></p><h2>M2DX-Core：ノート情報から音声になるまで</h2><p><strong>M2DX-Core</strong>はアプリやAUラッパーから独立したSwift 6の音源ライブラリーです。オペレーター、32アルゴリズム、エンベロープ、音程とスケーリング、ボイス割当、パッチ構造、音源側のコントローラー処理を担当します。接続、MIDI-CI/PE、UI、購入、保存、エフェクトはアプリ側です。</p><h2>Modern・Mark I・Depth・Vintage DAC</h2><p><strong>Modern</strong>はMSFA系参照モデルに対応する整数のサイン波・ゲイン演算です。別の「Clean Float32」音源ではありません。<strong>Mark I</strong>は公開されたOPSの動作資料に基づく対数サイン／指数モデルで、位相を象限へ折り返し、対数減衰を組み合わせてから振幅へ戻します。実機チップの全動作をサイクル精度で再現するものではありません。</p><p>CoreにはModernの整数計算をApacheライセンスのMSFA/Dexed参照実装とサンプル単位で比較するテストがあります。一部はカーネルを分離して調べるため参照側の位相増分を注入し、本番の音程計算とは経路が違います。Mark Iは独立して作ったC版との比較で、アプリ既定の÷1とは違う÷8の試験条件も含みます。これらはアプリの最終出力、Dexedの全設定、実機DX7の録音がすべてビット一致する証明ではありません。</p><p><strong>ライセンス：</strong>M2DX-CoreはApache-2.0、MIDI2KitはMIT、M2DXアプリ本体は独自のプロプライエタリーライセンスです。テスト専用C参照実装は出荷Swiftライブラリーとは別です。<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core LICENSE</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark Iカーネル</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">比較テストの条件</a>を参照してください。</p><p><a href="/M2DX-support/manual/ja/#core">M2DX-Core：ノート情報から音声になるまで</a> · <a href="/M2DX-support/manual/ja/#midi-support">公開版で実際に使えるMIDI機能</a></p><pre><code>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.25.0")</code></pre>
 
-            <hr>
 
-            <h2>特徴</h2>
 
-            <h3>DEXEDで検証した精度</h3>
-            <p>Int32固定小数点演算を全体で使用し、オペレーター・エンベロープ・スケーリングの各テストでDexed/msfaリファレンスとサンプル単位で照合検証しています。実機をサイクル精度でエミュレートするのではなく、DX7系FMを忠実にモデル化します。</p>
-
-            <h3>MIDI 2.0ネイティブ対応</h3>
-            <p>MIDI 2.0をネイティブサポートし、ノートごとのピッチベンド、ノートごとのエクスプレッション、高解像度コントロールデータを活用できます。MIDI 1.0では実現できなかった表現力豊かな演奏が可能です。</p>
-
-            <h3>リアルタイムセーフ</h3>
-            <p>オーディオ処理パスはロックフリーアーキテクチャを採用し、オーディオスレッドでのメモリアロケーションがありません。プロフェッショナルなオーディオアプリやAUv3プラグインでの使用に最適です。</p>
-
-            <h3>Pure Swift</h3>
-            <p>C、C++、Objective-Cのブリッジングヘッダーは一切不要です。M2DX-CoreはSwiftのみで実装されており、Swift PackageとしてあらゆるSwift・SwiftUIプロジェクトに簡単に統合できます。</p>
-
-            <hr>
-
-            <h2>導入方法</h2>
-
-            <h3>Swift Package Manager</h3>
-            <p>XcodeでSwift Package Managerを使って追加できます。<strong>File &gt; Add Package Dependencies</strong> からGitHub URLを入力してください：</p>
-            <pre>https://github.com/hakaru/M2DX-Core</pre>
-            <p>または <code>Package.swift</code> に直接追記する場合：</p>
-            <pre>.package(url: "https://github.com/hakaru/M2DX-Core", from: "1.0.0")</pre>
-
-            <hr>
-
-            <h2>オープンソース</h2>
-            <p>M2DX-CoreはMITライセンスのオープンソースソフトウェアです。IssueやPull Requestを歓迎します：</p>
-            <p><a href="https://github.com/hakaru/M2DX-Core"><strong>github.com/hakaru/M2DX-Core</strong></a></p>
-
-            <hr>
-
-            <h2>お問い合わせ</h2>
-            <p>ご質問やご意見は、以下のメールアドレスまでお気軽にどうぞ：<br>
-            <a href="mailto:support@hakaru.net"><strong>support@hakaru.net</strong></a></p>
         </div>
 
         <footer>

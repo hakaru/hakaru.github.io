@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M2DX 使用手冊 | hakaru</title>
+    <meta name="description" content="M2DX 詳細指南：FM 音色設計、預設音色、效果器、Pro 與 AUv3、M2DX-Core 內部運作、MIDI 2.0 功能與限制，以及與 Dexed 的比較。">
+    <meta property="og:title" content="M2DX 使用手冊">
+    <meta property="og:description" content="M2DX 詳細指南：FM 音色設計、預設音色、效果器、Pro 與 AUv3、M2DX-Core 內部運作、MIDI 2.0 功能與限制，以及與 Dexed 的比較。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <meta property="og:image" content="https://hakaru.net/assets/m2dx-icon.png">
+    <link rel="canonical" href="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="en" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="alternate" hreflang="ja" href="https://hakaru.net/M2DX-support/manual/ja/">
+    <link rel="alternate" hreflang="de" href="https://hakaru.net/M2DX-support/manual/de/">
+    <link rel="alternate" hreflang="es" href="https://hakaru.net/M2DX-support/manual/es/">
+    <link rel="alternate" hreflang="fr" href="https://hakaru.net/M2DX-support/manual/fr/">
+    <link rel="alternate" hreflang="it" href="https://hakaru.net/M2DX-support/manual/it/">
+    <link rel="alternate" hreflang="ko" href="https://hakaru.net/M2DX-support/manual/ko/">
+    <link rel="alternate" hreflang="nl" href="https://hakaru.net/M2DX-support/manual/nl/">
+    <link rel="alternate" hreflang="pt-BR" href="https://hakaru.net/M2DX-support/manual/pt-BR/">
+    <link rel="alternate" hreflang="sv" href="https://hakaru.net/M2DX-support/manual/sv/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://hakaru.net/M2DX-support/manual/zh-Hant/">
+    <link rel="alternate" hreflang="x-default" href="https://hakaru.net/M2DX-support/manual/en/">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/scripts/sidebar-styles.css">
+    <link rel="stylesheet" href="/M2DX-support/manual/manual.css">
+</head>
+<body>
+<a class="manual-skip" href="#contents">目錄</a>
+<button class="sidebar-toggle" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><a href="/">hakaru</a></div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/analog-rhythm-king-icon.png" alt="AnalogRhythmKing" width="24" height="24">
+      AnalogRhythmKing
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/AnalogRhythmKing-support/index-zh-Hant">支援</a>
+      <a href="/AnalogRhythmKing-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/m2mx12-icon.png" alt="M2MX12" width="24" height="24">
+      M2MX12
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2MX12-support/index-zh-Hant">支援</a>
+      <a href="/M2MX12-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/eraverb-icon.png" alt="EraVerb" width="24" height="24">
+      EraVerb
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/EraVerb-support/index-zh-Hant">支援</a>
+      <a href="/EraVerb-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/p73-icon.png" alt="P73" width="24" height="24">
+      P73
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/P73-support/index-zh-Hant">支援</a>
+      <a href="/P73-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/twinfet-icon.png" alt="TwinFET" width="24" height="24">
+      TwinFET
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TwinFET-support/index-zh-Hant">支援</a>
+      <a href="/TwinFET-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/1Take-support/assets/app-icon.png" alt="1Take" width="24" height="24">
+      1Take
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/1Take-support/">Support</a>
+      <a href="/1Take-support/manual/en/">Manual</a>
+      <a href="/1Take-support/blog/en/">Blog</a>
+      <a href="/1Take-support/changelog">Changelog</a>
+      <a href="/1Take-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/gitinflow-icon.png" alt="GitInflow" width="24" height="24">
+      GitInflow
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/GitInflow-support/">Support</a>
+      <a href="/GitInflow-support/manual/en/">Manual</a>
+      <a href="/GitInflow-support/blog/en/">Blog</a>
+      <a href="/GitInflow-support/changelog">Changelog</a>
+      <a href="/GitInflow-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Collector" width="24" height="24">
+      SonicDNA Collector
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNACollector-support/">Support</a>
+      <a href="/SonicDNACollector-support/manual/en/">Manual</a>
+      <a href="/SonicDNACollector-support/blog/en/">Blog</a>
+      <a href="/SonicDNACollector-support/changelog/">Changelog</a>
+      <a href="/SonicDNACollector-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/sonicdna-icon.png" alt="SonicDNA Engine" width="24" height="24">
+      SonicDNA Engine
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/SonicDNAEngine-support/">Support</a>
+      <a href="/SonicDNAEngine-support/blog/en/">Blog</a>
+      <a href="/SonicDNAEngine-support/changelog">Changelog</a>
+      <a href="/SonicDNAEngine-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/simplemidi-icon.png" alt="simpleMIDI Controller" width="24" height="24">
+      simpleMIDI Controller
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/simpleMIDIController-support/">Support</a>
+      <a href="/simpleMIDIController-support/manual/en/">Manual</a>
+      <a href="/simpleMIDIController-support/blog/en/">Blog</a>
+      <a href="/simpleMIDIController-support/privacy/">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tinemodeler-icon.png" alt="TineModeler" width="24" height="24">
+      TineModeler
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/TineModeler-support/">Support</a>
+      <a href="/TineModeler-support/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/midi2kit-icon.svg" alt="M2DX-Core" width="24" height="24">
+      M2DX-Core
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/M2DX-Core-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-Core-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header active expanded">
+      <img src="/assets/m2dx-icon.png" alt="M2DX" width="24" height="24">
+      M2DX
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links show">
+      <a href="/M2DX-support/index-zh-Hant">支援</a>
+      <a href="/M2DX-support/manual/zh-Hant/" class="active">手冊</a>
+      <a href="/M2DX-support/changelog-zh-Hant">更新紀錄</a>
+      <a href="/M2DX-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/PeerClockMetronome-support/assets/app-icon.svg" alt="PeerClock Metronome" width="24" height="24">
+      PeerClock Metronome
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/PeerClockMetronome-support/index-zh-Hant">支援</a>
+      <a href="/PeerClockMetronome-support/blog/zh-Hant/">部落格</a>
+      <a href="/PeerClockMetronome-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/myeq-icon.png" alt="MyEQ" width="24" height="24">
+      MyEQ
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MyEQ-support/">支援（英文）</a>
+      <a href="/MyEQ-support/manual/zh-Hant/">手冊</a>
+      <a href="/MyEQ-support/privacy">隱私權（英文）</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/tonrad-icon.png" alt="Tonrad" width="24" height="24">
+      Tonrad
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/Tonrad-support/">支援（英文）</a>
+      <a href="/Tonrad-support/manual/zh-Hant/">手冊</a>
+      <a href="/Tonrad-support/privacy">隱私權（英文）</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/chatarchive-icon.png" alt="ChatArchive" width="24" height="24">
+      ChatArchive
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/ChatArchive-support/zh-Hant/">Support</a>
+      <a href="/ChatArchive-support/zh-Hant/blog/">Blog</a>
+      <a href="/ChatArchive-support/zh-Hant/privacy">Privacy</a>
+      <a href="/ChatArchive-support/zh-Hant/terms">Terms</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/MacSlowCooker-support/assets/app-icon.png" alt="MacSlowCooker" width="24" height="24">
+      MacSlowCooker
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/MacSlowCooker-support/index-zh-Hant">支援</a>
+      <a href="https://github.com/hakaru/MacSlowCooker">GitHub</a>
+    </div>
+  </div>
+  <div class="sidebar-app">
+    <button class="sidebar-app-header">
+      <img src="/assets/bopbot-icon.png" alt="BopBot" width="24" height="24">
+      BopBot
+      <span class="arrow">&#9654;</span>
+    </button>
+    <div class="sidebar-app-links">
+      <a href="/BopBot-support/index-zh-Hant">支援</a>
+      <a href="/BopBot-support/manual/zh-Hant/">使用手冊</a>
+      <a href="/BopBot-support/privacy-zh-Hant">隱私</a>
+    </div>
+  </div>
+  <div class="sidebar-lang">
+    <a href="/M2DX-support/manual/en/index.html" class="sidebar-lang-btn" data-lang="en">EN</a>
+    <a href="/M2DX-support/manual/ja/index.html" class="sidebar-lang-btn" data-lang="ja">JA</a>
+    <a href="/M2DX-support/manual/de/index.html" class="sidebar-lang-btn" data-lang="de">DE</a>
+    <a href="/M2DX-support/manual/es/index.html" class="sidebar-lang-btn" data-lang="es">ES</a>
+    <a href="/M2DX-support/manual/fr/index.html" class="sidebar-lang-btn" data-lang="fr">FR</a>
+    <a href="/M2DX-support/manual/it/index.html" class="sidebar-lang-btn" data-lang="it">IT</a>
+    <a href="/M2DX-support/manual/ko/index.html" class="sidebar-lang-btn" data-lang="ko">KO</a>
+    <a href="/M2DX-support/manual/nl/index.html" class="sidebar-lang-btn" data-lang="nl">NL</a>
+    <a href="/M2DX-support/manual/pt-BR/index.html" class="sidebar-lang-btn" data-lang="pt-BR">PT-BR</a>
+    <a href="/M2DX-support/manual/sv/index.html" class="sidebar-lang-btn" data-lang="sv">SV</a>
+    <span class="sidebar-lang-btn active" data-lang="zh-Hant">繁體</span>
+  </div>
+</nav>
+<div class="content-pane">
+<main class="manual" id="top">
+<header class="manual-header">
+    <div class="manual-brand"><img src="/assets/m2dx-icon.png" width="76" height="76" alt=""><div><h1>M2DX 使用手冊</h1><p class="manual-subtitle">演奏與編輯 FM 音色 · M2DX-Core · MIDI 2.0 · Dexed 比較</p></div></div>
+    <p class="manual-updated">更新於 2026 年 11 月 15 日 · M2DX 1.7.14 (40) · M2DX-Core 1.25.0 · Dexed 1.1.0</p>
+    <nav class="manual-languages" aria-label="手冊語言"><a class="sidebar-lang-btn" data-lang="en" lang="en" hreflang="en" href="/M2DX-support/manual/en/">English</a><a class="sidebar-lang-btn" data-lang="ja" lang="ja" hreflang="ja" href="/M2DX-support/manual/ja/">日本語</a><a class="sidebar-lang-btn" data-lang="de" lang="de" hreflang="de" href="/M2DX-support/manual/de/">Deutsch</a><a class="sidebar-lang-btn" data-lang="es" lang="es" hreflang="es" href="/M2DX-support/manual/es/">Español</a><a class="sidebar-lang-btn" data-lang="fr" lang="fr" hreflang="fr" href="/M2DX-support/manual/fr/">Français</a><a class="sidebar-lang-btn" data-lang="it" lang="it" hreflang="it" href="/M2DX-support/manual/it/">Italiano</a><a class="sidebar-lang-btn" data-lang="ko" lang="ko" hreflang="ko" href="/M2DX-support/manual/ko/">한국어</a><a class="sidebar-lang-btn" data-lang="nl" lang="nl" hreflang="nl" href="/M2DX-support/manual/nl/">Nederlands</a><a class="sidebar-lang-btn" data-lang="pt-BR" lang="pt-BR" hreflang="pt-BR" href="/M2DX-support/manual/pt-BR/">Português (Brasil)</a><a class="sidebar-lang-btn" data-lang="sv" lang="sv" hreflang="sv" href="/M2DX-support/manual/sv/">Svenska</a><span class="sidebar-lang-btn active" data-lang="zh-Hant" lang="zh-Hant" aria-current="page">繁體中文</span></nav>
+</header>
+<nav class="manual-toc" id="contents" aria-labelledby="contents-title"><h2 id="contents-title">目錄</h2><ol><li><a href="#overview">版本、系統需求與適用範圍</a></li>
+<li><a href="#quickstart">演奏第一個音色</a></li>
+<li><a href="#screens">認識操作介面</a></li>
+<li><a href="#presets">音色庫、自訂音色與儲存</a></li>
+<li><a href="#sysex">匯入 DX7 SysEx 音色</a></li>
+<li><a href="#fm-basics">六運算子 FM 如何產生聲音</a></li>
+<li><a href="#operators">運算子的頻率、電平與鍵盤縮放</a></li>
+<li><a href="#envelopes">運算子包絡、音高包絡與 LFO</a></li>
+<li><a href="#performance">力度、控制器、單音與滑音</a></li>
+<li><a href="#effects">使用效果器塑造音色</a></li>
+<li><a href="#layers-pro">TX816 疊層、Voice Stack 與 Pro</a></li>
+<li><a href="#external-au">在 App 中使用外部 AU 效果器</a></li>
+<li><a href="#auv3">在 AUv3 宿主中使用 M2DX</a></li>
+<li><a href="#core">M2DX-Core：從音符到音訊</a></li>
+<li><a href="#core-engines">Modern、Mark I、Depth 與 Vintage DAC</a></li>
+<li><a href="#midi2">認識 MIDI 2.0：訊息與解析度</a></li>
+<li><a href="#midi-support">已發布版本的 MIDI 路徑實際支援哪些功能</a></li>
+<li><a href="#midi-ci">MIDI-CI、Profile 與 Property Exchange</a></li>
+<li><a href="#midi-learn">連接控制器並使用 MIDI Learn</a></li>
+<li><a href="#program-change">使用 Bank Select 與 Program Change 選取音色</a></li>
+<li><a href="#dexed-comparison">M2DX 與 Dexed：優勢與限制</a></li>
+<li><a href="#sound-matching">搬移音色並公平比較</a></li>
+<li><a href="#troubleshooting">疑難排解與目前限制</a></li>
+<li><a href="#sources">資料來源、版本與解讀方式</a></li></ol></nav>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">版本、系統需求與適用範圍 </h2>
+<p>M2DX 是一款具有六個運算子、32 種演算法的 FM 合成器。您可以使用螢幕鍵盤演奏、連接 MIDI 鍵盤，或在相容的宿主軟體中載入它的 AUv3 樂器。M2DX-Core 是產生 FM 聲音的 Swift 函式庫；App 則提供操作介面、預設音色、MIDI 連線與效果器。</p><ul><li>本手冊適用於已發布的 <strong>M2DX 1.7.14（組建 40）</strong>，使用 <strong>M2DX-Core 1.25.0</strong> 與 <strong>MIDI2Kit 1.0.19</strong>。後續開發中的變更不在本指南範圍內。</li><li>目前的 <a href="https://apps.apple.com/app/m2dx/id6763840208">App Store 頁面</a>標示系統需求為 <strong>iPhone、iOS 18 或以上版本</strong>。頁面也列出與搭載 Apple Silicon、執行 macOS 15 或以上版本的 Mac 相容，同時註明此 iPhone App 尚未在 macOS 上驗證。這項相容性資訊不代表提供原生 Mac 版本或針對 iPad 最佳化的版本。</li><li>本手冊提供 11 種語言。已發布 App 列出的介面語言為<strong>英語</strong>。因此，LIVE 與 SAVE 等控制項名稱在此仍保留英文。</li><li>App 與 AUv3 樂器可免費下載。<strong>M2DX Pro</strong> 為選購的一次性購買項目；請在 App 內確認目前價格。獨立 App 與 AUv3 可使用的 Pro 功能有所不同。</li></ul><p>以下說明會區分 MIDI 標準所具備的能力、函式庫內部的功能，以及實際可透過已發布 App 使用的功能。這些是不同層次的支援。</p>
+</section>
+<section id="quickstart" aria-labelledby="quickstart-title">
+<h2 id="quickstart-title">演奏第一個音色 </h2>
+<ol><li>開啟 M2DX 並選取 <strong>LIVE</strong>。請將裝置或音訊介面的音量維持在適中程度。</li><li>若螢幕鍵盤未顯示，請使用鍵盤顯示開關將它展開，再輕點琴鍵。不一定需要外接 MIDI 硬體。</li><li>在 LIVE 輕點一個預設音色。輕點<strong>目前的音色庫名稱</strong>可選取其他音色庫，再輕點該音色庫中的音色。</li><li>調整鍵盤八度以演奏不同音域。螢幕鍵盤的起始力度值為 100；可在 Settings → Velocity 調整力度曲線，或使用外接鍵盤改變演奏力度。</li><li>開啟 <strong>FX</strong> 調整音色效果，或開啟 <strong>EDIT</strong> 修改合成參數。選取另一個音色前，請先儲存已編輯的音色。</li></ol><p>使用 USB 鍵盤時，請連接相容的介面或轉接器，並確認 MIDI 接收狀態。使用 Bluetooth MIDI 鍵盤時，請開啟 <strong>Settings → MIDI → Bluetooth MIDI</strong> 並在該處連線。Bluetooth MIDI 傳送的是演奏資料，與藍牙音訊不同；藍牙音訊可能造成明顯的監聽延遲。</p><p>如果沒有聲音，請先用螢幕鍵盤測試原廠音色，以區分音訊輸出問題與控制器連線問題。請參閱<a href="#troubleshooting">疑難排解</a>。</p>
+</section>
+<section id="screens" aria-labelledby="screens-title">
+<h2 id="screens-title">認識操作介面 </h2>
+<div aria-labelledby="screens-table" class="table-wrap" role="region" tabindex="0"><table><caption id="screens-table">主要畫面</caption><thead><tr><th scope="col">畫面或控制項</th><th scope="col">用途</th></tr></thead><tbody><tr><th scope="row">LIVE</th><td>選取音色庫與音色，並演奏螢幕鍵盤。從 LAYER 返回此處會恢復單一音色模式。</td></tr><tr><th scope="row">EDIT</th><td>編輯六個運算子、演算法、包絡與音色共用參數；使用 SAVE 建立自訂音色。</td></tr><tr><th scope="row">LAYER</th><td>TX816 LAYER 頁面可將多個音色組成疊層。這裡沒有內建鍵盤；請使用外接 MIDI 或 AU 宿主的 MIDI 輸入試聽疊層。</td></tr><tr><th scope="row">FX</th><td>調整內部效果器。開啟 FX 會保留先前的單一音色或疊層模式。</td></tr><tr><th scope="row">AU</th><td>搭配 Pro 時，獨立 App 的 AU FX 頁面可載入外部音訊效果器。這與將 M2DX 本身載入為 AUv3 樂器不同。</td></tr><tr><th scope="row">頁首預設音色名稱 / ALG</th><td>預設音色名稱選單列出原廠音色。匯入的音色庫與 CUSTOM 請從 LIVE → 目前的音色庫名稱進入。ALG 會開啟演算法選單。</td></tr><tr><th scope="row">Settings</th><td>設定連線、聲音引擎選項、購買項目及其他 App 設定。開發資料中出現的除錯與 MIDI-CI 診斷畫面，並非公開版本的控制項。</td></tr></tbody></table></div><p>EDIT 沒有螢幕鍵盤。可使用外接／宿主 MIDI 試聽編輯結果，或在不選取其他音色的情況下返回 LIVE；在 LIVE 與 EDIT 之間切換會保留目前的編輯內容。</p>
+</section>
+<section id="presets" aria-labelledby="presets-title">
+<h2 id="presets-title">音色庫、自訂音色與儲存 </h2>
+<p>音色庫用來整理音色；選取音色會取代目前的單一 FM 音色。原廠音色、匯入的 SysEx 音色庫，以及您儲存的 <strong>CUSTOM</strong> 音色是不同的集合。可透過 LIVE 的音色庫選單存取全部集合。</p><h3>儲存編輯過的音色</h3><ol><li>選取一個起始音色，然後開啟 EDIT。</li><li>完成修改後輕點 <strong>SAVE</strong>。</li><li>輸入名稱並完成儲存。每次儲存都會建立一個<strong>新的自訂音色</strong>，即使已存在同名音色也是如此。SAVE 並不是覆寫指令。</li><li>要重新載入它，請返回 LIVE，輕點目前的音色庫名稱，在音色庫清單末端選取 <strong>CUSTOM</strong>，再輕點已儲存的音色。</li></ol><p>儲存會清除未儲存編輯的指示，但不會自動將目前的音色庫或預設音色選取項目切換到 CUSTOM。CUSTOM 至少包含一個已儲存音色後才會顯示。CUSTOM 會儲存音色、控制器路由／EG 模式、Mono/Poly、滑音的開關與時間，以及內部 FX。它不會儲存整個宿主專案、外部 AU 效果器鏈、引擎／除數／DAC 選項、MIDI Learn 對應或 TX816 疊層。使用 REVERT 可回到編輯基準狀態；使用 INIT 並確認後可初始化音色，但 INIT 不會重設所有 App 設定。</p><h3>刪除自訂音色</h3><p>在 CUSTOM 音色庫中長按音色，選取 <strong>Delete</strong> 並確認。這會移除已儲存的項目；目前載入的聲音仍可能繼續發聲。請另外保留日後需要重新匯入的原始 SysEx 檔案。</p>
+</section>
+<section id="sysex" aria-labelledby="sysex-title">
+<h2 id="sysex-title">匯入 DX7 SysEx 音色 </h2>
+<p><code>.syx</code> 檔案是 MIDI System Exclusive（系統專屬）資料檔。DX7 音色資料記錄運算子、包絡及音色共用設定，不包含錄製的音訊。已發布版本的匯入功能接受 <strong>4104 位元組的 DX7 32 音色整批音色庫</strong>。它會檢查標頭、7 位元資料與檢查碼，不接受單一音色傾印。</p><ol><li>將原始 <code>.syx</code> 檔案儲存到「檔案」選擇器可存取的位置。</li><li>開啟 <strong>Settings → Custom SysEx Banks → Import .syx Bank…</strong>，選取檔案，再輕點 Done。</li><li>返回 LIVE → 目前的音色庫名稱，選取匯入的音色庫，再選取音色。</li><li>需要時可編輯該音色，並使用 SAVE 建立獨立的 CUSTOM 副本。</li></ol><p>與 M2DX 交換檔案時，請使用 32 音色庫。單一音色傾印必須先透過 Dexed 等音色管理工具放入相容的音色庫。檔名以 .syx 結尾不代表相容：其他合成器的 SysEx 格式及 DX 系列的擴充資料可能不同。格式錯誤的檔案或不支援的訊息，無法僅靠重新命名變得相容。請先解壓縮封存檔，再選取其中的音色庫檔案。匯入相同檔名會新增帶編號的副本，而非覆寫現有音色庫。在 Settings 滑動匯入音色庫的項目，可刪除 App 內的副本；「檔案」中的原始文件不會被移除。公開介面沒有音色或音色庫的 Export 指令。</p><p>DX7 SysEx 不包含 M2DX 效果器、Pro 疊層、引擎設定或 Dexed 外掛狀態。若要在受控條件下比較聲音，請使用相同的 DX7 音色資料，並關閉額外處理。請參閱<a href="#sound-matching">與 Dexed 比對音色</a>。</p>
+</section>
+<section id="fm-basics" aria-labelledby="fm-basics-title">
+<h2 id="fm-basics-title">六運算子 FM 如何產生聲音 </h2>
+<p><strong>運算子</strong>是具有自身電平與包絡的振盪器。<strong>載波</strong>會到達音訊輸出；<strong>調變器</strong>則改變另一個運算子的相位，產生額外的頻率成分。DX 類型的 FM 是以相位調變實作，並非單純將訊號相乘。</p><div aria-label="調變器改變載波；載波到達輸出" class="signal-flow" role="img"><span>OP 2<br/>調變器</span><span aria-hidden="true">→</span><span>OP 1<br/>載波</span><span aria-hidden="true">→</span><span>音訊輸出</span></div><p><strong>演算法</strong>決定六個運算子的連接方式。有些是長串的調變鏈，有些則有多個並聯載波。即使各運算子的數值完全相同，切換演算法仍可能大幅改變聲音。</p><ul><li>提高<strong>載波的輸出電平</strong>，可改變該分支可聽見的音量。</li><li>提高<strong>調變器的輸出電平</strong>，可增加調變深度，通常會讓聲音更明亮或頻譜更複雜。</li><li>使用 1:1 或 2:1 等整數頻率比，可作為具有諧波關係的起點。非整數關係則常產生鐘聲或金屬質感。</li><li><strong>回授</strong>會將運算子訊號送回其回授路徑。增加回授可增添諧波或更粗糙的質感。</li></ul><p>適合初學的練習是：選擇具有簡單雙運算子分支的演算法，降低其他載波的電平，將這兩個運算子都設為 1:1，再慢慢提高調變器電平。接著只縮短調變器的包絡：聲音會在起音時明亮，隨後逐漸柔和。</p>
+</section>
+<section id="operators" aria-labelledby="operators-title">
+<h2 id="operators-title">運算子的頻率、電平與鍵盤縮放 </h2>
+<p>在 EDIT 選取運算子，重複演奏同一個音符，每次只調整一項參數。運算子編號代表它在演算法中的位置；不能僅憑編號判定某個運算子一定是載波。</p><div aria-labelledby="operators-table" class="table-wrap" role="region" tabindex="0"><table><caption id="operators-table">重要運算子參數</caption><thead><tr><th scope="col">參數</th><th scope="col">聆聽重點</th></tr></thead><tbody><tr><th scope="row">Ratio / Fixed、Coarse / Fine</th><td>Ratio 模式會跟隨演奏音高。Fixed 模式設定運算子的絕對頻率，適合製作調變不以一般方式跟隨鍵盤的特殊質感。Coarse 進行較大幅度的調整，Fine 則用於微調。</td></tr><tr><th scope="row">Output Level</th><td>改變載波的電平或調變器的深度。DX 的參數刻度不是單純線性的音量百分比。</td></tr><tr><th scope="row">Detune</th><td>略微偏移運算子的音高。加入合唱效果前，可先試著讓並聯載波之間出現細微音高差異，製造動態感。</td></tr><tr><th scope="row">力度靈敏度</th><td>決定音符力度對此運算子電平的影響程度。調變器的靈敏度主要影響明亮度；載波的靈敏度也會影響音量。</td></tr><tr><th scope="row">鍵盤電平縮放</th><td>轉折點、左／右深度與曲線會改變鍵盤各音域的電平。可用來收斂明亮的高音，或加強低音域。</td></tr><tr><th scope="row">速率縮放</th><td>讓包絡速度隨琴鍵位置變化。這與電平縮放是不同的設定。</td></tr><tr><th scope="row">振幅調變靈敏度</th><td>控制運算子對共用振幅調變訊號的反應程度。LFO 與控制器路由的調變量也必須大於零。</td></tr></tbody></table></div><div class="note"><p><strong>1.7.14 的 WAVE 限制：</strong>編輯器提供波形選項，但已出貨 Core 的波形設定函式不會改變振盪器。已發布引擎使用正弦波運算子。請勿依賴 WAVE，將此版本視為具備八種波形或 DX7II 引擎。</p></div><p>目前編輯器提供 Level 0–99、VEL 0–7、AMS 0–3、KRS 0–7 與 Feedback 0–7。Feedback 只會對所選演算法中的回授運算子啟用。主要 Ratio 滑桿範圍為 0.50–16.00，但 CRS（0–31）與 FIN（0–99）可表示超出該滑桿範圍的頻率比；CRS 0 代表 ×0.5。Detune 範圍為 −50 到 +50 音分。OP1–OP6 選擇器用來選取要編輯的運算子，不是獨奏／靜音開關。</p>
+</section>
+<section id="envelopes" aria-labelledby="envelopes-title">
+<h2 id="envelopes-title">運算子包絡、音高包絡與 LFO </h2>
+<p>每個運算子有四個包絡速率 <strong>R1–R4</strong> 與四個電平 <strong>L1–L4</strong>。音符開啟時，包絡依序朝前三個目標電平移動；持續階段使用 L3。音符關閉時，開始最後一段朝 L4 的轉換。速率控制轉換速度，不是以毫秒表示的持續時間；電平之間的距離也會影響所需時間。</p><p>要製作短促的電鋼琴起音，可讓調變器以較強的電平開始，快速下降至較低的 L3，同時讓載波緩慢衰減。要製作鋪底音色，可放慢載波最初的上升速度，並避免調變器起音過於尖銳。若放開琴鍵後聲音仍持續，請分別檢查 R4/L4、延音與殘響。</p><p><strong>音高包絡</strong>會隨時間改變音色的音高。它有自己的速率與電平，並不是另一組振幅包絡。建議先從小幅音高變化開始，因為強烈設定可能主導整個音色。</p><p>共用的 <strong>LFO</strong> 提供週期性的音高或振幅變化。波形、速度、延遲與深度共同決定變化形態。音高調變產生顫音；振幅調變產生震音，而運算子的靈敏度決定其反應強弱。<strong>Key sync</strong> 控制振盪器或 LFO 是否隨音符重新啟動，可能影響重複音符的起音與比較結果。</p><p>編輯時請固定 FM Engine、Mark I Depth 與控制器 EG MODE。若引擎的調變縮放或控制器 EG 偏置行為改變，相同的 DX7 儲存數值也可能產生不同反應；請參閱<a href="#core-engines">引擎設定</a>。</p><p>拖曳包絡圖上的四個控制點，可調整對應的電平與速率；R 值越高，速度越快。音高包絡的中心電平為 50。圖下方的數值僅用於顯示，不會開啟文字輸入欄位。LFO Speed、Delay、PMD 與 AMD 的範圍為 0–99，PMS 為 0–7，波形選項為 TRI、SAW▼、SAW▲、SQR、SIN 或 S&amp;H。</p>
+</section>
+<section id="performance" aria-labelledby="performance-title">
+<h2 id="performance-title">力度、控制器、單音與滑音 </h2>
+<p>LIVE 鍵盤傳送的固定起始力度值為 <strong>100</strong>；目前介面沒有 VEL 滑桿。<strong>Settings → Velocity → Velocity Curve</strong> 提供 Linear、Soft、Hard 與 DX7 Keyboard 1-100。Soft 會提高中間值，Hard 會降低中間值，DX7 選項則限制超過 100 的數值。也請使用外接鍵盤測試對力度敏感的音色。</p><p>LIVE 的 <strong>TRANSPOSE</strong> 可將整段演奏移調 ±24 個半音；輕點其數值可歸零。它與 EDIT 的音色移調不同，兩者的偏移量會相加。EDIT 也提供 <strong>PB Range</strong>（1–12 個半音）與 <strong>Tuning</strong>（±100 音分）。載入音色時，PB Range 會恢復為 2；主調音則會保留。</p><h3>設定表情控制器路由</h3><p>EDIT → CONTROLLERS 提供 WHEEL（CC1）、FOOT（CC4）、BREATH（CC2）與 A.TOUCH（通道壓力）。每項都有 0–99 的 Pitch、Amp 與 EG 調變量。Pitch 控制顫音，Amp 控制振幅調變，EG 則施加包絡偏置。這種路由與使用 MIDI Learn 指派實體旋鈕不同。</p><ul><li><strong>EG MODE DX7：</strong>作用於已啟用 AMS 的運算子。控制器處於靜止狀態時可能衰減這些運算子，提高控制器值會使它們逐漸回到正常電平。EG 調變量設為零可停用此偏置。若吹管控制音色在吹氣前沒有聲音，請檢查此模式。</li><li><strong>EG MODE BOOST：</strong>隨控制器輸入提高運算子電平，調變器也包含在內，因此明亮度與音量都可能改變。此模式保留了早期 M2DX 的行為。</li></ul><h3>每次演奏一個音符</h3><p>在 <strong>Settings → Performance</strong> 選取 Poly 或 Mono。EDIT 中也可設定滑音及其時間。在 Mono 模式，<strong>Fingered</strong> 會在重疊的音符之間滑音；<strong>Full-time</strong> 也會在分開的音符之間滑音。<strong>Glissando</strong> 則以半音為單位移動。Mono 只使用第一個已啟用聲部的一個發聲單元，不會將八聲部疊層或 Voice Stack 當作複音疊層演奏。</p><p>儲存目前的 CUSTOM 音色，可保留其 Mono/Poly、滑音開關／時間及控制器路由／EG 模式。全域力度曲線、調音、PB 範圍，以及獨立的 Mono Portamento/Glissando 設定不會儲存在該音色中。使用 AUv3 工作階段時，也請儲存宿主專案。</p><p>載入原廠或匯入音色時，獨立 App 會保留目前的控制器路由，AUv3 則會將它重設為 DX7 預設值。目前格式的 CUSTOM 音色會還原已儲存的路由。若需要可重現的吹管或其他控制器設定，請儲存 CUSTOM 副本。</p>
+</section>
+<section id="effects" aria-labelledby="effects-title">
+<h2 id="effects-title">使用效果器塑造音色 </h2>
+<p>一般內部訊號路徑如下：</p><div aria-label="標準內部效果器的訊號順序" class="signal-flow" role="img"><span>FM</span><span>→ EQ</span><span>→ Drive</span><span>→ Chorus</span><span>→ Reverb</span><span>→ Stereo</span><span>→ Maximizer</span></div><div aria-labelledby="effects-table" class="table-wrap" role="region" tabindex="0"><table><caption id="effects-table">FX 頁面控制項</caption><thead><tr><th scope="col">區段</th><th scope="col">控制項與實際用途</th></tr></thead><tbody><tr><th scope="row">MIX</th><td>VOLUME、EXPRESSION 與 MOD WHEEL。即使音色設定正常，過低的表情值也可能使其無聲。MOD WHEEL 依照控制器路由運作。</td></tr><tr><th scope="row">EQ / DRIVE</th><td>LOW/HIGH 改變音色平衡；OVERDRIVE 加入飽和效果。比較時請使用相近的輸出電平。</td></tr><tr><th scope="row">CHORUS</th><td>SPEED 與 DEPTH 增添動態與寬度。若音高變得過於模糊，請降低深度。</td></tr><tr><th scope="row">REVERB</th><td>TIME 與 LEVEL 控制空間感及其混合量。原始音符結束後，較長的殘響尾音仍可能持續。</td></tr><tr><th scope="row">STEREO</th><td>WIDTH 改變立體聲展寬程度。若寬度是音色的重要部分，請檢查單聲道播放結果。</td></tr><tr><th scope="row">MAXIMIZER</th><td>INPUT 與 CEILING 設定送入最後動態處理級的驅動量及其輸出上限。它不能取代前面各級的增益平衡。</td></tr></tbody></table></div><p>FX 區段的畫面排列不代表處理順序。CUSTOM 會儲存內部 FX 設定，包含可用時的 Pro FX 設定；外部 AU 效果器鏈則另外儲存。</p><p>在 <strong>Pro 獨立 App</strong> 中，路徑為 P73 → EQ → Drive → Chorus → 1176 → DigitalReverb → Stereo → Maximizer。<strong>PREAMP</strong> 提供 P73 增益、輸出、高通與音色控制。<strong>COMP</strong> 提供 1176 輸入／輸出、起音／釋放、壓縮比與混合量，以及增益衰減表。<strong>REVERB PRO</strong> 可選擇 HALL'78、HALL'86、PLATE、NONLIN、LO-FI'86 或 HALL'99，並加入預延遲、空間大小、阻尼、低頻截止、調變與寬度。一般殘響的 TIME/LEVEL 仍設定其時間與混合量。</p><p>每次只調整少量參數。增加失真驅動量、壓縮器輸入或最大化器輸入，可能同時提高感知音量並改變音色。即使購買 Pro，AUv3 仍使用標準 FX 鏈。</p>
+</section>
+<section id="layers-pro" aria-labelledby="layers-pro-title">
+<h2 id="layers-pro-title">TX816 疊層、Voice Stack 與 Pro </h2>
+<p><strong>TX816 LAYER</strong> 可結合不同音色及／或齊奏副本。它與獨立 App Settings 中實驗性的 <strong>Voice Stack</strong> 倍增器不同。</p><ol><li>開啟 LAYER，選擇 <strong>PARTS × UNISON</strong> 分配：8×1、4×2、2×4 或 1×8。OFF 會回到單一音色操作。啟用疊層需要 Pro。</li><li>輕點 LAYER MIXER 中各聲部的音色名稱並選取音色。調整 LVL（−24 到 +6 dB）、PAN，也可啟用 RND，讓每個音符產生新的隨機聲像。</li><li>設定 DETUNE（0–12 音分），以及 Even 或 Random 分布。使用外部 MIDI 來源或 AU 宿主演奏；此頁沒有螢幕鍵盤。</li><li>開啟 FX，可在調整共用效果器時繼續演奏疊層。返回 LIVE 或 EDIT 則會切換為單一音色。</li><li>使用儲存圖示、<strong>SAVE STACK</strong> 並輸入名稱，可建立新的疊層。… 選單會開啟 MANAGE STACKS，其中包含 FACTORY DEMOS 與 MY STACKS。已儲存的使用者疊層可在此刪除。</li></ol><p>疊層會內嵌各組成音色的 DX7 資料、聲部分配、微調、各聲部電平／聲像，以及共用內部 FX。為某聲部選取 CUSTOM 音色時，使用的是它的 DX7 音色資料，並不會將每項自訂演奏與 FX 設定當成該聲部的獨立配置。效果器處理的是混合後的訊號；各疊層沒有獨立的 FX 鏈。已儲存的 MY STACKS 不保證會在獨立 App 與 AUv3 之間同步。</p><div aria-labelledby="pro-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pro-table">各環境的免費與 Pro 功能</caption><thead><tr><th scope="col">功能</th><th scope="col">獨立 App</th><th scope="col">AUv3 樂器</th></tr></thead><tbody><tr><th scope="row">基本 FM、編輯、標準 FX</th><td>免費</td><td>免費</td></tr><tr><th scope="row">Mark I Depth</th><td>免費，÷1–÷16</td><td>宿主參數，÷1–÷16</td></tr><tr><th scope="row">FM 引擎選擇</th><td>選擇 Modern/Mark I 需要 Pro</td><td>可透過宿主參數設定，不受獨立 App 的 Pro 購買限制</td></tr><tr><th scope="row">TX816 LAYER</th><td>Pro</td><td>Pro，使用 App 的購買授權</td></tr><tr><th scope="row">P73 / 1176 / DigitalReverb</th><td>Pro</td><td>不提供；僅有標準 FX</td></tr><tr><th scope="row">外部 AU 效果器</th><td>Pro，AU 中最多四個插槽</td><td>請改在宿主中插入效果器</td></tr><tr><th scope="row">Vintage DAC / Voice Stack</th><td>Pro 獨立 App 選項</td><td>不以這些獨立 App 選項的形式提供</td></tr></tbody></table></div><p><strong>Settings → Experimental → Voice Stack</strong> 提供 1×（Off）、2×、4×、8× 與 16×、最高 25 音分的微調，以及隨機力度。倍數越高，渲染負擔越大；若出現過載或斷音，請降低倍數。Mono 會略過此疊加行為。</p><p>請在主 App 的 <strong>Settings → M2DX Pro</strong> 購買或回復購買項目。使用購買時的 Apple 帳號執行 Restore Purchases，必要時重新開啟外掛。AU 介面會引導您回到主 App 進行購買／回復。</p>
+</section>
+<section id="external-au" aria-labelledby="external-au-title">
+<h2 id="external-au-title">在 App 中使用外部 AU 效果器 </h2>
+<p>在具有 Pro 的獨立 App 中，於四個插槽之一開啟 <strong>AU → ADD EFFECT</strong>。從 Audio Units 清單選取已安裝的音訊效果器。此效果器鏈位於 M2DX 內部效果器之後。</p><ul><li><strong>BYP</strong> 可旁路某個插槽；若效果器提供操作介面，控制項圖示可將其開啟；× 則移除效果器。</li><li><strong>NOT INSTALLED</strong> 表示找不到已儲存的外掛。<strong>LOAD FAILED</strong> 表示載入失敗；確認安裝狀態後，可使用其重試控制項。</li><li>App 會獨立於 CUSTOM 音色及已儲存 TX816 疊層還原此效果器鏈。切換音色不會因此取代外部效果器鏈。</li></ul><p>此頁載入的是效果器，而非額外的樂器外掛。是否顯示此頁可能取決於 App 的功能配置。當 M2DX 本身以 AUv3 載入時，請在宿主中加入其他效果器，而不是尋找此 AU 頁面。</p>
+</section>
+<section id="auv3" aria-labelledby="auv3-title">
+<h2 id="auv3-title">在 AUv3 宿主中使用 M2DX </h2>
+<ol><li>安裝主 App 並至少開啟一次。在相容宿主中，將 <strong>M2DX FM Synthesizer</strong> 加入為樂器。</li><li>將宿主的鍵盤、MIDI 軌或外部 MIDI 輸入路由至此樂器，並依宿主需求啟用監聽。</li><li>選取音色，再使用 LIVE、EDIT、LAYER 或 FX 編輯。外掛有四個分頁；底部齒輪會開啟 Performance，而非獨立 App 的一般 Settings。</li><li>在主 App 匯入 .syx 音色庫。重新開啟 AU 介面或將它切到前景，可更新共用音色庫。CUSTOM 與匯入音色庫在同一安裝環境內共用儲存空間。</li><li>儲存宿主專案，以保留實例設定。若需要可重複使用的 CUSTOM 音色，請另外使用 EDIT → SAVE。</li></ol><p>音訊取樣率、緩衝區大小、MIDI 路由與自動化均由宿主管理。主 App 的 MIDI Input、Channel 與 Bluetooth 設定不會設定 AU 實例。請使用宿主的參數自動化或 MIDI 對應；此版本中，App 內可見的 MIDI Learn 控制項並未連接至 AU 的 MIDI 接收路徑。</p><p>宿主可以提供 <strong>FM Engine</strong> 與 <strong>Mark I Depth</strong> 參數。AU 引擎初始化為 <strong>÷5</strong>，但其參數宣告為 <strong>÷1</strong>，獨立 App 預設值也是 <strong>÷1</strong>。宿主可能重新套用其狀態；比較時請明確設為相同數值。標準 FX 與選購的 Pro TX816 疊層可在 AUv3 使用。Pro 前級／壓縮器／殘響、獨立 App 的外部 AU 載入、Vintage DAC 及 Voice Stack，並非 AU 中的同等功能。</p><p>1.7.14 版本會在較大的宿主視窗中縮放介面。宿主可能將 Program Change 用於自身的音色選取，因此請確認訊息確實到達 M2DX 實例。AU 的 MIDI 支援也取決於宿主提供的事件格式；請參閱下方的實作對照表。</p>
+</section>
+<section id="core" aria-labelledby="core-title">
+<h2 id="core-title">M2DX-Core：從音符到音訊 </h2>
+<p><strong>M2DX-Core</strong> 是 Swift 6 合成函式庫，與 App 及其外掛封裝分開。它實作運算子、32 種演算法、包絡、音高與縮放、發聲配置、音色資料結構，以及合成端的控制器處理。App 則提供連線、MIDI-CI/PE、介面、購買、儲存與效果器。</p><div aria-label="MIDI 與參數變更進入 M2DX-Core；它先渲染聲音，再送至 App 效果器及音訊輸出" class="signal-flow" role="img"><span>MIDI / 參數</span><span>→ 事件佇列 / 快照</span><span>→ M2DX-Core 發聲單元</span><span>→ 混音</span><span>→ App FX</span><span>→ 音訊輸出</span></div><h3>定點運算子與查找表</h3><p>主要運算子計算使用 <strong>Int32 Q24</strong> 類型的相位與訊號數值。一個相位週期對應 2<sup>24</sup> 個單位，較寬的 Int64 中間乘積可透過位移回到所需尺度。Q24 是內部數值表示法，不是音訊檔案格式，也不代表整個 App 只使用整數。</p><p>Modern 使用具有 1024 個區間的正弦表與線性插值；指數表則將對數電平轉為振幅。查表與插值可避免為每個運算子的每個取樣點計算完整正弦或指數運算。這些表格在初始化時準備，並非由編譯器產生。頻率轉換、控制器正規化、LFO、混音與 App 效果器也會使用浮點運算。</p><h3>包絡與穩定渲染</h3><p>運算子包絡使用內部 Q16 表示法，以區塊更新，再由合成核心對增益或衰減進行插值。引擎以最多 64 個取樣點的內部區塊運作。參數快照與事件佇列將變更送入渲染流程；預先配置的儲存空間與原子通訊設計，旨在避免音訊回呼中的等待與記憶體配置。</p><p>這個內部區塊大小不代表輸入的 MIDI 事件具有取樣點精度。在已發布的獨立 App 路徑中，來源時間戳記不會用來將音符事件排程到個別取樣偏移位置。AU 路徑會在渲染前處理事件清單，而非依每個事件時間切割緩衝區。實際聽到的時序也取決於宿主、作業系統、緩衝區與連線。</p><h3>複音與疊層</h3><p>在關閉超取樣、齊奏為 1、Voice Stack 為 1 的一般單一音色配置下，可用發聲數為 16。疊層／齊奏／堆疊的每個副本都會消耗處理用發聲單元；超取樣會改變可用數量。函式庫較大的內部緩衝區上限，不保證手機能可靠地演奏數千個獨立琴鍵音符。當裝置無法負荷時，請減少倍增數量與效果器。</p><p>來源：<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift">SynthEngine</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Voice.swift">DX7Voice</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/SinTable.swift">正弦表</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7Envelope.swift">包絡</a>。</p>
+</section>
+<section id="core-engines" aria-labelledby="core-engines-title">
+<h2 id="core-engines-title">Modern、Mark I、Depth 與 Vintage DAC </h2>
+<p><strong>Modern</strong> 使用與 MSFA 類型參考模型相關的整數正弦與增益核心。它不是獨立的「Clean Float32」引擎。<strong>Mark I</strong> 使用參考原始 OPS 行為公開說明的對數正弦／指數模型：將相位折疊至單一象限、合併對數衰減，再轉回振幅。它並非對原始晶片每個操作進行週期精確的模擬。</p><h3>Mark I Depth 實際改變什麼</h3><p><strong>Mark I Depth 是前向調變的除數，不是輸出音量、位元深度或包絡速度。</strong>÷1 會保留強烈調變；較大的除數會減弱送入下一個運算子相位的訊號，通常使聲音較不明亮。此控制項不會直接將載波輸出或回授訊號除以該值。</p><p>在獨立 App 中使用 <strong>Settings → Audio → Mark I Depth</strong>：範圍為 ÷1–÷16，以 0.1 為步進，可免費調整。目前預設為 Mark I、÷1.0，並關閉 DAC；先前儲存的偏好設定可能覆蓋預設值。Pro 另外提供 Modern/Mark I 選擇與 Vintage DAC 選項。切換引擎會停止目前發聲的音符，因此請在樂句之間變更。</p><p><strong>AU 初始值注意事項：</strong>宿主參數宣告的 Depth 預設值為 1，但 AU 引擎初始化時設為 5。宿主可能重新套用其參數狀態。尚未針對每個宿主測試首次開啟時的最終值；比對聲音時請明確設定。Engine/Depth 有控制設定函式，但渲染事件自動化處理這些控制項的方式與一般音色參數不同，因此請驗證宿主行為，不要假定每條自動化路徑都可運作。</p><h3>Vintage DAC 與超取樣</h3><p>選購的 Vintage 12-bit DAC 會對原始 Mark I 發聲輸出施加與振幅相關的壓擴處理及量化。它是獨立的音色塑造階段，不只是最終輸出的位元破壞效果，也不是 MIDI 解析度設定。獨立 App 的 Audio 也提供 Oversampling OFF/HQ/Low。請以聆聽比較並監控 CPU 負載；超取樣不一定能改善每個音色，而且會改變可用的發聲資源。</p><h3>參考測試能確認的範圍</h3><p>Core 包含將 Modern 整數計算與 Apache 授權的 MSFA/Dexed 參考實作進行取樣比較的測試。有些測試注入參考相位增量，以單獨檢驗核心；正式執行時的音高計算是另一條路徑。Mark I 測試則與獨立撰寫的 C 對照實作比較，其中包含與 App 預設 ÷1 不同的 ÷8 測試條件。這些測試不能證明所有最終 App 輸出、Dexed 設定或實體 DX7 錄音都逐位元相同。</p><p><strong>授權：</strong>M2DX-Core 採 Apache-2.0，MIDI2Kit 採 MIT，M2DX App 則有自己的專有授權。僅供測試的 C 參考實作並不是正式使用的 Swift 函式庫。請參閱 <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/LICENSE">Core LICENSE</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/NOTICE">NOTICE</a>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/DX7MarkI.swift">Mark I 核心</a>與<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Tests/M2DXCoreTests/VoiceComparisonTests.swift">比較測試條件</a>。</p>
+</section>
+<section id="midi2" aria-labelledby="midi2-title">
+<h2 id="midi2-title">認識 MIDI 2.0：訊息與解析度 </h2>
+<p>MIDI 傳送演奏指令，例如要演奏哪個音符、力度多大，以及踏板如何移動。接收端的合成器負責產生音訊。<strong>MIDI 2.0 不會改變音訊取樣率或音訊檔案位元深度。</strong></p><p><strong>UMP（Universal MIDI Packet）</strong> 是可承載 MIDI 1.0 與 MIDI 2.0 訊息的封包格式。連線中出現 UMP，本身並不能證明使用了高解析度 MIDI 2.0 Channel Voice 資料。CoreMIDI 可依接收端 API 與所選協定進行協定轉換。請參閱 <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple 的 CoreMIDI 說明</a>。</p><div aria-labelledby="resolution-table" class="table-wrap" role="region" tabindex="0"><table><caption id="resolution-table">協定數值位元寬度，不代表保證的合成精度</caption><thead><tr><th scope="col">訊息</th><th scope="col">一般 MIDI 1.0 訊息</th><th scope="col">MIDI 2.0 Channel Voice</th></tr></thead><tbody><tr><th scope="row">音符力度</th><td>7 位元：0–127</td><td>16 位元：0–65,535</td></tr><tr><th scope="row">Control Change</th><td>通常為 7 位元；成對控制器可提供 14 位元</td><td>32 位元：0–4,294,967,295</td></tr><tr><th scope="row">通道／複音壓力</th><td>7 位元</td><td>32 位元</td></tr><tr><th scope="row">Pitch Bend</th><td>14 位元：0–16,383</td><td>32 位元</td></tr></tbody></table></div><p>MIDI 1.0 的 Note On 若力度為零，作用等同 Note Off；MIDI 1.0 也有選用的高解析度擴充。表格比較的是一般訊息，而非所有擴充。請參閱 <a href="https://midi.org/summary-of-midi-1-0-messages">MIDI 1.0 訊息摘要</a>與 <a href="https://midi.org/the-state-of-midi-2-0-high-resolution-performance-and-the-rise-of-profiles-update-feb-2026">MIDI Association 解析度概覽</a>。</p><h3>較高解析度能做與不能做的事</h3><p>當傳送端、連線與聲音引擎都保留並使用較精細的控制值時，可以減少階梯感。將鍵盤的 7 位元值轉入 16 位元欄位，不會產生鍵盤從未量測到的額外細節。範圍為 0–99 的 DX7 參數，即使接收到高解析度控制器訊息，仍只有該離散範圍。請參閱 <a href="https://midi.org/midi-2-0-bit-scaling-and-resolution">MIDI 位元縮放與解析度</a>。</p><h3>群組、通道與逐音表情</h3><p>適用的 UMP 訊息最多有 16 個群組，每組 16 個通道。這些位址不保證 App 具備 256 個樂器聲部或 256 個複音。MIDI 2.0 也定義逐音音高與控制器，可用來只彎音某個按住的音符，而不影響和弦中的其他音符。M2DX 實際的路由限制見下一章。</p><p>MIDI 1.0 已具備複音按鍵壓力。傳統 MIDI 1.0 <strong>MPE</strong> 會將音符分配到不同通道，以取得進一步的逐音控制；原生 MIDI 2.0 逐音訊息則使用不同的表示方式。現代 MPE Profile 也涵蓋 MIDI 2.0，因此「MPE」與「MIDI 2.0」並非互斥標籤。請參閱 <a href="https://midi.org/mpe-midi-polyphonic-expression">MPE 規格</a>及 <a href="https://midi.org/midi-ci-profile-for-midi-polyphonic-expression">MIDI-CI MPE Profile</a>。</p>
+</section>
+<section id="midi-support" aria-labelledby="midi-support-title">
+<h2 id="midi-support-title">已發布版本的 MIDI 路徑實際支援哪些功能 </h2>
+<p>此表描述 1.7.14 的原始碼路徑，並非已對所有控制器／作業系統／宿主組合完成硬體測試。獨立 App 透過 MIDI2Kit 1.0.19 接收 CoreMIDI。AUv3 則有分開的傳統 MIDI 事件與 MIDI 2.0 UMP 事件輸入。</p><div aria-labelledby="midi-support-table" class="table-wrap" role="region" tabindex="0"><table><caption id="midi-support-table">接收訊息與實際聲音反應</caption><thead><tr><th scope="col">訊息／功能</th><th scope="col">獨立 App</th><th scope="col">AUv3</th></tr></thead><tbody><tr><th scope="row">Note On / Off</th><td>MIDI 1.0 與 MIDI 2.0 輸入。MIDI 2.0 力度以 16 位元形式到達 Core。</td><td>傳統 MIDI 與 MIDI 2.0 UMP 輸入。音符屬性與釋放力度不影響音色。</td></tr><tr><th scope="row">CC / 通道 Pitch Bend / Program Change</th><td>已針對支援的控制項與音色庫規則實作。</td><td>透過傳統與 MIDI 2.0 事件實作；仍須注意宿主路由。</td></tr><tr><th scope="row">通道壓力</th><td>已連接至 A.TOUCH 路由。</td><td>MIDI 2.0 UMP 路徑已連接；傳統 MIDI 壓力未接入。</td></tr><tr><th scope="row">複音按鍵壓力</th><td>會接收並儲存，但未連接至可聽見的合成變化。</td><td>MIDI 2.0 數值會儲存，但沒有可聽見的效果；傳統壓力未接入。</td></tr><tr><th scope="row">原生逐音音高／控制器／管理</th><td>傳輸層會在這些訊息到達 App 下游處理器前將其捨棄。無法透過此標準輸入路徑使用。</td><td>未接入宿主事件接收器。</td></tr><tr><th scope="row">外部 RPN / NRPN 控制</th><td>MIDI 2.0 Registered/Assignable Controller 會被傳輸層捨棄；MIDI 1.0 RPN/NRPN CC 序列不會組合成完整訊息。</td><td>未以外部 MIDI 訊息形式接入。AU 參數自動化使用另一條內部路徑。</td></tr><tr><th scope="row">UMP 中的 MIDI 1.0 Channel Voice</th><td>接受。</td><td>UMP 事件處理器會略過；傳統 MIDI 事件走不同路徑。</td></tr><tr><th scope="row">MPE / 獨立通道表情</th><td>沒有成員通道表情路由。Omni 不代表支援 MPE。</td><td>沒有獨立的通道／群組發聲路由。</td></tr><tr><th scope="row">MIDI-CI / Property Exchange</th><td>可使用，但有下述資源限制。</td><td>不透過 AU MIDI 事件輸入處理。</td></tr><tr><th scope="row">MIDI-CI Profile 配置</th><td>此 App 未宣告任何已實作的 Profile 配置。</td><td>AU 事件輸入未提供。</td></tr></tbody></table></div><h3>為何 16 位元力度不代表 65,536 種不同的 DX7 反應</h3><p>協定數值以 16 位元形式到達 Core，但 DX7 力度靈敏度計算會將其右移縮減為 7 位元，再查詢含有 64 個項目的表格。運算子的靈敏度設定會進一步影響結果。FX 控制項會將數值縮減至 0–127；運算子輸出電平使用 DX 的 0–99 範圍。通道控制項也會經過正規化。接收到較大的整數，不代表每個整數都會產生不同的可聽狀態。</p><h3>通道、群組與時序限制</h3><p>獨立 App 的 Settings 提供 Omni 或通道 1–16 作為輸入篩選。篩選後，群組／通道身分不會保留為獨立樂器聲部。通道彎音作用於整個合成器，而非個別 MPE 成員音符。Core 另有逐音 API，但這些 API 的存在無法補足已發布版本傳輸與路由上的缺口。</p><p>MIDI 2.0 不會使此版本具有取樣點精度，也不會消除延遲。來源時間戳記與宿主取樣偏移尚未完整用於逐事件排程。請勿根據 64 取樣點的內部處理區塊推定任何時序保證。</p><p>來源：<span class="source-review">傳輸分派</span>、<span class="source-review">AU 事件處理器</span>、<a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Tables/ScalingTable.swift">力度縮放</a>與 <a href="https://github.com/hakaru/M2DX-Core/blob/v1.25.0/Sources/M2DXCore/Engine/SynthEngine.swift#L2257">Core 表情處理</a>。</p>
+</section>
+<section id="midi-ci" aria-labelledby="midi-ci-title">
+<h2 id="midi-ci-title">MIDI-CI、Profile 與 Property Exchange </h2>
+<p><strong>MIDI-CI</strong> 讓裝置交換功能資訊。<strong>Profile</strong> 定義特定音樂用途的共同運作方式，並不是預設音色。<strong>Property Exchange（PE）</strong> 讓實作者提供具名資源，例如裝置資訊、音色清單或控制項說明。支援 PE 的連線不保證每個 DAW 都能自動編輯每個樂器參數。請參閱 <a href="https://midi.org/midi-2-0">MIDI Association 概覽</a>及 <a href="https://midi.org/profiles">Profile 說明</a>。</p><p>舊版 MIDI-CI Protocol Negotiation 程序已在 2023 年修訂中棄用。目前的一般說明應區分功能交換與 UMP 協定選擇。M2DX 已出貨的相容行為，不代表實作了目前所有 Profile 或規格選項。請參閱<a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">官方 2023 年修訂說明</a>。</p><div aria-labelledby="pe-table" class="table-wrap" role="region" tabindex="0"><table><caption id="pe-table">M2DX 獨立 App 資源</caption><thead><tr><th scope="col">資源</th><th scope="col">提供的內容</th><th scope="col">外部存取</th></tr></thead><tbody><tr><th scope="row">ResourceList / DeviceInfo</th><td>可用資源說明與裝置資訊。相容性欄位並非 App 版本或製造商資訊的權威來源。</td><td>GET；無 SET</td></tr><tr><th scope="row">ChannelList</th><td>一個代表通道的目前音色名稱，不是 256 個獨立聲部。</td><td>GET 與訂閱</td></tr><tr><th scope="row">ProgramList</th><td>支援分頁的原廠音色清單。它不是整合 CUSTOM、匯入音色庫與 TX816 疊層的瀏覽器。</td><td>GET；已註冊訂閱；無 SET</td></tr><tr><th scope="row">X-ParameterList</th><td>用於 KeyStage 等控制器整合的 CC 名稱、控制編號與預設值。不是完整的 Core 參數模型。</td><td>GET；已註冊訂閱；無 SET</td></tr><tr><th scope="row">X-ProgramEdit</th><td>目前音色名稱／位址，以及 0–127 形式的 CC 數值。</td><td>GET 與訂閱；無 SET</td></tr><tr><th scope="row">JSONSchema</th><td>參數清單與音色編輯資源的結構描述；雖未列於手動編寫的 ResourceList，仍已直接註冊。</td><td>GET；無 SET</td></tr></tbody></table></div><p>切換音色時會通知相關名稱／目前音色資源。UI 的 CC 變更可以通知 X-ProgramEdit；接收 CC 的同步處理則會避免將每次變更回送。資源接受訂閱，不代表所有可能的變更都會產生通知。</p><p><strong>這些已註冊資源未實作網路 PE SET。</strong>程式碼中有本機參數 get/set API，但其中的設定函式並未註冊為外部 PE 設定函式。請使用支援的 CC 控制項、App UI 或宿主自動化來編輯聲音。此版本也未提供標準 Profile 配置。</p><p>使用相容控制器時，請建立具有回傳路徑的 MIDI 連線，選取所需輸入／通道，再讓控制器要求支援的資源。若沒有出現標籤，一般音符／CC 演奏仍可能正常運作。此版本沒有公開的「Discover MIDI-CI Devices」除錯畫面，互通性仍視裝置而定。來源：<span class="source-review">已註冊的 PE 資源與通知</span>。</p>
+</section>
+<section id="midi-learn" aria-labelledby="midi-learn-title">
+<h2 id="midi-learn-title">連接控制器並使用 MIDI Learn </h2>
+<p>在獨立 App 的 <strong>Settings → MIDI</strong> 中，選取 All Sources 或特定 MIDI Input，再選擇 Omni (All) 或 1–16 中的一個通道。Connected MIDI Devices 與 Refresh Devices 可協助確認連線。BLE MIDI 控制器請使用 Bluetooth MIDI。演奏時可查看頁首的活動指示點。</p><ol><li>長按支援的 FX 滑桿約半秒，不要移動它。</li><li>在其 MIDI Learn 選單選取 <strong>Learn CC</strong>。</li><li>當 LEARN 閃爍時，移動硬體旋鈕或推桿。第一個收到的 CC 會被指派，學習隨即停止。</li><li>再次長按同一滑桿，可取消等待中的學習。使用 <strong>Settings → MIDI Learn → Reset All Mappings</strong> 可還原對應。</li></ol><p>支援的目標包括 MIX／基本 FX 滑桿、部分 Pro 連續控制項、LAYER DETUNE 與聲部 LVL。不能假定 LAYER PAN、所有 FM 編輯器控制項及所有效果器開關／選項都可學習。一個 CC 只有一個學習目標；新的指派會取代它先前的學習目標。延音等原本的標準功能仍可能有反應，因此請避免不小心將這些 CC 改作他用。</p><div aria-labelledby="cc-table" class="table-wrap" role="region" tabindex="0"><table><caption id="cc-table">實用的預設 CC 指派</caption><thead><tr><th scope="col">CC</th><th scope="col">功能</th></tr></thead><tbody><tr><th scope="row">1 / 2 / 4</th><td>調變輪／吹管／腳踏控制器；在 EDIT 設定 Pitch/Amp/EG 反應</td></tr><tr><th scope="row">7 / 11 / 64</th><td>音量／表情／延音</td></tr><tr><th scope="row">5 / 65</th><td>滑音時間／滑音開關</td></tr><tr><th scope="row">102 / 103 / 104 / 105</th><td>EQ 低頻／EQ 高頻／過載／立體聲寬度</td></tr><tr><th scope="row">106 / 107 / 108 / 109</th><td>合唱速度／合唱深度／殘響時間／殘響電平</td></tr><tr><th scope="row">110 / 111</th><td>最大化器輸入／上限</td></tr><tr><th scope="row">112–117</th><td>OP1–OP6 輸出電平</td></tr><tr><th scope="row">0 / 32</th><td>Bank Select MSB / LSB；依下一節說明搭配 Program Change 使用</td></tr></tbody></table></div><p>學習對應會獨立於 CUSTOM 音色儲存。如果只能透過學習指派的參數顯示 <strong>CC255</strong> 或 Reset to CC255，這是內部「沒有原廠 CC」的標記，不是可傳送的有效 MIDI CC。在 AUv3 中，請使用宿主的對應與自動化，而非獨立 App 的 Learn 程序。</p><p>AU 參數自動化使用內部參數路由表示法，不代表接受外部 MIDI 1.0 NRPN 序列或 MIDI 2.0 Assignable Controller。來源：<span class="source-review">Learn 對應</span>與 <span class="source-review">AU 參數路由</span>。</p>
+</section>
+<section id="program-change" aria-labelledby="program-change-title">
+<h2 id="program-change-title">使用 Bank Select 與 Program Change 選取音色 </h2>
+<p>MIDI 數值從零開始。顯示音色編號 1–128 的控制器，實際可能傳送 0–127。CUSTOM 卡片上的 <strong>B16 PC0</strong> 代表音色庫 MSB 16，以及傳送的 Program Change 0，不一定等於控制器畫面顯示的音色編號。</p><div aria-labelledby="program-table" class="table-wrap" role="region" tabindex="0"><table><caption id="program-table">音色定址</caption><thead><tr><th scope="col">目標</th><th scope="col">訊息／規則</th></tr></thead><tbody><tr><th scope="row">原廠音色</th><td>指定音色庫時，全域原廠索引為 Bank MSB × 32 + Program。LSB 會被忽略。未指定音色庫時，PC 視為全域原廠索引。LIVE 的分類音色庫與此 MIDI 音色庫編號不同。</td></tr><tr><th scope="row">第一個 CUSTOM 音色，固定編號 0</th><td>CC0 = 16、CC32 = 0、PC = 0。</td></tr><tr><th scope="row">CUSTOM 固定編號 130</th><td>CC0 = 16、CC32 = 1、PC = 2。通用公式：LSB = floor(number / 128)、PC = number mod 128。</td></tr><tr><th scope="row">匯入的 .syx 音色</th><td>請使用 App／宿主的預設音色瀏覽器。匯入音色不會僅因匯入就取得與 CUSTOM 相同的固定 Program Change 編號。若需要此位址，請儲存 CUSTOM 副本。</td></tr><tr><th scope="row">作用中的獨立 App TX816 疊層</th><td>已啟用的 Pro 疊層正在作用時，一般 PC 會優先使用疊層清單；CUSTOM 音色庫 16 另有優先規則。若要進行一般單一音色選取，請返回 LIVE/EDIT。</td></tr></tbody></table></div><p>刪除其他音色時，CUSTOM 編號會維持固定，不會依清單位置重新編號。未指派的 CUSTOM 編號不會改變目前聲音。在獨立 App 選取音色庫時，每次都應傳送音色庫訊息：下一個符合通道的 PC 會用掉該音色庫選擇，不應假定它會一直保持選取。</p><p>AUv3 會依其原廠／CUSTOM 選取路徑運作，並暫停目前的疊層。宿主可能在 PC 到達 M2DX 前就將它使用掉。AU 音色載入也會延後到 UI／控制端執行，因此與 PC 同時送出的 Note On 仍可能使用前一個音色。請在第一個演奏音符之前傳送音色選擇，並在目標宿主中驗證。</p><p>來源：<span class="source-review">CUSTOM 音色編號</span>、<span class="source-review">原廠音色庫定址</span>與 <span class="source-review">AU 載入與狀態</span>。</p>
+</section>
+<section id="dexed-comparison" aria-labelledby="dexed-comparison-title">
+<h2 id="dexed-comparison-title">M2DX 與 Dexed：優勢與限制 </h2>
+<p>此比較使用 <strong>M2DX 1.7.14 / Core 1.25.0</strong> 與官方穩定版 <strong>Dexed 1.1.0</strong>，查核日期為 2026 年 11 月 15 日。「未確認」表示所檢視版本無法證實具備該能力，不排除透過宿主轉換、分支版本或後續版本提供。</p><div aria-labelledby="dexed-table" class="table-wrap" role="region" tabindex="0"><table><caption id="dexed-table">特定發布版本的功能比較</caption><thead><tr><th scope="col">項目</th><th scope="col">M2DX 1.7.14</th><th scope="col">Dexed 1.1.0</th></tr></thead><tbody><tr><th scope="row">主要環境</th><td>iPhone App 與隨附 AUv3 樂器。列有 Apple Silicon Mac 相容性，但附帶尚未驗證的說明。</td><td>桌面 Windows、macOS 與 Linux；所檢視版本沒有官方 iOS App。</td></tr><tr><th scope="row">外掛格式</th><td>AUv3。此版本沒有 VST3 或 CLAP 版本。</td><td>官方套件：VST3、CLAP、獨立程式；macOS 另有 AU。1.1.0 發布 ZIP 未包含 LV2。</td></tr><tr><th scope="row">FM 結構／複音</th><td>六個運算子、32 種演算法；在關閉超取樣且沒有額外堆疊的一般單一配置下為 16 複音。疊層與齊奏會消耗資源。</td><td>六個運算子、32 種演算法；最多同時 16 個音符。</td></tr><tr><th scope="row">引擎選擇</th><td>Mark I 與 Modern；App 與 AUv3 的引擎設定及使用條件不同。沒有 OPL 引擎。</td><td>Modern、Mark I 與實驗性的 OPL Series。</td></tr><tr><th scope="row">DX7 音色交換</th><td>匯入相容的 .syx 資料；在本機儲存自訂音色。未提供完整的雙向硬體音色管理工具。</td><td>讀寫 DX7/TX7 音色與 32 音色卡匣、整理卡匣，並將 SysEx 傳送至硬體。</td></tr><tr><th scope="row">效果器</th><td>內部 EQ、過載、合唱、殘響、立體聲處理與最大化器。額外的 Pro 處理與外部 AU FX 是獨立 App 功能。</td><td>內建低通濾波器、共振與增益。合唱、殘響及其他處理需在宿主中加入。</td></tr><tr><th scope="row">疊層</th><td>選購 Pro TX816 可堆疊最多八個音色；獨立 App 的 Voice Stack 是另一項功能。</td><td>使用額外外掛實例與宿主路由，可達到類似疊層。</td></tr><tr><th scope="row">微分音調律</th><td>所檢視 App 未提供 Scala .scl/.kbm 與 MTS-ESP 工作流程。</td><td>支援 Scala .scl 音階、.kbm 鍵盤對應與 MTS-ESP 用戶端。</td></tr><tr><th scope="row">自動化／MIDI Learn</th><td>AU 宿主參數自動化；獨立 App 的 Learn 適用於支援的 FX／混音／疊層控制項。這些與外部 NRPN 支援不同。</td><td>144 個為 DAW 自動化設計的 DX7 參數，另可從參數快顯選單指派 MIDI CC。</td></tr><tr><th scope="row">MIDI 2.0／探索</th><td>實作 UMP 輸入與 MIDI-CI/PE，但有本手冊列出的版本限制。並非每個 Core 處理器都能從公開輸入路徑到達。</td><td>所檢視版本未確認支援原生 UMP、高解析度 MIDI 2.0、MIDI-CI 與 PE。已實作 MIDI 1.0 事件處理。</td></tr><tr><th scope="row">MPE／逐音控制</th><td>請勿假定已發布輸入路徑具備完整 MPE，或可用的原生逐音控制。</td><td>已實作 MPE 逐音彎音。所檢視處理程序中的 MPE 壓力與音色處理未啟用。</td></tr><tr><th scope="row">價格與原始碼授權</th><td>免費 App，可選購 Pro。M2DX-Core 有自己的 Apache-2.0 授權；該授權不涵蓋所有 App 元件。</td><td>免費開放原始碼。Dexed 整體採 GPL v3；其 msfa 元件採 Apache-2.0。</td></tr></tbody></table></div><p>來源：<a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 發布套件</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/README.md">README 與授權</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginProcessor.h">複音上限與引擎</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/window/CartManager.cpp">卡匣操作</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/Tuning.cpp">調律</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/midi/PluginMidi.cpp">MIDI 與 MPE 處理</a>、<a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/PluginFx.cpp">輸出效果器</a>。</p><h3>依用途選擇</h3><ul><li><strong>M2DX 的優勢：</strong>可立即演奏的行動樂器、螢幕鍵盤、內建創意效果器與選購疊層。限制包括較少的平台／外掛格式、獨立 App 與 AUv3 的功能差異，以及尚不完整的 MIDI 表情路徑。</li><li><strong>Dexed 的優勢：</strong>桌面 DAW 整合、卡匣管理、硬體編輯與替代調律。它需要桌面環境，且所檢視的內部處理較不像一條完整效果器鏈。</li><li>以上是根據記錄功能得出的工作流程結論，不是音質排名。本手冊未針對這兩個版本進行受控聆聽測試或相同渲染測試。</li></ul><p>Dexed 的編輯流程請參閱<a href="https://asb2m10.github.io/dexed/">官方概覽</a>與 <a href="https://github.com/asb2m10/dexed/blob/v1.1.0/source/ui/util/ContextMenuAdapter.h">MIDI CC 快顯選單實作</a>。</p>
+</section>
+<section id="sound-matching" aria-labelledby="sound-matching-title">
+<h2 id="sound-matching-title">搬移音色並公平比較 </h2>
+<ol><li>在 Dexed 將相容的 32 音色 DX7 卡匣匯出為 <code>.syx</code>。將該檔案匯入 M2DX，並選取相同音色。</li><li>使用單一音色模式。停用 M2DX 疊層、Voice Stack 與額外效果器；移除宿主效果器，並將 Dexed 的輸出濾波與增益塑形調整為中性。</li><li>盡可能比對取樣率、調音、移調、引擎模式、回授、運算子數值、包絡、琴鍵同步與輸入力度。</li><li>另行檢查 M2DX 的 Mark I 除數、EG 模式與 DAC 設定。它們的預設值與縮放方式不一定與 Dexed 同名引擎相同。</li><li>傳送相同的音符序列、音符長度、力度、延音與控制器數值。先比較單音，再比較可能觸發發聲搶占的密集和弦。</li><li>將感知輸出音量調整一致，再比較起音、持續階段頻譜與釋放。若有差異，每次隔離一個參數或處理階段來檢查。</li></ol><p>共用音色格式與相關的定點合成技術，不保證輸出取樣值完全相同。差異可能來自引擎行為、控制器轉換、包絡模式、增益、效果器或路由。Core 的參考測試涵蓋特定條件，並不認證每個音色、裝置、取樣率或設定都與 Dexed 或實體 DX7 相同。</p>
+</section>
+<section id="troubleshooting" aria-labelledby="troubleshooting-title">
+<h2 id="troubleshooting-title">疑難排解與目前限制 </h2>
+<div aria-labelledby="troubleshooting-table" class="table-wrap" role="region" tabindex="0"><table><caption id="troubleshooting-table">症狀與檢查項目</caption><thead><tr><th scope="col">症狀</th><th scope="col">檢查項目</th></tr></thead><tbody><tr><th scope="row">螢幕鍵盤沒有聲音</th><td>在 LIVE 試用原廠音色。檢查裝置音量、Settings → Audio → Output / Master Volume，以及 FX → MIX → VOLUME / EXPRESSION。若只有某個音色無聲，請檢查載波電平與吹管／EG 路由。</td></tr><tr><th scope="row">外接鍵盤無法演奏</th><td>檢查頁首 MIDI 活動指示點、Settings → MIDI → MIDI Input 與 MIDI Channel。連接介面後，使用 Refresh Devices 或重新連線圖示。MIDI 已連線不代表音訊已路由到預期輸出。</td></tr><tr><th scope="row">監聽延遲或斷音</th><td>試用有線音訊輸出。減少 Voice Stack／齊奏、疊層與耗費資源的外部效果器。在 AUv3 中，調整宿主緩衝區設定與 CPU 負載；較小緩衝區可降低延遲，但會縮減處理餘裕。</td></tr><tr><th scope="row">疊層聽起來只有一個音色</th><td>返回 LIVE/EDIT 會離開疊層模式。請停留在 LAYER 或 FX，並使用外接／宿主 MIDI。檢查聲部分配與 Pro 授權；Mono 不會演奏完整疊層。</td></tr><tr><th scope="row">找不到已儲存音色</th><td>使用 LIVE → 目前的音色庫名稱 → CUSTOM；頁首 PRESETS 選單只列出原廠音色。儲存不會自動選取新的 CUSTOM 項目。</td></tr><tr><th scope="row">SysEx 匯入失敗</th><td>請使用已解壓縮、4104 位元組的 DX7 32 音色庫，且必須有有效標頭、7 位元資料內容與檢查碼。此匯入功能不接受單一音色傾印，也不接受任意 .syx 檔案。</td></tr><tr><th scope="row">控制器已連線但沒有作用</th><td>檢查訊息類型、通道與對應。逐音處理器、複音壓力及部分 MIDI 2.0 訊息，在已發布路徑中並未接至可聽見的反應。請查閱支援表，不要假定所有 MIDI 2.0 訊息都可運作。</td></tr><tr><th scope="row">獨立 App 與 AUv3 聲音不同</th><td>比對引擎、Mark I 除數、力度曲線、FX、表情、調音與宿主取樣率。AU 預設除數不同，且 Pro FX 僅限獨立 App。</td></tr><tr><th scope="row">放開後音符仍持續</th><td>檢查延音 CC64、仍按住的外接琴鍵與殘響尾音。螢幕鍵盤的停止圖示會釋放觸控按住的音符，不是針對所有外部輸入的通用緊急停止功能。必要時在宿主停止／重設播放，或重新連接輸入。</td></tr><tr><th scope="row">缺少 Pro 功能</th><td>在主 App 回復購買項目，再重新開啟 AU。請查看獨立 App／AUv3 功能表：購買 Pro 不會將所有獨立 App 功能加入外掛。</td></tr></tbody></table></div><p>其他目前限制包括：沒有使用者可操作的音色／疊層匯出、沒有雲端音色庫同步、沒有 Scala/MTS-ESP 工作流程、沒有各疊層獨立效果器鏈，以及 WAVE 選擇器尚未生效。透過 App Group 共用 CUSTOM／匯入音色庫，僅限同一安裝環境，不代表跨裝置同步。本手冊不保證長時間背景播放。</p><p>回報問題時，請提供 App／組建與作業系統版本、裝置、使用獨立 App 或宿主名稱／版本、輸入硬體、訊息類型／通道、預設音色或音色庫名稱，以及能重現問題的最短步驟。請寄至 <a href="mailto:support@hakaru.net">support@hakaru.net</a>。M2DX 使用 Firebase 當機回報及其<a href="/M2DX-support/privacy">隱私權政策</a>所述的其他服務；其隱私行為與其他 hakaru App 不同。</p>
+</section>
+<section id="sources" aria-labelledby="sources-title">
+<h2 id="sources-title">資料來源、版本與解讀方式 </h2>
+<p>本指南結合已發布介面、其實際運作的原始碼路徑、官方標準與 Dexed 發布資料。儲存庫註解、舊版說明文字及僅限開發使用的畫面，均不視為公開功能的證據。</p><ul><li><a href="https://apps.apple.com/app/m2dx/id6763840208">M2DX App Store 頁面</a> — 公開版本與裝置需求。</li><li><span class="source-review">M2DX v1.7.14-40 原始碼</span> — LIVE/EDIT/Settings、自訂儲存、疊層、效果器與 AU 行為。</li><li><span class="source-review">已發布 App 的解析後相依套件</span> — Core 1.25.0 與 MIDI2Kit 1.0.19。</li><li><a href="https://github.com/hakaru/M2DX-Core/tree/v1.25.0">M2DX-Core 1.25.0</a> — 合成、縮放、控制器處理與授權。</li><li><span class="source-review">MIDI2Kit 1.0.19</span> — 此版本使用的傳輸層。</li><li><a href="https://github.com/asb2m10/dexed/releases/tag/v1.1.0">Dexed 1.1.0 發布版本</a>與<a href="https://github.com/asb2m10/dexed/tree/v1.1.0">標籤對應原始碼</a> — 比較基準。</li><li><a href="https://midi.org/midi-2-0-core-specification-collection">MIDI 2.0 核心規格集合</a>、<a href="https://midi.org/details-about-midi-2-0-midi-ci-profiles-and-property-exchange-updated-june-2023">2023 年規格變更</a>與 <a href="https://developer.apple.com/documentation/coremidi/incorporating-midi-2-into-your-apps">Apple CoreMIDI 文件</a> — 術語、傳輸與相容性。</li></ul><p>「函式庫內已實作」、「可從 App 到達」與「已使用特定控制器或宿主驗證」是不同的主張。本指南包含原始碼檢視，並非完整的硬體互通性測試。產品名稱用於指出相容與比較對象，不代表背書。</p><p class="source-access-note">M2DX 與 MIDI2Kit 的原始碼參照，指開發者對出貨程式碼的檢查。兩個儲存庫均為私人儲存庫，因此這些參照不是公開下載連結。M2DX-Core 與所引用的 Dexed 原始碼則已公開。</p>
+</section>
+<footer class="manual-footer"><nav><a href="/M2DX-support/changelog-zh-Hant">更新紀錄</a><a href="/M2DX-support/index-zh-Hant">支援</a><a href="/M2DX-support/privacy-zh-Hant">隱私</a><a href="mailto:support@hakaru.net">聯絡支援</a><a href="#top">回到頂端</a></nav><p>© 2026 hakaru</p></footer>
+</main>
+</div>
+<script src="/scripts/sidebar-script.js"></script>
+</body>
+</html>
