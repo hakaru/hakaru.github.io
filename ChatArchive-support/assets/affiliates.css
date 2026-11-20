@@ -1,0 +1,51 @@
+/* Legacy support markup nests content panes; apply the sidebar offset only once. */
+.content-pane .content-pane { margin-left: 0; padding-top: 0; min-width: 0; }
+
+.affiliate-callout {
+    margin: 28px 0 36px;
+    padding: clamp(20px, 4vw, 32px);
+    border: 1px solid #976071;
+    border-radius: 14px;
+    background: #241e2b;
+    color: #f5f5f7;
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+    scroll-margin-top: 24px;
+}
+.affiliate-callout h2 { margin: 0 0 16px; font-size: 1.5rem; line-height: 1.4; color: #fff; }
+.affiliate-callout p { margin: 0 0 16px; }
+.affiliate-callout strong { color: #ffb2c1; }
+.affiliate-callout .affiliate-terms { color: #d1cad6; }
+.affiliate-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.affiliate-callout a { color: #ffb2c1; text-underline-offset: 3px; }
+.affiliate-callout a.affiliate-apply {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #ffb2c1;
+    color: #241e2b;
+    text-decoration: none;
+    font-weight: 650;
+    text-align: center;
+}
+.affiliate-callout a.affiliate-apply:hover { background: #ffd0da; }
+.affiliate-callout a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.affiliate-notice {
+    margin: 16px 0 0;
+    padding: 16px 22px;
+    border: 1px solid #976071;
+    border-radius: 10px;
+    background: #241e2b;
+    color: #ffb2c1;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+.affiliate-notice a { display: block; padding: 4px 0; color: inherit; text-underline-offset: 4px; }
+
+@media (max-width: 768px) {
+    .affiliate-callout { scroll-margin-top: 76px; }
+}
